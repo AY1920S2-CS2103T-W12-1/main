@@ -46,11 +46,11 @@ Responsibilities: Dev Ops + Threading
 
 '''
 
-=== Benson Meier
-image::yl_coder.jpg[width="150", align="left"]
-{empty}[http://github.com/yl-coder[github]] [<<johndoe#, portfolio>>]
+=== Amos Cheong
+image::amoscheong97.png[width="150", align="left"]
+{empty}[https://github.com/Amoscheong97[github]] [<<amoscheong97#, portfolio>>]
 
-Role: Developer +
-Responsibilities: UI
+Role: Developer & Code-Quality +
+Responsibilities: Scheduling, tracking and deadlines
 
 '''
