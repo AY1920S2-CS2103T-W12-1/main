@@ -39,9 +39,20 @@
 <li><a href="#product-survey">Appendix F: Product Survey</a></li>
 <li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
-<li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-a-person">G.2. Deleting a person</a></li>
-<li><a href="#saving-data">G.3. Saving data</a></li>
+<li><a href="#launch-delino">G.1. Launch Delino</a></li>
+<li><a href="#adding-an-order">G.2. Adding an order</a></li>
+<li><a href="#deleting-an-order">G.3. Deleting an order</a></li>
+<li><a href="#edit-orders">G.4. Edit orders</a></li>
+<li><a href="#import-orders">G.5. Import orders</a></li>
+<li><a href="#list-orders">G.6. List orders</a></li>
+<li><a href="#find-an-order">G.7. Find an order</a></li>
+<li><a href="#mark-order-as-done">G.8. Mark order as Done</a></li>
+<li><a href="#clear-orders">G.9. Clear orders</a></li>
+<li><a href="#help">G.10. Help</a></li>
+<li><a href="#sort-orders">G.11. Sort orders</a></li>
+<li><a href="#undo-previous-action">G.12. Undo previous action</a></li>
+<li><a href="#saving-data">G.13. Saving data</a></li>
+<li><a href="#exit">G.14. Exit</a></li>
 </ul>
 </li>
 </ul>
@@ -1716,7 +1727,7 @@ These instructions only provide a starting point for testers to work on; testers
 </table>
 </div>
 <div class="sect2">
-<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">G.1. Launch and Shutdown</a></h3>
+<h3 id="launch-delino"><a class="link" href="#launch-delino">G.1. Launch Delino</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1724,86 +1735,400 @@ These instructions only provide a starting point for testers to work on; testers
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Download the jar file and copy into an empty folder</p>
+<p>Ensure that you have Java 11 installed in your computer</p>
 </li>
 <li>
-<p>Double-click the jar file<br>
-Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.</p>
-</li>
-</ol>
-</div>
+<p>Download the latest Delino.jar</p>
 </li>
 <li>
-<p>Saving window preferences</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Resize the window to an optimum size. Move the window to a different location. Close the window.</p>
-</li>
-<li>
-<p>Re-launch the app by double-clicking the jar file.<br>
-Expected: The most recent window size and location is retained.</p>
+<p>Copy the jar file to the folder you would like to use as a home address for Delino application
+Expected: Shows the GUI of the Delino App. The window size may not be optimum</p>
 </li>
 </ol>
 </div>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">G.2. Deleting a person</a></h3>
+<h3 id="adding-an-order"><a class="link" href="#adding-an-order">G.2. Adding an order</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Deleting a person while all persons are listed</p>
+<p>Add a minimum of 2 orders</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list.</p>
+<p>Add command format: <code>add</code> <code>tid/TRANSACTION_ID</code> <code>n/NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>ts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>pm/PAYMENT_METHOD</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p>
 </li>
 <li>
-<p>Test case: <code>delete 1</code><br>
-Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.</p>
+<p>Test case: <code>add</code> <code>tid/9876543210</code> <code>n/John Doe</code> <code>a/Blk 572 Hougang st 51 #10-33 S530572</code> <code>p/98766789</code> <code>ts/2020-02-20 1300</code> <code>w/Yishun</code> <code>pm/Cash</code><br>
+Expected: An order with the above details will be added to the list and displayed on the GUI</p>
 </li>
 <li>
-<p>Test case: <code>delete 0</code><br>
-Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.</p>
+<p>Test case: <code>add</code> <code>tid/1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 572 Hougang st 51 #11-37 S530572</code> <code>p/9001 0019</code> <code>ts/2020-03-10 1650</code> <code>w/Marsiling</code> <code>pm/Nets</code> <code>c/Leave it at the riser</code> <code>type/glass</code>
+Expected: The order is added to the list, including the item type and the order comment</p>
 </li>
 <li>
-<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
-Expected: Similar to previous.</p>
+<p>Test case: Invalid Syntax
+Expected: No order is added. Error details shown in the response message. A help message displayed for user to add accordingly. Status bar remain unchanged</p>
 </li>
 </ol>
 </div>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.3. Saving data</a></h3>
+<h3 id="deleting-an-order"><a class="link" href="#deleting-an-order">G.3. Deleting an order</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Dealing with missing/corrupted data files</p>
+<p>Deleting an order with respect to the current list displayed</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p><em>{explain how to simulate a missing/corrupted file and the expected behavior}</em></p>
+<p>Delete command format: <code>delete</code> <code>INDEX</code></p>
+</li>
+<li>
+<p>Prerequisites: List all orders using the <code>list</code> command. Multiple orders in the list</p>
+</li>
+<li>
+<p>Test case: <code>delete</code> <code>1</code><br>
+Expected: The first order item in the current list will be removed. Details of the deleted order will be displayed in the response box</p>
+</li>
+<li>
+<p>Test case: <code>delete</code> <code>2</code><br>
+Expected: The second item in the current list will be removed. Details of the deleted order will be displayed in the response box</p>
+</li>
+<li>
+<p>Test case: Invalid Syntax<br>
+Expected: No order is deleted. An error message will be displayed in the response box</p>
+</li>
+<li>
+<p>Test case: <code>delete</code> <code>INVALID_INDEX</code><br>
+Expected: No order is deleted. An error message will be displayed in the response box, indicating that the index cannot be found in the list</p>
 </li>
 </ol>
 </div>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
+</div>
+<div class="sect2">
+<h3 id="edit-orders"><a class="link" href="#edit-orders">G.4. Edit orders</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>You can edit the details of the delivery order by specifying the transaction id, the field you want to change and the value that is required to update</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Edit command format: <code>edit</code> <code>INDEX</code> <code>PREFIX/NEW_VALUE</code></p>
+</li>
+<li>
+<p>Test case: <code>edit</code> <code>1</code> <code>n/Xuan En</code><br>
+Expected: The first index customer&#8217;s name is changed to Xuan En</p>
+</li>
+<li>
+<p>Test case: <code>edit</code> <code>2</code> <code>p/99521654</code><br>
+Expected: The second index phone number is changed to 9952 1654</p>
+</li>
+<li>
+<p>Test case: <code>edit</code> <code>1</code> <code>a/Blk 123 Pasir Ris street 51 #12-23 S510123</code><br>
+Expected: The first index is edited where the address of the customer of the order will be changed to Blk 123 Pasir Ris Street 51 #12-23 S510123</p>
+</li>
+<li>
+<p>Test case: <code>edit</code> <code>2</code> <code>n/Mr Tan</code> <code>p/98776655</code> <code>a/Blk 888 Jurong East street 2 #01-02 S521731</code><br>
+Expected: The first index of the list is edited. The name is changed to Mr Tan, phone number changed to 98776655 and address will be changed to Blk 888 Jurong East street 2 #01-02 S521731</p>
+</li>
+<li>
+<p>Test case: <code>edit</code> <code>1</code> <code>ts/09/08/2020</code><br>
+Expected: The delivery date of the first index of the customer will be rescheduled to 09/08/2020</p>
+</li>
+<li>
+<p>Test case: <code>edit</code> <code>1</code> <code>ts/02/02/2020</code> (Assuming this date has passed)<br>
+Expected: The response box will display an error message as it is impossible to put a date that is already passed</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="import-orders"><a class="link" href="#import-orders">G.5. Import orders</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Import a new list of orders from a .csv file given by the company</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Import command format: <code>import</code> <code>NAME_OF_FILE.csv</code></p>
+</li>
+<li>
+<p>Prerequisites : The import file must be a .csv file. Otherwise, it will cause the app to raise an exception and print the error message. Should not import a file that is non-existent</p>
+</li>
+<li>
+<p>Test case: <code>import</code> <code>customers_20_02_2020.csv</code><br>
+Expected: In the response box, a message will appear to indicate that the import is successful. At the same time, the contents of the .csv file will be shown to the user in the form of a list of orders</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="list-orders"><a class="link" href="#list-orders">G.6. List orders</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>List all the delivery orders for the user. The type of orders to be listed is dependent on the command input from the user</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>list</code><br>
+Expected: List all the delivery orders, showing all completed and uncompleted orders.</p>
+</li>
+<li>
+<p>Test case: <code>list</code> <code>done</code><br>
+Expected: List all completed delivery orders.</p>
+</li>
+<li>
+<p>Test case: <code>list</code> <code>undone</code><br>
+Expected: List all uncompleted delivery orders.</p>
+</li>
+<li>
+<p>Test case: <code>list</code> <code>ANY_WORD_OTHER_THAN_UNDONE_AND_DONE</code><br>
+Expected: An error will occur, a message will appear in the response box, indicating an invalid list command</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="find-an-order"><a class="link" href="#find-an-order">G.7. Find an order</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Find an order based on either the person’s Name or by the Transaction ID</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Find command format: <code>find</code> <code>FLAG</code> <code>KEYWORD</code></p>
+</li>
+<li>
+<p>Prerequisite: Call the list command before calling the sort command. The orders found are dependent on what orders are listed before. For example, if the user calls a <code>list done</code> and then calls a find command, the orders from the output list is based on the list of completed orders</p>
+</li>
+<li>
+<p>Test case: <code>list</code> <code>done</code><br>
+<code>find</code> <code>-t</code> <code>A18512357Z</code><br>
+Expected: Specifically find the order that has the transaction ID of A18512357Z from a list of completed delivery orders and print it to the user.</p>
+</li>
+<li>
+<p>Test case: <code>list</code> <code>undone</code><br>
+<code>find</code> <code>-n</code> <code>Amos</code><br>
+Expected: Print all uncompleted delivery orders with any person that has the name ‘Amos’ in it. It will not print out completed delivery orders with a person named ‘Amos’ despite having the same keyword</p>
+</li>
+<li>
+<p>Test case: <code>list</code><br>
+<code>find</code> <code>-n</code> <code>Amos</code><br>
+Expected: The program will look up all the delivery orders, regardless of completed or uncompleted orders and print out all orders in a list with the word ‘Amos’ in the name</p>
+</li>
+<li>
+<p>Test case: <code>list</code><br>
+<code>find</code><br>
+Expected: An error message will appear in the response box, stating that the argument cannot be empty and there are no changes to the list itself</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mark-order-as-done"><a class="link" href="#mark-order-as-done">G.8. Mark order as Done</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Mark order as done whenever an order transaction is completed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Done command format: <code>done</code> <code>INDEX</code></p>
+</li>
+<li>
+<p>Prerequisite: Ensure that your list has more than or equals to two orders</p>
+</li>
+<li>
+<p>Test case: <code>done</code> <code>1</code><br>
+Expected: The first order in the currently displayed list will be marked as done</p>
+</li>
+<li>
+<p>Test case: <code>done</code> <code>2</code><br>
+Expected: The second order in the currently displayed list will be marked as done</p>
+</li>
+<li>
+<p>Test case: Invalid syntax
+Expected: No order is marked as done. The error message will be displayed on the error response box describing the error</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="clear-orders"><a class="link" href="#clear-orders">G.9. Clear orders</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Clear all orders while all orders are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Clear command format: <code>clear</code> <code>[FLAG]</code></p>
+</li>
+<li>
+<p>Test case: <code>clear</code><br>
+Expected: Confirmation message will display in status message. If reply ‘Y’, the order list will be cleared. If reply ‘N’, no order is deleted</p>
+</li>
+<li>
+<p>Test case: <code>clear</code> <code>-f</code><br>
+Expected: Order list will be cleared. Notify the user that the order list has been cleared in the status message.</p>
+</li>
+<li>
+<p>Test case: Invalid syntax
+Expected: No order is cleared. Error details shown in the response message. A help message displayed for the user to type the correct command. Status bar remains unchanged</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="help"><a class="link" href="#help">G.10. Help</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Display a list of available commands to user</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>help</code><br>
+Expected: A list of commands will be displayed and the response box will indicate a successful command.</p>
+</li>
+<li>
+<p>Test case: Invalid syntax
+Expected: An error will occur and the response box will show an error message</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sort-orders"><a class="link" href="#sort-orders">G.11. Sort orders</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Sort the orders based on the attributes input by the user. There are some things which we can sort by : Name of person, Transaction ID or Timestamp. The user will also input flags to indicate ascending order (-a) or descending order (-d)</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Sort command format: <code>sort</code> <code>[ORDER_FLAG]</code> <code>ORDER_ATTRIBUTE_PREFIX</code></p>
+</li>
+<li>
+<p>Prerequisites: Should call a list command before calling sort. The sort command will sort based on the current list</p>
+</li>
+<li>
+<p>Test case: <code>sort</code> <code>-a</code> <code>n/</code><br>
+Expected: Sort all orders in ascending order based on the customer names</p>
+</li>
+<li>
+<p>Test case: <code>sort</code> <code>-d</code> <code>tid/</code><br>
+Expected: Sort all orders in descending order based on transaction ID</p>
+</li>
+<li>
+<p>Test case: <code>sort</code> <code>-a</code> <code>ts/</code><br>
+Expected: Sort all orders in ascending order based on timestamp</p>
+</li>
+<li>
+<p>Test case: <code>sort</code> <code>n/</code><br>
+Expected: By default, if there is no flag, it will sort all orders in ascending order based the on customer names</p>
+</li>
+<li>
+<p>Test case: <code>sort</code><br>
+Expected: Error will occur as it is an invalid syntax</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="undo-previous-action"><a class="link" href="#undo-previous-action">G.12. Undo previous action</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Undo the user’s previous action and revert back to the previous state. Usually in the case where the user has accidentally deleted an order</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites : Execute any valid command that edits the list before calling the <code>undo</code> command</p>
+</li>
+<li>
+<p>Test case: <code>undo</code><br>
+Expected: The original list will be replaced with the current new list. The previous state will be restored</p>
+</li>
+<li>
+<p>Test case: <code>undo</code> <code>INVALID_SYNTAX</code><br>
+Expected: Error message displayed in the response box</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-data"><a class="link" href="#saving-data">G.13. Saving data</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Manual Saving is not required as data is already saved in the hard disk after any commands that change the data</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exit"><a class="link" href="#exit">G.14. Exit</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Exits the Delino App using the <code>exit</code> command</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>exit</code><br>
+Expected: The GUI window will be closed</p>
+</li>
+<li>
+<p>Test case: Adding any other words as the second argument of the <code>exit</code> command
+Expected: The response box will display an invalid command message</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 10:05:29 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 10:23:30 UTC</div></div></div></body></html>
