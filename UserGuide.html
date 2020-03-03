@@ -17,17 +17,19 @@
 <li><a href="#clearing-all-entries-code-clear-code">3.2. Clearing all entries : <code>clear</code></a></li>
 <li><a href="#delete">3.3. Deleting an order : <code>delete</code></a></li>
 <li><a href="#editing-an-order-code-edit-code">3.4. Editing an order : <code>edit</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.5. Exiting the program : <code>exit</code></a></li>
-<li><a href="#locating-persons-by-name-code-find-code">3.6. Locating persons by name: <code>find</code></a></li>
-<li><a href="#viewing-help-code-help-code">3.7. Viewing help : <code>help</code></a></li>
-<li><a href="#importing-a-list-of-orders-code-import-code">3.8. Importing a list of orders : <code>import</code></a></li>
-<li><a href="#listing-orders-code-list-code">3.9. Listing orders : <code>list</code></a></li>
-<li><a href="#sort">3.10. Sorting orders: <code>sort</code></a></li>
-<li><a href="#undo">3.11. Undo the previous action: <code>undo</code></a></li>
-<li><a href="#saving-the-data">3.12. Saving the data</a></li>
-<li><a href="#reminder-code-coming-in-v2-0-code">3.13. Reminder <code>[coming in v2.0]</code></a></li>
-<li><a href="#rescheduling-orders-code-coming-in-v2-0-code">3.14. Rescheduling orders <code>[coming in v2.0]</code></a></li>
-<li><a href="#keeping-track-of-work-schedule-code-coming-in-v2-0-code">3.15. Keeping track of work schedule <code>[coming in v2.0]</code></a></li>
+<li><a href="#done">3.5. Mark order as done: <code>done</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.6. Exiting the program : <code>exit</code></a></li>
+<li><a href="#locating-persons-by-name-code-find-code">3.7. Locating persons by name: <code>find</code></a></li>
+<li><a href="#viewing-help-code-help-code">3.8. Viewing help : <code>help</code></a></li>
+<li><a href="#importing-a-list-of-orders-code-import-code">3.9. Importing a list of orders : <code>import</code></a></li>
+<li><a href="#list">3.10. Listing orders : <code>list</code></a></li>
+<li><a href="#examples-5">3.11. Examples</a></li>
+<li><a href="#sort">3.12. Sorting orders: <code>sort</code></a></li>
+<li><a href="#undo">3.13. Undo the previous action: <code>undo</code></a></li>
+<li><a href="#saving-the-data">3.14. Saving the data</a></li>
+<li><a href="#reminder-code-coming-in-v2-0-code">3.15. Reminder <code>[coming in v2.0]</code></a></li>
+<li><a href="#rescheduling-orders-code-coming-in-v2-0-code">3.16. Rescheduling orders <code>[coming in v2.0]</code></a></li>
+<li><a href="#keeping-track-of-work-schedule-code-coming-in-v2-0-code">3.17. Keeping track of work schedule <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -293,9 +295,41 @@ Deletes the 1st order in the results of the <code>find</code> command (find all 
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.5. Exiting the program : <code>exit</code></a></h3>
+<h3 id="done"><a class="link" href="#done">3.5. Mark order as done: <code>done</code></a></h3>
 <div class="sect3">
 <h4 id="description-4"><a class="link" href="#description-4">3.5.1. Description</a></h4>
+<div class="paragraph">
+<p>Once you have completed a delivery order, you can mark an order as done by providing the index of the order list.
+The order that is marked as done will be moved to another list that contains all the orders that are completed.
+The completed list can be seen by calling the list command:`list` <code>done</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="format-4"><a class="link" href="#format-4">3.5.2. Format</a></h4>
+<div class="paragraph">
+<p><code>done</code> <code>INDEX</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="examples-4"><a class="link" href="#examples-4">3.5.3. Examples</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>done</code> <code>1</code><br>
+The order at the first index of the list is marked as done.</p>
+</li>
+<li>
+<p><code>done</code> <code>2</code><br>
+The order at the second index of the list is marked as done.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.6. Exiting the program : <code>exit</code></a></h3>
+<div class="sect3">
+<h4 id="description-5"><a class="link" href="#description-5">3.6.1. Description</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -305,7 +339,7 @@ Deletes the 1st order in the results of the <code>find</code> command (find all 
 </div>
 </div>
 <div class="sect3">
-<h4 id="format-4"><a class="link" href="#format-4">3.5.2. Format:</a></h4>
+<h4 id="format-5"><a class="link" href="#format-5">3.6.2. Format:</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -316,7 +350,7 @@ Deletes the 1st order in the results of the <code>find</code> command (find all 
 </div>
 </div>
 <div class="sect2">
-<h3 id="locating-persons-by-name-code-find-code"><a class="link" href="#locating-persons-by-name-code-find-code">3.6. Locating persons by name: <code>find</code></a></h3>
+<h3 id="locating-persons-by-name-code-find-code"><a class="link" href="#locating-persons-by-name-code-find-code">3.7. Locating persons by name: <code>find</code></a></h3>
 <div class="paragraph">
 <p>Finds persons whose names contain any of the given keywords.<br>
 Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
@@ -361,13 +395,13 @@ Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>J
 </div>
 </div>
 <div class="sect2">
-<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.7. Viewing help : <code>help</code></a></h3>
+<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.8. Viewing help : <code>help</code></a></h3>
 <div class="paragraph">
 <p>Format: <code>help</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="importing-a-list-of-orders-code-import-code"><a class="link" href="#importing-a-list-of-orders-code-import-code">3.8. Importing a list of orders : <code>import</code></a></h3>
+<h3 id="importing-a-list-of-orders-code-import-code"><a class="link" href="#importing-a-list-of-orders-code-import-code">3.9. Importing a list of orders : <code>import</code></a></h3>
 <div class="paragraph">
 <p>You will be able to import orders via .csv files that are given to you by your company.
 The CSV file will include all relevant and important details of the parcels; such as the customers’ names,
@@ -406,11 +440,11 @@ Import the contents of the csv file <code>orders.csv</code> to Delino.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-orders-code-list-code"><a class="link" href="#listing-orders-code-list-code">3.9. Listing orders : <code>list</code></a></h3>
+<h3 id="list"><a class="link" href="#list">3.10. Listing orders : <code>list</code></a></h3>
 <div class="sect3">
-<h4 id="description-5"><a class="link" href="#description-5">Description</a></h4>
-<div class="ulist none">
-<ul class="none">
+<h4 id="description-6"><a class="link" href="#description-6">3.10.1. Description</a></h4>
+<div class="ulist">
+<ul>
 <li>
 <p>You can request to list the delivery order to see.
 The done status of the delivery order will be used to list the delivery orders which have the same status.
@@ -419,11 +453,36 @@ There are three types of list commands that are shown in the examples below.</p>
 </ul>
 </div>
 </div>
+<div class="sect3">
+<h4 id="format-6"><a class="link" href="#format-6">3.10.2. Format</a></h4>
+<div class="paragraph">
+<p><code>list</code> <code>[DONE/UNDONE]</code><br></p>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="sort"><a class="link" href="#sort">3.10. Sorting orders: <code>sort</code></a></h3>
+<h3 id="examples-5"><a class="link" href="#examples-5">3.11. Examples</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list</code><br>
+List down all the orders, regardless of whether its completed or uncompleted.</p>
+</li>
+<li>
+<p><code>list</code> <code>done</code><br>
+List down all the orders that are completed.</p>
+</li>
+<li>
+<p><code>list</code> <code>undone</code><br>
+List down all the orders that are uncompleted.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sort"><a class="link" href="#sort">3.12. Sorting orders: <code>sort</code></a></h3>
 <div class="sect3">
-<h4 id="description-6"><a class="link" href="#description-6">3.10.1. Description</a></h4>
+<h4 id="description-7"><a class="link" href="#description-7">3.12.1. Description</a></h4>
 <div class="paragraph">
 <p>You can sort the orders based on their attributes <strong>(given in prefix form)</strong>.
 An additional flag can be provided <strong>(-a or -d)</strong> can be used to sort the delivery
@@ -432,7 +491,7 @@ If no additional flag is provided, the orders will be sorted in <strong>ascendin
 </div>
 </div>
 <div class="sect3">
-<h4 id="format-5"><a class="link" href="#format-5">3.10.2. Format</a></h4>
+<h4 id="format-7"><a class="link" href="#format-7">3.12.2. Format</a></h4>
 <div class="paragraph">
 <p><code>sort</code> <code>[ORDER FLAG]</code> <code>ORDER_ATTRIBUTE_PREFIX</code><br></p>
 </div>
@@ -486,7 +545,7 @@ If no additional flag is provided, the orders will be sorted in <strong>ascendin
 </div>
 </div>
 <div class="sect3">
-<h4 id="examples-4"><a class="link" href="#examples-4">3.10.3. Examples</a></h4>
+<h4 id="examples-6"><a class="link" href="#examples-6">3.12.3. Examples</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -510,9 +569,9 @@ You will sort the orders in descending order based on the transaction id of the 
 </div>
 </div>
 <div class="sect2">
-<h3 id="undo"><a class="link" href="#undo">3.11. Undo the previous action: <code>undo</code></a></h3>
+<h3 id="undo"><a class="link" href="#undo">3.13. Undo the previous action: <code>undo</code></a></h3>
 <div class="sect3">
-<h4 id="description-7"><a class="link" href="#description-7">3.11.1. Description</a></h4>
+<h4 id="description-8"><a class="link" href="#description-8">3.13.1. Description</a></h4>
 <div class="paragraph">
 <p>You can use the <code>undo</code> command to revert the most recent action that was previously executed.
 For example, if you accidentally deleted an order, you can use the <code>undo</code> command to add the deleted order
@@ -520,13 +579,13 @@ back to the list of orders.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="format-6"><a class="link" href="#format-6">3.11.2. Format</a></h4>
+<h4 id="format-8"><a class="link" href="#format-8">3.13.2. Format</a></h4>
 <div class="paragraph">
 <p><code>undo</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="example"><a class="link" href="#example">3.11.3. Example</a></h4>
+<h4 id="example"><a class="link" href="#example">3.13.3. Example</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -541,9 +600,9 @@ The list will be reverted back to the state after the second command <code>delet
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.12. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.14. Saving the data</a></h3>
 <div class="sect3">
-<h4 id="description-8"><a class="link" href="#description-8">3.12.1. Description</a></h4>
+<h4 id="description-9"><a class="link" href="#description-9">3.14.1. Description</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -555,19 +614,19 @@ There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="reminder-code-coming-in-v2-0-code"><a class="link" href="#reminder-code-coming-in-v2-0-code">3.13. Reminder <code>[coming in v2.0]</code></a></h3>
+<h3 id="reminder-code-coming-in-v2-0-code"><a class="link" href="#reminder-code-coming-in-v2-0-code">3.15. Reminder <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can set reminder specifically for orders that are rescheduled or urgent orders}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="rescheduling-orders-code-coming-in-v2-0-code"><a class="link" href="#rescheduling-orders-code-coming-in-v2-0-code">3.14. Rescheduling orders <code>[coming in v2.0]</code></a></h3>
+<h3 id="rescheduling-orders-code-coming-in-v2-0-code"><a class="link" href="#rescheduling-orders-code-coming-in-v2-0-code">3.16. Rescheduling orders <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can reschedule their orders when customers notify them that they are unavailable for receiving orders}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="keeping-track-of-work-schedule-code-coming-in-v2-0-code"><a class="link" href="#keeping-track-of-work-schedule-code-coming-in-v2-0-code">3.15. Keeping track of work schedule <code>[coming in v2.0]</code></a></h3>
+<h3 id="keeping-track-of-work-schedule-code-coming-in-v2-0-code"><a class="link" href="#keeping-track-of-work-schedule-code-coming-in-v2-0-code">3.17. Keeping track of work schedule <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can keep track of their work schedule}</em></p>
 </div>
@@ -640,4 +699,4 @@ e.g. <code>sort</code> <code>-d</code> <code>ts/</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 02:48:20 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 09:22:39 UTC</div></div></div></body></html>
