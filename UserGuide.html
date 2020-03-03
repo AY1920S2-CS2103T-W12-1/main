@@ -589,35 +589,55 @@ There is no need to save manually.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Add</strong> <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague</code></p>
+<p><a href="#add"><strong>Add</strong></a> : <code>add</code> <code>tid/TRANSACTION_ID</code> <code>n/NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>ts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>pm/PAYMENT_METHOD</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code><br>
+e.g. <code>add</code> <code>tid/0123456789</code> <code>n/Eng Xuan En</code> <code>a/Tampines St 84 Blk 877 S520877 #01-123</code> <code>p/87654321</code> <code>ts/2020-02-20 1300</code> <code>w/Yishun industry</code> <code>pm/cash</code> <code>c/please knock the door three times :D</code> <code>type/heavy</code></p>
 </li>
 <li>
-<p><strong>Clear</strong> : <code>clear</code></p>
+<p><a href="#clear"><strong>Clear</strong></a> : <code>clear</code> <code>[FLAG]</code><br>
+e.g. <code>clear</code> <code>-f</code></p>
 </li>
 <li>
-<p><strong>Delete</strong> : <code>delete INDEX</code><br>
-e.g. <code>delete 3</code></p>
+<p><a href="#delete"><strong>Delete</strong></a> : <code>delete</code> <code>INDEX</code><br>
+e.g. <code>delete</code> <code>2</code></p>
 </li>
 <li>
-<p><strong>Edit</strong> : <code>edit TRANSACTION_ID FIELD_TO_CHANGE CHANGES</code><br>
-e.g. <code>edit 0123456789 n/James Lee p/9999 8888</code></p>
+<p><a href="#done"><strong>Done</strong></a> : <code>done</code> <code>INDEX</code><br>
+e.g. <code>done</code> <code>2</code></p>
 </li>
 <li>
-<p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code><br>
-e.g. <code>find James Jake</code></p>
+<p><a href="#edit"><strong>Edit</strong></a> : <code>edit</code> <code>INDEX</code> <code>PREFIX/VALUE</code><br>
+e.g. <code>edit</code> <code>2</code> <code>n/Xuan En</code></p>
 </li>
 <li>
-<p><strong>Help</strong> : <code>help</code></p>
+<p><a href="#exit"><strong>Exit</strong></a> : <code>exit</code></p>
 </li>
 <li>
-<p><strong>Import</strong> : <code>import FILE NAME</code><br>
-e.g. <code>import orders.csv</code></p>
+<p><a href="#find"><strong>Find</strong></a> : <code>find</code> <code>flag</code> <code>KEYWORD</code><br>
+e.g. <code>find</code> <code>-t</code> <code>ac1e345x7s</code></p>
 </li>
 <li>
-<p><strong>List</strong> : <code>list</code></p>
+<p><a href="#help"><strong>Help</strong></a> : <code>help</code></p>
+</li>
+<li>
+<p><a href="#import"><strong>Import</strong></a> : <code>import</code> <code>FILE_NAME</code><br>
+e.g. <code>import</code> <code>orders.csv</code></p>
+</li>
+<li>
+<p><a href="#list"><strong>List</strong></a> : <code>list</code> <code>[DONE_STATUS]</code><br>
+e.g. <code>list</code> <code>done</code></p>
+</li>
+<li>
+<p><a href="#return"><strong>Return</strong></a> : <code>return</code> <code>tid/TRANSACTION_ID</code> <code>n/NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>ts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>pm/PAYMENT_METHOD</code> <code>c/COMMENTS_BY_CUSTOMER</code> <code>type/TYPE_OF_ITEM</code><br>
+e.g. <code>return</code> <code>tid/ac17s2a</code> <code>n/BOBBY TAN</code> <code>a/123 Delta Road #03-333, Singapore 123456</code> <code>p/91230456</code> <code>ts/12-12-2020</code> <code>w/Jurong Warehouse</code> <code>pm/visa</code> <code>c/NIL</code> <code>type/glass</code></p>
+</li>
+<li>
+<p><a href="#sort"><strong>Sort</strong></a> : <code>sort</code> <code>[ORDER_FLAG]</code> <code>ORDER_ATTRIBUTE_PREFIX</code><br>
+e.g. <code>sort</code> <code>-d</code> <code>ts/</code></p>
+</li>
+<li>
+<p><a href="#undo"><strong>Undo</strong></a> : <code>undo</code></p>
 </li>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 02:35:03 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 02:48:20 UTC</div></div></div></body></html>
