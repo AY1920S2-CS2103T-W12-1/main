@@ -40,7 +40,7 @@
 <li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
 <li><a href="#launch-delino">G.1. Launch Delino</a></li>
-<li><a href="#adding-an-order">G.2. Adding an order</a></li>
+<li><a href="#inserting-an-order">G.2. Inserting an order</a></li>
 <li><a href="#deleting-an-order">G.3. Deleting an order</a></li>
 <li><a href="#edit-orders">G.4. Edit orders</a></li>
 <li><a href="#import-orders">G.5. Import orders</a></li>
@@ -224,7 +224,7 @@ The following class plays an important role at the architecture level:</p>
 <p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
 </li>
 <li>
-<p>The command execution can affect the <code>Model</code> (e.g. adding a person).</p>
+<p>The command execution can affect the <code>Model</code> (e.g. adding a new order).</p>
 </li>
 <li>
 <p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
@@ -293,7 +293,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book</code>, which <code>Person</code> can reference. This would allow <code>Address Book</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>Person</code> needing their own <code>Tag</code> object. An example of how such a model may look like is given below.<br>
+As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book</code>, which <code>Order</code> can reference. This would allow <code>Address Book</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>Person</code> needing their own <code>Tag</code> object. An example of how such a model may look like is given below.<br>
 <br>
 <span class="image"><img src="images/BetterModelClassDiagram.png" alt="BetterModelClassDiagram"></span>
 </td>
@@ -377,7 +377,7 @@ Additionally, it implements the following operations:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th person in the address book. The <code>delete</code> command calls <code>Model#commitAddressBook()</code>, causing the modified state of the address book after the <code>delete 5</code> command executes to be saved in the <code>addressBookStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted address book state.</p>
+<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th order in the list. The <code>delete</code> command calls <code>Model#commitAddressBook()</code>, causing the modified state of the address book after the <code>delete 5</code> command executes to be saved in the <code>addressBookStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted address book state.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -385,7 +385,7 @@ Additionally, it implements the following operations:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new person. The <code>add</code> command also calls <code>Model#commitAddressBook()</code>, causing another modified address book state to be saved into the <code>addressBookStateList</code>.</p>
+<p>Step 3. The user executes <code>insert n/David &#8230;&#8203;</code> to add a new order delivery details. The <code>insert</code> command also calls <code>Model#commitAddressBook()</code>, causing another modified address book state to be saved into the <code>addressBookStateList</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -405,7 +405,7 @@ If a command fails its execution, it will not call <code>Model#commitAddressBook
 </table>
 </div>
 <div class="paragraph">
-<p>Step 4. The user now decides that adding the person was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoAddressBook()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous address book state, and restores the address book to that state.</p>
+<p>Step 4. The user now decides that adding the order was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoAddressBook()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous address book state, and restores the address book to that state.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -468,7 +468,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="paragraph">
-<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitAddressBook()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>addressBookStateList</code>, all address book states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
+<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitAddressBook()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>addressBookStateList</code>, all address book states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>insert n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -508,7 +508,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the person being deleted).</p>
+<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the order being deleted).</p>
 </li>
 <li>
 <p>Cons: We must ensure that the implementation of each individual command are correct.</p>
@@ -872,7 +872,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="paragraph">
 <p>(For all use cases below, the <strong>System</strong> is the <code>Delino</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
 </div>
-<h3 id="use-case-uc01-add-an-order" class="discrete">Use case: UC01 - Add an order</h3>
+<h3 id="use-case-uc01-insert-an-order" class="discrete">Use case: UC01 - Insert an order</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -882,7 +882,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <p>User key in the order details.</p>
 </li>
 <li>
-<p>Delino add the order details.</p>
+<p>Delino inserts the order details.</p>
 </li>
 <li>
 <p>Delino displays order added.</p>
@@ -1595,47 +1595,47 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tid/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Transaction ID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Add, Return</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Insert, Return</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n/</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Add</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Customer Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Insert</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">a/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Address</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Add</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Insert</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">p/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Phone Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Add</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Insert</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ts/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Delivery Date And Time</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Add</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Insert</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">w/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Warehouse Location</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Add</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Insert</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">pm/</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Payment Method</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Add</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cod/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cash On Delivery</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Insert</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">c/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Comments by Customer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Add, Return</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Insert, Return</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">type/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type of Item</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Add</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Insert</p></td>
 </tr>
 </tbody>
 </table>
@@ -1763,27 +1763,31 @@ Expected: Shows the GUI of the Delino App. The window size may not be optimum</p
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-an-order"><a class="link" href="#adding-an-order">G.2. Adding an order</a></h3>
+<h3 id="inserting-an-order"><a class="link" href="#inserting-an-order">G.2. Inserting an order</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add a minimum of 2 orders</p>
+<p>Insert a minimum of 2 orders</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Add command format: <code>add</code> <code>tid/TRANSACTION_ID</code> <code>n/NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>ts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>pm/PAYMENT_METHOD</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p>
+<p>Insert command format: <code>insert</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>ts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>cod/CASH_ON_DELIVERY</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p>
 </li>
 <li>
-<p>Test case: <code>add</code> <code>tid/9876543210</code> <code>n/John Doe</code> <code>a/Blk 572 Hougang st 51 #10-33 S530572</code> <code>p/98766789</code> <code>ts/2020-02-20 1300</code> <code>w/Yishun</code> <code>pm/Cash</code><br>
-Expected: An order with the above details will be added to the list and displayed on the GUI</p>
+<p>Test case: <code>insert</code> <code>tid/9876543210</code> <code>n/John Doe</code> <code>a/Blk 572 Hougang st 51 #10-33 S530572</code> <code>p/98766789</code> <code>ts/2020-02-20 1300</code> <code>w/Yishun</code> <code>cod/$4</code><br>
+Expected: Inserts an order with the above details to the list and displayed on the GUI</p>
 </li>
 <li>
-<p>Test case: <code>add</code> <code>tid/1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 572 Hougang st 51 #11-37 S530572</code> <code>p/9001 0019</code> <code>ts/2020-03-10 1650</code> <code>w/Marsiling</code> <code>pm/Nets</code> <code>c/Leave it at the riser</code> <code>type/glass</code>
-Expected: The order is added to the list, including the item type and the order comment</p>
+<p>Test case: <code>insert</code> <code>tid/1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 572 Hougang st 51 #11-37 S530572</code> <code>p/9001 0019</code> <code>ts/2020-03-10 1650</code> <code>w/Marsiling</code> <code>cod/$5</code> <code>c/Leave it at the riser</code> <code>type/glass</code><br>
+Expected: Inserts the order to the list, including the item type and the order comment</p>
 </li>
 <li>
-<p>Test case: Invalid Syntax
-Expected: No order is added. Error details shown in the response message. A help message displayed for user to add accordingly. Status bar remain unchanged</p>
+<p>Test case: Invalid Syntax<br>
+Expected: No order is added. Error details shown in the response message. A help message displayed for user to insert accordingly. Status bar remain unchanged</p>
+</li>
+<li>
+<p>Test case: Insert order with existing Transaction ID in list<br>
+Expected: An error will occur and a message will be displayed, stating that order with duplicate ID cannot be inserted into the list</p>
 </li>
 </ol>
 </div>
@@ -2143,4 +2147,4 @@ Expected: The response box will display an invalid command message</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-06 09:50:33 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-09 09:27:04 UTC</div></div></div></body></html>

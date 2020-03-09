@@ -13,7 +13,7 @@
 <li><a href="#quick-start">2. Quick Start</a></li>
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
-<li><a href="#add">3.1. Adding an order: <code>add</code></a></li>
+<li><a href="#insert">3.1. Inserting an order: <code>insert</code></a></li>
 <li><a href="#clear">3.2. Clearing all entries : <code>clear</code></a></li>
 <li><a href="#delete">3.3. Deleting an order : <code>delete</code></a></li>
 <li><a href="#done">3.4. Mark order as done: <code>done</code></a></li>
@@ -90,7 +90,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p><a href="#list"><code>list</code></a> : lists all orders to be delivered.</p>
 </li>
 <li>
-<p><a href="#add"><code>add</code></a> <code>tid/1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 572 Hougang st 51 #11-37 S530572</code> <code>p/9001 0019</code> <code>dts/2020-03-10 1650</code> <code>w/Marsiling</code> <code>pm/Nets</code> <code>c/Leave it at the riser type/glass</code> : adds an order where the receiver name is <code>Amos Cheong</code> into Delino.</p>
+<p><a href="#insert"><code>insert</code></a> <code>tid/1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 572 Hougang st 51 #11-37 S530572</code> <code>p/9001 0019</code> <code>dts/2020-03-10 1650</code> <code>w/Marsiling</code> <code>cod/$5</code> <code>c/Leave it at the riser type/glass</code> : adds an order where the receiver name is <code>Amos Cheong</code> into Delino.</p>
 </li>
 <li>
 <p><a href="#delete"><code>delete</code></a> <code>3</code> : deletes the 3rd delivery order shown in the current list</p>
@@ -119,29 +119,29 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/John Doe</code>.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>insert n/CUSTOMER_NAME</code>, <code>CUSTOMER_NAME</code> is a parameter which can be used as <code>insert n/John Doe</code>.</p>
 </li>
 <li>
-<p>Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/John Doe t/friend</code> or as <code>n/John Doe</code>.</p>
+<p>Items in square brackets are optional e.g <code>n/CUSTOMER_NAME [t/TAG]</code> can be used as <code>n/John Doe t/friend</code> or as <code>n/John Doe</code>.</p>
 </li>
 <li>
 <p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code> etc.</p>
 </li>
 <li>
-<p>Parameters can be in any order e.g. if the command specifies <code>n/NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/NAME</code> is also acceptable.</p>
+<p>Parameters can be in any order e.g. if the command specifies <code>n/CUSTOMER_NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/CUSTOMER_NAME</code> is also acceptable.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="add"><a class="link" href="#add">3.1. Adding an order: <code>add</code></a></h3>
+<h3 id="insert"><a class="link" href="#insert">3.1. Inserting an order: <code>insert</code></a></h3>
 <div class="sect3">
 <h4 id="description"><a class="link" href="#description">3.1.1. Description</a></h4>
 <div class="ulist">
 <ul>
 <li>
-<p>Adds a new order to the list of orders based on their order attributes.</p>
+<p>Inserts a new order to the list of orders based on their order attributes.</p>
 </li>
 </ul>
 </div>
@@ -151,7 +151,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><code>add</code> <code>tid/TRANSACTION_ID</code> <code>n/NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>dts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>pm/PAYMENT_METHOD</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p>
+<p><code>insert</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>dts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>cod/CASH_ON_DELIVERY</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p>
 </li>
 </ul>
 </div>
@@ -179,10 +179,10 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><code>add</code> <code>tid/9876543210</code> <code>n/John Doe</code> <code>a/Blk 572 Hougang st 51 #10-33 S530572</code> <code>p/98766789</code> <code>dts/2020-02-20 1300</code> <code>w/Yishun</code> <code>pm/Cash</code></p>
+<p><code>insert</code> <code>tid/9876543210</code> <code>n/John Doe</code> <code>a/Blk 572 Hougang st 51 #10-33 S530572</code> <code>p/98766789</code> <code>dts/2020-02-20 1300</code> <code>w/Yishun</code> <code>cod/$4</code></p>
 </li>
 <li>
-<p><code>add</code> <code>tid/1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 572 Hougang st 51 #11-37 S530572</code> <code>p/9001 0019</code> <code>dts/2020-03-10 1650</code> <code>w/Marsiling</code> <code>pm/Nets</code> <code>c/Leave it at the riser</code> <code>type/glass</code></p>
+<p><code>insert</code> <code>tid/1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 572 Hougang st 51 #11-37 S530572</code> <code>p/9001 0019</code> <code>dts/2020-03-10 1650</code> <code>w/Marsiling</code> <code>cod/$5</code> <code>c/Leave it at the riser</code> <code>type/glass</code></p>
 </li>
 </ul>
 </div>
@@ -274,7 +274,7 @@ Deletes the 2nd order.</p>
 <li>
 <p><code>find</code> <code>-n</code> <code>Betsy</code><br>
 <code>delete</code> <code>1</code><br>
-Deletes the 1st order in the results of the <code>find</code> command (find all orders with name <code>Betsy</code>).</p>
+Deletes the 1st order in the results of the <code>find</code> command (find all orders with customer&#8217;s name <code>Betsy</code>).</p>
 </li>
 </ul>
 </div>
@@ -780,13 +780,13 @@ orders in ascending/descending order.</p>
 <p><code>a/</code> - Address</p>
 </li>
 <li>
-<p><code>n/</code> - Name</p>
+<p><code>n/</code> - Customer Name</p>
 </li>
 <li>
 <p><code>p/</code> - Phone Number</p>
 </li>
 <li>
-<p><code>pm/</code> - Payment Method</p>
+<p><code>cod/</code> - Cash On Delivery</p>
 </li>
 <li>
 <p><code>tid/</code> - Transaction ID</p>
@@ -938,8 +938,8 @@ delivery), number of deliveries completed in a day}</em></p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#add"><strong>Add</strong></a> : <code>add</code> <code>tid/TRANSACTION_ID</code> <code>n/NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>dts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>pm/PAYMENT_METHOD</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code><br>
-e.g. <code>add</code> <code>tid/0123456789</code> <code>n/Eng Xuan En</code> <code>a/Tampines St 84 Blk 877 S520877 #01-123</code> <code>p/87654321</code> <code>dts/2020-02-20 1300</code> <code>w/Yishun industry</code> <code>pm/cash</code> <code>c/please knock the door three times :D</code> <code>type/heavy</code></p>
+<p><a href="#insert"><strong>Insert</strong></a> : <code>insert</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>dts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>cod/CASH_ON_DELIVERY</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code><br>
+e.g. <code>insert</code> <code>tid/0123456789</code> <code>n/Eng Xuan En</code> <code>a/Tampines St 84 Blk 877 S520877 #01-123</code> <code>p/87654321</code> <code>dts/2020-02-20 1300</code> <code>w/Yishun industry</code> <code>cod/$4.50</code> <code>c/please knock the door three times :D</code> <code>type/heavy</code></p>
 </li>
 <li>
 <p><a href="#clear"><strong>Clear</strong></a> : <code>clear</code> <code>[FLAG]</code><br>
@@ -1011,27 +1011,27 @@ e.g. <code>sort</code> <code>-d</code> <code>dts/</code></p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tid/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Transaction ID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#add">Add</a>, <a href="#edit">Edit</a>, <a href="#sort">Sort</a>, <a href="#return">Return</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#sort">Sort</a>, <a href="#return">Return</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n/</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#add">Add</a>, <a href="#edit">Edit</a>, <a href="#sort">Sort</a>, <a href="#return">Return</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Customer Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#sort">Sort</a>, <a href="#return">Return</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">a/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Address</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#add">Add</a>, <a href="#edit">Edit</a>, <a href="#sort">Sort</a>, <a href="#return">Return</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#sort">Sort</a>, <a href="#return">Return</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">p/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Phone Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#add">Add</a>, <a href="#edit">Edit</a>, <a href="#sort">Sort</a>, <a href="#return">Return</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#sort">Sort</a>, <a href="#return">Return</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dts/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Delivery Date And Time</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#add">Add</a>, <a href="#edit">Edit</a>, <a href="#sort">Sort</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#sort">Sort</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">rts/</p></td>
@@ -1041,22 +1041,22 @@ e.g. <code>sort</code> <code>-d</code> <code>dts/</code></p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">w/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Warehouse Location</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#add">Add</a>, <a href="#edit">Edit</a>, <a href="#sort">Sort</a>, <a href="#return">Return</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#sort">Sort</a>, <a href="#return">Return</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">pm/</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Payment Method</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#add">Add</a>, <a href="#edit">Edit</a>, <a href="#sort">Sort</a>, <a href="#return">Return</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cod/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cash On Delivery</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#sort">Sort</a>, <a href="#return">Return</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">c/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Comments by Customer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#add">Add</a>, <a href="#edit">Edit</a>, <a href="#return">Return</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#return">Return</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">type/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type of Item</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#add">Add</a>, <a href="#edit">Edit</a>, <a href="#return">Return</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#return">Return</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1092,7 +1092,7 @@ e.g. <code>sort</code> <code>-d</code> <code>dts/</code></p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-n</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Search using Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Search using Customer Name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#find">Find</a></p></td>
 </tr>
 <tr>
@@ -1103,4 +1103,4 @@ e.g. <code>sort</code> <code>-d</code> <code>dts/</code></p>
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-06 09:50:33 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-09 09:27:04 UTC</div></div></div></body></html>
