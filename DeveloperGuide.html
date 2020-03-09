@@ -49,7 +49,7 @@
 <li><a href="#mark-order-as-done">G.8. Mark order as Done</a></li>
 <li><a href="#clear-orders">G.9. Clear orders</a></li>
 <li><a href="#help">G.10. Help</a></li>
-<li><a href="#sort-orders">G.11. Sort orders</a></li>
+<li><a href="#obtain-all-nearby-orders-based-on-postal-sector">G.11. Obtain all nearby orders based on postal sector</a></li>
 <li><a href="#undo-previous-action">G.12. Undo previous action</a></li>
 <li><a href="#saving-data">G.13. Saving data</a></li>
 <li><a href="#exit">G.14. Exit</a></li>
@@ -721,8 +721,8 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">courier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sort delivery orders</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">see the list of orders based on preference/need</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view delivery orders based on a given postal sector</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">easily find delivery orders in the same general location</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
@@ -1408,20 +1408,20 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc12-sort-orders" class="discrete">Use case: UC12 - Sort orders</h3>
+<h3 id="use-case-uc12-obtain-orders-in-a-postal-sector" class="discrete">Use case: UC12 - Obtain orders in a postal sector</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to sort the orders</p>
+<p>User requests to obtain orders in a specified postal sector</p>
 </li>
 <li>
-<p>Delino sort the orders</p>
+<p>Delino obtains all orders located in the postal sector</p>
 </li>
 <li>
-<p>Delino display the sorted list</p>
+<p>Delino display the list of orders</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1654,16 +1654,6 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </tr>
 </thead>
 <tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sort</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-a</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sort in <strong>ascending</strong> order</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sort</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-d</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sort in <strong>descending</strong> order</p></td>
-</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Clear</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-f</p></td>
@@ -1938,7 +1928,7 @@ Expected: An error will occur, a message will appear in the response box, indica
 <p>Find command format: <code>find</code> <code>FLAG</code> <code>KEYWORD</code></p>
 </li>
 <li>
-<p>Prerequisite: Call the list command before calling the sort command. The orders found are dependent on what orders are listed before. For example, if the user calls a <code>list done</code> and then calls a find command, the orders from the output list is based on the list of completed orders</p>
+<p>Prerequisite: Call the list command. The orders found are dependent on what orders are listed before. For example, if the user calls a <code>list done</code> and then calls a find command, the orders from the output list is based on the list of completed orders</p>
 </li>
 <li>
 <p>Test case: <code>list</code> <code>done</code><br>
@@ -2050,38 +2040,42 @@ Expected: An error will occur and the response box will show an error message</p
 </div>
 </div>
 <div class="sect2">
-<h3 id="sort-orders"><a class="link" href="#sort-orders">G.11. Sort orders</a></h3>
+<h3 id="obtain-all-nearby-orders-based-on-postal-sector"><a class="link" href="#obtain-all-nearby-orders-based-on-postal-sector">G.11. Obtain all nearby orders based on postal sector</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Sort the orders based on the attributes input by the user. There are some things which we can sort by : Name of person, Transaction ID or Timestamp. The user will also input flags to indicate ascending order (-a) or descending order (-d)</p>
+<p>Obtain all orders located in the same postal sector.<br>
+The postal sector to search for is given by the user.<br>
+A <strong>postal sector</strong> is the first <strong>two</strong> digits of a six digit Singapore postal code.<br>
+The list of postal sectors and their corresponding general locations can be found
+<a href="https://www.ura.gov.sg/realEstateIIWeb/resources/misc/list_of_postal_districts.htm">here</a>.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Sort command format: <code>sort</code> <code>[ORDER_FLAG]</code> <code>ORDER_ATTRIBUTE_PREFIX</code></p>
+<p>Nearby command format: <code>nearby</code> <code>POSTAL_SECTOR</code></p>
 </li>
 <li>
-<p>Prerequisites: Should call a list command before calling sort. The sort command will sort based on the current list</p>
+<p>Prerequisites: Should call a list command before calling nearby. The nearby command will search based on the current list</p>
 </li>
 <li>
-<p>Test case: <code>sort</code> <code>-a</code> <code>n/</code><br>
-Expected: Sort all orders in ascending order based on the customer names</p>
+<p>Test case: <code>nearby</code> <code>79</code><br>
+Expected: Obtain all orders located in postal sector 79 (Seletar)</p>
 </li>
 <li>
-<p>Test case: <code>sort</code> <code>-d</code> <code>tid/</code><br>
-Expected: Sort all orders in descending order based on transaction ID</p>
+<p>Test case: <code>nearby</code> <code>07</code><br>
+Expected: Obtain all orders located in postal sector 07 (Anson, Tanjong Pagar)</p>
 </li>
 <li>
-<p>Test case: <code>sort</code> <code>-a</code> <code>ts/</code><br>
-Expected: Sort all orders in ascending order based on timestamp</p>
+<p>Test case: <code>nearby</code> <code>99</code><br>
+Expected: An error will occur as the given postal sector is invalid</p>
 </li>
 <li>
-<p>Test case: <code>sort</code> <code>n/</code><br>
-Expected: By default, if there is no flag, it will sort all orders in ascending order based the on customer names</p>
+<p>Test case: <code>nearby</code> <code>600</code><br>
+Expected: An error will occur as the given postal sector is invalid</p>
 </li>
 <li>
-<p>Test case: <code>sort</code><br>
-Expected: Error will occur as it is an invalid syntax</p>
+<p>Test case: <code>nearby</code><br>
+Expected: An error will occur as it is an invalid syntax (no postal sector is provided)</p>
 </li>
 </ol>
 </div>
@@ -2147,4 +2141,4 @@ Expected: The response box will display an invalid command message</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-09 10:30:46 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-09 10:43:50 UTC</div></div></div></body></html>
