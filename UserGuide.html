@@ -612,6 +612,118 @@ transaction id of the parcels and the address of the customers, etc.</p>
 </tr>
 </table>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>The data in the <code>csv file</code> should be written in the following format:</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Order data format</caption>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ot/ORDER_TYPE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tid/TRANSACTION_ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/NAME</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a/ADDRESS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">p/PHONE_NUMBER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dts/DELIVERY_DATE_&amp;_TIME</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">w/WAREHOUSE_LOCATION</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cod/CASH_ON_DELIVERY</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[c/COMMENTS_BY_CUSTOMER]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[type/TYPE_OF_ITEM]</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>Examples:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>ot/order</code>,<code>tid/1023456789</code>,<code>n/Amos Cheong</code>,<code>a/Blk 572 Hougang st 51 #11-37 S530572</code>,<code>p/90010019</code>,<br>
+<code>dts/2020-03-10 1650</code>,<code>w/Marsiling</code>,<code>cod/$9.50</code>,<code>c/Leave it at the riser</code>,<code>type/glass</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 2. Return data format</caption>
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1112%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ot/ORDER_TYPE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tid/TRANSACTION_ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/NAME</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a/ADDRESS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">p/PHONE_NUMBER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rts/RETURN_DATE_&amp;_TIME</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">w/WAREHOUSE_LOCATION</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[c/COMMENTS_BY_CUSTOMER]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[type/TYPE_OF_ITEM]</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>Examples:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>ot/return</code>,<code>tid/b1230512</code>,<code>n/Aaron Teo</code>,<code>a/256 Alpha Road #03-22 S123567</code>,<code>p/91230456</code>,<br>
+<code>rts/12-12-2020 1400</code>,<code>w/Jurong Warehouse</code>,<code>c/Leave it at the lobby</code>,<code>type/metal</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Note:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Commas <code>,</code> are required in between of the different fields.</p>
+</li>
+<li>
+<p>Prefixes are required before any value for that field.</p>
+</li>
+<li>
+<p><code>ORDER_TYPE</code> can only be either <code>order</code> or <code>return</code>.</p>
+</li>
+<li>
+<p>Only <code>COMMENTS_BY_CUSTOMER</code> and <code>TYPE_OF_ITEM</code> are optional.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </div>
 <div class="sect3">
 <h4 id="examples-8"><a class="link" href="#examples-8">3.9.3. Examples</a></h4>
@@ -773,7 +885,7 @@ Adds the order with transaction id 'b1230512' as a return parcel into the list o
 </ul>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 1. Postal Sectors in Singapore</caption>
+<caption class="title">Table 3. Postal Sectors in Singapore</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1094,7 +1206,7 @@ e.g. <code>nearby</code> <code>14</code></p>
 <h2 id="appendix-a-glossary"><a class="link" href="#appendix-a-glossary">6. Appendix A: Glossary</a></h2>
 <div class="sectionbody">
 <table id="command_prefix" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 2. Command Prefix</caption>
+<caption class="title">Table 4. Command Prefix</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1108,6 +1220,11 @@ e.g. <code>nearby</code> <code>14</code></p>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ot/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Order Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#import">Import</a></p></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tid/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Transaction ID</p></td>
@@ -1161,7 +1278,7 @@ e.g. <code>nearby</code> <code>14</code></p>
 </tbody>
 </table>
 <table id="command_flags" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 3. Possible Command Flags</caption>
+<caption class="title">Table 5. Possible Command Flags</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1193,4 +1310,4 @@ e.g. <code>nearby</code> <code>14</code></p>
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-10 02:45:54 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-10 15:58:20 UTC</div></div></div></body></html>
