@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Delino - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="index.html">Delino</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">Delino</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W12-1/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Delino - User Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="index.html">Delino</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">Delino</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W12-1/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Delino - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>CS2103T-W12-01</code>      Since: <code>Jan 2020</code>      Licence: <code>MIT</code></p>
@@ -13,7 +13,7 @@
 <li><a href="#quick-start">2. Quick Start</a></li>
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
-<li><a href="#add">3.1. Adding a person: <code>add</code></a></li>
+<li><a href="#insert">3.1. Inserting an order: <code>insert</code></a></li>
 <li><a href="#clear">3.2. Clearing all entries : <code>clear</code></a></li>
 <li><a href="#delete">3.3. Deleting an order : <code>delete</code></a></li>
 <li><a href="#done">3.4. Mark order as done: <code>done</code></a></li>
@@ -24,17 +24,19 @@
 <li><a href="#import">3.9. Importing a list of orders : <code>import</code></a></li>
 <li><a href="#list">3.10. Listing orders : <code>list</code></a></li>
 <li><a href="#return">3.11. Returning an order: <code>return</code></a></li>
-<li><a href="#sort">3.12. Sorting orders: <code>sort</code></a></li>
+<li><a href="#nearby">3.12. View orders located at the same postal sector: <code>nearby</code></a></li>
 <li><a href="#undo">3.13. Undo the previous action: <code>undo</code></a></li>
 <li><a href="#saving-the-data">3.14. Saving the data</a></li>
 <li><a href="#export-order-list-code-coming-in-v2-0-code">3.15. Export order list <code>[coming in v2.0]</code></a></li>
 <li><a href="#reminder-code-coming-in-v2-0-code">3.16. Reminder <code>[coming in v2.0]</code></a></li>
 <li><a href="#rescheduling-orders-code-coming-in-v2-0-code">3.17. Rescheduling orders <code>[coming in v2.0]</code></a></li>
 <li><a href="#keeping-track-of-work-schedule-code-coming-in-v2-0-code">3.18. Keeping track of work schedule <code>[coming in v2.0]</code></a></li>
+<li><a href="#statistics-for-completed-orders-code-coming-in-v2-0-code">3.19. Statistics for completed orders <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
 <li><a href="#command-summary">5. Command Summary</a></li>
+<li><a href="#appendix-a-glossary">6. Appendix A: Glossary</a></li>
 </ul>
 </div>
 </div>
@@ -88,7 +90,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p><a href="#list"><code>list</code></a> : lists all orders to be delivered.</p>
 </li>
 <li>
-<p><a href="#add"><code>add</code></a> <code>tid/1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 572 Hougang st 51 #11-37 S530572</code> <code>p/9001 0019</code> <code>ts/2020-03-10 1650</code> <code>w/Marsiling</code> <code>pm/Nets</code> <code>c/Leave it at the riser type/glass</code> : adds an order where the receiver name is <code>Amos Cheong</code> into Delino.</p>
+<p><a href="#insert"><code>insert</code></a> <code>tid/1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 572 Hougang st 51 #11-37 S530572</code> <code>p/9001 0019</code> <code>dts/2020-03-10 1650</code> <code>w/Marsiling</code> <code>cod/$5</code> <code>c/Leave it at the riser type/glass</code> : adds an order where the receiver name is <code>Amos Cheong</code> into Delino.</p>
 </li>
 <li>
 <p><a href="#delete"><code>delete</code></a> <code>3</code> : deletes the 3rd delivery order shown in the current list</p>
@@ -117,29 +119,29 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/John Doe</code>.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>insert n/CUSTOMER_NAME</code>, <code>CUSTOMER_NAME</code> is a parameter which can be used as <code>insert n/John Doe</code>.</p>
 </li>
 <li>
-<p>Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/John Doe t/friend</code> or as <code>n/John Doe</code>.</p>
+<p>Items in square brackets are optional e.g <code>n/CUSTOMER_NAME [t/TAG]</code> can be used as <code>n/John Doe t/friend</code> or as <code>n/John Doe</code>.</p>
 </li>
 <li>
 <p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code> etc.</p>
 </li>
 <li>
-<p>Parameters can be in any order e.g. if the command specifies <code>n/NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/NAME</code> is also acceptable.</p>
+<p>Parameters can be in any order e.g. if the command specifies <code>n/CUSTOMER_NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/CUSTOMER_NAME</code> is also acceptable.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="add"><a class="link" href="#add">3.1. Adding a person: <code>add</code></a></h3>
+<h3 id="insert"><a class="link" href="#insert">3.1. Inserting an order: <code>insert</code></a></h3>
 <div class="sect3">
 <h4 id="description"><a class="link" href="#description">3.1.1. Description</a></h4>
 <div class="ulist">
 <ul>
 <li>
-<p>Adds a new order to the list of orders</p>
+<p>Inserts a new order to the list of orders based on their order attributes.</p>
 </li>
 </ul>
 </div>
@@ -149,9 +151,27 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><code>add</code> <code>tid/TRANSACTION_ID</code> <code>n/NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>ts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>pm/PAYMENT_METHOD</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p>
+<p><code>insert</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>dts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>cod/CASH_ON_DELIVERY</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p>
 </li>
 </ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>List of order attribute prefixes can be found <a href="#command_prefix">here</a>.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
@@ -159,10 +179,10 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><code>add</code> <code>tid/9876543210</code> <code>n/John Doe</code> <code>a/Blk 572 Hougang st 51 #10-33 S530572</code> <code>p/98766789</code> <code>ts/2020-02-20 1300</code> <code>w/Yishun</code> <code>pm/Cash</code></p>
+<p><code>insert</code> <code>tid/9876543210</code> <code>n/John Doe</code> <code>a/Blk 572 Hougang st 51 #10-33 S530572</code> <code>p/98766789</code> <code>dts/2020-02-20 1300</code> <code>w/Yishun</code> <code>cod/$4</code></p>
 </li>
 <li>
-<p><code>add</code> <code>tid/1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 572 Hougang st 51 #11-37 S530572</code> <code>p/9001 0019</code> <code>ts/2020-03-10 1650</code> <code>w/Marsiling</code> <code>pm/Nets</code> <code>c/Leave it at the riser</code> <code>type/glass</code></p>
+<p><code>insert</code> <code>tid/1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 572 Hougang st 51 #11-37 S530572</code> <code>p/9001 0019</code> <code>dts/2020-03-10 1650</code> <code>w/Marsiling</code> <code>cod/$5</code> <code>c/Leave it at the riser</code> <code>type/glass</code></p>
 </li>
 </ul>
 </div>
@@ -175,8 +195,10 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p>You can use this command to clear all existing orders. By default, the command will ask you for confirmation.
-If an additional flag is given -f, no user confirmation will be requested.</p>
+<p>You can use this command to clear all existing orders. By default, the command will ask you for confirmation.</p>
+</li>
+<li>
+<p>If an additional flag is given -f, no user confirmation will be requested.</p>
 </li>
 </ul>
 </div>
@@ -209,8 +231,12 @@ If an additional flag is given -f, no user confirmation will be requested.</p>
 <h3 id="delete"><a class="link" href="#delete">3.3. Deleting an order : <code>delete</code></a></h3>
 <div class="sect3">
 <h4 id="description-3"><a class="link" href="#description-3">3.3.1. Description</a></h4>
-<div class="paragraph">
+<div class="ulist">
+<ul>
+<li>
 <p>You can use this command to delete a particular order from the current list of orders based on its index.<br></p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect3">
@@ -248,7 +274,7 @@ Deletes the 2nd order.</p>
 <li>
 <p><code>find</code> <code>-n</code> <code>Betsy</code><br>
 <code>delete</code> <code>1</code><br>
-Deletes the 1st order in the results of the <code>find</code> command (find all orders with name <code>Betsy</code>).</p>
+Deletes the 1st order in the results of the <code>find</code> command (find all orders with customer&#8217;s name <code>Betsy</code>).</p>
 </li>
 </ul>
 </div>
@@ -258,10 +284,18 @@ Deletes the 1st order in the results of the <code>find</code> command (find all 
 <h3 id="done"><a class="link" href="#done">3.4. Mark order as done: <code>done</code></a></h3>
 <div class="sect3">
 <h4 id="description-4"><a class="link" href="#description-4">3.4.1. Description</a></h4>
-<div class="paragraph">
-<p>Once you have completed a delivery order, you can mark an order as done by providing the index of the order list.
-The order that is marked as done will be moved to another list that contains all the orders that are completed.
-The completed list can be seen by calling the list command:`list` <code>done</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Once you have completed a delivery order, you can mark an order as done by providing the index of the order list.</p>
+</li>
+<li>
+<p>The order that is marked as done will be moved to another list that contains all the orders that are completed.</p>
+</li>
+<li>
+<p>The completed list can be seen by calling the list command: <code>list</code> <code>done</code>.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect3">
@@ -307,7 +341,16 @@ The order at the second index of the list is marked as done.</p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Use the <a href="#list"><code>list</code></a> command to see which delivery order you want to edit.
+<div class="ulist">
+<ul>
+<li>
+<p>Use the <a href="#list"><code>list</code></a> command to see which delivery order you want to edit.</p>
+</li>
+<li>
+<p>List of order attribute prefixes can be found <a href="#command_prefix">here</a>.</p>
+</li>
+</ul>
+</div>
 </td>
 </tr>
 </table>
@@ -315,7 +358,7 @@ Use the <a href="#list"><code>list</code></a> command to see which delivery orde
 <div class="ulist">
 <ul>
 <li>
-<p><code>edit</code> <code>INDEX</code> <code><a href="#sort">ORDER_ATTRIBUTE_PREFIX</a>/NEW_VALUE</code></p>
+<p><code>edit</code> <code>INDEX</code> <code>ORDER_ATTRIBUTE_PREFIX/NEW_VALUE</code> <code>[MORE_ORDER_ATTRIBUTE_PREFIXES/NEW_VALUE]&#8230;&#8203;</code></p>
 </li>
 </ul>
 </div>
@@ -326,7 +369,19 @@ Use the <a href="#list"><code>list</code></a> command to see which delivery orde
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-The <code>INDEX</code> <strong>must be a positive integer</strong>, e.g: 1, 2, 3, &#8230;&#8203;
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>INDEX</code> <strong>must be a positive integer</strong>, e.g: 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>The <code>INDEX</code> <strong>must be in range</strong> of the number of displayed orders</p>
+</li>
+<li>
+<p>Only can be used when there is at least an order displayed.</p>
+</li>
+</ul>
+</div>
 </td>
 </tr>
 </table>
@@ -377,7 +432,7 @@ The index <code>3</code> customer&#8217;s name, phone and address are changed ac
 <div class="ulist">
 <ul>
 <li>
-<p>You can exit the application using exit command.</p>
+<p>You can exit the application using the exit command.</p>
 </li>
 </ul>
 </div>
@@ -400,7 +455,16 @@ The index <code>3</code> customer&#8217;s name, phone and address are changed ac
 <div class="ulist">
 <ul>
 <li>
-<p>You can find all orders that contain a given keyword. The orders will be searched by a given flag. If the flag is <code>-n</code>, the orders will be searched by <strong>name</strong>. If the flag is <code>-t</code>, the orders will be searched by their <strong>transaction ID</strong>. The list of orders returned will not be sorted by default.</p>
+<p>You can find all orders that contain a given keyword. The orders will be searched by a given flag of two specific types (<code>-n</code> or <code>-t</code>).</p>
+</li>
+<li>
+<p>If the flag is <code>-n</code>, the orders will be searched by <strong>name</strong>.</p>
+</li>
+<li>
+<p>If the flag is <code>-t</code>, the orders will be searched by their <strong>transaction ID</strong>.</p>
+</li>
+<li>
+<p>The list of orders returned will not be sorted by default.</p>
 </li>
 </ul>
 </div>
@@ -431,7 +495,7 @@ The index <code>3</code> customer&#8217;s name, phone and address are changed ac
 <p>Only full words will be matched e.g. <code>Han</code> will not match <code>Hans</code></p>
 </li>
 <li>
-<p>Persons matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
+<p>Orders matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
 </li>
 </ul>
 </div>
@@ -443,15 +507,15 @@ The index <code>3</code> customer&#8217;s name, phone and address are changed ac
 <div class="ulist">
 <ul>
 <li>
-<p><code>find -n Jeremy Loh</code><br>
+<p><code>find</code> <code>-n</code> <code>Jeremy Loh</code><br>
 Possibly return <code>jeremy</code> or <code>Jeremy Loh</code> or <code>loh</code> or any of the above as long as keyword appears in name.</p>
 </li>
 <li>
-<p><code>find -t asj2od3943</code><br>
+<p><code>find</code> <code>-t</code> <code>asj2od3943</code><br>
 Return delivery order with transaction ID of <code>asj2od3943</code></p>
 </li>
 <li>
-<p>find -t 920392844<br>
+<p><code>find</code> <code>-t</code> <code>920392844</code><br>
 Return delivery order with transaction ID of <code>920392844</code></p>
 </li>
 </ul>
@@ -462,9 +526,13 @@ Return delivery order with transaction ID of <code>920392844</code></p>
 <h3 id="help"><a class="link" href="#help">3.8. Viewing help : <code>help</code></a></h3>
 <div class="sect3">
 <h4 id="description-8"><a class="link" href="#description-8">3.8.1. Description</a></h4>
-<div class="paragraph">
+<div class="ulist">
+<ul>
+<li>
 <p>You can use the help command to display all commands that are available to be used
-so that you can navigate the application easily.<br></p>
+so that you can navigate the application easily.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect3">
@@ -477,15 +545,32 @@ so that you can navigate the application easily.<br></p>
 </ul>
 </div>
 </div>
+<div class="sect3">
+<h4 id="examples-7"><a class="link" href="#examples-7">3.8.3. Examples:</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>help</code><br>
+Returns a list of all commands available.</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="import"><a class="link" href="#import">3.9. Importing a list of orders : <code>import</code></a></h3>
 <div class="sect3">
 <h4 id="description-9"><a class="link" href="#description-9">3.9.1. Description</a></h4>
-<div class="paragraph">
-<p>You will be able to import orders via csv file that are given to you by your company.
-The CSV file will include all relevant and important details of the parcels; such as the customers’ names,
-transaction id of the parcels and the address of the customers, etc.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>You will be able to import orders via csv file that are given to you by your company.</p>
+</li>
+<li>
+<p>The CSV file will include all relevant and important details of the parcels; such as the customers’ names,
+transaction id of the parcels and the address of the customers, etc.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect3">
@@ -497,8 +582,13 @@ transaction id of the parcels and the address of the customers, etc.<br></p>
 </li>
 </ul>
 </div>
-<div class="sidebarblock">
-<div class="content">
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
 <div class="ulist">
 <ul>
 <li>
@@ -508,21 +598,23 @@ transaction id of the parcels and the address of the customers, etc.<br></p>
 <p>Only <strong>one</strong> csv file can be imported at one time.</p>
 </li>
 <li>
-<p>The FILE_NAME should include the extension. For example: <strong>orders.csv</strong>.</p>
+<p>The <code>FILE_NAME</code> should include the extension. For example: <code><strong>orders.csv</strong></code>.</p>
 </li>
 <li>
 <p>The folder, <strong>data</strong>, which the csv files are stored should be at the same directory as the JAR file.</p>
 </li>
 <li>
-<p>Import the specific csv with the FILE_NAME in <strong>data</strong> folder to the application.</p>
+<p>Import the specific csv with the <code>FILE_NAME</code> in <strong>data</strong> folder to the application.</p>
 </li>
 </ul>
 </div>
-</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="examples-7"><a class="link" href="#examples-7">3.9.3. Examples</a></h4>
+<h4 id="examples-8"><a class="link" href="#examples-8">3.9.3. Examples</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -540,9 +632,13 @@ Import the contents of the csv file, <code>orders.csv</code>, to Delino.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>You can request to list the delivery order to see.
-The done status of the delivery order will be used to list the delivery orders which have the same status.
-There are three types of list commands that are shown in the examples below.</p>
+<p>You can view the list of delivery orders using the <code>list</code> command.</p>
+</li>
+<li>
+<p>The list command can be used with different <code>KEYWORD</code> to display all the orders with the specific status (done or undone).</p>
+</li>
+<li>
+<p>There are three types of list commands that are shown in the examples below.</p>
 </li>
 </ul>
 </div>
@@ -550,16 +646,34 @@ There are three types of list commands that are shown in the examples below.</p>
 <div class="sect3">
 <h4 id="format-10"><a class="link" href="#format-10">3.10.2. Format</a></h4>
 <div class="paragraph">
-<p><code>list</code> <code>[DONE/UNDONE]</code><br></p>
+<p><code>list</code> <code>[KEYWORD]</code></p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>KEYWORD</code> can only be either <code>done</code> or <code>undone</code>.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="examples-8"><a class="link" href="#examples-8">3.10.3. Examples</a></h4>
+<h4 id="examples-9"><a class="link" href="#examples-9">3.10.3. Examples</a></h4>
 <div class="ulist">
 <ul>
 <li>
 <p><code>list</code><br>
-List down all the orders, regardless of whether its completed or uncompleted.</p>
+List down all the orders, regardless of whether its completed or incomplete.</p>
 </li>
 <li>
 <p><code>list</code> <code>done</code><br>
@@ -577,49 +691,219 @@ List down all the orders that are uncompleted.</p>
 <h3 id="return"><a class="link" href="#return">3.11. Returning an order: <code>return</code></a></h3>
 <div class="sect3">
 <h4 id="description-11"><a class="link" href="#description-11">3.11.1. Description</a></h4>
-<div class="paragraph">
+<div class="ulist">
+<ul>
+<li>
 <p>Adds a particular order as a return parcel into a new list.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect3">
 <h4 id="format-11"><a class="link" href="#format-11">3.11.2. Format</a></h4>
 <div class="paragraph">
-<p><code>return</code> <code>tid/TRANSACTION_ID</code> <code>n/NAME</code> <code>a/ADDRESS</code> <code>p/PHONE NUMBER</code> <code>ts/DELIVER_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code>
+<p><code>return</code> <code>tid/TRANSACTION_ID</code> <code>n/NAME</code> <code>a/ADDRESS</code> <code>p/PHONE NUMBER</code> <code>rts/RETURN_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code>
  <code>pm/PAYMENT_METHOD</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="examples-9"><a class="link" href="#examples-9">3.11.3. Examples:</a></h4>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
 <div class="ulist">
 <ul>
 <li>
-<p><code>return `tid/ac17s2a</code> <code>n/Bobby Tan</code> <code>a/123 Delta Road #03-333, Singapore 123456</code><br>
-<code>p/91230456</code> <code>ts/12-12-2020</code> <code>w/Jurong Warehouse pm/visa c/NIL type/glass</code><br></p>
+<p>List of order attribute prefixes can be found <a href="#command_prefix">here</a>.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="examples-10"><a class="link" href="#examples-10">3.11.3. Examples:</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>return</code> <code>tid/ac17s2a</code> <code>n/Bobby Tan</code> <code>a/123 Delta Road #03-333, Singapore 123456</code> <code>p/91230456</code> <code>rts/12-12-2020 1300</code> <code>w/Jurong Warehouse</code> <code>pm/visa</code> <code>c/NIL</code> <code>type/glass</code><br>
+Adds the order with transaction id 'ac17s2a' as a return parcel into the list of returns.</p>
 </li>
 <li>
-<p><code>return `tid/a1230512</code> <code>n/Aaron Teo</code> <code>a/256 Alpha Road #03-222, Singapore 123567</code><br>
-<code>p/91230456</code> <code>ts/12-12-2020</code> <code>w/Jurong Warehouse pm/visa c/Leave it at the lobby type/metal</code>
-Adds the order with transaction id 'ac17s2a' as a return parcel into the list of returns.</p>
+<p><code>return</code> <code>tid/b1230512</code> <code>n/Aaron Teo</code> <code>a/256 Alpha Road #03-222, Singapore 123567</code> <code>p/91230456</code> <code>rts/12-12-2020 1400</code> <code>w/Jurong Warehouse</code> <code>pm/visa</code> <code>c/Leave it at the lobby</code> <code>type/metal</code><br>
+Adds the order with transaction id 'b1230512' as a return parcel into the list of returns.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="sort"><a class="link" href="#sort">3.12. Sorting orders: <code>sort</code></a></h3>
+<h3 id="nearby"><a class="link" href="#nearby">3.12. View orders located at the same postal sector: <code>nearby</code></a></h3>
 <div class="sect3">
 <h4 id="description-12"><a class="link" href="#description-12">3.12.1. Description</a></h4>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>You can sort the orders based on their attributes <strong>(given in prefix form)</strong>.
-An additional flag can be provided <strong>(-a or -d)</strong> can be used to sort the delivery
-orders in ascending/descending order.<br>
-If no additional flag is provided, the orders will be sorted in <strong>ascending order</strong>.</p>
+<p>A <strong>postal sector</strong> refers to the first <strong>two</strong> digits of a six digit Singapore postal code.</p>
 </div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You can view the orders at a specified Singapore <strong>postal sector</strong>.</p>
+</li>
+<li>
+<p>The general location for the order will be identified if a valid postal sector is given.</p>
+</li>
+<li>
+<p>The list of postal sectors and their corresponding general locations can be found
+<a href="https://www.ura.gov.sg/realEstateIIWeb/resources/misc/list_of_postal_districts.htm">here</a>.</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Postal Sectors in Singapore</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Postal Sector</th>
+<th class="tableblock halign-left valign-top">General Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">01, 02, 03, 04, 05, 06</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Raffles Place, Cecil, Marina, People&#8217;s Park</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">07, 08</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Anson, Tanjong Pagar</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">14, 15, 16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Queenstown, Tiong Bahru</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">09, 10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Telok Blangah, Harbourfront</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11, 12, 13</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pasir Panjang, Hong Leong Garden, Clementi New Town</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">17</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">High Street, Beach Road (part)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18, 19</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Middle Road, Golden Mile</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">20, 21</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Little India</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">22, 23</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Orchard, Cairnhill, River Valley</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">24, 25, 26, 27</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ardmore, Bukit Timah, Holland Road, Tanglin</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">28, 29, 30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Watten Estate, Novena, Thomson</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">31, 32, 33</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Balestier, Toa Payoh, Serangoon</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">34, 35, 36, 37</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Macpherson, Braddell</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">38, 39, 40, 41</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geylang, Eunos</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">42, 43, 44, 45</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Katong, Joo Chiat, Amber Road</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">46, 47, 48</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bedok, Upper East Coast, Eastwood, Kew Drive</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">49, 50, 81</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Loyang, Changi</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">51, 52</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tampines, Pasir Ris</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">53, 54, 55, 82</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Serangoon Garden, Hougang, Ponggol</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">56, 57</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bishan, Ang Mo Kio</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">58, 59</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Upper Bukit Timah, Clementi Park, Ulu Pandan</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">60, 61, 62, 63, 64</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Jurong</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">65, 66, 67, 68</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hillview, Dairy Farm, Bukit Panjang, Choa Chu Kang</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">69, 70, 71</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lim Chu Kang, Tengah</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">72, 73</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kranji, Woodgrove</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">77, 78</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Upper Thomson, Springleaf</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">75, 76</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yishun, Sembawang</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">79, 80</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Seletar</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect3">
 <h4 id="format-12"><a class="link" href="#format-12">3.12.2. Format</a></h4>
 <div class="paragraph">
-<p><code>sort</code> <code>[ORDER FLAG]</code> <code>ORDER_ATTRIBUTE_PREFIX</code><br></p>
+<p><code>nearby</code> <code>POSTAL_SECTOR</code><br></p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -629,66 +913,25 @@ If no additional flag is provided, the orders will be sorted in <strong>ascendin
 </td>
 <td class="content">
 <div class="paragraph">
-<p><code>ORDER_ATTRIBUTE_PREFIX</code> <strong>must</strong> be one of the following:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>a/</code> - Address</p>
-</li>
-<li>
-<p><code>n/</code> - Name</p>
-</li>
-<li>
-<p><code>p/</code> - Phone Number</p>
-</li>
-<li>
-<p><code>pm/</code> - Payment Method</p>
-</li>
-<li>
-<p><code>tid/</code> - Transaction ID</p>
-</li>
-<li>
-<p><code>ts/</code> - Timestamp</p>
-</li>
-<li>
-<p><code>w/</code> - Warehouse Location</p>
-</li>
-</ul>
+<p><code>POSTAL_SECTOR</code> is the first <strong>two</strong> digits of a six digit Singapore postal code<br>
+Example: The postal code <code>140239</code> has a <code>POSTAL_SECTOR</code> of <code>14</code></p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="paragraph">
-<p><strong>ORDER FLAG</strong>  can be either<br>
-<strong>-d</strong> (descending order) or<br>
-<strong>-a</strong> (ascending order).</p>
-</div>
-</div>
-</div>
 </div>
 <div class="sect3">
-<h4 id="examples-10"><a class="link" href="#examples-10">3.12.3. Examples</a></h4>
+<h4 id="examples-11"><a class="link" href="#examples-11">3.12.3. Examples</a></h4>
 <div class="ulist">
 <ul>
 <li>
-<p><code>sort</code> <code>ts/</code><br>
-You will sort the orders in ascending order based on the timestamp of the orders.</p>
+<p><code>nearby</code> <code>14</code><br>
+You will view all orders located in the general location of <code>Queenstown, Tiong Bahru</code>.</p>
 </li>
 <li>
-<p><code>sort</code> <code>-a</code> <code>n/</code><br>
-You will sort the orders in ascending order based on the names of the customers.</p>
-</li>
-<li>
-<p><code>sort</code> <code>-d</code> <code>ts/</code><br>
-You will sort the orders in descending order based on the timestamp of the orders.</p>
-</li>
-<li>
-<p><code>sort</code> <code>-d</code> <code>tid/</code><br>
-You will sort the orders in descending order based on the transaction id of the orders.</p>
+<p><code>nearby</code> <code>04</code><br>
+You will view all orders located in the general location of <code>Raffles Place, Cecil, Marina, People&#8217;s Park</code>.</p>
 </li>
 </ul>
 </div>
@@ -698,10 +941,16 @@ You will sort the orders in descending order based on the transaction id of the 
 <h3 id="undo"><a class="link" href="#undo">3.13. Undo the previous action: <code>undo</code></a></h3>
 <div class="sect3">
 <h4 id="description-13"><a class="link" href="#description-13">3.13.1. Description</a></h4>
-<div class="paragraph">
-<p>You can use the <code>undo</code> command to revert the most recent action that was previously executed.
-For example, if you accidentally deleted an order, you can use the <code>undo</code> command to add the deleted order
+<div class="ulist">
+<ul>
+<li>
+<p>You can use the <code>undo</code> command to revert the most recent action that was previously executed.</p>
+</li>
+<li>
+<p>For example, if you accidentally deleted an order, you can use the <code>undo</code> command to add the deleted order
 back to the list of orders.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect3">
@@ -732,8 +981,10 @@ The list will be reverted back to the state after the second command <code>delet
 <div class="ulist">
 <ul>
 <li>
-<p>Data is saved in the hard disk automatically after any command that changes data that is present.<br>
-There is no need to save manually.</p>
+<p>Data is saved in the hard disk automatically after any command that changes data that is present.</p>
+</li>
+<li>
+<p>There is no need to save manually.</p>
 </li>
 </ul>
 </div>
@@ -763,6 +1014,13 @@ There is no need to save manually.</p>
 <p><em>{explain how the user can keep track of their work schedule}</em></p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="statistics-for-completed-orders-code-coming-in-v2-0-code"><a class="link" href="#statistics-for-completed-orders-code-coming-in-v2-0-code">3.19. Statistics for completed orders <code>[coming in v2.0]</code></a></h3>
+<div class="paragraph">
+<p><em>{explain how the user can view statistics such as on-time rates (difference between actual and expected
+delivery), number of deliveries completed in a day}</em></p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -780,8 +1038,8 @@ There is no need to save manually.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#add"><strong>Add</strong></a> : <code>add</code> <code>tid/TRANSACTION_ID</code> <code>n/NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>ts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>pm/PAYMENT_METHOD</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code><br>
-e.g. <code>add</code> <code>tid/0123456789</code> <code>n/Eng Xuan En</code> <code>a/Tampines St 84 Blk 877 S520877 #01-123</code> <code>p/87654321</code> <code>ts/2020-02-20 1300</code> <code>w/Yishun industry</code> <code>pm/cash</code> <code>c/please knock the door three times :D</code> <code>type/heavy</code></p>
+<p><a href="#insert"><strong>Insert</strong></a> : <code>insert</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>dts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>cod/CASH_ON_DELIVERY</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code><br>
+e.g. <code>insert</code> <code>tid/0123456789</code> <code>n/Eng Xuan En</code> <code>a/Tampines St 84 Blk 877 S520877 #01-123</code> <code>p/87654321</code> <code>dts/2020-02-20 1300</code> <code>w/Yishun industry</code> <code>cod/$4.50</code> <code>c/please knock the door three times :D</code> <code>type/heavy</code></p>
 </li>
 <li>
 <p><a href="#clear"><strong>Clear</strong></a> : <code>clear</code> <code>[FLAG]</code><br>
@@ -796,7 +1054,7 @@ e.g. <code>delete</code> <code>2</code></p>
 e.g. <code>done</code> <code>2</code></p>
 </li>
 <li>
-<p><a href="#edit"><strong>Edit</strong></a> : <code>edit</code> <code>INDEX</code> <code>PREFIX/VALUE</code><br>
+<p><a href="#edit"><strong>Edit</strong></a> : <code>edit</code> <code>INDEX</code> <code>ORDER_ATTRIBUTE_PREFIX/VALUE</code><br>
 e.g. <code>edit</code> <code>2</code> <code>n/Xuan En</code></p>
 </li>
 <li>
@@ -818,12 +1076,12 @@ e.g. <code>import</code> <code>orders.csv</code></p>
 e.g. <code>list</code> <code>done</code></p>
 </li>
 <li>
-<p><a href="#return"><strong>Return</strong></a> : <code>return</code> <code>tid/TRANSACTION_ID</code> <code>n/NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>ts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>pm/PAYMENT_METHOD</code> <code>c/COMMENTS_BY_CUSTOMER</code> <code>type/TYPE_OF_ITEM</code><br>
-e.g. <code>return</code> <code>tid/ac17s2a</code> <code>n/BOBBY TAN</code> <code>a/123 Delta Road #03-333, Singapore 123456</code> <code>p/91230456</code> <code>ts/12-12-2020</code> <code>w/Jurong Warehouse</code> <code>pm/visa</code> <code>c/NIL</code> <code>type/glass</code></p>
+<p><a href="#return"><strong>Return</strong></a> : <code>return</code> <code>tid/TRANSACTION_ID</code> <code>n/NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>rts/RETURN_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>pm/PAYMENT_METHOD</code> <code>c/COMMENTS_BY_CUSTOMER</code> <code>type/TYPE_OF_ITEM</code><br>
+e.g. <code>return</code> <code>tid/ac17s2a</code> <code>n/BOBBY TAN</code> <code>a/123 Delta Road #03-333, Singapore 123456</code> <code>p/91230456</code> <code>rts/12-12-2020 1301</code> <code>w/Jurong Warehouse</code> <code>pm/visa</code> <code>c/NIL</code> <code>type/glass</code></p>
 </li>
 <li>
-<p><a href="#sort"><strong>Sort</strong></a> : <code>sort</code> <code>[ORDER_FLAG]</code> <code>ORDER_ATTRIBUTE_PREFIX</code><br>
-e.g. <code>sort</code> <code>-d</code> <code>ts/</code></p>
+<p><a href="#nearby"><strong>Nearby</strong></a> : <code>nearby</code> <code>POSTAL_SECTOR</code><br>
+e.g. <code>nearby</code> <code>14</code></p>
 </li>
 <li>
 <p><a href="#undo"><strong>Undo</strong></a> : <code>undo</code></p>
@@ -831,4 +1089,108 @@ e.g. <code>sort</code> <code>-d</code> <code>ts/</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-09 15:49:54 UTC</div></div></div></body></html>
+</div>
+<div class="sect1">
+<h2 id="appendix-a-glossary"><a class="link" href="#appendix-a-glossary">6. Appendix A: Glossary</a></h2>
+<div class="sectionbody">
+<table id="command_prefix" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 2. Command Prefix</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Prefix</th>
+<th class="tableblock halign-left valign-top">Meaning</th>
+<th class="tableblock halign-left valign-top">Used in the following Command(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tid/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transaction ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#sort">Sort</a>, <a href="#return">Return</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Customer Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#sort">Sort</a>, <a href="#return">Return</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#sort">Sort</a>, <a href="#return">Return</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">p/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Phone Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#sort">Sort</a>, <a href="#return">Return</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dts/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delivery Date And Time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#sort">Sort</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rts/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Return Date and Time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#return">Return</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">w/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Warehouse Location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#sort">Sort</a>, <a href="#return">Return</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cod/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cash On Delivery</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#sort">Sort</a>, <a href="#return">Return</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">c/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comments by Customer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#return">Return</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type of Item</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#return">Return</a></p></td>
+</tr>
+</tbody>
+</table>
+<table id="command_flags" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 3. Possible Command Flags</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Flag</th>
+<th class="tableblock halign-left valign-top">Meaning</th>
+<th class="tableblock halign-left valign-top">Used in the following Command(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-f</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Force clear, no user confirmation will be requested</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#clear">Clear</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-n</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Search using Customer Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#find">Find</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-t</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Search using Transaction ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#find">Find</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-10 00:56:27 UTC</div></div></div></body></html>

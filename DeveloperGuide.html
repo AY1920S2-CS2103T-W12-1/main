@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Delino - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="index.html">Delino</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">Delino</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W12-1/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Delino - Developer Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="index.html">Delino</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">Delino</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W12-1/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Delino - Developer Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>CS2103T-W12-01</code>      Since: <code>Jan 2020</code>      Licence: <code>MIT</code></p>
@@ -40,7 +40,7 @@
 <li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
 <li><a href="#launch-delino">G.1. Launch Delino</a></li>
-<li><a href="#adding-an-order">G.2. Adding an order</a></li>
+<li><a href="#inserting-an-order">G.2. Inserting an order</a></li>
 <li><a href="#deleting-an-order">G.3. Deleting an order</a></li>
 <li><a href="#edit-orders">G.4. Edit orders</a></li>
 <li><a href="#import-orders">G.5. Import orders</a></li>
@@ -49,7 +49,7 @@
 <li><a href="#mark-order-as-done">G.8. Mark order as Done</a></li>
 <li><a href="#clear-orders">G.9. Clear orders</a></li>
 <li><a href="#help">G.10. Help</a></li>
-<li><a href="#sort-orders">G.11. Sort orders</a></li>
+<li><a href="#obtain-all-nearby-orders-based-on-postal-sector">G.11. Obtain all nearby orders based on postal sector</a></li>
 <li><a href="#undo-previous-action">G.12. Undo previous action</a></li>
 <li><a href="#saving-data">G.13. Saving data</a></li>
 <li><a href="#exit">G.14. Exit</a></li>
@@ -224,7 +224,7 @@ The following class plays an important role at the architecture level:</p>
 <p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
 </li>
 <li>
-<p>The command execution can affect the <code>Model</code> (e.g. adding a person).</p>
+<p>The command execution can affect the <code>Model</code> (e.g. adding a new order).</p>
 </li>
 <li>
 <p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
@@ -293,7 +293,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book</code>, which <code>Person</code> can reference. This would allow <code>Address Book</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>Person</code> needing their own <code>Tag</code> object. An example of how such a model may look like is given below.<br>
+As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book</code>, which <code>Order</code> can reference. This would allow <code>Address Book</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>Person</code> needing their own <code>Tag</code> object. An example of how such a model may look like is given below.<br>
 <br>
 <span class="image"><img src="images/BetterModelClassDiagram.png" alt="BetterModelClassDiagram"></span>
 </td>
@@ -377,7 +377,7 @@ Additionally, it implements the following operations:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th person in the address book. The <code>delete</code> command calls <code>Model#commitAddressBook()</code>, causing the modified state of the address book after the <code>delete 5</code> command executes to be saved in the <code>addressBookStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted address book state.</p>
+<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th order in the list. The <code>delete</code> command calls <code>Model#commitAddressBook()</code>, causing the modified state of the address book after the <code>delete 5</code> command executes to be saved in the <code>addressBookStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted address book state.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -385,7 +385,7 @@ Additionally, it implements the following operations:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new person. The <code>add</code> command also calls <code>Model#commitAddressBook()</code>, causing another modified address book state to be saved into the <code>addressBookStateList</code>.</p>
+<p>Step 3. The user executes <code>insert n/David &#8230;&#8203;</code> to add a new order delivery details. The <code>insert</code> command also calls <code>Model#commitAddressBook()</code>, causing another modified address book state to be saved into the <code>addressBookStateList</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -405,7 +405,7 @@ If a command fails its execution, it will not call <code>Model#commitAddressBook
 </table>
 </div>
 <div class="paragraph">
-<p>Step 4. The user now decides that adding the person was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoAddressBook()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous address book state, and restores the address book to that state.</p>
+<p>Step 4. The user now decides that adding the order was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoAddressBook()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous address book state, and restores the address book to that state.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -468,7 +468,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="paragraph">
-<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitAddressBook()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>addressBookStateList</code>, all address book states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
+<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitAddressBook()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>addressBookStateList</code>, all address book states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>insert n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -508,7 +508,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the person being deleted).</p>
+<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the order being deleted).</p>
 </li>
 <li>
 <p>Cons: We must ensure that the implementation of each individual command are correct.</p>
@@ -721,8 +721,8 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">courier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sort delivery orders</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">see the list of orders based on preference/need</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view delivery orders based on a given postal sector</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">easily find delivery orders in the same general location</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
@@ -850,6 +850,18 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <td class="tableblock halign-left valign-top"><p class="tableblock">see how others are doing with their orders</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">help them if they have any difficulties delivering all of their parcels by the deadline</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mindful courier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know about the weather of the day</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plan ahead for any changes to my deliveries</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">courier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">look at the current time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">revise my delivery routes if necessary</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -860,7 +872,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="paragraph">
 <p>(For all use cases below, the <strong>System</strong> is the <code>Delino</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
 </div>
-<h3 id="use-case-uc01-add-an-order" class="discrete">Use case: UC01 - Add an order</h3>
+<h3 id="use-case-uc01-insert-an-order" class="discrete">Use case: UC01 - Insert an order</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -870,7 +882,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <p>User key in the order details.</p>
 </li>
 <li>
-<p>Delino add the order details.</p>
+<p>Delino inserts the order details.</p>
 </li>
 <li>
 <p>Delino displays order added.</p>
@@ -1396,20 +1408,20 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc12-sort-orders" class="discrete">Use case: UC12 - Sort orders</h3>
+<h3 id="use-case-uc12-obtain-orders-in-a-postal-sector" class="discrete">Use case: UC12 - Obtain orders in a postal sector</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to sort the orders</p>
+<p>User requests to obtain orders in a specified postal sector</p>
 </li>
 <li>
-<p>Delino sort the orders</p>
+<p>Delino obtains all orders located in the postal sector</p>
 </li>
 <li>
-<p>Delino display the sorted list</p>
+<p>Delino display the list of orders</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1583,47 +1595,47 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tid/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Transaction ID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Add, Return</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Insert, Return</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n/</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Add</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Customer Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Insert</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">a/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Address</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Add</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Insert</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">p/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Phone Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Add</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Insert</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ts/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Delivery Date And Time</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Add</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Insert</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">w/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Warehouse Location</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Add</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Insert</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">pm/</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Payment Method</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Add</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cod/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cash On Delivery</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Insert</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">c/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Comments by Customer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Add, Return</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Insert, Return</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">type/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type of Item</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Add</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Insert</p></td>
 </tr>
 </tbody>
 </table>
@@ -1642,16 +1654,6 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </tr>
 </thead>
 <tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sort</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-a</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sort in <strong>ascending</strong> order</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sort</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-d</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sort in <strong>descending</strong> order</p></td>
-</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Clear</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-f</p></td>
@@ -1751,27 +1753,31 @@ Expected: Shows the GUI of the Delino App. The window size may not be optimum</p
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-an-order"><a class="link" href="#adding-an-order">G.2. Adding an order</a></h3>
+<h3 id="inserting-an-order"><a class="link" href="#inserting-an-order">G.2. Inserting an order</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add a minimum of 2 orders</p>
+<p>Insert a minimum of 2 orders</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Add command format: <code>add</code> <code>tid/TRANSACTION_ID</code> <code>n/NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>ts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>pm/PAYMENT_METHOD</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p>
+<p>Insert command format: <code>insert</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>ts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>cod/CASH_ON_DELIVERY</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p>
 </li>
 <li>
-<p>Test case: <code>add</code> <code>tid/9876543210</code> <code>n/John Doe</code> <code>a/Blk 572 Hougang st 51 #10-33 S530572</code> <code>p/98766789</code> <code>ts/2020-02-20 1300</code> <code>w/Yishun</code> <code>pm/Cash</code><br>
-Expected: An order with the above details will be added to the list and displayed on the GUI</p>
+<p>Test case: <code>insert</code> <code>tid/9876543210</code> <code>n/John Doe</code> <code>a/Blk 572 Hougang st 51 #10-33 S530572</code> <code>p/98766789</code> <code>ts/2020-02-20 1300</code> <code>w/Yishun</code> <code>cod/$4</code><br>
+Expected: Inserts an order with the above details to the list and displayed on the GUI</p>
 </li>
 <li>
-<p>Test case: <code>add</code> <code>tid/1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 572 Hougang st 51 #11-37 S530572</code> <code>p/9001 0019</code> <code>ts/2020-03-10 1650</code> <code>w/Marsiling</code> <code>pm/Nets</code> <code>c/Leave it at the riser</code> <code>type/glass</code>
-Expected: The order is added to the list, including the item type and the order comment</p>
+<p>Test case: <code>insert</code> <code>tid/1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 572 Hougang st 51 #11-37 S530572</code> <code>p/9001 0019</code> <code>ts/2020-03-10 1650</code> <code>w/Marsiling</code> <code>cod/$5</code> <code>c/Leave it at the riser</code> <code>type/glass</code><br>
+Expected: Inserts the order to the list, including the item type and the order comment</p>
 </li>
 <li>
-<p>Test case: Invalid Syntax
-Expected: No order is added. Error details shown in the response message. A help message displayed for user to add accordingly. Status bar remain unchanged</p>
+<p>Test case: Invalid Syntax<br>
+Expected: No order is added. Error details shown in the response message. A help message displayed for user to insert accordingly. Status bar remain unchanged</p>
+</li>
+<li>
+<p>Test case: Insert order with existing Transaction ID in list<br>
+Expected: An error will occur and a message will be displayed, stating that order with duplicate ID cannot be inserted into the list</p>
 </li>
 </ol>
 </div>
@@ -1922,7 +1928,7 @@ Expected: An error will occur, a message will appear in the response box, indica
 <p>Find command format: <code>find</code> <code>FLAG</code> <code>KEYWORD</code></p>
 </li>
 <li>
-<p>Prerequisite: Call the list command before calling the sort command. The orders found are dependent on what orders are listed before. For example, if the user calls a <code>list done</code> and then calls a find command, the orders from the output list is based on the list of completed orders</p>
+<p>Prerequisite: Call the list command. The orders found are dependent on what orders are listed before. For example, if the user calls a <code>list done</code> and then calls a find command, the orders from the output list is based on the list of completed orders</p>
 </li>
 <li>
 <p>Test case: <code>list</code> <code>done</code><br>
@@ -2034,38 +2040,42 @@ Expected: An error will occur and the response box will show an error message</p
 </div>
 </div>
 <div class="sect2">
-<h3 id="sort-orders"><a class="link" href="#sort-orders">G.11. Sort orders</a></h3>
+<h3 id="obtain-all-nearby-orders-based-on-postal-sector"><a class="link" href="#obtain-all-nearby-orders-based-on-postal-sector">G.11. Obtain all nearby orders based on postal sector</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Sort the orders based on the attributes input by the user. There are some things which we can sort by : Name of person, Transaction ID or Timestamp. The user will also input flags to indicate ascending order (-a) or descending order (-d)</p>
+<p>Obtain all orders located in the same postal sector.<br>
+The postal sector to search for is given by the user.<br>
+A <strong>postal sector</strong> is the first <strong>two</strong> digits of a six digit Singapore postal code.<br>
+The list of postal sectors and their corresponding general locations can be found
+<a href="https://www.ura.gov.sg/realEstateIIWeb/resources/misc/list_of_postal_districts.htm">here</a>.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Sort command format: <code>sort</code> <code>[ORDER_FLAG]</code> <code>ORDER_ATTRIBUTE_PREFIX</code></p>
+<p>Nearby command format: <code>nearby</code> <code>POSTAL_SECTOR</code></p>
 </li>
 <li>
-<p>Prerequisites: Should call a list command before calling sort. The sort command will sort based on the current list</p>
+<p>Prerequisites: Should call a list command before calling nearby. The nearby command will search based on the current list</p>
 </li>
 <li>
-<p>Test case: <code>sort</code> <code>-a</code> <code>n/</code><br>
-Expected: Sort all orders in ascending order based on the customer names</p>
+<p>Test case: <code>nearby</code> <code>79</code><br>
+Expected: Obtain all orders located in postal sector 79 (Seletar)</p>
 </li>
 <li>
-<p>Test case: <code>sort</code> <code>-d</code> <code>tid/</code><br>
-Expected: Sort all orders in descending order based on transaction ID</p>
+<p>Test case: <code>nearby</code> <code>07</code><br>
+Expected: Obtain all orders located in postal sector 07 (Anson, Tanjong Pagar)</p>
 </li>
 <li>
-<p>Test case: <code>sort</code> <code>-a</code> <code>ts/</code><br>
-Expected: Sort all orders in ascending order based on timestamp</p>
+<p>Test case: <code>nearby</code> <code>99</code><br>
+Expected: An error will occur as the given postal sector is invalid</p>
 </li>
 <li>
-<p>Test case: <code>sort</code> <code>n/</code><br>
-Expected: By default, if there is no flag, it will sort all orders in ascending order based the on customer names</p>
+<p>Test case: <code>nearby</code> <code>600</code><br>
+Expected: An error will occur as the given postal sector is invalid</p>
 </li>
 <li>
-<p>Test case: <code>sort</code><br>
-Expected: Error will occur as it is an invalid syntax</p>
+<p>Test case: <code>nearby</code><br>
+Expected: An error will occur as it is an invalid syntax (no postal sector is provided)</p>
 </li>
 </ol>
 </div>
@@ -2131,4 +2141,4 @@ Expected: The response box will display an invalid command message</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-09 15:49:54 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-10 00:56:27 UTC</div></div></div></body></html>
