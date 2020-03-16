@@ -814,8 +814,7 @@ List down all the orders that are uncompleted.</p>
 <div class="sect3">
 <h4 id="format-11"><a class="link" href="#format-11">3.11.2. Format</a></h4>
 <div class="paragraph">
-<p><code>return</code> <code>tid/TRANSACTION_ID</code> <code>n/NAME</code> <code>a/ADDRESS</code> <code>p/PHONE NUMBER</code> <code>rts/RETURN_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code>
- <code>pm/PAYMENT_METHOD</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p>
+<p><code>return</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE NUMBER</code> <code>rts/RETURN_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -841,11 +840,11 @@ List down all the orders that are uncompleted.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>return</code> <code>tid/ac17s2a</code> <code>n/Bobby Tan</code> <code>a/123 Delta Road #03-333, Singapore 123456</code> <code>p/91230456</code> <code>rts/12-12-2020 1300</code> <code>w/Jurong Warehouse</code> <code>pm/visa</code> <code>c/NIL</code> <code>type/glass</code><br>
+<p><code>return</code> <code>tid/ac17s2a</code> <code>n/Bobby Tan</code> <code>a/123 Delta Road #03-333, Singapore 123456</code> <code>p/91230456</code> <code>rts/12-12-2020 1300</code> <code>w/Jurong Warehouse</code> <code>c/NIL</code> <code>type/glass</code><br>
 Adds the order with transaction id 'ac17s2a' as a return parcel into the list of returns.</p>
 </li>
 <li>
-<p><code>return</code> <code>tid/b1230512</code> <code>n/Aaron Teo</code> <code>a/256 Alpha Road #03-222, Singapore 123567</code> <code>p/91230456</code> <code>rts/12-12-2020 1400</code> <code>w/Jurong Warehouse</code> <code>pm/visa</code> <code>c/Leave it at the lobby</code> <code>type/metal</code><br>
+<p><code>return</code> <code>tid/b1230512</code> <code>n/Aaron Teo</code> <code>a/256 Alpha Road #03-222, Singapore 123567</code> <code>p/91230456</code> <code>rts/12-12-2020 1400</code> <code>w/Jurong Warehouse</code> <code>c/Leave it at the lobby</code> <code>type/metal</code><br>
 Adds the order with transaction id 'b1230512' as a return parcel into the list of returns.</p>
 </li>
 </ul>
@@ -1188,8 +1187,8 @@ e.g. <code>import</code> <code>orders.csv</code></p>
 e.g. <code>list</code> <code>done</code></p>
 </li>
 <li>
-<p><a href="#return"><strong>Return</strong></a> : <code>return</code> <code>tid/TRANSACTION_ID</code> <code>n/NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>rts/RETURN_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>pm/PAYMENT_METHOD</code> <code>c/COMMENTS_BY_CUSTOMER</code> <code>type/TYPE_OF_ITEM</code><br>
-e.g. <code>return</code> <code>tid/ac17s2a</code> <code>n/BOBBY TAN</code> <code>a/123 Delta Road #03-333, Singapore 123456</code> <code>p/91230456</code> <code>rts/12-12-2020 1301</code> <code>w/Jurong Warehouse</code> <code>pm/visa</code> <code>c/NIL</code> <code>type/glass</code></p>
+<p><a href="#return"><strong>Return</strong></a> : <code>return</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>rts/RETURN_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>c/COMMENTS_BY_CUSTOMER</code> <code>type/TYPE_OF_ITEM</code><br>
+e.g. <code>return</code> <code>tid/ac17s2a</code> <code>n/BOBBY TAN</code> <code>a/123 Delta Road #03-333, Singapore 123456</code> <code>p/91230456</code> <code>rts/12-12-2020 1301</code> <code>w/Jurong Warehouse</code> <code>c/NIL</code> <code>type/glass</code></p>
 </li>
 <li>
 <p><a href="#nearby"><strong>Nearby</strong></a> : <code>nearby</code> <code>POSTAL_SECTOR</code><br>
@@ -1263,7 +1262,7 @@ e.g. <code>nearby</code> <code>14</code></p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">cod/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Cash On Delivery</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#sort">Sort</a>, <a href="#return">Return</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#sort">Sort</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">c/</p></td>
@@ -1310,4 +1309,4 @@ e.g. <code>nearby</code> <code>14</code></p>
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-16 13:29:29 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-16 13:42:02 UTC</div></div></div></body></html>
