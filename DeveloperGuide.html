@@ -45,7 +45,7 @@
 <li><a href="#edit-orders">G.4. Edit orders</a></li>
 <li><a href="#import-orders">G.5. Import orders</a></li>
 <li><a href="#list-orders">G.6. List orders</a></li>
-<li><a href="#find-an-order">G.7. Find an order</a></li>
+<li><a href="#search-an-order">G.7. Search an order</a></li>
 <li><a href="#mark-order-as-done">G.8. Mark order as Done</a></li>
 <li><a href="#clear-orders">G.9. Clear orders</a></li>
 <li><a href="#help">G.10. Help</a></li>
@@ -1166,14 +1166,14 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ol>
 </div>
-<h3 id="use-case-uc07-find-an-order" class="discrete">Use case: UC07 - Find an order</h3>
+<h3 id="use-case-uc07-search-an-order" class="discrete">Use case: UC07 - Search an order</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User request to find specific order by transaction id</p>
+<p>User request to search specific order by transaction id</p>
 </li>
 <li>
 <p>Delino display the requested order.</p>
@@ -1660,12 +1660,12 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <td class="tableblock halign-left valign-top"><p class="tableblock">Force clear, no user confirmation will be requested</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Find</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Search</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-n</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Search using Name</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Find</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Search</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-t</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Search using Transaction ID</p></td>
 </tr>
@@ -1918,37 +1918,37 @@ Expected: An error will occur, a message will appear in the response box, indica
 </div>
 </div>
 <div class="sect2">
-<h3 id="find-an-order"><a class="link" href="#find-an-order">G.7. Find an order</a></h3>
+<h3 id="search-an-order"><a class="link" href="#search-an-order">G.7. Search an order</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Find an order based on either the person’s Name or by the Transaction ID</p>
+<p>Search an order based on either the person’s Name or by the Transaction ID</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Find command format: <code>find</code> <code>FLAG</code> <code>KEYWORD</code></p>
+<p>Search command format: <code>search</code> <code>FLAG</code> <code>KEYWORD</code></p>
 </li>
 <li>
-<p>Prerequisite: Call the list command. The orders found are dependent on what orders are listed before. For example, if the user calls a <code>list done</code> and then calls a find command, the orders from the output list is based on the list of completed orders</p>
+<p>Prerequisite: Call the list command. The orders found are dependent on what orders are listed before. For example, if the user calls a <code>list done</code> and then calls a <code>search</code> command, the orders from the output list is based on the list of completed orders</p>
 </li>
 <li>
 <p>Test case: <code>list</code> <code>done</code><br>
-<code>find</code> <code>-t</code> <code>A18512357Z</code><br>
-Expected: Specifically find the order that has the transaction ID of A18512357Z from a list of completed delivery orders and print it to the user.</p>
+<code>search</code> <code>-t</code> <code>A18512357Z</code><br>
+Expected: Specifically search the order that has the transaction ID of A18512357Z from a list of completed delivery orders and print it to the user.</p>
 </li>
 <li>
 <p>Test case: <code>list</code> <code>undone</code><br>
-<code>find</code> <code>-n</code> <code>Amos</code><br>
+<code>search</code> <code>-n</code> <code>Amos</code><br>
 Expected: Print all uncompleted delivery orders with any person that has the name ‘Amos’ in it. It will not print out completed delivery orders with a person named ‘Amos’ despite having the same keyword</p>
 </li>
 <li>
 <p>Test case: <code>list</code><br>
-<code>find</code> <code>-n</code> <code>Amos</code><br>
+<code>search</code> <code>-n</code> <code>Amos</code><br>
 Expected: The program will look up all the delivery orders, regardless of completed or uncompleted orders and print out all orders in a list with the word ‘Amos’ in the name</p>
 </li>
 <li>
 <p>Test case: <code>list</code><br>
-<code>find</code><br>
+<code>search</code><br>
 Expected: An error message will appear in the response box, stating that the argument cannot be empty and there are no changes to the list itself</p>
 </li>
 </ol>
@@ -2142,4 +2142,4 @@ Expected: The response box will display an invalid command message</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-15 17:10:18 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-16 13:17:39 UTC</div></div></div></body></html>
