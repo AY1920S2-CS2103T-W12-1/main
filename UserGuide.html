@@ -19,7 +19,7 @@
 <li><a href="#done">3.4. Mark order as done: <code>done</code></a></li>
 <li><a href="#edit">3.5. Editing an order : <code>edit</code></a></li>
 <li><a href="#exit">3.6. Exiting the program : <code>exit</code></a></li>
-<li><a href="#find">3.7. Locating orders by name or transaction ID: <code>find</code></a></li>
+<li><a href="#search">3.7. Locating orders by name or transaction ID: <code>search</code></a></li>
 <li><a href="#help">3.8. Viewing help : <code>help</code></a></li>
 <li><a href="#import">3.9. Importing a list of orders : <code>import</code></a></li>
 <li><a href="#list">3.10. Listing orders : <code>list</code></a></li>
@@ -272,9 +272,9 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 Deletes the 2nd order.</p>
 </li>
 <li>
-<p><code>find</code> <code>-n</code> <code>Betsy</code><br>
+<p><code>search</code> <code>-n</code> <code>Betsy</code><br>
 <code>delete</code> <code>1</code><br>
-Deletes the 1st order in the results of the <code>find</code> command (find all orders with customer&#8217;s name <code>Betsy</code>).</p>
+Deletes the 1st order in the results of the <code>search</code> command (search all orders with customer&#8217;s name <code>Betsy</code>).</p>
 </li>
 </ul>
 </div>
@@ -449,13 +449,13 @@ The index <code>3</code> customer&#8217;s name, phone and address are changed ac
 </div>
 </div>
 <div class="sect2">
-<h3 id="find"><a class="link" href="#find">3.7. Locating orders by name or transaction ID: <code>find</code></a></h3>
+<h3 id="search"><a class="link" href="#search">3.7. Locating orders by name or transaction ID: <code>search</code></a></h3>
 <div class="sect3">
 <h4 id="description-7"><a class="link" href="#description-7">3.7.1. Description</a></h4>
 <div class="ulist">
 <ul>
 <li>
-<p>You can find all orders that contain a given keyword. The orders will be searched by a given flag of two specific types (<code>-n</code> or <code>-t</code>).</p>
+<p>You can search all orders that contain a given keyword. The orders will be searched by a given flag of two specific types (<code>-n</code> or <code>-t</code>).</p>
 </li>
 <li>
 <p>If the flag is <code>-n</code>, the orders will be searched by <strong>name</strong>.</p>
@@ -474,7 +474,7 @@ The index <code>3</code> customer&#8217;s name, phone and address are changed ac
 <div class="ulist">
 <ul>
 <li>
-<p><code>find</code> <code>FLAG</code> <code>KEYWORD</code> <code>[MORE_KEYWORDS]&#8230;&#8203;</code></p>
+<p><code>search</code> <code>FLAG</code> <code>KEYWORD</code> <code>[MORE_KEYWORDS]&#8230;&#8203;</code></p>
 </li>
 </ul>
 </div>
@@ -507,15 +507,15 @@ The index <code>3</code> customer&#8217;s name, phone and address are changed ac
 <div class="ulist">
 <ul>
 <li>
-<p><code>find</code> <code>-n</code> <code>Jeremy Loh</code><br>
+<p><code>search</code> <code>-n</code> <code>Jeremy Loh</code><br>
 Possibly return <code>jeremy</code> or <code>Jeremy Loh</code> or <code>loh</code> or any of the above as long as keyword appears in name.</p>
 </li>
 <li>
-<p><code>find</code> <code>-t</code> <code>asj2od3943</code><br>
+<p><code>search</code> <code>-t</code> <code>asj2od3943</code><br>
 Return delivery order with transaction ID of <code>asj2od3943</code></p>
 </li>
 <li>
-<p><code>find</code> <code>-t</code> <code>920392844</code><br>
+<p><code>search</code> <code>-t</code> <code>920392844</code><br>
 Return delivery order with transaction ID of <code>920392844</code></p>
 </li>
 </ul>
@@ -1172,8 +1172,8 @@ e.g. <code>edit</code> <code>2</code> <code>n/Xuan En</code></p>
 <p><a href="#exit"><strong>Exit</strong></a> : <code>exit</code></p>
 </li>
 <li>
-<p><a href="#find"><strong>Find</strong></a> : <code>find</code> <code>flag</code> <code>KEYWORD</code><br>
-e.g. <code>find</code> <code>-t</code> <code>ac1e345x7s</code></p>
+<p><a href="#search"><strong>Search</strong></a> : <code>search</code> <code>flag</code> <code>KEYWORD</code><br>
+e.g. <code>search</code> <code>-t</code> <code>ac1e345x7s</code></p>
 </li>
 <li>
 <p><a href="#help"><strong>Help</strong></a> : <code>help</code></p>
@@ -1299,14 +1299,14 @@ e.g. <code>nearby</code> <code>14</code></p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-n</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Search using Customer Name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#find">Find</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#search">Search</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-t</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Search using Transaction ID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#find">Find</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#search">Search</a></p></td>
 </tr>
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-16 14:13:24 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-17 03:08:38 UTC</div></div></div></body></html>
