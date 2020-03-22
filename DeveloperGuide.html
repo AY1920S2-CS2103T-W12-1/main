@@ -22,10 +22,11 @@
 </li>
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#proposed-undo-redo-feature">3.1. [Proposed] Undo/Redo feature</a></li>
-<li><a href="#proposed-data-encryption">3.2. [Proposed] Data Encryption</a></li>
-<li><a href="#logging">3.3. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.4. Configuration</a></li>
+<li><a href="#nearby-feature">3.1. Nearby feature</a></li>
+<li><a href="#proposed-undo-redo-feature">3.2. [Proposed] Undo/Redo feature</a></li>
+<li><a href="#proposed-data-encryption">3.3. [Proposed] Data Encryption</a></li>
+<li><a href="#logging">3.4. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.5. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a></li>
@@ -49,7 +50,7 @@
 <li><a href="#mark-order-as-done">G.8. Mark order as Done</a></li>
 <li><a href="#clear-orders">G.9. Clear orders</a></li>
 <li><a href="#help">G.10. Help</a></li>
-<li><a href="#obtain-all-nearby-orders-based-on-postal-sector">G.11. Obtain all nearby orders based on postal sector</a></li>
+<li><a href="#obtain-all-nearby-orders-based-on-area-or-postal-sector">G.11. Obtain all nearby orders based on area or postal sector</a></li>
 <li><a href="#undo-previous-action">G.12. Undo previous action</a></li>
 <li><a href="#saving-data">G.13. Saving data</a></li>
 <li><a href="#exit">G.14. Exit</a></li>
@@ -341,9 +342,188 @@ every UniqueOrderList is part of an OrderBook.
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">3.1. [Proposed] Undo/Redo feature</a></h3>
+<h3 id="nearby-feature"><a class="link" href="#nearby-feature">3.1. Nearby feature</a></h3>
+<div class="paragraph">
+<p>The nearby feature allows the user to view all orders that are located at a particular area
+based on a given search criteria.<br>
+There are currently two possible search options:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Searching by <strong>postal sector</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>A <strong>postal sector</strong> refers to the first <strong>two</strong> digits of a six digit Singapore postal code.</p>
+</li>
+<li>
+<p>The list of postal sectors and their corresponding general locations can be found
+<a href="https://www.ura.gov.sg/realEstateIIWeb/resources/misc/list_of_postal_districts.htm">on this website</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="2">
+<li>
+<p>Searching by <strong>area</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>An <strong>area</strong> refers to one of the five areas of Singapore</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Central</p>
+</li>
+<li>
+<p>East</p>
+</li>
+<li>
+<p>North East</p>
+</li>
+<li>
+<p>West</p>
+</li>
+<li>
+<p>North</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>You can obtain more detailed information about each area from
+<a href="https://keylocation.sg/singapore/districts-map">this website</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The nearby feature was implemented as a <code>NearbyCommand</code> in the <code>Logic</code> package.<br></p>
+</div>
 <div class="sect3">
-<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">3.1.1. Proposed Implementation</a></h4>
+<h4 id="class-diagram-for-nearby-feature"><a class="link" href="#class-diagram-for-nearby-feature">3.1.1. Class Diagram for Nearby feature</a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="images/NearbyClassDiagram.svg" alt="NearbyClassDiagram">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sequence-diagram-for-searching-by-postal-sector"><a class="link" href="#sequence-diagram-for-searching-by-postal-sector">3.1.2. Sequence Diagram for searching by postal sector</a></h4>
+<div class="paragraph">
+<p>The sequence diagram for the <strong>Nearby Command</strong> when searching by <strong>postal sector</strong>
+is shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/NearbyCommandSequenceDiagram1.svg" alt="NearbyCommandSequenceDiagram1">
+</div>
+</div>
+<div class="paragraph">
+<p>The arguments passed to the Nearby Command will be parsed by the <code>NearbyCommandParser</code> class.<br>
+If the given arguments are valid, a new <code>NearbyCommand</code> object will be returned.
+In this class, invalid arguments will result in a <code>ParseException</code>.<br>
+Two types of invalid arguments are checked for: empty arguments
+and arguments with only whitespace characters.</p>
+</div>
+<div class="paragraph">
+<p>The <code>execute()</code> function of the <code>NearbyCommand</code> will first check if the given arguments
+are in the format required for postal sector search (the argument can be converted into an integer).
+The check is done by the <code>isPostalSectorSearch()</code> function.<br>
+If the first check is successful, the argument will be converted into an integer and
+a second check is performed via the <code>isValidPostalSector(Index postalSector)</code> function
+of the <code>NearbyCommandUtil</code> helper class.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><code>NearbyCommandUtil</code> is a helper class that contains functions and variables used for
+identifying postal sectors and their corresponding general locations.<br>
+This class was created to reduce the responsibility of the <code>NearbyCommand</code> class.<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A <code>HashMap</code> was used to store information about postal sectors and their respective general locations.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The <code>showPostalSectors(Model model, Index postalSector)</code> function of the <code>NearbyCommand</code> is called.
+This function updates the model&#8217;s filtered order list using the predicate obtained from the
+<code>getPostalSectorPredicate()</code> function.</p>
+</div>
+<div class="paragraph">
+<p>A <code>CommandResult</code> is then generated and returned to the <code>LogicManager</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sequence-diagram-for-searching-by-area"><a class="link" href="#sequence-diagram-for-searching-by-area">3.1.3. Sequence Diagram for searching by area</a></h4>
+<div class="paragraph">
+<p>The sequence diagram for the <strong>Nearby Command</strong> when searching by <strong>area</strong> is shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/NearbyCommandSequenceDiagram2.svg" alt="NearbyCommandSequenceDiagram2">
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>NearbyCommandParser</code> will check for invalid arguments given by the user.<br>
+Invalid arguments can be either empty arguments or arguments with
+only whitespace characters.
+A <code>ParseException</code> will be generated if an invalid argument is present.</p>
+</div>
+<div class="paragraph">
+<p>A new <code>NearbyCommand</code> will be created and returned to <code>LogicManager</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>LogicManager</code> will then call the <code>execute()</code> function of the <code>NearbyCommand</code>.<br>
+There will then be a check for whether the given argument is a valid area with the
+function <code>isValidArea(String area)</code> present in the <code>DistrictInfo</code> class.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><code>DistrictInfo</code> is a helper class that contains functions and variables used for
+identifying areas.<br>
+This class was created to reduce the responsibility of the <code>NearbyCommand</code> class.<br></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The model will then be updated using the predicate obtained from the <code>getAreaPredicate()</code> function.</p>
+</div>
+<div class="paragraph">
+<p>A new <code>CommandResult</code> will be created and returned to the <code>LogicManager</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">3.2. [Proposed] Undo/Redo feature</a></h3>
+<div class="sect3">
+<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">3.2.1. Proposed Implementation</a></h4>
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by <code>VersionedAddressBook</code>.
 It extends <code>AddressBook</code> with an undo/redo history, stored internally as an <code>addressBookStateList</code> and <code>currentStatePointer</code>.
@@ -485,7 +665,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.2. Design Considerations</a></h4>
+<h4 id="design-considerations"><a class="link" href="#design-considerations">3.2.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
@@ -555,20 +735,20 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.2. [Proposed] Data Encryption</a></h3>
+<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.3. [Proposed] Data Encryption</a></h3>
 <div class="paragraph">
 <p><em>{Explain here how the data encryption feature will be implemented}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.3. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">3.4. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.4, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.5, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -599,7 +779,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.4. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.5. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2084,7 +2264,10 @@ Expected: An error will occur and the response box will show an error message</p
 </div>
 </div>
 <div class="sect2">
-<h3 id="obtain-all-nearby-orders-based-on-postal-sector"><a class="link" href="#obtain-all-nearby-orders-based-on-postal-sector">G.11. Obtain all nearby orders based on postal sector</a></h3>
+<h3 id="obtain-all-nearby-orders-based-on-area-or-postal-sector"><a class="link" href="#obtain-all-nearby-orders-based-on-area-or-postal-sector">G.11. Obtain all nearby orders based on area or postal sector</a></h3>
+<div class="paragraph">
+<p>There are two possible search criteria for nearby orders</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2120,6 +2303,44 @@ Expected: An error will occur as the given postal sector is invalid</p>
 <li>
 <p>Test case: <code>nearby</code><br>
 Expected: An error will occur as it is an invalid syntax (no postal sector is provided)</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Obtain all orders located in the same area.<br>
+There are <strong>5</strong> different areas in Singapore: Central, East, North East, West, North<br></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Nearby command format: <code>nearby</code> <code>AREA</code></p>
+</li>
+<li>
+<p>Prerequisites: Should call a list command before calling nearby. The nearby command will search based on the current list</p>
+</li>
+<li>
+<p>Test case: <code>nearby</code> <code>central</code><br>
+Expected: Obtain all orders located in central area of Singapore</p>
+</li>
+<li>
+<p>Test case: <code>nearby</code> <code>east</code><br>
+Expected: Obtain all orders located in east area of Singapore</p>
+</li>
+<li>
+<p>Test case: <code>nearby</code> <code>north east</code><br>
+Expected: Obtain all orders located in east area of Singapore</p>
+</li>
+<li>
+<p>Test case: <code>nearby</code> <code>west</code><br>
+Expected: Obtain all orders located in east area of Singapore</p>
+</li>
+<li>
+<p>Test case: <code>nearby</code> <code>north</code><br>
+Expected: Obtain all orders located in east area of Singapore</p>
+</li>
+<li>
+<p>Information about each area was obtained from
+<a href="https://keylocation.sg/singapore/districts-map">this website</a><br></p>
 </li>
 </ol>
 </div>
@@ -2185,4 +2406,4 @@ Expected: The response box will display an invalid command message</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-22 09:31:37 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-22 12:59:38 UTC</div></div></div></body></html>

@@ -24,7 +24,7 @@
 <li><a href="#import">3.9. Importing a list of orders : <code>import</code></a></li>
 <li><a href="#list">3.10. Listing orders : <code>list</code></a></li>
 <li><a href="#return">3.11. Returning an order: <code>return</code></a></li>
-<li><a href="#nearby">3.12. View orders located at the same postal sector: <code>nearby</code></a></li>
+<li><a href="#nearby">3.12. View orders located at the same area or postal sector: <code>nearby</code></a></li>
 <li><a href="#undo">3.13. Undo the previous action: <code>undo</code></a></li>
 <li><a href="#saving-the-data">3.14. Saving the data</a></li>
 <li><a href="#export-order-list-code-coming-in-v2-0-code">3.15. Export order list <code>[coming in v2.0]</code></a></li>
@@ -854,9 +854,20 @@ Adds the order with transaction id 'b1230512' as a return parcel into the list o
 </div>
 </div>
 <div class="sect2">
-<h3 id="nearby"><a class="link" href="#nearby">3.12. View orders located at the same postal sector: <code>nearby</code></a></h3>
+<h3 id="nearby"><a class="link" href="#nearby">3.12. View orders located at the same area or postal sector: <code>nearby</code></a></h3>
 <div class="sect3">
 <h4 id="description-12"><a class="link" href="#description-12">3.12.1. Description</a></h4>
+<div class="paragraph">
+<p>There are two possible search criteria for the <code>nearby</code> command:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>By <strong>postal sector</strong>:<br>
+Command Usage: <code>nearby</code> <code>POSTAL_SECTOR</code></p>
+</li>
+</ol>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1012,11 +1023,70 @@ Adds the order with transaction id 'b1230512' as a return parcel into the list o
 </tr>
 </tbody>
 </table>
+<div class="olist arabic">
+<ol class="arabic" start="2">
+<li>
+<p>By <strong>area</strong>:<br>
+Command Usage: <code>nearby</code> <code>AREA</code></p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>An <strong>area</strong> refers to one of the five areas of Singapore<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Central</p>
+</li>
+<li>
+<p>East</p>
+</li>
+<li>
+<p>North East</p>
+</li>
+<li>
+<p>West</p>
+</li>
+<li>
+<p>North</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>A quick reference for the five areas of Singapore can be <a href="#area_table">found here</a></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You can view all the orders located at a specified <strong>area</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can obtain more detailed information about each area from
+<a href="https://keylocation.sg/singapore/districts-map">this website</a></p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="format-12"><a class="link" href="#format-12">3.12.2. Format</a></h4>
-<div class="paragraph">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
 <p><code>nearby</code> <code>POSTAL_SECTOR</code><br></p>
+</li>
+</ol>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -1033,6 +1103,13 @@ Example: The postal code <code>140239</code> has a <code>POSTAL_SECTOR</code> of
 </tr>
 </table>
 </div>
+<div class="olist arabic">
+<ol class="arabic" start="2">
+<li>
+<p><code>nearby</code> <code>AREA</code></p>
+</li>
+</ol>
+</div>
 </div>
 <div class="sect3">
 <h4 id="examples-11"><a class="link" href="#examples-11">3.12.3. Examples</a></h4>
@@ -1045,6 +1122,10 @@ You will view all orders located in the general location of <code>Queenstown, Ti
 <li>
 <p><code>nearby</code> <code>04</code><br>
 You will view all orders located in the general location of <code>Raffles Place, Cecil, Marina, People&#8217;s Park</code>.</p>
+</li>
+<li>
+<p><code>nearby</code> <code>north</code><br>
+You will view all orders located in the north area of Singapore.</p>
 </li>
 </ul>
 </div>
@@ -1193,8 +1274,9 @@ e.g. <code>list</code> <code>done</code></p>
 e.g. <code>return</code> <code>tid/ac17s2a</code> <code>n/BOBBY TAN</code> <code>a/123 Delta Road #03-333, Singapore 123456</code> <code>p/91230456</code> <code>rts/12-12-2020 1301</code> <code>w/Jurong Warehouse</code> <code>c/NIL</code> <code>type/glass</code></p>
 </li>
 <li>
-<p><a href="#nearby"><strong>Nearby</strong></a> : <code>nearby</code> <code>POSTAL_SECTOR</code><br>
-e.g. <code>nearby</code> <code>14</code></p>
+<p><a href="#nearby"><strong>Nearby</strong></a> : <code>nearby</code> <code>POSTAL_SECTOR</code> or <code>nearby</code> <code>AREA</code><br>
+e.g. <code>nearby</code> <code>14</code><br>
+e.g. <code>nearby</code> <code>north</code></p>
 </li>
 <li>
 <p><a href="#undo"><strong>Undo</strong></a> : <code>undo</code></p>
@@ -1315,5 +1397,626 @@ e.g. <code>nearby</code> <code>14</code></p>
 </tr>
 </tbody>
 </table>
+<div id="area_table" class="paragraph">
+<p><strong>Area Information of Singapore</strong></p>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-22 09:31:37 UTC</div></div></div></body></html>
+<div class="paragraph">
+<p><a href="#nearby">Click here</a> to navigate back to the Nearby Command!</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 6. Central</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">District</th>
+<th class="tableblock halign-left valign-top">Areas</th>
+<th class="tableblock halign-left valign-top">Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Marina Area</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Boat Quay</p>
+</li>
+<li>
+<p>Chinatown</p>
+</li>
+<li>
+<p>Havelock Road</p>
+</li>
+<li>
+<p>Marina Square</p>
+</li>
+<li>
+<p>Raffles Place</p>
+</li>
+<li>
+<p>Suntec City</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CBD</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Anson Road</p>
+</li>
+<li>
+<p>Chinatown</p>
+</li>
+<li>
+<p>Neil Road</p>
+</li>
+<li>
+<p>Raffles Place</p>
+</li>
+<li>
+<p>Shenton Way</p>
+</li>
+<li>
+<p>Tanjong Pagar</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Central South</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Alexandra Road</p>
+</li>
+<li>
+<p>Tiong Bahru</p>
+</li>
+<li>
+<p>Queenstown</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Keppel</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Keppel</p>
+</li>
+<li>
+<p>Mount Faber</p>
+</li>
+<li>
+<p>Sentosa</p>
+</li>
+<li>
+<p>Telok Blangah</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">South West</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Buona Vista</p>
+</li>
+<li>
+<p>Dover</p>
+</li>
+<li>
+<p>Pasir Panjang</p>
+</li>
+<li>
+<p>West Coast</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">City Hall</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>City Hall</p>
+</li>
+<li>
+<p>High Street</p>
+</li>
+<li>
+<p>North Bridge Road</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Beach Road</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Beach Road</p>
+</li>
+<li>
+<p>Bencoolen Road</p>
+</li>
+<li>
+<p>Bugis</p>
+</li>
+<li>
+<p>Rochor</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Little India</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Little India</p>
+</li>
+<li>
+<p>Farrer Park</p>
+</li>
+<li>
+<p>Serangoon Road</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Orchard</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Cairnhill</p>
+</li>
+<li>
+<p>Killiney</p>
+</li>
+<li>
+<p>Leonie Hill</p>
+</li>
+<li>
+<p>Orchard</p>
+</li>
+<li>
+<p>Oxley</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tanglin</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Balmoral</p>
+</li>
+<li>
+<p>Bukit Timah</p>
+</li>
+<li>
+<p>Grange Road</p>
+</li>
+<li>
+<p>Holland</p>
+</li>
+<li>
+<p>Orchard Boulevard</p>
+</li>
+<li>
+<p>River Valley</p>
+</li>
+<li>
+<p>Tanglin Road</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Newton</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Chancery</p>
+</li>
+<li>
+<p>Bukit Timah</p>
+</li>
+<li>
+<p>Dunearn Road</p>
+</li>
+<li>
+<p>Newton</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Toa Payoh</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Balestier</p>
+</li>
+<li>
+<p>Moulmein</p>
+</li>
+<li>
+<p>Novena</p>
+</li>
+<li>
+<p>Toa Payoh</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">13</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Central East</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Potong Pasir</p>
+</li>
+<li>
+<p>Macpherson</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">14</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Eunos</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Eunos</p>
+</li>
+<li>
+<p>Geylang</p>
+</li>
+<li>
+<p>Kembangan</p>
+</li>
+<li>
+<p>Paya Lebar</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">East Coast</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Katong</p>
+</li>
+<li>
+<p>Marine Parade</p>
+</li>
+<li>
+<p>Siglap</p>
+</li>
+<li>
+<p>Tanjong Rhu</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">21</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Central West</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Clementi</p>
+</li>
+<li>
+<p>Upper Bukit Timah</p>
+</li>
+<li>
+<p>Hume Avenue</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 7. East<br></caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">District</th>
+<th class="tableblock halign-left valign-top">Areas</th>
+<th class="tableblock halign-left valign-top">Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Upper East Coast</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Bayshore</p>
+</li>
+<li>
+<p>Bedok</p>
+</li>
+<li>
+<p>Chai Chee</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">17</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Far East</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Changi</p>
+</li>
+<li>
+<p>Loyang</p>
+</li>
+<li>
+<p>Pasir Ris</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tampines</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Pasir Ris</p>
+</li>
+<li>
+<p>Simei</p>
+</li>
+<li>
+<p>Tampines</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 8. North East</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">District</th>
+<th class="tableblock halign-left valign-top">Areas</th>
+<th class="tableblock halign-left valign-top">Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">19</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">North East</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Hougang</p>
+</li>
+<li>
+<p>Punggol</p>
+</li>
+<li>
+<p>Sengkang</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ang Mo Kio</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Ang Mo Kio</p>
+</li>
+<li>
+<p>Bishan</p>
+</li>
+<li>
+<p>Braddell Road</p>
+</li>
+<li>
+<p>Thomson</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">28</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">North East</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Seletar</p>
+</li>
+<li>
+<p>Yio Chu Kang</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 9. West</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">District</th>
+<th class="tableblock halign-left valign-top">Areas</th>
+<th class="tableblock halign-left valign-top">Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">22</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Far West</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Boon Lay</p>
+</li>
+<li>
+<p>Jurong</p>
+</li>
+<li>
+<p>Tuas</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">23</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">North West</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Bukit Batok</p>
+</li>
+<li>
+<p>Choa Chu Kang</p>
+</li>
+<li>
+<p>Hillview Avenue</p>
+</li>
+<li>
+<p>Upper Bukit Timah</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">24</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Far North West</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Kranji</p>
+</li>
+<li>
+<p>Lim Chu Kang</p>
+</li>
+<li>
+<p>Sungei Gedong</p>
+</li>
+<li>
+<p>Tengah</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 10. North</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">District</th>
+<th class="tableblock halign-left valign-top">Areas</th>
+<th class="tableblock halign-left valign-top">Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">25</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Far North</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Admiralty</p>
+</li>
+<li>
+<p>Woodlands</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">26</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">North</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Tagore</p>
+</li>
+<li>
+<p>Yio Chu Kang</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">27</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Far North</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Admiralty</p>
+</li>
+<li>
+<p>Sembawang</p>
+</li>
+<li>
+<p>Yishun</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-22 12:59:38 UTC</div></div></div></body></html>
