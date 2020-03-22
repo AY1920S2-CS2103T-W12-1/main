@@ -16,7 +16,7 @@
 <li><a href="#insert">3.1. Inserting an order: <code>insert</code></a></li>
 <li><a href="#clear">3.2. Clearing all entries : <code>clear</code></a></li>
 <li><a href="#delete">3.3. Deleting an order : <code>delete</code></a></li>
-<li><a href="#done">3.4. Mark order as done: <code>done</code></a></li>
+<li><a href="#delivered">3.4. Mark order as delivered: <code>delivered</code></a></li>
 <li><a href="#edit">3.5. Editing an order : <code>edit</code></a></li>
 <li><a href="#exit">3.6. Exiting the program : <code>exit</code></a></li>
 <li><a href="#search">3.7. Locating orders by name or transaction ID: <code>search</code></a></li>
@@ -151,7 +151,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><code>insert</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>dts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>cod/CASH_ON_DELIVERY</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p>
+<p><code>insert</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>dts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>cod/CASH_ON_DELIVERY</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p>
 </li>
 </ul>
 </div>
@@ -179,10 +179,10 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><code>insert</code> <code>tid/9876543210</code> <code>n/John Doe</code> <code>a/Blk 572 Hougang st 51 #10-33 S530572</code> <code>p/98766789</code> <code>dts/2020-02-20 1300</code> <code>w/Yishun</code> <code>cod/$4</code></p>
+<p><code>insert</code> <code>tid/9876543210</code> <code>n/John Doe</code> <code>a/Blk 572 Hougang st 51 #10-33 S530572</code> <code>p/98766789</code> <code>e/johndoe@example.com</code> <code>dts/2020-02-20 1300</code> <code>w/Yishun</code> <code>cod/$4</code></p>
 </li>
 <li>
-<p><code>insert</code> <code>tid/1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 572 Hougang st 51 #11-37 S530572</code> <code>p/9001 0019</code> <code>dts/2020-03-10 1650</code> <code>w/Marsiling</code> <code>cod/$5</code> <code>c/Leave it at the riser</code> <code>type/glass</code></p>
+<p><code>insert</code> <code>tid/1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 572 Hougang st 51 #11-37 S530572</code> <code>e/amoscheong@example.com</code> <code>p/9001 0019</code> <code>dts/2020-03-10 1650</code> <code>w/Marsiling</code> <code>cod/$5</code> <code>c/Leave it at the riser</code> <code>type/glass</code></p>
 </li>
 </ul>
 </div>
@@ -281,7 +281,7 @@ Deletes the 1st order in the results of the <code>search</code> command (search 
 </div>
 </div>
 <div class="sect2">
-<h3 id="done"><a class="link" href="#done">3.4. Mark order as done: <code>done</code></a></h3>
+<h3 id="delivered"><a class="link" href="#delivered">3.4. Mark order as delivered: <code>delivered</code></a></h3>
 <div class="sect3">
 <h4 id="description-4"><a class="link" href="#description-4">3.4.1. Description</a></h4>
 <div class="ulist">
@@ -301,7 +301,7 @@ Deletes the 1st order in the results of the <code>search</code> command (search 
 <div class="sect3">
 <h4 id="format-4"><a class="link" href="#format-4">3.4.2. Format</a></h4>
 <div class="paragraph">
-<p><code>done</code> <code>INDEX</code></p>
+<p><code>delivered</code> <code>INDEX</code></p>
 </div>
 </div>
 <div class="sect3">
@@ -309,12 +309,12 @@ Deletes the 1st order in the results of the <code>search</code> command (search 
 <div class="ulist">
 <ul>
 <li>
-<p><code>done</code> <code>1</code><br>
-The order at the first index of the list is marked as done.</p>
+<p><code>delivered</code> <code>1</code><br>
+The order at the first index of the list is marked as a delivered order.</p>
 </li>
 <li>
-<p><code>done</code> <code>2</code><br>
-The order at the second index of the list is marked as done.</p>
+<p><code>delivered</code> <code>2</code><br>
+The order at the second index of the list is marked as a delivered order.</p>
 </li>
 </ul>
 </div>
@@ -622,16 +622,17 @@ transaction id of the parcels and the address of the customers, etc.</p>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 1. Order data format</caption>
 <colgroup>
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
+<col style="width: 9.0909%;">
+<col style="width: 9.0909%;">
+<col style="width: 9.0909%;">
+<col style="width: 9.0909%;">
+<col style="width: 9.0909%;">
+<col style="width: 9.0909%;">
+<col style="width: 9.0909%;">
+<col style="width: 9.0909%;">
+<col style="width: 9.0909%;">
+<col style="width: 9.0909%;">
+<col style="width: 9.091%;">
 </colgroup>
 <tbody>
 <tr>
@@ -640,6 +641,7 @@ transaction id of the parcels and the address of the customers, etc.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n/NAME</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">a/ADDRESS</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">p/PHONE_NUMBER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">e/EMAIL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dts/DELIVERY_DATE_&amp;_TIME</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">w/WAREHOUSE_LOCATION</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">cod/CASH_ON_DELIVERY</p></td>
@@ -655,8 +657,8 @@ transaction id of the parcels and the address of the customers, etc.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>ot/order</code>,<code>tid/1023456789</code>,<code>n/Amos Cheong</code>,<code>a/Blk 572 Hougang st 51 #11-37 S530572</code>,<code>p/90010019</code>,<br>
-<code>dts/2020-03-10 1650</code>,<code>w/Marsiling</code>,<code>cod/$9.50</code>,<code>c/Leave it at the riser</code>,<code>type/glass</code></p>
+<p><code>ot/order</code>,<code>tid/1023456789</code>,<code>n/Amos Cheong</code>,<code>a/Blk 572 Hougang st 51 #11-37 S530572</code>,<code>p/90010019</code>,
+<code>e/amos@example.com</code>, <code>dts/2020-03-10 1650</code>,<code>w/Marsiling</code>,<code>cod/$9.50</code>,<code>c/Leave it at the riser</code>,<code>type/glass</code></p>
 </li>
 </ul>
 </div>
@@ -683,7 +685,7 @@ transaction id of the parcels and the address of the customers, etc.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n/NAME</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">a/ADDRESS</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">p/PHONE_NUMBER</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">rts/RETURN_DATE_&amp;_TIME</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">e/EMAIL rts/RETURN_DATE_&amp;_TIME</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">w/WAREHOUSE_LOCATION</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[c/COMMENTS_BY_CUSTOMER]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[type/TYPE_OF_ITEM]</p></td>
@@ -697,7 +699,7 @@ transaction id of the parcels and the address of the customers, etc.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>ot/return</code>,<code>tid/b1230512</code>,<code>n/Aaron Teo</code>,<code>a/256 Alpha Road #03-22 S123567</code>,<code>p/91230456</code>,<br>
+<p><code>ot/return</code>,<code>tid/b1230512</code>,<code>n/Aaron Teo</code>,<code>a/256 Alpha Road #03-22 S123567</code>,<code>p/91230456</code>, <code>e/aaron@example.com</code><br>
 <code>rts/12-12-2020 1400</code>,<code>w/Jurong Warehouse</code>,<code>c/Leave it at the lobby</code>,<code>type/metal</code></p>
 </li>
 </ul>
@@ -840,11 +842,11 @@ List down all the orders that are uncompleted.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>return</code> <code>tid/ac17s2a</code> <code>n/Bobby Tan</code> <code>a/123 Delta Road #03-333, Singapore 123456</code> <code>p/91230456</code> <code>rts/12-12-2020 1300</code> <code>w/Jurong Warehouse</code> <code>c/NIL</code> <code>type/glass</code><br>
+<p><code>return</code> <code>tid/ac17s2a</code> <code>n/Bobby Tan</code> <code>a/123 Delta Road #03-333, Singapore 123456</code> <code>p/91230456</code> <code>e/bobby@example.com</code> <code>rts/12-12-2020 1300</code> <code>w/Jurong Warehouse</code> <code>c/NIL</code> <code>type/glass</code><br>
 Adds the order with transaction id 'ac17s2a' as a return parcel into the list of returns.</p>
 </li>
 <li>
-<p><code>return</code> <code>tid/b1230512</code> <code>n/Aaron Teo</code> <code>a/256 Alpha Road #03-222, Singapore 123567</code> <code>p/91230456</code> <code>rts/12-12-2020 1400</code> <code>w/Jurong Warehouse</code> <code>c/Leave it at the lobby</code> <code>type/metal</code><br>
+<p><code>return</code> <code>tid/b1230512</code> <code>n/Aaron Teo</code> <code>a/256 Alpha Road #03-222, Singapore 123567</code> <code>p/91230456</code> <code>e/aaron@example.com</code> <code>rts/12-12-2020 1400</code> <code>w/Jurong Warehouse</code> <code>c/Leave it at the lobby</code> <code>type/metal</code><br>
 Adds the order with transaction id 'b1230512' as a return parcel into the list of returns.</p>
 </li>
 </ul>
@@ -1149,8 +1151,8 @@ delivery), number of deliveries completed in a day}</em></p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#insert"><strong>Insert</strong></a> : <code>insert</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>dts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>cod/CASH_ON_DELIVERY</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code><br>
-e.g. <code>insert</code> <code>tid/0123456789</code> <code>n/Eng Xuan En</code> <code>a/Tampines St 84 Blk 877 S520877 #01-123</code> <code>p/87654321</code> <code>dts/2020-02-20 1300</code> <code>w/Yishun industry</code> <code>cod/$4.50</code> <code>c/please knock the door three times :D</code> <code>type/heavy</code></p>
+<p><a href="#insert"><strong>Insert</strong></a> : <code>insert</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/E,MAIL</code> <code>dts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>cod/CASH_ON_DELIVERY</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code><br>
+e.g. <code>insert</code> <code>tid/0123456789</code> <code>n/Eng Xuan En</code> <code>a/Tampines St 84 Blk 877 S520877 #01-123</code> <code>p/87654321</code> <code>e/xuanen@example.com</code> <code>dts/2020-02-20 1300</code> <code>w/Yishun industry</code> <code>cod/$4.50</code> <code>c/please knock the door three times :D</code> <code>type/heavy</code></p>
 </li>
 <li>
 <p><a href="#clear"><strong>Clear</strong></a> : <code>clear</code> <code>[FLAG]</code><br>
@@ -1161,8 +1163,8 @@ e.g. <code>clear</code> <code>-f</code></p>
 e.g. <code>delete</code> <code>2</code></p>
 </li>
 <li>
-<p><a href="#done"><strong>Done</strong></a> : <code>done</code> <code>INDEX</code><br>
-e.g. <code>done</code> <code>2</code></p>
+<p><a href="#delivered"><strong>Delivered</strong></a> : <code>delivered</code> <code>INDEX</code><br>
+e.g. <code>delivered</code> <code>2</code></p>
 </li>
 <li>
 <p><a href="#edit"><strong>Edit</strong></a> : <code>edit</code> <code>INDEX</code> <code>ORDER_ATTRIBUTE_PREFIX/VALUE</code><br>
@@ -1187,7 +1189,7 @@ e.g. <code>import</code> <code>orders.csv</code></p>
 e.g. <code>list</code> <code>done</code></p>
 </li>
 <li>
-<p><a href="#return"><strong>Return</strong></a> : <code>return</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>rts/RETURN_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>c/COMMENTS_BY_CUSTOMER</code> <code>type/TYPE_OF_ITEM</code><br>
+<p><a href="#return"><strong>Return</strong></a> : <code>return</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>rts/RETURN_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>c/COMMENTS_BY_CUSTOMER</code> <code>type/TYPE_OF_ITEM</code><br>
 e.g. <code>return</code> <code>tid/ac17s2a</code> <code>n/BOBBY TAN</code> <code>a/123 Delta Road #03-333, Singapore 123456</code> <code>p/91230456</code> <code>rts/12-12-2020 1301</code> <code>w/Jurong Warehouse</code> <code>c/NIL</code> <code>type/glass</code></p>
 </li>
 <li>
@@ -1243,6 +1245,11 @@ e.g. <code>nearby</code> <code>14</code></p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">p/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Phone Number</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#sort">Sort</a>, <a href="#return">Return</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">e/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Email</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#return">Return</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dts/</p></td>
@@ -1309,4 +1316,4 @@ e.g. <code>nearby</code> <code>14</code></p>
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-20 09:08:22 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-22 08:33:24 UTC</div></div></div></body></html>
