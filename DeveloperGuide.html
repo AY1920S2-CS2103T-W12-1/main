@@ -23,9 +23,10 @@
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
 <li><a href="#nearby-feature">3.1. Nearby feature</a></li>
-<li><a href="#import-feature">3.2. Import feature</a></li>
-<li><a href="#logging">3.3. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.4. Configuration</a></li>
+<li><a href="#import">3.2. Import feature</a></li>
+<li><a href="#search">3.3. Search feature</a></li>
+<li><a href="#logging">3.4. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.5. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a></li>
@@ -411,6 +412,7 @@ There are currently two possible search options:</p>
 <div class="content">
 <img src="images/NearbyClassDiagram.svg" alt="NearbyClassDiagram">
 </div>
+<div class="title">Figure 9. Nearby Command Class Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -423,6 +425,7 @@ is shown below:</p>
 <div class="content">
 <img src="images/NearbyCommandSequenceDiagram1.svg" alt="NearbyCommandSequenceDiagram1">
 </div>
+<div class="title">Figure 10. Nearby Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The arguments passed to the Nearby Command will be parsed by the <code>NearbyCommandParser</code> class.<br>
@@ -480,6 +483,7 @@ This function updates the model&#8217;s filtered order list using the predicate 
 <div class="content">
 <img src="images/NearbyCommandSequenceDiagram2.svg" alt="NearbyCommandSequenceDiagram2">
 </div>
+<div class="title">Figure 11. Nearby Command Sequence Diagram 2</div>
 </div>
 <div class="paragraph">
 <p>The <code>NearbyCommandParser</code> will check for invalid arguments given by the user.<br>
@@ -520,7 +524,7 @@ This class was created to reduce the responsibility of the <code>NearbyCommand</
 </div>
 </div>
 <div class="sect2">
-<h3 id="import-feature"><a class="link" href="#import-feature">3.2. Import feature</a></h3>
+<h3 id="import"><a class="link" href="#import">3.2. Import feature</a></h3>
 <div class="paragraph">
 <p>The import feature allows users to save the trouble of adding the delivery orders and the return orders one by one
 when they have large amount of delivery orders or return orders to add into Delino.</p>
@@ -534,6 +538,7 @@ when they have large amount of delivery orders or return orders to add into Deli
 <div class="content">
 <img src="images/ImportClassDiagram.png" alt="ImportClassDiagram">
 </div>
+<div class="title">Figure 12. Import Command Class Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -546,6 +551,7 @@ is shown below:</p>
 <div class="content">
 <img src="images/ImportCommandSequenceDiagram.png" alt="ImportCommandSequenceDiagram">
 </div>
+<div class="title">Figure 13. Import Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The arguments passed to the Import Command will be parsed by the <code>ImportCommandParser</code> class.<br>
@@ -591,6 +597,7 @@ to run the execute the import Command, this is will be shown at the <a href="#ex
 <div class="content">
 <img src="images/ImportCommandSequenceDiagram2.png" alt="ImportCommandSequenceDiagram2">
 </div>
+<div class="title">Figure 14. Import Command Sequence Diagram 2</div>
 </div>
 <div class="paragraph">
 <p>The <code>execute(model)</code> function of the <code>ImportCommand</code> will first check if the data given starts with
@@ -603,19 +610,117 @@ or <code>ReturnCommand</code>. This will cause a delivery order or return order 
 </div>
 <div class="paragraph">
 <p>The <code>ImportCommand</code> will call its own <code>printResult()</code> function and return a String message to the <code>CommandResult</code> object
-which is then pass back to the <code>LogicManager</code>.</p>
+which is then pass back to the <code>LogicManager</code>.
+**</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.3. Logging</a></h3>
+<h3 id="search"><a class="link" href="#search">3.3. Search feature</a></h3>
+<div class="paragraph">
+<p>The search function allow users to search for any orders according to the provided input.<br>
+There are two mode of searching, <strong>general search</strong> or <strong>specific search</strong>.<br>
+If the user does not provide any <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code>, a <strong>general search</strong> mode will be performed.<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>General search</strong> will search for all fields in an order and return orders that have any matching fields.<br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If the user provide any <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code>, a <strong>specific search</strong> will be performed.<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Specfic search</strong> will search orders based on the given <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code>.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="class-diagram-for-search-feature"><a class="link" href="#class-diagram-for-search-feature">3.3.1. Class Diagram for Search feature:</a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="images/SearchCommandClassDiagram.svg" alt="SearchCommandClassDiagram">
+</div>
+<div class="title">Figure 15. Search Command Class Diagram</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sequence-diagram-for-search-feature"><a class="link" href="#sequence-diagram-for-search-feature">3.3.2. Sequence Diagram for Search feature:</a></h4>
+<div class="paragraph">
+<p>The sequence diagram for the <strong>Search Command</strong> when searching for any orders that contain <strong>Alice</strong> in any of it&#8217;s field is shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SearchCommandSequenceDiagram.svg" alt="SearchCommandSequenceDiagram">
+</div>
+<div class="title">Figure 16. Search Command Sequence Diagram</div>
+</div>
+<div class="paragraph">
+<p>LogicManager first calls <code>parseCommand</code> with arguments representing the user input, <code>Alice</code>. The <code>SearchCommandParser</code> will then check for any invalid arguments passed by the user.<br></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>If the given arguments are valid, <code>SearchCommandParser</code> will return  a new <code>SearchCommand</code> object.<br></p>
+</li>
+<li>
+<p>If the given arguments are invalid or empty, a <code>ParseException</code> object will be thrown (not shown in the diagram).</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Upon validation of the arguments, <code>SearchCommandParser</code> will call for the <code>tokenize</code> static method in <code>ArgumentTokenizer</code> to get an <code>ArgumentMultimap</code> object containing all the user input keywords.
+Each keyword will be stored in the <code>ArgumentMultimap</code> object to it&#8217;s corresponding prefix.
+If no prefix is given, <code>ArgumentMultimap</code> will store the user input as a value tagged to an empty string key; the empty string key is referred to as the <strong>preamble</strong>.<br></p>
+</div>
+<div class="paragraph">
+<p>Using the <code>ArgumentMultimap</code> object, <code>SearchCommandParser</code> will check if the preamble is empty.<br>
+If the preamble is not empty, a <strong>general search</strong> will be performed in which the <code>SearchCommandParser</code> will call the
+<code>OrderContainsKeywordsPredicate</code> constructor. The constructor accepts the user input as a parameter (<code>keyword</code>).<br>
+If the preamble is empty, <code>SearchCommandParser</code> will call the overloaded constructor of <code>OrderContainsKeywordsPredicate</code>, passing the pre-processed user input as <code>keyword</code> and the <code>ArgumentMultimap</code>.<br></p>
+</div>
+<div class="paragraph">
+<p>For both scenarios, <code>OrderContainsKeywordsPredicate</code> object will be returned to <code>SearchCommandParser</code>. After which, a new instance of <code>SearchCommand</code> object will be created and returned back to the <code>LogicManager</code> through <code>OrderBookParser</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SearchCommandSequenceDiagram2.svg" alt="SearchCommandSequenceDiagram2">
+</div>
+<div class="title">Figure 17. Search Command Sequence Diagram 2</div>
+</div>
+<div class="paragraph">
+<p>After which, the <code>LogicManager</code> will then call the <code>execute</code> function of <code>SearchCommand</code> object passing a <code>model</code> object as an argument.<br>
+The <code>model</code> will then update the list of shown orders using the <code>OrderContainsKeywordsPredicate</code> object.</p>
+</div>
+<div class="paragraph">
+<p>Lastly, a new <code>CommandResult</code> object will be created and returned to the <code>LogicManager</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="logging"><a class="link" href="#logging">3.4. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.4, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.5, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -646,7 +751,7 @@ which is then pass back to the <code>LogicManager</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.4. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.5. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -1662,7 +1767,7 @@ which is then pass back to the <code>LogicManager</code>.</p>
 </dd>
 </dl>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table id="command_prefix" class="tableblock frame-all grid-all spread">
 <caption class="title">Table 1. Command Prefix</caption>
 <colgroup>
 <col style="width: 33.3333%;">
@@ -1678,58 +1783,68 @@ which is then pass back to the <code>LogicManager</code>.</p>
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ot/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Order Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#import">Import</a></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tid/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Transaction ID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Insert, Return</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Customer Name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Insert, Return</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">a/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Address</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Insert, Return</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">p/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Phone Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Insert, Return</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">e/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Email</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Insert, Return, Edit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ts/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dts/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Delivery Date And Time</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Insert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rts/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Return Date and Time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#return">Return</a>, <a href="#search">Search</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">w/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Warehouse Location</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Insert, Return</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">cod/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Cash On Delivery</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Insert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#search">Search</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">c/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Comments by Customer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Insert, Return</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">type/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type of Item</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Insert, Return</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all spread">
+<table id="command_flags" class="tableblock frame-all grid-all spread">
 <caption class="title">Table 2. Possible Command Flags</caption>
 <colgroup>
 <col style="width: 33.3333%;">
@@ -1738,26 +1853,16 @@ which is then pass back to the <code>LogicManager</code>.</p>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Command</th>
 <th class="tableblock halign-left valign-top">Flag</th>
 <th class="tableblock halign-left valign-top">Meaning</th>
+<th class="tableblock halign-left valign-top">Used in the following Command(s)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Clear</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-f</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Force clear, no user confirmation will be requested</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Search</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-n</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Search using Name</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Search</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-t</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Search using Transaction ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#clear">Clear</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -2273,4 +2378,4 @@ Expected: The response box will display an invalid command message</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-24 16:56:54 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-24 18:41:05 UTC</div></div></div></body></html>
