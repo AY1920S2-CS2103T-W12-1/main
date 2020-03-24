@@ -22,11 +22,12 @@
 </li>
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#nearby-feature">3.1. Nearby feature</a></li>
-<li><a href="#import">3.2. Import feature</a></li>
-<li><a href="#search">3.3. Search feature</a></li>
-<li><a href="#logging">3.4. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.5. Configuration</a></li>
+<li><a href="#delivered-feature">3.1. Delivered feature</a></li>
+<li><a href="#nearby-feature">3.2. Nearby feature</a></li>
+<li><a href="#import">3.3. Import feature</a></li>
+<li><a href="#search">3.4. Search feature</a></li>
+<li><a href="#logging">3.5. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.6. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a></li>
@@ -46,14 +47,15 @@
 <li><a href="#edit-orders">G.4. Edit orders</a></li>
 <li><a href="#import-orders">G.5. Import orders</a></li>
 <li><a href="#list-orders">G.6. List orders</a></li>
-<li><a href="#search-an-order">G.7. Search an order</a></li>
-<li><a href="#mark-order-as-done">G.8. Mark order as Done</a></li>
-<li><a href="#clear-orders">G.9. Clear orders</a></li>
-<li><a href="#help">G.10. Help</a></li>
-<li><a href="#obtain-all-nearby-orders-based-on-area-or-postal-sector">G.11. Obtain all nearby orders based on area or postal sector</a></li>
-<li><a href="#undo-previous-action">G.12. Undo previous action</a></li>
-<li><a href="#saving-data">G.13. Saving data</a></li>
-<li><a href="#exit">G.14. Exit</a></li>
+<li><a href="#returning-an-order">G.7. Returning an order</a></li>
+<li><a href="#search-an-order">G.8. Search an order</a></li>
+<li><a href="#mark-order-as-done">G.9. Mark order as Done</a></li>
+<li><a href="#clear-orders">G.10. Clear orders</a></li>
+<li><a href="#help">G.11. Help</a></li>
+<li><a href="#obtain-all-nearby-orders-based-on-area-or-postal-sector">G.12. Obtain all nearby orders based on area or postal sector</a></li>
+<li><a href="#undo-previous-action">G.13. Undo previous action</a></li>
+<li><a href="#saving-data">G.14. Saving data</a></li>
+<li><a href="#exit">G.15. Exit</a></li>
 </ul>
 </li>
 </ul>
@@ -261,7 +263,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <h3 id="Design-Model"><a class="link" href="#Design-Model">2.4. Model component</a></h3>
 <div class="imageblock">
 <div class="content">
-<img src="images/ModelClassDiagram.png" alt="ModelClassDiagram">
+<img src="images/ModelClassDiagram.svg" alt="ModelClassDiagram">
 </div>
 <div class="title">Figure 7. Structure of the Model Component</div>
 </div>
@@ -342,7 +344,66 @@ every UniqueOrderList is part of an OrderBook.
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="nearby-feature"><a class="link" href="#nearby-feature">3.1. Nearby feature</a></h3>
+<h3 id="delivered-feature"><a class="link" href="#delivered-feature">3.1. Delivered feature</a></h3>
+<div class="paragraph">
+<p>The delivered feature allows the user to mark orders as delivered after delivering an order.</p>
+</div>
+<div class="paragraph">
+<p>The delivered feature was implemented as a <code>DoneCommand</code> in the <code>Logic</code> package.<br></p>
+</div>
+<div class="sect3">
+<h4 id="class-diagram-for-done-feature"><a class="link" href="#class-diagram-for-done-feature">3.1.1. Class Diagram for Done feature</a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="images/DoneClassDiagram.svg" alt="DoneClassDiagram">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sequence-diagram-for-delivering-an-order"><a class="link" href="#sequence-diagram-for-delivering-an-order">3.1.2. Sequence Diagram for delivering an order</a></h4>
+<div class="paragraph">
+<p>The sequence diagram for the <strong>Delivered Command</strong> is shown below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DoneSequenceDiagram.svg" alt="DoneSequenceDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>The arguments passed to the Done Command will be parsed by the <code>DoneCommandParser</code> class.<br>
+If the given arguments are valid, a new <code>DoneCommand</code> object will be returned.
+In this class, invalid arguments will result in a <code>ParseException</code>.<br>
+Two types of invalid arguments are checked for: empty arguments
+and arguments with only whitespace characters.</p>
+</div>
+<div class="paragraph">
+<p>The <code>execute()</code> function of the <code>DoneCommand</code> will first check if the given arguments
+are in the format required for an order to be marked as complete
+(i.e. both the command word <code>return</code> and <code>INDEX</code> are present)
+The check is done within the <code>execute()</code> function.<br></p>
+</div>
+<div class="paragraph">
+<p>If the input is valid, the particular order based on the integer <code>INDEX</code> will be used to<br>
+obtain this order from the order book. This order will be checked if it was delivered.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>If it was not delivered, it will trigger the <code>setOrder()</code>, <code>deliverOrder()</code>
+and <code>updateFilteredOrderList()</code> functions. These methods will be used to replace
+the existing order with the new order that has a delivered status. Also, the order book
+will be updated to show the change.<br></p>
+</li>
+<li>
+<p>If the order was delivered, it will only trigger the <code>updateFilteredOrderList()</code> function which will
+display the original order book.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="nearby-feature"><a class="link" href="#nearby-feature">3.2. Nearby feature</a></h3>
 <div class="paragraph">
 <p>The nearby feature allows the user to view all orders that are located at a particular area
 based on a given search criteria.<br>
@@ -407,7 +468,7 @@ There are currently two possible search options:</p>
 <p>The nearby feature was implemented as a <code>NearbyCommand</code> in the <code>Logic</code> package.<br></p>
 </div>
 <div class="sect3">
-<h4 id="class-diagram-for-nearby-feature"><a class="link" href="#class-diagram-for-nearby-feature">3.1.1. Class Diagram for Nearby feature</a></h4>
+<h4 id="class-diagram-for-nearby-feature"><a class="link" href="#class-diagram-for-nearby-feature">3.2.1. Class Diagram for Nearby feature</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/NearbyClassDiagram.svg" alt="NearbyClassDiagram">
@@ -416,7 +477,7 @@ There are currently two possible search options:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="sequence-diagram-for-searching-by-postal-sector"><a class="link" href="#sequence-diagram-for-searching-by-postal-sector">3.1.2. Sequence Diagram for searching by postal sector</a></h4>
+<h4 id="sequence-diagram-for-searching-by-postal-sector"><a class="link" href="#sequence-diagram-for-searching-by-postal-sector">3.2.2. Sequence Diagram for searching by postal sector</a></h4>
 <div class="paragraph">
 <p>The sequence diagram for the <strong>Nearby Command</strong> when searching by <strong>postal sector</strong>
 is shown below:</p>
@@ -475,7 +536,7 @@ This function updates the model&#8217;s filtered order list using the predicate 
 </div>
 </div>
 <div class="sect3">
-<h4 id="sequence-diagram-for-searching-by-area"><a class="link" href="#sequence-diagram-for-searching-by-area">3.1.3. Sequence Diagram for searching by area</a></h4>
+<h4 id="sequence-diagram-for-searching-by-area"><a class="link" href="#sequence-diagram-for-searching-by-area">3.2.3. Sequence Diagram for searching by area</a></h4>
 <div class="paragraph">
 <p>The sequence diagram for the <strong>Nearby Command</strong> when searching by <strong>area</strong> is shown below:</p>
 </div>
@@ -524,7 +585,7 @@ This class was created to reduce the responsibility of the <code>NearbyCommand</
 </div>
 </div>
 <div class="sect2">
-<h3 id="import"><a class="link" href="#import">3.2. Import feature</a></h3>
+<h3 id="import"><a class="link" href="#import">3.3. Import feature</a></h3>
 <div class="paragraph">
 <p>The import feature allows users to save the trouble of adding the delivery orders and the return orders one by one
 when they have large amount of delivery orders or return orders to add into Delino.</p>
@@ -533,7 +594,7 @@ when they have large amount of delivery orders or return orders to add into Deli
 <p>The import feature was implemented as a <code>ImportCommand</code> in the <code>Logic</code> package.</p>
 </div>
 <div class="sect3">
-<h4 id="class-diagram-for-import-feature"><a class="link" href="#class-diagram-for-import-feature">3.2.1. Class Diagram for Import feature:</a></h4>
+<h4 id="class-diagram-for-import-feature"><a class="link" href="#class-diagram-for-import-feature">3.3.1. Class Diagram for Import feature:</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/ImportClassDiagram.png" alt="ImportClassDiagram">
@@ -542,7 +603,7 @@ when they have large amount of delivery orders or return orders to add into Deli
 </div>
 </div>
 <div class="sect3">
-<h4 id="sequence-diagram-for-importing-the-csv-file"><a class="link" href="#sequence-diagram-for-importing-the-csv-file">3.2.2. Sequence Diagram for importing the csv file.</a></h4>
+<h4 id="sequence-diagram-for-importing-the-csv-file"><a class="link" href="#sequence-diagram-for-importing-the-csv-file">3.3.2. Sequence Diagram for importing the csv file.</a></h4>
 <div class="paragraph">
 <p>The sequence diagram for the <strong>Import Command</strong> when import the data from the  <strong>csv file</strong>
 is shown below:</p>
@@ -592,7 +653,7 @@ to run the execute the import Command, this is will be shown at the <a href="#ex
 </div>
 </div>
 <div class="sect3">
-<h4 id="execution-of-import-command-sequence-diagram"><a class="link" href="#execution-of-import-command-sequence-diagram">3.2.3. Execution of Import Command Sequence Diagram</a></h4>
+<h4 id="execution-of-import-command-sequence-diagram"><a class="link" href="#execution-of-import-command-sequence-diagram">3.3.3. Execution of Import Command Sequence Diagram</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/ImportCommandSequenceDiagram2.png" alt="ImportCommandSequenceDiagram2">
@@ -616,7 +677,7 @@ which is then pass back to the <code>LogicManager</code>.
 </div>
 </div>
 <div class="sect2">
-<h3 id="search"><a class="link" href="#search">3.3. Search feature</a></h3>
+<h3 id="search"><a class="link" href="#search">3.4. Search feature</a></h3>
 <div class="paragraph">
 <p>The search function allow users to search for any orders according to the provided input.<br>
 There are two mode of searching, <strong>general search</strong> or <strong>specific search</strong>.<br>
@@ -640,7 +701,7 @@ If the user does not provide any <code><a href="#command_prefix">ORDER_ATTRIBUTE
 </ul>
 </div>
 <div class="sect3">
-<h4 id="class-diagram-for-search-feature"><a class="link" href="#class-diagram-for-search-feature">3.3.1. Class Diagram for Search feature:</a></h4>
+<h4 id="class-diagram-for-search-feature"><a class="link" href="#class-diagram-for-search-feature">3.4.1. Class Diagram for Search feature:</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/SearchCommandClassDiagram.svg" alt="SearchCommandClassDiagram">
@@ -649,7 +710,7 @@ If the user does not provide any <code><a href="#command_prefix">ORDER_ATTRIBUTE
 </div>
 </div>
 <div class="sect3">
-<h4 id="sequence-diagram-for-search-feature"><a class="link" href="#sequence-diagram-for-search-feature">3.3.2. Sequence Diagram for Search feature:</a></h4>
+<h4 id="sequence-diagram-for-search-feature"><a class="link" href="#sequence-diagram-for-search-feature">3.4.2. Sequence Diagram for Search feature:</a></h4>
 <div class="paragraph">
 <p>The sequence diagram for the <strong>Search Command</strong> when searching for any orders that contain <strong>Alice</strong> in any of it&#8217;s field is shown below:</p>
 </div>
@@ -713,14 +774,14 @@ The <code>model</code> will then update the list of shown orders using the <code
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.4. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">3.5. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.5, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.6, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -751,7 +812,7 @@ The <code>model</code> will then update the list of shown orders using the <code
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.5. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.6. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2113,7 +2174,40 @@ Expected: An error will occur, a message will appear in the response box, indica
 </div>
 </div>
 <div class="sect2">
-<h3 id="search-an-order"><a class="link" href="#search-an-order">G.7. Search an order</a></h3>
+<h3 id="returning-an-order"><a class="link" href="#returning-an-order">G.7. Returning an order</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Returning an order with the specific order attributes</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Return command format: <code>return</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>rts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p>
+</li>
+<li>
+<p>Test case: <code>return</code> <code>tid/9876543210</code> <code>n/John Doe</code> <code>a/Blk 572 Hougang st 51 #10-33 S530572</code> <code>p/98766789</code> <code>e/johndoe@example.com</code> <code>ts/2020-02-20 1300</code> <code>w/Yishun</code><br>
+Expected: Creates and adds a return order with the above details to the return order book.</p>
+</li>
+<li>
+<p>Test case: <code>return</code> <code>tid/1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 572 Hougang st 51 #11-37 S530572</code> <code>p/9001 0019</code> <code>e/amoscheong@example.com</code> <code>ts/2020-03-10 1650</code> <code>w/Marsiling</code> <code>c/Leave it at the riser</code> <code>type/glass</code><br>
+Expected: Creates and adds the return order to the return order book, including the item type and comment.</p>
+</li>
+<li>
+<p>Test case: Invalid Syntax<br>
+Expected: No return order is added. Error details shown in the response message. A help message displayed for user to type the return command accordingly. Status bar remain unchanged</p>
+</li>
+<li>
+<p>Test case: Return order with existing Transaction ID in list<br>
+Expected: An error will occur and a message will be displayed, stating that the return order with duplicate ID cannot be added into the list</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="search-an-order"><a class="link" href="#search-an-order">G.8. Search an order</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2153,7 +2247,7 @@ Expected: An error message will appear in the response box, stating that the arg
 </div>
 </div>
 <div class="sect2">
-<h3 id="mark-order-as-done"><a class="link" href="#mark-order-as-done">G.8. Mark order as Done</a></h3>
+<h3 id="mark-order-as-done"><a class="link" href="#mark-order-as-done">G.9. Mark order as Done</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2185,7 +2279,7 @@ Expected: No order is marked as done. The error message will be displayed on the
 </div>
 </div>
 <div class="sect2">
-<h3 id="clear-orders"><a class="link" href="#clear-orders">G.9. Clear orders</a></h3>
+<h3 id="clear-orders"><a class="link" href="#clear-orders">G.10. Clear orders</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2214,7 +2308,7 @@ Expected: No order is cleared. Error details shown in the response message. A he
 </div>
 </div>
 <div class="sect2">
-<h3 id="help"><a class="link" href="#help">G.10. Help</a></h3>
+<h3 id="help"><a class="link" href="#help">G.11. Help</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2236,7 +2330,7 @@ Expected: An error will occur and the response box will show an error message</p
 </div>
 </div>
 <div class="sect2">
-<h3 id="obtain-all-nearby-orders-based-on-area-or-postal-sector"><a class="link" href="#obtain-all-nearby-orders-based-on-area-or-postal-sector">G.11. Obtain all nearby orders based on area or postal sector</a></h3>
+<h3 id="obtain-all-nearby-orders-based-on-area-or-postal-sector"><a class="link" href="#obtain-all-nearby-orders-based-on-area-or-postal-sector">G.12. Obtain all nearby orders based on area or postal sector</a></h3>
 <div class="paragraph">
 <p>There are two possible search criteria for nearby orders</p>
 </div>
@@ -2321,7 +2415,7 @@ Expected: Obtain all orders located in east area of Singapore</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="undo-previous-action"><a class="link" href="#undo-previous-action">G.12. Undo previous action</a></h3>
+<h3 id="undo-previous-action"><a class="link" href="#undo-previous-action">G.13. Undo previous action</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2346,7 +2440,7 @@ Expected: Error message displayed in the response box</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.13. Saving data</a></h3>
+<h3 id="saving-data"><a class="link" href="#saving-data">G.14. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2356,7 +2450,7 @@ Expected: Error message displayed in the response box</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exit"><a class="link" href="#exit">G.14. Exit</a></h3>
+<h3 id="exit"><a class="link" href="#exit">G.15. Exit</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2378,4 +2472,4 @@ Expected: The response box will display an invalid command message</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-24 19:14:24 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-24 19:27:58 UTC</div></div></div></body></html>
