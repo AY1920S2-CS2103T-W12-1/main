@@ -883,13 +883,19 @@ List down all the orders that are uncompleted.</p>
 <div class="sect3">
 <h4 id="description-11"><a class="link" href="#description-11">3.12.1. Description</a></h4>
 <div class="paragraph">
+<p>The <code>nearby</code> command can be used to search either the order list or return order list.<br>
+You <strong>may</strong> give either a <code>-o</code> flag for viewing nearby orders in the order list
+or a <code>-r</code> flag for viewing nearby orders in the returns list.<br>
+By default, the <code>nearby</code> command will search both the order list and return order list.</p>
+</div>
+<div class="paragraph">
 <p>There are two possible search criteria for the <code>nearby</code> command:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>By <strong>postal sector</strong>:<br>
-Command Usage: <code>nearby</code> <code>POSTAL_SECTOR</code></p>
+Command Usage: <code>nearby</code> <code>[FLAG]</code> <code>POSTAL_SECTOR</code></p>
 </li>
 </ol>
 </div>
@@ -901,7 +907,10 @@ Command Usage: <code>nearby</code> <code>POSTAL_SECTOR</code></p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>A <strong>postal sector</strong> refers to the first <strong>two</strong> digits of a six digit Singapore postal code.</p>
+<p>A <code>POSTAL_SECTOR</code> refers to the first <strong>two</strong> digits of a six digit Singapore postal code.<br>
+A <code>FLAG</code> refers to either <code>-o</code> or <code>-r</code> and is <strong>optional</strong>.<br>
+A <code>-o</code> flag is used to indicate searching on the order list.<br>
+A <code>-r</code> flag is used to indicate searching on the return order list.</p>
 </div>
 </td>
 </tr>
@@ -1052,7 +1061,7 @@ Command Usage: <code>nearby</code> <code>POSTAL_SECTOR</code></p>
 <ol class="arabic" start="2">
 <li>
 <p>By <strong>area</strong>:<br>
-Command Usage: <code>nearby</code> <code>AREA</code></p>
+Command Usage: <code>nearby</code> <code>[FLAG]</code> <code>AREA</code></p>
 </li>
 </ol>
 </div>
@@ -1088,6 +1097,11 @@ Command Usage: <code>nearby</code> <code>AREA</code></p>
 <div class="paragraph">
 <p>A quick reference for the five areas of Singapore can be <a href="#area_table">found here</a></p>
 </div>
+<div class="paragraph">
+<p>A <code>FLAG</code> refers to either <code>-o</code> or <code>-r</code> and is <strong>optional</strong>.<br>
+A <code>-o</code> flag is used to indicate searching on the order list.<br>
+A <code>-r</code> flag is used to indicate searching on the return order list.</p>
+</div>
 </td>
 </tr>
 </table>
@@ -1109,7 +1123,7 @@ Command Usage: <code>nearby</code> <code>AREA</code></p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><code>nearby</code> <code>POSTAL_SECTOR</code><br></p>
+<p><code>nearby</code> <code>[FLAG]</code> <code>POSTAL_SECTOR</code><br></p>
 </li>
 </ol>
 </div>
@@ -1124,6 +1138,11 @@ Command Usage: <code>nearby</code> <code>AREA</code></p>
 <p><code>POSTAL_SECTOR</code> is the first <strong>two</strong> digits of a six digit Singapore postal code<br>
 Example: The postal code <code>140239</code> has a <code>POSTAL_SECTOR</code> of <code>14</code></p>
 </div>
+<div class="paragraph">
+<p>A <code>FLAG</code> refers to either <code>-o</code> or <code>-r</code> and is <strong>optional</strong>.<br>
+A <code>-o</code> flag is used to indicate searching on the order list.<br>
+A <code>-r</code> flag is used to indicate searching on the return order list.</p>
+</div>
 </td>
 </tr>
 </table>
@@ -1131,7 +1150,7 @@ Example: The postal code <code>140239</code> has a <code>POSTAL_SECTOR</code> of
 <div class="olist arabic">
 <ol class="arabic" start="2">
 <li>
-<p><code>nearby</code> <code>AREA</code></p>
+<p><code>nearby</code> <code>FLAG</code> <code>AREA</code></p>
 </li>
 </ol>
 </div>
@@ -1141,16 +1160,16 @@ Example: The postal code <code>140239</code> has a <code>POSTAL_SECTOR</code> of
 <div class="ulist">
 <ul>
 <li>
-<p><code>nearby</code> <code>14</code><br>
-You will view all orders located in the general location of <code>Queenstown, Tiong Bahru</code>.</p>
+<p><code>nearby</code> <code>-o</code> <code>14</code><br>
+You will view all orders in the order list located in the general location of <code>Queenstown, Tiong Bahru</code>.</p>
 </li>
 <li>
-<p><code>nearby</code> <code>04</code><br>
-You will view all orders located in the general location of <code>Raffles Place, Cecil, Marina, People&#8217;s Park</code>.</p>
+<p><code>nearby</code> <code>-r</code> <code>04</code><br>
+You will view all return orders located in the general location of <code>Raffles Place, Cecil, Marina, People&#8217;s Park</code>.</p>
 </li>
 <li>
 <p><code>nearby</code> <code>north</code><br>
-You will view all orders located in the north area of Singapore.</p>
+You will view all orders in the order list and return order list located in the north area of Singapore.</p>
 </li>
 </ul>
 </div>
@@ -1432,9 +1451,10 @@ e.g. <code>list</code> <code>done</code></p>
 e.g. <code>return</code> <code>tid/ac17s2a</code> <code>n/BOBBY TAN</code> <code>a/123 Delta Road #03-333, Singapore 123456</code> <code>p/91230456</code> <code>rts/12-12-2020 1301</code> <code>w/Jurong Warehouse</code> <code>c/NIL</code> <code>type/glass</code></p>
 </li>
 <li>
-<p><a href="#nearby"><strong>Nearby</strong></a> : <code>nearby</code> <code>POSTAL_SECTOR</code> or <code>nearby</code> <code>AREA</code><br>
-e.g. <code>nearby</code> <code>14</code><br>
-e.g. <code>nearby</code> <code>north</code></p>
+<p><a href="#nearby"><strong>Nearby</strong></a> : <code>nearby</code> <code>[FLAG]</code> <code>POSTAL_SECTOR</code> or <code>nearby</code> <code>[FLAG]</code> <code>AREA</code><br>
+e.g. <code>nearby</code> <code>-o</code> <code>14</code><br>
+e.g. <code>nearby</code> <code>-r</code> <code>north</code><br>
+e.g. <code>nearby</code> <code>east</code></p>
 </li>
 <li>
 <p><a href="#undo"><strong>Undo</strong></a> : <code>undo</code></p>
@@ -2177,4 +2197,4 @@ e.g. <code>nearby</code> <code>north</code></p>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-29 15:10:16 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-29 15:31:14 UTC</div></div></div></body></html>

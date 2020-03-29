@@ -407,8 +407,16 @@ display the original order book.</p>
 <h3 id="nearby-feature"><a class="link" href="#nearby-feature">3.2. Nearby feature</a></h3>
 <div class="paragraph">
 <p>The nearby feature allows the user to view all orders that are located at a particular area
-based on a given search criteria.<br>
-There are currently two possible search options:</p>
+based on a given search criteria.<br></p>
+</div>
+<div class="paragraph">
+<p>The nearby feature can have an optional <code>FLAG</code> argument. This can be either <code>-o</code> or <code>-r</code>.<br>
+A <code>-o</code> <code>FLAG</code> argument indicates that the order list will be searched.<br>
+A <code>-r</code> <code>FLAG</code> argument indicates that the return order list will be searched.<br>
+By default, if no <code>FLAG</code> arguments are provided, both order list and return order list will be searched.</p>
+</div>
+<div class="paragraph">
+<p>There are currently two possible search options:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2411,29 +2419,29 @@ The list of postal sectors and their corresponding general locations can be foun
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Nearby command format: <code>nearby</code> <code>POSTAL_SECTOR</code></p>
+<p>Nearby command format: <code>nearby</code> <code>[FLAG]</code> <code>POSTAL_SECTOR</code></p>
 </li>
 <li>
 <p>Prerequisites: Should call a list command before calling nearby. The nearby command will search based on the current list</p>
 </li>
 <li>
-<p>Test case: <code>nearby</code> <code>79</code><br>
+<p>Test case: <code>nearby</code> <code>-o</code> <code>79</code><br>
 Expected: Obtain all orders located in postal sector 79 (Seletar)</p>
 </li>
 <li>
-<p>Test case: <code>nearby</code> <code>07</code><br>
-Expected: Obtain all orders located in postal sector 07 (Anson, Tanjong Pagar)</p>
+<p>Test case: <code>nearby</code> <code>-r</code> <code>07</code><br>
+Expected: Obtain all return orders located in postal sector 07 (Anson, Tanjong Pagar)</p>
 </li>
 <li>
-<p>Test case: <code>nearby</code> <code>99</code><br>
+<p>Test case: <code>nearby</code> <code>-o</code> <code>99</code><br>
 Expected: An error will occur as the given postal sector is invalid</p>
 </li>
 <li>
-<p>Test case: <code>nearby</code> <code>600</code><br>
+<p>Test case: <code>nearby</code> <code>-o</code> <code>600</code><br>
 Expected: An error will occur as the given postal sector is invalid</p>
 </li>
 <li>
-<p>Test case: <code>nearby</code><br>
+<p>Test case: <code>nearby -o</code><br>
 Expected: An error will occur as it is an invalid syntax (no postal sector is provided)</p>
 </li>
 </ol>
@@ -2445,30 +2453,30 @@ There are <strong>5</strong> different areas in Singapore: Central, East, North 
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Nearby command format: <code>nearby</code> <code>AREA</code></p>
+<p>Nearby command format: <code>nearby</code> <code>[FLAG]</code> <code>AREA</code></p>
 </li>
 <li>
 <p>Prerequisites: Should call a list command before calling nearby. The nearby command will search based on the current list</p>
 </li>
 <li>
-<p>Test case: <code>nearby</code> <code>central</code><br>
+<p>Test case: <code>nearby</code> <code>-o</code> <code>central</code><br>
 Expected: Obtain all orders located in central area of Singapore</p>
 </li>
 <li>
-<p>Test case: <code>nearby</code> <code>east</code><br>
+<p>Test case: <code>nearby</code> <code>-r</code> <code>east</code><br>
+Expected: Obtain all return orders located in east area of Singapore</p>
+</li>
+<li>
+<p>Test case: <code>nearby</code> <code>-o</code> <code>north east</code><br>
 Expected: Obtain all orders located in east area of Singapore</p>
 </li>
 <li>
-<p>Test case: <code>nearby</code> <code>north east</code><br>
-Expected: Obtain all orders located in east area of Singapore</p>
+<p>Test case: <code>nearby</code> <code>-r</code> <code>west</code><br>
+Expected: Obtain all return orders located in east area of Singapore</p>
 </li>
 <li>
-<p>Test case: <code>nearby</code> <code>west</code><br>
-Expected: Obtain all orders located in east area of Singapore</p>
-</li>
-<li>
-<p>Test case: <code>nearby</code> <code>north</code><br>
-Expected: Obtain all orders located in east area of Singapore</p>
+<p>Test case: <code>nearby</code> <code>-r</code> <code>north</code><br>
+Expected: Obtain all return orders located in east area of Singapore</p>
 </li>
 <li>
 <p>Information about each area was obtained from
@@ -2538,4 +2546,4 @@ Expected: The response box will display an invalid command message</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-29 15:10:16 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-29 15:31:14 UTC</div></div></div></body></html>
