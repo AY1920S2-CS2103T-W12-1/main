@@ -2338,13 +2338,12 @@ Expected: Both order list and return order list will be cleared. Notify the user
 Expected: Only return order list will be cleared. Notify the user that return order list has been cleared in the status message.</p>
 </li>
 <li>
-<p>Test case: <code>clear</code> <code>-r</code> <code>-o</code><br>
-Expected: Invalid command input, as both <code>-r</code> and <code>-o</code> cannot be in a single command.<br>
-Error details shown in the response message. A help message displayed for the user to type the correct command. Status bar remains unchanged</p>
+<p>Test case: <code>clear</code> <code>-r</code> <code>-r</code> <code>-f</code>+
+Expected: Only return order list will be cleared. Notify the user that return order list has been cleared in the status message.</p>
 </li>
 <li>
-<p>Test case: <code>clear</code> <code>-r</code> <code>-r</code><br>
-Expected: Invalid command input, as duplicate flag is not allowed.<br>
+<p>Test case: <code>clear</code> <code>-r</code> <code>-o</code><br>
+Expected: Invalid command input, as both <code>-r</code> and <code>-o</code> cannot be in a single command.<br>
 Error details shown in the response message. A help message displayed for the user to type the correct command. Status bar remains unchanged</p>
 </li>
 <li>
@@ -2546,4 +2545,4 @@ Expected: The response box will display an invalid command message</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-29 15:49:51 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-29 16:44:38 UTC</div></div></div></body></html>

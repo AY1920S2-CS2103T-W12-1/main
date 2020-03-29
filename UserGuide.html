@@ -735,7 +735,7 @@ transaction id of the parcels and the address of the customers, etc.</p>
 <ul>
 <li>
 <p><code>ot/order</code>,<code>tid/1023456789</code>,<code>n/Amos Cheong</code>,<code>a/Blk 572 Hougang st 51 #11-37 S530572</code>,<code>p/90010019</code>,
-<code>e/amos@example.com</code>, <code>dts/2020-03-10 1650</code>,<code>w/Marsiling</code>,<code>cod/$9.50</code>,<code>c/Leave it at the riser</code>,<code>type/glass</code></p>
+<code>e/amos@example.com</code>, <code>dts/2020-05-10 1650</code>,<code>w/Marsiling</code>,<code>cod/$9.50</code>,<code>c/Leave it at the riser</code>,<code>type/glass</code></p>
 </li>
 </ul>
 </div>
@@ -745,15 +745,16 @@ transaction id of the parcels and the address of the customers, etc.</p>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 2. Return data format</caption>
 <colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 11.1111%;">
-<col style="width: 11.1111%;">
-<col style="width: 11.1111%;">
-<col style="width: 11.1111%;">
-<col style="width: 11.1111%;">
-<col style="width: 11.1111%;">
-<col style="width: 11.1111%;">
-<col style="width: 11.1112%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
 </colgroup>
 <tbody>
 <tr>
@@ -762,7 +763,8 @@ transaction id of the parcels and the address of the customers, etc.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n/NAME</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">a/ADDRESS</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">p/PHONE_NUMBER</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">e/EMAIL rts/RETURN_DATE_&amp;_TIME</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">e/EMAIL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rts/RETURN_DATE_&amp;_TIME</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">w/WAREHOUSE_LOCATION</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[c/COMMENTS_BY_CUSTOMER]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[type/TYPE_OF_ITEM]</p></td>
@@ -776,14 +778,21 @@ transaction id of the parcels and the address of the customers, etc.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>ot/return</code>,<code>tid/b1230512</code>,<code>n/Aaron Teo</code>,<code>a/256 Alpha Road #03-22 S123567</code>,<code>p/91230456</code>, <code>e/aaron@example.com</code><br>
-<code>rts/12-12-2020 1400</code>,<code>w/Jurong Warehouse</code>,<code>c/Leave it at the lobby</code>,<code>type/metal</code></p>
+<p><code>ot/return</code>,<code>tid/b1230512</code>,<code>n/Aaron Teo</code>,<code>a/256 Alpha Road #03-22 S123567</code>,<code>p/91230456</code>, <code>e/aaron@example.com</code>,<br>
+<code>rts/2020-05-10 1400</code>,<code>w/Jurong Warehouse</code>,<code>c/Leave it at the lobby</code>,<code>type/metal</code></p>
 </li>
 </ul>
 </div>
 </li>
-<li>
-<p>Note:</p>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="ulist">
 <ul>
 <li>
@@ -798,10 +807,20 @@ transaction id of the parcels and the address of the customers, etc.</p>
 <li>
 <p>Only <code>COMMENTS_BY_CUSTOMER</code> and <code>TYPE_OF_ITEM</code> are optional.</p>
 </li>
-</ul>
-</div>
+<li>
+<p><code>ORDER_TYPE</code> denote the start of an delivery order or return order.</p>
+</li>
+<li>
+<p>The last value of the same type will be stored if duplicate prefix type is found in a single order sentence.</p>
+</li>
+<li>
+<p>Duplicate and invalid order or return order will not be imported into Delino.</p>
 </li>
 </ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
@@ -1216,11 +1235,11 @@ You will view all orders in the order list and return order list located in the 
 <div class="ulist">
 <ul>
 <li>
-<p><code>return</code> <code>tid/ac17s2a</code> <code>n/Bobby Tan</code> <code>a/123 Delta Road #03-333, Singapore 123456</code> <code>p/91230456</code> <code>e/bobby@example.com</code> <code>rts/12-12-2020 1300</code> <code>w/Jurong Warehouse</code> <code>c/NIL</code> <code>type/glass</code><br>
+<p><code>return</code> <code>tid/ac17s2a</code> <code>n/Bobby Tan</code> <code>a/123 Delta Road #03-333, Singapore 123456</code> <code>p/91230456</code> <code>e/bobby@example.com</code> <code>rts/2020-12-12 1300</code> <code>w/Jurong Warehouse</code> <code>c/NIL</code> <code>type/glass</code><br>
 Adds the order with transaction id 'ac17s2a' as a return parcel into the list of returns.</p>
 </li>
 <li>
-<p><code>return</code> <code>tid/b1230512</code> <code>n/Aaron Teo</code> <code>a/256 Alpha Road #03-222, Singapore 123567</code> <code>p/91230456</code> <code>e/aaron@example.com</code> <code>rts/12-12-2020 1400</code> <code>w/Jurong Warehouse</code> <code>c/Leave it at the lobby</code> <code>type/metal</code><br>
+<p><code>return</code> <code>tid/b1230512</code> <code>n/Aaron Teo</code> <code>a/256 Alpha Road #03-222, Singapore 123567</code> <code>p/91230456</code> <code>e/aaron@example.com</code> <code>rts/2020-12-12 1400</code> <code>w/Jurong Warehouse</code> <code>c/Leave it at the lobby</code> <code>type/metal</code><br>
 Adds the order with transaction id 'b1230512' as a return parcel into the list of returns.</p>
 </li>
 </ul>
@@ -1407,7 +1426,7 @@ delivery), number of deliveries completed in a day}</em></p>
 <ul>
 <li>
 <p><a href="#insert"><strong>Insert</strong></a> : <code>insert</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/E,MAIL</code> <code>dts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>cod/CASH_ON_DELIVERY</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code><br>
-e.g. <code>insert</code> <code>tid/0123456789</code> <code>n/Eng Xuan En</code> <code>a/Tampines St 84 Blk 877 S520877 #01-123</code> <code>p/87654321</code> <code>e/xuanen@example.com</code> <code>dts/2020-02-20 1300</code> <code>w/Yishun industry</code> <code>cod/$4.50</code> <code>c/please knock the door three times :D</code> <code>type/heavy</code></p>
+e.g. <code>insert</code> <code>tid/0123456789</code> <code>n/Eng Xuan En</code> <code>a/Tampines St 84 Blk 877 S520877 #01-123</code> <code>p/87654321</code> <code>e/xuanen@example.com</code> <code>dts/2020-05-20 1300</code> <code>w/Yishun industry</code> <code>cod/$4.50</code> <code>c/please knock the door three times :D</code> <code>type/heavy</code></p>
 </li>
 <li>
 <p><a href="#clear"><strong>Clear</strong></a> : <code>clear</code> <code>[FLAG]</code><br>
@@ -1448,7 +1467,7 @@ e.g. <code>list</code> <code>done</code></p>
 </li>
 <li>
 <p><a href="#return"><strong>Return</strong></a> : <code>return</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>rts/RETURN_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>c/COMMENTS_BY_CUSTOMER</code> <code>type/TYPE_OF_ITEM</code><br>
-e.g. <code>return</code> <code>tid/ac17s2a</code> <code>n/BOBBY TAN</code> <code>a/123 Delta Road #03-333, Singapore 123456</code> <code>p/91230456</code> <code>rts/12-12-2020 1301</code> <code>w/Jurong Warehouse</code> <code>c/NIL</code> <code>type/glass</code></p>
+e.g. <code>return</code> <code>tid/ac17s2a</code> <code>n/BOBBY TAN</code> <code>a/123 Delta Road #03-333, Singapore 123456</code> <code>p/91230456</code> <code>rts/2020-12-12 1301</code> <code>w/Jurong Warehouse</code> <code>c/NIL</code> <code>type/glass</code></p>
 </li>
 <li>
 <p><a href="#nearby"><strong>Nearby</strong></a> : <code>nearby</code> <code>[FLAG]</code> <code>POSTAL_SECTOR</code> or <code>nearby</code> <code>[FLAG]</code> <code>AREA</code><br>
@@ -1489,57 +1508,57 @@ e.g. <code>nearby</code> <code>east</code></p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tid/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Transaction ID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a>, <a href="#import">Import</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Customer Name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a>, <a href="#import">Import</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">a/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Address</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a>, <a href="#import">Import</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">p/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Phone Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a>, <a href="#import">Import</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">e/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Email</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#return">Return</a>, <a href="#search">Search</a>, <a href="#import">Import</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dts/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Delivery Date And Time</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a>, <a href="#import">Import</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">rts/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Return Date and Time</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#return">Return</a>, <a href="#search">Search</a>, <a href="#import">Import</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">w/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Warehouse Location</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a>, <a href="#import">Import</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">cod/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Cash On Delivery</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#search">Search</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#search">Search</a>, <a href="#import">Import</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">c/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Comments by Customer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a>, <a href="#import">Import</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">type/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type of Item</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a>, <a href="#import">Import</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -2197,4 +2216,4 @@ e.g. <code>nearby</code> <code>east</code></p>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-29 15:49:51 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-29 16:44:38 UTC</div></div></div></body></html>
