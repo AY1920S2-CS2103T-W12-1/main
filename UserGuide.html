@@ -11,7 +11,8 @@
 <ul class="sectlevel1">
 <li><a href="#introduction">1. Introduction</a>
 <ul class="sectlevel2">
-<li><a href="#how-to-navigate-this-user-guide">1.1. How to navigate this user guide</a></li>
+<li><a href="#product-information">1.1. Product Information</a></li>
+<li><a href="#how-to-navigate-this-user-guide">1.2. How to navigate this user guide</a></li>
 </ul>
 </li>
 <li><a href="#quick-start">2. Quick Start</a></li>
@@ -20,7 +21,7 @@
 <li><a href="#examples">3.1. Examples</a></li>
 <li><a href="#clear">3.2. Clearing all entries : <code>clear</code></a></li>
 <li><a href="#delete">3.3. Deleting an order : <code>delete</code></a></li>
-<li><a href="#delivered">3.4. Mark order as delivered: <code>delivered</code></a></li>
+<li><a href="#delivered">3.4. Marks an order or return order as delivered: <code>delivered</code></a></li>
 <li><a href="#edit">3.5. Editing an order : <code>edit</code></a></li>
 <li><a href="#exit">3.6. Exiting the program : <code>exit</code></a></li>
 <li><a href="#help">3.7. Viewing help : <code>help</code></a></li>
@@ -31,13 +32,12 @@
 <li><a href="#nearby">3.12. View orders located at the same area or postal sector: <code>nearby</code></a></li>
 <li><a href="#return">3.13. Returning an order: <code>return</code></a></li>
 <li><a href="#search">3.14. Locating orders by order fields: <code>search</code></a></li>
-<li><a href="#undo">3.15. Undo the previous action: <code>undo</code></a></li>
-<li><a href="#saving-the-data">3.16. Saving the data</a></li>
-<li><a href="#export-order-list-code-coming-in-v2-0-code">3.17. Export order list <code>[coming in v2.0]</code></a></li>
-<li><a href="#reminder-code-coming-in-v2-0-code">3.18. Reminder <code>[coming in v2.0]</code></a></li>
-<li><a href="#rescheduling-orders-code-coming-in-v2-0-code">3.19. Rescheduling orders <code>[coming in v2.0]</code></a></li>
-<li><a href="#keeping-track-of-work-schedule-code-coming-in-v2-0-code">3.20. Keeping track of work schedule <code>[coming in v2.0]</code></a></li>
-<li><a href="#statistics-for-completed-orders-code-coming-in-v2-0-code">3.21. Statistics for completed orders <code>[coming in v2.0]</code></a></li>
+<li><a href="#saving-the-data">3.15. Saving the data</a></li>
+<li><a href="#export-order-list-code-coming-in-v2-0-code">3.16. Export order list <code>[coming in v2.0]</code></a></li>
+<li><a href="#reminder-code-coming-in-v2-0-code">3.17. Reminder <code>[coming in v2.0]</code></a></li>
+<li><a href="#rescheduling-orders-code-coming-in-v2-0-code">3.18. Rescheduling orders <code>[coming in v2.0]</code></a></li>
+<li><a href="#keeping-track-of-work-schedule-code-coming-in-v2-0-code">3.19. Keeping track of work schedule <code>[coming in v2.0]</code></a></li>
+<li><a href="#statistics-for-completed-orders-code-coming-in-v2-0-code">3.20. Statistics for completed orders <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -65,7 +65,16 @@ Sounds interesting? Have a quick look at our tutorial <a href="#quick-start">Sec
 Have a delightful journey using Delino!</p>
 </div>
 <div class="sect2">
-<h3 id="how-to-navigate-this-user-guide"><a class="link" href="#how-to-navigate-this-user-guide">1.1. How to navigate this user guide</a></h3>
+<h3 id="product-information"><a class="link" href="#product-information">1.1. Product Information</a></h3>
+<div class="paragraph">
+<p>Are you still using pen and papers or Excel to keep track of all your orders?<br></p>
+</div>
+<div class="paragraph">
+<p>With Delino, you can be rest assured that it will help you to keep track of a large number of orders in the most efficient way possible. Are you interested in improving your parcel delivery management? Read further to discover the features of Delino!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="how-to-navigate-this-user-guide"><a class="link" href="#how-to-navigate-this-user-guide">1.2. How to navigate this user guide</a></h3>
 <div class="paragraph">
 <p>Throughout this user guide, you might encounter additional symbols. These symbols are used to
 highlight important information.<br>
@@ -132,8 +141,23 @@ It contains more information regarding complex content that you should take note
 <p>You will also encounter the use of <code>text markup</code> to indicate keywords such as
 command arguments to Delino. (e.g. <code>exit</code>)</p>
 </div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>Finally, you will encounter links to external webpages for additional information.
+<p>For the various commands, you might encounter arguments in square brackets (e.g. <code>nearby</code> <code>[FLAG]</code> <code>AREA</code>). <br>
+These arguments are optional.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Finally, you will encounter links to external web pages for additional information.
 These links will <a href="">look like this</a>.</p>
 </div>
 </div>
@@ -157,7 +181,7 @@ These links will <a href="">look like this</a>.</p>
 <p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/Ui.png" alt="Ui" width="790">
+<img src="images/Delino.svg" alt="Delino" width="790">
 </div>
 </div>
 </li>
@@ -170,13 +194,13 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#list"><code>list</code></a> : lists all orders to be delivered.</p>
+<p><a href="#list"><code>list</code></a> ` done` : lists all delivered orders and return orders.</p>
 </li>
 <li>
 <p><a href="#insert"><code>insert</code></a> <code>tid/1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 572 Hougang st 51 #11-37 S530572</code> <code>p/9001 0019</code> <code>dts/2020-03-10 1650</code> <code>w/Marsiling</code> <code>cod/$5</code> <code>c/Leave it at the riser type/glass</code> : adds an order where the receiver name is <code>Amos Cheong</code> into Delino.</p>
 </li>
 <li>
-<p><a href="#delete"><code>delete</code></a> <code>3</code> : deletes the 3rd delivery order shown in the current list</p>
+<p><a href="#delete"><code>delete</code></a> <code>-o</code> <code>3</code> : deletes the 3rd delivery order shown in the current list</p>
 </li>
 <li>
 <p><a href="#exit"><code>exit</code></a> : exits the app</p>
@@ -205,13 +229,11 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>insert n/CUSTOMER_NAME</code>, <code>CUSTOMER_NAME</code> is a parameter which can be used as <code>insert n/John Doe</code>.</p>
 </li>
 <li>
-<p>Items in square brackets are optional e.g <code>n/CUSTOMER_NAME [t/TAG]</code> can be used as <code>n/John Doe t/friend</code> or as <code>n/John Doe</code>.</p>
+<p>Items in square brackets are optional e.g <code>n/CUSTOMER_NAME [c/COMMENT]</code> can be used as <code>n/John Doe c/Leave the parcel outside</code> or as <code>n/John Doe</code>.</p>
 </li>
 <li>
-<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code> etc.</p>
-</li>
-<li>
-<p>Parameters can be in any order e.g. if the command specifies <code>n/CUSTOMER_NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/CUSTOMER_NAME</code> is also acceptable.</p>
+<p>Parameters can be in any order e.g. if the command specifies <code>n/CUSTOMER_NAME</code> <code>p/PHONE_NUMBER</code>,<br>
+<code>p/PHONE_NUMBER</code> <code>n/CUSTOMER_NAME</code>  is also acceptable.</p>
 </li>
 </ul>
 </div>
@@ -222,7 +244,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><code>insert</code> <code>tid/9876543210</code> <code>n/John Doe</code> <code>a/Blk 572 Hougang st 51 #10-33 S530572</code> <code>p/98766789</code> <code>e/johndoe@example.com</code> <code>dts/2020-02-20 1300</code> <code>w/Yishun</code> <code>cod/$4</code></p>
+<p><code>insert</code> <code>tid/92173754</code> <code>n/John Doe</code> <code>a/Blk 572 Hougang st 51 #10-33 S530572</code> <code>p/98766789</code> <code>e/johndoe@example.com</code> <code>dts/2020-02-20 1300</code> <code>w/Yishun</code> <code>cod/$4</code></p>
 </li>
 <li>
 <p><code>insert</code> <code>tid/1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 572 Hougang st 51 #11-37 S530572</code> <code>e/amoscheong@example.com</code> <code>p/9001 0019</code> <code>dts/2020-03-10 1650</code> <code>w/Marsiling</code> <code>cod/$5</code> <code>c/Leave it at the riser</code> <code>type/glass</code></p>
@@ -254,7 +276,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p>Space is required in between the flags and command.</p>
+<p>A space is required in between the command and flags. Refer to the  examples below for more information.</p>
 </li>
 <li>
 <p>If <strong>no</strong> <code>-o</code> or <code>-r</code> flag is given, it will be treated as both. <strong>Both</strong> order book and return order book will be cleared.</p>
@@ -282,7 +304,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <ul>
 <li>
 <p><code>clear</code><br>
-Popup will appeared and ask the user for double confirm to clear both order and return order book.</p>
+Popup will appear and ask the user for double confirm to clear both order and return order book.</p>
 </li>
 <li>
 <p><code>clear</code> <code>-f</code><br>
@@ -307,7 +329,8 @@ Only order book is cleared immediately.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>You can use this command to delete a particular order from the current list of orders based on its index.<br></p>
+<p>You can use this command to delete a particular order or return order based on its index.<br>
+The item to be deleted is taken from the respective list of orders or return orders; depending on its type.</p>
 </li>
 </ul>
 </div>
@@ -315,20 +338,23 @@ Only order book is cleared immediately.</p>
 <div class="sect3">
 <h4 id="format-2"><a class="link" href="#format-2">3.3.2. Format:</a></h4>
 <div class="paragraph">
-<p><code>delete</code> <code>INDEX</code></p>
+<p><code>delete</code> <code>FLAG</code> <code>INDEX</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Deletes the order at the specified <code>INDEX</code>.</p>
+<p>Deletes the order/return order at the specified <code>INDEX</code>.</p>
 </li>
 <li>
-<p>The index refers to the index number shown in the displayed order list.</p>
+<p>The <code>FLAG</code> determines the list which the item to be deleted is taken from.</p>
 </li>
 <li>
-<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+<p>The <code>INDEX</code> refers to the <code>INDEX</code> number shown in the displayed order list.</p>
+</li>
+<li>
+<p>The <code>INDEX</code> <strong>must be a positive integer</strong> i.e. 1, 2, 3, &#8230;&#8203;</p>
 </li>
 </ul>
 </div>
@@ -341,32 +367,42 @@ Only order book is cleared immediately.</p>
 <ul>
 <li>
 <p><code>list</code><br>
-<code>delete</code> <code>2</code><br>
-Deletes the 2nd order.</p>
+<code>delete</code> <code>-o</code> <code>2</code><br>
+Deletes the 2nd order from the order list.</p>
 </li>
 <li>
-<p><code>search</code> <code>-n</code> <code>Betsy</code><br>
-<code>delete</code> <code>1</code><br>
+<p><code>list</code><br>
+<code>delete</code> <code>-r</code> <code>3</code><br>
+Deletes the 3rd return order from the return order list.</p>
+</li>
+<li>
+<p><code>search</code> <code>-o</code> <code>Betsy</code><br>
+<code>delete</code> <code>-o</code> <code>1</code><br>
 Deletes the 1st order in the results of the <code>search</code> command (search all orders with customer&#8217;s name <code>Betsy</code>).</p>
+</li>
+<li>
+<p><code>search</code> <code>-r</code> <code>Aaron</code><br>
+<code>delete</code> <code>-r</code> <code>1</code><br>
+Deletes the 1st order in the results of the <code>search</code> command (search all orders with customer&#8217;s name <code>Aaron</code>).</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="delivered"><a class="link" href="#delivered">3.4. Mark order as delivered: <code>delivered</code></a></h3>
+<h3 id="delivered"><a class="link" href="#delivered">3.4. Marks an order or return order as delivered: <code>delivered</code></a></h3>
 <div class="sect3">
 <h4 id="description-3"><a class="link" href="#description-3">3.4.1. Description</a></h4>
 <div class="ulist">
 <ul>
 <li>
-<p>Once you have completed a delivery order, you can mark an order as done by providing the index of the order list.</p>
+<p>Once you have delivered a delivery order or a return order, you can mark it as delivered by providing the <code>FLAG</code> and <code>INDEX</code> of the order/return list.</p>
 </li>
 <li>
-<p>The order that is marked as done will be moved to another list that contains all the orders that are completed.</p>
+<p>The delivery status of the orders or return orders will be changed from ‘Not Delivered’ to ‘Delivered’.</p>
 </li>
 <li>
-<p>The completed list can be seen by calling the list command: <code>list</code> <code>done</code>.</p>
+<p>The list of delivered orders or return orders can then be seen by calling the list command: <code>list</code> <code>done</code>.</p>
 </li>
 </ul>
 </div>
@@ -374,7 +410,7 @@ Deletes the 1st order in the results of the <code>search</code> command (search 
 <div class="sect3">
 <h4 id="format-3"><a class="link" href="#format-3">3.4.2. Format</a></h4>
 <div class="paragraph">
-<p><code>delivered</code> <code>INDEX</code></p>
+<p><code>delivered</code> <code>FLAG</code> <code>INDEX</code></p>
 </div>
 </div>
 <div class="sect3">
@@ -382,12 +418,12 @@ Deletes the 1st order in the results of the <code>search</code> command (search 
 <div class="ulist">
 <ul>
 <li>
-<p><code>delivered</code> <code>1</code><br>
-The order at the first index of the list is marked as a delivered order.</p>
+<p><code>delivered</code> <code>-o</code> <code>1</code><br>
+The order at the first <code>INDEX</code> of the order list is marked as a delivered order.</p>
 </li>
 <li>
-<p><code>delivered</code> <code>2</code><br>
-The order at the second index of the list is marked as a delivered order.</p>
+<p><code>delivered</code> <code>-r</code> <code>2</code><br>
+The return order at the second <code>INDEX</code> of the return order list is marked as a delivered order.</p>
 </li>
 </ul>
 </div>
@@ -400,7 +436,23 @@ The order at the second index of the list is marked as a delivered order.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>You can edit the details of the delivery order by providing the index of it shown on the status bar, followed by the field you want to change and lastly the updated value.</p>
+<p>You can edit the details of the parcel by providing the following in order:<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>the <code>INDEX</code> of it<br></p>
+</li>
+<li>
+<p><code>FLAG</code> corresponding to the order type<br></p>
+</li>
+<li>
+<p>field you want to change<br></p>
+</li>
+<li>
+<p>new value to update to.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -431,7 +483,7 @@ The order at the second index of the list is marked as a delivered order.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>edit</code> <code>INDEX</code> <code>ORDER_ATTRIBUTE_PREFIX/NEW_VALUE</code> <code>[ORDER_ATTRIBUTE_PREFIXES/NEW_VALUE]&#8230;&#8203;</code></p>
+<p><code>edit</code> <code>FLAG</code> <code>INDEX</code> <code>ORDER_ATTRIBUTE_PREFIX/NEW_VALUE</code> <code>[ORDER_ATTRIBUTE_PREFIXES/NEW_VALUE]&#8230;&#8203;</code></p>
 </li>
 </ul>
 </div>
@@ -453,6 +505,9 @@ The order at the second index of the list is marked as a delivered order.</p>
 <li>
 <p>Only can be used when there is at least an order displayed.</p>
 </li>
+<li>
+<p>The <code>FLAG</code> can only be either <code>-o</code> or <code>-r</code>, please refer to <a href="#command_flags">here</a> for more information.</p>
+</li>
 </ul>
 </div>
 </td>
@@ -464,7 +519,7 @@ The order at the second index of the list is marked as a delivered order.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Edits the order at the specified <code>INDEX</code>.</p>
+<p>Edits the parcel at the specified <code>INDEX</code>.</p>
 </li>
 <li>
 <p>Existing value that corresponds to the <code>PREFIX</code> will be updated to the input <code>NEW_VALUE</code>.</p>
@@ -479,20 +534,20 @@ The order at the second index of the list is marked as a delivered order.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>edit</code> <code>1</code> <code>n/Xuan En</code><br>
-The index <code>1</code> customer&#8217;s name is changed to <code>Xuan En</code>.</p>
+<p><code>edit</code> <code>-r</code> <code>1</code> <code>n/Xuan En</code><br>
+The index <code>1</code> customer&#8217;s name of the return order list will be changed to <code>Xuan En</code>.</p>
 </li>
 <li>
-<p><code>edit</code> <code>2</code> <code>p/9999 4444</code><br>
-The index <code>2</code> customer&#8217;s phone number is changed to <code>9999 4444</code>.</p>
+<p><code>edit</code> <code>-o</code> <code>2</code> <code>p/9999 4444</code><br>
+The index <code>2</code> customer&#8217;s phone number of the order list will be changed changed to <code>9999 4444</code>.</p>
 </li>
 <li>
-<p><code>edit</code> <code>1</code> <code>a/Blk 123 Pasir Ris Street 51 #12-21 S510123</code><br>
-The index <code>1</code> customer&#8217;s address is changed to <code>Blk 123 Pasir Ris Street 51 #12-21 S510123</code>.</p>
+<p><code>edit</code> <code>-o</code> <code>1</code> <code>a/Blk 123 Pasir Ris Street 51 #12-21 S510123</code><br>
+The index <code>1</code> customer&#8217;s address of the order list will be changed to <code>Blk 123 Pasir Ris Street 51 #12-21 S510123</code>.</p>
 </li>
 <li>
-<p><code>edit</code> <code>3</code> <code>n/Mr Tan</code> <code>p/0123 4567</code> <code>a/Blk 141 Yishun st 71 #09-09 S760141</code><br>
-The index <code>3</code> customer&#8217;s name, phone and address are changed accordingly to the prefix.</p>
+<p><code>edit</code> <code>-r</code> <code>3</code> <code>n/Mr Tan</code> <code>p/0123 4567</code> <code>a/Blk 141 Yishun st 71 #09-09 S760141</code><br>
+The index <code>3</code> customer&#8217;s name, phone and address of the return order list will be changed accordingly to the prefix.</p>
 </li>
 </ul>
 </div>
@@ -528,8 +583,7 @@ The index <code>3</code> customer&#8217;s name, phone and address are changed ac
 <div class="ulist">
 <ul>
 <li>
-<p>You can use the help command to display all commands that are available to be used
-so that you can navigate the application easily.</p>
+<p>You can use the help command to display all commands that are available to be used so that you can navigate the application easily.</p>
 </li>
 </ul>
 </div>
@@ -563,10 +617,8 @@ Returns a list of all commands available.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>You can use the show command to open a new window to display statistics of the orders assigned to the courier.
-It shows the earnings the courier has made today, the number of orders delivered and the total number of orders
-he or she has to deliver today. The statistics include a PieChart at the bottom, which shows the percentage of
-delivered orders compared to the undelivered ones.</p>
+<p>You can use the show command to open a new window to display statistics of the orders assigned to the courier.<br>
+It shows the earnings the courier has made today, the number of delivery orders and return orders completed and the total orders (Return parcels and delivery orders) to deliver today.</p>
 </li>
 </ul>
 </div>
@@ -587,7 +639,7 @@ delivered orders compared to the undelivered ones.</p>
 <ul>
 <li>
 <p><code>show</code><br>
-Opens a new window that contains the statistics.</p>
+Opens a new window that displays the statistics.</p>
 </li>
 </ul>
 </div>
@@ -613,6 +665,29 @@ Opens a new window that contains the statistics.</p>
 <p><code>insert</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>dts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>cod/CASH_ON_DELIVERY</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="examples-8"><a class="link" href="#examples-8">3.9.3. Examples</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>insert</code> <code>tid/A094844</code> <code>n/John Doe</code> <code>a/Blk 505 Tampines #10-33 S469695</code> <code>p/98761111</code> <code>e/johndoe@example.com</code> <code>dts/2020-05-20 1300</code> <code>w/Yishun</code> <code>cod/$4</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Insert the order to be delivered with transaction id 'A094844' into the list of delivery orders.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>insert</code> <code>tid/C1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 572 Hougang st 51 #11-37 S530572</code> <code>e/amoscheong@example.com</code> <code>p/9001 0019</code> <code>dts/2020-05-10 1650</code> <code>w/Marsiling</code> <code>cod/$5</code> <code>c/Leave it at the riser</code> <code>type/glass</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Insert the delivery order with transaction id 'C1023456789' into the list of delivery orders. The delivery order that is inserted has a comment for the courier, requesting the order to be left at the riser.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -641,7 +716,7 @@ Opens a new window that contains the statistics.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>You will be able to import orders via csv file that are given to you by your company.</p>
+<p>You will be able to import orders and return orders via a csv file that are given to you by your company.</p>
 </li>
 <li>
 <p>The CSV file will include all relevant and important details of the parcels; such as the customers’ names,
@@ -659,13 +734,8 @@ transaction id of the parcels and the address of the customers, etc.</p>
 </li>
 </ul>
 </div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
+<div class="exampleblock">
+<div class="content">
 <div class="ulist">
 <ul>
 <li>
@@ -678,16 +748,14 @@ transaction id of the parcels and the address of the customers, etc.</p>
 <p>The <code>FILE_NAME</code> should include the extension. For example: <code><strong>orders.csv</strong></code>.</p>
 </li>
 <li>
-<p>The folder, <strong>data</strong>, which the csv files are stored should be at the same directory as the JAR file.</p>
+<p>The folder, <strong>data</strong>, which the csv files are stored in, should be in the same directory as the JAR file.</p>
 </li>
 <li>
 <p>Import the specific csv with the <code>FILE_NAME</code> in <strong>data</strong> folder to the application.</p>
 </li>
 </ul>
 </div>
-</td>
-</tr>
-</table>
+</div>
 </div>
 <div class="ulist">
 <ul>
@@ -824,7 +892,7 @@ transaction id of the parcels and the address of the customers, etc.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="examples-8"><a class="link" href="#examples-8">3.10.3. Examples</a></h4>
+<h4 id="examples-9"><a class="link" href="#examples-9">3.10.3. Examples</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -878,20 +946,20 @@ Import the contents of the csv file, <code>orders.csv</code>, to Delino.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="examples-9"><a class="link" href="#examples-9">3.11.3. Examples</a></h4>
+<h4 id="examples-10"><a class="link" href="#examples-10">3.11.3. Examples</a></h4>
 <div class="ulist">
 <ul>
 <li>
 <p><code>list</code><br>
-List down all the orders, regardless of whether its completed or incomplete.</p>
+List down all the orders (Return orders and Delivery orders), regardless of whether it is completed or not.</p>
 </li>
 <li>
 <p><code>list</code> <code>done</code><br>
-List down all the orders that are completed.</p>
+List down all the orders (Return orders and Delivery orders) that are completed.</p>
 </li>
 <li>
 <p><code>list</code> <code>undone</code><br>
-List down all the orders that are uncompleted.</p>
+List down all the orders (Return orders and Delivery orders) that are uncompleted.</p>
 </li>
 </ul>
 </div>
@@ -1175,7 +1243,7 @@ A <code>-r</code> flag is used to indicate searching on the return order list.</
 </div>
 </div>
 <div class="sect3">
-<h4 id="examples-10"><a class="link" href="#examples-10">3.12.3. Examples</a></h4>
+<h4 id="examples-11"><a class="link" href="#examples-11">3.12.3. Examples</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1201,15 +1269,25 @@ You will view all orders in the order list and return order list located in the 
 <div class="ulist">
 <ul>
 <li>
-<p>Adds a particular order as a return parcel into a new list.</p>
+<p>If the order to be returned is an existing order in the list, you may convert it into a return order by typing <code>return</code> <code>TRANSACTION_ID</code> of the order. This will remove it from the list of orders and add it into the return order list.</p>
+</li>
+<li>
+<p>If the parcel to be returned is not an existing order in the list, you can create a new return order by typing <code>return</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE NUMBER</code> <code>rts/RETURN_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code> of the parcel. This will create a new return order and add it into the return order list.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
 <h4 id="format-12"><a class="link" href="#format-12">3.13.2. Format</a></h4>
-<div class="paragraph">
+<div class="ulist">
+<ul>
+<li>
 <p><code>return</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE NUMBER</code> <code>rts/RETURN_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p>
+</li>
+<li>
+<p><code>return</code> <code>tid/TRANSACTION_ID</code></p>
+</li>
+</ul>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1231,16 +1309,21 @@ You will view all orders in the order list and return order list located in the 
 </div>
 </div>
 <div class="sect3">
-<h4 id="examples-11"><a class="link" href="#examples-11">3.13.3. Examples:</a></h4>
+<h4 id="examples-12"><a class="link" href="#examples-12">3.13.3. Examples</a></h4>
 <div class="ulist">
 <ul>
 <li>
-<p><code>return</code> <code>tid/ac17s2a</code> <code>n/Bobby Tan</code> <code>a/123 Delta Road #03-333, Singapore 123456</code> <code>p/91230456</code> <code>e/bobby@example.com</code> <code>rts/2020-12-12 1300</code> <code>w/Jurong Warehouse</code> <code>c/NIL</code> <code>type/glass</code><br>
-Adds the order with transaction id 'ac17s2a' as a return parcel into the list of returns.</p>
+<p><code>return</code> <code>tid/ac17s2a</code> <code>n/Bobby Tan</code> <code>a/123 Delta Road #03-333, Singapore 123456</code> <code>p/91230456</code> <code>e/bobby@example.com</code>
+<code>rts/12-12-2020 1300</code> <code>w/Jurong Warehouse</code> <code>c/NIL</code> <code>type/glass</code><br>
+Creates and adds an order with <code>TRANSACTION_ID</code> 'ac17s2a' as a return order into the list of return orders.</p>
 </li>
 <li>
-<p><code>return</code> <code>tid/b1230512</code> <code>n/Aaron Teo</code> <code>a/256 Alpha Road #03-222, Singapore 123567</code> <code>p/91230456</code> <code>e/aaron@example.com</code> <code>rts/2020-12-12 1400</code> <code>w/Jurong Warehouse</code> <code>c/Leave it at the lobby</code> <code>type/metal</code><br>
-Adds the order with transaction id 'b1230512' as a return parcel into the list of returns.</p>
+<p><code>return</code> <code>tid/ac17s2a</code><br>
+Converts the order with <code>TRANSACTION_ID</code> 'ac17s2a' into a return order and adds it into the list of returns.</p>
+</li>
+<li>
+<p><code>return</code> <code>tid/b1230512</code> <code>n/Aaron Teo</code> <code>a/256 Alpha Road #03-222, Singapore 123567</code> <code>p/91230456</code> <code>e/aaron@example.com</code> <code>rts/12-12-2020 1400</code> <code>w/Jurong Warehouse</code> <code>c/Leave it at the lobby</code> <code>type/metal</code><br>
+Creates and adds an order with <code>TRANSACTION ID</code> 'b1230512' as a return order into the list of return orders.</p>
 </li>
 </ul>
 </div>
@@ -1256,10 +1339,13 @@ Adds the order with transaction id 'b1230512' as a return parcel into the list o
 <p>You can search all orders that contain a given keyword.</p>
 </li>
 <li>
-<p>By default, <code>search</code> finds all orders that contain the given keyword(s) in any of it&#8217;s field.</p>
+<p>By default, <code>search</code> finds all parcels (orders and return orders) that contain the given keyword(s) in any of it&#8217;s field.</p>
 </li>
 <li>
 <p>Specific search can be performed by tagging keywords that you want to search for with the corresponding <a href="#command_prefix"><code>ORDER_ATTRIBUTE_PREFIX</code></a>.</p>
+</li>
+<li>
+<p>You can also specify which type of parcel you want to specifically search for by providing a <a href="#command_flags">flag</a>.</p>
 </li>
 </ul>
 </div>
@@ -1269,10 +1355,10 @@ Adds the order with transaction id 'b1230512' as a return parcel into the list o
 <div class="ulist">
 <ul>
 <li>
-<p><code>search</code> <code>KEYWORD</code> <code>[MORE_KEYWORDS]&#8230;&#8203;</code> OR</p>
+<p><code>search</code> <code><a href="#command_flags">[FLAG]</a></code> <code>KEYWORD</code> <code>[MORE_KEYWORDS]&#8230;&#8203;</code> OR</p>
 </li>
 <li>
-<p><code>search</code> <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD</code> <code>[MORE_KEYWORDS]&#8230;&#8203;</code> <code>[<a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD/KEYWORD MORE_KEYWORDS]&#8230;&#8203;</code></p>
+<p><code>search</code> <code><a href="#command_flags">[FLAG]</a></code> <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD</code> <code>[MORE_KEYWORDS]&#8230;&#8203;</code> <code>[<a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD MORE_KEYWORDS]&#8230;&#8203;</code></p>
 </li>
 </ul>
 </div>
@@ -1287,9 +1373,6 @@ Adds the order with transaction id 'b1230512' as a return parcel into the list o
 <p>The sequence of the keywords does not matter. e.g. <code>Hans Bo</code> will match <code>Bo Hans</code></p>
 </li>
 <li>
-<p>The delivery orders can only be searched by any fields of the orders.</p>
-</li>
-<li>
 <p>Only full words will be matched e.g. <code>Han</code> will not match <code>Hans</code></p>
 </li>
 <li>
@@ -1301,70 +1384,33 @@ Adds the order with transaction id 'b1230512' as a return parcel into the list o
 </div>
 </div>
 <div class="sect3">
-<h4 id="examples-12"><a class="link" href="#examples-12">3.14.3. Examples</a></h4>
+<h4 id="examples-13"><a class="link" href="#examples-13">3.14.3. Examples</a></h4>
 <div class="ulist">
 <ul>
 <li>
-<p><code>search</code> <code>Jeremy Loh</code><br>
-Return delivery order(s) containing keyword of <code>jeremy</code>, <code>Jeremy Loh</code> or <code>loh</code> or any of the above as long as it appears in any of the orders field.</p>
+<p><code>search</code> <code>-r</code> <code>Jeremy Loh</code><br>
+Return return order(s) containing keyword of <code>jeremy</code>, <code>Jeremy Loh</code> or <code>loh</code> or any of the above as long as it appears in any of the orders field.</p>
 </li>
 <li>
-<p><code>search</code> <code>tid/asj2od3943</code><br>
-Return delivery order(s) with transaction ID of <code>asj2od3943</code></p>
+<p><code>search</code> <code>-o</code> <code>tid/asj2od3943</code><br>
+Return order(s) with transaction ID of <code>asj2od3943</code></p>
 </li>
 <li>
-<p><code>search</code> <code>p/92039999</code><br>
-Return delivery order(s) with phone number of <code>92039999</code></p>
+<p><code>search</code> <code>-r</code> <code>p/92039999</code><br>
+Return return order(s) with phone number of <code>92039999</code></p>
 </li>
 <li>
-<p><code>search</code> <code>p/92039999</code> <code>tid/asj2od3943</code> <code>n/jeremy</code><br>
-Return delivery order(s) with either phone number of <code>92039999</code> or transaction ID of <code>asj2od3943</code> or name of <code>jeremy</code> or any of the above combinations.</p>
+<p><code>search</code> <code>-o</code> <code>p/92039999</code> <code>tid/asj2od3943</code> <code>n/jeremy</code><br>
+Return order(s) with either phone number of <code>92039999</code> or transaction ID of <code>asj2od3943</code> or name of <code>jeremy</code> or any of the above combinations.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="undo"><a class="link" href="#undo">3.15. Undo the previous action: <code>undo</code></a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.15. Saving the data</a></h3>
 <div class="sect3">
 <h4 id="description-14"><a class="link" href="#description-14">3.15.1. Description</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>You can use the <code>undo</code> command to revert the most recent action that was previously executed.</p>
-</li>
-<li>
-<p>For example, if you accidentally deleted an order, you can use the <code>undo</code> command to add the deleted order
-back to the list of orders.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="format-14"><a class="link" href="#format-14">3.15.2. Format</a></h4>
-<div class="paragraph">
-<p><code>undo</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="example"><a class="link" href="#example">3.15.3. Example</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list</code><br>
-<code>delete</code> <code>1</code><br>
-<code>delete</code> <code>2</code><br>
-<code>undo</code><br>
-The list will be reverted back to the state after the second command <code>delete</code> <code>1</code>.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.16. Saving the data</a></h3>
-<div class="sect3">
-<h4 id="description-15"><a class="link" href="#description-15">3.16.1. Description</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1378,31 +1424,31 @@ The list will be reverted back to the state after the second command <code>delet
 </div>
 </div>
 <div class="sect2">
-<h3 id="export-order-list-code-coming-in-v2-0-code"><a class="link" href="#export-order-list-code-coming-in-v2-0-code">3.17. Export order list <code>[coming in v2.0]</code></a></h3>
+<h3 id="export-order-list-code-coming-in-v2-0-code"><a class="link" href="#export-order-list-code-coming-in-v2-0-code">3.16. Export order list <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can export their order list as csv file to pass the orders to their colleagues}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="reminder-code-coming-in-v2-0-code"><a class="link" href="#reminder-code-coming-in-v2-0-code">3.18. Reminder <code>[coming in v2.0]</code></a></h3>
+<h3 id="reminder-code-coming-in-v2-0-code"><a class="link" href="#reminder-code-coming-in-v2-0-code">3.17. Reminder <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can set reminder specifically for orders that are rescheduled or urgent orders}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="rescheduling-orders-code-coming-in-v2-0-code"><a class="link" href="#rescheduling-orders-code-coming-in-v2-0-code">3.19. Rescheduling orders <code>[coming in v2.0]</code></a></h3>
+<h3 id="rescheduling-orders-code-coming-in-v2-0-code"><a class="link" href="#rescheduling-orders-code-coming-in-v2-0-code">3.18. Rescheduling orders <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can reschedule their orders when customers notify them that they are unavailable for receiving orders}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="keeping-track-of-work-schedule-code-coming-in-v2-0-code"><a class="link" href="#keeping-track-of-work-schedule-code-coming-in-v2-0-code">3.20. Keeping track of work schedule <code>[coming in v2.0]</code></a></h3>
+<h3 id="keeping-track-of-work-schedule-code-coming-in-v2-0-code"><a class="link" href="#keeping-track-of-work-schedule-code-coming-in-v2-0-code">3.19. Keeping track of work schedule <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can keep track of their work schedule}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="statistics-for-completed-orders-code-coming-in-v2-0-code"><a class="link" href="#statistics-for-completed-orders-code-coming-in-v2-0-code">3.21. Statistics for completed orders <code>[coming in v2.0]</code></a></h3>
+<h3 id="statistics-for-completed-orders-code-coming-in-v2-0-code"><a class="link" href="#statistics-for-completed-orders-code-coming-in-v2-0-code">3.20. Statistics for completed orders <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can view statistics such as on-time rates (difference between actual and expected
 delivery), number of deliveries completed in a day}</em></p>
@@ -1425,31 +1471,27 @@ delivery), number of deliveries completed in a day}</em></p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#insert"><strong>Insert</strong></a> : <code>insert</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/E,MAIL</code> <code>dts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>cod/CASH_ON_DELIVERY</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code><br>
-e.g. <code>insert</code> <code>tid/0123456789</code> <code>n/Eng Xuan En</code> <code>a/Tampines St 84 Blk 877 S520877 #01-123</code> <code>p/87654321</code> <code>e/xuanen@example.com</code> <code>dts/2020-05-20 1300</code> <code>w/Yishun industry</code> <code>cod/$4.50</code> <code>c/please knock the door three times :D</code> <code>type/heavy</code></p>
+<p><a href="#insert"><strong>Insert</strong></a> : <code>insert</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>dts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>cod/CASH_ON_DELIVERY</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code><br>
+e.g. <code>insert</code> <code>tid/0123456789</code> <code>n/Eng Xuan En</code> <code>a/Tampines St 84 Blk 877 S520877 #01-123</code> <code>p/87654321</code> <code>e/xuanen@example.com</code> <code>dts/2020-02-20 1300</code> <code>w/Yishun industry</code> <code>cod/$4.50</code> <code>c/please knock the door three times :D</code> <code>type/heavy</code></p>
 </li>
 <li>
 <p><a href="#clear"><strong>Clear</strong></a> : <code>clear</code> <code>[FLAG]</code><br>
 e.g. <code>clear</code> <code>-f</code></p>
 </li>
 <li>
-<p><a href="#delete"><strong>Delete</strong></a> : <code>delete</code> <code>INDEX</code><br>
-e.g. <code>delete</code> <code>2</code></p>
+<p><a href="#delete"><strong>Delete</strong></a> : <code>delete</code> <code>FLAG</code> <code>INDEX</code><br>
+e.g. <code>delete</code> <code>-o</code> <code>2</code></p>
 </li>
 <li>
-<p><a href="#delivered"><strong>Delivered</strong></a> : <code>delivered</code> <code>INDEX</code><br>
-e.g. <code>delivered</code> <code>2</code></p>
+<p><a href="#delivered"><strong>Delivered</strong></a> : <code>delivered</code> <code>FLAG</code> <code>INDEX</code><br>
+e.g. <code>delivered</code> <code>-r</code> <code>2</code>
+<a href="#edit"><strong>Edit</strong></a> : <code>edit</code> <code>FLAG</code> <code>INDEX</code> <code>ORDER_ATTRIBUTE_PREFIX/VALUE</code><br>
+e.g. <code>edit</code> <code>-r</code> <code>2</code> <code>n/Xuan En</code></p>
 </li>
 <li>
-<p><a href="#edit"><strong>Edit</strong></a> : <code>edit</code> <code>INDEX</code> <code>ORDER_ATTRIBUTE_PREFIX/VALUE</code><br>
-e.g. <code>edit</code> <code>2</code> <code>n/Xuan En</code></p>
-</li>
-<li>
-<p><a href="#exit"><strong>Exit</strong></a> : <code>exit</code></p>
-</li>
-<li>
-<p><a href="#search"><strong>Search</strong></a> : <code>search</code> <code>ORDER_ATTRIBUTE_PREFIX/KEYWORD</code><br>
-e.g. <code>search</code> <code>tid/ac1e345x7s</code></p>
+<p><a href="#exit"><strong>Exit</strong></a> : <code>exit</code>
+<a href="#search"><strong>Search</strong></a> : <code>search</code> <code><a href="#command_flags">[FLAG]</a></code> <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD</code> <code>[MORE_KEYWORDS]&#8230;&#8203;</code> <code>[<a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD MORE_KEYWORDS]&#8230;&#8203;</code> <br>
+ e.g. <code>search</code> <code>-r</code> <code>tid/ac1e345x7s</code></p>
 </li>
 <li>
 <p><a href="#help"><strong>Help</strong></a> : <code>help</code></p>
@@ -1467,16 +1509,17 @@ e.g. <code>list</code> <code>done</code></p>
 </li>
 <li>
 <p><a href="#return"><strong>Return</strong></a> : <code>return</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>rts/RETURN_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>c/COMMENTS_BY_CUSTOMER</code> <code>type/TYPE_OF_ITEM</code><br>
-e.g. <code>return</code> <code>tid/ac17s2a</code> <code>n/BOBBY TAN</code> <code>a/123 Delta Road #03-333, Singapore 123456</code> <code>p/91230456</code> <code>rts/2020-12-12 1301</code> <code>w/Jurong Warehouse</code> <code>c/NIL</code> <code>type/glass</code></p>
+e.g. <code>return</code> <code>tid/ac17s2a</code> <code>n/BOBBY TAN</code> <code>a/123 Delta Road #03-333, Singapore 123456</code> <code>p/91230456</code> <code>rts/12-12-2020 1301</code> <code>w/Jurong Warehouse</code> <code>c/NIL</code> <code>type/glass</code></p>
+</li>
+<li>
+<p><a href="#return"><strong>Return</strong></a> : <code>return</code> <code>tid/TRANSACTION_ID</code><br>
+e.g. <code>return</code> <code>tid/ac17s2a</code></p>
 </li>
 <li>
 <p><a href="#nearby"><strong>Nearby</strong></a> : <code>nearby</code> <code>[FLAG]</code> <code>POSTAL_SECTOR</code> or <code>nearby</code> <code>[FLAG]</code> <code>AREA</code><br>
 e.g. <code>nearby</code> <code>-o</code> <code>14</code><br>
 e.g. <code>nearby</code> <code>-r</code> <code>north</code><br>
 e.g. <code>nearby</code> <code>east</code></p>
-</li>
-<li>
-<p><a href="#undo"><strong>Undo</strong></a> : <code>undo</code></p>
 </li>
 </ul>
 </div>
@@ -1585,12 +1628,12 @@ e.g. <code>nearby</code> <code>east</code></p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-o</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Order flag, Operation on order list</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#clear">Clear</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#clear">Clear</a>, <a href="#nearby">Nearby</a>, <a href="#delivered">Delivered</a>, <a href="#search">Search</a>, <a href="#edit">Edit</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-r</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Return Order flag, Operation on return order list</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#clear">Clear</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#clear">Clear</a>, <a href="#nearby">Nearby</a>, <a href="#delivered">Delivered</a>, <a href="#search">Search</a>, <a href="#edit">Edit</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -2216,4 +2259,4 @@ e.g. <code>nearby</code> <code>east</code></p>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-29 16:47:41 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-29 18:34:41 UTC</div></div></div></body></html>
