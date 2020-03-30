@@ -20,16 +20,16 @@
 <ul class="sectlevel2">
 <li><a href="#clear">3.1. Clearing all entries : <code>clear</code></a></li>
 <li><a href="#delete">3.2. Deleting an order : <code>delete</code></a></li>
-<li><a href="#delivered">3.3. Marks an order or return order as delivered: <code>delivered</code></a></li>
+<li><a href="#delivered">3.3. Delivering an order or return order : <code>delivered</code> [Done by - Cher Wei Jie]</a></li>
 <li><a href="#edit">3.4. Editing an order : <code>edit</code> [Done by - Kenny Ho Si Chong]</a></li>
 <li><a href="#exit">3.5. Exiting the program : <code>exit</code></a></li>
-<li><a href="#help">3.6. Viewing help : <code>help</code></a></li>
+<li><a href="#help">3.6. Showing the Help message - <code>help</code> [Done by - Cher Wei Jie]</a></li>
 <li><a href="#show">3.7. Showing statistics : <code>show</code> [Done by Amos Cheong Jit Hon]</a></li>
 <li><a href="#insert">3.8. Inserting an order: <code>insert</code> [Done by Amos Cheong Jit Hon]</a></li>
 <li><a href="#import">3.9. Importing a list of orders : <code>import</code></a></li>
 <li><a href="#list">3.10. Listing orders : <code>list</code>  [Done by Amos Cheong Jit Hon]</a></li>
 <li><a href="#nearby">3.11. Viewing orders located at the same area or postal sector: <code>nearby</code> [Done by - Loh Jeremy Wen Jun]</a></li>
-<li><a href="#return">3.12. Returning an order: <code>return</code></a></li>
+<li><a href="#return">3.12. Returning an order : <code>return</code> [Done by - Cher Wei Jie]</a></li>
 <li><a href="#search">3.13. Searching for parcels using their attributes: <code>search</code> [Done by Kenny Ho Si Chong]</a></li>
 <li><a href="#saving-the-data">3.14. Saving the data</a></li>
 <li><a href="#export">3.15. Export order list <code>[coming in v2.0]</code></a></li>
@@ -442,42 +442,141 @@ Deletes the 1st order in the results of the <code>search</code> command (search 
 </div>
 </div>
 <div class="sect2">
-<h3 id="delivered"><a class="link" href="#delivered">3.3. Marks an order or return order as delivered: <code>delivered</code></a></h3>
-<div class="sect3">
-<h4 id="description-3"><a class="link" href="#description-3">3.3.1. Description</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Once you have delivered a delivery order or a return order, you can mark it as delivered by providing the <code>FLAG</code> and <code>INDEX</code> of the order/return list.</p>
-</li>
-<li>
-<p>The delivery status of the orders or return orders will be changed from ‘Not Delivered’ to ‘Delivered’.</p>
-</li>
-<li>
-<p>The list of delivered orders or return orders can then be seen by calling the list command: <code>list</code> <code>done</code>.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="format-3"><a class="link" href="#format-3">3.3.2. Format</a></h4>
+<h3 id="delivered"><a class="link" href="#delivered">3.3. Delivering an order or return order : <code>delivered</code> [Done by - Cher Wei Jie]</a></h3>
 <div class="paragraph">
-<p><code>delivered</code> <code>FLAG</code> <code>INDEX</code></p>
-</div>
+<p>In this section, you will learn more about the Delivered command and how to use it.<br>
+Why would you want to use the Delivered command?
+If you have delivered an order or return order, you can mark it as delivered with the Delivered command.</p>
 </div>
 <div class="sect3">
-<h4 id="examples-3"><a class="link" href="#examples-3">3.3.3. Examples</a></h4>
+<h4 id="delivered-works"><a class="link" href="#delivered-works">3.3.1. How to use the Delivered command</a></h4>
+<div class="paragraph">
+<p>This section will explain the steps needed to use the Delivered command.<br></p>
+</div>
+<div class="paragraph">
+<p>Here is how you can mark the details of any order or return order by following the steps below:<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong> : Type in the keyword <strong>delivered</strong><br>
+<strong>Step 2</strong> : Provide the <code><a href="#command_flags">FLAG</a></code> corresponding to the parcel order type you want to mark as delivered<br>
+<strong>Step 3</strong> : Provide the <code>INDEX</code> of the parcel displayed on the screen that you wish to mark as delivered<br>
+<strong>Step 4</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="ulist">
 <ul>
 <li>
-<p><code>delivered</code> <code>-o</code> <code>1</code><br>
-The order at the first <code>INDEX</code> of the order list is marked as a delivered order.</p>
+<p>Please include a whitespace in between the keyword, command flag and index. i.e. <code>delivered -o 1</code></p>
 </li>
 <li>
-<p><code>delivered</code> <code>-r</code> <code>2</code><br>
-The return order at the second <code>INDEX</code> of the return order list is marked as a delivered order.</p>
+<p>If you can&#8217;t see any orders use the <a href="#list"><code>list</code></a> command to view existing parcel!
+If nothing is showing up, it means you got to <a href="#insert"><code>insert</code></a> or <a href="#return"><code>return</code></a> some parcel and start doing work!</p>
 </li>
 </ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="delivered-examples"><a class="link" href="#delivered-examples">3.3.2. What constitutes a valid Delivered command</a></h4>
+<div class="paragraph">
+<p>The syntax for a valid Delivered command can be seen below!</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>delivered</code> <code>FLAG</code> <code>INDEX</code></p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Possible Combinations of Delivered command</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Scenario</th>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to mark the first return order displayed on returns list as delivered, you can do this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delivered</code> <code>-r</code> <code>1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Delivery Status of the first return order displayed on the returns list will be changed to "Returned to Warehouse"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to mark the second order displayed on the orders list, you can do this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delivered</code> <code>-o</code> <code>2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The delivery status of the second order in the order list will be changed to "Delivered".</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>INDEX</code> given is the parcel you will be marking as delivered.</p>
+</li>
+<li>
+<p>The parcel will be marked as delivered after executing this delivered command.</p>
+</li>
+<li>
+<p>If the parcel is an order, its Delivery Status will be changed from "Not Delivered" to "Delivered".</p>
+</li>
+<li>
+<p>If the parcel is a return order, its Delivery Status will be changed from "Not returned to warehouse" to "Returned to warehouse"</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>INDEX</code> <strong>must be a positive integer</strong>, e.g: 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>The <code>INDEX</code> <strong>must be in range</strong> of the number of displayed orders</p>
+</li>
+<li>
+<p>Only can be used when there is at least an order or return order displayed.</p>
+</li>
+<li>
+<p>The <code>FLAG</code> can only be either <code>-o</code> or <code>-r</code>, please refer to <a href="#command_flags">here</a> for more information.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -564,7 +663,7 @@ Why will you want to use the <code>edit</code> command? If you wish to edit any 
 </table>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 1. Possible Combinations of Edit command</caption>
+<caption class="title">Table 2. Possible Combinations of Edit command</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -679,7 +778,7 @@ Optionally you can click on the cross button of the application to exit!
 </table>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 2. Possible Combinations of Exit command</caption>
+<caption class="title">Table 3. Possible Combinations of Exit command</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -701,19 +800,31 @@ Optionally you can click on the cross button of the application to exit!
 </div>
 </div>
 <div class="sect2">
-<h3 id="help"><a class="link" href="#help">3.6. Viewing help : <code>help</code></a></h3>
-<div class="sect3">
-<h4 id="description-4"><a class="link" href="#description-4">3.6.1. Description</a></h4>
+<h3 id="help"><a class="link" href="#help">3.6. Showing the Help message - <code>help</code> [Done by - Cher Wei Jie]</a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p>You can use the help command to display all commands that are available to be used so that you can navigate the application easily.</p>
+<p>In this section, you will learn more about the Help command and how to use it.<br>
+Why would you want to use the Help command?
+You can use this Help command to see a summary of all available features of Delino.</p>
 </li>
 </ul>
 </div>
+<div class="sect3">
+<h4 id="help-works"><a class="link" href="#help-works">3.6.1. How to use the Help command?</a></h4>
+<div class="paragraph">
+<p>Here is how you can use the Help command to show a summary of all available commands in Delino.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong> : Type in the keyword <strong>help</strong>.<br>
+<strong>Step 2</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="format-4"><a class="link" href="#format-4">3.6.2. Format:</a></h4>
+<h4 id="help-examples"><a class="link" href="#help-examples">3.6.2. What constitutes a valid Help command?</a></h4>
+<div class="paragraph">
+<p>The syntax for a valid help command can be seen below!</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -721,17 +832,28 @@ Optionally you can click on the cross button of the application to exit!
 </li>
 </ul>
 </div>
-</div>
-<div class="sect3">
-<h4 id="examples-4"><a class="link" href="#examples-4">3.6.3. Examples:</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p><code>help</code><br>
-Returns a list of all commands available.</p>
-</li>
-</ul>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 4. Possible Combinations of Help command</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Scenario</th>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to view all the available commands in Delino, you can do this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>help</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A pop-up window will be shown that includes a summary to briefly explain all the commands that Delino offers.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -945,7 +1067,7 @@ in 24 hour format.</p>
 <p>There are two different scenarios on how to insert the orders :</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 3. Possible combinations of Insert Command</caption>
+<caption class="title">Table 5. Possible combinations of Insert Command</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -994,7 +1116,7 @@ in 24 hour format.</p>
 <div class="sect2">
 <h3 id="import"><a class="link" href="#import">3.9. Importing a list of orders : <code>import</code></a></h3>
 <div class="sect3">
-<h4 id="description-5"><a class="link" href="#description-5">3.9.1. Description</a></h4>
+<h4 id="description-3"><a class="link" href="#description-3">3.9.1. Description</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1008,7 +1130,7 @@ transaction id of the parcels and the address of the customers, etc.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="format-5"><a class="link" href="#format-5">3.9.2. Format</a></h4>
+<h4 id="format-3"><a class="link" href="#format-3">3.9.2. Format</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1054,7 +1176,7 @@ transaction id of the parcels and the address of the customers, etc.</p>
 </ul>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 4. Order data format</caption>
+<caption class="title">Table 6. Order data format</caption>
 <colgroup>
 <col style="width: 9.0909%;">
 <col style="width: 9.0909%;">
@@ -1100,7 +1222,7 @@ transaction id of the parcels and the address of the customers, etc.</p>
 </ul>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 5. Return data format</caption>
+<caption class="title">Table 7. Return data format</caption>
 <colgroup>
 <col style="width: 10%;">
 <col style="width: 10%;">
@@ -1181,7 +1303,7 @@ transaction id of the parcels and the address of the customers, etc.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="examples-5"><a class="link" href="#examples-5">3.9.3. Examples</a></h4>
+<h4 id="examples-3"><a class="link" href="#examples-3">3.9.3. Examples</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1231,7 +1353,7 @@ uncompleted orders)<br></p>
 <p>There are three types of list commands that are shown in the examples below :</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 6. Possible combinations of List Command</caption>
+<caption class="title">Table 8. Possible combinations of List Command</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1440,7 +1562,7 @@ The list of postal sectors and their corresponding general locations can be foun
 <p>The table below describes the possible usage scenarios of the nearby command:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 7. Possible Combinations of nearby command</caption>
+<caption class="title">Table 9. Possible Combinations of nearby command</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1489,7 +1611,7 @@ This would allow you to complete more orders!</p></td>
 <p>You can obtain more information about the various postal sectors in the following table:</p>
 </div>
 <table id="postal_sector" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 8. Postal Sectors in Singapore</caption>
+<caption class="title">Table 10. Postal Sectors in Singapore</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1618,43 +1740,46 @@ This would allow you to complete more orders!</p></td>
 </div>
 </div>
 <div class="sect2">
-<h3 id="return"><a class="link" href="#return">3.12. Returning an order: <code>return</code></a></h3>
-<div class="sect3">
-<h4 id="description-6"><a class="link" href="#description-6">3.12.1. Description</a></h4>
+<h3 id="return"><a class="link" href="#return">3.12. Returning an order : <code>return</code> [Done by - Cher Wei Jie]</a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p>If the order to be returned is an existing order in the list, you may convert it into a return order by typing <code>return</code> <code>TRANSACTION_ID</code> of the order. This will remove it from the list of orders and add it into the return order list.</p>
-</li>
-<li>
-<p>If the parcel to be returned is not an existing order in the list, you can create a new return order by typing <code>return</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE NUMBER</code> <code>rts/RETURN_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code> of the parcel. This will create a new return order and add it into the return order list.</p>
+<p>In this section, you will learn more about the Return command and how to use it.<br>
+Why would you want to use the Return command?
+You can use this Return command to create a new return order to be added into the return order list.</p>
 </li>
 </ul>
-</div>
 </div>
 <div class="sect3">
-<h4 id="format-6"><a class="link" href="#format-6">3.12.2. Format</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p><code>return</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE NUMBER</code> <code>rts/RETURN_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p>
-</li>
-<li>
-<p><code>return</code> <code>tid/TRANSACTION_ID</code></p>
-</li>
-</ul>
+<h4 id="return-works"><a class="link" href="#return-works">3.12.1. How to use the Return command?</a></h4>
+<div class="paragraph">
+<p>Here is how you can convert an order into a return order or create a new return order by following the steps below:</p>
 </div>
-<div class="admonitionblock tip">
+<div class="paragraph">
+<p><strong>Step 1</strong> : Type in the keyword <strong>return</strong>.<br>
+<strong>Step 2a</strong> : If you would like to convert an existing order into a return order,
+provide the <code><a href="#command_prefix">TRANSACTION_ID</a></code> corresponding to the order to be converted.<br>
+<strong>Step 2b</strong>: If you would like to create a new return order in the return list, provide the
+<code><a href="#command_prefix">TRANSACTION_ID</a></code> <code><a href="#command_prefix">CUSTOMER_NAME</a></code> <code><a href="#command_prefix">ADDRESS</a></code>
+<code><a href="#command_prefix">PHONE_NUMBER</a></code> <code><a href="#command_prefix">RETURN_TIMESTAMP</a></code> <code><a href="#command_prefix">WAREHOUSE_LOCATION</a></code>
+<code><a href="#command_prefix">CUSTOMER_EMAIL</a></code> <code><a href="#command_prefix">[COMMENTS_BY_CUSTOMER]</a></code> <code><a href="#command_prefix">[TYPE OF ITEM]</a></code> of the parcel.<br>
+<strong>Step 3</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
+</div>
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>List of order attribute prefixes can be found <a href="#command_prefix">here</a>.</p>
+<p>Please include a whitespace in between the keyword &amp; transaction id or keyword &amp; the attributes aforementioned.<br>
+i.e. <code>return</code> <code>tid/123abcd</code><br>
+ or<br>
+<code>return</code> <code>tid/123abcd</code> <code>n/weijie</code> <code>a/blk 32 clementi road</code> <code>p/92123412</code>
+<code>w/Jurong warehouse</code> <code>rts/2020-04-05</code></p>
 </li>
 </ul>
 </div>
@@ -1664,23 +1789,143 @@ This would allow you to complete more orders!</p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="examples-6"><a class="link" href="#examples-6">3.12.3. Examples</a></h4>
+<h4 id="return-examples"><a class="link" href="#return-examples">3.12.2. What constitutes a valid Return command?</a></h4>
+<div class="paragraph">
+<p>The syntax for a valid Return command can be seen below!</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>return</code> <code>tid/ac17s2a</code> <code>n/Bobby Tan</code> <code>a/123 Delta Road #03-333, Singapore 123456</code> <code>p/91230456</code> <code>e/bobby@example.com</code>
-<code>rts/12-12-2020 1300</code> <code>w/Jurong Warehouse</code> <code>c/NIL</code> <code>type/glass</code><br>
-Creates and adds an order with <code>TRANSACTION_ID</code> 'ac17s2a' as a return order into the list of return orders.</p>
-</li>
-<li>
-<p><code>return</code> <code>tid/ac17s2a</code><br>
-Converts the order with <code>TRANSACTION_ID</code> 'ac17s2a' into a return order and adds it into the list of returns.</p>
-</li>
-<li>
-<p><code>return</code> <code>tid/b1230512</code> <code>n/Aaron Teo</code> <code>a/256 Alpha Road #03-222, Singapore 123567</code> <code>p/91230456</code> <code>e/aaron@example.com</code> <code>rts/12-12-2020 1400</code> <code>w/Jurong Warehouse</code> <code>c/Leave it at the lobby</code> <code>type/metal</code><br>
-Creates and adds an order with <code>TRANSACTION ID</code> 'b1230512' as a return order into the list of return orders.</p>
+<p><code>return</code> <code>TRANSACTION_ID</code> or <code>return</code> <code>TRANSACTION_ID</code> <code>CUSTOMER_NAME</code> <code>CUSTOMER_ADDRESS</code> <code>CUSTOMER_EMAIL</code>
+<code>WAREHOUSE_LOCATION</code> <code>PHONE_NUMBER</code> <code>RETURN_TIMESTAMP</code> <code>[COMMENTS_BY_CUSTOMER]</code> <code>[TYPE_OF_ITEM]</code></p>
 </li>
 </ul>
+</div>
+<div class="ulist NOTE">
+<ul class="NOTE">
+<li>
+<p>The <code>TRANSACTION_ID</code> refers to the transaction id of a parcel.</p>
+</li>
+<li>
+<p>The <code>CUSTOMER_NAME</code> refers to the name of the recipient of the parcel.</p>
+</li>
+<li>
+<p>The <code>CUSTOMER_ADDRESS</code> refers to the location which the return should be picked up from.</p>
+</li>
+<li>
+<p>The <code>WAREHOUSE_LOCATION</code> refers to the location which the return should be delivered to.</p>
+</li>
+<li>
+<p>The <code>PHONE_NUMBER</code> refers to the phone number of the customer.</p>
+</li>
+<li>
+<p>The <code>RETURN_TIMESTAMP</code> refers to the return date and time of the parcel.</p>
+</li>
+<li>
+<p>The <code>COMMENTS_BY_CUSTOMER</code> is an optional attribute which can be included if the customer has special requests.</p>
+</li>
+<li>
+<p>The <code>TYPE_OF_ITEM</code> is an optional attribute which can be included if the item requires special attention.
+For example, it can be used when the item is fragile.</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 11. Possible Combinations of Return command</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Scenario</th>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to convert the order with Transaction Id 'abc1234' into a return order and display it on returns list, you can do this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>return</code> <code>tid/abc1234</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This order will be removed from the order list and be added into the returns list as a return order.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to create a new return order in the return order list, you can do this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>return</code> <code>tid/123abcd</code> <code>n/weijie</code> <code>a/blk 32 clementi road</code> <code>p/92123412</code> <code>w/Jurong warehouse</code> <code>rts/2020-04-05</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A return order with the input attributes will be created into the return order list.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>TRANSACTION_ID</code> given belongs to the return order that will be created.</p>
+</li>
+<li>
+<p>A return order will be created after executing this return command.</p>
+</li>
+<li>
+<p>If the parcel is an existing order, it will be removed from the order list and converted into a return order
+and added into the return order list.</p>
+</li>
+<li>
+<p>If the parcel is a new return order, it will be created and added into the return order list.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The conversion of an order into a return order can only be done if the order was already delivered.</p>
+</li>
+<li>
+<p>The <code>TRANSACTION_ID</code> <strong>is alphanumeric</strong>, e.g: 123asd, 1234567, abcdef.</p>
+</li>
+<li>
+<p>The <code>CUSTOMER_NAME</code> <strong>must consist of only alphabets</strong>.</p>
+</li>
+<li>
+<p>The <code>CUSTOMER_ADDRESS</code> <strong>is alphanumeric</strong>.</p>
+</li>
+<li>
+<p>The <code>CUSTOMER_PHONE</code> <strong>must be numeric</strong></p>
+</li>
+<li>
+<p>The <code>WAREHOUSE_LOCATION</code> <strong>is alphanumeric</strong></p>
+</li>
+<li>
+<p>The <code>RETURN_TIMESTAMP</code> <strong>must follow the yyyy-mm-dd format</strong></p>
+</li>
+<li>
+<p>The <code>COMMENTS_BY_CUSTOMER</code> <strong>is alphanumeric</strong></p>
+</li>
+<li>
+<p>The <code>TYPE_OF_ITEM</code> is <strong>alphanumeric</strong></p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -1783,7 +2028,7 @@ Why will you want to use the <code>search</code> command? If you wish to <code>s
 </table>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 9. Possible Combinations of Search command</caption>
+<caption class="title">Table 12. Possible Combinations of Search command</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1856,7 +2101,7 @@ Why will you want to use the <code>search</code> command? If you wish to <code>s
 <div class="sect2">
 <h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.14. Saving the data</a></h3>
 <div class="sect3">
-<h4 id="description-7"><a class="link" href="#description-7">3.14.1. Description</a></h4>
+<h4 id="description-4"><a class="link" href="#description-4">3.14.1. Description</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1923,7 +2168,7 @@ delivery), number of deliveries completed in a day}</em></p>
 the provided link in the table below.</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 10. Command Summary</caption>
+<caption class="title">Table 13. Command Summary</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2031,7 +2276,7 @@ OR<br>
 <h2 id="glossary"><a class="link" href="#glossary">6. Glossary</a></h2>
 <div class="sectionbody">
 <table id="command_prefix" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 11. Command Prefix</caption>
+<caption class="title">Table 14. Command Prefix</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2108,7 +2353,7 @@ OR<br>
 </tbody>
 </table>
 <table id="command_flags" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 12. Possible Command Flags</caption>
+<caption class="title">Table 15. Possible Command Flags</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2145,7 +2390,7 @@ OR<br>
 <p><a href="#nearby">Click here</a> to navigate back to the Nearby Command!</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 13. Central</caption>
+<caption class="title">Table 16. Central</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2488,7 +2733,7 @@ OR<br>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 14. East<br></caption>
+<caption class="title">Table 17. East<br></caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2556,7 +2801,7 @@ OR<br>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 15. North East</caption>
+<caption class="title">Table 18. North East</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2624,7 +2869,7 @@ OR<br>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 16. West</caption>
+<caption class="title">Table 19. West</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2698,7 +2943,7 @@ OR<br>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 17. North</caption>
+<caption class="title">Table 20. North</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2761,4 +3006,4 @@ OR<br>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-30 12:40:45 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-30 13:08:40 UTC</div></div></div></body></html>
