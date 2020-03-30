@@ -27,7 +27,7 @@ Sounds interesting? Have a quick look at our tutorial <<Quick Start>> to get sta
 Have a delightful journey using Delino!
 
 .Graphical User Interface (GUI) of Delino
-image::Delino.svg[width="790"]
+image::Ui.svg[width="790"]
 
 === Product Information
 Are you still using pen and papers or Excel to keep track of all your orders? +

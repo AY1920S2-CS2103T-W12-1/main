@@ -9,11 +9,11 @@ https://app.netlify.com/sites/ay1920s2-cs2103t-w12-1/deploys[image:https://api.n
 
 
 ifdef::env-github[]
-image::docs/images/Delino.svg[width="600"]
+image::docs/images/Ui.svg[width="600"]
 endif::[]
 
 ifndef::env-github[]
-image::docs/images/Delino.svg[width="600"]
+image::docs/images/Ui.svg[width="600"]
 endif::[]
 
 == Introduction
