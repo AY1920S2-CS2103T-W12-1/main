@@ -29,7 +29,7 @@
 <li><a href="#insert">3.9. Inserting an order: <code>insert</code></a></li>
 <li><a href="#import">3.10. Importing a list of orders : <code>import</code></a></li>
 <li><a href="#list">3.11. Listing orders : <code>list</code></a></li>
-<li><a href="#nearby">3.12. View orders located at the same area or postal sector: <code>nearby</code></a></li>
+<li><a href="#nearby">3.12. Viewing orders located at the same area or postal sector: <code>nearby</code> [Done by - Loh Jeremy Wen Jun]</a></li>
 <li><a href="#return">3.13. Returning an order: <code>return</code></a></li>
 <li><a href="#search">3.14. Locating orders by order fields: <code>search</code></a></li>
 <li><a href="#saving-the-data">3.15. Saving the data</a></li>
@@ -42,7 +42,7 @@
 </li>
 <li><a href="#faq">4. FAQ</a></li>
 <li><a href="#command-summary">5. Command Summary</a></li>
-<li><a href="#appendix-a-glossary">6. Appendix A: Glossary</a>
+<li><a href="#glossary">6. Glossary</a>
 <ul class="sectlevel2">
 <li><a href="#area_table">6.1. Area Information of Singapore</a></li>
 </ul>
@@ -63,6 +63,12 @@ It is <strong>optimised for those who have a strong preference towards Command L
 while still enjoying the benefits of a Graphical User Interface (GUI).
 Sounds interesting? Have a quick look at our tutorial <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started.
 Have a delightful journey using Delino!</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Delino.svg" alt="Delino" width="790">
+</div>
+<div class="title">Figure 1. Graphical User Interface (GUI) of Delino</div>
 </div>
 <div class="sect2">
 <h3 id="product-information"><a class="link" href="#product-information">1.1. Product Information</a></h3>
@@ -131,30 +137,24 @@ It contains more information regarding complex content that you should take note
 </td>
 <td class="content">
 <div class="paragraph">
-<p>This block contains <strong>important</strong> inforamtion that you should be mindful of.</p>
+<p>This block contains <strong>important</strong> information that you should be mindful of.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>You will also encounter the use of <code>text markup</code> to indicate keywords such as
-command arguments to Delino. (e.g. <code>exit</code>)</p>
+<p><code>text markup</code> : This is used to indicate keywords such as command arguments to Delino. (e.g. <code>exit</code>)</p>
 </div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
 <div class="paragraph">
-<p>For the various commands, you might encounter arguments in square brackets (e.g. <code>nearby</code> <code>[FLAG]</code> <code>AREA</code>). <br>
-These arguments are optional.</p>
+<p><code>[FLAG]</code> : For the various commands, you might encounter <strong>keywords</strong> placed in square brackets.<br>
+(e.g. <code>nearby</code> <code>[FLAG]</code> <code>AREA</code>)<br>
+These indicate the optional arguments to a command.</p>
 </div>
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Keywords that are capitalized represent all possible combinations of an argument.<br>
+(e.g. <code>[FLAG]</code> represents all possible flag arguments available).<br>
+For the list of all possible combinations of an argument, you can refer to the <a href="#glossary">glossary</a></p>
 </div>
 <div class="paragraph">
 <p>Finally, you will encounter links to external web pages for additional information.
@@ -179,11 +179,6 @@ These links will <a href="">look like this</a>.</p>
 </li>
 <li>
 <p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
-<div class="imageblock">
-<div class="content">
-<img src="images/Delino.svg" alt="Delino" width="790">
-</div>
-</div>
 </li>
 <li>
 <p>Type the command in the command box and press <kbd>Enter</kbd> to execute it.<br>
@@ -973,25 +968,50 @@ List down all the orders (Return orders and Delivery orders) that are uncomplete
 </div>
 </div>
 <div class="sect2">
-<h3 id="nearby"><a class="link" href="#nearby">3.12. View orders located at the same area or postal sector: <code>nearby</code></a></h3>
+<h3 id="nearby"><a class="link" href="#nearby">3.12. Viewing orders located at the same area or postal sector: <code>nearby</code> [Done by - Loh Jeremy Wen Jun]</a></h3>
+<div class="paragraph">
+<p>In this section, you will learn more about the <code>nearby</code> command,
+<a href="#how_to_use_nearby_command">how to use it</a> and the
+<a href="#usage_scenario_nearby_command">possible usage scenarios</a> of the <code>nearby</code> command.<br></p>
+</div>
+<div class="paragraph">
+<p>The <code>nearby</code> command is useful if you would like to obtain all orders located in the same
+postal sector or region of Singapore. This would allow you to be more efficient with your delivery
+orders.</p>
+</div>
 <div class="sect3">
-<h4 id="description-11"><a class="link" href="#description-11">3.12.1. Description</a></h4>
+<h4 id="how_to_use_nearby_command"><a class="link" href="#how_to_use_nearby_command">3.12.1. How to use the nearby command</a></h4>
 <div class="paragraph">
-<p>The <code>nearby</code> command can be used to search either the order list or return order list.<br>
-You <strong>may</strong> give either a <code>-o</code> flag for viewing nearby orders in the order list
-or a <code>-r</code> flag for viewing nearby orders in the returns list.<br>
-By default, the <code>nearby</code> command will search both the order list and return order list.</p>
+<p>In this section, you learn more about the exact inputs required to use the <code>nearby</code> command.</p>
 </div>
 <div class="paragraph">
-<p>There are two possible search criteria for the <code>nearby</code> command:</p>
+<p>Here are the steps you should follow to obtain all orders using the <code>nearby</code> command:<br>
+<strong>Step 1</strong> : Type in the keyword <code>nearby</code><br></p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>By <strong>postal sector</strong>:<br>
-Command Usage: <code>nearby</code> <code>[FLAG]</code> <code>POSTAL_SECTOR</code></p>
-</li>
-</ol>
+<div class="paragraph">
+<p><strong>Step 2 (optional)</strong> : Provide an optional <code><a href="#command_flags">FLAG</a></code> that indicates which order list to
+search (order list or return order list).<br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>A <code>-o</code> flag indicates searching of nearby orders using the order list.<br>
+A <code>-r</code> flag indicates searching of the nearby orders using the return order list.<br></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>By default, if no <code>FLAG</code> is provided, both order list and return order list will be searched.<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong> : Provide either a <code><a href="#postal_sector">POSTAL SECTOR</a></code> or an <code><a href="#area">AREA</a></code><br></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1002,30 +1022,159 @@ Command Usage: <code>nearby</code> <code>[FLAG]</code> <code>POSTAL_SECTOR</code
 <td class="content">
 <div class="paragraph">
 <p>A <code>POSTAL_SECTOR</code> refers to the first <strong>two</strong> digits of a six digit Singapore postal code.<br>
-A <code>FLAG</code> refers to either <code>-o</code> or <code>-r</code> and is <strong>optional</strong>.<br>
-A <code>-o</code> flag is used to indicate searching on the order list.<br>
-A <code>-r</code> flag is used to indicate searching on the return order list.</p>
+Example: The postal code <code>140239</code> has a <code>POSTAL_SECTOR</code> of <code>14</code>.<br>
+The list of postal sectors and their corresponding general locations can be found
+<a href="https://www.ura.gov.sg/realEstateIIWeb/resources/misc/list_of_postal_districts.htm">here</a>.</p>
+</div>
+<div id="area" class="paragraph">
+<p>An <code>AREA</code> refers to one of the five areas of Singapore<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Central</p>
+</li>
+<li>
+<p>East</p>
+</li>
+<li>
+<p>North East</p>
+</li>
+<li>
+<p>West</p>
+</li>
+<li>
+<p>North</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>A quick reference for the five areas of Singapore can be <a href="#area_table">found here</a>.</p>
+</div>
+<div class="paragraph">
+<p>You can obtain more detailed information about each area from
+<a href="https://keylocation.sg/singapore/districts-map">this website</a></p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>You can view the orders at a specified Singapore <strong>postal sector</strong>.</p>
-</li>
-<li>
-<p>The general location for the order will be identified if a valid postal sector is given.</p>
-</li>
-<li>
-<p>The list of postal sectors and their corresponding general locations can be found
+<div class="paragraph">
+<p><strong>Step 4</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="what-constitutes-a-valid-nearby-command"><a class="link" href="#what-constitutes-a-valid-nearby-command">3.12.2. What constitutes a valid nearby command</a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the syntax of the <code>nearby</code> command<br></p>
+</div>
+<div class="paragraph">
+<p>The syntax for a valid <code>nearby</code> command can be one of the following:<br>
+1. <code>nearby</code> <code>[FLAG]</code> <code>POSTAL_SECTOR</code><br>
+2. <code>nearby</code> <code>[FLAG]</code> <code>AREA</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>An optional <code>FLAG</code> can be provided to indicate which list to search on.<br>
+A <code>-o</code> flag indicates searching of nearby orders using the order list.<br>
+A <code>-r</code> flag indicates searching of the nearby orders using the return order list.<br>
+By default, if no <code>FLAG</code> is provided, both order list and return order list will be searched.<br></p>
+</div>
+<div class="paragraph">
+<p>A <code>POSTAL_SECTOR</code> refers to the first <strong>two</strong> digits of a six digit Singapore postal code.<br>
+Example: The postal code <code>140239</code> has a <code>POSTAL_SECTOR</code> of <code>14</code><br>
+The list of postal sectors and their corresponding general locations can be found
 <a href="https://www.ura.gov.sg/realEstateIIWeb/resources/misc/list_of_postal_districts.htm">here</a>.</p>
+</div>
+<div class="paragraph">
+<p>An <code>AREA</code> refers to one of the five areas of Singapore:<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Central</p>
 </li>
-</ul>
+<li>
+<p>East</p>
+</li>
+<li>
+<p>North East</p>
+</li>
+<li>
+<p>West</p>
+</li>
+<li>
+<p>North</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>A quick reference for the five areas of Singapore can be <a href="#area_table">found here</a></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="usage_scenario_nearby_command" class="paragraph">
+<p>The table below describes the possible usage scenarios of the nearby command:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 3. Postal Sectors in Singapore</caption>
+<caption class="title">Table 3. Possible Combinations of nearby command</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Scenario</th>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to obtain all orders in both the order list and return order list located in the the north region of Singapore.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nearby</code> <code>north</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All orders in the order list and return order list that are located in the north region of Singapore will be displayed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to obtain all orders in the order list located in the general location of  <code>Queenstown, Tiong Bahru</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nearby</code> <code>-o</code> <code>14</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All orders in the order list that are located in postal sector <code>14</code> (<code>Queenstown, Tiong Bahru</code>) will be displayed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to obtain all orders in the return order list located in the general location of <code>Raffles Place, Cecil, Marina, People&#8217;s Park</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nearby</code> <code>-r</code> <code>04</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All orders in the return order list that are located in the postal sector <code>04</code> (<code>Raffles Place, Cecil, Marina, People&#8217;s Park</code>) will be displayed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to obtain all orders in the return order list located in the central region of Singapore.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nearby</code> <code>-r</code> <code>central</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All orders in the return order list that are located in the central region of Singapore will be displayed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Suppose you are delivering an order to Buona Vista and would like to know all the orders located near
+that region (central region of Singapore). Are you going manually look through all of your orders and
+find those that are located near Buona Vista?<br>
+If only there was a way to efficiently find all orders based on a given region or postal sector!<br>
+This would allow you to complete more orders!</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nearby</code> <code>-o</code> <code>central</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All orders in the order list that are located in the central region of Singapore will be displayed.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>You can obtain more information about the various postal sectors in the following table:</p>
+</div>
+<table id="postal_sector" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 4. Postal Sectors in Singapore</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1151,128 +1300,12 @@ A <code>-r</code> flag is used to indicate searching on the return order list.</
 </tr>
 </tbody>
 </table>
-<div class="olist arabic">
-<ol class="arabic" start="2">
-<li>
-<p>By <strong>area</strong>:<br>
-Command Usage: <code>nearby</code> <code>[FLAG]</code> <code>AREA</code></p>
-</li>
-</ol>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>An <strong>area</strong> refers to one of the five areas of Singapore<br></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Central</p>
-</li>
-<li>
-<p>East</p>
-</li>
-<li>
-<p>North East</p>
-</li>
-<li>
-<p>West</p>
-</li>
-<li>
-<p>North</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>A quick reference for the five areas of Singapore can be <a href="#area_table">found here</a></p>
-</div>
-<div class="paragraph">
-<p>A <code>FLAG</code> refers to either <code>-o</code> or <code>-r</code> and is <strong>optional</strong>.<br>
-A <code>-o</code> flag is used to indicate searching on the order list.<br>
-A <code>-r</code> flag is used to indicate searching on the return order list.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>You can view all the orders located at a specified <strong>area</strong>.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>You can obtain more detailed information about each area from
-<a href="https://keylocation.sg/singapore/districts-map">this website</a></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="format-11"><a class="link" href="#format-11">3.12.2. Format</a></h4>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><code>nearby</code> <code>[FLAG]</code> <code>POSTAL_SECTOR</code><br></p>
-</li>
-</ol>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p><code>POSTAL_SECTOR</code> is the first <strong>two</strong> digits of a six digit Singapore postal code<br>
-Example: The postal code <code>140239</code> has a <code>POSTAL_SECTOR</code> of <code>14</code></p>
-</div>
-<div class="paragraph">
-<p>A <code>FLAG</code> refers to either <code>-o</code> or <code>-r</code> and is <strong>optional</strong>.<br>
-A <code>-o</code> flag is used to indicate searching on the order list.<br>
-A <code>-r</code> flag is used to indicate searching on the return order list.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="olist arabic">
-<ol class="arabic" start="2">
-<li>
-<p><code>nearby</code> <code>FLAG</code> <code>AREA</code></p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect3">
-<h4 id="examples-11"><a class="link" href="#examples-11">3.12.3. Examples</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p><code>nearby</code> <code>-o</code> <code>14</code><br>
-You will view all orders in the order list located in the general location of <code>Queenstown, Tiong Bahru</code>.</p>
-</li>
-<li>
-<p><code>nearby</code> <code>-r</code> <code>04</code><br>
-You will view all return orders located in the general location of <code>Raffles Place, Cecil, Marina, People&#8217;s Park</code>.</p>
-</li>
-<li>
-<p><code>nearby</code> <code>north</code><br>
-You will view all orders in the order list and return order list located in the north area of Singapore.</p>
-</li>
-</ul>
-</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="return"><a class="link" href="#return">3.13. Returning an order: <code>return</code></a></h3>
 <div class="sect3">
-<h4 id="description-12"><a class="link" href="#description-12">3.13.1. Description</a></h4>
+<h4 id="description-11"><a class="link" href="#description-11">3.13.1. Description</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1285,7 +1318,7 @@ You will view all orders in the order list and return order list located in the 
 </div>
 </div>
 <div class="sect3">
-<h4 id="format-12"><a class="link" href="#format-12">3.13.2. Format</a></h4>
+<h4 id="format-11"><a class="link" href="#format-11">3.13.2. Format</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1316,7 +1349,7 @@ You will view all orders in the order list and return order list located in the 
 </div>
 </div>
 <div class="sect3">
-<h4 id="examples-12"><a class="link" href="#examples-12">3.13.3. Examples</a></h4>
+<h4 id="examples-11"><a class="link" href="#examples-11">3.13.3. Examples</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1339,7 +1372,7 @@ Creates and adds an order with <code>TRANSACTION ID</code> 'b1230512' as a retur
 <div class="sect2">
 <h3 id="search"><a class="link" href="#search">3.14. Locating orders by order fields: <code>search</code></a></h3>
 <div class="sect3">
-<h4 id="description-13"><a class="link" href="#description-13">3.14.1. Description</a></h4>
+<h4 id="description-12"><a class="link" href="#description-12">3.14.1. Description</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1358,7 +1391,7 @@ Creates and adds an order with <code>TRANSACTION ID</code> 'b1230512' as a retur
 </div>
 </div>
 <div class="sect3">
-<h4 id="format-13"><a class="link" href="#format-13">3.14.2. Format</a></h4>
+<h4 id="format-12"><a class="link" href="#format-12">3.14.2. Format</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1391,7 +1424,7 @@ Creates and adds an order with <code>TRANSACTION ID</code> 'b1230512' as a retur
 </div>
 </div>
 <div class="sect3">
-<h4 id="examples-13"><a class="link" href="#examples-13">3.14.3. Examples</a></h4>
+<h4 id="examples-12"><a class="link" href="#examples-12">3.14.3. Examples</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1417,7 +1450,7 @@ Return order(s) with either phone number of <code>92039999</code> or transaction
 <div class="sect2">
 <h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.15. Saving the data</a></h3>
 <div class="sect3">
-<h4 id="description-14"><a class="link" href="#description-14">3.15.1. Description</a></h4>
+<h4 id="description-13"><a class="link" href="#description-13">3.15.1. Description</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1468,75 +1501,131 @@ delivery), number of deliveries completed in a day}</em></p>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
-<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.</p>
+<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Delino folder.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="command-summary"><a class="link" href="#command-summary">5. Command Summary</a></h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#insert"><strong>Insert</strong></a> : <code>insert</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>dts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>cod/CASH_ON_DELIVERY</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code><br>
-e.g. <code>insert</code> <code>tid/0123456789</code> <code>n/Eng Xuan En</code> <code>a/Tampines St 84 Blk 877 S520877 #01-123</code> <code>p/87654321</code> <code>e/xuanen@example.com</code> <code>dts/2020-02-20 1300</code> <code>w/Yishun industry</code> <code>cod/$4.50</code> <code>c/please knock the door three times :D</code> <code>type/heavy</code></p>
-</li>
-<li>
-<p><a href="#clear"><strong>Clear</strong></a> : <code>clear</code> <code>[FLAG]</code><br>
-e.g. <code>clear</code> <code>-f</code></p>
-</li>
-<li>
-<p><a href="#delete"><strong>Delete</strong></a> : <code>delete</code> <code>FLAG</code> <code>INDEX</code><br>
-e.g. <code>delete</code> <code>-o</code> <code>2</code></p>
-</li>
-<li>
-<p><a href="#delivered"><strong>Delivered</strong></a> : <code>delivered</code> <code>FLAG</code> <code>INDEX</code><br>
-e.g. <code>delivered</code> <code>-r</code> <code>2</code>
-<a href="#edit"><strong>Edit</strong></a> : <code>edit</code> <code>FLAG</code> <code>INDEX</code> <code>ORDER_ATTRIBUTE_PREFIX/VALUE</code><br>
-e.g. <code>edit</code> <code>-r</code> <code>2</code> <code>n/Xuan En</code></p>
-</li>
-<li>
-<p><a href="#exit"><strong>Exit</strong></a> : <code>exit</code>
-<a href="#search"><strong>Search</strong></a> : <code>search</code> <code><a href="#command_flags">[FLAG]</a></code> <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD</code> <code>[MORE_KEYWORDS]&#8230;&#8203;</code> <code>[<a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD MORE_KEYWORDS]&#8230;&#8203;</code> <br>
- e.g. <code>search</code> <code>-r</code> <code>tid/ac1e345x7s</code></p>
-</li>
-<li>
-<p><a href="#help"><strong>Help</strong></a> : <code>help</code></p>
-</li>
-<li>
-<p><a href="#show"><strong>Show</strong></a> : <code>show</code></p>
-</li>
-<li>
-<p><a href="#import"><strong>Import</strong></a> : <code>import</code> <code>FILE_NAME</code><br>
-e.g. <code>import</code> <code>orders.csv</code></p>
-</li>
-<li>
-<p><a href="#list"><strong>List</strong></a> : <code>list</code> <code>[DONE_STATUS]</code><br>
-e.g. <code>list</code> <code>done</code></p>
-</li>
-<li>
-<p><a href="#return"><strong>Return</strong></a> : <code>return</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>rts/RETURN_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>c/COMMENTS_BY_CUSTOMER</code> <code>type/TYPE_OF_ITEM</code><br>
-e.g. <code>return</code> <code>tid/ac17s2a</code> <code>n/BOBBY TAN</code> <code>a/123 Delta Road #03-333, Singapore 123456</code> <code>p/91230456</code> <code>rts/12-12-2020 1301</code> <code>w/Jurong Warehouse</code> <code>c/NIL</code> <code>type/glass</code></p>
-</li>
-<li>
-<p><a href="#return"><strong>Return</strong></a> : <code>return</code> <code>tid/TRANSACTION_ID</code><br>
-e.g. <code>return</code> <code>tid/ac17s2a</code></p>
-</li>
-<li>
-<p><a href="#nearby"><strong>Nearby</strong></a> : <code>nearby</code> <code>[FLAG]</code> <code>POSTAL_SECTOR</code> or <code>nearby</code> <code>[FLAG]</code> <code>AREA</code><br>
-e.g. <code>nearby</code> <code>-o</code> <code>14</code><br>
-e.g. <code>nearby</code> <code>-r</code> <code>north</code><br>
-e.g. <code>nearby</code> <code>east</code></p>
-</li>
-</ul>
+<div class="paragraph">
+<p>In this section, you can find out more about the commands supported by Delino
+(their respective format and example).</p>
 </div>
+<div class="paragraph">
+<p>If you would like to know more about a specific command, you can view more information by clicking
+the provided link in the table below.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 5. Command Summary</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Format</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert"><strong>Insert</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>insert</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>dts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>cod/CASH_ON_DELIVERY</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>insert</code> <code>tid/0123456789</code> <code>n/Eng Xuan En</code> <code>a/Tampines St 84 Blk 877 S520877 #01-123</code> <code>p/87654321</code> <code>e/xuanen@example.com</code> <code>dts/2020-02-20 1300</code> <code>w/Yishun industry</code> <code>cod/$4.50</code> <code>c/please knock the door three times :D</code> <code>type/heavy</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#clear"><strong>Clear</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code> <code>[FLAG]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code><br>
+<code>clear</code> <code>-f</code><br>
+<code>clear</code> <code>-r</code><br>
+<code>clear</code> <code>-f</code> <code>-r</code><br>
+<code>clear</code> <code>-o</code><br>
+<code>clear</code> <code>-o</code> <code>-f</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#delete"><strong>Delete</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete</code> <code>FLAG</code> <code>INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete</code> <code>-o</code> <code>2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#delivered"><strong>Delivered</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delivered</code> <code>FLAG</code> <code>INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delivered</code> <code>-r</code> <code>2</code><br>
+delivered` <code>-o</code> <code>1</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit"><strong>Edit</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit</code> <code>FLAG</code> <code>INDEX</code> <code>ORDER_ATTRIBUTE_PREFIX/VALUE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit</code> <code>-r</code> <code>2</code> <code>n/Xuan En</code><br>
+<code>edit</code> <code>-o</code> <code>2</code> <code>p/9999 4444</code><br>
+<code>edit</code> <code>-o</code> <code>1</code> <code>a/Blk 123 Pasir Ris Street 51 #12-21 S510123</code><br>
+<code>edit</code> <code>-r</code> <code>3</code> <code>n/Mr Tan</code> <code>p/0123 4567</code> <code>a/Blk 141 Yishun st 71 #09-09 S760141</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#exit"><strong>Exit</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>exit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>exit</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#search"><strong>Search</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code><a href="#command_flags">[FLAG]</a></code> <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD</code> <code>[MORE_KEYWORDS]&#8230;&#8203;</code> <code>[<a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD MORE_KEYWORDS]&#8230;&#8203;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>-r</code> <code>tid/ac1e345x7s</code><br>
+<code>search</code> <code>-r</code> <code>Jeremy Loh</code><br>
+<code>search</code> <code>-o</code> <code>tid/asj2od3943</code><br>
+<code>search</code> <code>-r</code> <code>p/92039999</code><br>
+<code>search</code> <code>-o</code> <code>p/92039999</code> <code>tid/asj2od3943</code> <code>n/jeremy</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#help"><strong>Help</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>help</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>help</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#show"><strong>Show</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#import"><strong>Import</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>import</code> <code>FILE_NAME</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>import</code> <code>orders.csv</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#list"><strong>List</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list</code> <code>[DONE_STATUS]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list</code><br>
+<code>list</code> <code>done</code><br>
+<code>list</code> <code>undone</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#return"><strong>Return</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>return</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>rts/RETURN_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>c/COMMENTS_BY_CUSTOMER</code> <code>type/TYPE_OF_ITEM</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>return</code> <code>tid/ac17s2a</code> <code>n/BOBBY TAN</code> <code>a/123 Delta Road #03-333, Singapore 123456</code> <code>p/91230456</code> <code>rts/12-12-2020 1301</code> <code>w/Jurong Warehouse</code> <code>c/NIL</code> <code>type/glass</code><br>
+<code>return</code> <code>tid/ac17s2a</code><br>
+<code>return</code> <code>tid/b1230512</code> <code>n/Aaron Teo</code> <code>a/256 Alpha Road #03-222, Singapore 123567</code> <code>p/91230456</code> <code>e/aaron@example.com</code> <code>rts/12-12-2020 1400</code> <code>w/Jurong Warehouse</code> <code>c/Leave it at the lobby</code> <code>type/metal</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#nearby"><strong>Nearby</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nearby</code> <code>[FLAG]</code> <code>POSTAL_SECTOR</code><br>
+OR<br>
+<code>nearby</code> <code>[FLAG]</code> <code>AREA</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nearby</code> <code>east</code><br>
+<code>nearby</code> <code>-o</code> <code>14</code><br>
+<code>nearby</code> <code>-r</code> <code>north</code></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
-<h2 id="appendix-a-glossary"><a class="link" href="#appendix-a-glossary">6. Appendix A: Glossary</a></h2>
+<h2 id="glossary"><a class="link" href="#glossary">6. Glossary</a></h2>
 <div class="sectionbody">
 <table id="command_prefix" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 4. Command Prefix</caption>
+<caption class="title">Table 6. Command Prefix</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1545,7 +1634,7 @@ e.g. <code>nearby</code> <code>east</code></p>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Prefix</th>
-<th class="tableblock halign-left valign-top">Meaning</th>
+<th class="tableblock halign-left valign-top">Order Attributes</th>
 <th class="tableblock halign-left valign-top">Used in the following Command(s)</th>
 </tr>
 </thead>
@@ -1613,7 +1702,7 @@ e.g. <code>nearby</code> <code>east</code></p>
 </tbody>
 </table>
 <table id="command_flags" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 5. Possible Command Flags</caption>
+<caption class="title">Table 7. Possible Command Flags</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1650,7 +1739,7 @@ e.g. <code>nearby</code> <code>east</code></p>
 <p><a href="#nearby">Click here</a> to navigate back to the Nearby Command!</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 6. Central</caption>
+<caption class="title">Table 8. Central</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1993,7 +2082,7 @@ e.g. <code>nearby</code> <code>east</code></p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 7. East<br></caption>
+<caption class="title">Table 9. East<br></caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2061,7 +2150,7 @@ e.g. <code>nearby</code> <code>east</code></p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 8. North East</caption>
+<caption class="title">Table 10. North East</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2129,7 +2218,7 @@ e.g. <code>nearby</code> <code>east</code></p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 9. West</caption>
+<caption class="title">Table 11. West</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2203,7 +2292,7 @@ e.g. <code>nearby</code> <code>east</code></p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 10. North</caption>
+<caption class="title">Table 12. North</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2266,4 +2355,4 @@ e.g. <code>nearby</code> <code>east</code></p>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-30 05:41:58 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-30 11:54:29 UTC</div></div></div></body></html>
