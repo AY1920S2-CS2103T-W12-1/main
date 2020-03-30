@@ -24,10 +24,10 @@
 <li><a href="#edit">3.4. Editing an order : <code>edit</code> [Done by - Kenny Ho Si Chong]</a></li>
 <li><a href="#exit">3.5. Exiting the program : <code>exit</code></a></li>
 <li><a href="#help">3.6. Viewing help : <code>help</code></a></li>
-<li><a href="#show">3.7. Show statistics : <code>show</code></a></li>
-<li><a href="#insert">3.8. Inserting an order: <code>insert</code></a></li>
+<li><a href="#show">3.7. Showing statistics : <code>show</code> [Done by Amos Cheong Jit Hon]</a></li>
+<li><a href="#insert">3.8. Inserting an order: <code>insert</code> [Done by Amos Cheong Jit Hon]</a></li>
 <li><a href="#import">3.9. Importing a list of orders : <code>import</code></a></li>
-<li><a href="#list">3.10. Listing orders : <code>list</code></a></li>
+<li><a href="#list">3.10. Listing orders : <code>list</code>  [Done by Amos Cheong Jit Hon]</a></li>
 <li><a href="#nearby">3.11. Viewing orders located at the same area or postal sector: <code>nearby</code> [Done by - Loh Jeremy Wen Jun]</a></li>
 <li><a href="#return">3.12. Returning an order: <code>return</code></a></li>
 <li><a href="#search">3.13. Searching for parcels using their attributes: <code>search</code> [Done by Kenny Ho Si Chong]</a></li>
@@ -735,84 +735,242 @@ Returns a list of all commands available.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="show"><a class="link" href="#show">3.7. Show statistics : <code>show</code></a></h3>
+<h3 id="show"><a class="link" href="#show">3.7. Showing statistics : <code>show</code> [Done by Amos Cheong Jit Hon]</a></h3>
+<div class="paragraph">
+<p>This section will explain more about the Show command and how to use it.</p>
+</div>
+<div class="paragraph">
+<p>At some point of time, you would want to know how many orders have you delivered or what is your earnings for today. Therefore,
+you have to use the Show Command to view those information.</p>
+</div>
 <div class="sect3">
-<h4 id="description-5"><a class="link" href="#description-5">3.7.1. Description</a></h4>
+<h4 id="show-works"><a class="link" href="#show-works">3.7.1. How to use the Show command</a></h4>
+<div class="paragraph">
+<p>In this section, you will learn how to use the Show Command.</p>
+</div>
+<div class="paragraph">
+<p>Here is how you can show the statistics of your orders:<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong> : Type : <code>show</code><br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code>show</code> command opens up a new window that displays the following information :</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>You can use the show command to open a new window to display statistics of the orders assigned to the courier.<br>
-It shows the earnings the courier has made today, the number of delivery orders and return orders completed and the total orders (Return parcels and delivery orders) to deliver today.</p>
+<p>Earnings Today</p>
+</li>
+<li>
+<p>Deliveries Made</p>
+</li>
+<li>
+<p>Deliveries Today (The number of delivery orders to make today)</p>
+</li>
+<li>
+<p>Orders Returned</p>
+</li>
+<li>
+<p>Returns Today (The number of return orders to make today)</p>
+</li>
+<li>
+<p>Total Orders Today (The total number of all the orders to make today)</p>
 </li>
 </ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="format-5"><a class="link" href="#format-5">3.7.2. Format:</a></h4>
+<h4 id="show-examples"><a class="link" href="#show-examples">3.7.2. What constitutes a valid Show Command</a></h4>
+<div class="paragraph">
+<p>This is the only syntax of the Show Command: <code>show</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="ulist">
 <ul>
 <li>
-<p><code>show</code></p>
+<p>No other keywords is allowed other than <code>show</code></p>
 </li>
 </ul>
 </div>
-</div>
-<div class="sect3">
-<h4 id="examples-5"><a class="link" href="#examples-5">3.7.3. Examples:</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p><code>show</code><br>
-Opens a new window that displays the statistics.</p>
-</li>
-</ul>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="insert"><a class="link" href="#insert">3.8. Inserting an order: <code>insert</code></a></h3>
-<div class="sect3">
-<h4 id="description-6"><a class="link" href="#description-6">3.8.1. Description</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Inserts a new order to the list of orders based on their order attributes.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="format-6"><a class="link" href="#format-6">3.8.2. Format</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p><code>insert</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>dts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>cod/CASH_ON_DELIVERY</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="examples-6"><a class="link" href="#examples-6">3.8.3. Examples</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p><code>insert</code> <code>tid/A094844</code> <code>n/John Doe</code> <code>a/Blk 505 Tampines #10-33 S469695</code> <code>p/98761111</code> <code>e/johndoe@example.com</code> <code>dts/2020-05-20 1300</code> <code>w/Yishun</code> <code>cod/$4</code></p>
-</li>
-</ul>
+<h3 id="insert"><a class="link" href="#insert">3.8. Inserting an order: <code>insert</code> [Done by Amos Cheong Jit Hon]</a></h3>
+<div class="paragraph">
+<p>This section shows you how to use the Insert Command and the relevant examples.</p>
 </div>
 <div class="paragraph">
-<p>Insert the order to be delivered with transaction id 'A094844' into the list of delivery orders.</p>
+<p>Whenever you have a new delivery order to make, you have to add it into your list of orders.
+The Insert Command is in charge of this functionality.</p>
 </div>
+<div class="sect3">
+<h4 id="insert-works"><a class="link" href="#insert-works">3.8.1. How to use the Insert Command</a></h4>
+<div class="paragraph">
+<p>Here are the steps on using the Insert Command:<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong> : Type in the keyword <strong>insert</strong><br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong> : Add in the prefixes <code><a href="#command_prefix">TRANSACTION_ID</a></code> <code><a href="#command_prefix">CUSTOMER_NAME</a></code>
+ <code><a href="#command_prefix">ADDRESS</a></code> <code><a href="#command_prefix">PHONE_NUMBER</a></code> <code><a href="#command_prefix">EMAIL</a></code>
+ <code><a href="#command_prefix">ORDER_TIMESTAMP</a></code> <code><a href="#command_prefix">WAREHOUSE_LOCATION</a></code> <code><a href="#command_prefix">CASH_ON_DELIVERY</a></code>
+of the delivery orders<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong> : Skip Step 4 if the specific order does not have the customer&#8217;s comment and the type of item.<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 4</strong> : Add in the Customer comment and type of item using the prefixes <code><a href="#command_prefix">[COMMENT_BY_CUSTOMER]</a></code>
+ <code><a href="#command_prefix">[TYPE_OF_ITEM]</a></code><br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 5</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="insert-examples"><a class="link" href="#insert-examples">3.8.2. What constitutes a valid Insert command</a></h4>
+<div class="paragraph">
+<p>Here is the syntax of the <strong>Insert</strong> Command :<br>
+<code>insert</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>dts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>cod/CASH_ON_DELIVERY</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="ulist">
 <ul>
 <li>
-<p><code>insert</code> <code>tid/C1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 572 Hougang st 51 #11-37 S530572</code> <code>e/amoscheong@example.com</code> <code>p/9001 0019</code> <code>dts/2020-05-10 1650</code> <code>w/Marsiling</code> <code>cod/$5</code> <code>c/Leave it at the riser</code> <code>type/glass</code></p>
+<p>The <code>TRANSACTION_ID</code> refers to the transaction id of the order.</p>
+</li>
+<li>
+<p>The <code>CUSTOMER_NAME</code> refers to the name of the recipient of the order.</p>
+</li>
+<li>
+<p>The <code>ADDRESS</code> refers to the address of the recipient.</p>
+</li>
+<li>
+<p>The <code>PHONE_NUMBER</code> refers to the phone number of the recipient.</p>
+</li>
+<li>
+<p>The <code>EMAIL</code> refers to the email address of the recipient.</p>
+</li>
+<li>
+<p>The <code>DELIVERY_DATE_&amp;_TIME</code> refers to the delivery date and time of the order.</p>
+</li>
+<li>
+<p>The <code>WAREHOUSE_LOCATION</code> refers to the warehouse that the courier should collect the order from.</p>
+</li>
+<li>
+<p>The <code>CASH_ON_DELIVERY</code> refers to the money earned from delivering the particular order.</p>
+</li>
+<li>
+<p>The <code>[COMMENTS_BY_CUSTOMER]</code> refers to the comment made by the recipient to the courier.</p>
+</li>
+<li>
+<p>The <code>[TYPE_OF_ITEM]</code> refers to the type of item that the courier is delivering.</p>
+</li>
+<li>
+<p>The prefixes <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>dts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>cod/CASH_ON_DELIVERY</code> are compulsory.</p>
+</li>
+<li>
+<p>The prefixes <code>c/COMMENTS_BY_CUSTOMER</code> <code>type/TYPE_OF_ITEM</code> are optional.</p>
+</li>
+<li>
+<p>Any compulsory prefixes that is absent will result in the App displaying an error message.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>Insert the delivery order with transaction id 'C1023456789' into the list of delivery orders. The delivery order that is inserted has a comment for the courier, requesting the order to be left at the riser.</p>
+</td>
+</tr>
+</table>
 </div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The Email provided must be a valid email address.</p>
+</li>
+<li>
+<p>Cash On Delivery must start with a dollar sign followed by the value.</p>
+</li>
+<li>
+<p>To add the Delivery Date and Time, first type in the date in this format : YYYY-MM-DD. Followed by adding the time
+in 24 hour format.</p>
+</li>
+<li>
+<p>Type of Item must be alphanumeric (No numbers or special characters allowed).</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>There are two different scenarios on how to insert the orders :</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 3. Possible combinations of Insert Command</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Scenario</th>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Insert the order without a comment and no item type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>insert</code> <code>tid/A094844</code> <code>n/John Doe</code> <code>a/Blk 505 Tampines #10-33 S469695</code> <code>p/98761111</code> <code>e/johndoe@example.com</code> <code>dts/2020-05-20 1300</code> <code>w/Yishun</code> <code>cod/$4</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You should be able to see that the order with transaction id 'A094844' will be inserted into the list of delivery orders.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Insert the order with all the order attributes including the non-compulsory ones</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>insert</code> <code>tid/C1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 572 Hougang st 51 #11-37 S530572</code> <code>e/amoscheong@example.com</code> <code>p/9001 0019</code> <code>dts/2020-05-10 1650</code> <code>w/Marsiling</code> <code>cod/$5</code> <code>c/Leave it at the riser</code> <code>type/glass</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You should see that the order with transaction id 'C1023456789' is inserted into the list of delivery orders.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -836,7 +994,7 @@ Opens a new window that displays the statistics.</p>
 <div class="sect2">
 <h3 id="import"><a class="link" href="#import">3.9. Importing a list of orders : <code>import</code></a></h3>
 <div class="sect3">
-<h4 id="description-7"><a class="link" href="#description-7">3.9.1. Description</a></h4>
+<h4 id="description-5"><a class="link" href="#description-5">3.9.1. Description</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -850,7 +1008,7 @@ transaction id of the parcels and the address of the customers, etc.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="format-7"><a class="link" href="#format-7">3.9.2. Format</a></h4>
+<h4 id="format-5"><a class="link" href="#format-5">3.9.2. Format</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -896,7 +1054,7 @@ transaction id of the parcels and the address of the customers, etc.</p>
 </ul>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 3. Order data format</caption>
+<caption class="title">Table 4. Order data format</caption>
 <colgroup>
 <col style="width: 9.0909%;">
 <col style="width: 9.0909%;">
@@ -942,7 +1100,7 @@ transaction id of the parcels and the address of the customers, etc.</p>
 </ul>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 4. Return data format</caption>
+<caption class="title">Table 5. Return data format</caption>
 <colgroup>
 <col style="width: 10%;">
 <col style="width: 10%;">
@@ -1023,7 +1181,7 @@ transaction id of the parcels and the address of the customers, etc.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="examples-7"><a class="link" href="#examples-7">3.9.3. Examples</a></h4>
+<h4 id="examples-5"><a class="link" href="#examples-5">3.9.3. Examples</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1035,28 +1193,75 @@ Import the contents of the csv file, <code>orders.csv</code>, to Delino.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="list"><a class="link" href="#list">3.10. Listing orders : <code>list</code></a></h3>
-<div class="sect3">
-<h4 id="description-8"><a class="link" href="#description-8">3.10.1. Description</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>You can view the list of delivery orders using the <code>list</code> command.</p>
-</li>
-<li>
-<p>The list command can be used with different <code>KEYWORD</code> to display all the orders with the specific status (done or undone).</p>
-</li>
-<li>
-<p>There are three types of list commands that are shown in the examples below.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="format-8"><a class="link" href="#format-8">3.10.2. Format</a></h4>
+<h3 id="list"><a class="link" href="#list">3.10. Listing orders : <code>list</code>  [Done by Amos Cheong Jit Hon]</a></h3>
 <div class="paragraph">
-<p><code>list</code> <code>[KEYWORD]</code></p>
+<p>In this section, you will learn more about the List command and how to use it.</p>
 </div>
+<div class="paragraph">
+<p>As a courier, you would want to take a look at all the orders that you have in your list of orders regardless of the type of orders or the order status. The List Command will enable you to
+view all these orders.</p>
+</div>
+<div class="sect3">
+<h4 id="list-works"><a class="link" href="#list-works">3.10.1. How does the List Command works</a></h4>
+<div class="paragraph">
+<p>Here are the steps to execute the List command:</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong> : Type in the keyword <strong>list</strong>.<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong> : If you want to simply see all your delivery and return orders.
+Otherwise, please proceed to Step 3. Else, skip to Step 4<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong> : Provide the following <code>[KEYWORD]</code> : <code>done</code> (Showing all your completed orders) or <code>undone</code> (Show all your
+uncompleted orders)<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 4</strong> : Press <code>Enter</code> on your keyboard and see the magic!</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="list-examples"><a class="link" href="#list-examples">3.10.2. What constitutes a valid List command</a></h4>
+<div class="paragraph">
+<p>The syntax of a valid <code>list</code> command is as shown:
+<code>list</code> <code>[KEYWORD]</code></p>
+</div>
+<div class="paragraph">
+<p>There are three types of list commands that are shown in the examples below :</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 6. Possible combinations of List Command</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Scenario</th>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Display all orders</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Show two lists of all orders. One list for delivery orders, the other for return orders</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Display all completed orders</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list</code> <code>done</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Show two lists of all completed orders. One list for delivery orders, the other for return orders</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Display all uncompleted orders</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list</code> <code>undone</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Show two lists of all uncompleted orders. One list for delivery orders, the other for return orders</p></td>
+</tr>
+</tbody>
+</table>
 <div class="admonitionblock important">
 <table>
 <tr>
@@ -1074,25 +1279,6 @@ Import the contents of the csv file, <code>orders.csv</code>, to Delino.</p>
 </td>
 </tr>
 </table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="examples-8"><a class="link" href="#examples-8">3.10.3. Examples</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list</code><br>
-List down all the orders (Return orders and Delivery orders), regardless of whether it is completed or not.</p>
-</li>
-<li>
-<p><code>list</code> <code>done</code><br>
-List down all the orders (Return orders and Delivery orders) that are completed.</p>
-</li>
-<li>
-<p><code>list</code> <code>undone</code><br>
-List down all the orders (Return orders and Delivery orders) that are uncompleted.</p>
-</li>
-</ul>
 </div>
 </div>
 </div>
@@ -1254,7 +1440,7 @@ The list of postal sectors and their corresponding general locations can be foun
 <p>The table below describes the possible usage scenarios of the nearby command:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 5. Possible Combinations of nearby command</caption>
+<caption class="title">Table 7. Possible Combinations of nearby command</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1303,7 +1489,7 @@ This would allow you to complete more orders!</p></td>
 <p>You can obtain more information about the various postal sectors in the following table:</p>
 </div>
 <table id="postal_sector" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 6. Postal Sectors in Singapore</caption>
+<caption class="title">Table 8. Postal Sectors in Singapore</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1434,7 +1620,7 @@ This would allow you to complete more orders!</p></td>
 <div class="sect2">
 <h3 id="return"><a class="link" href="#return">3.12. Returning an order: <code>return</code></a></h3>
 <div class="sect3">
-<h4 id="description-9"><a class="link" href="#description-9">3.12.1. Description</a></h4>
+<h4 id="description-6"><a class="link" href="#description-6">3.12.1. Description</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1447,7 +1633,7 @@ This would allow you to complete more orders!</p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="format-9"><a class="link" href="#format-9">3.12.2. Format</a></h4>
+<h4 id="format-6"><a class="link" href="#format-6">3.12.2. Format</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1478,7 +1664,7 @@ This would allow you to complete more orders!</p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="examples-9"><a class="link" href="#examples-9">3.12.3. Examples</a></h4>
+<h4 id="examples-6"><a class="link" href="#examples-6">3.12.3. Examples</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1597,7 +1783,7 @@ Why will you want to use the <code>search</code> command? If you wish to <code>s
 </table>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 7. Possible Combinations of Search command</caption>
+<caption class="title">Table 9. Possible Combinations of Search command</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1670,7 +1856,7 @@ Why will you want to use the <code>search</code> command? If you wish to <code>s
 <div class="sect2">
 <h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.14. Saving the data</a></h3>
 <div class="sect3">
-<h4 id="description-10"><a class="link" href="#description-10">3.14.1. Description</a></h4>
+<h4 id="description-7"><a class="link" href="#description-7">3.14.1. Description</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1737,7 +1923,7 @@ delivery), number of deliveries completed in a day}</em></p>
 the provided link in the table below.</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 8. Command Summary</caption>
+<caption class="title">Table 10. Command Summary</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1845,7 +2031,7 @@ OR<br>
 <h2 id="glossary"><a class="link" href="#glossary">6. Glossary</a></h2>
 <div class="sectionbody">
 <table id="command_prefix" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 9. Command Prefix</caption>
+<caption class="title">Table 11. Command Prefix</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1922,7 +2108,7 @@ OR<br>
 </tbody>
 </table>
 <table id="command_flags" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 10. Possible Command Flags</caption>
+<caption class="title">Table 12. Possible Command Flags</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1959,7 +2145,7 @@ OR<br>
 <p><a href="#nearby">Click here</a> to navigate back to the Nearby Command!</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 11. Central</caption>
+<caption class="title">Table 13. Central</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2302,7 +2488,7 @@ OR<br>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 12. East<br></caption>
+<caption class="title">Table 14. East<br></caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2370,7 +2556,7 @@ OR<br>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 13. North East</caption>
+<caption class="title">Table 15. North East</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2438,7 +2624,7 @@ OR<br>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 14. West</caption>
+<caption class="title">Table 16. West</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2512,7 +2698,7 @@ OR<br>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 15. North</caption>
+<caption class="title">Table 17. North</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2575,4 +2761,4 @@ OR<br>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-30 12:00:42 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-30 12:40:45 UTC</div></div></div></body></html>
