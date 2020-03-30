@@ -32,6 +32,7 @@ import static seedu.address.logic.commands.CommandTestUtil.TID_DESC_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.TYPE_DESC_GLASS;
 import static seedu.address.logic.commands.CommandTestUtil.TYPE_DESC_PLASTIC;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_ADDRESS_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_COMMENT_INSTRUCTION;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_EMAIL_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_PHONE_BOB;
@@ -125,6 +126,9 @@ public class ReturnCommandParserTest {
         assertParseSuccess(parser, TID_DESC_BOB + NAME_DESC_BOB + PHONE_DESC_BOB + EMAIL_DESC_BOB
                 + ADDRESS_DESC_BOB + RETURN_TIMESTAMP_DESC_BOB + WAREHOUSE_DESC_BOB + COMMENT_DESC_NIL
                 + TYPE_DESC_PLASTIC + TYPE_DESC_GLASS, new ReturnCommand(expectedReturnOrder, expectedTid));
+
+        // only TID present
+        assertParseSuccess(parser, TID_DESC_BOB, new ReturnCommand(null, expectedTid));
     }
 
     @Test
@@ -136,6 +140,18 @@ public class ReturnCommandParserTest {
                         + ADDRESS_DESC_AMY + RETURN_TIMESTAMP_DESC_AMY + WAREHOUSE_DESC_AMY + COMMENT_DESC_NIL
                         + TYPE_DESC_PLASTIC,
                 new ReturnCommand(expectedReturnOrder, expectedTid));
+
+        ReturnOrder expectedReturnOrderWithType = new ReturnOrderBuilder(AMY_RETURN)
+                .withItemType(VALID_TYPE_GLASS).build();
+        assertParseSuccess(parser, TID_DESC_AMY + NAME_DESC_AMY + PHONE_DESC_AMY + EMAIL_DESC_AMY
+                        + ADDRESS_DESC_AMY + RETURN_TIMESTAMP_DESC_AMY + WAREHOUSE_DESC_AMY + TYPE_DESC_GLASS,
+                new ReturnCommand(expectedReturnOrderWithType, expectedTid));
+
+        ReturnOrder expectedReturnOrderWithComment = new ReturnOrderBuilder(AMY_RETURN).withItemType("NIL")
+                .withComment(VALID_COMMENT_INSTRUCTION).build();
+        assertParseSuccess(parser, TID_DESC_AMY + NAME_DESC_AMY + PHONE_DESC_AMY + EMAIL_DESC_AMY
+                        + ADDRESS_DESC_AMY + RETURN_TIMESTAMP_DESC_AMY + WAREHOUSE_DESC_AMY + COMMENT_DESC_INSTRUCTION,
+                new ReturnCommand(expectedReturnOrderWithComment, expectedTid));
     }
 
     @Test
@@ -173,6 +189,12 @@ public class ReturnCommandParserTest {
         // all prefixes missing
         assertParseFailure(parser, VALID_TID_BOB + VALID_NAME_BOB + VALID_PHONE_BOB + VALID_EMAIL_BOB
                 + VALID_ADDRESS_BOB + VALID_TIMESTAMP_BOB + VALID_WAREHOUSE_BOB, expectedMessage);
+
+        // additional field besides TID - cannot trigger conversion of existing order into a return order
+        assertParseFailure(parser, VALID_TID_BOB + VALID_NAME_BOB, expectedMessage);
+
+        // additional field besides TID - cannot trigger conversion of existing order into a return order
+        assertParseFailure(parser, VALID_TID_BOB + VALID_ADDRESS_BOB + VALID_EMAIL_BOB, expectedMessage);
     }
 
     @Test
