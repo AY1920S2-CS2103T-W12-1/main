@@ -18,7 +18,7 @@
 <li><a href="#quick-start">2. Quick Start</a></li>
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
-<li><a href="#clear">3.1. Clearing all entries : <code>clear</code></a></li>
+<li><a href="#clear">3.1. Clearing all entries : <code>clear</code> [Done by - Eng Xuan En]</a></li>
 <li><a href="#delete">3.2. Deleting an order : <code>delete</code></a></li>
 <li><a href="#delivered">3.3. Delivering an order or return order : <code>delivered</code> [Done by - Cher Wei Jie]</a></li>
 <li><a href="#edit">3.4. Editing an order : <code>edit</code> [Done by - Kenny Ho Si Chong]</a></li>
@@ -26,12 +26,12 @@
 <li><a href="#help">3.6. Showing the Help message - <code>help</code> [Done by - Cher Wei Jie]</a></li>
 <li><a href="#show">3.7. Showing statistics : <code>show</code> [Done by Amos Cheong Jit Hon]</a></li>
 <li><a href="#insert">3.8. Inserting an order: <code>insert</code> [Done by Amos Cheong Jit Hon]</a></li>
-<li><a href="#import">3.9. Importing a list of orders : <code>import</code></a></li>
+<li><a href="#import">3.9. Importing a list of orders : <code>import</code> [Done by - Eng Xuan En]</a></li>
 <li><a href="#list">3.10. Listing orders : <code>list</code>  [Done by Amos Cheong Jit Hon]</a></li>
 <li><a href="#nearby">3.11. Viewing orders located at the same area or postal sector: <code>nearby</code> [Done by - Loh Jeremy Wen Jun]</a></li>
 <li><a href="#return">3.12. Returning an order : <code>return</code> [Done by - Cher Wei Jie]</a></li>
 <li><a href="#search">3.13. Searching for parcels using their attributes: <code>search</code> [Done by Kenny Ho Si Chong]</a></li>
-<li><a href="#saving-the-data">3.14. Saving the data</a></li>
+<li><a href="#saving">3.14. Saving the data</a></li>
 <li><a href="#export">3.15. Export order list <code>[coming in v2.0]</code></a></li>
 <li><a href="#reminder">3.16. Reminder <code>[coming in v2.0]</code></a></li>
 <li><a href="#rescheduling">3.17. Rescheduling orders <code>[coming in v2.0]</code></a></li>
@@ -65,7 +65,7 @@ Have a delightful journey using Delino!</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/Delino.svg" alt="Delino" width="790">
+<img src="images/Ui.png" alt="Ui" width="790">
 </div>
 <div class="title">Figure 1. Graphical User Interface (GUI) of Delino</div>
 </div>
@@ -305,18 +305,25 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </div>
 <div class="sect2">
-<h3 id="clear"><a class="link" href="#clear">3.1. Clearing all entries : <code>clear</code></a></h3>
+<h3 id="clear"><a class="link" href="#clear">3.1. Clearing all entries : <code>clear</code> [Done by - Eng Xuan En]</a></h3>
+<div class="paragraph">
+<p>In this section, you will be able to find out <a href="#clear-usage">how to use</a> the <code>clear</code> command and
+the <a href="#clear-combinations">possible combinations</a> of the <code>clear</code> command.<br></p>
+</div>
+<div class="paragraph">
+<p>If you wish to delete huge amount of orders and return orders from Delino, the <code>clear</code> command will provide you the means
+to do so.</p>
+</div>
 <div class="sect3">
-<h4 id="description"><a class="link" href="#description">3.1.1. Description</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>You can use this command to clear all existing orders. By default, the command will ask you for confirmation.</p>
-</li>
-<li>
-<p>If an <code>-f</code> flag is given, no user confirmation will be requested.</p>
-</li>
-</ul>
+<h4 id="clear-usage"><a class="link" href="#clear-usage">3.1.1. How to use the Clear command</a></h4>
+<div class="paragraph">
+<p>Here is how you can clear the order list and return order list by following the steps below:<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong> : Type in the keyword <code>clear</code>.<br>
+<strong>Step 2 (Optional)</strong> : Provides the <code>-f</code> flag if you confirm that you would like to force clear both order list and return order list.<br>
+<strong>Step 3 (Optional)</strong> : Provides the <code>-o</code> or <code>-r</code> flag if you only want to clear either order list or return order list respectively.<br>
+<strong>Step 4</strong> : Press <code>Enter</code> on your keyboard to send the instruction to Delino.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -331,7 +338,13 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p>A space is required in between the command and flags. Refer to the  examples below for more information.</p>
 </li>
 <li>
-<p>If <strong>no</strong> <code>-o</code> or <code>-r</code> flag is given, it will be treated as both. <strong>Both</strong> order book and return order book will be cleared.</p>
+<p>If <strong>no</strong> <code>-o</code> or <code>-r</code> flag is given, it will be treated as both. <strong>Both</strong> order list and return order list will be cleared.</p>
+</li>
+<li>
+<p>Flags can be in any order such that <code>clear</code> <code>-f</code> <code>-o</code> and <code>clear</code> <code>-o</code> <code>-f</code> indicate to force clear the order list.</p>
+</li>
+<li>
+<p>If an <code>-f</code> flag is given, no user confirmation will be requested.</p>
 </li>
 </ul>
 </div>
@@ -341,7 +354,13 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </div>
 <div class="sect3">
-<h4 id="format"><a class="link" href="#format">3.1.2. Format:</a></h4>
+<h4 id="what-constitutes-a-valid-clear-command"><a class="link" href="#what-constitutes-a-valid-clear-command">3.1.2. What constitutes a valid Clear command</a></h4>
+<div class="paragraph">
+<p>In this section, you will learn about the syntax for a valid <code>clear</code> command and the possible combinations of the command.</p>
+</div>
+<div class="paragraph">
+<p>The syntax for a valid <code>clear</code> command can be seen below:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -349,35 +368,84 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </li>
 </ul>
 </div>
-</div>
-<div class="sect3">
-<h4 id="examples"><a class="link" href="#examples">3.1.3. Examples</a></h4>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="ulist">
 <ul>
 <li>
-<p><code>clear</code><br>
-Popup will appear and ask the user for double confirm to clear both order and return order book.</p>
+<p><code>clear</code> is the command word for the clear feature</p>
 </li>
 <li>
-<p><code>clear</code> <code>-f</code><br>
-Both order book and return order book will be cleared immediately.</p>
-</li>
-<li>
-<p><code>clear</code> <code>-f</code> <code>-r</code><br>
-Only return order book is cleared immediately.</p>
-</li>
-<li>
-<p><code>clear</code> <code>-o</code> <code>-f</code><br>
-Only order book is cleared immediately.</p>
+<p><code>FLAG</code> could be either <code>-f</code>, <code>-r</code> and <code>-o</code>; whereby <code>-f</code> flag indicate force clear and<br>
+<code>-r</code> and <code>-o</code> indicates the return order list and order list respectively.</p>
 </li>
 </ul>
 </div>
+</td>
+</tr>
+</table>
+</div>
+<div id="clear-combinations" class="paragraph">
+<p>These are the possible combinations of the <code>clear</code> command:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Possible Combinations of Clear command</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Scenario</th>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to have a confirmation notice before clearing both lists, you could use this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Popup will appear and ask the user for confirmation to clear both order list and return order list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you don&#8217;t want to get prompt before clearing both lists, you could use this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code> <code>-f</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Both order list and return order list will be cleared immediately.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to have a confirmation notice before clearing return order list, you could use this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code> <code>-r</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Popup will appear and ask the user for confirmation to clear the return order list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you don&#8217;t want to get prompt before clearing return order list, you could use this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code> <code>-f</code> <code>-r</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only return order list is cleared immediately.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to have a confirmation notice before clearing order list, you could use this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code> <code>-o</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Popup will appear and ask the user for confirmation to clear the order list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you don&#8217;t want to get prompt before clearing order list, you could use this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code> <code>-o</code> <code>-f</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only order list is cleared immediately.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect2">
 <h3 id="delete"><a class="link" href="#delete">3.2. Deleting an order : <code>delete</code></a></h3>
 <div class="sect3">
-<h4 id="description-2"><a class="link" href="#description-2">3.2.1. Description</a></h4>
+<h4 id="description"><a class="link" href="#description">3.2.1. Description</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -388,7 +456,7 @@ The item to be deleted is taken from the respective list of orders or return ord
 </div>
 </div>
 <div class="sect3">
-<h4 id="format-2"><a class="link" href="#format-2">3.2.2. Format:</a></h4>
+<h4 id="format"><a class="link" href="#format">3.2.2. Format:</a></h4>
 <div class="paragraph">
 <p><code>delete</code> <code>FLAG</code> <code>INDEX</code></p>
 </div>
@@ -414,7 +482,7 @@ The item to be deleted is taken from the respective list of orders or return ord
 </div>
 </div>
 <div class="sect3">
-<h4 id="examples-2"><a class="link" href="#examples-2">3.2.3. Examples:</a></h4>
+<h4 id="examples"><a class="link" href="#examples">3.2.3. Examples:</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -498,7 +566,7 @@ If nothing is showing up, it means you got to <a href="#insert"><code>insert</co
 </ul>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 1. Possible Combinations of Delivered command</caption>
+<caption class="title">Table 2. Possible Combinations of Delivered command</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -663,7 +731,7 @@ Why will you want to use the <code>edit</code> command? If you wish to edit any 
 </table>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 2. Possible Combinations of Edit command</caption>
+<caption class="title">Table 3. Possible Combinations of Edit command</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -778,7 +846,7 @@ Optionally you can click on the cross button of the application to exit!
 </table>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 3. Possible Combinations of Exit command</caption>
+<caption class="title">Table 4. Possible Combinations of Exit command</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -833,7 +901,7 @@ You can use this Help command to see a summary of all available features of Deli
 </ul>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 4. Possible Combinations of Help command</caption>
+<caption class="title">Table 5. Possible Combinations of Help command</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1067,7 +1135,7 @@ in 24 hour format.</p>
 <p>There are two different scenarios on how to insert the orders :</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 5. Possible combinations of Insert Command</caption>
+<caption class="title">Table 6. Possible combinations of Insert Command</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1114,27 +1182,40 @@ in 24 hour format.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="import"><a class="link" href="#import">3.9. Importing a list of orders : <code>import</code></a></h3>
+<h3 id="import"><a class="link" href="#import">3.9. Importing a list of orders : <code>import</code> [Done by - Eng Xuan En]</a></h3>
+<div class="paragraph">
+<p>In this section, you will be able to find out <a href="#import-usage">how to use</a> the <code>import</code> command and
+the <a href="#import-combination">possible combination</a> of the <code>import</code> command.<br></p>
+</div>
+<div class="paragraph">
+<p>If you wish to delete huge amount of orders and return orders from Delino, the <code>clear</code> command will provide you the means
+to do so.</p>
+</div>
 <div class="sect3">
-<h4 id="description-3"><a class="link" href="#description-3">3.9.1. Description</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>You will be able to import orders and return orders via a csv file that are given to you by your company.</p>
-</li>
-<li>
-<p>The CSV file will include all relevant and important details of the parcels; such as the customers’ names,
-transaction id of the parcels and the address of the customers, etc.</p>
-</li>
-</ul>
+<h4 id="import-usage"><a class="link" href="#import-usage">3.9.1. How to use Import command</a></h4>
+<div class="paragraph">
+<p>Here is how you can import the orders and return orders into Delino by following the steps below:<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong> : Type in the keyword <code>import</code>.<br>
+<strong>Step 2</strong> : Provides the CSV file name that you would like to import with the <strong>.csv</strong> extension behind<br>
+<strong>Step 3</strong> : Press <code>Enter</code> on your keyboard to send the instruction to Delino.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="format-3"><a class="link" href="#format-3">3.9.2. Format</a></h4>
+<h4 id="what-constitutes-a-valid-import-command"><a class="link" href="#what-constitutes-a-valid-import-command">3.9.2. What constitutes a valid Import command</a></h4>
+<div class="paragraph">
+<p>In this section, you will learn about the syntax of a valid <code>import</code> command, the format for both orders and return orders in the CSV file
+and the combination for the <code>import</code> command.</p>
+</div>
+<div class="paragraph">
+<p>The syntax for a valid <code>Clear</code> command can be seen below:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>import</code> <code>FILE_NAME</code></p>
+<p><code>import</code> <code>FILE_NAME</code><br>
+<code>import</code> is the command and <code>FILE_NAME</code>  is the file name that is required to import with the <strong>.csv</strong> extension behind.</p>
 </li>
 </ul>
 </div>
@@ -1148,19 +1229,19 @@ transaction id of the parcels and the address of the customers, etc.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Only csv file could be imported.</p>
+<p>Only CSV file could be imported.</p>
 </li>
 <li>
-<p>Only <strong>one</strong> csv file can be imported at one time.</p>
+<p>Only <strong>one</strong> CSV file can be imported at one time.</p>
 </li>
 <li>
 <p>The <code>FILE_NAME</code> should include the extension. For example: <code><strong>orders.csv</strong></code>.</p>
 </li>
 <li>
-<p>The folder, <strong>data</strong>, which the csv files are stored in, should be in the same directory as the JAR file.</p>
+<p>The folder, <strong>data</strong>, which the CSV files are stored in, should be in the same directory as the JAR file.</p>
 </li>
 <li>
-<p>Import the specific csv with the <code>FILE_NAME</code> in <strong>data</strong> folder to the application.</p>
+<p>Import the specific CSV with the <code>FILE_NAME</code> in <strong>data</strong> folder to the application.</p>
 </li>
 </ul>
 </div>
@@ -1168,15 +1249,11 @@ transaction id of the parcels and the address of the customers, etc.</p>
 </tr>
 </table>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>The data in the <code>csv file</code> should be written in the following format:</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>The data in the <code>CSV file</code> should be written in the following format:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 6. Order data format</caption>
+<caption class="title">Table 7. Order data format</caption>
 <colgroup>
 <col style="width: 9.0909%;">
 <col style="width: 9.0909%;">
@@ -1204,25 +1281,23 @@ transaction id of the parcels and the address of the customers, etc.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[c/COMMENTS_BY_CUSTOMER]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[type/TYPE_OF_ITEM]</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ot/order</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>tid/1023456789</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>n/Amos Cheong</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>a/Blk 572 Hougang st 51 #11-37 S530572</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>p/90010019</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>e/amos@example.com</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dts/2020-05-10 1650</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>w/Marsiling</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cod/$9.50</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>c/Leave it at the riser</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>type/glass</code></p></td>
+</tr>
 </tbody>
 </table>
-<div class="ulist">
-<ul>
-<li>
-<p>Examples:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>ot/order</code>,<code>tid/1023456789</code>,<code>n/Amos Cheong</code>,<code>a/Blk 572 Hougang st 51 #11-37 S530572</code>,<code>p/90010019</code>,
-<code>e/amos@example.com</code>, <code>dts/2020-05-10 1650</code>,<code>w/Marsiling</code>,<code>cod/$9.50</code>,<code>c/Leave it at the riser</code>,<code>type/glass</code></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 7. Return data format</caption>
+<caption class="title">Table 8. Return data format</caption>
 <colgroup>
 <col style="width: 10%;">
 <col style="width: 10%;">
@@ -1248,23 +1323,20 @@ transaction id of the parcels and the address of the customers, etc.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[c/COMMENTS_BY_CUSTOMER]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[type/TYPE_OF_ITEM]</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ot/return</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>tid/b1230512</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>n/Aaron Teo</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>a/256 Alpha Road #03-22 S123567</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>p/91230456</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>e/aaron@example.com</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rts/2020-05-10 1400</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>w/Jurong Warehouse</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>c/Leave it at the lobby</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>type/metal</code></p></td>
+</tr>
 </tbody>
 </table>
-<div class="ulist">
-<ul>
-<li>
-<p>Examples:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>ot/return</code>,<code>tid/b1230512</code>,<code>n/Aaron Teo</code>,<code>a/256 Alpha Road #03-22 S123567</code>,<code>p/91230456</code>, <code>e/aaron@example.com</code>,<br>
-<code>rts/2020-05-10 1400</code>,<code>w/Jurong Warehouse</code>,<code>c/Leave it at the lobby</code>,<code>type/metal</code></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1301,17 +1373,31 @@ transaction id of the parcels and the address of the customers, etc.</p>
 </tr>
 </table>
 </div>
+<div id="import-combination" class="paragraph">
+<p>There are only one possible combination for the <code>import</code> Command:</p>
 </div>
-<div class="sect3">
-<h4 id="examples-3"><a class="link" href="#examples-3">3.9.3. Examples</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p><code>import</code> <code>orders.csv</code><br>
-Import the contents of the csv file, <code>orders.csv</code>, to Delino.</p>
-</li>
-</ul>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 9. Possible combination of Import command</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Scenario</th>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to import all of the orders and return orders at once via a CSV file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>import</code> <code>orders.csv</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Import the contents of the CSV file, <code>orders.csv</code>, to Delino.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -1353,7 +1439,7 @@ uncompleted orders)<br></p>
 <p>There are three types of list commands that are shown in the examples below :</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 8. Possible combinations of List Command</caption>
+<caption class="title">Table 10. Possible combinations of List Command</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1562,7 +1648,7 @@ The list of postal sectors and their corresponding general locations can be foun
 <p>The table below describes the possible usage scenarios of the nearby command:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 9. Possible Combinations of nearby command</caption>
+<caption class="title">Table 11. Possible Combinations of nearby command</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1611,7 +1697,7 @@ This would allow you to complete more orders!</p></td>
 <p>You can obtain more information about the various postal sectors in the following table:</p>
 </div>
 <table id="postal_sector" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 10. Postal Sectors in Singapore</caption>
+<caption class="title">Table 12. Postal Sectors in Singapore</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1831,7 +1917,7 @@ For example, it can be used when the item is fragile.</p>
 </ul>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 11. Possible Combinations of Return command</caption>
+<caption class="title">Table 13. Possible Combinations of Return command</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2028,7 +2114,7 @@ Why will you want to use the <code>search</code> command? If you wish to <code>s
 </table>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 12. Possible Combinations of Search command</caption>
+<caption class="title">Table 14. Possible Combinations of Search command</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2099,9 +2185,7 @@ Why will you want to use the <code>search</code> command? If you wish to <code>s
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.14. Saving the data</a></h3>
-<div class="sect3">
-<h4 id="description-4"><a class="link" href="#description-4">3.14.1. Description</a></h4>
+<h3 id="saving"><a class="link" href="#saving">3.14. Saving the data</a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2111,7 +2195,6 @@ Why will you want to use the <code>search</code> command? If you wish to <code>s
 <p>There is no need to save manually.</p>
 </li>
 </ul>
-</div>
 </div>
 </div>
 <div class="sect2">
@@ -2168,7 +2251,7 @@ delivery), number of deliveries completed in a day}</em></p>
 the provided link in the table below.</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 13. Command Summary</caption>
+<caption class="title">Table 15. Command Summary</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2276,7 +2359,7 @@ OR<br>
 <h2 id="glossary"><a class="link" href="#glossary">6. Glossary</a></h2>
 <div class="sectionbody">
 <table id="command_prefix" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 14. Command Prefix</caption>
+<caption class="title">Table 16. Command Prefix</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2353,7 +2436,7 @@ OR<br>
 </tbody>
 </table>
 <table id="command_flags" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 15. Possible Command Flags</caption>
+<caption class="title">Table 17. Possible Command Flags</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2390,7 +2473,7 @@ OR<br>
 <p><a href="#nearby">Click here</a> to navigate back to the Nearby Command!</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 16. Central</caption>
+<caption class="title">Table 18. Central</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2733,7 +2816,7 @@ OR<br>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 17. East<br></caption>
+<caption class="title">Table 19. East<br></caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2801,7 +2884,7 @@ OR<br>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 18. North East</caption>
+<caption class="title">Table 20. North East</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2869,7 +2952,7 @@ OR<br>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 19. West</caption>
+<caption class="title">Table 21. West</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2943,7 +3026,7 @@ OR<br>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 20. North</caption>
+<caption class="title">Table 22. North</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -3006,4 +3089,4 @@ OR<br>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-31 08:12:18 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-31 10:01:00 UTC</div></div></div></body></html>
