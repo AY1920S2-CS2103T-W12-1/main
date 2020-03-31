@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="423px" preserveAspectRatio="none" style="width:748px;height:423px;" version="1.1" viewBox="0 0 748 423" width="748px" zoomAndPan="magnify"><defs/><g><!--MD5=[11b747870319a085bc745183e08c5f76]
+class Storage--><rect fill="#A38300" height="38.8926" id="Storage" style="stroke: #FFFFFF; stroke-width: 1.0;" width="64" x="252" y="107"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="62" x="253" y="124.457">«Interface»</text><text fill="#FFFFFF" font-family="Arial" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="43" x="262.5" y="138.3496">Storage</text><!--MD5=[8a5ced027b720c99ce7a6d28a509754b]
+class UserPrefsStorage--><rect fill="#A38300" height="38.8926" id="UserPrefsStorage" style="stroke: #FFFFFF; stroke-width: 1.0;" width="103" x="348.5" y="8"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="62" x="369" y="25.457">«Interface»</text><text fill="#FFFFFF" font-family="Arial" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="97" x="351.5" y="39.3496">UserPrefsStorage</text><!--MD5=[d294c457debf25206ebf0a9ff2f97488]
+class OrderBookStorage--><rect fill="#A38300" height="38.8926" id="OrderBookStorage" style="stroke: #FFFFFF; stroke-width: 1.0;" width="109" x="426.5" y="206"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="62" x="450" y="223.457">«Interface»</text><text fill="#FFFFFF" font-family="Arial" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="103" x="429.5" y="237.3496">OrderBookStorage</text><!--MD5=[11a0db2a207bb3d11837471f021a1d79]
+class ReturnOrderBookStorage--><rect fill="#A38300" height="38.8926" id="ReturnOrderBookStorage" style="stroke: #FFFFFF; stroke-width: 1.0;" width="146" x="245" y="206"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="62" x="287" y="223.457">«Interface»</text><text fill="#FFFFFF" font-family="Arial" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="140" x="248" y="237.3496">ReturnOrderBookStorage</text><!--MD5=[c47c8d4c18673c3c891899ebd374dbd0]
+class StorageManager--><rect fill="#A38300" height="23.7988" id="StorageManager" style="stroke: #FFFFFF; stroke-width: 1.0;" width="97" x="351.5" y="114.5"/><text fill="#FFFFFF" font-family="Arial" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="91" x="354.5" y="130.7559">StorageManager</text><!--MD5=[a9c1870f99109ebf18f8c33e121b649f]
+class JsonUserPrefsStorage--><rect fill="#A38300" height="23.7988" id="JsonUserPrefsStorage" style="stroke: #FFFFFF; stroke-width: 1.0;" width="132" x="487" y="15.5"/><text fill="#FFFFFF" font-family="Arial" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="126" x="490" y="31.7559">JsonUserPrefsStorage</text><!--MD5=[5883334532a3b0f459efa5673f53cb43]
+class JsonOrderBookStorage--><rect fill="#A38300" height="23.7988" id="JsonOrderBookStorage" style="stroke: #FFFFFF; stroke-width: 1.0;" width="135" x="570.5" y="213.5"/><text fill="#FFFFFF" font-family="Arial" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="129" x="573.5" y="229.7559">JsonOrderBookStorage</text><!--MD5=[3dcc4f19816b00379bc5966ac0a731b6]
+class JsonReturnOrderBookStorage--><rect fill="#A38300" height="23.7988" id="JsonReturnOrderBookStorage" style="stroke: #FFFFFF; stroke-width: 1.0;" width="172" x="38" y="213.5"/><text fill="#FFFFFF" font-family="Arial" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="166" x="41" y="229.7559">JsonReturnOrderBookStorage</text><!--MD5=[0f3d33750ee9cb9bc6e4d93b200287bc]
+class JsonSerializableOrderBookStorage--><rect fill="#A38300" height="23.7988" id="JsonSerializableOrderBookStorage" style="stroke: #FFFFFF; stroke-width: 1.0;" width="199" x="538.5" y="305"/><text fill="#FFFFFF" font-family="Arial" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="193" x="541.5" y="321.2559">JsonSerializableOrderBookStorage</text><!--MD5=[4cd6dc8ad4a36b9a3664e2e1dbed26fb]
+class JsonSerializableReturnOrderBookStorage--><rect fill="#A38300" height="23.7988" id="JsonSerializableReturnOrderBookStorage" style="stroke: #FFFFFF; stroke-width: 1.0;" width="236" x="6" y="305"/><text fill="#FFFFFF" font-family="Arial" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="230" x="9" y="321.2559">JsonSerializableReturnOrderBookStorage</text><!--MD5=[541be8d9e4978a9b6a9a1f016771f4f7]
+class JsonAdaptedOrder--><rect fill="#A38300" height="23.7988" id="JsonAdaptedOrder" style="stroke: #FFFFFF; stroke-width: 1.0;" width="109" x="583.5" y="389"/><text fill="#FFFFFF" font-family="Arial" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="103" x="586.5" y="405.2559">JsonAdaptedOrder</text><!--MD5=[def398d6e652b434b82efbb12a29be70]
+class JsonAdaptedReturnOrder--><rect fill="#A38300" height="23.7988" id="JsonAdaptedReturnOrder" style="stroke: #FFFFFF; stroke-width: 1.0;" width="146" x="51" y="389"/><text fill="#FFFFFF" font-family="Arial" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="140" x="54" y="405.2559">JsonAdaptedReturnOrder</text><!--MD5=[180c583bbd2e63c1867ef033c2cf1303]
+reverse link Storage to StorageManager--><path d="M336.428,126.5 C341.355,126.5 346.282,126.5 351.209,126.5 " fill="none" id="Storage&lt;-StorageManager" style="stroke: #A38300; stroke-width: 1.1; stroke-dasharray: 7.0,7.0;"/><polygon fill="none" points="336.172,133.5,316.172,126.5,336.172,119.5,336.172,133.5" style="stroke: #A38300; stroke-width: 1.1;"/><!--MD5=[db41308d672031f55086d01c1023686f]
+link UserPrefsStorage to StorageManager--><path d="M400,60.217 C400,73.473 400,102.408 400,102.408 " fill="none" id="UserPrefsStorage-StorageManager" style="stroke: #A38300; stroke-width: 1.1;"/><polygon fill="#FFFFFF" points="400,114.408,404,108.408,400,102.408,396,108.408,400,114.408" style="stroke: #A38300; stroke-width: 1.1;"/><polygon fill="#A38300" points="400,47.203,396,56.203,400,52.203,404,56.203,400,47.203" style="stroke: #A38300; stroke-width: 1.1;"/><line style="stroke: #A38300; stroke-width: 1.1;" x1="400" x2="400" y1="52.203" y2="60.203"/><!--MD5=[0e3304c410fd0da3a8443a3246231a94]
+link StorageManager to OrderBookStorage--><path d="M416.9837,147.8378 C416.9837,147.8378 444.285,180.532 456.845,195.573 " fill="none" id="StorageManager-OrderBookStorage" style="stroke: #A38300; stroke-width: 1.1;"/><polygon fill="#A38300" points="465.457,205.887,462.7585,196.415,462.2521,202.0492,456.618,201.5428,465.457,205.887" style="stroke: #A38300; stroke-width: 1.1;"/><line style="stroke: #A38300; stroke-width: 1.1;" x1="462.2521" x2="457.1245" y1="202.0492" y2="195.9085"/><polygon fill="#FFFFFF" points="409.292,138.627,410.0676,145.7963,416.9837,147.8378,416.2081,140.6685,409.292,138.627" style="stroke: #A38300; stroke-width: 1.1;"/><!--MD5=[7bad273c64609d06dd48e5e5a08077db]
+link StorageManager to ReturnOrderBookStorage--><path d="M382.8471,147.7914 C382.8471,147.7914 355.169,180.532 342.454,195.573 " fill="none" id="StorageManager-ReturnOrderBookStorage" style="stroke: #A38300; stroke-width: 1.1;"/><polygon fill="#A38300" points="333.735,205.887,342.6003,201.5966,336.9631,202.0687,336.491,196.4316,333.735,205.887" style="stroke: #A38300; stroke-width: 1.1;"/><line style="stroke: #A38300; stroke-width: 1.1;" x1="336.9631" x2="342.1275" y1="202.0687" y2="195.9595"/><polygon fill="#FFFFFF" points="390.594,138.627,383.6658,140.6269,382.8471,147.7914,389.7754,145.7915,390.594,138.627" style="stroke: #A38300; stroke-width: 1.1;"/><!--MD5=[876da414b8f5f367f7d257bb4bf26450]
+reverse link UserPrefsStorage to JsonUserPrefsStorage--><path d="M471.783,27.5 C476.827,27.5 481.871,27.5 486.916,27.5 " fill="none" id="UserPrefsStorage&lt;-JsonUserPrefsStorage" style="stroke: #A38300; stroke-width: 1.1; stroke-dasharray: 7.0,7.0;"/><polygon fill="none" points="471.697,34.5,451.697,27.5,471.697,20.5,471.697,34.5" style="stroke: #A38300; stroke-width: 1.1;"/><!--MD5=[6b5307f0c16e452eb03d6de1dbe42805]
+reverse link OrderBookStorage to JsonOrderBookStorage--><path d="M555.704,225.5 C560.599,225.5 565.494,225.5 570.388,225.5 " fill="none" id="OrderBookStorage&lt;-JsonOrderBookStorage" style="stroke: #A38300; stroke-width: 1.1; stroke-dasharray: 7.0,7.0;"/><polygon fill="none" points="555.582,232.5,535.582,225.5,555.582,218.5,555.582,232.5" style="stroke: #A38300; stroke-width: 1.1;"/><!--MD5=[af97066094c54f3163ef692a097c445c]
+reverse link ReturnOrderBookStorage to OrderBookStorage--><!--MD5=[ce1dbf83f4e347ac37fe25bb1981f084]
+link JsonReturnOrderBookStorage to ReturnOrderBookStorage--><path d="M210.012,225.5 C214.786,225.5 219.56,225.5 224.334,225.5 " fill="none" id="JsonReturnOrderBookStorage-&gt;ReturnOrderBookStorage" style="stroke: #A38300; stroke-width: 1.1; stroke-dasharray: 7.0,7.0;"/><polygon fill="none" points="224.602,218.5,244.602,225.5,224.602,232.5,224.602,218.5" style="stroke: #A38300; stroke-width: 1.1;"/><!--MD5=[0a6d3dc7523447ff2a8211ff6585708a]
+link JsonOrderBookStorage to JsonSerializableOrderBookStorage--><path d="M638,237.835 C638,253.437 638,281.628 638,299.55 " fill="none" id="JsonOrderBookStorage-&gt;JsonSerializableOrderBookStorage" style="stroke: #A38300; stroke-width: 1.1; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A38300" points="638,304.757,642,295.757,638,299.757,634,295.757,638,304.757" style="stroke: #A38300; stroke-width: 1.1;"/><!--MD5=[2c0216574c81816f2a3313adc3800bf3]
+link JsonReturnOrderBookStorage to JsonSerializableReturnOrderBookStorage--><path d="M124,237.835 C124,253.437 124,281.628 124,299.55 " fill="none" id="JsonReturnOrderBookStorage-&gt;JsonSerializableReturnOrderBookStorage" style="stroke: #A38300; stroke-width: 1.1; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A38300" points="124,304.757,128,295.757,124,299.757,120,295.757,124,304.757" style="stroke: #A38300; stroke-width: 1.1;"/><!--MD5=[a9aca244c87636ad37573fd03737479b]
+link JsonSerializableOrderBookStorage to JsonAdaptedOrder--><path d="M638,329.0589 C638,343.1197 638,367.5106 638,383.7039 " fill="none" id="JsonSerializableOrderBookStorage-&gt;JsonAdaptedOrder" style="stroke: #A38300; stroke-width: 1.1; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A38300" points="638,388.8544,642,379.8544,638,383.8544,634,379.8544,638,388.8544" style="stroke: #A38300; stroke-width: 1.1;"/><!--MD5=[c67cc182f9349c14322ec63c94638f0b]
+link JsonSerializableReturnOrderBookStorage to JsonAdaptedReturnOrder--><path d="M124,329.0589 C124,343.1197 124,367.5106 124,383.7039 " fill="none" id="JsonSerializableReturnOrderBookStorage-&gt;JsonAdaptedReturnOrder" style="stroke: #A38300; stroke-width: 1.1; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A38300" points="124,388.8544,128,379.8544,124,383.8544,120,379.8544,124,388.8544" style="stroke: #A38300; stroke-width: 1.1;"/><!--MD5=[ae12db668514268b8aae5a197837ac11]
+@startuml
+
+
+
+
+
+
+
+
+skinparam BackgroundColor #FFFFFFF
+
+skinparam Shadowing false
+
+skinparam Class {
+    FontColor #FFFFFF
+    BorderThickness 1
+    BorderColor #FFFFFF
+    StereotypeFontColor #FFFFFF
+    FontName Arial
+}
+
+skinparam Actor {
+    BorderColor #000000
+    Color #000000
+    FontName Arial
+}
+
+skinparam Sequence {
+    MessageAlign center
+    BoxFontSize 15
+    BoxPadding 0
+    BoxFontColor #FFFFFF
+    FontName Arial
+}
+
+skinparam Participant {
+    FontColor #FFFFFFF
+    Padding 20
+}
+
+skinparam MinClassWidth 50
+skinparam ParticipantPadding 10
+skinparam Shadowing false
+skinparam DefaultTextAlignment center
+skinparam packageStyle Rectangle
+
+hide footbox
+hide members
+hide circle
+skinparam arrowThickness 1.1
+skinparam arrowColor #A38300
+skinparam classBackgroundColor #A38300
+
+Interface Storage <<Interface>>
+Interface UserPrefsStorage <<Interface>>
+Interface OrderBookStorage <<Interface>>
+Interface ReturnOrderBookStorage <<Interface>>
+
+Class StorageManager
+Class JsonUserPrefsStorage
+Class JsonOrderBookStorage
+Class JsonReturnOrderBookStorage
+Class JsonSerializableOrderBookStorage
+Class JsonSerializableReturnOrderBookStorage
+Class JsonAdaptedOrder
+
+StorageManager .left.|> Storage
+StorageManager o-up-> UserPrefsStorage
+StorageManager o- -> OrderBookStorage
+StorageManager o- -> ReturnOrderBookStorage
+
+JsonUserPrefsStorage .left.|> UserPrefsStorage
+JsonOrderBookStorage .left.|> OrderBookStorage
+OrderBookStorage .left[hidden].> ReturnOrderBookStorage
+JsonReturnOrderBookStorage .right.|> ReturnOrderBookStorage
+JsonOrderBookStorage .down.> JsonSerializableOrderBookStorage
+JsonReturnOrderBookStorage .down.> JsonSerializableReturnOrderBookStorage
+JsonSerializableOrderBookStorage .down.> JsonAdaptedOrder
+JsonSerializableReturnOrderBookStorage .down.> JsonAdaptedReturnOrder
+@enduml
+
+PlantUML version 1.2019.11(Sun Sep 22 18:02:15 SGT 2019)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11.0.5+10-b520.30
+Operating System: Windows 10
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>
