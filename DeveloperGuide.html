@@ -380,7 +380,7 @@ If the given arguments are valid, a new <code>ClearCommand</code> object will be
 <div class="paragraph">
 <p>In the <code>ClearCommandParser</code>, there will be two validation checks:<br>
 1. The flag is one of the three flags: <code>-f</code>, <code>-o</code> and <code>-r</code>.<br>
-2. There are no <code>-o</code> and <code>-r</code> flags in the arguments.</p>
+2. The arguments do not have both <code>-o</code> and <code>-r</code> flags.</p>
 </div>
 <div class="paragraph">
 <p>After the <code>ClearCommand</code> object is being returned to the <code>LogicManager</code>, the <code>LogicManager</code> will start
@@ -696,15 +696,15 @@ In this class, invalid arguments will result in a <code>ParseException</code>.<b
 <div class="paragraph">
 <p>Two types of checks will be done before returning the <code>ImportCommand</code>:</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Check whether the file is exists in the data folder.</p>
 </li>
 <li>
 <p>Check whether the first prefix is <code>orderType</code> prefix.</p>
 </li>
-</ul>
+</ol>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -723,7 +723,7 @@ giving to <code>ImportCommand</code>.</p>
 </div>
 <div class="paragraph">
 <p>After the <code>ImportCommand</code> object is being returned to the <code>LogicManager</code>, the <code>LogicManager</code> will start
-to run the execute the import Command, this is will be shown at the diagram below.</p>
+to run the execute the <code>ImportCommand</code>, this is will be shown at the diagram below.</p>
 </div>
 </div>
 <div class="sect3">
@@ -770,7 +770,7 @@ If the user does not provide any <code><a href="#command_prefix">ORDER_ATTRIBUTE
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Specfic search</strong> will search orders based on the given <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code>.</p>
+<p><strong>Specific search</strong> will search orders based on the given <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code>.</p>
 </li>
 </ul>
 </div>
@@ -2610,4 +2610,4 @@ Expected: The response box will display an invalid command message</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-31 14:21:30 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-31 14:36:13 UTC</div></div></div></body></html>
