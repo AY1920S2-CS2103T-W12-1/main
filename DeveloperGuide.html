@@ -349,61 +349,86 @@ every UniqueOrderList is part of an OrderBook.
 <div class="sect2">
 <h3 id="clear-feature"><a class="link" href="#clear-feature">3.1. Clear feature</a></h3>
 <div class="paragraph">
-<p>The clear feature allows the user to remove the orders and return orders by input one command line.</p>
-</div>
-<div class="paragraph">
-<p>The clear feature was implemented as a <code>ClearCommand</code> in the <code>Logic</code> package.<br></p>
+<p>In this section, the <a href="#what-is-clear">functionality</a> of the <code>import</code> feature, the expected <a href="#clear-execution-path">execution path</a>,
+the <a href="#clear-structure">structure</a> of the <code>ClearCommand</code> class and the <a href="#clear-interaction">interactions</a>
+between objects with the <code>ClearCommand</code> object will be discussed.</p>
 </div>
 <div class="sect3">
-<h4 id="class-diagram-for-clear-feature"><a class="link" href="#class-diagram-for-clear-feature">3.1.1. Class Diagram for Clear feature</a></h4>
+<h4 id="what-is-clear"><a class="link" href="#what-is-clear">3.1.1. What is the Clear feature</a></h4>
+<div class="paragraph">
+<p>The <code>clear</code> feature was implemented as a <code>ClearCommand</code> in the <code>logic</code> package.<br>
+The <code>clear</code> feature allows the user to remove the orders and return orders by input one command line.<br></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="clear-execution-path"><a class="link" href="#clear-execution-path">3.1.2. Execution paths of Clear Command</a></h4>
+<div class="paragraph">
+<p>The execution path of the <code>ClearCommand</code> is shown below:<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ClearActivityDiagram.svg" alt="ClearActivityDiagram">
+</div>
+<div class="title">Figure 9. Clear Class Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p>After user enter the <code>clear</code> command, the <code>ClearCommandParser</code> will check if the arguments are empty, if yes,
+it will set the flags as null, otherwise it will retrieve the flags from the arguments. Afterward, the <code>ClearCommandParser</code>
+will create and return a new <code>ClearCommand</code> object to the <code>LogicManager</code>, which will execute the <code>ClearCommand</code>.
+During the execution of the <code>ClearCommand</code>, if <code>-f</code> flag is found in flags, the respective order book will be cleared and
+display a success message to the user, otherwise, a pop up will appeared with the confirmation message. Upon pressing
+the 'Yes' button, the respective order book will be cleared.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="clear-structure"><a class="link" href="#clear-structure">3.1.3. Structure of Clear Command</a></h4>
+<div class="paragraph">
+<p>The following diagram shows the overview of the <code>ClearCommand</code> Class Diagram:<br></p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ClearClassDiagram.svg" alt="ClearClassDiagram">
 </div>
-<div class="title">Figure 9. Clear Class Diagram</div>
+<div class="title">Figure 10. Clear Command Class Diagram</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="sequence-diagram-for-clearing-both-order-book-and-return-order-book"><a class="link" href="#sequence-diagram-for-clearing-both-order-book-and-return-order-book">3.1.2. Sequence Diagram for clearing both order book and return order book</a></h4>
+<h4 id="clear-interaction"><a class="link" href="#clear-interaction">3.1.4. Interactions between objects when Clear Command is executed</a></h4>
 <div class="paragraph">
-<p>The sequence diagram for the <strong>Clear Command</strong> is shown below:<br></p>
+<p>In this section, the interactions between objects when <code>ClearCommand</code> is executed will be display in the Clear Command
+Sequence Diagram below:<br></p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ClearCommandSequenceDiagram.svg" alt="ClearCommandSequenceDiagram">
 </div>
-<div class="title">Figure 10. Clear Command Sequence Diagram</div>
+<div class="title">Figure 11. Clear Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The arguments passed to the Clear Command will be parsed by the <code>ClearCommandParser</code> class<br>
-If the given arguments are valid, a new <code>ClearCommand</code> object will be returned.</p>
+If the given arguments are valid, a new <code>Clear</code> Command object will be returned.</p>
 </div>
 <div class="paragraph">
 <p>In the <code>ClearCommandParser</code>, there will be two validation checks:<br>
-1. The flag is one of the three flags: <code>-f</code>, <code>-o</code> and <code>-r</code>.<br>
-2. The arguments do not have both <code>-o</code> and <code>-r</code> flags.</p>
+1. <code>isValidFlag(flag)</code>: Check whether the flag is one of the three flags: <code>-f</code>, <code>-o</code> and <code>-r</code><br>
+2. <code>isInvalidFlagFormat(flag, flags)</code>: Ensure the arguments do not have both <code>-o</code> and <code>-r</code> flags.</p>
 </div>
 <div class="paragraph">
-<p>After the <code>ClearCommand</code> object is being returned to the <code>LogicManager</code>, the <code>LogicManager</code> will start
-to run the execute the clear Command, this is will be shown diagram below.</p>
+<p>Afterwards, a new <code>ClearCommand</code> object will be created by <code>ClearCommandParser</code> and it is being returned
+to the <code>LogicManager</code>. The <code>LogicManager</code> will start to run the execute the <code>clear</code> Command, which will be
+shown in details in below diagram:</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="execution-of-clear-command-sequence-diagram"><a class="link" href="#execution-of-clear-command-sequence-diagram">3.1.3. Execution of Clear Command Sequence Diagram</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/ClearCommandSequenceDiagram2.svg" alt="ClearCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 11. Execution of Clear Command Sequence Diagram</div>
+<div class="title">Figure 12. Execution of Clear Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
-<p>The <code>execute(model)</code> function of the <code>ClearCommand</code> will have the 6 following sequences:<br>
-1. <code>-o</code> flag and <code>-f</code> flag found in flags: Pass a new <code>OrderBook</code> to <code>model</code>.<br>
-2. <code>-r</code> flag and <code>-f</code> flag found in flags: Pass a new <code>ReturnOrderBook</code> to <code>model</code>.<br>
-3. Only <code>-f</code> flag found in flags: Pass a new <code>ReturnOrderBook</code> and a new <code>OrderBook</code> to <code>model</code>.<br>
-4. Only <code>-o</code> flag found in flags: Pass the confirmation message for clearing the <code>OrderBook</code> to <code>CommandResult</code>.<br>
-5. Only <code>-r</code> flag found in flags: Pass the confirmation message for clearing the <code>ReturnOrderBook</code> to <code>CommandResult</code>.<br>
-6. No flag found in flags: Pass the confirmation message for clearing both <code>OrderBook</code> and <code>ReturnOrderBook</code> to <code>CommandResult</code>.<br></p>
+<p>After <code>LogicManager</code> call the <code>ClearCommand#execute(model)</code>, the <code>clear</code> Command will update the model by creating a
+new <code>OrderBook</code> object and pass it to <code>Model#setOrerBook(orderBook)</code>, whereby the <code>Model</code> will then update its own
+orderBook. In addition, the <code>clear</code> Command will pass back a new <code>CommandResult</code> object with the success message
+in it back to the <code>LogicManager</code>.</p>
 </div>
 <div class="paragraph">
 <p>After executing any of the sequences above, a new <code>CommandResult</code> object will be return back to <code>LogicManager</code>.</p>
@@ -557,7 +582,7 @@ By default, if no <code>FLAG</code> arguments are provided, both order list and 
 <div class="content">
 <img src="images/NearbyClassDiagram.svg" alt="NearbyClassDiagram">
 </div>
-<div class="title">Figure 12. Nearby Command Class Diagram</div>
+<div class="title">Figure 13. Nearby Command Class Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -570,7 +595,7 @@ is shown below:</p>
 <div class="content">
 <img src="images/NearbyCommandSequenceDiagram1.svg" alt="NearbyCommandSequenceDiagram1">
 </div>
-<div class="title">Figure 13. Nearby Command Sequence Diagram</div>
+<div class="title">Figure 14. Nearby Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The arguments passed to the Nearby Command will be parsed by the <code>NearbyCommandParser</code> class.<br>
@@ -628,7 +653,7 @@ This function updates the model&#8217;s filtered order list using the predicate 
 <div class="content">
 <img src="images/NearbyCommandSequenceDiagram2.svg" alt="NearbyCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 14. Nearby Command Sequence Diagram 2</div>
+<div class="title">Figure 15. Nearby Command Sequence Diagram 2</div>
 </div>
 <div class="paragraph">
 <p>The <code>NearbyCommandParser</code> will check for invalid arguments given by the user.<br>
@@ -671,35 +696,63 @@ This class was created to reduce the responsibility of the <code>NearbyCommand</
 <div class="sect2">
 <h3 id="import"><a class="link" href="#import">3.5. Import feature</a></h3>
 <div class="paragraph">
-<p>The import feature allows users to save the trouble of adding the delivery orders and the return orders one by one
-when they have large amount of delivery orders or return orders to add into Delino.</p>
-</div>
-<div class="paragraph">
-<p>The import feature was implemented as a <code>ImportCommand</code> in the <code>Logic</code> package.</p>
+<p>In this section, the <a href="#what-is-import">functionality</a> of the <code>import</code> feature, the expected <a href="#import-execution-path">execution path</a>, the <a href="#import-structure">structure</a> of the
+<code>ImportCommand</code> class and the <a href="#import-interaction">interactions</a> between objects with the <code>ImportCommand</code> object will be discussed.</p>
 </div>
 <div class="sect3">
-<h4 id="class-diagram-for-import-feature"><a class="link" href="#class-diagram-for-import-feature">3.5.1. Class Diagram for Import feature:</a></h4>
+<h4 id="what-is-import"><a class="link" href="#what-is-import">3.5.1. What is the Import feature</a></h4>
+<div class="paragraph">
+<p>The <code>import</code> feature was implemented as the <code>ImportCommand</code> in the <code>logic</code> package.<br>
+The <code>import</code> feature allows users to save the trouble of adding the delivery orders and the return orders one by one
+when they have large amount of delivery orders or return orders to add into Delino.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="import-execution-path"><a class="link" href="#import-execution-path">3.5.2. Execution paths of Import Command</a></h4>
+<div class="paragraph">
+<p>The execution path of the <code>ImportCommand</code> is shown below:<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ImportActivityDiagram.svg" alt="ImportActivityDiagram">
+</div>
+<div class="title">Figure 16. Import Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p>After the user enter the <code>import</code> command, the filePath will be checked if it is valid. If yes, display the error
+message to the user, otherwise, check if the file is able to read. If the file is unable to read, display the error
+message to the user, otherwise, data will be retrieve from the <code>CSV file</code> and being processed. A new <code>ImportCommand</code> will
+be created and pass to <code>Logic Manager</code>, whereby it will executes the command. For every data inside the list,
+add order or return order based on the <code>orderType</code> value. Finally, display the <code>import</code> result to the user after
+finished processing the data.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="import-structure"><a class="link" href="#import-structure">3.5.3. Structure of Import Command</a></h4>
+<div class="paragraph">
+<p>The following diagram shows the overview structure of the <code>ImportCommand</code> Class Diagram:<br></p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ImportClassDiagram.svg" alt="ImportClassDiagram">
 </div>
-<div class="title">Figure 15. Import Command Class Diagram</div>
+<div class="title">Figure 17. Import Command Class Diagram</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="sequence-diagram-for-importing-the-csv-file"><a class="link" href="#sequence-diagram-for-importing-the-csv-file">3.5.2. Sequence Diagram for importing the csv file.</a></h4>
+<h4 id="import-interaction"><a class="link" href="#import-interaction">3.5.4. Interactions between objects when Import Command is executed</a></h4>
 <div class="paragraph">
-<p>The sequence diagram for the <strong>Import Command</strong> when import the data from the  <strong>csv file</strong>
-is shown below:</p>
+<p>In this section, the interactions between the objects when <code>ImportCommand</code> is executed will be shown in the Import Command
+Sequence Diagram below:<br></p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ImportCommandSequenceDiagram.svg" alt="ImportCommandSequenceDiagram">
 </div>
-<div class="title">Figure 16. Import Command Sequence Diagram</div>
+<div class="title">Figure 18. Import Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
-<p>The arguments passed to the Import Command will be parsed by the <code>ImportCommandParser</code> class.<br>
+<p>The arguments passed to the <code>import</code> Command will be parsed by the <code>ImportCommandParser</code> class.<br>
 If the given arguments are valid, a new <code>ImportCommand</code> object will be returned.
 In this class, invalid arguments will result in a <code>ParseException</code>.<br></p>
 </div>
@@ -733,30 +786,26 @@ giving to <code>ImportCommand</code>.</p>
 </div>
 <div class="paragraph">
 <p>After the <code>ImportCommand</code> object is being returned to the <code>LogicManager</code>, the <code>LogicManager</code> will start
-to run the execute the <code>ImportCommand</code>, this is will be shown at the diagram below.</p>
+to run the execute the <code>ImportCommand</code>, this will be shown at the diagram below.</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="execution-of-import-command-sequence-diagram"><a class="link" href="#execution-of-import-command-sequence-diagram">3.5.3. Execution of Import Command Sequence Diagram</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/ImportCommandSequenceDiagram2.svg" alt="ImportCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 17. Execution of Import Command Sequence Diagram</div>
+<div class="title">Figure 19. Execution of Import Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
-<p>The <code>execute(model)</code> function of the <code>ImportCommand</code> will first check if the data given starts with
+<p>The <code>ImportCommand#execute(model)</code> will first check if the data given starts with
 <strong>order</strong> or <strong>return</strong> and pass to the <code>InsertCommandParser</code> or <code>ReturnCommandParser</code> respectively.<br></p>
 </div>
 <div class="paragraph">
-<p>Afterwards, <code>InsertCommandParser</code> or <code>ReturnCommandParser</code> will return the <code>InsertCommand</code> or <code>ReturnCommand</code> respective
-if it successfully parse the data. The <code>ImportCommand</code> will then call the <code>execute(Model)</code> function of <code>InsertCommand</code>
-or <code>ReturnCommand</code>. This will cause a delivery order or return order being added into the <code>Model</code>.</p>
+<p>Afterwards, <code>InsertCommandParser</code> or <code>ReturnCommandParser</code> will return the <code>InsertCommand</code> or <code>ReturnCommand</code> respectively
+if it successfully parse the data. The <code>ImportCommand</code> will then call the <code>InsertCommand#execute(Model)</code>
+or <code>ReturnCommand#execute(Model)</code> depend whether it is delivery order or return order. This will cause a delivery order or return order being added into the <code>Model</code>.</p>
 </div>
 <div class="paragraph">
 <p>The <code>ImportCommand</code> will call its own <code>printResult()</code> function and return a String message to the <code>CommandResult</code> object
-which is then pass back to the <code>LogicManager</code>.
-**</p>
+which is then pass back to the <code>LogicManager</code>.</p>
 </div>
 </div>
 </div>
@@ -790,7 +839,7 @@ If the user does not provide any <code><a href="#command_prefix">ORDER_ATTRIBUTE
 <div class="content">
 <img src="images/SearchCommandClassDiagram.png" alt="SearchCommandClassDiagram">
 </div>
-<div class="title">Figure 18. Search Command Class Diagram</div>
+<div class="title">Figure 20. Search Command Class Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -802,7 +851,7 @@ If the user does not provide any <code><a href="#command_prefix">ORDER_ATTRIBUTE
 <div class="content">
 <img src="images/SearchCommandSequenceDiagram.svg" alt="SearchCommandSequenceDiagram">
 </div>
-<div class="title">Figure 19. Search Command Sequence Diagram</div>
+<div class="title">Figure 21. Search Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>LogicManager first calls <code>parseCommand</code> with arguments representing the user input, <code>Alice</code>. The <code>SearchCommandParser</code> will then check for any invalid arguments passed by the user.<br></p>
@@ -846,7 +895,7 @@ If the preamble is empty, <code>SearchCommandParser</code> will call the overloa
 <div class="content">
 <img src="images/SearchCommandSequenceDiagram2.svg" alt="SearchCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 20. Search Command Sequence Diagram 2</div>
+<div class="title">Figure 22. Search Command Sequence Diagram 2</div>
 </div>
 <div class="paragraph">
 <p>After which, the <code>LogicManager</code> will then call the <code>execute</code> function of <code>SearchCommand</code> object passing a <code>model</code> object as an argument.<br>
@@ -2621,4 +2670,4 @@ Expected: The response box will display an invalid command message</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-01 14:28:49 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-01 14:35:05 UTC</div></div></div></body></html>
