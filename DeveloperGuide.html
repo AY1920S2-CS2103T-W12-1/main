@@ -23,10 +23,10 @@
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
 <li><a href="#clear-feature">3.1. Clear feature</a></li>
-<li><a href="#delete-feature">3.2. Delete feature</a></li>
+<li><a href="#delete-feature">3.2. Delete Feature</a></li>
 <li><a href="#delivered-feature">3.3. Delivered feature</a></li>
 <li><a href="#edit-feature">3.4. Edit Feature</a></li>
-<li><a href="#nearby-feature">3.5. Nearby feature</a></li>
+<li><a href="#nearby-feature">3.5. Nearby Feature</a></li>
 <li><a href="#import">3.6. Import feature</a></li>
 <li><a href="#search">3.7. Search Feature</a></li>
 <li><a href="#logging">3.8. Logging</a></li>
@@ -437,12 +437,216 @@ in it back to the <code>LogicManager</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="delete-feature"><a class="link" href="#delete-feature">3.2. Delete feature</a></h3>
+<h3 id="delete-feature"><a class="link" href="#delete-feature">3.2. Delete Feature</a></h3>
 <div class="paragraph">
-<p>The delete feature allows the user to delete orders in either the order list or return order list.</p>
+<p>In this section, you will learn more about how the <code>delete</code> feature is implemented.</p>
+</div>
+<div class="sect3">
+<h4 id="what-is-the-delete-feature"><a class="link" href="#what-is-the-delete-feature">3.2.1. What is the Delete Feature</a></h4>
+<div class="paragraph">
+<p>The delete feature allows the user to delete orders in either the order list or return order list.<br></p>
 </div>
 <div class="paragraph">
 <p>The delete feature was implemented as a <code>DeleteCommand</code> in the <code>Logic</code> package.<br></p>
+</div>
+<div class="paragraph">
+<p>The <code>delete</code> command has the following format:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>delete</code> <code>FLAG</code> <code>INDEX</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>A <code>FLAG</code> is a compulsory argument that indicates the list to delete from.<br>
+It can be either <code>-o</code> or <code>-r</code>.<br>
+A <code>-o</code> <code>FLAG</code> argument indicates deletion from the order list.<br>
+A <code>-r</code> <code>FLAG</code> argument indicates deletion from the return order list.<br></p>
+</li>
+<li>
+<p>An <code>INDEX</code> is a compulsory argument that identifies the specific order to
+delete in the list.<br>
+The <code>INDEX</code> <strong>must be a positive integer</strong> i.e. 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ol>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="execution-paths-of-delete-command"><a class="link" href="#execution-paths-of-delete-command">3.2.2. Execution paths of Delete command</a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the execution paths for the <code>delete</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeleteActivityDiagram.svg" alt="DeleteActivityDiagram">
+</div>
+<div class="title">Figure 13. Delete Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p>There are four possible execution paths for the <code>delete</code> command</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User provides an invalid <code>delete</code> command input<br>
+This results in a parse exception<br></p>
+</li>
+<li>
+<p>User provides a valid <code>delete</code> command input that has a flag indicating deletion
+from the order list.<br>
+The specified order will be deleted from the order list.<br></p>
+</li>
+<li>
+<p>User provides a valid <code>delete</code> command input that has a flag indicating deletion
+from the return order list.<br>
+The specified return order will be deleted from the return order list.<br></p>
+</li>
+<li>
+<p>User provides an invalid <code>delete</code> command input that has an invalid flag.<br>
+A Command Exception wil be generated.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="structure-of-delete-command"><a class="link" href="#structure-of-delete-command">3.2.3. Structure of Delete command</a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects
+related to the <code>delete</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeleteClassDiagram.svg" alt="DeleteClassDiagram">
+</div>
+<div class="title">Figure 14. Delete Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>In the <code>DeleteCommand</code> class, there are also static strings present that represent the
+various possible messages.<br>
+For some of the message strings, there are placeholder %s strings used for including dynamic input<br>
+These messages are the following:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>MESSAGE_DELETE_ORDER_SUCCESS</code><br>
+Deleted Order: %1$s<br></p>
+</li>
+<li>
+<p><code>MESSAGE_INVALID_FLAG</code><br>
+Invalid flag given!<br></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="interactions-between-delete-command-and-its-associated-objects"><a class="link" href="#interactions-between-delete-command-and-its-associated-objects">3.2.4. Interactions between Delete command and its associated objects</a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the <code>delete</code> command and its inner workings.</p>
+</div>
+<div class="paragraph">
+<p>The sequence diagram below shows the interactions for a <code>delete</code> command execution of
+<code>delete</code> <code>-o</code> <code>1</code>.<br>
+This indicates that the first order should be deleted from the order
+list.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeleteSequenceDiagram.svg" alt="DeleteSequenceDiagram">
+</div>
+<div class="title">Figure 15. Delete Command Sequence Diagram for <code>delete</code> <code>-o</code> <code>1</code></div>
+</div>
+<div class="paragraph">
+<p>The arguments passed to the <code>delete</code> command will be parsed by the <code>DeleteCommandParser</code> class.<br>
+If the given arguments are valid, a new <code>DeleteCommand</code> object will be returned.<br>
+In this class, invalid arguments will result in a <code>ParseException</code>.<br>
+Two checks will be done for the arguments:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invalid <code>FLAG</code> argument</p>
+</li>
+<li>
+<p>Invalid <code>INDEX</code> argument</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>When the <code>LogicManager</code> runs the <code>execute()</code> method of <code>DeleteCommand</code>,
+<code>DeleteCommand</code> will first check the list to delete from.<br></p>
+</div>
+<div class="paragraph">
+<p>The <code>deleteFromOrderList(model)</code> method of <code>DeleteCommand</code> will then
+be called and the filtered order list will be obtained from the <code>getFilteredOrderList()</code>
+method of the <code>model</code>.<br></p>
+</div>
+<div class="paragraph">
+<p>The specified order at <code>INDEX</code> 1 will be deleted using the <code>deleteOrder(order)</code> method
+in the <code>model</code>.</p>
+</div>
+<div class="paragraph">
+<p>A new <code>CommandResult</code> will be created and returned to the <code>LogicManager</code>.</p>
+</div>
+<div class="paragraph">
+<p>The sequence diagram below shows the interactions for a <code>delete</code> command execution of
+<code>delete</code> <code>-r</code> <code>2</code>.<br>
+This indicates that the second order should be deleted from the return order
+list.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeleteSequenceDiagram2.svg" alt="DeleteSequenceDiagram2">
+</div>
+<div class="title">Figure 16. Delete Command Sequence Diagram for <code>delete</code> <code>-r</code> <code>2</code></div>
+</div>
+<div class="paragraph">
+<p>The arguments passed to the <code>delete</code> command will be parsed by the <code>DeleteCommandParser</code> class.<br>
+If the given arguments are valid, a new <code>DeleteCommand</code> object will be returned.<br>
+In this class, invalid arguments will result in a <code>ParseException</code>.<br>
+Two checks will be done for the arguments:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invalid <code>FLAG</code> argument</p>
+</li>
+<li>
+<p>Invalid <code>INDEX</code> argument</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>When the <code>LogicManager</code> runs the <code>execute()</code> method of <code>DeleteCommand</code>,
+<code>DeleteCommand</code> will first check the list to delete from.<br></p>
+</div>
+<div class="paragraph">
+<p>The <code>deleteFromReturnList(model)</code> method of <code>DeleteCommand</code> will then
+be called and the filtered return order list will be obtained from the <code>getFilteredReturnOrderList()</code>
+method of the <code>model</code>.<br></p>
+</div>
+<div class="paragraph">
+<p>The specified return order at <code>INDEX</code> 2 will be deleted using the <code>deleteReturnOrder(returnOrder)</code> method
+in the <code>model</code>.</p>
+</div>
+<div class="paragraph">
+<p>A new <code>CommandResult</code> will be created and returned to the <code>LogicManager</code>.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -549,7 +753,7 @@ The list of the different parcel fields are listed in Appendix E: <a href="#comm
 <div class="content">
 <img src="images/EditCommandClassDiagram.png" alt="EditCommandClassDiagram">
 </div>
-<div class="title">Figure 13. Edit Command Class Diagram</div>
+<div class="title">Figure 17. Edit Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The class diagram above depicts the structure of <code>EditCommand</code>. As per any <code>Command</code> class, <code>EditCommand</code> needs to extend the abstract class <code>Command</code>.<br>
@@ -562,7 +766,7 @@ Information that are left out in this class diagram are the common messages used
 <div class="content">
 <img src="images/EditCommandSequenceDiagram.svg" alt="EditCommandSequenceDiagram">
 </div>
-<div class="title">Figure 14. Edit Command Sequence Diagram</div>
+<div class="title">Figure 18. Edit Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above figure illustrates the interactions of <code>EditCommand</code> when the user successfully edit the first displayed order name to <code>Alice</code>.</p>
@@ -570,46 +774,59 @@ Information that are left out in this class diagram are the common messages used
 </div>
 </div>
 <div class="sect2">
-<h3 id="nearby-feature"><a class="link" href="#nearby-feature">3.5. Nearby feature</a></h3>
+<h3 id="nearby-feature"><a class="link" href="#nearby-feature">3.5. Nearby Feature</a></h3>
+<div class="paragraph">
+<p>In this section, you will learn more about how the <code>nearby</code> feature is implemented.</p>
+</div>
+<div class="sect3">
+<h4 id="what-is-the-nearby-feature"><a class="link" href="#what-is-the-nearby-feature">3.5.1. What is the Nearby Feature</a></h4>
 <div class="paragraph">
 <p>The nearby feature allows the user to view all orders that are located at a particular area
 based on a given search criteria.<br></p>
 </div>
 <div class="paragraph">
-<p>The nearby feature can have an optional <code>FLAG</code> argument. This can be either <code>-o</code> or <code>-r</code>.<br>
-A <code>-o</code> <code>FLAG</code> argument indicates that the order list will be searched.<br>
-A <code>-r</code> <code>FLAG</code> argument indicates that the return order list will be searched.<br>
-By default, if no <code>FLAG</code> arguments are provided, both order list and return order list will be searched.</p>
+<p>The nearby feature was implemented as a <code>NearbyCommand</code> in the <code>Logic</code> package.<br></p>
 </div>
 <div class="paragraph">
-<p>There are currently two possible search options:</p>
+<p>The <code>nearby</code> command has two possible formats:<br></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Searching by <strong>postal sector</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>A <strong>postal sector</strong> refers to the first <strong>two</strong> digits of a six digit Singapore postal code.</p>
+<p><code>nearby</code> <code>FLAG</code> <code>POSTAL_SECTOR</code></p>
 </li>
 <li>
-<p>The list of postal sectors and their corresponding general locations can be found
-<a href="https://www.ura.gov.sg/realEstateIIWeb/resources/misc/list_of_postal_districts.htm">on this website</a>.</p>
-</li>
-</ul>
-</div>
+<p><code>nearby</code> <code>FLAG</code> <code>AREA</code></p>
 </li>
 </ol>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="olist arabic">
-<ol class="arabic" start="2">
+<ol class="arabic">
 <li>
-<p>Searching by <strong>area</strong></p>
+<p><code>FLAG</code> is an optional argument and indicates which order list to search on.<br>
+It can be either <code>-o</code> or <code>-r</code>.
+A <code>-o</code> <code>FLAG</code> argument indicates that the order list will be searched.<br>
+A <code>-r</code> <code>FLAG</code> argument indicates that the return order list will be searched.<br>
+By default, if no <code>FLAG</code> arguments are provided, both order list and return order list will be searched.</p>
+</li>
+<li>
+<p>Searching of nearby orders is done by either <code>POSTAL_SECTOR</code> or <code>AREA</code><br></p>
 <div class="ulist">
 <ul>
 <li>
-<p>An <strong>area</strong> refers to one of the five areas of Singapore</p>
+<p>A <code>POSTAL_SECTOR</code> refers to the first <strong>two</strong> digits of a six digit Singapore postal code.<br>
+The list of postal sectors and their corresponding general locations can be found
+<a href="https://www.ura.gov.sg/realEstateIIWeb/resources/misc/list_of_postal_districts.htm">on this website</a>.<br></p>
+</li>
+<li>
+<p>An <code>AREA</code> refers to one of the five areas of Singapore:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -627,9 +844,6 @@ By default, if no <code>FLAG</code> arguments are provided, both order list and 
 <li>
 <p>North</p>
 </li>
-</ul>
-</div>
-</li>
 <li>
 <p>You can obtain more detailed information about each area from
 <a href="https://keylocation.sg/singapore/districts-map">this website</a></p>
@@ -637,35 +851,149 @@ By default, if no <code>FLAG</code> arguments are provided, both order list and 
 </ul>
 </div>
 </li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="execution-paths-of-nearby-command"><a class="link" href="#execution-paths-of-nearby-command">3.5.2. Execution paths of Nearby command</a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the execution paths for the <code>nearby</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/NearbyActivityDiagram.svg" alt="NearbyActivityDiagram">
+</div>
+<div class="title">Figure 19. Nearby Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p>There are four possible execution paths for the <code>nearby</code> command</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User provides an invalid <code>nearby</code> command input<br>
+This results in a parse exception<br></p>
+</li>
+<li>
+<p>User provides a valid <code>nearby</code> command input that has no flags<br>
+All matching nearby orders will be shown for all lists (order list and return order list)<br></p>
+</li>
+<li>
+<p>User provides a valid <code>nearby</code> command input that has one flag. This flag indicates the order list (<code>-o</code>)<br>
+All matching nearby orders will be shown for the order list.</p>
+</li>
+<li>
+<p>User provides a valid <code>nearby</code> command input that has one flag. This flag indicates the return order list (<code>-r</code>)<br>
+All matching nearby orders will be shown for the return order list.</p>
+</li>
 </ol>
 </div>
 <div class="paragraph">
-<p>The nearby feature was implemented as a <code>NearbyCommand</code> in the <code>Logic</code> package.<br></p>
+<p>The matching orders are determined based on the given user argument.<br>
+If a two digit integer is given, searching of nearby orders will be based on their postal sector.<br>
+Else, searching of nearby orders will be based on their area.<br>
+There are currently five areas that are searchable:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Central</p>
+</li>
+<li>
+<p>East</p>
+</li>
+<li>
+<p>North-East</p>
+</li>
+<li>
+<p>West</p>
+</li>
+<li>
+<p>North</p>
+</li>
+</ol>
+</div>
 </div>
 <div class="sect3">
-<h4 id="class-diagram-for-nearby-feature"><a class="link" href="#class-diagram-for-nearby-feature">3.5.1. Class Diagram for Nearby feature</a></h4>
+<h4 id="structure-of-nearby-command"><a class="link" href="#structure-of-nearby-command">3.5.3. Structure of Nearby command</a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects
+related to the <code>nearby</code> command.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/NearbyClassDiagram.svg" alt="NearbyClassDiagram">
 </div>
-<div class="title">Figure 15. Nearby Command Class Diagram</div>
+<div class="title">Figure 20. Nearby Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>In the <code>NearbyCommand</code> class, there are also static strings present that represent the
+various possible messages.<br>
+For some of the message strings, there are placeholder %s strings used for including dynamic input<br>
+These messages are the following:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>MESSAGE_USAGE</code><br>
+nearby: View all orders located at the same postal sector based on the displayed list.<br>
+Parameters: [FLAG] POSTAL_SECTOR or AREA<br>
+An optional flag may be given to indicate the list to be searched for.<br>
+The flag can be either -o for orders for -r for return orders<br>
+A postal sector is the first two digits of a six digit Singapore postal code<br>
+An area is one of the following: Central, East, North-East, West, North<br>
+Example: nearby -o 14<br>
+Example: nearby -r central<br>
+Example: nearby east<br></p>
+</li>
+<li>
+<p><code>MESSAGE_SUCCESS_POSTAL_SECTOR</code><br>
+Displayed all orders in postal sector.<br>
+General Location: %1$s<br></p>
+</li>
+<li>
+<p><code>MESSAGE_SUCCESS_AREA</code><br>
+Displayed all orders in area (%s)<br></p>
+</li>
+<li>
+<p><code>MESSAGE_FAILURE_POSTAL_SECTOR</code><br>
+Invalid postal sector given.<br></p>
+</li>
+<li>
+<p><code>MESSAGE_FAILURE_AREA</code><br>
+Invalid area given.<br></p>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect3">
-<h4 id="sequence-diagram-for-searching-by-postal-sector"><a class="link" href="#sequence-diagram-for-searching-by-postal-sector">3.5.2. Sequence Diagram for searching by postal sector</a></h4>
+<h4 id="interactions-between-nearby-command-and-its-associated-objects"><a class="link" href="#interactions-between-nearby-command-and-its-associated-objects">3.5.4. Interactions between Nearby command and its associated objects</a></h4>
 <div class="paragraph">
-<p>The sequence diagram for the <strong>Nearby Command</strong> when searching by <strong>postal sector</strong>
-is shown below:</p>
+<p>In this section, you will learn more about the <code>nearby</code> command and its inner workings.</p>
+</div>
+<div class="paragraph">
+<p>The sequence diagram below shows the interactions for a <code>nearby</code> command execution of
+<code>nearby</code> <code>-o</code> <code>14</code>.<br>
+This indicates that the order list should be operated on and
+all orders in the order list that have a <code>POSTAL_SECTOR</code> of <code>14</code>
+should be displayed to the user.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/NearbyCommandSequenceDiagram1.svg" alt="NearbyCommandSequenceDiagram1">
 </div>
-<div class="title">Figure 16. Nearby Command Sequence Diagram</div>
+<div class="title">Figure 21. Nearby Command Sequence Diagram for <code>nearby</code> <code>-o</code> <code>14</code></div>
 </div>
 <div class="paragraph">
 <p>The arguments passed to the Nearby Command will be parsed by the <code>NearbyCommandParser</code> class.<br>
-If the given arguments are valid, a new <code>NearbyCommand</code> object will be returned.
+If the given arguments are valid, a new <code>NearbyCommand</code> object will be returned.<br>
 In this class, invalid arguments will result in a <code>ParseException</code>.<br>
 Two types of invalid arguments are checked for: empty arguments
 and arguments with only whitespace characters.</p>
@@ -673,7 +1001,6 @@ and arguments with only whitespace characters.</p>
 <div class="paragraph">
 <p>The <code>execute()</code> function of the <code>NearbyCommand</code> will first check if the given arguments
 are in the format required for postal sector search (the argument can be converted into an integer).
-The check is done by the <code>isPostalSectorSearch()</code> function.<br>
 If the first check is successful, the argument will be converted into an integer and
 a second check is performed via the <code>isValidPostalSector(Index postalSector)</code> function
 of the <code>NearbyCommandUtil</code> helper class.</p>
@@ -702,24 +1029,23 @@ This class was created to reduce the responsibility of the <code>NearbyCommand</
 </table>
 </div>
 <div class="paragraph">
-<p>The <code>showPostalSectors(Model model, Index postalSector)</code> function of the <code>NearbyCommand</code> is called.
-This function updates the model&#8217;s filtered order list using the predicate obtained from the
-<code>getPostalSectorPredicate()</code> function.</p>
+<p>The <code>model</code> will then be updated by the <code>updateFilteredOrderList(orderPredicate)</code> function.<br></p>
 </div>
 <div class="paragraph">
 <p>A <code>CommandResult</code> is then generated and returned to the <code>LogicManager</code>.</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="sequence-diagram-for-searching-by-area"><a class="link" href="#sequence-diagram-for-searching-by-area">3.5.3. Sequence Diagram for searching by area</a></h4>
 <div class="paragraph">
-<p>The sequence diagram for the <strong>Nearby Command</strong> when searching by <strong>area</strong> is shown below:</p>
+<p>The sequence diagram below shows the interactions for a <code>nearby</code> command execution of
+<code>nearby</code> <code>-o</code> <code>central</code>.<br>
+This indicates that the order list should be operated on and
+all orders in the order list that have an <code>AREA</code> of <code>central</code>
+should be displayed to the user.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/NearbyCommandSequenceDiagram2.svg" alt="NearbyCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 17. Nearby Command Sequence Diagram 2</div>
+<div class="title">Figure 22. Nearby Command Sequence Diagram of <code>nearby</code> <code>-o</code> <code>central</code></div>
 </div>
 <div class="paragraph">
 <p>The <code>NearbyCommandParser</code> will check for invalid arguments given by the user.<br>
@@ -733,7 +1059,7 @@ A <code>ParseException</code> will be generated if an invalid argument is presen
 <div class="paragraph">
 <p><code>LogicManager</code> will then call the <code>execute()</code> function of the <code>NearbyCommand</code>.<br>
 There will then be a check for whether the given argument is a valid area with the
-function <code>isValidArea(String area)</code> present in the <code>DistrictInfo</code> class.</p>
+function <code>isValidArea(area)</code> present in the <code>DistrictInfo</code> class.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -752,10 +1078,24 @@ This class was created to reduce the responsibility of the <code>NearbyCommand</
 </table>
 </div>
 <div class="paragraph">
-<p>The model will then be updated using the predicate obtained from the <code>getAreaPredicate()</code> function.</p>
+<p>The model will then be updated using the <code>updateFilteredOrderList(orderPredicate)</code> function.</p>
 </div>
 <div class="paragraph">
 <p>A new <code>CommandResult</code> will be created and returned to the <code>LogicManager</code>.</p>
+</div>
+<div class="paragraph">
+<p>The sequence diagram below shows the interactions for a <code>nearby</code> command execution of
+<code>nearby</code>.<br>
+This will result in a <code>ParseException</code> as invalid arguments are provided.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/NearbySequenceDiagramParseException.svg" alt="NearbySequenceDiagramParseException">
+</div>
+<div class="title">Figure 23. Nearby Command Sequence Diagram of <code>nearby</code></div>
+</div>
+<div class="paragraph">
+<p>The exception will be thrown in the <code>NearbyCommandParser</code>.</p>
 </div>
 </div>
 </div>
@@ -782,7 +1122,7 @@ when they have large amount of delivery orders or return orders to add into Deli
 <div class="content">
 <img src="images/ImportActivityDiagram.svg" alt="ImportActivityDiagram">
 </div>
-<div class="title">Figure 18. Import Command Activity Diagram</div>
+<div class="title">Figure 24. Import Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>After the user enter the <code>import</code> command, the filePath will be checked if it is valid. If yes, display the error
@@ -802,7 +1142,7 @@ finished processing the data.</p>
 <div class="content">
 <img src="images/ImportClassDiagram.svg" alt="ImportClassDiagram">
 </div>
-<div class="title">Figure 19. Import Command Class Diagram</div>
+<div class="title">Figure 25. Import Command Class Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -815,7 +1155,7 @@ Sequence Diagram below:<br></p>
 <div class="content">
 <img src="images/ImportCommandSequenceDiagram.svg" alt="ImportCommandSequenceDiagram">
 </div>
-<div class="title">Figure 20. Import Command Sequence Diagram</div>
+<div class="title">Figure 26. Import Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The arguments passed to the <code>import</code> Command will be parsed by the <code>ImportCommandParser</code> class.<br>
@@ -858,7 +1198,7 @@ to run the execute the <code>ImportCommand</code>, this will be shown at the dia
 <div class="content">
 <img src="images/ImportCommandSequenceDiagram2.svg" alt="ImportCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 21. Execution of Import Command Sequence Diagram</div>
+<div class="title">Figure 27. Execution of Import Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The <code>ImportCommand#execute(model)</code> will first check if the data given starts with
@@ -936,7 +1276,7 @@ The <code><a href="#command_flags">[FLAG]</a></code> <code>-r</code> when given,
 <div class="content">
 <img src="images/SearchCommandActivityDiagram.svg" alt="SearchCommandActivityDiagram">
 </div>
-<div class="title">Figure 22. Search Command Activity Diagram</div>
+<div class="title">Figure 28. Search Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above activity diagram illustrates the different execution paths of <code>search</code> command.<br>
@@ -959,7 +1299,7 @@ User input will be validated in the <code>SearchCommandParser</code> class.</p>
 <div class="content">
 <img src="images/SearchCommandClassDiagram.png" alt="SearchCommandClassDiagram">
 </div>
-<div class="title">Figure 23. Search Command Class Diagram</div>
+<div class="title">Figure 29. Search Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram depicts the structure of the class <code>SearchCommand</code>. As per any <code>Command</code> class, <code>SearchCommand</code> needs to extend the abstract class <code>Command</code>.<br>
@@ -972,7 +1312,7 @@ Information that are left out in this class diagram are the common messages used
 <div class="content">
 <img src="images/SearchCommandSequenceDiagram.svg" alt="SearchCommandSequenceDiagram">
 </div>
-<div class="title">Figure 24. Search Command Sequence Diagram</div>
+<div class="title">Figure 30. Search Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The sequence diagram above illustrates the interactions between objects when <code>search</code> command is performed by the user.<br>
@@ -2801,4 +3141,4 @@ Expected: The response box will display an invalid command message</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-01 14:37:19 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-01 14:45:43 UTC</div></div></div></body></html>
