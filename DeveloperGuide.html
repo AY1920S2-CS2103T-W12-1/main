@@ -25,15 +25,14 @@
 <li><a href="#insert">3.1. Insert Feature</a></li>
 <li><a href="#list">3.2. List feature</a></li>
 <li><a href="#clear-feature">3.3. Clear feature</a></li>
-<li><a href="#delete-feature">3.4. Delete Feature</a></li>
+<li><a href="#delete">3.4. Delete Feature</a></li>
 <li><a href="#delivered">3.5. Delivered Feature</a></li>
-<li><a href="#execution-paths-delivered">3.6. Execution Paths of Delivered Command</a></li>
-<li><a href="#edit-feature">3.7. Edit Feature</a></li>
-<li><a href="#nearby-feature">3.8. Nearby Feature</a></li>
-<li><a href="#import">3.9. Import feature</a></li>
-<li><a href="#search">3.10. Search Feature</a></li>
-<li><a href="#logging">3.11. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.12. Configuration</a></li>
+<li><a href="#edit-feature">3.6. Edit Feature</a></li>
+<li><a href="#nearby">3.7. Nearby Feature</a></li>
+<li><a href="#import">3.8. Import feature</a></li>
+<li><a href="#search">3.9. Search Feature</a></li>
+<li><a href="#logging">3.10. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.11. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a></li>
@@ -610,7 +609,7 @@ in it back to the <code>LogicManager</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="delete-feature"><a class="link" href="#delete-feature">3.4. Delete Feature</a></h3>
+<h3 id="delete"><a class="link" href="#delete">3.4. Delete Feature</a></h3>
 <div class="paragraph">
 <p>In this section, you will learn more about how the <code>delete</code> feature is implemented.</p>
 </div>
@@ -621,6 +620,204 @@ in it back to the <code>LogicManager</code>.</p>
 </div>
 <div class="paragraph">
 <p>The delete feature was implemented as a <code>DeleteCommand</code> in the <code>Logic</code> package.<br></p>
+</div>
+<div class="paragraph">
+<p>The <code>delete</code> command has the following format:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>delete</code> <code>FLAG</code> <code>INDEX</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>A <code>FLAG</code> is a compulsory argument that indicates the list to delete from.<br>
+It can be either <code>-o</code> or <code>-r</code>.<br>
+A <code>-o</code> <code>FLAG</code> argument indicates deletion from the order list.<br>
+A <code>-r</code> <code>FLAG</code> argument indicates deletion from the return order list.<br></p>
+</li>
+<li>
+<p>An <code>INDEX</code> is a compulsory argument that identifies the specific order to
+delete in the list.<br>
+The <code>INDEX</code> <strong>must be a positive integer</strong> i.e. 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ol>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="execution-paths-of-delete-command"><a class="link" href="#execution-paths-of-delete-command">3.4.2. Execution paths of Delete command</a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the execution paths for the <code>delete</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeleteActivityDiagram.svg" alt="DeleteActivityDiagram">
+</div>
+<div class="title">Figure 19. Delete Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p>There are four possible execution paths for the <code>delete</code> command</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User provides an invalid <code>delete</code> command input<br>
+This results in a parse exception<br></p>
+</li>
+<li>
+<p>User provides a valid <code>delete</code> command input that has a flag indicating deletion
+from the order list.<br>
+The specified order will be deleted from the order list.<br></p>
+</li>
+<li>
+<p>User provides a valid <code>delete</code> command input that has a flag indicating deletion
+from the return order list.<br>
+The specified return order will be deleted from the return order list.<br></p>
+</li>
+<li>
+<p>User provides an invalid <code>delete</code> command input that has an invalid flag.<br>
+A Command Exception wil be generated.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="structure-of-delete-command"><a class="link" href="#structure-of-delete-command">3.4.3. Structure of Delete command</a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects
+related to the <code>delete</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeleteClassDiagram.svg" alt="DeleteClassDiagram">
+</div>
+<div class="title">Figure 20. Delete Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>In the <code>DeleteCommand</code> class, there are also static strings present that represent the
+various possible messages.<br>
+For some of the message strings, there are placeholder %s strings used for including dynamic input<br>
+These messages are the following:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>MESSAGE_DELETE_ORDER_SUCCESS</code><br>
+Deleted Order: %1$s<br></p>
+</li>
+<li>
+<p><code>MESSAGE_INVALID_FLAG</code><br>
+Invalid flag given!<br></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="interactions-between-delete-command-and-its-associated-objects"><a class="link" href="#interactions-between-delete-command-and-its-associated-objects">3.4.4. Interactions between Delete command and its associated objects</a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the <code>delete</code> command and its inner workings.</p>
+</div>
+<div class="paragraph">
+<p>The sequence diagram below shows the interactions for a <code>delete</code> command execution of
+<code>delete</code> <code>-o</code> <code>1</code>.<br>
+This indicates that the first order should be deleted from the order
+list.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeleteSequenceDiagram.svg" alt="DeleteSequenceDiagram">
+</div>
+<div class="title">Figure 21. Delete Command Sequence Diagram for <code>delete</code> <code>-o</code> <code>1</code></div>
+</div>
+<div class="paragraph">
+<p>The arguments passed to the <code>delete</code> command will be parsed by the <code>DeleteCommandParser</code> class.<br>
+If the given arguments are valid, a new <code>DeleteCommand</code> object will be returned.<br>
+In this class, invalid arguments will result in a <code>ParseException</code>.<br>
+Two checks will be done for the arguments:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invalid <code>FLAG</code> argument</p>
+</li>
+<li>
+<p>Invalid <code>INDEX</code> argument</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>When the <code>LogicManager</code> runs the <code>execute()</code> method of <code>DeleteCommand</code>,
+<code>DeleteCommand</code> will first check the list to delete from.<br></p>
+</div>
+<div class="paragraph">
+<p>The <code>deleteFromOrderList(model)</code> method of <code>DeleteCommand</code> will then
+be called and the filtered order list will be obtained from the <code>getFilteredOrderList()</code>
+method of the <code>model</code>.<br></p>
+</div>
+<div class="paragraph">
+<p>The specified order at <code>INDEX</code> 1 will be deleted using the <code>deleteOrder(order)</code> method
+in the <code>model</code>.</p>
+</div>
+<div class="paragraph">
+<p>A new <code>CommandResult</code> will be created and returned to the <code>LogicManager</code>.</p>
+</div>
+<div class="paragraph">
+<p>The sequence diagram below shows the interactions for a <code>delete</code> command execution of
+<code>delete</code> <code>-r</code> <code>2</code>.<br>
+This indicates that the second order should be deleted from the return order
+list.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeleteSequenceDiagram2.svg" alt="DeleteSequenceDiagram2">
+</div>
+<div class="title">Figure 22. Delete Command Sequence Diagram for <code>delete</code> <code>-r</code> <code>2</code></div>
+</div>
+<div class="paragraph">
+<p>The arguments passed to the <code>delete</code> command will be parsed by the <code>DeleteCommandParser</code> class.<br>
+If the given arguments are valid, a new <code>DeleteCommand</code> object will be returned.<br>
+In this class, invalid arguments will result in a <code>ParseException</code>.<br>
+Two checks will be done for the arguments:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invalid <code>FLAG</code> argument</p>
+</li>
+<li>
+<p>Invalid <code>INDEX</code> argument</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>When the <code>LogicManager</code> runs the <code>execute()</code> method of <code>DeleteCommand</code>,
+<code>DeleteCommand</code> will first check the list to delete from.<br></p>
+</div>
+<div class="paragraph">
+<p>The <code>deleteFromReturnList(model)</code> method of <code>DeleteCommand</code> will then
+be called and the filtered return order list will be obtained from the <code>getFilteredReturnOrderList()</code>
+method of the <code>model</code>.<br></p>
+</div>
+<div class="paragraph">
+<p>The specified return order at <code>INDEX</code> 2 will be deleted using the <code>deleteReturnOrder(returnOrder)</code> method
+in the <code>model</code>.</p>
+</div>
+<div class="paragraph">
+<p>A new <code>CommandResult</code> will be created and returned to the <code>LogicManager</code>.</p>
 </div>
 </div>
 </div>
@@ -656,22 +853,22 @@ on the <a href="#command_prefix"><code>FLAG</code></a>that is provided. For inst
 the <a href="#command_prefix"><code>INDEX</code></a> should not be greater than the size of the order list.<br></p>
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="execution-paths-delivered"><a class="link" href="#execution-paths-delivered">3.6. Execution Paths of Delivered Command</a></h3>
+<div class="sect3">
+<h4 id="execution-paths-delivered"><a class="link" href="#execution-paths-delivered">3.5.2. Execution Paths of Delivered Command</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/DeliveredCommandActivityDiagram.png" alt="DeliveredCommandActivityDiagram">
 </div>
-<div class="title">Figure 19. Activity Diagram of the Delivered Command</div>
+<div class="title">Figure 23. Activity Diagram of the Delivered Command</div>
 </div>
 <div class="paragraph">
 <p>The above activity diagram shows the logic behind the <code>DeliveredCommand</code> which is determined in
 the <code>DeliveredCommandParser</code> class when the user inputs the command word <code>delivered</code> to activate the
 <code>delivered</code> feature.</p>
 </div>
+</div>
 <div class="sect3">
-<h4 id="structure-delivered"><a class="link" href="#structure-delivered">3.6.1. Structure of Delivered Command</a></h4>
+<h4 id="structure-delivered"><a class="link" href="#structure-delivered">3.5.3. Structure of Delivered Command</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/DeliveredClassDiagram.png" alt="DeliveredClassDiagram">
@@ -684,7 +881,7 @@ not extensively utilised in <code>DeliveredCommand</code>; such as public static
 </div>
 </div>
 <div class="sect3">
-<h4 id="sequence-diagram-for-delivering-an-order"><a class="link" href="#sequence-diagram-for-delivering-an-order">3.6.2. Sequence Diagram for delivering an order</a></h4>
+<h4 id="sequence-diagram-for-delivering-an-order"><a class="link" href="#sequence-diagram-for-delivering-an-order">3.5.4. Sequence Diagram for delivering an order</a></h4>
 <div class="paragraph">
 <p>The sequence diagrams for the <strong>Delivered Command</strong> are shown below.</p>
 </div>
@@ -692,13 +889,13 @@ not extensively utilised in <code>DeliveredCommand</code>; such as public static
 <div class="content">
 <img src="images/DeliveredSequenceDiagram.png" alt="DeliveredSequenceDiagram">
 </div>
-<div class="title">Figure 20. Search Command Sequence Diagram</div>
+<div class="title">Figure 24. Search Command Sequence Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/DeliveredSequenceDiagram2.png" alt="DeliveredSequenceDiagram2">
 </div>
-<div class="title">Figure 21. Execution of Delivered Command</div>
+<div class="title">Figure 25. Execution of Delivered Command</div>
 </div>
 <div class="paragraph">
 <p>The arguments typed into Delino by the user will first be done by the <code>execute</code>
@@ -764,13 +961,13 @@ method to update the list in the <code>model</code>.<br></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="edit-feature"><a class="link" href="#edit-feature">3.7. Edit Feature</a></h3>
+<h3 id="edit-feature"><a class="link" href="#edit-feature">3.6. Edit Feature</a></h3>
 <div class="paragraph">
 <p>In this section, the <a href="#what-is-edit">functionality</a> of the <code>edit</code> feature, the expected <a href="#edit-path-execution">execution path</a>, the <a href="#edit-structure">structure</a> of the <code>EditCommand</code> class
 and the <a href="#edit-interactions">interactions</a> between objects with the <code>EditCommand</code> object will be discussed.</p>
 </div>
 <div class="sect3">
-<h4 id="what-is-edit"><a class="link" href="#what-is-edit">3.7.1. What is Edit Command</a></h4>
+<h4 id="what-is-edit"><a class="link" href="#what-is-edit">3.6.1. What is Edit Command</a></h4>
 <div class="paragraph">
 <p>The <code>edit</code> feature was implemented as <code>EditCommand</code> in the <code>Logic</code> package.<br></p>
 </div>
@@ -799,16 +996,16 @@ The list of the different parcel fields are listed in Appendix E: <a href="#comm
 </div>
 </div>
 <div class="sect3">
-<h4 id="edit-path-execution"><a class="link" href="#edit-path-execution">3.7.2. Execution paths of Edit Command</a></h4>
+<h4 id="edit-path-execution"><a class="link" href="#edit-path-execution">3.6.2. Execution paths of Edit Command</a></h4>
 
 </div>
 <div class="sect3">
-<h4 id="edit-structure"><a class="link" href="#edit-structure">3.7.3. Structure of Edit Command</a></h4>
+<h4 id="edit-structure"><a class="link" href="#edit-structure">3.6.3. Structure of Edit Command</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/EditCommandClassDiagram.png" alt="EditCommandClassDiagram">
 </div>
-<div class="title">Figure 22. Edit Command Class Diagram</div>
+<div class="title">Figure 26. Edit Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The class diagram above depicts the structure of <code>EditCommand</code>. As per any <code>Command</code> class, <code>EditCommand</code> needs to extend the abstract class <code>Command</code>.<br>
@@ -816,12 +1013,12 @@ Information that are left out in this class diagram are the common messages used
 </div>
 </div>
 <div class="sect3">
-<h4 id="edit-interactions"><a class="link" href="#edit-interactions">3.7.4. Interactions between Edit Command and it&#8217;s associated objects</a></h4>
+<h4 id="edit-interactions"><a class="link" href="#edit-interactions">3.6.4. Interactions between Edit Command and it&#8217;s associated objects</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/EditCommandSequenceDiagram.svg" alt="EditCommandSequenceDiagram">
 </div>
-<div class="title">Figure 23. Edit Command Sequence Diagram</div>
+<div class="title">Figure 27. Edit Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above figure illustrates the interactions of <code>EditCommand</code> when the user successfully edit the first displayed order name to <code>Alice</code>.</p>
@@ -829,12 +1026,12 @@ Information that are left out in this class diagram are the common messages used
 </div>
 </div>
 <div class="sect2">
-<h3 id="nearby-feature"><a class="link" href="#nearby-feature">3.8. Nearby Feature</a></h3>
+<h3 id="nearby"><a class="link" href="#nearby">3.7. Nearby Feature</a></h3>
 <div class="paragraph">
 <p>In this section, you will learn more about how the <code>nearby</code> feature is implemented.</p>
 </div>
 <div class="sect3">
-<h4 id="what-is-the-nearby-feature"><a class="link" href="#what-is-the-nearby-feature">3.8.1. What is the Nearby Feature</a></h4>
+<h4 id="what-is-the-nearby-feature"><a class="link" href="#what-is-the-nearby-feature">3.7.1. What is the Nearby Feature</a></h4>
 <div class="paragraph">
 <p>The nearby feature allows the user to view all orders that are located at a particular area
 based on a given search criteria.<br></p>
@@ -917,7 +1114,7 @@ The list of postal sectors and their corresponding general locations can be foun
 </div>
 </div>
 <div class="sect3">
-<h4 id="execution-paths-of-nearby-command"><a class="link" href="#execution-paths-of-nearby-command">3.8.2. Execution paths of Nearby command</a></h4>
+<h4 id="execution-paths-of-nearby-command"><a class="link" href="#execution-paths-of-nearby-command">3.7.2. Execution paths of Nearby command</a></h4>
 <div class="paragraph">
 <p>In this section, you will learn more about the execution paths for the <code>nearby</code> command.</p>
 </div>
@@ -925,7 +1122,7 @@ The list of postal sectors and their corresponding general locations can be foun
 <div class="content">
 <img src="images/NearbyActivityDiagram.svg" alt="NearbyActivityDiagram">
 </div>
-<div class="title">Figure 24. Nearby Command Activity Diagram</div>
+<div class="title">Figure 28. Nearby Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>There are four possible execution paths for the <code>nearby</code> command</p>
@@ -977,7 +1174,7 @@ There are currently five areas that are searchable:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="structure-of-nearby-command"><a class="link" href="#structure-of-nearby-command">3.8.3. Structure of Nearby command</a></h4>
+<h4 id="structure-of-nearby-command"><a class="link" href="#structure-of-nearby-command">3.7.3. Structure of Nearby command</a></h4>
 <div class="paragraph">
 <p>In this section, you will learn more about the relationships between objects
 related to the <code>nearby</code> command.</p>
@@ -986,7 +1183,7 @@ related to the <code>nearby</code> command.</p>
 <div class="content">
 <img src="images/NearbyClassDiagram.svg" alt="NearbyClassDiagram">
 </div>
-<div class="title">Figure 25. Nearby Command Class Diagram</div>
+<div class="title">Figure 29. Nearby Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>In the <code>NearbyCommand</code> class, there are also static strings present that represent the
@@ -1029,7 +1226,7 @@ Invalid area given.<br></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="interactions-between-nearby-command-and-its-associated-objects"><a class="link" href="#interactions-between-nearby-command-and-its-associated-objects">3.8.4. Interactions between Nearby command and its associated objects</a></h4>
+<h4 id="interactions-between-nearby-command-and-its-associated-objects"><a class="link" href="#interactions-between-nearby-command-and-its-associated-objects">3.7.4. Interactions between Nearby command and its associated objects</a></h4>
 <div class="paragraph">
 <p>In this section, you will learn more about the <code>nearby</code> command and its inner workings.</p>
 </div>
@@ -1044,7 +1241,7 @@ should be displayed to the user.</p>
 <div class="content">
 <img src="images/NearbyCommandSequenceDiagram1.svg" alt="NearbyCommandSequenceDiagram1">
 </div>
-<div class="title">Figure 26. Nearby Command Sequence Diagram for <code>nearby</code> <code>-o</code> <code>14</code></div>
+<div class="title">Figure 30. Nearby Command Sequence Diagram for <code>nearby</code> <code>-o</code> <code>14</code></div>
 </div>
 <div class="paragraph">
 <p>The arguments passed to the Nearby Command will be parsed by the <code>NearbyCommandParser</code> class.<br>
@@ -1100,7 +1297,7 @@ should be displayed to the user.</p>
 <div class="content">
 <img src="images/NearbyCommandSequenceDiagram2.svg" alt="NearbyCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 27. Nearby Command Sequence Diagram of <code>nearby</code> <code>-o</code> <code>central</code></div>
+<div class="title">Figure 31. Nearby Command Sequence Diagram of <code>nearby</code> <code>-o</code> <code>central</code></div>
 </div>
 <div class="paragraph">
 <p>The <code>NearbyCommandParser</code> will check for invalid arguments given by the user.<br>
@@ -1147,7 +1344,7 @@ This will result in a <code>ParseException</code> as invalid arguments are provi
 <div class="content">
 <img src="images/NearbySequenceDiagramParseException.svg" alt="NearbySequenceDiagramParseException">
 </div>
-<div class="title">Figure 28. Nearby Command Sequence Diagram of <code>nearby</code></div>
+<div class="title">Figure 32. Nearby Command Sequence Diagram of <code>nearby</code></div>
 </div>
 <div class="paragraph">
 <p>The exception will be thrown in the <code>NearbyCommandParser</code>.</p>
@@ -1155,13 +1352,13 @@ This will result in a <code>ParseException</code> as invalid arguments are provi
 </div>
 </div>
 <div class="sect2">
-<h3 id="import"><a class="link" href="#import">3.9. Import feature</a></h3>
+<h3 id="import"><a class="link" href="#import">3.8. Import feature</a></h3>
 <div class="paragraph">
 <p>In this section, the <a href="#what-is-import">functionality</a> of the <code>import</code> feature, the expected <a href="#import-execution-path">execution path</a>, the <a href="#import-structure">structure</a> of the
 <code>ImportCommand</code> class and the <a href="#import-interaction">interactions</a> between objects with the <code>ImportCommand</code> object will be discussed.</p>
 </div>
 <div class="sect3">
-<h4 id="what-is-import"><a class="link" href="#what-is-import">3.9.1. What is the Import feature</a></h4>
+<h4 id="what-is-import"><a class="link" href="#what-is-import">3.8.1. What is the Import feature</a></h4>
 <div class="paragraph">
 <p>The <code>import</code> feature was implemented as the <code>ImportCommand</code> in the <code>logic</code> package.<br>
 The <code>import</code> feature allows users to save the trouble of adding the delivery orders and the return orders one by one
@@ -1169,7 +1366,7 @@ when they have large amount of delivery orders or return orders to add into Deli
 </div>
 </div>
 <div class="sect3">
-<h4 id="import-execution-path"><a class="link" href="#import-execution-path">3.9.2. Execution paths of Import Command</a></h4>
+<h4 id="import-execution-path"><a class="link" href="#import-execution-path">3.8.2. Execution paths of Import Command</a></h4>
 <div class="paragraph">
 <p>The execution path of the <code>ImportCommand</code> is shown below:<br></p>
 </div>
@@ -1177,7 +1374,7 @@ when they have large amount of delivery orders or return orders to add into Deli
 <div class="content">
 <img src="images/ImportActivityDiagram.svg" alt="ImportActivityDiagram">
 </div>
-<div class="title">Figure 29. Import Command Activity Diagram</div>
+<div class="title">Figure 33. Import Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>After the user enter the <code>import</code> command, the filePath will be checked if it is valid. If yes, display the error
@@ -1189,7 +1386,7 @@ finished processing the data.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="import-structure"><a class="link" href="#import-structure">3.9.3. Structure of Import Command</a></h4>
+<h4 id="import-structure"><a class="link" href="#import-structure">3.8.3. Structure of Import Command</a></h4>
 <div class="paragraph">
 <p>The following diagram shows the overview structure of the <code>ImportCommand</code> Class Diagram:<br></p>
 </div>
@@ -1197,11 +1394,11 @@ finished processing the data.</p>
 <div class="content">
 <img src="images/ImportClassDiagram.svg" alt="ImportClassDiagram">
 </div>
-<div class="title">Figure 30. Import Command Class Diagram</div>
+<div class="title">Figure 34. Import Command Class Diagram</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="import-interaction"><a class="link" href="#import-interaction">3.9.4. Interactions between objects when Import Command is executed</a></h4>
+<h4 id="import-interaction"><a class="link" href="#import-interaction">3.8.4. Interactions between objects when Import Command is executed</a></h4>
 <div class="paragraph">
 <p>In this section, the interactions between the objects when <code>ImportCommand</code> is executed will be shown in the Import Command
 Sequence Diagram below:<br></p>
@@ -1210,7 +1407,7 @@ Sequence Diagram below:<br></p>
 <div class="content">
 <img src="images/ImportCommandSequenceDiagram.svg" alt="ImportCommandSequenceDiagram">
 </div>
-<div class="title">Figure 31. Import Command Sequence Diagram</div>
+<div class="title">Figure 35. Import Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The arguments passed to the <code>import</code> Command will be parsed by the <code>ImportCommandParser</code> class.<br>
@@ -1253,7 +1450,7 @@ to run the execute the <code>ImportCommand</code>, this will be shown at the dia
 <div class="content">
 <img src="images/ImportCommandSequenceDiagram2.svg" alt="ImportCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 32. Execution of Import Command Sequence Diagram</div>
+<div class="title">Figure 36. Execution of Import Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The <code>ImportCommand#execute(model)</code> will first check if the data given starts with
@@ -1271,13 +1468,13 @@ which is then pass back to the <code>LogicManager</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="search"><a class="link" href="#search">3.10. Search Feature</a></h3>
+<h3 id="search"><a class="link" href="#search">3.9. Search Feature</a></h3>
 <div class="paragraph">
 <p>In this section, the <a href="#what-is-search">functionality</a> of the <code>search</code> feature, the expected <a href="#search-path-execution">execution path</a>, the <a href="#search-structure">structure</a> of the <code>SearchCommand</code> class
 and the <a href="#search-interactions">interactions</a> between objects with the <code>SearchCommand</code> object will be discussed.</p>
 </div>
 <div class="sect3">
-<h4 id="what-is-search"><a class="link" href="#what-is-search">3.10.1. What is the Search feature</a></h4>
+<h4 id="what-is-search"><a class="link" href="#what-is-search">3.9.1. What is the Search feature</a></h4>
 <div class="paragraph">
 <p>The <code>search</code> feature was implemented as the <code>SearchCommand</code> in the <code>logic</code> package.</p>
 </div>
@@ -1326,12 +1523,12 @@ The <code><a href="#command_flags">[FLAG]</a></code> <code>-r</code> when given,
 </div>
 </div>
 <div class="sect3">
-<h4 id="search-path-execution"><a class="link" href="#search-path-execution">3.10.2. Execution paths of Search Command</a></h4>
+<h4 id="search-path-execution"><a class="link" href="#search-path-execution">3.9.2. Execution paths of Search Command</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/SearchCommandActivityDiagram.svg" alt="SearchCommandActivityDiagram">
 </div>
-<div class="title">Figure 33. Search Command Activity Diagram</div>
+<div class="title">Figure 37. Search Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above activity diagram illustrates the different execution paths of <code>search</code> command.<br>
@@ -1349,12 +1546,12 @@ User input will be validated in the <code>SearchCommandParser</code> class.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="search-structure"><a class="link" href="#search-structure">3.10.3. Structure of Search Command</a></h4>
+<h4 id="search-structure"><a class="link" href="#search-structure">3.9.3. Structure of Search Command</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/SearchCommandClassDiagram.png" alt="SearchCommandClassDiagram">
 </div>
-<div class="title">Figure 34. Search Command Class Diagram</div>
+<div class="title">Figure 38. Search Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram depicts the structure of the class <code>SearchCommand</code>. As per any <code>Command</code> class, <code>SearchCommand</code> needs to extend the abstract class <code>Command</code>.<br>
@@ -1362,12 +1559,12 @@ Information that are left out in this class diagram are the common messages used
 </div>
 </div>
 <div class="sect3">
-<h4 id="search-interactions"><a class="link" href="#search-interactions">3.10.4. Interactions between objects when Search Command is executed</a></h4>
+<h4 id="search-interactions"><a class="link" href="#search-interactions">3.9.4. Interactions between objects when Search Command is executed</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/SearchCommandSequenceDiagram.svg" alt="SearchCommandSequenceDiagram">
 </div>
-<div class="title">Figure 35. Search Command Sequence Diagram</div>
+<div class="title">Figure 39. Search Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The sequence diagram above illustrates the interactions between objects when <code>search</code> command is performed by the user.<br>
@@ -1433,14 +1630,14 @@ However, if <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> is
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.11. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">3.10. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.12, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.11, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1471,7 +1668,7 @@ However, if <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> is
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.12. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.11. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -3196,4 +3393,4 @@ Expected: The response box will display an invalid command message</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-01 16:39:25 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-02 02:02:18 UTC</div></div></div></body></html>
