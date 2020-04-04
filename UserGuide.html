@@ -1951,8 +1951,8 @@ provide the <code><a href="#command_prefix">TRANSACTION_ID</a></code> correspond
 <p>Please include a whitespace in between the keyword &amp; transaction id or keyword &amp; the attributes aforementioned.<br>
 i.e. <code>return</code> <code>tid/123abcd</code><br>
  or<br>
-<code>return</code> <code>tid/123abcd</code> <code>n/weijie</code> <code>a/blk 32 clementi road</code> <code>p/92123412</code>
-<code>w/Jurong warehouse</code> <code>rts/2020-04-05</code></p>
+<code>return</code> <code>tid/A999999</code> <code>n/John Doe</code> <code>p/98765432</code> <code>a/311 Clementi Ave 2 #02-25</code> <code>e/johndoe@gmail.com</code>
+<code>rts/2020-05-05 1500</code> <code>w/5 Toh Guan Rd E #02-30 S608831</code> <code>c/NIL</code> <code>type/glass</code></p>
 </li>
 </ul>
 </div>
@@ -2052,6 +2052,10 @@ and added into the return order list.</p>
 <li>
 <p>If the parcel is a new return order, it will be created and added into the return order list.</p>
 </li>
+<li>
+<p>All return orders will not have the <code>CASH_ON_DELIVERY</code> attribute as
+the item was already delivered and the money already was collected upon delivery.</p>
+</li>
 </ul>
 </div>
 </td>
@@ -2093,6 +2097,10 @@ and added into the return order list.</p>
 </li>
 <li>
 <p>The <code>TYPE_OF_ITEM</code> is <strong>alphanumeric</strong></p>
+</li>
+<li>
+<p>The resulting created return order will not have the <code>CASH_ON_DELIVERY</code> field as the money
+was already collected.</p>
 </li>
 </ul>
 </div>
@@ -3176,4 +3184,4 @@ OR<br>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-04 10:59:12 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-04 12:54:27 UTC</div></div></div></body></html>
