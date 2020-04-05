@@ -18,29 +18,934 @@ interacts with it using a CLI, and it has a GUI created with JavaFX. It is writt
 <div class="sect1">
 <h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
 <div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>: *</p>
+<p><strong>Major enhancement</strong>:<br>
+Add <code>nearby</code> command<br>
+(searching by postal sector)<br>
+(March 17 2020)<br>
+<strong>(+1091 -45 LOC)</strong><br>
+(Pull request <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/181">#181</a>)</p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does:</p>
+<p><strong>What it does</strong>:<br>
+Allows the user to find all orders located at a specified postal sector.</p>
 </li>
 <li>
-<p>Justification:</p>
+<p><strong>Justification</strong>:<br>
+It is helpful for our target audience, couriers, to find all relevant orders
+at a specific postal sector.<br>
+This would allow them to deliver their pending orders in
+a more efficient manner.</p>
 </li>
 <li>
-<p>Highlights:</p>
+<p><strong>Highlights</strong>:<br>
+Ability to find orders based on all postal codes in Singapore.<br>
+A helpful message regarding the specified postal code is also shown.<br>
+Parsing has been done to user input of a valid postal sector (the first two digits of a six digit Singapore postal code)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<table id="postal_sector" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Postal Sectors in Singapore</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Postal Sector</th>
+<th class="tableblock halign-left valign-top">General Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">01, 02, 03, 04, 05, 06</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Raffles Place, Cecil, Marina, People&#8217;s Park</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">07, 08</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Anson, Tanjong Pagar</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">14, 15, 16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Queenstown, Tiong Bahru</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">09, 10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Telok Blangah, Harbourfront</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11, 12, 13</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pasir Panjang, Hong Leong Garden, Clementi New Town</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">17</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">High Street, Beach Road (part)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18, 19</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Middle Road, Golden Mile</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">20, 21</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Little India</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">22, 23</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Orchard, Cairnhill, River Valley</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">24, 25, 26, 27</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ardmore, Bukit Timah, Holland Road, Tanglin</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">28, 29, 30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Watten Estate, Novena, Thomson</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">31, 32, 33</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Balestier, Toa Payoh, Serangoon</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">34, 35, 36, 37</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Macpherson, Braddell</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">38, 39, 40, 41</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geylang, Eunos</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">42, 43, 44, 45</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Katong, Joo Chiat, Amber Road</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">46, 47, 48</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bedok, Upper East Coast, Eastwood, Kew Drive</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">49, 50, 81</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Loyang, Changi</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">51, 52</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tampines, Pasir Ris</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">53, 54, 55, 82</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Serangoon Garden, Hougang, Punggol</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">56, 57</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bishan, Ang Mo Kio</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">58, 59</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Upper Bukit Timah, Clementi Park, Ulu Pandan</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">60, 61, 62, 63, 64</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Jurong</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">65, 66, 67, 68</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hillview, Dairy Farm, Bukit Panjang, Choa Chu Kang</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">69, 70, 71</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lim Chu Kang, Tengah</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">72, 73</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kranji, Woodgrove</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">77, 78</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Upper Thomson, Springleaf</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">75, 76</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yishun, Sembawang</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">79, 80</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Seletar</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>Credits: N.A</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Major enhancement</strong>:</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://user-images.githubusercontent.com/38811217/77161742-5b4c3f00-6ae5-11ea-9572-17d6953d5ce1.png" alt="77161742 5b4c3f00 6ae5 11ea 9572 17d6953d5ce1">
+</div>
+</div>
+<div class="paragraph">
+<p>Enhancement to <code>nearby</code> command to search the 5 general regions of Singapore<br>
+Add ability for <code>nearby</code> command to search orders located at one of the 5 areas of Singapore:<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Central</p>
 </li>
 <li>
-<p>Credits: <em>{mention here if you reused any code/ideas from elsewhere or if a third-party library is heavily used in the feature so that a reader can make a more accurate judgement of how much effort went into the feature}</em></p>
+<p>East</p>
+</li>
+<li>
+<p>North-east</p>
+</li>
+<li>
+<p>West</p>
+</li>
+<li>
+<p>North</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>(March 22 2020)<br>
+<strong>(+1,579 −164 LOC)</strong><br>
+(Pull request <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/194">#194</a>)<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What it does</strong>:<br>
+Allows the user to find all orders located at a specified region of Singapore.<br></p>
+</li>
+<li>
+<p><strong>Justification</strong>:<br>
+This makes it easy for couriers in a certain area to select orders to be done in that region.</p>
+</li>
+<li>
+<p><strong>Highlights</strong>:<br>
+Ability to find orders based on the 5 regions in Singapore.<br>
+A helpful message regarding the specified area is also shown.<br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following table shows more information about the 5 regions of Singapore:</p>
+</div>
+<div id="area_table" class="paragraph">
+<p><strong>Area Information of Singapore</strong></p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 2. Central</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">District</th>
+<th class="tableblock halign-left valign-top">Areas</th>
+<th class="tableblock halign-left valign-top">Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Marina Area</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Boat Quay</p>
+</li>
+<li>
+<p>Chinatown</p>
+</li>
+<li>
+<p>Havelock Road</p>
+</li>
+<li>
+<p>Marina Square</p>
+</li>
+<li>
+<p>Raffles Place</p>
+</li>
+<li>
+<p>Suntec City</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CBD</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Anson Road</p>
+</li>
+<li>
+<p>Chinatown</p>
+</li>
+<li>
+<p>Neil Road</p>
+</li>
+<li>
+<p>Raffles Place</p>
+</li>
+<li>
+<p>Shenton Way</p>
+</li>
+<li>
+<p>Tanjong Pagar</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Central South</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Alexandra Road</p>
+</li>
+<li>
+<p>Tiong Bahru</p>
+</li>
+<li>
+<p>Queenstown</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Keppel</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Keppel</p>
+</li>
+<li>
+<p>Mount Faber</p>
+</li>
+<li>
+<p>Sentosa</p>
+</li>
+<li>
+<p>Telok Blangah</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">South West</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Buona Vista</p>
+</li>
+<li>
+<p>Dover</p>
+</li>
+<li>
+<p>Pasir Panjang</p>
+</li>
+<li>
+<p>West Coast</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">City Hall</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>City Hall</p>
+</li>
+<li>
+<p>High Street</p>
+</li>
+<li>
+<p>North Bridge Road</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Beach Road</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Beach Road</p>
+</li>
+<li>
+<p>Bencoolen Road</p>
+</li>
+<li>
+<p>Bugis</p>
+</li>
+<li>
+<p>Rochor</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Little India</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Little India</p>
+</li>
+<li>
+<p>Farrer Park</p>
+</li>
+<li>
+<p>Serangoon Road</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Orchard</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Cairnhill</p>
+</li>
+<li>
+<p>Killiney</p>
+</li>
+<li>
+<p>Leonie Hill</p>
+</li>
+<li>
+<p>Orchard</p>
+</li>
+<li>
+<p>Oxley</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tanglin</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Balmoral</p>
+</li>
+<li>
+<p>Bukit Timah</p>
+</li>
+<li>
+<p>Grange Road</p>
+</li>
+<li>
+<p>Holland</p>
+</li>
+<li>
+<p>Orchard Boulevard</p>
+</li>
+<li>
+<p>River Valley</p>
+</li>
+<li>
+<p>Tanglin Road</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Newton</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Chancery</p>
+</li>
+<li>
+<p>Bukit Timah</p>
+</li>
+<li>
+<p>Dunearn Road</p>
+</li>
+<li>
+<p>Newton</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Toa Payoh</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Balestier</p>
+</li>
+<li>
+<p>Moulmein</p>
+</li>
+<li>
+<p>Novena</p>
+</li>
+<li>
+<p>Toa Payoh</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">13</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Central East</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Potong Pasir</p>
+</li>
+<li>
+<p>Macpherson</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">14</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Eunos</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Eunos</p>
+</li>
+<li>
+<p>Geylang</p>
+</li>
+<li>
+<p>Kembangan</p>
+</li>
+<li>
+<p>Paya Lebar</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">East Coast</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Katong</p>
+</li>
+<li>
+<p>Marine Parade</p>
+</li>
+<li>
+<p>Siglap</p>
+</li>
+<li>
+<p>Tanjong Rhu</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">21</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Central West</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Clementi</p>
+</li>
+<li>
+<p>Upper Bukit Timah</p>
+</li>
+<li>
+<p>Hume Avenue</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 3. East<br></caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">District</th>
+<th class="tableblock halign-left valign-top">Areas</th>
+<th class="tableblock halign-left valign-top">Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Upper East Coast</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Bayshore</p>
+</li>
+<li>
+<p>Bedok</p>
+</li>
+<li>
+<p>Chai Chee</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">17</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Far East</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Changi</p>
+</li>
+<li>
+<p>Loyang</p>
+</li>
+<li>
+<p>Pasir Ris</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tampines</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Pasir Ris</p>
+</li>
+<li>
+<p>Simei</p>
+</li>
+<li>
+<p>Tampines</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 4. North East</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">District</th>
+<th class="tableblock halign-left valign-top">Areas</th>
+<th class="tableblock halign-left valign-top">Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">19</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">North East</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Hougang</p>
+</li>
+<li>
+<p>Punggol</p>
+</li>
+<li>
+<p>Sengkang</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ang Mo Kio</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Ang Mo Kio</p>
+</li>
+<li>
+<p>Bishan</p>
+</li>
+<li>
+<p>Braddell Road</p>
+</li>
+<li>
+<p>Thomson</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">28</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">North East</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Seletar</p>
+</li>
+<li>
+<p>Yio Chu Kang</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 5. West</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">District</th>
+<th class="tableblock halign-left valign-top">Areas</th>
+<th class="tableblock halign-left valign-top">Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">22</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Far West</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Boon Lay</p>
+</li>
+<li>
+<p>Jurong</p>
+</li>
+<li>
+<p>Tuas</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">23</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">North West</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Bukit Batok</p>
+</li>
+<li>
+<p>Choa Chu Kang</p>
+</li>
+<li>
+<p>Hillview Avenue</p>
+</li>
+<li>
+<p>Upper Bukit Timah</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">24</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Far North West</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Kranji</p>
+</li>
+<li>
+<p>Lim Chu Kang</p>
+</li>
+<li>
+<p>Sungei Gedong</p>
+</li>
+<li>
+<p>Tengah</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 6. North</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">District</th>
+<th class="tableblock halign-left valign-top">Areas</th>
+<th class="tableblock halign-left valign-top">Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">25</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Far North</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Admiralty</p>
+</li>
+<li>
+<p>Woodlands</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">26</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">North</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Tagore</p>
+</li>
+<li>
+<p>Yio Chu Kang</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">27</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Far North</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Admiralty</p>
+</li>
+<li>
+<p>Sembawang</p>
+</li>
+<li>
+<p>Yishun</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>Credits: Information about the various areas was obtained from <a href="https://keylocation.sg/singapore/districts-map" class="bare">https://keylocation.sg/singapore/districts-map</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Minor enhancement</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Add Warehouse field for Orders.<br>
+(Pull request <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/174">#174</a>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Allows for orders to keep track of warehouse.</p>
+</li>
+<li>
+<p>Justification: It is a must have. Couriers need to keep track of the warehouse they need to collect/return
+the order to.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 </li>
 <li>
 <p><strong>Minor enhancement</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Modify Ui for application (temporary change).<br>
+(Pull request <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/192">#192</a>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Cosmetic change to UI (change in colours and placement of UI elements).</p>
+</li>
+<li>
+<p>Justification: A temporary UI change to differentiate our application from the
+original UI of AddressBook Level 3.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Modify delete command to take in flags.<br>
+(Pull request <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/240">#240</a>)
+(Pull request <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/304">#304</a>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Allows for deletion of orders or return orders.</p>
+</li>
+<li>
+<p>Justification: It is a must have. Couriers need to be able to delete from a specific list.
+Our application has two lists: Order list and Return Order list.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
@@ -97,6 +1002,9 @@ interacts with it using a CLI, and it has a GUI created with JavaFX. It is writt
 <li>
 <p>Integrated a third party library (Coveralls) to the project (<a href="https://github.com/AY1920S2-CS2103T-W12-1/main/commit/248bb4db86666270ee5025f1d4f9276ef1d530ec">248bb4d</a>)</p>
 </li>
+<li>
+<p>Configure Repo to Provide Additional Data to RepoSense (Pull request <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/220">#220</a>)</p>
+</li>
 </ul>
 </div>
 </li>
@@ -145,4 +1053,4 @@ interacts with it using a CLI, and it has a GUI created with JavaFX. It is writt
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-05 04:39:39 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-05 10:44:44 UTC</div></div></div></body></html>
