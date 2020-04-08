@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="498px" preserveAspectRatio="none" style="width:684px;height:498px;" version="1.1" viewBox="0 0 684 498" width="684px" zoomAndPan="magnify"><defs><filter height="300%" id="f16986utrk04vc" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="3.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="6.0" dy="6.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[8f353962597800a0a308e81908923c48]
+class InsertCommandParser--><rect fill="#FEFECE" filter="url(#f16986utrk04vc)" height="103.1484" id="InsertCommandParser" style="stroke: #A80036; stroke-width: 2.25;" width="658.5" x="9" y="207"/><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="190.5" x="243" y="233.1855">InsertCommandParser</text><line style="stroke: #A80036; stroke-width: 2.25;" x1="10.5" x2="666" y1="244.6406" y2="244.6406"/><line style="stroke: #A80036; stroke-width: 2.25;" x1="10.5" x2="666" y1="256.6406" y2="256.6406"/><text fill="#000000" font-family="sans-serif" font-size="16.5" lengthAdjust="spacingAndGlyphs" textLength="276" x="18" y="279.769">+parse(args : String) : InsertCommand</text><text fill="#000000" font-family="sans-serif" font-size="16.5" lengthAdjust="spacingAndGlyphs" textLength="640.5" x="18" y="300.5229">-arePrefixesPresent(argumentMultimap : ArgumentMultimap, prefixes : Prefix...) : boolean</text><!--MD5=[628cc5a2753cca06eb1ffef55c386535]
+class Parser--><rect fill="#FEFECE" filter="url(#f16986utrk04vc)" height="105.0352" id="Parser" style="stroke: #A80036; stroke-width: 2.25;" width="316.5" x="180" y="12"/><text fill="#000000" font-family="sans-serif" font-size="18" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="91.5" x="284.25" y="38.1855">«interface»</text><text fill="#000000" font-family="sans-serif" font-size="18" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="54" x="303" y="60.8262">Parser</text><rect fill="#FFFFFF" height="25.6406" style="stroke: #000000; stroke-width: 1.5; stroke-dasharray: 2.0,2.0;" width="13.5" x="487.5" y="7.5"/><text fill="#000000" font-family="sans-serif" font-size="18" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="10.5" x="489" y="27.6855">T</text><line style="stroke: #A80036; stroke-width: 2.25;" x1="181.5" x2="495" y1="72.2813" y2="72.2813"/><line style="stroke: #A80036; stroke-width: 2.25;" x1="181.5" x2="495" y1="84.2813" y2="84.2813"/><text fill="#000000" font-family="sans-serif" font-size="16.5" lengthAdjust="spacingAndGlyphs" textLength="298.5" x="189" y="107.4097">parse(userInput : String) : ClearCommand</text><!--MD5=[219f3ac85648aee436ae9305d11a5044]
+class ArgumentMultimap--><rect fill="#FEFECE" filter="url(#f16986utrk04vc)" height="82.3945" id="ArgumentMultimap" style="stroke: #A80036; stroke-width: 2.25;" width="333" x="32.25" y="400.5"/><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="154.5" x="121.5" y="426.6855">ArgumentMultimap</text><line style="stroke: #A80036; stroke-width: 2.25;" x1="33.75" x2="363.75" y1="438.1406" y2="438.1406"/><line style="stroke: #A80036; stroke-width: 2.25;" x1="33.75" x2="363.75" y1="450.1406" y2="450.1406"/><text fill="#000000" font-family="sans-serif" font-size="16.5" lengthAdjust="spacingAndGlyphs" textLength="315" x="41.25" y="473.269">+getValue(prefix : Prefix) : Optional&lt;String&gt;</text><!--MD5=[441c273129fdc179bfb2b8ffb4e98281]
+class Prefix--><rect fill="#FEFECE" filter="url(#f16986utrk04vc)" height="82.3945" id="Prefix" style="stroke: #A80036; stroke-width: 2.25;" width="121.5" x="418.5" y="400.5"/><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="45" x="456.75" y="426.6855">Prefix</text><line style="stroke: #A80036; stroke-width: 2.25;" x1="420" x2="538.5" y1="438.1406" y2="438.1406"/><text fill="#000000" font-family="sans-serif" font-size="16.5" lengthAdjust="spacingAndGlyphs" textLength="103.5" x="427.5" y="461.269">-prefix : String</text><line style="stroke: #A80036; stroke-width: 2.25;" x1="420" x2="538.5" y1="470.8945" y2="470.8945"/><!--MD5=[c07d2bbc76d409541a2bddaae1904082]
+reverse link Parser to InsertCommandParser--><path d="M338.25,147.513 C338.25,167.544 338.25,188.421 338.25,206.52 " fill="none" id="Parser&lt;-InsertCommandParser" style="stroke: #A80036; stroke-width: 1.5; stroke-dasharray: 7.0,7.0;"/><polygon fill="none" points="327.75,147.252,338.25,117.252,348.75,147.252,327.75,147.252" style="stroke: #A80036; stroke-width: 1.5;"/><!--MD5=[40ec91b43d018084528cf4db7c8dbb56]
+link InsertCommandParser to ArgumentMultimap--><path d="M299.0205,310.869 C278.8125,336.9429 254.349,368.5098 234.6435,393.9356 " fill="none" id="InsertCommandParser-&gt;ArgumentMultimap" style="stroke: #A80036; stroke-width: 1.5; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A80036" points="229.7415,400.2603,242.7543,393.2662,234.3363,394.3326,233.2699,385.9145,229.7415,400.2603" style="stroke: #A80036; stroke-width: 1.5;"/><!--MD5=[5b259f288b39af065d4094c083b0f9a8]
+link InsertCommandParser to Prefix--><path d="M377.901,310.869 C398.3265,336.9429 423.054,368.5098 442.971,393.9356 " fill="none" id="InsertCommandParser-&gt;Prefix" style="stroke: #A80036; stroke-width: 1.5; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A80036" points="447.924,400.2603,444.3239,385.9324,443.2997,394.3556,434.8764,393.3313,447.924,400.2603" style="stroke: #A80036; stroke-width: 1.5;"/><!--MD5=[2f492b412e751775da61e9ef47605172]
+@startuml
+skinparam backgroundColor #ffffff
+skinparam classAttributeIconSize 0
+hide circle
+
+class InsertCommandParser implements Parser {
+    + parse(args : String) : InsertCommand
+    - arePrefixesPresent(argumentMultimap : ArgumentMultimap, prefixes : Prefix...) : boolean
+
+}
+
+interface Parser<T> <<interface>> {
+    parse(userInput : String) : ClearCommand
+}
+
+class ArgumentMultimap {
+    + getValue(prefix : Prefix) : Optional<String>
+}
+
+class Prefix {
+    - prefix : String
+}
+
+InsertCommandParser ..> ArgumentMultimap
+InsertCommandParser ..> Prefix
+
+@enduml
+
+PlantUML version 1.2019.11(Sun Sep 22 18:02:15 SGT 2019)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11.0.5+10-b520.17
+Operating System: Windows 10
+Default Encoding: UTF-8
+Language: en
+Country: SG
+--></g></svg>

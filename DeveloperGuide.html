@@ -353,7 +353,8 @@ every UniqueOrderList is part of an OrderBook.
 <h3 id="insert"><a class="link" href="#insert">3.1. Insert Feature</a></h3>
 <div class="paragraph">
 <p>This section, will <a href="#what-is-insert">introduce</a> the Insert Feature. In addition, it will show the expected
-<a href="#insert-sequence">path-execution</a>, the <a href="#insert-class">structure</a> of the of the <strong>InsertCommand</strong> class and
+<a href="#insert-sequence">path-execution</a>, the <a href="#insert-class">structure</a> of the of the <strong>InsertCommand</strong> class,
+<a href="#insertparser-class">structure</a> of the <strong>InsertCommandParser</strong> class and
 it will also describe the <a href="#insert-activity">interaction</a> of objects between the <strong>InsertCommand</strong> object and other object classes.</p>
 </div>
 <div class="sect3">
@@ -387,16 +388,25 @@ CashOnDelivery</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="insert-activity"><a class="link" href="#insert-activity">3.1.3. Path Execution of Insert Command</a></h4>
+<h4 id="insertparser-class"><a class="link" href="#insertparser-class">3.1.3. Structure of InsertCommandParser</a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="images/InsertParserClassDiagram.svg" alt="InsertParserClassDiagram">
+</div>
+<div class="title">Figure 10. InsertCommandParser Class Diagram</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="insert-activity"><a class="link" href="#insert-activity">3.1.4. Path Execution of Insert Command</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/InsertActivityDiagram.svg" alt="InsertActivityDiagram">
 </div>
-<div class="title">Figure 10. Insert Activity Diagram</div>
+<div class="title">Figure 11. Insert Activity Diagram</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="insert-sequence"><a class="link" href="#insert-sequence">3.1.4. Interaction between objects when the <strong>Insert Command</strong> is executed</a></h4>
+<h4 id="insert-sequence"><a class="link" href="#insert-sequence">3.1.5. Interaction between objects when the <strong>Insert Command</strong> is executed</a></h4>
 <div class="paragraph">
 <p>Here is the sequence diagram for the <strong>Insert Command</strong> as shown below:<br></p>
 </div>
@@ -404,7 +414,7 @@ CashOnDelivery</p>
 <div class="content">
 <img src="images/InsertCommandSequenceDiagram.svg" alt="InsertCommandSequenceDiagram">
 </div>
-<div class="title">Figure 11. Insert</div>
+<div class="title">Figure 12. Insert</div>
 </div>
 <div class="paragraph">
 <p>The arguments of the Insert Command will be parsed using the parse method of the <code>InsertCommandParser</code> class.<br>
@@ -465,7 +475,7 @@ all delivered orders and <code>undone</code> to display all orders that are not 
 <div class="content">
 <img src="images/ListClassDiagram.svg" alt="ListClassDiagram">
 </div>
-<div class="title">Figure 12. List Class Diagram</div>
+<div class="title">Figure 13. List Class Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -474,7 +484,7 @@ all delivered orders and <code>undone</code> to display all orders that are not 
 <div class="content">
 <img src="images/ListActivityDiagram.svg" alt="ListActivityDiagram">
 </div>
-<div class="title">Figure 13. List Activity Diagram</div>
+<div class="title">Figure 14. List Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above activity diagram shows the logic and the path execution when the <strong>List Command</strong> is executed.</p>
@@ -489,7 +499,7 @@ all delivered orders and <code>undone</code> to display all orders that are not 
 <div class="content">
 <img src="images/ListCommandSequenceDiagram.svg" alt="ListCommandSequenceDiagram">
 </div>
-<div class="title">Figure 14. List Command Sequence Diagram</div>
+<div class="title">Figure 15. List Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The user first calls the command "list".</p>
@@ -542,7 +552,7 @@ The <code>clear</code> feature allows the user to remove the orders and return o
 <div class="content">
 <img src="images/ClearActivityDiagram.svg" alt="ClearActivityDiagram">
 </div>
-<div class="title">Figure 15. Clear Class Activity Diagram</div>
+<div class="title">Figure 16. Clear Class Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>After user enter the <code>clear</code> command, the <code>ClearCommandParser</code> will check if the arguments are empty, if yes,
@@ -562,7 +572,7 @@ the 'Yes' button, the respective order book will be cleared.</p>
 <div class="content">
 <img src="images/ClearClassDiagram.svg" alt="ClearClassDiagram">
 </div>
-<div class="title">Figure 16. Clear Command Class Diagram</div>
+<div class="title">Figure 17. Clear Command Class Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -575,7 +585,7 @@ Sequence Diagram below:<br></p>
 <div class="content">
 <img src="images/ClearCommandSequenceDiagram.svg" alt="ClearCommandSequenceDiagram">
 </div>
-<div class="title">Figure 17. Clear Command Sequence Diagram</div>
+<div class="title">Figure 18. Clear Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The arguments passed to the Clear Command will be parsed by the <code>ClearCommandParser</code> class<br>
@@ -595,7 +605,7 @@ shown in details in below diagram:</p>
 <div class="content">
 <img src="images/ClearCommandSequenceDiagram2.svg" alt="ClearCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 18. Execution of Clear Command Sequence Diagram</div>
+<div class="title">Figure 19. Execution of Clear Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>After <code>LogicManager</code> call the <code>ClearCommand#execute(model)</code>, the <code>clear</code> Command will update the model by creating a
@@ -667,7 +677,7 @@ The <code>INDEX</code> <strong>must be a positive integer</strong> i.e. 1, 2, 3,
 <div class="content">
 <img src="images/DeleteActivityDiagram.svg" alt="DeleteActivityDiagram">
 </div>
-<div class="title">Figure 19. Delete Command Activity Diagram</div>
+<div class="title">Figure 20. Delete Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>There are four possible execution paths for the <code>delete</code> command</p>
@@ -705,7 +715,7 @@ related to the <code>delete</code> command.</p>
 <div class="content">
 <img src="images/DeleteClassDiagram.svg" alt="DeleteClassDiagram">
 </div>
-<div class="title">Figure 20. Delete Command Class Diagram</div>
+<div class="title">Figure 21. Delete Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>In the <code>DeleteCommand</code> class, there are also static strings present that represent the
@@ -741,7 +751,7 @@ list.</p>
 <div class="content">
 <img src="images/DeleteSequenceDiagram.svg" alt="DeleteSequenceDiagram">
 </div>
-<div class="title">Figure 21. Delete Command Sequence Diagram for <code>delete</code> <code>-o</code> <code>1</code></div>
+<div class="title">Figure 22. Delete Command Sequence Diagram for <code>delete</code> <code>-o</code> <code>1</code></div>
 </div>
 <div class="paragraph">
 <p>The arguments passed to the <code>delete</code> command will be parsed by the <code>DeleteCommandParser</code> class.<br>
@@ -785,7 +795,7 @@ list.</p>
 <div class="content">
 <img src="images/DeleteSequenceDiagram2.svg" alt="DeleteSequenceDiagram2">
 </div>
-<div class="title">Figure 22. Delete Command Sequence Diagram for <code>delete</code> <code>-r</code> <code>2</code></div>
+<div class="title">Figure 23. Delete Command Sequence Diagram for <code>delete</code> <code>-r</code> <code>2</code></div>
 </div>
 <div class="paragraph">
 <p>The arguments passed to the <code>delete</code> command will be parsed by the <code>DeleteCommandParser</code> class.<br>
@@ -859,7 +869,7 @@ the <a href="#command_prefix"><code>INDEX</code></a> should not be greater than 
 <div class="content">
 <img src="images/DeliveredCommandActivityDiagram.png" alt="DeliveredCommandActivityDiagram">
 </div>
-<div class="title">Figure 23. Activity Diagram of the Delivered Command</div>
+<div class="title">Figure 24. Activity Diagram of the Delivered Command</div>
 </div>
 <div class="paragraph">
 <p>The above activity diagram shows the logic behind the <code>DeliveredCommand</code> which is determined in
@@ -889,13 +899,13 @@ not extensively utilised in <code>DeliveredCommand</code>; such as public static
 <div class="content">
 <img src="images/DeliveredSequenceDiagram.png" alt="DeliveredSequenceDiagram">
 </div>
-<div class="title">Figure 24. Search Command Sequence Diagram</div>
+<div class="title">Figure 25. Search Command Sequence Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/DeliveredSequenceDiagram2.png" alt="DeliveredSequenceDiagram2">
 </div>
-<div class="title">Figure 25. Execution of Delivered Command</div>
+<div class="title">Figure 26. Execution of Delivered Command</div>
 </div>
 <div class="paragraph">
 <p>The arguments typed into Delino by the user will first be done by the <code>execute</code>
@@ -1013,7 +1023,7 @@ This feature allows user to edit more than one field within a command.
 <div class="content">
 <img src="images/EditCommandActivityDiagram.svg" alt="EditCommandActivityDiagram">
 </div>
-<div class="title">Figure 26. EditCommand Activity Diagram</div>
+<div class="title">Figure 27. EditCommand Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above figure illustrates the execution path of <code>edit</code> command when performed by the user.<br></p>
@@ -1046,7 +1056,7 @@ Furthermore, if <code>NEW_VALUE</code> is invalid an exception should be thrown 
 <div class="content">
 <img src="images/EditCommandClassDiagram.png" alt="EditCommandClassDiagram">
 </div>
-<div class="title">Figure 27. Edit Command Class Diagram</div>
+<div class="title">Figure 28. Edit Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The class diagram above depicts the structure of <code>EditCommand</code>. As per any <code>Command</code> class, <code>EditCommand</code> needs to extend the abstract class <code>Command</code>.<br>
@@ -1059,7 +1069,7 @@ Information that are left out in this class diagram are the common messages used
 <div class="content">
 <img src="images/EditCommandSequenceDiagram.svg" alt="EditCommandSequenceDiagram">
 </div>
-<div class="title">Figure 28. Edit Command Sequence Diagram</div>
+<div class="title">Figure 29. Edit Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above figure illustrates the important interactions of <code>EditCommand</code> when the user successfully edit the first displayed order name to <code>Alice</code>.<br></p>
@@ -1175,7 +1185,7 @@ The list of postal sectors and their corresponding general locations can be foun
 <div class="content">
 <img src="images/NearbyActivityDiagram.svg" alt="NearbyActivityDiagram">
 </div>
-<div class="title">Figure 29. Nearby Command Activity Diagram</div>
+<div class="title">Figure 30. Nearby Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>There are four possible execution paths for the <code>nearby</code> command</p>
@@ -1236,7 +1246,7 @@ related to the <code>nearby</code> command.</p>
 <div class="content">
 <img src="images/NearbyClassDiagram.svg" alt="NearbyClassDiagram">
 </div>
-<div class="title">Figure 30. Nearby Command Class Diagram</div>
+<div class="title">Figure 31. Nearby Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>In the <code>NearbyCommand</code> class, there are also static strings present that represent the
@@ -1294,7 +1304,7 @@ should be displayed to the user.</p>
 <div class="content">
 <img src="images/NearbyCommandSequenceDiagram1.svg" alt="NearbyCommandSequenceDiagram1">
 </div>
-<div class="title">Figure 31. Nearby Command Sequence Diagram for <code>nearby</code> <code>-o</code> <code>14</code></div>
+<div class="title">Figure 32. Nearby Command Sequence Diagram for <code>nearby</code> <code>-o</code> <code>14</code></div>
 </div>
 <div class="paragraph">
 <p>The arguments passed to the Nearby Command will be parsed by the <code>NearbyCommandParser</code> class.<br>
@@ -1350,7 +1360,7 @@ should be displayed to the user.</p>
 <div class="content">
 <img src="images/NearbyCommandSequenceDiagram2.svg" alt="NearbyCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 32. Nearby Command Sequence Diagram of <code>nearby</code> <code>-o</code> <code>central</code></div>
+<div class="title">Figure 33. Nearby Command Sequence Diagram of <code>nearby</code> <code>-o</code> <code>central</code></div>
 </div>
 <div class="paragraph">
 <p>The <code>NearbyCommandParser</code> will check for invalid arguments given by the user.<br>
@@ -1397,7 +1407,7 @@ This will result in a <code>ParseException</code> as invalid arguments are provi
 <div class="content">
 <img src="images/NearbySequenceDiagramParseException.svg" alt="NearbySequenceDiagramParseException">
 </div>
-<div class="title">Figure 33. Nearby Command Sequence Diagram of <code>nearby</code></div>
+<div class="title">Figure 34. Nearby Command Sequence Diagram of <code>nearby</code></div>
 </div>
 <div class="paragraph">
 <p>The exception will be thrown in the <code>NearbyCommandParser</code>.</p>
@@ -1427,7 +1437,7 @@ when they have large amount of delivery orders or return orders to add into Deli
 <div class="content">
 <img src="images/ImportActivityDiagram.svg" alt="ImportActivityDiagram">
 </div>
-<div class="title">Figure 34. Import Command Activity Diagram</div>
+<div class="title">Figure 35. Import Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>After the user enter the <code>import</code> command, the filePath will be checked if it is valid. If yes, display the error
@@ -1447,7 +1457,7 @@ finished processing the data.</p>
 <div class="content">
 <img src="images/ImportClassDiagram.svg" alt="ImportClassDiagram">
 </div>
-<div class="title">Figure 35. Import Command Class Diagram</div>
+<div class="title">Figure 36. Import Command Class Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1460,7 +1470,7 @@ Sequence Diagram below:<br></p>
 <div class="content">
 <img src="images/ImportCommandSequenceDiagram.svg" alt="ImportCommandSequenceDiagram">
 </div>
-<div class="title">Figure 36. Import Command Sequence Diagram</div>
+<div class="title">Figure 37. Import Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The arguments passed to the <code>import</code> Command will be parsed by the <code>ImportCommandParser</code> class.<br>
@@ -1503,7 +1513,7 @@ to run the execute the <code>ImportCommand</code>, this will be shown at the dia
 <div class="content">
 <img src="images/ImportCommandSequenceDiagram2.svg" alt="ImportCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 37. Execution of Import Command Sequence Diagram</div>
+<div class="title">Figure 38. Execution of Import Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The <code>ImportCommand#execute(model)</code> will first check if the data given starts with
@@ -1581,7 +1591,7 @@ The <code><a href="#command_flags">[FLAG]</a></code> <code>-r</code> when given,
 <div class="content">
 <img src="images/SearchCommandActivityDiagram.svg" alt="SearchCommandActivityDiagram">
 </div>
-<div class="title">Figure 38. Search Command Activity Diagram</div>
+<div class="title">Figure 39. Search Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above activity diagram illustrates the different execution paths of <code>search</code> command.<br>
@@ -1604,7 +1614,7 @@ User input will be validated in the <code>SearchCommandParser</code> class.</p>
 <div class="content">
 <img src="images/SearchCommandClassDiagram.png" alt="SearchCommandClassDiagram">
 </div>
-<div class="title">Figure 39. Search Command Class Diagram</div>
+<div class="title">Figure 40. Search Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram depicts the structure of the class <code>SearchCommand</code>. As per any <code>Command</code> class, <code>SearchCommand</code> needs to extend the abstract class <code>Command</code>.<br>
@@ -1617,7 +1627,7 @@ Information that are left out in this class diagram are the common messages used
 <div class="content">
 <img src="images/SearchCommandSequenceDiagram.svg" alt="SearchCommandSequenceDiagram">
 </div>
-<div class="title">Figure 40. Search Command Sequence Diagram</div>
+<div class="title">Figure 41. Search Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The sequence diagram above illustrates the interactions between objects when <code>search</code> command is performed by the user.<br>
@@ -3485,4 +3495,4 @@ Expected: The response box will display an invalid command message</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-08 06:33:23 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-08 09:26:30 UTC</div></div></div></body></html>
