@@ -56,12 +56,11 @@
 <li><a href="#search-an-order">G.8. Search an order</a></li>
 <li><a href="#mark-order-as-done">G.9. Mark order as Done</a></li>
 <li><a href="#clear-orders">G.10. Clear orders</a></li>
-<li><a href="#help">G.11. Help</a></li>
-<li><a href="#show">G.12. Show</a></li>
-<li><a href="#obtain-all-nearby-orders-based-on-area-or-postal-sector">G.13. Obtain all nearby orders based on area or postal sector</a></li>
-<li><a href="#undo-previous-action">G.14. Undo previous action</a></li>
-<li><a href="#saving-data">G.15. Saving data</a></li>
-<li><a href="#exit">G.16. Exit</a></li>
+<li><a href="#show">G.11. Show</a></li>
+<li><a href="#obtain-all-nearby-orders-based-on-area-or-postal-sector">G.12. Obtain all nearby orders based on area or postal sector</a></li>
+<li><a href="#undo-previous-action">G.13. Undo previous action</a></li>
+<li><a href="#saving-data">G.14. Saving data</a></li>
+<li><a href="#exit">G.15. Exit</a></li>
 </ul>
 </li>
 </ul>
@@ -532,7 +531,7 @@ to the <code>LogicManager</code>, indicating that the command execution is a suc
 <div class="sect2">
 <h3 id="clear-feature"><a class="link" href="#clear-feature">3.3. Clear feature</a></h3>
 <div class="paragraph">
-<p>In this section, the <a href="#what-is-clear">functionality</a> of the <code>import</code> feature, the expected <a href="#clear-execution-path">execution path</a>,
+<p>In this section, the <a href="#what-is-clear">functionality</a> of the <code>clear</code> feature, the expected <a href="#clear-execution-path">execution path</a>,
 the <a href="#clear-structure">structure</a> of the <code>ClearCommand</code> class and the <a href="#clear-interaction">interactions</a>
 between objects with the <code>ClearCommand</code> object will be discussed.</p>
 </div>
@@ -555,24 +554,101 @@ The <code>clear</code> feature allows the user to remove the orders and return o
 <div class="title">Figure 16. Clear Class Activity Diagram</div>
 </div>
 <div class="paragraph">
-<p>After user enter the <code>clear</code> command, the <code>ClearCommandParser</code> will check if the arguments are empty, if yes,
-it will set the flags as null, otherwise it will retrieve the flags from the arguments. Afterward, the <code>ClearCommandParser</code>
-will create and return a new <code>ClearCommand</code> object to the <code>LogicManager</code>, which will execute the <code>ClearCommand</code>.
-During the execution of the <code>ClearCommand</code>, if <code>-f</code> flag is found in flags, the respective order book will be cleared and
-display a success message to the user, otherwise, a pop up will appeared with the confirmation message. Upon pressing
-the 'Yes' button, the respective order book will be cleared.</p>
+<p>After user enter the <code>clear</code> command, the <code>ClearCommandParser</code> will check if the arguments are empty:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>if <code>Yes</code>, a new <code>ClearCommand</code> object will be created with no flag</p>
+</li>
+<li>
+<p>If <code>No</code>, a new <code>ClearCommand</code> object will be created with the flags.<br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Afterward,  the new <code>ClearCommand</code> object will be executed.</p>
+</div>
+<div class="paragraph">
+<p>During the execution of the <code>ClearCommand</code>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If <code>-f</code> flag is found in flags, the respective order book list will be cleared and
+display a success message to the user.</p>
+</li>
+<li>
+<p>If there are no <code>-f</code> flag found in flags, a pop up will appeared with the confirmation message.
+User would be required to press either one of the following two buttons:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Yes</code> button - The respective order book list will be cleared and display successful clear message to the user.</p>
+</li>
+<li>
+<p><code>No</code> button - Pop up closed and end of activity.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect3">
 <h4 id="clear-structure"><a class="link" href="#clear-structure">3.3.3. Structure of Clear Command</a></h4>
 <div class="paragraph">
-<p>The following diagram shows the overview of the <code>ClearCommand</code> Class Diagram:<br></p>
+<p>The following diagramS shows the overview of the <code>ClearCommand</code> Class Diagram:<br></p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ClearClassDiagram.svg" alt="ClearClassDiagram">
+<img src="images/ClearCommandParserClassDiagram.svg" alt="ClearCommandParserClassDiagram">
 </div>
-<div class="title">Figure 17. Clear Command Class Diagram</div>
+<div class="title">Figure 17. Clear Command Parser Class Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ClearCommandClassDiagram.svg" alt="ClearCommandClassDiagram">
+</div>
+<div class="title">Figure 18. Clear Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>In the <code>ClearCommand</code> class, there are also some static messages for the different input command
+the user has key in:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>MESSAGE_USAGE</code><br>
+clear: Clear either both order book list and return order book list or one of them.<br>
+Parameters: -o/-r/-f<br>
+Example: clear -o -f<br></p>
+</li>
+<li>
+<p><code>MESSAGE_SUCCESS_ORDER_BOOK</code><br>
+Inform the user that order book list has been cleared successfully.</p>
+</li>
+<li>
+<p><code>MESSAGE_SUCCESS_RETURN_BOOK</code><br>
+Inform the user that return order book list has been cleared successfully.</p>
+</li>
+<li>
+<p><code>MESSAGE_SUCCESS_BOTH_BOOK</code><br>
+Inform the user that both order book lists have been cleared successfully.</p>
+</li>
+<li>
+<p><code>MESSAGE_ENQUIRY_ORDER_BOOK</code><br>
+Confirmation message to the user if the user want to clear order book list.</p>
+</li>
+<li>
+<p><code>MESSAGE_ENQUIRY_RETURN_BOOK</code><br>
+Confirmation message to the user if the user want to clear return order book list.</p>
+</li>
+<li>
+<p><code>MESSAGE_ENQUIRY_BOTH_BOOK</code><br>
+Confirmation message to the user if the user want to clear both order book lists.</p>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect3">
@@ -585,7 +661,7 @@ Sequence Diagram below:<br></p>
 <div class="content">
 <img src="images/ClearCommandSequenceDiagram.svg" alt="ClearCommandSequenceDiagram">
 </div>
-<div class="title">Figure 18. Clear Command Sequence Diagram</div>
+<div class="title">Figure 19. Clear Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The arguments passed to the Clear Command will be parsed by the <code>ClearCommandParser</code> class<br>
@@ -597,15 +673,16 @@ If the given arguments are valid, a new <code>Clear</code> Command object will b
 2. <code>isInvalidFlagFormat(flag, flags)</code>: Ensure the arguments do not have both <code>-o</code> and <code>-r</code> flags.</p>
 </div>
 <div class="paragraph">
-<p>Afterwards, a new <code>ClearCommand</code> object will be created by <code>ClearCommandParser</code> and it is being returned
-to the <code>LogicManager</code>. The <code>LogicManager</code> will start to run the execute the <code>clear</code> Command, which will be
+<p>After the two validation checks, the flag will be added into HashSet, <strong>flags</strong> which will then passed to
+the new <code>ClearCommand</code> object created by <code>ClearCommandParser</code> and it is being returned to the <code>LogicManager</code>.
+The <code>LogicManager</code> will start to run the execute the <code>clear</code> Command, which will be
 shown in details in below diagram:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ClearCommandSequenceDiagram2.svg" alt="ClearCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 19. Execution of Clear Command Sequence Diagram</div>
+<div class="title">Figure 20. Execution of Clear Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>After <code>LogicManager</code> call the <code>ClearCommand#execute(model)</code>, the <code>clear</code> Command will update the model by creating a
@@ -677,7 +754,7 @@ The <code>INDEX</code> <strong>must be a positive integer</strong> i.e. 1, 2, 3,
 <div class="content">
 <img src="images/DeleteActivityDiagram.svg" alt="DeleteActivityDiagram">
 </div>
-<div class="title">Figure 20. Delete Command Activity Diagram</div>
+<div class="title">Figure 21. Delete Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>There are four possible execution paths for the <code>delete</code> command</p>
@@ -715,7 +792,7 @@ related to the <code>delete</code> command.</p>
 <div class="content">
 <img src="images/DeleteClassDiagram.svg" alt="DeleteClassDiagram">
 </div>
-<div class="title">Figure 21. Delete Command Class Diagram</div>
+<div class="title">Figure 22. Delete Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>In the <code>DeleteCommand</code> class, there are also static strings present that represent the
@@ -751,7 +828,7 @@ list.</p>
 <div class="content">
 <img src="images/DeleteSequenceDiagram.svg" alt="DeleteSequenceDiagram">
 </div>
-<div class="title">Figure 22. Delete Command Sequence Diagram for <code>delete</code> <code>-o</code> <code>1</code></div>
+<div class="title">Figure 23. Delete Command Sequence Diagram for <code>delete</code> <code>-o</code> <code>1</code></div>
 </div>
 <div class="paragraph">
 <p>The arguments passed to the <code>delete</code> command will be parsed by the <code>DeleteCommandParser</code> class.<br>
@@ -795,7 +872,7 @@ list.</p>
 <div class="content">
 <img src="images/DeleteSequenceDiagram2.svg" alt="DeleteSequenceDiagram2">
 </div>
-<div class="title">Figure 23. Delete Command Sequence Diagram for <code>delete</code> <code>-r</code> <code>2</code></div>
+<div class="title">Figure 24. Delete Command Sequence Diagram for <code>delete</code> <code>-r</code> <code>2</code></div>
 </div>
 <div class="paragraph">
 <p>The arguments passed to the <code>delete</code> command will be parsed by the <code>DeleteCommandParser</code> class.<br>
@@ -869,7 +946,7 @@ the <a href="#command_prefix"><code>INDEX</code></a> should not be greater than 
 <div class="content">
 <img src="images/DeliveredCommandActivityDiagram.png" alt="DeliveredCommandActivityDiagram">
 </div>
-<div class="title">Figure 24. Activity Diagram of the Delivered Command</div>
+<div class="title">Figure 25. Activity Diagram of the Delivered Command</div>
 </div>
 <div class="paragraph">
 <p>The above activity diagram shows the logic behind the <code>DeliveredCommand</code> which is determined in
@@ -899,13 +976,13 @@ not extensively utilised in <code>DeliveredCommand</code>; such as public static
 <div class="content">
 <img src="images/DeliveredSequenceDiagram.png" alt="DeliveredSequenceDiagram">
 </div>
-<div class="title">Figure 25. Search Command Sequence Diagram</div>
+<div class="title">Figure 26. Search Command Sequence Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/DeliveredSequenceDiagram2.png" alt="DeliveredSequenceDiagram2">
 </div>
-<div class="title">Figure 26. Execution of Delivered Command</div>
+<div class="title">Figure 27. Execution of Delivered Command</div>
 </div>
 <div class="paragraph">
 <p>The arguments typed into Delino by the user will first be done by the <code>execute</code>
@@ -1023,7 +1100,7 @@ This feature allows user to edit more than one field within a command.
 <div class="content">
 <img src="images/EditCommandActivityDiagram.svg" alt="EditCommandActivityDiagram">
 </div>
-<div class="title">Figure 27. EditCommand Activity Diagram</div>
+<div class="title">Figure 28. EditCommand Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above figure illustrates the execution path of <code>edit</code> command when performed by the user.<br></p>
@@ -1056,7 +1133,7 @@ Furthermore, if <code>NEW_VALUE</code> is invalid an exception should be thrown 
 <div class="content">
 <img src="images/EditCommandClassDiagram.png" alt="EditCommandClassDiagram">
 </div>
-<div class="title">Figure 28. Edit Command Class Diagram</div>
+<div class="title">Figure 29. Edit Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The class diagram above depicts the structure of <code>EditCommand</code>. As per any <code>Command</code> class, <code>EditCommand</code> needs to extend the abstract class <code>Command</code>.<br>
@@ -1069,7 +1146,7 @@ Information that are left out in this class diagram are the common messages used
 <div class="content">
 <img src="images/EditCommandSequenceDiagram.svg" alt="EditCommandSequenceDiagram">
 </div>
-<div class="title">Figure 29. Edit Command Sequence Diagram</div>
+<div class="title">Figure 30. Edit Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above figure illustrates the important interactions of <code>EditCommand</code> when the user successfully edit the first displayed order name to <code>Alice</code>.<br></p>
@@ -1185,7 +1262,7 @@ The list of postal sectors and their corresponding general locations can be foun
 <div class="content">
 <img src="images/NearbyActivityDiagram.svg" alt="NearbyActivityDiagram">
 </div>
-<div class="title">Figure 30. Nearby Command Activity Diagram</div>
+<div class="title">Figure 31. Nearby Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>There are four possible execution paths for the <code>nearby</code> command</p>
@@ -1246,7 +1323,7 @@ related to the <code>nearby</code> command.</p>
 <div class="content">
 <img src="images/NearbyClassDiagram.svg" alt="NearbyClassDiagram">
 </div>
-<div class="title">Figure 31. Nearby Command Class Diagram</div>
+<div class="title">Figure 32. Nearby Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>In the <code>NearbyCommand</code> class, there are also static strings present that represent the
@@ -1304,7 +1381,7 @@ should be displayed to the user.</p>
 <div class="content">
 <img src="images/NearbyCommandSequenceDiagram1.svg" alt="NearbyCommandSequenceDiagram1">
 </div>
-<div class="title">Figure 32. Nearby Command Sequence Diagram for <code>nearby</code> <code>-o</code> <code>14</code></div>
+<div class="title">Figure 33. Nearby Command Sequence Diagram for <code>nearby</code> <code>-o</code> <code>14</code></div>
 </div>
 <div class="paragraph">
 <p>The arguments passed to the Nearby Command will be parsed by the <code>NearbyCommandParser</code> class.<br>
@@ -1360,7 +1437,7 @@ should be displayed to the user.</p>
 <div class="content">
 <img src="images/NearbyCommandSequenceDiagram2.svg" alt="NearbyCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 33. Nearby Command Sequence Diagram of <code>nearby</code> <code>-o</code> <code>central</code></div>
+<div class="title">Figure 34. Nearby Command Sequence Diagram of <code>nearby</code> <code>-o</code> <code>central</code></div>
 </div>
 <div class="paragraph">
 <p>The <code>NearbyCommandParser</code> will check for invalid arguments given by the user.<br>
@@ -1407,7 +1484,7 @@ This will result in a <code>ParseException</code> as invalid arguments are provi
 <div class="content">
 <img src="images/NearbySequenceDiagramParseException.svg" alt="NearbySequenceDiagramParseException">
 </div>
-<div class="title">Figure 34. Nearby Command Sequence Diagram of <code>nearby</code></div>
+<div class="title">Figure 35. Nearby Command Sequence Diagram of <code>nearby</code></div>
 </div>
 <div class="paragraph">
 <p>The exception will be thrown in the <code>NearbyCommandParser</code>.</p>
@@ -1437,15 +1514,58 @@ when they have large amount of delivery orders or return orders to add into Deli
 <div class="content">
 <img src="images/ImportActivityDiagram.svg" alt="ImportActivityDiagram">
 </div>
-<div class="title">Figure 35. Import Command Activity Diagram</div>
+<div class="title">Figure 36. Import Command Activity Diagram</div>
 </div>
 <div class="paragraph">
-<p>After the user enter the <code>import</code> command, the filePath will be checked if it is valid. If yes, display the error
-message to the user, otherwise, check if the file is able to read. If the file is unable to read, display the error
-message to the user, otherwise, data will be retrieve from the <code>CSV file</code> and being processed. A new <code>ImportCommand</code> will
-be created and pass to <code>Logic Manager</code>, whereby it will executes the command. For every data inside the list,
-add order or return order based on the <code>orderType</code> value. Finally, display the <code>import</code> result to the user after
-finished processing the data.</p>
+<p>After the user enter the <code>import</code> command, there are three validation check for the file based on the input argument, <code>FILE_NAME</code>:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Check if the input argument has the .csv file extension at the back:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If <code>Yes</code>, continue with the next validation check.</p>
+</li>
+<li>
+<p>If <code>No</code>, display error message to the user.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Check if the filePath is valid:<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>If <code>Yes</code>, continue with the next validation check.</p>
+</li>
+<li>
+<p>If <code>No</code>, display error message to the user.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Check if the file able to read:<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>If <code>Yes</code>, retrieve the data from the CSV file and process the data.</p>
+</li>
+<li>
+<p>If <code>No</code>, display the error message to the user.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Afterward, a new <code>ImportCommand</code> will be created and executed. For every data inside the list, either order or return order
+will be added into the order book list and return order book list respectively based on the <code>orderType</code> value.
+If the <code>orderType</code> is invalid, add the data into the result, which will be displayed to the user after processing.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1457,7 +1577,43 @@ finished processing the data.</p>
 <div class="content">
 <img src="images/ImportClassDiagram.svg" alt="ImportClassDiagram">
 </div>
-<div class="title">Figure 36. Import Command Class Diagram</div>
+<div class="title">Figure 37. Import Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>In the <code>ImportCommand</code> Class, there are also a few static message to display to the user for the various scenarios occurred
+during the importing of data from the CSV file:<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>MESSAGE_USAGE</code><br>
+import: Import the data in .csv file into Delino<br>
+Parameters: fileName.csv\n <br>
+Example: import orders.csv<br></p>
+</li>
+<li>
+<p><code>INVALID_MESSAGE</code><br>
+Invalid order type encountered.</p>
+</li>
+<li>
+<p><code>DUPLICATE_ORDER_MESSAGE</code><br>
+Duplicate order encountered.</p>
+</li>
+<li>
+<p><code>DUPLICATE_RETURN_MESSAGE</code><br>
+Duplicate return order encountered.</p>
+</li>
+<li>
+<p><code>MESSAGE_INVALID_CSV_FILEPATH</code><br>
+The csv file is not found in the data folder.</p>
+</li>
+<li>
+<p><code>PROCESS_FAILED_MESSAGE</code><br>
+Failed to process the data.<br>
+This could be due to invalid order type encountered or invalid data input for the attributes in
+order and return order.</p>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect3">
@@ -1470,7 +1626,7 @@ Sequence Diagram below:<br></p>
 <div class="content">
 <img src="images/ImportCommandSequenceDiagram.svg" alt="ImportCommandSequenceDiagram">
 </div>
-<div class="title">Figure 37. Import Command Sequence Diagram</div>
+<div class="title">Figure 38. Import Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The arguments passed to the <code>import</code> Command will be parsed by the <code>ImportCommandParser</code> class.<br>
@@ -1478,10 +1634,13 @@ If the given arguments are valid, a new <code>ImportCommand</code> object will b
 In this class, invalid arguments will result in a <code>ParseException</code>.<br></p>
 </div>
 <div class="paragraph">
-<p>Two types of checks will be done before returning the <code>ImportCommand</code>:</p>
+<p>Three types of checks will be done before returning the <code>ImportCommand</code>:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
+<li>
+<p>Check whether the argument has the <code>.csv</code> file extension at the back.</p>
+</li>
 <li>
 <p>Check whether the file is exists in the data folder.</p>
 </li>
@@ -1513,7 +1672,7 @@ to run the execute the <code>ImportCommand</code>, this will be shown at the dia
 <div class="content">
 <img src="images/ImportCommandSequenceDiagram2.svg" alt="ImportCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 38. Execution of Import Command Sequence Diagram</div>
+<div class="title">Figure 39. Execution of Import Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The <code>ImportCommand#execute(model)</code> will first check if the data given starts with
@@ -1591,7 +1750,7 @@ The <code><a href="#command_flags">[FLAG]</a></code> <code>-r</code> when given,
 <div class="content">
 <img src="images/SearchCommandActivityDiagram.svg" alt="SearchCommandActivityDiagram">
 </div>
-<div class="title">Figure 39. Search Command Activity Diagram</div>
+<div class="title">Figure 40. Search Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above activity diagram illustrates the different execution paths of <code>search</code> command.<br>
@@ -1614,7 +1773,7 @@ User input will be validated in the <code>SearchCommandParser</code> class.</p>
 <div class="content">
 <img src="images/SearchCommandClassDiagram.png" alt="SearchCommandClassDiagram">
 </div>
-<div class="title">Figure 40. Search Command Class Diagram</div>
+<div class="title">Figure 41. Search Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram depicts the structure of the class <code>SearchCommand</code>. As per any <code>Command</code> class, <code>SearchCommand</code> needs to extend the abstract class <code>Command</code>.<br>
@@ -1627,7 +1786,7 @@ Information that are left out in this class diagram are the common messages used
 <div class="content">
 <img src="images/SearchCommandSequenceDiagram.svg" alt="SearchCommandSequenceDiagram">
 </div>
-<div class="title">Figure 41. Search Command Sequence Diagram</div>
+<div class="title">Figure 42. Search Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The sequence diagram above illustrates the interactions between objects when <code>search</code> command is performed by the user.<br>
@@ -2478,13 +2637,13 @@ However, if <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> is
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
 <h3 id="use-case-uc10-listing-all-orders" class="discrete">Use case: UC10 - Listing all orders</h3>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -3288,7 +3447,7 @@ Expected: Both order list and return order list will be cleared. Notify the user
 Expected: Only return order list will be cleared. Notify the user that return order list has been cleared in the status message.</p>
 </li>
 <li>
-<p>Test case: <code>clear</code> <code>-r</code> <code>-r</code> <code>-f</code>+
+<p>Test case: <code>clear</code> <code>-r</code> <code>-r</code> <code>-f</code><br>
 Expected: Only return order list will be cleared. Notify the user that return order list has been cleared in the status message.</p>
 </li>
 <li>
@@ -3297,20 +3456,14 @@ Expected: Invalid command input, as both <code>-r</code> and <code>-o</code> can
 Error details shown in the response message. A help message displayed for the user to type the correct command. Status bar remains unchanged</p>
 </li>
 <li>
-<p>Test case: <code>clear</code> <code>-r-f</code>+
+<p>Test case: <code>clear</code> <code>-r-f</code><br>
 Expected: Invalid command input, as space is required in between flags.<br>
-   Error details shown in the response message. A help message displayed for the user to type the correct command. Status bar remains unchanged</p>
+   Error details shown in the response message. A help message displayed for the user to type the correct command. Status bar remains unchanged
+=== Help</p>
 </li>
 </ol>
 </div>
 </li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="help"><a class="link" href="#help">G.11. Help</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
 <li>
 <p>Display a list of available commands to user</p>
 <div class="olist loweralpha">
@@ -3330,7 +3483,7 @@ Expected: An error will occur and the response box will show an error message</p
 </div>
 </div>
 <div class="sect2">
-<h3 id="show"><a class="link" href="#show">G.12. Show</a></h3>
+<h3 id="show"><a class="link" href="#show">G.11. Show</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3353,7 +3506,7 @@ Expected: An error will occur and the response box will show an error message.</
 </div>
 </div>
 <div class="sect2">
-<h3 id="obtain-all-nearby-orders-based-on-area-or-postal-sector"><a class="link" href="#obtain-all-nearby-orders-based-on-area-or-postal-sector">G.13. Obtain all nearby orders based on area or postal sector</a></h3>
+<h3 id="obtain-all-nearby-orders-based-on-area-or-postal-sector"><a class="link" href="#obtain-all-nearby-orders-based-on-area-or-postal-sector">G.12. Obtain all nearby orders based on area or postal sector</a></h3>
 <div class="paragraph">
 <p>There are two possible search criteria for nearby orders</p>
 </div>
@@ -3438,7 +3591,7 @@ Expected: Obtain all return orders located in east area of Singapore</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="undo-previous-action"><a class="link" href="#undo-previous-action">G.14. Undo previous action</a></h3>
+<h3 id="undo-previous-action"><a class="link" href="#undo-previous-action">G.13. Undo previous action</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3463,7 +3616,7 @@ Expected: Error message displayed in the response box</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.15. Saving data</a></h3>
+<h3 id="saving-data"><a class="link" href="#saving-data">G.14. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3473,7 +3626,7 @@ Expected: Error message displayed in the response box</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exit"><a class="link" href="#exit">G.16. Exit</a></h3>
+<h3 id="exit"><a class="link" href="#exit">G.15. Exit</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3495,4 +3648,4 @@ Expected: The response box will display an invalid command message</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-08 09:26:33 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-08 19:24:46 UTC</div></div></div></body></html>

@@ -211,6 +211,571 @@ and clear features (Pull requests <a href="https://github.com/AY1920S2-CS2103T-W
 </div>
 </div>
 <div class="sect1">
+<h2 id="features"><a class="link" href="#features">Features</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="clear"><a class="link" href="#clear">Clearing all entries : <code>clear</code> [Done by - Eng Xuan En]</a></h3>
+<div class="paragraph">
+<p>In this section, you will be able to find out <a href="#clear-usage">how to use</a> the <code>clear</code> command and
+the <a href="#clear-combinations">possible combinations</a> of the <code>clear</code> command.<br></p>
+</div>
+<div class="paragraph">
+<p>If you wish to delete huge amount of orders and return orders from Delino, the <code>clear</code> command will provide you the means
+to do so.</p>
+</div>
+<div class="sect3">
+<h4 id="clear-usage"><a class="link" href="#clear-usage">How to use the Clear command</a></h4>
+<div class="paragraph">
+<p>Here is how you can clear the order list and return order list by following the steps below:<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong> : Type in the keyword <code>clear</code>.<br>
+<strong>Step 2 (Optional)</strong> : Provides the <code>-f</code> flag if you confirm that you would like to force clear both order list and return order list.<br>
+<strong>Step 3 (Optional)</strong> : Provides the <code>-o</code> or <code>-r</code> flag if you only want to clear either order list or return order list respectively.<br>
+<strong>Step 4</strong> : Press <code>Enter</code> on your keyboard to send the instruction to Delino.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>A space is required in between the command and flags. Refer to the  <a href="#clear-combinations">examples</a> below for more information.</p>
+</li>
+<li>
+<p>If <strong>no</strong> <code>-o</code> or <code>-r</code> flag is given, it will be treated as both. <strong>Both</strong> order list and return order list will be cleared.</p>
+</li>
+<li>
+<p>Flags can be in any order such that <code>clear</code> <code>-f</code> <code>-o</code> and <code>clear</code> <code>-o</code> <code>-f</code> indicate to force clear the order list.</p>
+</li>
+<li>
+<p>If an <code>-f</code> flag is given, no user confirmation will be requested.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="what-constitutes-a-valid-clear-command"><a class="link" href="#what-constitutes-a-valid-clear-command">What constitutes a valid Clear command</a></h4>
+<div class="paragraph">
+<p>In this section, you will learn about the syntax for a valid <code>clear</code> command and the possible combinations of the command.</p>
+</div>
+<div class="paragraph">
+<p>The syntax for a valid <code>clear</code> command can be seen below:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>clear</code> <code>[FLAG]</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>clear</code> is the command word for the clear feature</p>
+</li>
+<li>
+<p><code>FLAG</code> could be either <code>-f</code>, <code>-r</code> and <code>-o</code>; whereby <code>-f</code> flag indicate force clear and<br>
+<code>-r</code> and <code>-o</code> indicates the return order list and order list respectively.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="clear-combinations" class="paragraph">
+<p>These are the possible combinations of the <code>clear</code> command:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Possible Combinations of Clear command</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Scenario</th>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to have a confirmation notice before clearing both lists, you could use this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Popup will appear and ask the user for confirmation to clear both order list and return order list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you don&#8217;t want to get prompt before clearing both lists, you could use this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code> <code>-f</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Both order list and return order list will be cleared immediately.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to have a confirmation notice before clearing return order list, you could use this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code> <code>-r</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Popup will appear and ask the user for confirmation to clear the return order list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you don&#8217;t want to get prompt before clearing return order list, you could use this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code> <code>-f</code> <code>-r</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only return order list is cleared immediately.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to have a confirmation notice before clearing order list, you could use this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code> <code>-o</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Popup will appear and ask the user for confirmation to clear the order list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you don&#8217;t want to get prompt before clearing order list, you could use this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code> <code>-o</code> <code>-f</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only order list is cleared immediately.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="import"><a class="link" href="#import">Importing a list of orders : <code>import</code> [Done by - Eng Xuan En]</a></h3>
+<div class="paragraph">
+<p>In this section, you will be able to find out <a href="#import-usage">how to use</a> the <code>import</code> command and
+the <a href="#import-combination">possible combination</a> of the <code>import</code> command.<br></p>
+</div>
+<div class="paragraph">
+<p>If you wish to add huge amount of orders and return orders to Delino, the <code>import</code> command will provide you the means
+to do so.</p>
+</div>
+<div class="sect3">
+<h4 id="import-usage"><a class="link" href="#import-usage">How to use Import command</a></h4>
+<div class="paragraph">
+<p>Here is how you can import the orders and return orders into Delino by following the steps below:<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong> : Type in the keyword <code>import</code>.<br>
+<strong>Step 2</strong> : Provides the CSV file name that you would like to import with the <strong>.csv</strong> extension behind<br>
+<strong>Step 3</strong> : Press <code>Enter</code> on your keyboard to send the instruction to Delino.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="what-constitutes-a-valid-import-command"><a class="link" href="#what-constitutes-a-valid-import-command">What constitutes a valid Import command</a></h4>
+<div class="paragraph">
+<p>In this section, you will learn about the syntax of a valid <code>import</code> command, the format for both orders and return orders in the CSV file
+and the combination for the <code>import</code> command.</p>
+</div>
+<div class="paragraph">
+<p>The syntax for a valid <code>Import</code> command can be seen below:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>import</code> <code>FILE_NAME</code><br>
+<code>import</code> is the command and <code>FILE_NAME</code>  is the file name that is required to import with the <strong>.csv</strong> extension behind.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Only CSV file could be imported.</p>
+</li>
+<li>
+<p>Only <strong>one</strong> CSV file can be imported at one time.</p>
+</li>
+<li>
+<p>The <code>FILE_NAME</code> should include the extension. For example: <code><strong>orders.csv</strong></code>.</p>
+</li>
+<li>
+<p>The folder, <strong>data</strong>, which the CSV files are stored in, should be in the same directory as the JAR file.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>CSV file should be saved only as CSV (Comma delimited), as shown in the figure below:</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/CSVSaveFormat.png" alt="CSVSaveFormat">
+</div>
+<div class="title">Figure 1. CSV File Save Type</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The data in the <code>CSV file</code> should be written in the following format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Order data format:<br>
+<code>ot/ORDER_TYPE</code>, <code>tid/TRANSACTION_ID</code>, <code>n/NAME</code>, <code>a/ADDRESS</code>, <code>p/PHONE_NUMBER</code>, <code>e/EMAIL</code>, <code>dts/DELIVERY_DATE_&amp;_TIME</code>, <code>w/WAREHOUSE_LOCATION</code>, <code>cod/CASH_ON_DELIVERY</code>, <code>[c/COMMENTS_BY_CUSTOMER]</code>, <code>[type/TYPE_OF_ITEM]</code></p>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/OrderCSVFormat.png" alt="OrderCSVFormat">
+</div>
+<div class="title">Figure 2. Order data format in CSV file</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Return order data format:<br>
+<code>ot/ORDER_TYPE</code>,<code>tid/TRANSACTION_ID</code>, <code>n/NAME</code>, <code>a/ADDRESS</code>, <code>p/PHONE_NUMBER</code>, <code>e/EMAIL</code>, <code>rts/RETURN_DATE_&amp;_TIME</code>, <code>w/WAREHOUSE_LOCATION</code>, <code>[c/COMMENTS_BY_CUSTOMER]</code>, <code>[type/TYPE_OF_ITEM]</code></p>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ReturnCSVFormat.png" alt="ReturnCSVFormat">
+</div>
+<div class="title">Figure 3. Return order data format in CSV file</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Commas <code>,</code> are required in between of the different fields.</p>
+</li>
+<li>
+<p>Prefixes are required before any value for that field.</p>
+</li>
+<li>
+<p><code>ORDER_TYPE</code> can only be either <code>order</code> or <code>return</code>.</p>
+</li>
+<li>
+<p>Only <code>COMMENTS_BY_CUSTOMER</code> and <code>TYPE_OF_ITEM</code> are optional.</p>
+</li>
+<li>
+<p><code>ORDER_TYPE</code> denote the start of an delivery order or return order.</p>
+</li>
+<li>
+<p>The last value of the same type will be stored if duplicate prefix type is found in a single order sentence.</p>
+</li>
+<li>
+<p>Duplicate and invalid order or return order will not be imported into Delino.</p>
+</li>
+<li>
+<p>You could download a <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/releases">sample CSV file</a> in our release under assets to start with.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="import-combination" class="paragraph">
+<p>There are only one possible combination for the <code>import</code> Command:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 2. Possible combination of Import command</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Scenario</th>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to import all of the orders and return orders at once via a CSV file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>import</code> <code>orders.csv</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Import the contents of the CSV file, <code>orders.csv</code>, to Delino.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="command-summary"><a class="link" href="#command-summary">Command Summary</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this section, you can find out more about the commands supported by Delino
+(their respective format and example).</p>
+</div>
+<div class="paragraph">
+<p>If you would like to know more about a specific command, you can view more information by clicking
+the provided link in the table below.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 3. Command Summary</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Format</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert"><strong>Insert</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>insert</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>dts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>cod/CASH_ON_DELIVERY</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>insert</code> <code>tid/0123456789</code> <code>n/Eng Xuan En</code> <code>a/Tampines St 84 Blk 877 S520877 #01-123</code> <code>p/87654321</code> <code>e/xuanen@example.com</code> <code>dts/2020-02-20 1300</code> <code>w/Yishun industry</code> <code>cod/$4.50</code> <code>c/please knock the door three times :D</code> <code>type/heavy</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#clear"><strong>Clear</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code> <code>[FLAG]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code><br>
+<code>clear</code> <code>-f</code><br>
+<code>clear</code> <code>-r</code><br>
+<code>clear</code> <code>-f</code> <code>-r</code><br>
+<code>clear</code> <code>-o</code><br>
+<code>clear</code> <code>-o</code> <code>-f</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#delete"><strong>Delete</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete</code> <code>FLAG</code> <code>INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete</code> <code>-o</code> <code>2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#delivered"><strong>Delivered</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delivered</code> <code>FLAG</code> <code>INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delivered</code> <code>-r</code> <code>2</code><br>
+delivered` <code>-o</code> <code>1</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit"><strong>Edit</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit</code> <code>FLAG</code> <code>INDEX</code> <code>ORDER_ATTRIBUTE_PREFIX/VALUE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit</code> <code>-r</code> <code>2</code> <code>n/Xuan En</code><br>
+<code>edit</code> <code>-o</code> <code>2</code> <code>p/9999 4444</code><br>
+<code>edit</code> <code>-o</code> <code>1</code> <code>a/Blk 123 Pasir Ris Street 51 #12-21 S510123</code><br>
+<code>edit</code> <code>-r</code> <code>3</code> <code>n/Mr Tan</code> <code>p/0123 4567</code> <code>a/Blk 141 Yishun st 71 #09-09 S760141</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#exit"><strong>Exit</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>exit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>exit</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#search"><strong>Search</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code><a href="#command_flags">[FLAG]</a></code> <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD</code> <code>[MORE_KEYWORDS]&#8230;&#8203;</code> <code>[<a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD MORE_KEYWORDS]&#8230;&#8203;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>-r</code> <code>tid/ac1e345x7s</code><br>
+<code>search</code> <code>-r</code> <code>Jeremy Loh</code><br>
+<code>search</code> <code>-o</code> <code>tid/asj2od3943</code><br>
+<code>search</code> <code>-r</code> <code>p/92039999</code><br>
+<code>search</code> <code>-o</code> <code>p/92039999</code> <code>tid/asj2od3943</code> <code>n/jeremy</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#help"><strong>Help</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>help</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>help</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#show"><strong>Show</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#import"><strong>Import</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>import</code> <code>FILE_NAME</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>import</code> <code>orders.csv</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#list"><strong>List</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list</code> <code>[DONE_STATUS]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list</code><br>
+<code>list</code> <code>done</code><br>
+<code>list</code> <code>undone</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#return"><strong>Return</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>return</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>rts/RETURN_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>c/COMMENTS_BY_CUSTOMER</code> <code>type/TYPE_OF_ITEM</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>return</code> <code>tid/ac17s2a</code> <code>n/BOBBY TAN</code> <code>a/123 Delta Road #03-333, Singapore 123456</code> <code>p/91230456</code> <code>rts/12-12-2020 1301</code> <code>w/Jurong Warehouse</code> <code>c/NIL</code> <code>type/glass</code><br>
+<code>return</code> <code>tid/ac17s2a</code><br>
+<code>return</code> <code>tid/b1230512</code> <code>n/Aaron Teo</code> <code>a/256 Alpha Road #03-222, Singapore 123567</code> <code>p/91230456</code> <code>e/aaron@example.com</code> <code>rts/12-12-2020 1400</code> <code>w/Jurong Warehouse</code> <code>c/Leave it at the lobby</code> <code>type/metal</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#nearby"><strong>Nearby</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nearby</code> <code>[FLAG]</code> <code>POSTAL_SECTOR</code><br>
+OR<br>
+<code>nearby</code> <code>[FLAG]</code> <code>AREA</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nearby</code> <code>east</code><br>
+<code>nearby</code> <code>-o</code> <code>14</code><br>
+<code>nearby</code> <code>-r</code> <code>north</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="glossary"><a class="link" href="#glossary">Glossary</a></h2>
+<div class="sectionbody">
+<table id="command_prefix" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 4. Command Prefix</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Prefix</th>
+<th class="tableblock halign-left valign-top">Order Attributes</th>
+<th class="tableblock halign-left valign-top">Used in the following Command(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ot/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Order Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#import">Import</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tid/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transaction ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a>, <a href="#import">Import</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Customer Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a>, <a href="#import">Import</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a>, <a href="#import">Import</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">p/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Phone Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a>, <a href="#import">Import</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">e/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Email</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#return">Return</a>, <a href="#search">Search</a>, <a href="#import">Import</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dts/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delivery Date And Time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a>, <a href="#import">Import</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rts/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Return Date and Time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#return">Return</a>, <a href="#search">Search</a>, <a href="#import">Import</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">w/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Warehouse Location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a>, <a href="#import">Import</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cod/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cash On Delivery</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#search">Search</a>, <a href="#import">Import</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">c/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comments by Customer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a>, <a href="#import">Import</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type of Item</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a>, <a href="#import">Import</a></p></td>
+</tr>
+</tbody>
+</table>
+<table id="command_flags" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 5. Possible Command Flags</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Flag</th>
+<th class="tableblock halign-left valign-top">Meaning</th>
+<th class="tableblock halign-left valign-top">Used in the following Command(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-f</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Force clear, no user confirmation will be requested</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#clear">Clear</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-o</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Order flag, Operation on order list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#clear">Clear</a>, <a href="#delete">Delete</a>, <a href="#delivered">Delivered</a>, <a href="#edit">Edit</a>, <a href="#nearby">Nearby</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-r</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Return Order flag, Operation on return order list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#clear">Clear</a>, <a href="#delete">Delete</a>, <a href="#delivered">Delivered</a>, <a href="#edit">Edit</a>, <a href="#nearby">Nearby</a>, <a href="#search">Search</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
 <h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all spread">
@@ -226,8 +791,772 @@ and clear features (Pull requests <a href="https://github.com/AY1920S2-CS2103T-W
 </div>
 </div>
 <div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
+<h2 id="design"><a class="link" href="#design">Design</a></h2>
 <div class="sectionbody">
-<hr>
+<div class="sect2">
+<h3 id="Design-Storage"><a class="link" href="#Design-Storage">Storage component</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/StorageClassDiagram.svg" alt="StorageClassDiagram">
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-08 09:26:34 UTC</div></div></div></body></html>
+<div class="title">Figure 4. Structure of the Storage Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="{repoURL}/blob/master/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>Storage</code> component,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>can save <code>UserPref</code> objects in json format and read it back.</p>
+</li>
+<li>
+<p>can save both OrderBook and ReturnOrderBook data in json format and read it back.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="features-2"><a class="link" href="#features-2">Features</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="clear-feature"><a class="link" href="#clear-feature">Clear feature</a></h3>
+<div class="paragraph">
+<p>In this section, the <a href="#what-is-clear">functionality</a> of the <code>clear</code> feature, the expected <a href="#clear-execution-path">execution path</a>,
+the <a href="#clear-structure">structure</a> of the <code>ClearCommand</code> class and the <a href="#clear-interaction">interactions</a>
+between objects with the <code>ClearCommand</code> object will be discussed.</p>
+</div>
+<div class="sect3">
+<h4 id="what-is-clear"><a class="link" href="#what-is-clear">What is the Clear feature</a></h4>
+<div class="paragraph">
+<p>The <code>clear</code> feature was implemented as a <code>ClearCommand</code> in the <code>logic</code> package.<br>
+The <code>clear</code> feature allows the user to remove the orders and return orders by input one command line.<br></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="clear-execution-path"><a class="link" href="#clear-execution-path">Execution paths of Clear Command</a></h4>
+<div class="paragraph">
+<p>The execution path of the <code>ClearCommand</code> is shown below:<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ClearActivityDiagram.svg" alt="ClearActivityDiagram">
+</div>
+<div class="title">Figure 5. Clear Class Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p>After user enter the <code>clear</code> command, the <code>ClearCommandParser</code> will check if the arguments are empty:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>if <code>Yes</code>, a new <code>ClearCommand</code> object will be created with no flag</p>
+</li>
+<li>
+<p>If <code>No</code>, a new <code>ClearCommand</code> object will be created with the flags.<br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Afterward,  the new <code>ClearCommand</code> object will be executed.</p>
+</div>
+<div class="paragraph">
+<p>During the execution of the <code>ClearCommand</code>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If <code>-f</code> flag is found in flags, the respective order book list will be cleared and
+display a success message to the user.</p>
+</li>
+<li>
+<p>If there are no <code>-f</code> flag found in flags, a pop up will appeared with the confirmation message.
+User would be required to press either one of the following two buttons:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Yes</code> button - The respective order book list will be cleared and display successful clear message to the user.</p>
+</li>
+<li>
+<p><code>No</code> button - Pop up closed and end of activity.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="clear-structure"><a class="link" href="#clear-structure">Structure of Clear Command</a></h4>
+<div class="paragraph">
+<p>The following diagramS shows the overview of the <code>ClearCommand</code> Class Diagram:<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ClearCommandParserClassDiagram.svg" alt="ClearCommandParserClassDiagram">
+</div>
+<div class="title">Figure 6. Clear Command Parser Class Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ClearCommandClassDiagram.svg" alt="ClearCommandClassDiagram">
+</div>
+<div class="title">Figure 7. Clear Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>In the <code>ClearCommand</code> class, there are also some static messages for the different input command
+the user has key in:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>MESSAGE_USAGE</code><br>
+clear: Clear either both order book list and return order book list or one of them.<br>
+Parameters: -o/-r/-f<br>
+Example: clear -o -f<br></p>
+</li>
+<li>
+<p><code>MESSAGE_SUCCESS_ORDER_BOOK</code><br>
+Inform the user that order book list has been cleared successfully.</p>
+</li>
+<li>
+<p><code>MESSAGE_SUCCESS_RETURN_BOOK</code><br>
+Inform the user that return order book list has been cleared successfully.</p>
+</li>
+<li>
+<p><code>MESSAGE_SUCCESS_BOTH_BOOK</code><br>
+Inform the user that both order book lists have been cleared successfully.</p>
+</li>
+<li>
+<p><code>MESSAGE_ENQUIRY_ORDER_BOOK</code><br>
+Confirmation message to the user if the user want to clear order book list.</p>
+</li>
+<li>
+<p><code>MESSAGE_ENQUIRY_RETURN_BOOK</code><br>
+Confirmation message to the user if the user want to clear return order book list.</p>
+</li>
+<li>
+<p><code>MESSAGE_ENQUIRY_BOTH_BOOK</code><br>
+Confirmation message to the user if the user want to clear both order book lists.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="clear-interaction"><a class="link" href="#clear-interaction">Interactions between objects when Clear Command is executed</a></h4>
+<div class="paragraph">
+<p>In this section, the interactions between objects when <code>ClearCommand</code> is executed will be display in the Clear Command
+Sequence Diagram below:<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ClearCommandSequenceDiagram.svg" alt="ClearCommandSequenceDiagram">
+</div>
+<div class="title">Figure 8. Clear Command Sequence Diagram</div>
+</div>
+<div class="paragraph">
+<p>The arguments passed to the Clear Command will be parsed by the <code>ClearCommandParser</code> class<br>
+If the given arguments are valid, a new <code>Clear</code> Command object will be returned.</p>
+</div>
+<div class="paragraph">
+<p>In the <code>ClearCommandParser</code>, there will be two validation checks:<br>
+1. <code>isValidFlag(flag)</code>: Check whether the flag is one of the three flags: <code>-f</code>, <code>-o</code> and <code>-r</code><br>
+2. <code>isInvalidFlagFormat(flag, flags)</code>: Ensure the arguments do not have both <code>-o</code> and <code>-r</code> flags.</p>
+</div>
+<div class="paragraph">
+<p>After the two validation checks, the flag will be added into HashSet, <strong>flags</strong> which will then passed to
+the new <code>ClearCommand</code> object created by <code>ClearCommandParser</code> and it is being returned to the <code>LogicManager</code>.
+The <code>LogicManager</code> will start to run the execute the <code>clear</code> Command, which will be
+shown in details in below diagram:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ClearCommandSequenceDiagram2.svg" alt="ClearCommandSequenceDiagram2">
+</div>
+<div class="title">Figure 9. Execution of Clear Command Sequence Diagram</div>
+</div>
+<div class="paragraph">
+<p>After <code>LogicManager</code> call the <code>ClearCommand#execute(model)</code>, the <code>clear</code> Command will update the model by creating a
+new <code>OrderBook</code> object and pass it to <code>Model#setOrerBook(orderBook)</code>, whereby the <code>Model</code> will then update its own
+orderBook. In addition, the <code>clear</code> Command will pass back a new <code>CommandResult</code> object with the success message
+in it back to the <code>LogicManager</code>.</p>
+</div>
+<div class="paragraph">
+<p>After executing any of the sequences above, a new <code>CommandResult</code> object will be return back to <code>LogicManager</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="import"><a class="link" href="#import">Import feature</a></h3>
+<div class="paragraph">
+<p>In this section, the <a href="#what-is-import">functionality</a> of the <code>import</code> feature, the expected <a href="#import-execution-path">execution path</a>, the <a href="#import-structure">structure</a> of the
+<code>ImportCommand</code> class and the <a href="#import-interaction">interactions</a> between objects with the <code>ImportCommand</code> object will be discussed.</p>
+</div>
+<div class="sect3">
+<h4 id="what-is-import"><a class="link" href="#what-is-import">What is the Import feature</a></h4>
+<div class="paragraph">
+<p>The <code>import</code> feature was implemented as the <code>ImportCommand</code> in the <code>logic</code> package.<br>
+The <code>import</code> feature allows users to save the trouble of adding the delivery orders and the return orders one by one
+when they have large amount of delivery orders or return orders to add into Delino.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="import-execution-path"><a class="link" href="#import-execution-path">Execution paths of Import Command</a></h4>
+<div class="paragraph">
+<p>The execution path of the <code>ImportCommand</code> is shown below:<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ImportActivityDiagram.svg" alt="ImportActivityDiagram">
+</div>
+<div class="title">Figure 10. Import Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p>After the user enter the <code>import</code> command, there are three validation check for the file based on the input argument, <code>FILE_NAME</code>:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Check if the input argument has the .csv file extension at the back:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If <code>Yes</code>, continue with the next validation check.</p>
+</li>
+<li>
+<p>If <code>No</code>, display error message to the user.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Check if the filePath is valid:<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>If <code>Yes</code>, continue with the next validation check.</p>
+</li>
+<li>
+<p>If <code>No</code>, display error message to the user.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Check if the file able to read:<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>If <code>Yes</code>, retrieve the data from the CSV file and process the data.</p>
+</li>
+<li>
+<p>If <code>No</code>, display the error message to the user.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Afterward, a new <code>ImportCommand</code> will be created and executed. For every data inside the list, either order or return order
+will be added into the order book list and return order book list respectively based on the <code>orderType</code> value.
+If the <code>orderType</code> is invalid, add the data into the result, which will be displayed to the user after processing.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="import-structure"><a class="link" href="#import-structure">Structure of Import Command</a></h4>
+<div class="paragraph">
+<p>The following diagram shows the overview structure of the <code>ImportCommand</code> Class Diagram:<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ImportClassDiagram.svg" alt="ImportClassDiagram">
+</div>
+<div class="title">Figure 11. Import Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>In the <code>ImportCommand</code> Class, there are also a few static message to display to the user for the various scenarios occurred
+during the importing of data from the CSV file:<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>MESSAGE_USAGE</code><br>
+import: Import the data in .csv file into Delino<br>
+Parameters: fileName.csv\n <br>
+Example: import orders.csv<br></p>
+</li>
+<li>
+<p><code>INVALID_MESSAGE</code><br>
+Invalid order type encountered.</p>
+</li>
+<li>
+<p><code>DUPLICATE_ORDER_MESSAGE</code><br>
+Duplicate order encountered.</p>
+</li>
+<li>
+<p><code>DUPLICATE_RETURN_MESSAGE</code><br>
+Duplicate return order encountered.</p>
+</li>
+<li>
+<p><code>MESSAGE_INVALID_CSV_FILEPATH</code><br>
+The csv file is not found in the data folder.</p>
+</li>
+<li>
+<p><code>PROCESS_FAILED_MESSAGE</code><br>
+Failed to process the data.<br>
+This could be due to invalid order type encountered or invalid data input for the attributes in
+order and return order.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="import-interaction"><a class="link" href="#import-interaction">Interactions between objects when Import Command is executed</a></h4>
+<div class="paragraph">
+<p>In this section, the interactions between the objects when <code>ImportCommand</code> is executed will be shown in the Import Command
+Sequence Diagram below:<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ImportCommandSequenceDiagram.svg" alt="ImportCommandSequenceDiagram">
+</div>
+<div class="title">Figure 12. Import Command Sequence Diagram</div>
+</div>
+<div class="paragraph">
+<p>The arguments passed to the <code>import</code> Command will be parsed by the <code>ImportCommandParser</code> class.<br>
+If the given arguments are valid, a new <code>ImportCommand</code> object will be returned.
+In this class, invalid arguments will result in a <code>ParseException</code>.<br></p>
+</div>
+<div class="paragraph">
+<p>Three types of checks will be done before returning the <code>ImportCommand</code>:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Check whether the argument has the <code>.csv</code> file extension at the back.</p>
+</li>
+<li>
+<p>Check whether the file is exists in the data folder.</p>
+</li>
+<li>
+<p>Check whether the first prefix is <code>orderType</code> prefix.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><code>CsvProcessor</code> is  a helper class that helps to retrieve the data from the csv file and process the data before
+giving to <code>ImportCommand</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>After the <code>ImportCommand</code> object is being returned to the <code>LogicManager</code>, the <code>LogicManager</code> will start
+to run the execute the <code>ImportCommand</code>, this will be shown at the diagram below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ImportCommandSequenceDiagram2.svg" alt="ImportCommandSequenceDiagram2">
+</div>
+<div class="title">Figure 13. Execution of Import Command Sequence Diagram</div>
+</div>
+<div class="paragraph">
+<p>The <code>ImportCommand#execute(model)</code> will first check if the data given starts with
+<strong>order</strong> or <strong>return</strong> and pass to the <code>InsertCommandParser</code> or <code>ReturnCommandParser</code> respectively.<br></p>
+</div>
+<div class="paragraph">
+<p>Afterwards, <code>InsertCommandParser</code> or <code>ReturnCommandParser</code> will return the <code>InsertCommand</code> or <code>ReturnCommand</code> respectively
+if it successfully parse the data. The <code>ImportCommand</code> will then call the <code>InsertCommand#execute(Model)</code>
+or <code>ReturnCommand#execute(Model)</code> depend whether it is delivery order or return order. This will cause a delivery order or return order being added into the <code>Model</code>.</p>
+</div>
+<div class="paragraph">
+<p>The <code>ImportCommand</code> will call its own <code>printResult()</code> function and return a String message to the <code>CommandResult</code> object
+which is then pass back to the <code>LogicManager</code>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="use-cases"><a class="link" href="#use-cases">Use Cases</a></h2>
+<div class="sectionbody">
+<h3 id="use-case-uc02-clear-all-orders" class="discrete">Use case: UC02 - Clear all orders</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to clear all orders.</p>
+</li>
+<li>
+<p>Delino clear all existing orders.</p>
+</li>
+<li>
+<p>Delino displays order cleared message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Delino detects invalid syntax.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Delino shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b. Delino detects no flag <code>-f</code>.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. Delino trigger pop-up message.</p>
+<div class="ulist None">
+<ul class="None">
+<li>
+<p>1b2a. User select <code>yes</code> button.</p>
+<div class="ulist None">
+<ul class="None">
+<li>
+<p>1b2a1. Return to step 2.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b2b. User select <code>no</code> button.</p>
+<div class="ulist None">
+<ul class="None">
+<li>
+<p>1b2b1. Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1c. Delino detects no orders.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1c1. Delino shows no order to be cleared message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="use-case-uc09-importing-order-details"><a class="link" href="#use-case-uc09-importing-order-details">Use case: UC09 -  Importing order details</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to import orders from an external file.</p>
+</li>
+<li>
+<p>Delino checks for file existence.</p>
+</li>
+<li>
+<p>Delino imports all orders from the external file.</p>
+</li>
+<li>
+<p>Delino displays all orders imported.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Delino detects invalid syntax.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Delino shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. Delino detects invalid file path.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Delino shows the invalid file path error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a. Delino is unable to open the file.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. Delino shows permission denied error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="glossary-2"><a class="link" href="#glossary-2">Glossary</a></h2>
+<div class="sectionbody">
+<table id="command_prefix" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 6. Command Prefix</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Prefix</th>
+<th class="tableblock halign-left valign-top">Meaning</th>
+<th class="tableblock halign-left valign-top">Used in the following Command(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ot/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Order Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#import">Import</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tid/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transaction ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#import">Import</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Customer Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#import">Import</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#import">Import</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">p/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Phone Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#import">Import</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">e/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Email</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#import">Import</a>, <a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dts/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delivery Date And Time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#import">Import</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rts/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Return Date and Time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#import">Import</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">w/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Warehouse Location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#import">Import</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cod/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cash On Delivery</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">c/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comments by Customer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#import">Import</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type of Item</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#import">Import</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+</tbody>
+</table>
+<table id="command_flags" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 7. Possible Command Flags</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Flag</th>
+<th class="tableblock halign-left valign-top">Meaning</th>
+<th class="tableblock halign-left valign-top">Used in the following Command(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-f</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Force clear, no user confirmation will be requested</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#clear">Clear</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-o</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Order flag, Operation on order list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#clear">Clear</a>, <a href="#delete">Delete</a>, <a href="#delivered">Delivered</a>, <a href="#edit">Edit</a>, <a href="#nearby">Nearby</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-r</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Return Order flag, Operation on return order list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#clear">Clear</a>, <a href="#delete">Delete</a>, <a href="#delivered">Delivered</a>, <a href="#edit">Edit</a>, <a href="#nearby">Nearby</a>, <a href="#search">Search</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="appendix-g-instructions-for-manual-testing"><a class="link" href="#appendix-g-instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="clear-orders"><a class="link" href="#clear-orders">Clear orders</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Clear all orders while all orders are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Clear command format: <code>clear</code> <code>[FLAG]</code></p>
+</li>
+<li>
+<p>Test case: <code>clear</code><br>
+Expected: Confirmation message will display in status message.<br></p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>If <strong>Yes</strong> button is pressed, the both order and return order lists will be cleared. Notify the user that both order lists have been cleared in the status message.<br></p>
+</li>
+<li>
+<p>If <strong>No</strong> button is pressed, no order list is cleared.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case: <code>clear</code> <code>-f</code><br>
+Expected: Both order list and return order list will be cleared. Notify the user that both order lists have been cleared in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>clear</code> <code>-f</code> <code>-r</code><br>
+Expected: Only return order list will be cleared. Notify the user that return order list has been cleared in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>clear</code> <code>-r</code> <code>-r</code> <code>-f</code><br>
+Expected: Only return order list will be cleared. Notify the user that return order list has been cleared in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>clear</code> <code>-r</code> <code>-o</code><br>
+Expected: Invalid command input, as both <code>-r</code> and <code>-o</code> cannot be in a single command.<br>
+Error details shown in the response message. A help message displayed for the user to type the correct command. Status bar remains unchanged</p>
+</li>
+<li>
+<p>Test case: <code>clear</code> <code>-r-f</code><br>
+Expected: Invalid command input, as space is required in between flags.<br>
+   Error details shown in the response message. A help message displayed for the user to type the correct command. Status bar remains unchanged
+=== Import orders</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Import a new list of orders from a .csv file given by the company</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Import command format: <code>import</code> <code>NAME_OF_FILE.csv</code></p>
+</li>
+<li>
+<p>Prerequisites :
+The import file must be a <code>.csv file</code> and the <code>csv file</code> should be inside <code>data</code> folder which is the same directory as the JAR file. Otherwise, it will cause the app to raise an exception and print the error message. Should not import a file that is non-existent</p>
+</li>
+<li>
+<p>Test case: <code>import</code> <code>customers_20_02_2020.csv</code><br>
+Expected: In the response box, a message will appear to indicate that the import is successful. At the same time, the contents of the .csv file will be shown to the user in the form of a list of orders</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-08 19:24:46 UTC</div></div></div></body></html>
