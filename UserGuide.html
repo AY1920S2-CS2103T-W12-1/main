@@ -18,32 +18,38 @@
 <li><a href="#quick-start">2. Quick Start</a></li>
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
-<li><a href="#clear">3.1. Clearing all entries : <code>clear</code> [Done by - Eng Xuan En]</a></li>
-<li><a href="#delete">3.2. Deleting an order : <code>delete</code> [Done by - Loh Jeremy Wen Jun]</a></li>
-<li><a href="#delivered">3.3. Delivering an order or return order : <code>delivered</code> [Done by - Cher Wei Jie]</a></li>
+<li><a href="#help">3.1. Showing the Help message - <code>help</code> [Done by - Cher Wei Jie]</a></li>
+<li><a href="#insert">3.2. Inserting an order: <code>insert</code> [Done by Amos Cheong Jit Hon]</a></li>
+<li><a href="#return">3.3. Returning an order : <code>return</code> [Done by - Cher Wei Jie]</a></li>
 <li><a href="#edit">3.4. Editing an order : <code>edit</code> [Done by - Kenny Ho Si Chong]</a></li>
-<li><a href="#exit">3.5. Exiting the program : <code>exit</code></a></li>
-<li><a href="#help">3.6. Showing the Help message - <code>help</code> [Done by - Cher Wei Jie]</a></li>
-<li><a href="#show">3.7. Showing statistics : <code>show</code> [Done by Amos Cheong Jit Hon]</a></li>
-<li><a href="#insert">3.8. Inserting an order: <code>insert</code> [Done by Amos Cheong Jit Hon]</a></li>
-<li><a href="#import">3.9. Importing a list of orders : <code>import</code> [Done by - Eng Xuan En]</a></li>
+<li><a href="#delete">3.5. Deleting an order : <code>delete</code> [Done by - Loh Jeremy Wen Jun]</a></li>
+<li><a href="#clear">3.6. Clearing all entries : <code>clear</code> [Done by - Eng Xuan En]</a></li>
+<li><a href="#import">3.7. Importing a list of orders : <code>import</code> [Done by - Eng Xuan En]</a></li>
+<li><a href="#search">3.8. Searching for parcels using their attributes: <code>search</code> [Done by Kenny Ho Si Chong]</a></li>
+<li><a href="#nearby">3.9. Viewing orders located at the same area or postal sector: <code>nearby</code> [Done by - Loh Jeremy Wen Jun]</a></li>
 <li><a href="#list">3.10. Listing orders : <code>list</code>  [Done by Amos Cheong Jit Hon]</a></li>
-<li><a href="#nearby">3.11. Viewing orders located at the same area or postal sector: <code>nearby</code> [Done by - Loh Jeremy Wen Jun]</a></li>
-<li><a href="#return">3.12. Returning an order : <code>return</code> [Done by - Cher Wei Jie]</a></li>
-<li><a href="#search">3.13. Searching for parcels using their attributes: <code>search</code> [Done by Kenny Ho Si Chong]</a></li>
+<li><a href="#delivered">3.11. Delivering an order or return order : <code>delivered</code> [Done by - Cher Wei Jie]</a></li>
+<li><a href="#show">3.12. Showing statistics : <code>show</code> [Done by Amos Cheong Jit Hon]</a></li>
+<li><a href="#exit">3.13. Exiting the program : <code>exit</code></a></li>
 <li><a href="#saving">3.14. Saving the data</a></li>
-<li><a href="#export">3.15. Export order list <code>[coming in v2.0]</code></a></li>
-<li><a href="#reminder">3.16. Reminder <code>[coming in v2.0]</code></a></li>
-<li><a href="#rescheduling">3.17. Rescheduling orders <code>[coming in v2.0]</code></a></li>
-<li><a href="#tracking-work">3.18. Keeping track of work schedule <code>[coming in v2.0]</code></a></li>
-<li><a href="#statistics">3.19. Statistics for completed orders <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
-<li><a href="#faq">4. FAQ</a></li>
-<li><a href="#command-summary">5. Command Summary</a></li>
-<li><a href="#glossary">6. Glossary</a>
+<li><a href="#future-features-v2-0">4. Future Features (v2.0)</a>
 <ul class="sectlevel2">
-<li><a href="#area_table">6.1. Area Information of Singapore</a></li>
+<li><a href="#export">4.1. Export order list <code>[coming in v2.0]</code></a></li>
+<li><a href="#reminder">4.2. Reminder <code>[coming in v2.0]</code></a></li>
+<li><a href="#rescheduling">4.3. Rescheduling orders <code>[coming in v2.0]</code></a></li>
+<li><a href="#tracking-work">4.4. Keeping track of work schedule <code>[coming in v2.0]</code></a></li>
+<li><a href="#statistics">4.5. Statistics for completed orders <code>[coming in v2.0]</code></a></li>
+</ul>
+</li>
+<li><a href="#faq">5. FAQ</a></li>
+<li><a href="#command-summary">6. Command Summary</a></li>
+<li><a href="#glossary">7. Glossary</a>
+<ul class="sectlevel2">
+<li><a href="#command_prefix">7.1. Command Prefix</a></li>
+<li><a href="#command_flags">7.2. Command Flags</a></li>
+<li><a href="#area_table">7.3. Area Information of Singapore</a></li>
 </ul>
 </li>
 </ul>
@@ -305,96 +311,40 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </div>
 <div class="sect2">
-<h3 id="clear"><a class="link" href="#clear">3.1. Clearing all entries : <code>clear</code> [Done by - Eng Xuan En]</a></h3>
-<div class="paragraph">
-<p>In this section, you will be able to find out <a href="#clear-usage">how to use</a> the <code>clear</code> command and
-the <a href="#clear-combinations">possible combinations</a> of the <code>clear</code> command.<br></p>
-</div>
-<div class="paragraph">
-<p>If you wish to delete huge amount of orders and return orders from Delino, the <code>clear</code> command will provide you the means
-to do so.</p>
-</div>
-<div class="sect3">
-<h4 id="clear-usage"><a class="link" href="#clear-usage">3.1.1. How to use the Clear command</a></h4>
-<div class="paragraph">
-<p>Here is how you can clear the order list and return order list by following the steps below:<br></p>
-</div>
-<div class="paragraph">
-<p><strong>Step 1</strong> : Type in the keyword <code>clear</code>.<br>
-<strong>Step 2 (Optional)</strong> : Provides the <code>-f</code> flag if you confirm that you would like to force clear both order list and return order list.<br>
-<strong>Step 3 (Optional)</strong> : Provides the <code>-o</code> or <code>-r</code> flag if you only want to clear either order list or return order list respectively.<br>
-<strong>Step 4</strong> : Press <code>Enter</code> on your keyboard to send the instruction to Delino.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
+<h3 id="help"><a class="link" href="#help">3.1. Showing the Help message - <code>help</code> [Done by - Cher Wei Jie]</a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p>A space is required in between the command and flags. Refer to the  <a href="#clear-combinations">examples</a> below for more information.</p>
-</li>
-<li>
-<p>If <strong>no</strong> <code>-o</code> or <code>-r</code> flag is given, it will be treated as both. <strong>Both</strong> order list and return order list will be cleared.</p>
-</li>
-<li>
-<p>Flags can be in any order such that <code>clear</code> <code>-f</code> <code>-o</code> and <code>clear</code> <code>-o</code> <code>-f</code> indicate to force clear the order list.</p>
-</li>
-<li>
-<p>If an <code>-f</code> flag is given, no user confirmation will be requested.</p>
+<p>In this section, you will learn more about the Help command and how to use it.<br>
+Why would you want to use the Help command?
+You can use this Help command to see a summary of all available features of Delino.</p>
 </li>
 </ul>
 </div>
-</td>
-</tr>
-</table>
+<div class="sect3">
+<h4 id="help-works"><a class="link" href="#help-works">3.1.1. How to use the Help command?</a></h4>
+<div class="paragraph">
+<p>Here is how you can use the Help command to show a summary of all available commands in Delino.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong> : Type in the keyword <strong>help</strong>.<br>
+<strong>Step 2</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="what-constitutes-a-valid-clear-command"><a class="link" href="#what-constitutes-a-valid-clear-command">3.1.2. What constitutes a valid Clear command</a></h4>
+<h4 id="help-examples"><a class="link" href="#help-examples">3.1.2. What constitutes a valid Help command?</a></h4>
 <div class="paragraph">
-<p>In this section, you will learn about the syntax for a valid <code>clear</code> command and the possible combinations of the command.</p>
-</div>
-<div class="paragraph">
-<p>The syntax for a valid <code>clear</code> command can be seen below:</p>
+<p>The syntax for a valid help command can be seen below!</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>clear</code> <code>[FLAG]</code></p>
+<p><code>help</code></p>
 </li>
 </ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="ulist">
-<ul>
-<li>
-<p><code>clear</code> is the command word for the clear feature</p>
-</li>
-<li>
-<p><code>FLAG</code> could be either <code>-f</code>, <code>-r</code> and <code>-o</code>; whereby <code>-f</code> flag indicate force clear and<br>
-<code>-r</code> and <code>-o</code> indicates the return order list and order list respectively.</p>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div id="clear-combinations" class="paragraph">
-<p>These are the possible combinations of the <code>clear</code> command:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 1. Possible Combinations of Clear command</caption>
+<caption class="title">Table 1. Possible Combinations of Help command</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -409,183 +359,53 @@ to do so.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to have a confirmation notice before clearing both lists, you could use this:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Popup will appear and ask the user for confirmation to clear both order list and return order list.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you don&#8217;t want to get prompt before clearing both lists, you could use this:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code> <code>-f</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Both order list and return order list will be cleared immediately.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to have a confirmation notice before clearing return order list, you could use this:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code> <code>-r</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Popup will appear and ask the user for confirmation to clear the return order list.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you don&#8217;t want to get prompt before clearing return order list, you could use this:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code> <code>-f</code> <code>-r</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Only return order list is cleared immediately.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to have a confirmation notice before clearing order list, you could use this:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code> <code>-o</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Popup will appear and ask the user for confirmation to clear the order list.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you don&#8217;t want to get prompt before clearing order list, you could use this:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code> <code>-o</code> <code>-f</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Only order list is cleared immediately.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to view all the available commands in Delino, you can do this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>help</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A pop-up window will be shown that includes a summary to briefly explain all the commands that Delino offers.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="delete"><a class="link" href="#delete">3.2. Deleting an order : <code>delete</code> [Done by - Loh Jeremy Wen Jun]</a></h3>
+<h3 id="insert"><a class="link" href="#insert">3.2. Inserting an order: <code>insert</code> [Done by Amos Cheong Jit Hon]</a></h3>
 <div class="paragraph">
-<p>In this section, you will learn more about the <code>delete</code> command,
-<a href="#how_to_use_delete_command">how to use it</a> and the
-<a href="#usage_scenario_delete_command">possible usage scenarios</a> of the <code>delete</code> command.<br></p>
+<p>This section shows you how to use the Insert Command and the relevant examples.</p>
 </div>
 <div class="paragraph">
-<p>The <code>delete</code> command is useful if you would like to delete a specific order from either
-the order list or return order list.<br>
-This would allow you to correct any accidental additions that you may have made
-when <a href="#insert">inserting orders</a> or <a href="#import">importing an order file</a>.</p>
+<p>Whenever you have a new delivery order to make, you have to add it into your list of orders.
+The Insert Command is in charge of this functionality.</p>
 </div>
 <div class="sect3">
-<h4 id="how_to_use_delete_command"><a class="link" href="#how_to_use_delete_command">3.2.1. How to use the delete command</a></h4>
+<h4 id="insert-works"><a class="link" href="#insert-works">3.2.1. How to use the Insert Command</a></h4>
 <div class="paragraph">
-<p>In this section, you learn more about the exact inputs required to use the <code>delete</code> command.</p>
-</div>
-<div class="paragraph">
-<p>Here are the steps you should follow to delete an order using the <code>delete</code> command:<br>
-<strong>Step 1</strong> : Type in the keyword <code>delete</code><br></p>
+<p>Here are the steps on using the Insert Command:<br></p>
 </div>
 <div class="paragraph">
-<p><strong>Step 2</strong> : Provide a <code>FLAG</code> to indicate which list to delete your order from<br></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>A <code>FLAG</code> can be either <code>-o</code> or <code>-r</code>.<br>
-A <code>-o</code> flag indicates the order list.<br>
-A <code>-r</code> flag indicates the return order list.</p>
-</div>
-</td>
-</tr>
-</table>
+<p><strong>Step 1</strong> : Type in the keyword <strong>insert</strong><br></p>
 </div>
 <div class="paragraph">
-<p><strong>Step 3</strong> : Provide an <code>INDEX</code> to indicate the specific order to delete based on the list</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The <code>INDEX</code> refers to the <code>INDEX</code> number shown in the displayed list.<br>
-The <code>INDEX</code> <strong>must be a positive integer</strong> i.e. 1, 2, 3, &#8230;&#8203;</p>
-</div>
-</td>
-</tr>
-</table>
+<p><strong>Step 2</strong> : Add in the prefixes <code><a href="#command_prefix">TRANSACTION_ID</a></code> <code><a href="#command_prefix">CUSTOMER_NAME</a></code>
+<code><a href="#command_prefix">ADDRESS</a></code> <code><a href="#command_prefix">PHONE_NUMBER</a></code> <code><a href="#command_prefix">EMAIL</a></code>
+<code><a href="#command_prefix">ORDER_TIMESTAMP</a></code> <code><a href="#command_prefix">WAREHOUSE_LOCATION</a></code> <code><a href="#command_prefix">CASH_ON_DELIVERY</a></code>
+of the delivery orders<br></p>
 </div>
 <div class="paragraph">
-<p><strong>Step 4</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
+<p><strong>Step 3</strong> : Skip Step 4 if the specific order does not have the customer&#8217;s comment and the type of item.<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 4</strong> : Add in the Customer comment and type of item using the prefixes <code><a href="#command_prefix">[COMMENT_BY_CUSTOMER]</a></code>
+<code><a href="#command_prefix">[TYPE_OF_ITEM]</a></code><br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 5</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="what-constitutes-a-valid-delete-command"><a class="link" href="#what-constitutes-a-valid-delete-command">3.2.2. What constitutes a valid delete command</a></h4>
+<h4 id="insert-examples"><a class="link" href="#insert-examples">3.2.2. What constitutes a valid Insert command</a></h4>
 <div class="paragraph">
-<p>In this section, you will learn more about the syntax of the <code>delete</code> command<br></p>
-</div>
-<div class="paragraph">
-<p>The syntax for a valid <code>delete</code> command is the following:<br>
-<code>delete</code> <code>FLAG</code> <code>INDEX</code><br></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="usage_scenario_delete_command"><a class="link" href="#usage_scenario_delete_command">3.2.3. Delete command usage scenarios</a></h4>
-<div class="paragraph">
-<p>In this section, you will learn more about the various usage scenarios of the <code>delete</code> command!</p>
-</div>
-<div class="paragraph">
-<p>The table below describes the possible usage scenarios of the delete command:</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 2. Possible Combinations of delete command</caption>
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Scenario</th>
-<th class="tableblock halign-left valign-top">Command</th>
-<th class="tableblock halign-left valign-top">Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to delete the second order from the order list.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete</code> <code>-o</code> <code>2</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes the 2nd order from the order list.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to delete the third order from the return order list.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete</code> <code>-r</code> <code>3</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes the 3rd return order from the return order list.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want delete the first order that belongs to the customer 'Betsy'.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>-o</code> <code>Betsy</code><br>
-<code>delete</code> <code>-o</code> <code>1</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes the 1st order in the results of the <code>search</code> command
-(search all orders with customer&#8217;s name <code>Betsy</code>).</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to obtain all orders in the return order list located in the central region of Singapore.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>-r</code> <code>Aaron</code><br>
-<code>delete</code> <code>-r</code> <code>1</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes the 1st return order in the results of the <code>search</code> command
-(search all return orders with customer&#8217;s name <code>Aaron</code>).</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="delivered"><a class="link" href="#delivered">3.3. Delivering an order or return order : <code>delivered</code> [Done by - Cher Wei Jie]</a></h3>
-<div class="paragraph">
-<p>In this section, you will learn more about the Delivered command and how to use it.<br>
-Why would you want to use the Delivered command?
-If you have delivered an order or return order, you can mark it as delivered with the Delivered command.</p>
-</div>
-<div class="sect3">
-<h4 id="delivered-works"><a class="link" href="#delivered-works">3.3.1. How to use the Delivered command</a></h4>
-<div class="paragraph">
-<p>This section will explain the steps needed to use the Delivered command.<br></p>
-</div>
-<div class="paragraph">
-<p>Here is how you can mark the details of any order or return order by following the steps below:<br></p>
-</div>
-<div class="paragraph">
-<p><strong>Step 1</strong> : Type in the keyword <strong>delivered</strong><br>
-<strong>Step 2</strong> : Provide the <code><a href="#command_flags">FLAG</a></code> corresponding to the parcel order type you want to mark as delivered<br>
-<strong>Step 3</strong> : Provide the <code>INDEX</code> of the parcel displayed on the screen that you wish to mark as delivered<br>
-<strong>Step 4</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
+<p>Here is the syntax of the <strong>Insert</strong> Command :<br>
+<code>insert</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>dts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>cod/CASH_ON_DELIVERY</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -597,78 +417,47 @@ If you have delivered an order or return order, you can mark it as delivered wit
 <div class="ulist">
 <ul>
 <li>
-<p>Please include a whitespace in between the keyword, command flag and index. i.e. <code>delivered -o 1</code></p>
+<p>The <code>TRANSACTION_ID</code> refers to the transaction id of the order.</p>
 </li>
 <li>
-<p>If you can&#8217;t see any orders use the <a href="#list"><code>list</code></a> command to view existing parcel!
-If nothing is showing up, it means you got to <a href="#insert"><code>insert</code></a> or <a href="#return"><code>return</code></a> some parcel and start doing work!</p>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="delivered-examples"><a class="link" href="#delivered-examples">3.3.2. What constitutes a valid Delivered command</a></h4>
-<div class="paragraph">
-<p>The syntax for a valid Delivered command can be seen below!</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>delivered</code> <code>FLAG</code> <code>INDEX</code></p>
-</li>
-</ul>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 3. Possible Combinations of Delivered command</caption>
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Scenario</th>
-<th class="tableblock halign-left valign-top">Command</th>
-<th class="tableblock halign-left valign-top">Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to mark the first return order displayed on returns list as delivered, you can do this:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delivered</code> <code>-r</code> <code>1</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Delivery Status of the first return order displayed on the returns list will be changed to "Returned to Warehouse"</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to mark the second order displayed on the orders list, you can do this:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delivered</code> <code>-o</code> <code>2</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The delivery status of the second order in the order list will be changed to "Delivered".</p></td>
-</tr>
-</tbody>
-</table>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>The <code>INDEX</code> given is the parcel you will be marking as delivered.</p>
+<p>The <code>CUSTOMER_NAME</code> refers to the name of the recipient of the order.</p>
 </li>
 <li>
-<p>The parcel will be marked as delivered after executing this delivered command.</p>
+<p>The <code>ADDRESS</code> refers to the address of the recipient.</p>
 </li>
 <li>
-<p>If the parcel is an order, its Delivery Status will be changed from "Not Delivered" to "Delivered".</p>
+<p>The <code>PHONE_NUMBER</code> refers to the phone number of the recipient.</p>
 </li>
 <li>
-<p>If the parcel is a return order, its Delivery Status will be changed from "Not returned to warehouse" to "Returned to warehouse"</p>
+<p>The <code>EMAIL</code> refers to the email address of the recipient.</p>
+</li>
+<li>
+<p>The <code>DELIVERY_DATE_&amp;_TIME</code> refers to the delivery date and time of the order.</p>
+</li>
+<li>
+<p>The <code>WAREHOUSE_LOCATION</code> refers to the warehouse that the courier should collect the order from.</p>
+</li>
+<li>
+<p>The <code>CASH_ON_DELIVERY</code> refers to the money earned from delivering the particular order.</p>
+</li>
+<li>
+<p>The <code>[COMMENTS_BY_CUSTOMER]</code> refers to the comment made by the recipient to the courier.</p>
+</li>
+<li>
+<p>The <code>[TYPE_OF_ITEM]</code> refers to the type of item that the courier is delivering.</p>
+</li>
+<li>
+<p>The prefixes <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>dts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>cod/CASH_ON_DELIVERY</code> are compulsory.</p>
+</li>
+<li>
+<p>The prefixes <code>c/COMMENTS_BY_CUSTOMER</code> <code>type/TYPE_OF_ITEM</code> are optional.</p>
+</li>
+<li>
+<p>Any compulsory prefixes that is absent will result in the App displaying an error message.</p>
+</li>
+<li>
+<p>There should be a spacing in between every prefixes. For example, <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> is allowed
+but <code>tid/TRANSACTION_IDn/CUSTOMER_NAME</code> will be an invalid command input.</p>
 </li>
 </ul>
 </div>
@@ -686,16 +475,287 @@ If nothing is showing up, it means you got to <a href="#insert"><code>insert</co
 <div class="ulist">
 <ul>
 <li>
-<p>The <code>INDEX</code> <strong>must be a positive integer</strong>, e.g: 1, 2, 3, &#8230;&#8203;</p>
+<p><code>TRANSACTION_ID</code> must be alphanumeric (No numbers or special characters allowed).</p>
 </li>
 <li>
-<p>The <code>INDEX</code> <strong>must be in range</strong> of the number of displayed orders</p>
+<p><code>ADDRESS</code> must have a postal code.</p>
 </li>
 <li>
-<p>Only can be used when there is at least an order or return order displayed.</p>
+<p><code>EMAIL</code> should be a valid email address.</p>
 </li>
 <li>
-<p>The <code>FLAG</code> can only be either <code>-o</code> or <code>-r</code>, please refer to <a href="#command_flags">here</a> for more information.</p>
+<p><code>CASH_ON_DELIVERY</code> must start with a dollar sign followed by the value.</p>
+</li>
+<li>
+<p>To add the Delivery Date and Time, first type in the date in this format : YYYY-MM-DD. Followed by adding the time
+in 24 hour format.</p>
+</li>
+<li>
+<p>The value for <code>DELIVERY_DATE_&amp;_TIME</code> must be a time in the future. For example, if the date and time now is 2020-04-03 1200,
+you are not allowed to add 2020-04-03 1159 as the <code>DELIVERY_DATE_&amp;_TIME</code>.</p>
+</li>
+<li>
+<p><code>TYPE_OF_ITEM</code> must be alphanumeric (No numbers or special characters allowed).</p>
+</li>
+<li>
+<p><code>CUSTOMER_NAME</code> mut be alphanumeric(No numbers or special characters allowed).</p>
+</li>
+<li>
+<p><code>PHONE_NUMBER</code> should not have a spacing in between. <code>n/90011009</code> is allowed,<br>
+but <code>n/9001 1009</code> is not allowed.</p>
+</li>
+<li>
+<p>Only numbers are allowed in <code>PHONE_NUMBER</code>.</p>
+</li>
+<li>
+<p><code>CASH_ON_DELIVERY</code> value must be strictly less than $10,000,000,000,000.If there is a need
+to add decimal places, you can only add two.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>There are two different scenarios on how to insert the orders :</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 2. Possible combinations of Insert Command</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Scenario</th>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Insert the order without a comment and no item type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>insert</code> <code>tid/A094844</code> <code>n/John Doe</code> <code>a/Blk 505 Tampines #10-33 S520505</code> <code>p/98761111</code> <code>e/johndoe@example.com</code> <code>dts/2020-05-20 1300</code> <code>w/Yishun</code> <code>cod/$4</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You should be able to see that the order with transaction id 'A094844' will be inserted into the list of delivery orders.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Insert the order with all the order attributes including the non-compulsory ones</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>insert</code> <code>tid/C1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 571 Hougang st 51 #02-02 S530571</code> <code>e/amoscheong@example.com</code> <code>p/90010019</code> <code>dts/2020-05-10 1650</code> <code>w/Marsiling</code> <code>cod/$5</code> <code>c/Leave it at the riser</code> <code>type/glass</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You should see that the order with transaction id 'C1023456789' is inserted into the list of delivery orders.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>List of order attribute prefixes can be found <a href="#command_prefix">here</a>.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="return"><a class="link" href="#return">3.3. Returning an order : <code>return</code> [Done by - Cher Wei Jie]</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>In this section, you will learn more about the Return command and how to use it.<br>
+Why would you want to use the Return command?
+You can use this Return command to create a new return order to be added into the return order list.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="return-works"><a class="link" href="#return-works">3.3.1. How to use the Return command?</a></h4>
+<div class="paragraph">
+<p>Here is how you can convert an order into a return order or create a new return order by following the steps below:</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong> : Type in the keyword <strong>return</strong>.<br>
+<strong>Step 2a</strong> : If you would like to convert an existing order into a return order,
+provide the <code><a href="#command_prefix">TRANSACTION_ID</a></code> corresponding to the order to be converted.<br>
+<strong>Step 2b</strong>: If you would like to create a new return order in the return list, provide the
+<code><a href="#command_prefix">TRANSACTION_ID</a></code> <code><a href="#command_prefix">CUSTOMER_NAME</a></code> <code><a href="#command_prefix">ADDRESS</a></code>
+<code><a href="#command_prefix">PHONE_NUMBER</a></code> <code><a href="#command_prefix">RETURN_TIMESTAMP</a></code> <code><a href="#command_prefix">WAREHOUSE_LOCATION</a></code>
+<code><a href="#command_prefix">CUSTOMER_EMAIL</a></code> <code><a href="#command_prefix">[COMMENTS_BY_CUSTOMER]</a></code> <code><a href="#command_prefix">[TYPE OF ITEM]</a></code> of the parcel.<br>
+<strong>Step 3</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Please include a whitespace in between the keyword &amp; transaction id or keyword &amp; the attributes aforementioned.<br>
+i.e. <code>return</code> <code>tid/123abcd</code><br>
+ or<br>
+<code>return</code> <code>tid/A999999</code> <code>n/John Doe</code> <code>p/98765432</code> <code>a/311 Clementi Ave 2 #02-25</code> <code>e/johndoe@gmail.com</code>
+<code>rts/2020-05-05 1500</code> <code>w/5 Toh Guan Rd E #02-30 S608831</code> <code>c/NIL</code> <code>type/glass</code></p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="return-examples"><a class="link" href="#return-examples">3.3.2. What constitutes a valid Return command?</a></h4>
+<div class="paragraph">
+<p>The syntax for a valid Return command can be seen below!</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>return</code> <code>TRANSACTION_ID</code> or <code>return</code> <code>TRANSACTION_ID</code> <code>CUSTOMER_NAME</code> <code>CUSTOMER_ADDRESS</code> <code>CUSTOMER_EMAIL</code>
+<code>WAREHOUSE_LOCATION</code> <code>PHONE_NUMBER</code> <code>RETURN_TIMESTAMP</code> <code>[COMMENTS_BY_CUSTOMER]</code> <code>[TYPE_OF_ITEM]</code></p>
+</li>
+</ul>
+</div>
+<div class="ulist NOTE">
+<ul class="NOTE">
+<li>
+<p>The <code>TRANSACTION_ID</code> refers to the transaction id of a parcel.</p>
+</li>
+<li>
+<p>The <code>CUSTOMER_NAME</code> refers to the name of the recipient of the parcel.</p>
+</li>
+<li>
+<p>The <code>CUSTOMER_ADDRESS</code> refers to the location which the return should be picked up from.</p>
+</li>
+<li>
+<p>The <code>WAREHOUSE_LOCATION</code> refers to the location which the return should be delivered to.</p>
+</li>
+<li>
+<p>The <code>PHONE_NUMBER</code> refers to the phone number of the customer.</p>
+</li>
+<li>
+<p>The <code>RETURN_TIMESTAMP</code> refers to the return date and time of the parcel. This field cannot be earlier than the current date and time.</p>
+</li>
+<li>
+<p>The <code>COMMENTS_BY_CUSTOMER</code> is an optional attribute which can be included if the customer has special requests.</p>
+</li>
+<li>
+<p>The <code>TYPE_OF_ITEM</code> is an optional attribute which can be included if the item requires special attention.
+For example, it can be used when the item is fragile.</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 3. Possible Combinations of Return command</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Scenario</th>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to convert the order with Transaction Id 'abc1234' into a return order and display it on returns list, you can do this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>return</code> <code>tid/abc1234</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This order will be removed from the order list and be added into the returns list as a return order.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to create a new return order in the return order list, you can do this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>return</code> <code>tid/123abcd</code> <code>n/weijie</code> <code>a/blk 32 clementi road</code> <code>p/92123412</code> <code>w/Jurong warehouse</code> <code>rts/2020-04-05</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A return order with the input attributes will be created into the return order list.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>TRANSACTION_ID</code> given belongs to the return order that will be created.</p>
+</li>
+<li>
+<p>A return order will be created after executing this return command.</p>
+</li>
+<li>
+<p>If the parcel is an existing order, it will be removed from the order list and converted into a return order
+and added into the return order list.</p>
+</li>
+<li>
+<p>If the parcel is a new return order, it will be created and added into the return order list.</p>
+</li>
+<li>
+<p>All return orders will not have the <code>CASH_ON_DELIVERY</code> attribute as
+the item was already delivered and the money already was collected upon delivery.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The conversion of an order into a return order can only be done if the order was already delivered.</p>
+</li>
+<li>
+<p>The <code>TRANSACTION_ID</code> <strong>is alphanumeric</strong>, e.g: 123asd, 1234567, abcdef.</p>
+</li>
+<li>
+<p>The <code>CUSTOMER_NAME</code> <strong>must consist of only alphabets</strong>.</p>
+</li>
+<li>
+<p>The <code>CUSTOMER_ADDRESS</code> <strong>is alphanumeric</strong>.</p>
+</li>
+<li>
+<p>The <code>CUSTOMER_PHONE</code> <strong>must be numeric</strong></p>
+</li>
+<li>
+<p>The <code>WAREHOUSE_LOCATION</code> <strong>is alphanumeric</strong></p>
+</li>
+<li>
+<p>The <code>RETURN_TIMESTAMP</code> <strong>must follow the yyyy-mm-dd format</strong> <strong>must not be earlier than the current date and time</strong></p>
+</li>
+<li>
+<p>The <code>COMMENTS_BY_CUSTOMER</code> <strong>is alphanumeric</strong></p>
+</li>
+<li>
+<p>The <code>TYPE_OF_ITEM</code> is <strong>alphanumeric</strong></p>
+</li>
+<li>
+<p>The resulting created return order will not have the <code>CASH_ON_DELIVERY</code> field as the money
+was already collected.</p>
 </li>
 </ul>
 </div>
@@ -854,19 +914,29 @@ Why will you want to use the <code>edit</code> command? If you wish to edit any 
 </div>
 </div>
 <div class="sect2">
-<h3 id="exit"><a class="link" href="#exit">3.5. Exiting the program : <code>exit</code></a></h3>
+<h3 id="delete"><a class="link" href="#delete">3.5. Deleting an order : <code>delete</code> [Done by - Loh Jeremy Wen Jun]</a></h3>
 <div class="paragraph">
-<p>In this section, you will be able to find out how to properly <a href="#exit-works">use</a> the <code>Exit</code> command and the relevant <a href="#exit-examples">examples</a>.<br>
-Why will you want to use the <code>exit</code> command? If you wish to exit the application, the <code>exit</code> command will allow you to do so.</p>
+<p>In this section, you will learn more about the <code>delete</code> command,
+<a href="#how_to_use_delete_command">how to use it</a> and the
+<a href="#usage_scenario_delete_command">possible usage scenarios</a> of the <code>delete</code> command.<br></p>
+</div>
+<div class="paragraph">
+<p>The <code>delete</code> command is useful if you would like to delete a specific order from either
+the order list or return order list.<br>
+This would allow you to correct any accidental additions that you may have made
+when <a href="#insert">inserting orders</a> or <a href="#import">importing an order file</a>.</p>
 </div>
 <div class="sect3">
-<h4 id="exit-works"><a class="link" href="#exit-works">3.5.1. How to use the Exit command</a></h4>
+<h4 id="how_to_use_delete_command"><a class="link" href="#how_to_use_delete_command">3.5.1. How to use the delete command</a></h4>
 <div class="paragraph">
-<p>Here is how you can exit the application:</p>
+<p>In this section, you learn more about the exact inputs required to use the <code>delete</code> command.</p>
 </div>
 <div class="paragraph">
-<p><strong>Step 1</strong> : Type in the keyword <code>exit</code><br>
-<strong>Step 2</strong> : Say bye to Delino!</p>
+<p>Here are the steps you should follow to delete an order using the <code>delete</code> command:<br>
+<strong>Step 1</strong> : Type in the keyword <code>delete</code><br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong> : Provide a <code>FLAG</code> to indicate which list to delete your order from<br></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -875,20 +945,17 @@ Why will you want to use the <code>exit</code> command? If you wish to exit the 
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Optionally you can click on the cross button of the application to exit!
+<div class="paragraph">
+<p>A <code>FLAG</code> can be either <code>-o</code> or <code>-r</code>.<br>
+A <code>-o</code> flag indicates the order list.<br>
+A <code>-r</code> flag indicates the return order list.</p>
+</div>
 </td>
 </tr>
 </table>
 </div>
-</div>
-<div class="sect3">
-<h4 id="exit-examples"><a class="link" href="#exit-examples">3.5.2. What constitutes a valid Exit command</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p><code>exit</code></p>
-</li>
-</ul>
+<div class="paragraph">
+<p><strong>Step 3</strong> : Provide an <code>INDEX</code> to indicate the specific order to delete based on the list</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -897,68 +964,38 @@ Optionally you can click on the cross button of the application to exit!
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<code>exit</code> is the command word for this feature.
+<div class="paragraph">
+<p>The <code>INDEX</code> refers to the <code>INDEX</code> number shown in the displayed list.<br>
+The <code>INDEX</code> <strong>must be a positive integer</strong> i.e. 1, 2, 3, &#8230;&#8203;</p>
+</div>
 </td>
 </tr>
 </table>
 </div>
-<table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 5. Possible Combinations of Exit command</caption>
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Scenario</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Command</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Result</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you wish to exit the application because you&#8217;re en-route to delivering or after a long day of work.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>exit</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Delino will silently close the application window and awaits for your next usage.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="help"><a class="link" href="#help">3.6. Showing the Help message - <code>help</code> [Done by - Cher Wei Jie]</a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p>In this section, you will learn more about the Help command and how to use it.<br>
-Why would you want to use the Help command?
-You can use this Help command to see a summary of all available features of Delino.</p>
-</li>
-</ul>
-</div>
-<div class="sect3">
-<h4 id="help-works"><a class="link" href="#help-works">3.6.1. How to use the Help command?</a></h4>
 <div class="paragraph">
-<p>Here is how you can use the Help command to show a summary of all available commands in Delino.</p>
-</div>
-<div class="paragraph">
-<p><strong>Step 1</strong> : Type in the keyword <strong>help</strong>.<br>
-<strong>Step 2</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
+<p><strong>Step 4</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="help-examples"><a class="link" href="#help-examples">3.6.2. What constitutes a valid Help command?</a></h4>
+<h4 id="what-constitutes-a-valid-delete-command"><a class="link" href="#what-constitutes-a-valid-delete-command">3.5.2. What constitutes a valid delete command</a></h4>
 <div class="paragraph">
-<p>The syntax for a valid help command can be seen below!</p>
+<p>In this section, you will learn more about the syntax of the <code>delete</code> command<br></p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>help</code></p>
-</li>
-</ul>
+<div class="paragraph">
+<p>The syntax for a valid <code>delete</code> command is the following:<br>
+<code>delete</code> <code>FLAG</code> <code>INDEX</code><br></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="usage_scenario_delete_command"><a class="link" href="#usage_scenario_delete_command">3.5.3. Delete command usage scenarios</a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the various usage scenarios of the <code>delete</code> command!</p>
+</div>
+<div class="paragraph">
+<p>The table below describes the possible usage scenarios of the delete command:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 6. Possible Combinations of Help command</caption>
+<caption class="title">Table 5. Possible Combinations of delete command</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -973,47 +1010,53 @@ You can use this Help command to see a summary of all available features of Deli
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to view all the available commands in Delino, you can do this:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>help</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A pop-up window will be shown that includes a summary to briefly explain all the commands that Delino offers.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to delete the second order from the order list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete</code> <code>-o</code> <code>2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes the 2nd order from the order list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to delete the third order from the return order list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete</code> <code>-r</code> <code>3</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes the 3rd return order from the return order list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want delete the first order that belongs to the customer 'Betsy'.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>-o</code> <code>Betsy</code><br>
+<code>delete</code> <code>-o</code> <code>1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes the 1st order in the results of the <code>search</code> command
+(search all orders with customer&#8217;s name <code>Betsy</code>).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to obtain all orders in the return order list located in the central region of Singapore.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>-r</code> <code>Aaron</code><br>
+<code>delete</code> <code>-r</code> <code>1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes the 1st return order in the results of the <code>search</code> command
+(search all return orders with customer&#8217;s name <code>Aaron</code>).</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="show"><a class="link" href="#show">3.7. Showing statistics : <code>show</code> [Done by Amos Cheong Jit Hon]</a></h3>
+<h3 id="clear"><a class="link" href="#clear">3.6. Clearing all entries : <code>clear</code> [Done by - Eng Xuan En]</a></h3>
 <div class="paragraph">
-<p>This section will explain more about the Show command and how to use it.</p>
+<p>In this section, you will be able to find out <a href="#clear-usage">how to use</a> the <code>clear</code> command and
+the <a href="#clear-combinations">possible combinations</a> of the <code>clear</code> command.<br></p>
 </div>
 <div class="paragraph">
-<p>At some point of time, you would want to know how many orders have you delivered or what is your earnings for today. Therefore,
-you have to use the Show Command to view those information.</p>
+<p>If you wish to delete huge amount of orders and return orders from Delino, the <code>clear</code> command will provide you the means
+to do so.</p>
 </div>
 <div class="sect3">
-<h4 id="show-works"><a class="link" href="#show-works">3.7.1. How to use the Show command</a></h4>
+<h4 id="clear-usage"><a class="link" href="#clear-usage">3.6.1. How to use the Clear command</a></h4>
 <div class="paragraph">
-<p>In this section, you will learn how to use the Show Command.</p>
+<p>Here is how you can clear the order list and return order list by following the steps below:<br></p>
 </div>
 <div class="paragraph">
-<p>Here is how you can show the statistics of your orders:<br></p>
-</div>
-<div class="paragraph">
-<p><strong>Step 1</strong> : Type <code>show</code><br></p>
-</div>
-<div class="paragraph">
-<p><strong>Step 2</strong> : If you want to see your statistics for all the orders, simply type <code>all</code> and skip to Step 5<br></p>
-</div>
-<div class="paragraph">
-<p><strong>Step 3</strong> : Type <code>today</code> to show the statistics for today or simply type in a date
-in a date format of <code>yyyy-mm-dd</code><br></p>
-</div>
-<div class="paragraph">
-<p><strong>Step 4 (Optional)</strong> : Type another date in <code>yyyy-mm-dd</code> format to see the statistics within the date range.
-This date must be after or equal to the date provided previously<br></p>
-</div>
-<div class="paragraph">
-<p><strong>Step 5</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
+<p><strong>Step 1</strong> : Type in the keyword <code>clear</code>.<br>
+<strong>Step 2 (Optional)</strong> : Provides the <code>-f</code> flag if you confirm that you would like to force clear both order list and return order list.<br>
+<strong>Step 3 (Optional)</strong> : Provides the <code>-o</code> or <code>-r</code> flag if you only want to clear either order list or return order list respectively.<br>
+<strong>Step 4</strong> : Press <code>Enter</code> on your keyboard to send the instruction to Delino.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1022,22 +1065,19 @@ This date must be after or equal to the date provided previously<br></p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<div class="paragraph">
-<p>The <code>show</code> command opens up a new window that displays the following information :</p>
-</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Earnings</p>
+<p>A space is required in between the command and flags. Refer to the  <a href="#clear-combinations">examples</a> below for more information.</p>
 </li>
 <li>
-<p>Orders Delivered</p>
+<p>If <strong>no</strong> <code>-o</code> or <code>-r</code> flag is given, it will be treated as both. <strong>Both</strong> order list and return order list will be cleared.</p>
 </li>
 <li>
-<p>Orders Returned</p>
+<p>Flags can be in any order such that <code>clear</code> <code>-f</code> <code>-o</code> and <code>clear</code> <code>-o</code> <code>-f</code> indicate to force clear the order list.</p>
 </li>
 <li>
-<p>PieChart that display numbers for orders delivered, not delivered, returned and not returned</p>
+<p>If an <code>-f</code> flag is given, no user confirmation will be requested.</p>
 </li>
 </ul>
 </div>
@@ -1047,21 +1087,17 @@ This date must be after or equal to the date provided previously<br></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="show-examples"><a class="link" href="#show-examples">3.7.2. What constitutes a valid Show Command</a></h4>
+<h4 id="what-constitutes-a-valid-clear-command"><a class="link" href="#what-constitutes-a-valid-clear-command">3.6.2. What constitutes a valid Clear command</a></h4>
 <div class="paragraph">
-<p>In this section, you will learn about the correct syntax for a valid <code>show</code> command and all the
-different combinations of the command.<br></p>
+<p>In this section, you will learn about the syntax for a valid <code>clear</code> command and the possible combinations of the command.</p>
 </div>
 <div class="paragraph">
-<p>All the syntax for a valid <code>show</code> command is shown below:</p>
+<p>The syntax for a valid <code>clear</code> command can be seen below:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>show</code> <code>START_DATE</code> <code>[END_DATE]</code></p>
-</li>
-<li>
-<p><code>show</code> <code>all</code></p>
+<p><code>clear</code> <code>[FLAG]</code></p>
 </li>
 </ul>
 </div>
@@ -1075,21 +1111,11 @@ different combinations of the command.<br></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Only one or two arguments is allowed for the <code>show</code> command.</p>
+<p><code>clear</code> is the command word for the clear feature</p>
 </li>
 <li>
-<p>The value of <code>START_DATE</code> can be just the word <code>today</code> (Showing statistics just for today)</p>
-</li>
-<li>
-<p><code>END_DATE</code> is an optional field. If included, the command will show statistics based on the given range (inclusive)
-of dates</p>
-</li>
-<li>
-<p><code>START_DATE</code> cannot be a date after <code>END_DATE</code></p>
-</li>
-<li>
-<p><code>show</code> <code>all</code> command is the only command that accepts only one argument. It shows all the statistics in the list
-regardless of the dates</p>
+<p><code>FLAG</code> could be either <code>-f</code>, <code>-r</code> and <code>-o</code>; whereby <code>-f</code> flag indicate force clear and<br>
+<code>-r</code> and <code>-o</code> indicates the return order list and order list respectively.</p>
 </li>
 </ul>
 </div>
@@ -1097,11 +1123,11 @@ regardless of the dates</p>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>Here are the different scenarios of showing statistics :</p>
+<div id="clear-combinations" class="paragraph">
+<p>These are the possible combinations of the <code>clear</code> command:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 7. Possible combinations of Show Command</caption>
+<caption class="title">Table 6. Possible Combinations of Clear command</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1116,238 +1142,41 @@ regardless of the dates</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Showing all the orders statistics regardless of date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code> <code>all</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">You will be brought to the Statistics tab and the statistics of all orders will be displayed to you</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to have a confirmation notice before clearing both lists, you could use this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Popup will appear and ask the user for confirmation to clear both order list and return order list.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Showing the statistics for today</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code> <code>today</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">You will be brought to the Statistics tab and the statistics for today&#8217;s orders will be displayed to you</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you don&#8217;t want to get prompt before clearing both lists, you could use this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code> <code>-f</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Both order list and return order list will be cleared immediately.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Showing the statistics for the date between today and the end date provided</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code> <code>today</code> <code>2020-12-03</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">You will be brought to the Statistics tab and the statistics between today&#8217;s date and
-<code>2020-12-03</code> will be displayed to you</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to have a confirmation notice before clearing return order list, you could use this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code> <code>-r</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Popup will appear and ask the user for confirmation to clear the return order list.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Showing the statistics for just the given date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code> <code>2020-12-03</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">You will be brought to the Statistics tab and the statistics in <code>2020-12-03</code> will be displayed to you</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you don&#8217;t want to get prompt before clearing return order list, you could use this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code> <code>-f</code> <code>-r</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only return order list is cleared immediately.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Showing the statistics within two given dates</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code> <code>2020-12-03</code> <code>2021-01-01</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">You will be brought to the Statistics tab and the statistics for the date between <code>2020-12-03</code> and <code>2021-01-01</code>
-will be displayed to you</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to have a confirmation notice before clearing order list, you could use this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code> <code>-o</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Popup will appear and ask the user for confirmation to clear the order list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you don&#8217;t want to get prompt before clearing order list, you could use this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code> <code>-o</code> <code>-f</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only order list is cleared immediately.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="insert"><a class="link" href="#insert">3.8. Inserting an order: <code>insert</code> [Done by Amos Cheong Jit Hon]</a></h3>
-<div class="paragraph">
-<p>This section shows you how to use the Insert Command and the relevant examples.</p>
-</div>
-<div class="paragraph">
-<p>Whenever you have a new delivery order to make, you have to add it into your list of orders.
-The Insert Command is in charge of this functionality.</p>
-</div>
-<div class="sect3">
-<h4 id="insert-works"><a class="link" href="#insert-works">3.8.1. How to use the Insert Command</a></h4>
-<div class="paragraph">
-<p>Here are the steps on using the Insert Command:<br></p>
-</div>
-<div class="paragraph">
-<p><strong>Step 1</strong> : Type in the keyword <strong>insert</strong><br></p>
-</div>
-<div class="paragraph">
-<p><strong>Step 2</strong> : Add in the prefixes <code><a href="#command_prefix">TRANSACTION_ID</a></code> <code><a href="#command_prefix">CUSTOMER_NAME</a></code>
- <code><a href="#command_prefix">ADDRESS</a></code> <code><a href="#command_prefix">PHONE_NUMBER</a></code> <code><a href="#command_prefix">EMAIL</a></code>
- <code><a href="#command_prefix">ORDER_TIMESTAMP</a></code> <code><a href="#command_prefix">WAREHOUSE_LOCATION</a></code> <code><a href="#command_prefix">CASH_ON_DELIVERY</a></code>
-of the delivery orders<br></p>
-</div>
-<div class="paragraph">
-<p><strong>Step 3</strong> : Skip Step 4 if the specific order does not have the customer&#8217;s comment and the type of item.<br></p>
-</div>
-<div class="paragraph">
-<p><strong>Step 4</strong> : Add in the Customer comment and type of item using the prefixes <code><a href="#command_prefix">[COMMENT_BY_CUSTOMER]</a></code>
- <code><a href="#command_prefix">[TYPE_OF_ITEM]</a></code><br></p>
-</div>
-<div class="paragraph">
-<p><strong>Step 5</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="insert-examples"><a class="link" href="#insert-examples">3.8.2. What constitutes a valid Insert command</a></h4>
-<div class="paragraph">
-<p>Here is the syntax of the <strong>Insert</strong> Command :<br>
-<code>insert</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>dts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>cod/CASH_ON_DELIVERY</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>The <code>TRANSACTION_ID</code> refers to the transaction id of the order.</p>
-</li>
-<li>
-<p>The <code>CUSTOMER_NAME</code> refers to the name of the recipient of the order.</p>
-</li>
-<li>
-<p>The <code>ADDRESS</code> refers to the address of the recipient.</p>
-</li>
-<li>
-<p>The <code>PHONE_NUMBER</code> refers to the phone number of the recipient.</p>
-</li>
-<li>
-<p>The <code>EMAIL</code> refers to the email address of the recipient.</p>
-</li>
-<li>
-<p>The <code>DELIVERY_DATE_&amp;_TIME</code> refers to the delivery date and time of the order.</p>
-</li>
-<li>
-<p>The <code>WAREHOUSE_LOCATION</code> refers to the warehouse that the courier should collect the order from.</p>
-</li>
-<li>
-<p>The <code>CASH_ON_DELIVERY</code> refers to the money earned from delivering the particular order.</p>
-</li>
-<li>
-<p>The <code>[COMMENTS_BY_CUSTOMER]</code> refers to the comment made by the recipient to the courier.</p>
-</li>
-<li>
-<p>The <code>[TYPE_OF_ITEM]</code> refers to the type of item that the courier is delivering.</p>
-</li>
-<li>
-<p>The prefixes <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>dts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>cod/CASH_ON_DELIVERY</code> are compulsory.</p>
-</li>
-<li>
-<p>The prefixes <code>c/COMMENTS_BY_CUSTOMER</code> <code>type/TYPE_OF_ITEM</code> are optional.</p>
-</li>
-<li>
-<p>Any compulsory prefixes that is absent will result in the App displaying an error message.</p>
-</li>
-<li>
-<p>There should be a spacing in between every prefixes. For example, <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> is allowed
-but <code>tid/TRANSACTION_IDn/CUSTOMER_NAME</code> will be an invalid command input.</p>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-<div class="ulist">
-<ul>
-<li>
-<p><code>TRANSACTION_ID</code> must be alphanumeric (No numbers or special characters allowed).</p>
-</li>
-<li>
-<p><code>ADDRESS</code> must have a postal code.</p>
-</li>
-<li>
-<p><code>EMAIL</code> should be a valid email address.</p>
-</li>
-<li>
-<p><code>CASH_ON_DELIVERY</code> must start with a dollar sign followed by the value.</p>
-</li>
-<li>
-<p>To add the Delivery Date and Time, first type in the date in this format : YYYY-MM-DD. Followed by adding the time
-in 24 hour format.</p>
-</li>
-<li>
-<p>The value for <code>DELIVERY_DATE_&amp;_TIME</code> must be a time in the future. For example, if the date and time now is 2020-04-03 1200,
-you are not allowed to add 2020-04-03 1159 as the <code>DELIVERY_DATE_&amp;_TIME</code>.</p>
-</li>
-<li>
-<p><code>TYPE_OF_ITEM</code> must be alphanumeric (No numbers or special characters allowed).</p>
-</li>
-<li>
-<p><code>CUSTOMER_NAME</code> mut be alphanumeric(No numbers or special characters allowed).</p>
-</li>
-<li>
-<p><code>PHONE_NUMBER</code> should not have a spacing in between. <code>n/90011009</code> is allowed,<br>
-but <code>n/9001 1009</code> is not allowed.</p>
-</li>
-<li>
-<p>Only numbers are allowed in <code>PHONE_NUMBER</code>.</p>
-</li>
-<li>
-<p><code>CASH_ON_DELIVERY</code> value must be strictly less than $10,000,000,000,000.If there is a need
-to add decimal places, you can only add two.</p>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>There are two different scenarios on how to insert the orders :</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 8. Possible combinations of Insert Command</caption>
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Scenario</th>
-<th class="tableblock halign-left valign-top">Command</th>
-<th class="tableblock halign-left valign-top">Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Insert the order without a comment and no item type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>insert</code> <code>tid/A094844</code> <code>n/John Doe</code> <code>a/Blk 505 Tampines #10-33 S520505</code> <code>p/98761111</code> <code>e/johndoe@example.com</code> <code>dts/2020-05-20 1300</code> <code>w/Yishun</code> <code>cod/$4</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">You should be able to see that the order with transaction id 'A094844' will be inserted into the list of delivery orders.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Insert the order with all the order attributes including the non-compulsory ones</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>insert</code> <code>tid/C1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 571 Hougang st 51 #02-02 S530571</code> <code>e/amoscheong@example.com</code> <code>p/90010019</code> <code>dts/2020-05-10 1650</code> <code>w/Marsiling</code> <code>cod/$5</code> <code>c/Leave it at the riser</code> <code>type/glass</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">You should see that the order with transaction id 'C1023456789' is inserted into the list of delivery orders.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>List of order attribute prefixes can be found <a href="#command_prefix">here</a>.</p>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="import"><a class="link" href="#import">3.9. Importing a list of orders : <code>import</code> [Done by - Eng Xuan En]</a></h3>
+<h3 id="import"><a class="link" href="#import">3.7. Importing a list of orders : <code>import</code> [Done by - Eng Xuan En]</a></h3>
 <div class="paragraph">
 <p>In this section, you will be able to find out <a href="#import-usage">how to use</a> the <code>import</code> command and
 the <a href="#import-combination">possible combination</a> of the <code>import</code> command.<br></p>
@@ -1357,7 +1186,7 @@ the <a href="#import-combination">possible combination</a> of the <code>import</
 to do so.</p>
 </div>
 <div class="sect3">
-<h4 id="import-usage"><a class="link" href="#import-usage">3.9.1. How to use Import command</a></h4>
+<h4 id="import-usage"><a class="link" href="#import-usage">3.7.1. How to use Import command</a></h4>
 <div class="paragraph">
 <p>Here is how you can import the orders and return orders into Delino by following the steps below:<br></p>
 </div>
@@ -1368,7 +1197,7 @@ to do so.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="what-constitutes-a-valid-import-command"><a class="link" href="#what-constitutes-a-valid-import-command">3.9.2. What constitutes a valid Import command</a></h4>
+<h4 id="what-constitutes-a-valid-import-command"><a class="link" href="#what-constitutes-a-valid-import-command">3.7.2. What constitutes a valid Import command</a></h4>
 <div class="paragraph">
 <p>In this section, you will learn about the syntax of a valid <code>import</code> command, the format for both orders and return orders in the CSV file
 and the combination for the <code>import</code> command.</p>
@@ -1515,7 +1344,7 @@ and the combination for the <code>import</code> command.</p>
 <p>There are only one possible combination for the <code>import</code> Command:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 9. Possible combination of Import command</caption>
+<caption class="title">Table 7. Possible combination of Import command</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1539,45 +1368,108 @@ and the combination for the <code>import</code> command.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="list"><a class="link" href="#list">3.10. Listing orders : <code>list</code>  [Done by Amos Cheong Jit Hon]</a></h3>
+<h3 id="search"><a class="link" href="#search">3.8. Searching for parcels using their attributes: <code>search</code> [Done by Kenny Ho Si Chong]</a></h3>
 <div class="paragraph">
-<p>In this section, you will learn more about the List command and how to use it.</p>
-</div>
-<div class="paragraph">
-<p>As a courier, you would want to take a look at all the orders that you have in your list of orders regardless of the type of orders or the order status. The List Command will enable you to
-view all these orders.</p>
+<p>In this section, you will be able to find out how to properly <a href="#edit-works">use</a> the Search command and the relevant <a href="#edit-examples">examples</a>.<br>
+Why will you want to use the <code>search</code> command? If you wish to <code>search</code> for a parcel with specific keywords, the <code>search</code> command will provide you the means to do so.</p>
 </div>
 <div class="sect3">
-<h4 id="list-works"><a class="link" href="#list-works">3.10.1. How does the List Command works</a></h4>
+<h4 id="search-works"><a class="link" href="#search-works">3.8.1. How to use the Search command?</a></h4>
 <div class="paragraph">
-<p>Here are the steps to execute the List command:</p>
+<p>Here is how you can <code>search</code> for any parcel containing the keywords given by following the steps below:<br></p>
 </div>
 <div class="paragraph">
-<p><strong>Step 1</strong> : Type in the keyword <strong>list</strong>.<br></p>
+<p><strong>Step 1</strong> : Type in the keyword <strong>search</strong><br>
+<strong>Step 2</strong> (optional) : Provide <code>-o</code> flag if you want to only search for parcels in the order list. A <code>-r</code> flag also can be used to only search for parcels in the return list.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If no flag is given in this step, <code>search</code> command will be performed on both the order and return list.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p><strong>Step 2</strong> : If you want to simply see all your delivery and return orders.
-Otherwise, please proceed to Step 3. Else, skip to Step 4<br></p>
+<p><strong>Step 3 (optional)</strong> : If you wish to only specifically search for keyword in a field, you should provide the <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> coupled with a front slash <code>/</code> and the keyword you want to search for.<br>
+<strong>Step 4</strong> : Provide any number of alphanumeric word you wish to search for in the parcel.<br>
+<strong>Step 5</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
 </div>
-<div class="paragraph">
-<p><strong>Step 3</strong> : Provide the following <code>[KEYWORD]</code> : <code>done</code> (Showing all your completed orders) or <code>undone</code> (Show all your
-uncompleted orders)<br></p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>In between each step please put a whitespace!</p>
+</li>
+<li>
+<p>If nothing is displaying means you have no parcel containing the keyword you have given!</p>
+</li>
+<li>
+<p>Keyword searches are case-insensitive, e.g: <code>Jeremy</code> matches <code>jErEmY</code> or <code>jeremy</code> or any alphabet casing permutations.</p>
+</li>
+</ul>
 </div>
-<div class="paragraph">
-<p><strong>Step 4</strong> : Press <code>Enter</code> on your keyboard and see the magic!</p>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-examples"><a class="link" href="#list-examples">3.10.2. What constitutes a valid List command</a></h4>
+<h4 id="search-examples"><a class="link" href="#search-examples">3.8.2. What constitutes a valid Search command?</a></h4>
 <div class="paragraph">
-<p>The syntax of a valid <code>list</code> command is as shown:
-<code>list</code> <code>[KEYWORD]</code></p>
+<p>The syntax for a valid <code>Search</code> command can be seen below:</p>
 </div>
-<div class="paragraph">
-<p>There are three types of list commands that are shown in the examples below :</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>search</code> <code><a href="#command_flags">[FLAG]</a></code> <code>KEYWORD</code> <code>[MORE_KEYWORDS]&#8230;&#8203;</code> OR</p>
+</li>
+<li>
+<p><code>search</code> <code><a href="#command_flags">[FLAG]</a></code> <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD</code> <code>[MORE_KEYWORDS]&#8230;&#8203;</code> <code>[<a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD MORE_KEYWORDS]&#8230;&#8203;</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>search</code> is the command word for this feature.</p>
+</li>
+<li>
+<p><code>FLAG</code> is to differentiate the different kind of parcel (orders or returns).</p>
+</li>
+<li>
+<p>The <code>KEYWORD</code> is the word you want to search for in any of the parcel and it is case-insensitive.</p>
+</li>
+<li>
+<p><code>ORDER_ATTRIBUTE_PREFIX</code> is the field of the parcel you want to search for</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 10. Possible combinations of List Command</caption>
+<caption class="title">Table 8. Possible Combinations of Search command</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1592,19 +1484,29 @@ uncompleted orders)<br></p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Display all orders</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Show two lists of all orders. One list for delivery orders, the other for return orders</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to search for any return parcel containing the keyword <code>Jeremy</code> or <code>Loh</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>-r</code> <code>Jeremy Loh</code><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Return all return order(s) containing keyword of <code>jeremy</code>, <code>Jeremy Loh</code> or <code>loh</code> or any of the above as long as it appears in any of the parcel field.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Display all completed orders</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list</code> <code>done</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Show two lists of all completed orders. One list for delivery orders, the other for return orders</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to search for any order parcel that contain the transaction id of <code>asj2od3943</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>-o</code> <code>tid/asj2od3943</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Return all order(s) with transaction ID of <code>asj2od3943</code>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Display all uncompleted orders</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list</code> <code>undone</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Show two lists of all uncompleted orders. One list for delivery orders, the other for return orders</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to search for any return parcel that contain the phone number of <code>92039999</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>-r</code> <code>p/92039999</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Return all return order(s) with phone number of <code>92039999</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to only search for any order parcel that contains either the phone number <code>92039999</code>, transaction id of <code>asj2od3943</code> or the name <code>jeremy</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>-o</code> <code>p/92039999</code> <code>tid/asj2od3943</code> <code>n/jeremy</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Return all order(s) with either phone number of <code>92039999</code> or transaction ID of <code>asj2od3943</code> or name of <code>jeremy</code> or any of the above combinations.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to search for any parcel containing the name <code>Jeremy</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>n/Jeremy</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Return all parcel(s) with the name of <code>Jeremy</code></p></td>
 </tr>
 </tbody>
 </table>
@@ -1618,7 +1520,16 @@ uncompleted orders)<br></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>KEYWORD</code> can only be either <code>done</code> or <code>undone</code>.</p>
+<p>The search is case insensitive. e.g <code>hans</code> will match <code>Hans</code></p>
+</li>
+<li>
+<p>The sequence of the keywords does not matter. e.g. <code>Hans Bo</code> will match <code>Bo Hans</code></p>
+</li>
+<li>
+<p>Only full words will be matched e.g. <code>Han</code> will not match <code>Hans</code></p>
+</li>
+<li>
+<p>Orders matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
 </li>
 </ul>
 </div>
@@ -1629,7 +1540,7 @@ uncompleted orders)<br></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="nearby"><a class="link" href="#nearby">3.11. Viewing orders located at the same area or postal sector: <code>nearby</code> [Done by - Loh Jeremy Wen Jun]</a></h3>
+<h3 id="nearby"><a class="link" href="#nearby">3.9. Viewing orders located at the same area or postal sector: <code>nearby</code> [Done by - Loh Jeremy Wen Jun]</a></h3>
 <div class="paragraph">
 <p>In this section, you will learn more about the <code>nearby</code> command,
 <a href="#how_to_use_nearby_command">how to use it</a> and the
@@ -1641,7 +1552,7 @@ postal sector or region of Singapore. This would allow you to be more efficient 
 orders.</p>
 </div>
 <div class="sect3">
-<h4 id="how_to_use_nearby_command"><a class="link" href="#how_to_use_nearby_command">3.11.1. How to use the nearby command</a></h4>
+<h4 id="how_to_use_nearby_command"><a class="link" href="#how_to_use_nearby_command">3.9.1. How to use the nearby command</a></h4>
 <div class="paragraph">
 <p>In this section, you learn more about the exact inputs required to use the <code>nearby</code> command.</p>
 </div>
@@ -1725,7 +1636,7 @@ The list of postal sectors and their corresponding general locations can be foun
 </div>
 </div>
 <div class="sect3">
-<h4 id="what-constitutes-a-valid-nearby-command"><a class="link" href="#what-constitutes-a-valid-nearby-command">3.11.2. What constitutes a valid nearby command</a></h4>
+<h4 id="what-constitutes-a-valid-nearby-command"><a class="link" href="#what-constitutes-a-valid-nearby-command">3.9.2. What constitutes a valid nearby command</a></h4>
 <div class="paragraph">
 <p>In this section, you will learn more about the syntax of the <code>nearby</code> command<br></p>
 </div>
@@ -1784,7 +1695,7 @@ The list of postal sectors and their corresponding general locations can be foun
 </div>
 </div>
 <div class="sect3">
-<h4 id="usage_scenario_nearby_command"><a class="link" href="#usage_scenario_nearby_command">3.11.3. Nearby command usage scenarios</a></h4>
+<h4 id="usage_scenario_nearby_command"><a class="link" href="#usage_scenario_nearby_command">3.9.3. Nearby command usage scenarios</a></h4>
 <div class="paragraph">
 <p>In this section, you will learn more about the various usage scenarios of the <code>nearby</code> command!</p>
 </div>
@@ -1792,7 +1703,7 @@ The list of postal sectors and their corresponding general locations can be foun
 <p>The table below describes the possible usage scenarios of the <code>nearby</code> command:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 11. Possible Combinations of nearby command</caption>
+<caption class="title">Table 9. Possible Combinations of nearby command</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1841,7 +1752,7 @@ This would allow you to complete more orders!</p></td>
 <p>You can obtain more information about the various postal sectors in the following table:</p>
 </div>
 <table id="postal_sector" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 12. Postal Sectors in Singapore</caption>
+<caption class="title">Table 10. Postal Sectors in Singapore</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1970,98 +1881,45 @@ This would allow you to complete more orders!</p></td>
 </div>
 </div>
 <div class="sect2">
-<h3 id="return"><a class="link" href="#return">3.12. Returning an order : <code>return</code> [Done by - Cher Wei Jie]</a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p>In this section, you will learn more about the Return command and how to use it.<br>
-Why would you want to use the Return command?
-You can use this Return command to create a new return order to be added into the return order list.</p>
-</li>
-</ul>
+<h3 id="list"><a class="link" href="#list">3.10. Listing orders : <code>list</code>  [Done by Amos Cheong Jit Hon]</a></h3>
+<div class="paragraph">
+<p>In this section, you will learn more about the List command and how to use it.</p>
+</div>
+<div class="paragraph">
+<p>As a courier, you would want to take a look at all the orders that you have in your list of orders regardless of the type of orders or the order status. The List Command will enable you to
+view all these orders.</p>
 </div>
 <div class="sect3">
-<h4 id="return-works"><a class="link" href="#return-works">3.12.1. How to use the Return command?</a></h4>
+<h4 id="list-works"><a class="link" href="#list-works">3.10.1. How does the List Command works</a></h4>
 <div class="paragraph">
-<p>Here is how you can convert an order into a return order or create a new return order by following the steps below:</p>
+<p>Here are the steps to execute the List command:</p>
 </div>
 <div class="paragraph">
-<p><strong>Step 1</strong> : Type in the keyword <strong>return</strong>.<br>
-<strong>Step 2a</strong> : If you would like to convert an existing order into a return order,
-provide the <code><a href="#command_prefix">TRANSACTION_ID</a></code> corresponding to the order to be converted.<br>
-<strong>Step 2b</strong>: If you would like to create a new return order in the return list, provide the
-<code><a href="#command_prefix">TRANSACTION_ID</a></code> <code><a href="#command_prefix">CUSTOMER_NAME</a></code> <code><a href="#command_prefix">ADDRESS</a></code>
-<code><a href="#command_prefix">PHONE_NUMBER</a></code> <code><a href="#command_prefix">RETURN_TIMESTAMP</a></code> <code><a href="#command_prefix">WAREHOUSE_LOCATION</a></code>
-<code><a href="#command_prefix">CUSTOMER_EMAIL</a></code> <code><a href="#command_prefix">[COMMENTS_BY_CUSTOMER]</a></code> <code><a href="#command_prefix">[TYPE OF ITEM]</a></code> of the parcel.<br>
-<strong>Step 3</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
+<p><strong>Step 1</strong> : Type in the keyword <strong>list</strong>.<br></p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Please include a whitespace in between the keyword &amp; transaction id or keyword &amp; the attributes aforementioned.<br>
-i.e. <code>return</code> <code>tid/123abcd</code><br>
- or<br>
-<code>return</code> <code>tid/A999999</code> <code>n/John Doe</code> <code>p/98765432</code> <code>a/311 Clementi Ave 2 #02-25</code> <code>e/johndoe@gmail.com</code>
-<code>rts/2020-05-05 1500</code> <code>w/5 Toh Guan Rd E #02-30 S608831</code> <code>c/NIL</code> <code>type/glass</code></p>
-</li>
-</ul>
+<div class="paragraph">
+<p><strong>Step 2</strong> : If you want to simply see all your delivery and return orders.
+Otherwise, please proceed to Step 3. Else, skip to Step 4<br></p>
 </div>
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p><strong>Step 3</strong> : Provide the following <code>[KEYWORD]</code> : <code>done</code> (Showing all your completed orders) or <code>undone</code> (Show all your
+uncompleted orders)<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 4</strong> : Press <code>Enter</code> on your keyboard and see the magic!</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="return-examples"><a class="link" href="#return-examples">3.12.2. What constitutes a valid Return command?</a></h4>
+<h4 id="list-examples"><a class="link" href="#list-examples">3.10.2. What constitutes a valid List command</a></h4>
 <div class="paragraph">
-<p>The syntax for a valid Return command can be seen below!</p>
+<p>The syntax of a valid <code>list</code> command is as shown:
+<code>list</code> <code>[KEYWORD]</code></p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>return</code> <code>TRANSACTION_ID</code> or <code>return</code> <code>TRANSACTION_ID</code> <code>CUSTOMER_NAME</code> <code>CUSTOMER_ADDRESS</code> <code>CUSTOMER_EMAIL</code>
-<code>WAREHOUSE_LOCATION</code> <code>PHONE_NUMBER</code> <code>RETURN_TIMESTAMP</code> <code>[COMMENTS_BY_CUSTOMER]</code> <code>[TYPE_OF_ITEM]</code></p>
-</li>
-</ul>
-</div>
-<div class="ulist NOTE">
-<ul class="NOTE">
-<li>
-<p>The <code>TRANSACTION_ID</code> refers to the transaction id of a parcel.</p>
-</li>
-<li>
-<p>The <code>CUSTOMER_NAME</code> refers to the name of the recipient of the parcel.</p>
-</li>
-<li>
-<p>The <code>CUSTOMER_ADDRESS</code> refers to the location which the return should be picked up from.</p>
-</li>
-<li>
-<p>The <code>WAREHOUSE_LOCATION</code> refers to the location which the return should be delivered to.</p>
-</li>
-<li>
-<p>The <code>PHONE_NUMBER</code> refers to the phone number of the customer.</p>
-</li>
-<li>
-<p>The <code>RETURN_TIMESTAMP</code> refers to the return date and time of the parcel. This field cannot be earlier than the current date and time.</p>
-</li>
-<li>
-<p>The <code>COMMENTS_BY_CUSTOMER</code> is an optional attribute which can be included if the customer has special requests.</p>
-</li>
-<li>
-<p>The <code>TYPE_OF_ITEM</code> is an optional attribute which can be included if the item requires special attention.
-For example, it can be used when the item is fragile.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>There are three types of list commands that are shown in the examples below :</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 13. Possible Combinations of Return command</caption>
+<caption class="title">Table 11. Possible combinations of List Command</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2076,14 +1934,122 @@ For example, it can be used when the item is fragile.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to convert the order with Transaction Id 'abc1234' into a return order and display it on returns list, you can do this:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>return</code> <code>tid/abc1234</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This order will be removed from the order list and be added into the returns list as a return order.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Display all orders</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Show two lists of all orders. One list for delivery orders, the other for return orders</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to create a new return order in the return order list, you can do this:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>return</code> <code>tid/123abcd</code> <code>n/weijie</code> <code>a/blk 32 clementi road</code> <code>p/92123412</code> <code>w/Jurong warehouse</code> <code>rts/2020-04-05</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A return order with the input attributes will be created into the return order list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Display all completed orders</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list</code> <code>done</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Show two lists of all completed orders. One list for delivery orders, the other for return orders</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Display all uncompleted orders</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list</code> <code>undone</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Show two lists of all uncompleted orders. One list for delivery orders, the other for return orders</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>KEYWORD</code> can only be either <code>done</code> or <code>undone</code>.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delivered"><a class="link" href="#delivered">3.11. Delivering an order or return order : <code>delivered</code> [Done by - Cher Wei Jie]</a></h3>
+<div class="paragraph">
+<p>In this section, you will learn more about the Delivered command and how to use it.<br>
+Why would you want to use the Delivered command?
+If you have delivered an order or return order, you can mark it as delivered with the Delivered command.</p>
+</div>
+<div class="sect3">
+<h4 id="delivered-works"><a class="link" href="#delivered-works">3.11.1. How to use the Delivered command</a></h4>
+<div class="paragraph">
+<p>This section will explain the steps needed to use the Delivered command.<br></p>
+</div>
+<div class="paragraph">
+<p>Here is how you can mark the details of any order or return order by following the steps below:<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong> : Type in the keyword <strong>delivered</strong><br>
+<strong>Step 2</strong> : Provide the <code><a href="#command_flags">FLAG</a></code> corresponding to the parcel order type you want to mark as delivered<br>
+<strong>Step 3</strong> : Provide the <code>INDEX</code> of the parcel displayed on the screen that you wish to mark as delivered<br>
+<strong>Step 4</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Please include a whitespace in between the keyword, command flag and index. i.e. <code>delivered -o 1</code></p>
+</li>
+<li>
+<p>If you can&#8217;t see any orders use the <a href="#list"><code>list</code></a> command to view existing parcel!
+If nothing is showing up, it means you got to <a href="#insert"><code>insert</code></a> or <a href="#return"><code>return</code></a> some parcel and start doing work!</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="delivered-examples"><a class="link" href="#delivered-examples">3.11.2. What constitutes a valid Delivered command</a></h4>
+<div class="paragraph">
+<p>The syntax for a valid Delivered command can be seen below!</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>delivered</code> <code>FLAG</code> <code>INDEX</code></p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 12. Possible Combinations of Delivered command</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Scenario</th>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to mark the first return order displayed on returns list as delivered, you can do this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delivered</code> <code>-r</code> <code>1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Delivery Status of the first return order displayed on the returns list will be changed to "Returned to Warehouse"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to mark the second order displayed on the orders list, you can do this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delivered</code> <code>-o</code> <code>2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The delivery status of the second order in the order list will be changed to "Delivered".</p></td>
 </tr>
 </tbody>
 </table>
@@ -2097,21 +2063,16 @@ For example, it can be used when the item is fragile.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The <code>TRANSACTION_ID</code> given belongs to the return order that will be created.</p>
+<p>The <code>INDEX</code> given is the parcel you will be marking as delivered.</p>
 </li>
 <li>
-<p>A return order will be created after executing this return command.</p>
+<p>The parcel will be marked as delivered after executing this delivered command.</p>
 </li>
 <li>
-<p>If the parcel is an existing order, it will be removed from the order list and converted into a return order
-and added into the return order list.</p>
+<p>If the parcel is an order, its Delivery Status will be changed from "Not Delivered" to "Delivered".</p>
 </li>
 <li>
-<p>If the parcel is a new return order, it will be created and added into the return order list.</p>
-</li>
-<li>
-<p>All return orders will not have the <code>CASH_ON_DELIVERY</code> attribute as
-the item was already delivered and the money already was collected upon delivery.</p>
+<p>If the parcel is a return order, its Delivery Status will be changed from "Not returned to warehouse" to "Returned to warehouse"</p>
 </li>
 </ul>
 </div>
@@ -2129,35 +2090,16 @@ the item was already delivered and the money already was collected upon delivery
 <div class="ulist">
 <ul>
 <li>
-<p>The conversion of an order into a return order can only be done if the order was already delivered.</p>
+<p>The <code>INDEX</code> <strong>must be a positive integer</strong>, e.g: 1, 2, 3, &#8230;&#8203;</p>
 </li>
 <li>
-<p>The <code>TRANSACTION_ID</code> <strong>is alphanumeric</strong>, e.g: 123asd, 1234567, abcdef.</p>
+<p>The <code>INDEX</code> <strong>must be in range</strong> of the number of displayed orders</p>
 </li>
 <li>
-<p>The <code>CUSTOMER_NAME</code> <strong>must consist of only alphabets</strong>.</p>
+<p>Only can be used when there is at least an order or return order displayed.</p>
 </li>
 <li>
-<p>The <code>CUSTOMER_ADDRESS</code> <strong>is alphanumeric</strong>.</p>
-</li>
-<li>
-<p>The <code>CUSTOMER_PHONE</code> <strong>must be numeric</strong></p>
-</li>
-<li>
-<p>The <code>WAREHOUSE_LOCATION</code> <strong>is alphanumeric</strong></p>
-</li>
-<li>
-<p>The <code>RETURN_TIMESTAMP</code> <strong>must follow the yyyy-mm-dd format</strong> <strong>must not be earlier than the current date and time</strong></p>
-</li>
-<li>
-<p>The <code>COMMENTS_BY_CUSTOMER</code> <strong>is alphanumeric</strong></p>
-</li>
-<li>
-<p>The <code>TYPE_OF_ITEM</code> is <strong>alphanumeric</strong></p>
-</li>
-<li>
-<p>The resulting created return order will not have the <code>CASH_ON_DELIVERY</code> field as the money
-was already collected.</p>
+<p>The <code>FLAG</code> can only be either <code>-o</code> or <code>-r</code>, please refer to <a href="#command_flags">here</a> for more information.</p>
 </li>
 </ul>
 </div>
@@ -2168,19 +2110,38 @@ was already collected.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="search"><a class="link" href="#search">3.13. Searching for parcels using their attributes: <code>search</code> [Done by Kenny Ho Si Chong]</a></h3>
+<h3 id="show"><a class="link" href="#show">3.12. Showing statistics : <code>show</code> [Done by Amos Cheong Jit Hon]</a></h3>
 <div class="paragraph">
-<p>In this section, you will be able to find out how to properly <a href="#edit-works">use</a> the Search command and the relevant <a href="#edit-examples">examples</a>.<br>
-Why will you want to use the <code>search</code> command? If you wish to <code>search</code> for a parcel with specific keywords, the <code>search</code> command will provide you the means to do so.</p>
+<p>This section will explain more about the Show command and how to use it.</p>
+</div>
+<div class="paragraph">
+<p>At some point of time, you would want to know how many orders have you delivered or what is your earnings for today. Therefore,
+you have to use the Show Command to view those information.</p>
 </div>
 <div class="sect3">
-<h4 id="search-works"><a class="link" href="#search-works">3.13.1. How to use the Search command?</a></h4>
+<h4 id="show-works"><a class="link" href="#show-works">3.12.1. How to use the Show command</a></h4>
 <div class="paragraph">
-<p>Here is how you can <code>search</code> for any parcel containing the keywords given by following the steps below:<br></p>
+<p>In this section, you will learn how to use the Show Command.</p>
 </div>
 <div class="paragraph">
-<p><strong>Step 1</strong> : Type in the keyword <strong>search</strong><br>
-<strong>Step 2</strong> (optional) : Provide <code>-o</code> flag if you want to only search for parcels in the order list. A <code>-r</code> flag also can be used to only search for parcels in the return list.</p>
+<p>Here is how you can show the statistics of your orders:<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong> : Type <code>show</code><br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong> : If you want to see your statistics for all the orders, simply type <code>all</code> and skip to Step 5<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong> : Type <code>today</code> to show the statistics for today or simply type in a date
+in a date format of <code>yyyy-mm-dd</code><br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 4 (Optional)</strong> : Type another date in <code>yyyy-mm-dd</code> format to see the statistics within the date range.
+This date must be after or equal to the date provided previously<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 5</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2190,34 +2151,21 @@ Why will you want to use the <code>search</code> command? If you wish to <code>s
 </td>
 <td class="content">
 <div class="paragraph">
-<p>If no flag is given in this step, <code>search</code> command will be performed on both the order and return list.</p>
+<p>The <code>show</code> command opens up a new window that displays the following information :</p>
 </div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p><strong>Step 3 (optional)</strong> : If you wish to only specifically search for keyword in a field, you should provide the <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> coupled with a front slash <code>/</code> and the keyword you want to search for.<br>
-<strong>Step 4</strong> : Provide any number of alphanumeric word you wish to search for in the parcel.<br>
-<strong>Step 5</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>In between each step please put a whitespace!</p>
+<p>Earnings</p>
 </li>
 <li>
-<p>If nothing is displaying means you have no parcel containing the keyword you have given!</p>
+<p>Orders Delivered</p>
 </li>
 <li>
-<p>Keyword searches are case-insensitive, e.g: <code>Jeremy</code> matches <code>jErEmY</code> or <code>jeremy</code> or any alphabet casing permutations.</p>
+<p>Orders Returned</p>
+</li>
+<li>
+<p>PieChart that display numbers for orders delivered, not delivered, returned and not returned</p>
 </li>
 </ul>
 </div>
@@ -2227,17 +2175,21 @@ Why will you want to use the <code>search</code> command? If you wish to <code>s
 </div>
 </div>
 <div class="sect3">
-<h4 id="search-examples"><a class="link" href="#search-examples">3.13.2. What constitutes a valid Search command?</a></h4>
+<h4 id="show-examples"><a class="link" href="#show-examples">3.12.2. What constitutes a valid Show Command</a></h4>
 <div class="paragraph">
-<p>The syntax for a valid <code>Search</code> command can be seen below:</p>
+<p>In this section, you will learn about the correct syntax for a valid <code>show</code> command and all the
+different combinations of the command.<br></p>
+</div>
+<div class="paragraph">
+<p>All the syntax for a valid <code>show</code> command is shown below:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>search</code> <code><a href="#command_flags">[FLAG]</a></code> <code>KEYWORD</code> <code>[MORE_KEYWORDS]&#8230;&#8203;</code> OR</p>
+<p><code>show</code> <code>START_DATE</code> <code>[END_DATE]</code></p>
 </li>
 <li>
-<p><code>search</code> <code><a href="#command_flags">[FLAG]</a></code> <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD</code> <code>[MORE_KEYWORDS]&#8230;&#8203;</code> <code>[<a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD MORE_KEYWORDS]&#8230;&#8203;</code></p>
+<p><code>show</code> <code>all</code></p>
 </li>
 </ul>
 </div>
@@ -2251,25 +2203,33 @@ Why will you want to use the <code>search</code> command? If you wish to <code>s
 <div class="ulist">
 <ul>
 <li>
-<p><code>search</code> is the command word for this feature.</p>
+<p>Only one or two arguments is allowed for the <code>show</code> command.</p>
 </li>
 <li>
-<p><code>FLAG</code> is to differentiate the different kind of parcel (orders or returns).</p>
+<p>The value of <code>START_DATE</code> can be just the word <code>today</code> (Showing statistics just for today)</p>
 </li>
 <li>
-<p>The <code>KEYWORD</code> is the word you want to search for in any of the parcel and it is case-insensitive.</p>
+<p><code>END_DATE</code> is an optional field. If included, the command will show statistics based on the given range (inclusive)
+of dates</p>
 </li>
 <li>
-<p><code>ORDER_ATTRIBUTE_PREFIX</code> is the field of the parcel you want to search for</p>
+<p><code>START_DATE</code> cannot be a date after <code>END_DATE</code></p>
+</li>
+<li>
+<p><code>show</code> <code>all</code> command is the only command that accepts only one argument. It shows all the statistics in the list
+regardless of the dates</p>
 </li>
 </ul>
 </div>
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>Here are the different scenarios of showing statistics :</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 14. Possible Combinations of Search command</caption>
+<caption class="title">Table 13. Possible combinations of Show Command</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2284,59 +2244,105 @@ Why will you want to use the <code>search</code> command? If you wish to <code>s
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to search for any return parcel containing the keyword <code>Jeremy</code> or <code>Loh</code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>-r</code> <code>Jeremy Loh</code><br></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Return all return order(s) containing keyword of <code>jeremy</code>, <code>Jeremy Loh</code> or <code>loh</code> or any of the above as long as it appears in any of the parcel field.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Showing all the orders statistics regardless of date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code> <code>all</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You will be brought to the Statistics tab and the statistics of all orders will be displayed to you</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to search for any order parcel that contain the transaction id of <code>asj2od3943</code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>-o</code> <code>tid/asj2od3943</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Return all order(s) with transaction ID of <code>asj2od3943</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Showing the statistics for today</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code> <code>today</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You will be brought to the Statistics tab and the statistics for today&#8217;s orders will be displayed to you</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to search for any return parcel that contain the phone number of <code>92039999</code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>-r</code> <code>p/92039999</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Return all return order(s) with phone number of <code>92039999</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Showing the statistics for the date between today and the end date provided</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code> <code>today</code> <code>2020-12-03</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You will be brought to the Statistics tab and the statistics between today&#8217;s date and
+<code>2020-12-03</code> will be displayed to you</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to only search for any order parcel that contains either the phone number <code>92039999</code>, transaction id of <code>asj2od3943</code> or the name <code>jeremy</code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>-o</code> <code>p/92039999</code> <code>tid/asj2od3943</code> <code>n/jeremy</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Return all order(s) with either phone number of <code>92039999</code> or transaction ID of <code>asj2od3943</code> or name of <code>jeremy</code> or any of the above combinations.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Showing the statistics for just the given date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code> <code>2020-12-03</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You will be brought to the Statistics tab and the statistics in <code>2020-12-03</code> will be displayed to you</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to search for any parcel containing the name <code>Jeremy</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>n/Jeremy</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Return all parcel(s) with the name of <code>Jeremy</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Showing the statistics within two given dates</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code> <code>2020-12-03</code> <code>2021-01-01</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You will be brought to the Statistics tab and the statistics for the date between <code>2020-12-03</code> and <code>2021-01-01</code>
+will be displayed to you</p></td>
 </tr>
 </tbody>
 </table>
-<div class="admonitionblock important">
+</div>
+</div>
+<div class="sect2">
+<h3 id="exit"><a class="link" href="#exit">3.13. Exiting the program : <code>exit</code></a></h3>
+<div class="paragraph">
+<p>In this section, you will be able to find out how to properly <a href="#exit-works">use</a> the <code>Exit</code> command and the relevant <a href="#exit-examples">examples</a>.<br>
+Why will you want to use the <code>exit</code> command? If you wish to exit the application, the <code>exit</code> command will allow you to do so.</p>
+</div>
+<div class="sect3">
+<h4 id="exit-works"><a class="link" href="#exit-works">3.13.1. How to use the Exit command</a></h4>
+<div class="paragraph">
+<p>Here is how you can exit the application:</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong> : Type in the keyword <code>exit</code><br>
+<strong>Step 2</strong> : Say bye to Delino!</p>
+</div>
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-important" title="Important"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>The search is case insensitive. e.g <code>hans</code> will match <code>Hans</code></p>
-</li>
-<li>
-<p>The sequence of the keywords does not matter. e.g. <code>Hans Bo</code> will match <code>Bo Hans</code></p>
-</li>
-<li>
-<p>Only full words will be matched e.g. <code>Han</code> will not match <code>Hans</code></p>
-</li>
-<li>
-<p>Orders matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
-</li>
-</ul>
-</div>
+Optionally you can click on the cross button of the application to exit!
 </td>
 </tr>
 </table>
 </div>
+</div>
+<div class="sect3">
+<h4 id="exit-examples"><a class="link" href="#exit-examples">3.13.2. What constitutes a valid Exit command</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>exit</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>exit</code> is the command word for this feature.
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 14. Possible Combinations of Exit command</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scenario</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Command</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Result</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you wish to exit the application because you&#8217;re en-route to delivering or after a long day of work.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>exit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delino will silently close the application window and awaits for your next usage.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -2352,32 +2358,37 @@ Why will you want to use the <code>search</code> command? If you wish to <code>s
 </ul>
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="future-features-v2-0"><a class="link" href="#future-features-v2-0">4. Future Features (v2.0)</a></h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="export"><a class="link" href="#export">3.15. Export order list <code>[coming in v2.0]</code></a></h3>
+<h3 id="export"><a class="link" href="#export">4.1. Export order list <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can export their order list as csv file to pass the orders to their colleagues}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="reminder"><a class="link" href="#reminder">3.16. Reminder <code>[coming in v2.0]</code></a></h3>
+<h3 id="reminder"><a class="link" href="#reminder">4.2. Reminder <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can set reminder specifically for orders that are rescheduled or urgent orders}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="rescheduling"><a class="link" href="#rescheduling">3.17. Rescheduling orders <code>[coming in v2.0]</code></a></h3>
+<h3 id="rescheduling"><a class="link" href="#rescheduling">4.3. Rescheduling orders <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can reschedule their orders when customers notify them that they are unavailable for receiving orders}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="tracking-work"><a class="link" href="#tracking-work">3.18. Keeping track of work schedule <code>[coming in v2.0]</code></a></h3>
+<h3 id="tracking-work"><a class="link" href="#tracking-work">4.4. Keeping track of work schedule <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can keep track of their work schedule}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="statistics"><a class="link" href="#statistics">3.19. Statistics for completed orders <code>[coming in v2.0]</code></a></h3>
+<h3 id="statistics"><a class="link" href="#statistics">4.5. Statistics for completed orders <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can view statistics such as on-time rates (difference between actual and expected
 delivery), number of deliveries completed in a day}</em></p>
@@ -2386,7 +2397,7 @@ delivery), number of deliveries completed in a day}</em></p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="faq"><a class="link" href="#faq">4. FAQ</a></h2>
+<h2 id="faq"><a class="link" href="#faq">5. FAQ</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
@@ -2395,7 +2406,7 @@ delivery), number of deliveries completed in a day}</em></p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="command-summary"><a class="link" href="#command-summary">5. Command Summary</a></h2>
+<h2 id="command-summary"><a class="link" href="#command-summary">6. Command Summary</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In this section, you can find out more about the commands supported by Delino
@@ -2511,9 +2522,11 @@ OR<br>
 </div>
 </div>
 <div class="sect1">
-<h2 id="glossary"><a class="link" href="#glossary">6. Glossary</a></h2>
+<h2 id="glossary"><a class="link" href="#glossary">7. Glossary</a></h2>
 <div class="sectionbody">
-<table id="command_prefix" class="tableblock frame-all grid-all spread">
+<div class="sect2">
+<h3 id="command_prefix"><a class="link" href="#command_prefix">7.1. Command Prefix</a></h3>
+<table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 16. Command Prefix</caption>
 <colgroup>
 <col style="width: 33.3333%;">
@@ -2590,7 +2603,10 @@ OR<br>
 </tr>
 </tbody>
 </table>
-<table id="command_flags" class="tableblock frame-all grid-all spread">
+</div>
+<div class="sect2">
+<h3 id="command_flags"><a class="link" href="#command_flags">7.2. Command Flags</a></h3>
+<table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 17. Possible Command Flags</caption>
 <colgroup>
 <col style="width: 33.3333%;">
@@ -2622,8 +2638,9 @@ OR<br>
 </tr>
 </tbody>
 </table>
+</div>
 <div class="sect2">
-<h3 id="area_table"><a class="link" href="#area_table">6.1. Area Information of Singapore</a></h3>
+<h3 id="area_table"><a class="link" href="#area_table">7.3. Area Information of Singapore</a></h3>
 <div class="paragraph">
 <p><a href="#nearby">Click here</a> to navigate back to the Nearby Command!</p>
 </div>
@@ -3244,4 +3261,4 @@ OR<br>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-09 10:22:43 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-09 10:36:19 UTC</div></div></div></body></html>
