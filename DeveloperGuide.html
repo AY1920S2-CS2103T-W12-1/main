@@ -3509,13 +3509,29 @@ Expected: An error will occur and the response box will show an error message</p
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Opens a window which shows the statistics of the current list of orders.</p>
+<p>Opens a window which shows the statistics of the current lists of orders. It displays information such
+as earnings made, orders delivered and orders returned (Including a PieChart).</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Test case: <code>show</code><br>
-   Expected: A new window will appear and it will show the earnings, orders delivered and the total
-number of orders the courier has to deliver today. There should be a PieChart displayed as well.</p>
+<p>Test case: <code>show</code> <code>all</code><br>
+Expected: All statistical information of all the orders shown in the statistics tab.</p>
+</li>
+<li>
+<p>Test case: <code>show</code> <code>today</code><br>
+Expected: All statistical information today shown in the statistics tab.</p>
+</li>
+<li>
+<p>Test case: <code>show</code> <code>today</code> <code>2020-12-03</code><br>
+Expected: All statistical information between the dates shown in the statistics tab.</p>
+</li>
+<li>
+<p>Test case: <code>show</code> <code>2020-12-03</code><br>
+Expected: All statistical information for the given date shown in the statistics tab.</p>
+</li>
+<li>
+<p>Test case: <code>show</code> <code>2020-12-03</code> <code>2021-01-01</code><br>
+Expected: All statistical information within the dates shown in the statistics tab.</p>
 </li>
 <li>
 <p>Test case: Invalid syntax<br>
@@ -3670,4 +3686,4 @@ Expected: The response box will display an invalid command message</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-09 08:57:57 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-09 10:11:20 UTC</div></div></div></body></html>
