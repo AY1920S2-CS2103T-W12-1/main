@@ -1063,7 +1063,7 @@ and the <a href="#edit-interactions">interactions</a> between objects with the <
 </div>
 <div class="paragraph">
 <p>The <code>edit</code> feature allows the user to edit any field except delivery status of the order or the return order. However, user must provide a <code><a href="#command_flags">FLAG</a></code> and <code>INDEX</code>.<br>
-<code><a href="#command_flags">FLAG</a></code> to indicate which parcel type to edit; <code>-o</code> and  <code>-r</code> <code><a href="#command_flags">FLAG</a>`</code> to represent Order or Return Order respectively.<br>
+<code><a href="#command_flags">FLAG</a></code> to indicate which parcel type to edit; <code>-o</code> and  <code>-r</code> <code><a href="#command_flags">FLAG</a></code> to represent Order or Return Order respectively.<br>
 <code>INDEX</code> to indicate which parcel the user wants to edit.<br>
 The list of the different parcel fields are listed in Appendix E: <a href="#command_prefix">Glossary</a>.<br></p>
 </div>
@@ -1087,7 +1087,17 @@ This feature allows user to edit more than one field within a command.
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Limitation to editing the delivery/return time is that the updated delivery date or return date must not be in the past.</p>
+<p><strong>Limitation </strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Editing the delivery/return time is that the updated delivery date or return date must not be in the past.</p>
+</li>
+<li>
+<p>There must be an order first for <code>edit</code> command to work.</p>
+</li>
+</ul>
 </div>
 </td>
 </tr>
@@ -1714,6 +1724,18 @@ and the <a href="#search-interactions">interactions</a> between objects with the
 </td>
 <td class="content">
 A space is needed in between each word.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Keyword search is case-insensitive. E.g: Given <code>Jeremy</code> it matches <code>JeReMy</code>, <code>jeremy</code> or any permutations of alphabet casing.
 </td>
 </tr>
 </table>
@@ -3217,35 +3239,38 @@ Expected: No order is deleted. An error message will be displayed in the respons
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>You can edit the details of the delivery order by specifying the transaction id, the field you want to change and the value that is required to update</p>
+<p>Edit the details of the delivery order by specifying the <code><a href="#command_flag">FLAG</a></code> (order type), <code>INDEX</code> (parcel number displayed), <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> (the field user want to change) and <code>NEW_VALUE</code> (the new value that user want to replace the old ones with). For detailed implementation explanation click <a href="#edit">here</a>.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Edit command format: <code>edit</code> <code>INDEX</code> <code>PREFIX/NEW_VALUE</code></p>
+<p>Prerequisite: Call the <code><a href="#list">list</a></code> command to show something or <code><a href="#insert">insert</a></code>/<code><a href="#return">return</a></code> command to add something before you can <code><a href="#edit">edit</a></code>.</p>
 </li>
 <li>
-<p>Test case: <code>edit</code> <code>1</code> <code>n/Xuan En</code><br>
-Expected: The first index customer&#8217;s name is changed to Xuan En</p>
+<p>Edit command format: <code>edit</code> <code><a href="#command_flag">FLAG</a></code> <code>INDEX</code> <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/NEW_VALUE</code></p>
 </li>
 <li>
-<p>Test case: <code>edit</code> <code>2</code> <code>p/99521654</code><br>
-Expected: The second index phone number is changed to 9952 1654</p>
+<p>Test case: <code>edit</code> <code>-r</code> <code>1</code> <code>n/Xuan En</code><br>
+Expected: The first index customer&#8217;s name is changed to Xuan En.</p>
 </li>
 <li>
-<p>Test case: <code>edit</code> <code>1</code> <code>a/Blk 123 Pasir Ris street 51 #12-23 S510123</code><br>
-Expected: The first index is edited where the address of the customer of the order will be changed to Blk 123 Pasir Ris Street 51 #12-23 S510123</p>
+<p>Test case: <code>edit</code> <code>-o</code> <code>2</code> <code>p/99521654</code><br>
+Expected: The second index phone number is changed to 9952 1654.</p>
 </li>
 <li>
-<p>Test case: <code>edit</code> <code>2</code> <code>n/Mr Tan</code> <code>p/98776655</code> <code>a/Blk 888 Jurong East street 2 #01-02 S609601</code><br>
-Expected: The second index of the list is edited. The name is changed to Mr Tan, phone number changed to 98776655 and address will be changed to Blk 888 Jurong East street 2 #01-02 S609601</p>
+<p>Test case: <code>edit</code> <code>-o</code> <code>1</code> <code>a/Blk 123 Pasir Ris street 51 #12-23 S510123</code><br>
+Expected: The first index is edited where the address of the customer of the order will be changed to Blk 123 Pasir Ris Street 51 #12-23 S510123.</p>
 </li>
 <li>
-<p>Test case: <code>edit</code> <code>1</code> <code>ts/09/08/2020</code><br>
-Expected: The delivery date of the first index of the customer will be rescheduled to 09/08/2020</p>
+<p>Test case: <code>edit</code> <code>-r</code> <code>2</code> <code>n/Mr Tan</code> <code>p/98776655</code> <code>a/Blk 888 Jurong East street 2 #01-02 S609601</code><br>
+Expected: The second index of the list is edited. The name is changed to Mr Tan, phone number changed to 98776655 and address will be changed to Blk 888 Jurong East street 2 #01-02 S609601.</p>
 </li>
 <li>
-<p>Test case: <code>edit</code> <code>1</code> <code>ts/02/02/2020</code> (Assuming this date has passed)<br>
-Expected: The response box will display an error message as it is impossible to put a date that is already passed</p>
+<p>Test case: <code>edit</code> <code>-o</code> <code>1</code> <code>dts/09/08/2020</code><br>
+Expected: The delivery date of the first index of the customer will be rescheduled to 09/08/2020.</p>
+</li>
+<li>
+<p>Test case: <code>edit</code> <code>-r</code> <code>1</code> <code>rts/02/02/1900</code><br>
+Expected: The response box will display an error message as it is impossible to put a date that is already passed.</p>
 </li>
 </ol>
 </div>
@@ -3346,34 +3371,31 @@ Expected: An error will occur and a message will be displayed, stating that the 
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Search an order based on either the person’s Name or by the Transaction ID</p>
+<p>Search an order based on the <code>KEYWORD</code> and <code>FLAG</code>(if any) given. For a more detailed explanation of the implementation click <a href="#search">here</a>.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Search command format: <code>search</code> <code>FLAG</code> <code>KEYWORD</code></p>
-</li>
-<li>
-<p>Prerequisite: Call the list command. The orders found are dependent on what orders are listed before. For example, if the user calls a <code>list done</code> and then calls a <code>search</code> command, the orders from the output list is based on the list of completed orders</p>
+<p>Search command format: <code>search</code> <code><a href="#command_flag">FLAG</a></code> <code>KEYWORD</code></p>
 </li>
 <li>
 <p>Test case: <code>list</code> <code>done</code><br>
-<code>search</code> <code>-t</code> <code>A18512357Z</code><br>
-Expected: Specifically search the order that has the transaction ID of A18512357Z from a list of completed delivery orders and print it to the user.</p>
+<code>search</code> <code>-r</code> <code>Jeremy Loh</code><br>
+Expected: Specifically search for any return order from the return order list that has any field matching the keyword of either <code>Jeremy</code>, <code>Loh</code> or both and print it to the user.</p>
 </li>
 <li>
 <p>Test case: <code>list</code> <code>undone</code><br>
-<code>search</code> <code>-n</code> <code>Amos</code><br>
-Expected: Print all uncompleted delivery orders with any person that has the name ‘Amos’ in it. It will not print out completed delivery orders with a person named ‘Amos’ despite having the same keyword</p>
+<code>search</code> <code>-o</code> <code>tid/asj2od3943</code><br>
+Expected: Specifically search for any order from the order list that has a Transaction id of <code>asj2od3943</code> and print it out to the user.</p>
 </li>
 <li>
 <p>Test case: <code>list</code><br>
-<code>search</code> <code>-n</code> <code>Amos</code><br>
-Expected: The program will look up all the delivery orders, regardless of completed or uncompleted orders and print out all orders in a list with the word ‘Amos’ in the name</p>
+<code>search</code> <code>n/Jeremy</code><br>
+   Expected: Specifically search for both return order or order from both list that has one word of the name matching the key word <code>Jeremy</code>.</p>
 </li>
 <li>
 <p>Test case: <code>list</code><br>
 <code>search</code><br>
-Expected: An error message will appear in the response box, stating that the argument cannot be empty and there are no changes to the list itself</p>
+Expected: An error message will appear in the response box, stating that the argument cannot be empty and there are no changes to the list itself.</p>
 </li>
 </ol>
 </div>
@@ -3648,4 +3670,4 @@ Expected: The response box will display an invalid command message</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-08 19:25:08 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-09 07:23:07 UTC</div></div></div></body></html>

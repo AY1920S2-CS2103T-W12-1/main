@@ -188,7 +188,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#list"><code>list</code></a> ` done` : lists all delivered orders and return orders.</p>
+<p><a href="#list"><code>list</code></a> <code>done</code> : lists all delivered orders and return orders.</p>
 </li>
 <li>
 <p><a href="#insert"><code>insert</code></a> <code>tid/1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 572 Hougang st 51 #11-37 S530572</code> <code>p/9001 0019</code> <code>dts/2020-03-10 1650</code> <code>w/Marsiling</code> <code>cod/$5</code> <code>c/Leave it at the riser type/glass</code> : adds an order where the receiver name is <code>Amos Cheong</code> into Delino.</p>
@@ -736,7 +736,7 @@ Why will you want to use the <code>edit</code> command? If you wish to edit any 
 <p>In between each step please put a whitespace!</p>
 </li>
 <li>
-<p>If you can&#8217;t see any orders or returns use the <a href="#list"><code>list</code></a> command to view existing parcel! If nothing is showing up means you got to add some <a href="#insert">order</a> or <a href="#return">return</a> parcel and start doing work!</p>
+<p>If you can&#8217;t see any orders or returns use the <code><a href="#list">list</a></code> command to view existing parcel! If nothing is showing up means you got to add some <code><a href="#insert">order</a></code> or <code><a href="#return">return</a></code> parcel and start doing work!</p>
 </li>
 </ul>
 </div>
@@ -779,7 +779,7 @@ Why will you want to use the <code>edit</code> command? If you wish to edit any 
 <p><code>ORDER_ATTRIBUTE_PREFIX</code> is the field of the parcel you want to change</p>
 </li>
 <li>
-<p><code>NEW_VALUE</code> is the value you want to replace with.</p>
+<p><code>NEW_VALUE</code> is the new value you want to replace the old value with.</p>
 </li>
 </ul>
 </div>
@@ -2132,6 +2132,9 @@ Why will you want to use the <code>search</code> command? If you wish to <code>s
 <li>
 <p>If nothing is displaying means you have no parcel containing the keyword you have given!</p>
 </li>
+<li>
+<p>Keyword searches are case-insensitive, e.g: <code>Jeremy</code> matches <code>jErEmY</code> or <code>jeremy</code> or any alphabet casing permutations.</p>
+</li>
 </ul>
 </div>
 </td>
@@ -2170,7 +2173,7 @@ Why will you want to use the <code>search</code> command? If you wish to <code>s
 <p><code>FLAG</code> is to differentiate the different kind of parcel (orders or returns).</p>
 </li>
 <li>
-<p>The <code>KEYWORD</code> is the word you want to search for in any of the parcel.</p>
+<p>The <code>KEYWORD</code> is the word you want to search for in any of the parcel and it is case-insensitive.</p>
 </li>
 <li>
 <p><code>ORDER_ATTRIBUTE_PREFIX</code> is the field of the parcel you want to search for</p>
@@ -2203,7 +2206,7 @@ Why will you want to use the <code>search</code> command? If you wish to <code>s
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">If you want to search for any order parcel that contain the transaction id of <code>asj2od3943</code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>-o</code> `tid/asj2od3943</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>-o</code> <code>tid/asj2od3943</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Return all order(s) with transaction ID of <code>asj2od3943</code>.</p></td>
 </tr>
 <tr>
@@ -2357,7 +2360,7 @@ the provided link in the table below.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#delivered"><strong>Delivered</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>delivered</code> <code>FLAG</code> <code>INDEX</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>delivered</code> <code>-r</code> <code>2</code><br>
-delivered` <code>-o</code> <code>1</code></p></td>
+<code>delivered</code> <code>-o</code> <code>1</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit"><strong>Edit</strong></a></p></td>
@@ -3157,4 +3160,4 @@ OR<br>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-08 19:25:08 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-09 07:23:07 UTC</div></div></div></body></html>
