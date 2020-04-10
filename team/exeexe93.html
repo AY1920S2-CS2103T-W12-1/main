@@ -42,8 +42,13 @@ interacts with it using a CLI, and it has a GUI created with JavaFX. It is writt
 <p>What it does: Allows the user to add multiple orders and return orders via a CSV file.</p>
 </li>
 <li>
-<p>Justification: This is an essential update, which allows the user to save time<br>
-from adding multiple orders and return order one by one.</p>
+<p>Justification: This is an essential update, which allows the user to save time from adding multiple orders and
+return order one by one.</p>
+</li>
+<li>
+<p>Highlights: This enhancement depends heavily on <code>InsertCommandParser</code> and <code>ReturnCommandParser</code> to process the data
+retrieve from the data. Considerations have to be made to differentiate the data for <code>Order</code> and <code>ReturnOrder</code>, as they
+have different attributes in their models.</p>
 </li>
 </ul>
 </div>
@@ -58,6 +63,10 @@ from adding multiple orders and return order one by one.</p>
 <li>
 <p>Justification: The storage of return orders is important, as the return orders are required to be separate from
 orders and store as a separate json file in the hard disk from the orders.</p>
+</li>
+<li>
+<p>Highlights: Considerations are to be made for how to store and retrieve the return order data from the json file
+which is stored in hard disk.</p>
 </li>
 </ul>
 </div>
@@ -84,6 +93,10 @@ orders and store as a separate json file in the hard disk from the orders.</p>
 </li>
 <li>
 <p>Justification: This is an essential update, which prevent the user from having the trouble clearing the orders or return orders one by one.</p>
+</li>
+<li>
+<p>Highlights: Considerations are to be made for the clearing either one of the list or both order list and return order list,
+as clearing the wrong list, the data in that list would be lost permanently.</p>
 </li>
 </ul>
 </div>
@@ -125,6 +138,9 @@ their parcel on that day.</p>
 </li>
 </ul>
 </div>
+</li>
+<li>
+<p><strong>Code contributed</strong>: [<a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=exeexe93&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2020-02-14&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=true">Functional code &amp; Test code</a>]</p>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
@@ -173,7 +189,13 @@ and clear features (Pull requests <a href="https://github.com/AY1920S2-CS2103T-W
 <ul>
 <li>
 <p>PRs reviewed (with non-trivial review comments): (Pull requests <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/126">#126</a>,
-<a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/139">#139</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/174">#174</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/189">#189</a>, &#8230;&#8203;)</p>
+<a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/139">#139</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/174">#174</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/189">#189</a>)</p>
+</li>
+<li>
+<p>Reported bugs and suggestions for other teams in the class: (Examples: <a href="https://github.com/Exeexe93/ped/issues">PE dry run issue</a>)</p>
+</li>
+<li>
+<p>Contributed to forum discussion  by asking help question: (Example: <a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/104">#104</a>)</p>
 </li>
 </ul>
 </div>
@@ -183,7 +205,7 @@ and clear features (Pull requests <a href="https://github.com/AY1920S2-CS2103T-W
 <div class="ulist">
 <ul>
 <li>
-<p>Integrated a new Github plugin (AppVeyor) to the team repo</p>
+<p>Integrated a new Github plugin (AppVeyor) to the team repo (<a href="https://github.com/AY1920S2-CS2103T-W12-1/main/commit/37b0cd15b16cfe6fe08cb9bdba9ac8e37a1722a3">#37b0cd1</a>)</p>
 </li>
 </ul>
 </div>
@@ -500,6 +522,9 @@ and the combination for the <code>import</code> command.</p>
 </li>
 <li>
 <p><code>ORDER_TYPE</code> denote the start of an delivery order or return order.</p>
+</li>
+<li>
+<p>If there are 2 or more <code>ORDER_TYPE</code> within a single order sentence it will be treated as 2 or more orders.</p>
 </li>
 <li>
 <p>The last value of the same type will be stored if duplicate prefix type is found in a single order sentence.</p>
@@ -855,20 +880,21 @@ The <code>clear</code> feature allows the user to remove the orders and return o
 <div class="title">Figure 5. Clear Class Activity Diagram</div>
 </div>
 <div class="paragraph">
-<p>After user enter the <code>clear</code> command, the <code>ClearCommandParser</code> will check if the arguments are empty:<br></p>
+<p>After user enter the <code>clear</code> command, the <code>ClearCommandParser</code> will run the following two checks:<br></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>if <code>Yes</code>, a new <code>ClearCommand</code> object will be created with no flag</p>
+<p>Check if flag in the arguments do not belong to one of the three valid flags: <code>-f</code>, <code>-r</code> and <code>-o</code></p>
 </li>
 <li>
-<p>If <code>No</code>, a new <code>ClearCommand</code> object will be created with the flags.<br></p>
+<p>Check if both <code>-r</code> and <code>-o</code> flags found in the arguments<br></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Afterward,  the new <code>ClearCommand</code> object will be executed.</p>
+<p>If either one of the conditions occurs, exception will be thrown and the error message will be display to the user.
+Afterward,  the new <code>ClearCommand</code> object will be executed.</p>
 </div>
 <div class="paragraph">
 <p>During the execution of the <code>ClearCommand</code>:</p>
@@ -876,7 +902,7 @@ The <code>clear</code> feature allows the user to remove the orders and return o
 <div class="ulist">
 <ul>
 <li>
-<p>If <code>-f</code> flag is found in flags, the respective order book list will be cleared and
+<p>If <code>-f</code> flag is found in flags, the respective order book will be cleared and
 display a success message to the user.</p>
 </li>
 <li>
@@ -885,7 +911,7 @@ User would be required to press either one of the following two buttons:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>Yes</code> button - The respective order book list will be cleared and display successful clear message to the user.</p>
+<p><code>Yes</code> button - The respective order book will be cleared and display successful clear message to the user.</p>
 </li>
 <li>
 <p><code>No</code> button - Pop up closed and end of activity.</p>
@@ -965,13 +991,17 @@ Sequence Diagram below:<br></p>
 <div class="title">Figure 8. Clear Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
-<p>The arguments passed to the Clear Command will be parsed by the <code>ClearCommandParser</code> class<br>
+<p>The above sequence diagram illustrate how <code>Clear</code> Command being processed when the user input <code>clear -f</code> to force clear
+both order book and return order book.</p>
+</div>
+<div class="paragraph">
+<p>After the user input. the arguments passed to the <code>Clear</code> Command will be parsed by the <code>ClearCommandParser</code> class<br>
 If the given arguments are valid, a new <code>Clear</code> Command object will be returned.</p>
 </div>
 <div class="paragraph">
 <p>In the <code>ClearCommandParser</code>, there will be two validation checks:<br>
-1. <code>isValidFlag(flag)</code>: Check whether the flag is one of the three flags: <code>-f</code>, <code>-o</code> and <code>-r</code><br>
-2. <code>isInvalidFlagFormat(flag, flags)</code>: Ensure the arguments do not have both <code>-o</code> and <code>-r</code> flags.</p>
+1. Ensure the flag is one of the three flags: <code>-f</code>, <code>-o</code> and <code>-r</code><br>
+2. Ensure the arguments do not have both <code>-o</code> and <code>-r</code> flags.</p>
 </div>
 <div class="paragraph">
 <p>After the two validation checks, the flag will be added into HashSet, <strong>flags</strong> which will then passed to
@@ -981,18 +1011,15 @@ shown in details in below diagram:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/ClearCommandSequenceDiagram2.svg" alt="ClearCommandSequenceDiagram2">
+<img src="../images/ExecuteClearCommand.svg" alt="ExecuteClearCommand">
 </div>
 <div class="title">Figure 9. Execution of Clear Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
-<p>After <code>LogicManager</code> call the <code>ClearCommand#execute(model)</code>, the <code>clear</code> Command will update the model by creating a
-new <code>OrderBook</code> object and pass it to <code>Model#setOrerBook(orderBook)</code>, whereby the <code>Model</code> will then update its own
-orderBook. In addition, the <code>clear</code> Command will pass back a new <code>CommandResult</code> object with the success message
-in it back to the <code>LogicManager</code>.</p>
-</div>
-<div class="paragraph">
-<p>After executing any of the sequences above, a new <code>CommandResult</code> object will be return back to <code>LogicManager</code>.</p>
+<p>After <code>LogicManager</code> call the <code>ClearCommand#execute(model)</code>, the <code>clear</code> Command will update the model by pass a new
+<code>OrderBook</code> object and a new <code>ReturnOrderBook</code> object to <code>Model</code>.  The <code>Model</code> will then update its own orderBook and
+returnOrderBook. In addition, the <code>clear</code> Command will pass back a new <code>CommandResult</code> object with the success message
+in it to the <code>LogicManager</code> at the end of the execution.</p>
 </div>
 </div>
 </div>
@@ -1069,7 +1096,7 @@ when they have large amount of delivery orders or return orders to add into Deli
 </div>
 <div class="paragraph">
 <p>Afterward, a new <code>ImportCommand</code> will be created and executed. For every data inside the list, either order or return order
-will be added into the order book list and return order book list respectively based on the <code>orderType</code> value.
+will be added into the order book and return order book respectively based on the <code>orderType</code> value.
 If the <code>orderType</code> is invalid, add the data into the result, which will be displayed to the user after processing.</p>
 </div>
 </div>
@@ -1175,7 +1202,7 @@ to run the execute the <code>ImportCommand</code>, this will be shown at the dia
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/ImportCommandSequenceDiagram2.svg" alt="ImportCommandSequenceDiagram2">
+<img src="../images/ExecuteImportCommand.svg" alt="ExecuteImportCommand">
 </div>
 <div class="title">Figure 13. Execution of Import Command Sequence Diagram</div>
 </div>
@@ -1184,7 +1211,7 @@ to run the execute the <code>ImportCommand</code>, this will be shown at the dia
 <strong>order</strong> or <strong>return</strong> and pass to the <code>InsertCommandParser</code> or <code>ReturnCommandParser</code> respectively.<br></p>
 </div>
 <div class="paragraph">
-<p>Afterwards, <code>InsertCommandParser</code> or <code>ReturnCommandParser</code> will return the <code>InsertCommand</code> or <code>ReturnCommand</code> respectively
+<p>Afterwards, <code>InsertCommandParser</code> or <code>ReturnCommandParser</code> will return a new <code>InsertCommand</code> or <code>ReturnCommand</code> respectively
 if it successfully parse the data. The <code>ImportCommand</code> will then call the <code>InsertCommand#execute(Model)</code>
 or <code>ReturnCommand#execute(Model)</code> depend whether it is delivery order or return order. This will cause a delivery order or return order being added into the <code>Model</code>.</p>
 </div>
@@ -1565,4 +1592,4 @@ Expected: In the response box, a message will appear to indicate that the import
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 07:49:58 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 10:25:34 UTC</div></div></div></body></html>

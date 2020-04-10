@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1127px" preserveAspectRatio="none" style="width:1602px;height:1127px;" version="1.1" viewBox="0 0 1602 1127" width="1602px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="1113.0928" style="stroke: #000000; stroke-width: 1.0;" width="1587" x="4" y="3"/><path d="M190,4 L190,13.6094 L180,23.6094 L4,23.6094 " fill="none" style="stroke: #000000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="176" x="7" y="18.5332">sd execute import command</text><rect fill="#C8C8FA" height="1067.6875" style="stroke: #A80036; stroke-width: 1.0;" width="1466" x="9" y="31.6094"/><text fill="#FFFFFF" font-family="sans-serif" font-size="15" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="39" x="720.5" y="47.1807">Logic</text><rect fill="#F97181" height="1067.6875" style="stroke: #A80036; stroke-width: 1.0;" width="92" x="1477" y="31.6094"/><text fill="#FFFFFF" font-family="sans-serif" font-size="15" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="44" x="1499" y="47.1807">Model</text><rect fill="#FFFFFF" height="990.2109" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="72" y="97.0859"/><rect fill="#FFFFFF" height="923.5078" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="268" y="119.4375"/><rect fill="#FFFFFF" height="41.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="273" y="877.2813"/><rect fill="#FFFFFF" height="32.6094" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="489.5" y="194.1406"/><rect fill="#FFFFFF" height="103.3125" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="489.5" y="257.1016"/><rect fill="#FFFFFF" height="32.6094" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="682.5" y="516.9531"/><rect fill="#FFFFFF" height="103.3125" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="682.5" y="579.9141"/><rect fill="#FFFFFF" height="32.6094" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="904" y="297.4531"/><rect fill="#FFFFFF" height="58.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="904" y="404.7656"/><rect fill="#FFFFFF" height="32.6094" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1155.5" y="620.2656"/><rect fill="#FFFFFF" height="58.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1155.5" y="727.5781"/><rect fill="#FFFFFF" height="32.6094" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1377.5" y="965.9844"/><rect fill="#FFFFFF" height="14" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1518" y="435.1172"/><rect fill="#FFFFFF" height="14" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1518" y="757.9297"/><rect fill="#FFFFFF" height="705.4922" style="stroke: #000000; stroke-width: 2.0;" width="1454" x="131" y="134.4375"/><rect fill="#FFFFFF" height="673.1406" style="stroke: #000000; stroke-width: 2.0;" width="1434" x="141" y="159.7891"/><rect fill="#3333C4" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="159" x="415" y="178.1406"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="145" x="422" y="199.6738">:InsertCommandParser</text><rect fill="#3333C4" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="216" x="801" y="265.1016"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="202" x="808" y="286.6348">insertCommand:InsertCommand</text><rect fill="#FFFFFF" height="347.8125" style="stroke: none; stroke-width: 1.0;" width="1434" x="141" y="485.1172"/><rect fill="#3333C4" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="167" x="604" y="500.9531"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="153" x="611" y="522.4863">:ReturnCommandParser</text><rect fill="#3333C4" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="227" x="1047" y="587.9141"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="213" x="1054" y="609.4473">returnCommand:ReturnCommand</text><rect fill="#3333C4" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="157" x="1304" y="933.6328"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="143" x="1311" y="955.166">result:CommandResult</text><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="77" x2="77" y1="87.0859" y2="1105.2969"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="273" x2="273" y1="87.0859" y2="1105.2969"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="494" x2="494" y1="209.4453" y2="1105.2969"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="687" x2="687" y1="532.2578" y2="1105.2969"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="909" x2="909" y1="296.4063" y2="1105.2969"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1160" x2="1160" y1="619.2188" y2="1105.2969"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1382" x2="1382" y1="964.9375" y2="1105.2969"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1523" x2="1523" y1="87.0859" y2="1105.2969"/><rect fill="#3333C4" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="108" x="23" y="54.4766"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="94" x="30" y="76.0098">:LogicManager</text><rect fill="#3333C4" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="224" x="161" y="54.4766"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="210" x="168" y="76.0098">importCommand:ImportCommand</text><rect fill="#9D0012" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="64" x="1491" y="54.4766"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="42" x="1502" y="76.0098">:Model</text><rect fill="#FFFFFF" height="990.2109" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="72" y="97.0859"/><rect fill="#FFFFFF" height="923.5078" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="268" y="119.4375"/><rect fill="#FFFFFF" height="41.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="273" y="877.2813"/><rect fill="#FFFFFF" height="32.6094" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="489.5" y="194.1406"/><rect fill="#FFFFFF" height="103.3125" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="489.5" y="257.1016"/><rect fill="#FFFFFF" height="32.6094" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="682.5" y="516.9531"/><rect fill="#FFFFFF" height="103.3125" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="682.5" y="579.9141"/><rect fill="#FFFFFF" height="32.6094" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="904" y="297.4531"/><rect fill="#FFFFFF" height="58.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="904" y="404.7656"/><rect fill="#FFFFFF" height="32.6094" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1155.5" y="620.2656"/><rect fill="#FFFFFF" height="58.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1155.5" y="727.5781"/><rect fill="#FFFFFF" height="32.6094" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1377.5" y="965.9844"/><rect fill="#FFFFFF" height="14" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1518" y="435.1172"/><rect fill="#FFFFFF" height="14" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1518" y="757.9297"/><polygon fill="#A80036" points="256,115.4375,266,119.4375,256,123.4375,260,119.4375" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="82" x2="262" y1="119.4375" y2="119.4375"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="89" x="130.5" y="114.5811">execute(model)</text><path d="M131,134.4375 L204,134.4375 L204,142.4375 L194,152.4375 L131,152.4375 L131,134.4375 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="705.4922" style="stroke: #000000; stroke-width: 2.0;" width="1454" x="131" y="134.4375"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="28" x="146" y="148.9326">loop</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="289" x="219" y="147.8564">[until every String data in ordersData are processed]</text><path d="M141,159.7891 L202,159.7891 L202,167.7891 L192,177.7891 L141,177.7891 L141,159.7891 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="673.1406" style="stroke: #000000; stroke-width: 2.0;" width="1434" x="141" y="159.7891"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="16" x="156" y="174.2842">alt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="128" x="217" y="173.208">[data starts with order]</text><polygon fill="#A80036" points="403,180.1406,413,184.1406,403,188.1406,407,184.1406" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="278" x2="409" y1="184.1406" y2="184.1406"/><rect fill="#3333C4" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="159" x="415" y="178.1406"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="145" x="422" y="199.6738">:InsertCommandParser</text><polygon fill="#A80036" points="289,222.75,279,226.75,289,230.75,285,226.75" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="283" x2="493.5" y1="226.75" y2="226.75"/><polygon fill="#A80036" points="477.5,253.1016,487.5,257.1016,477.5,261.1016,481.5,257.1016" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="278" x2="483.5" y1="257.1016" y2="257.1016"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="65" x="351.25" y="252.2451">parse(data)</text><polygon fill="#A80036" points="789,283.4531,799,287.4531,789,291.4531,793,287.4531" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="499.5" x2="795" y1="287.4531" y2="287.4531"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="25" x="637.75" y="282.5967">data</text><rect fill="#3333C4" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="216" x="801" y="265.1016"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="202" x="808" y="286.6348">insertCommand:InsertCommand</text><polygon fill="#A80036" points="510.5,326.0625,500.5,330.0625,510.5,334.0625,506.5,330.0625" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="504.5" x2="908" y1="330.0625" y2="330.0625"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="91" x="658.75" y="325.2061">insertCommand</text><polygon fill="#A80036" points="289,356.4141,279,360.4141,289,364.4141,285,360.4141" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="283" x2="493.5" y1="360.4141" y2="360.4141"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="91" x="340.75" y="355.5576">insertCommand</text><line style="stroke: #A80036; stroke-width: 2.0;" x1="485.5" x2="503.5" y1="365.4141" y2="383.4141"/><line style="stroke: #A80036; stroke-width: 2.0;" x1="485.5" x2="503.5" y1="383.4141" y2="365.4141"/><polygon fill="#A80036" points="892,400.7656,902,404.7656,892,408.7656,896,404.7656" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="278" x2="898" y1="404.7656" y2="404.7656"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="89" x="546.5" y="399.9092">execute(Model)</text><polygon fill="#A80036" points="1506,431.1172,1516,435.1172,1506,439.1172,1510,435.1172" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="914" x2="1512" y1="435.1172" y2="435.1172"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="95" x="1168.5" y="430.2607">addOrder(toAdd)</text><polygon fill="#A80036" points="925,445.1172,915,449.1172,925,453.1172,921,449.1172" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="919" x2="1522" y1="449.1172" y2="449.1172"/><polygon fill="#A80036" points="289,459.1172,279,463.1172,289,467.1172,285,463.1172" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="283" x2="908" y1="463.1172" y2="463.1172"/><line style="stroke: #A80036; stroke-width: 2.0;" x1="900" x2="918" y1="468.1172" y2="486.1172"/><line style="stroke: #A80036; stroke-width: 2.0;" x1="900" x2="918" y1="486.1172" y2="468.1172"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="141" x2="1575" y1="486.1172" y2="486.1172"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="132" x="146" y="497.5361">[data starts with return]</text><polygon fill="#A80036" points="592,502.9531,602,506.9531,592,510.9531,596,506.9531" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="278" x2="598" y1="506.9531" y2="506.9531"/><rect fill="#3333C4" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="167" x="604" y="500.9531"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="153" x="611" y="522.4863">:ReturnCommandParser</text><polygon fill="#A80036" points="289,545.5625,279,549.5625,289,553.5625,285,549.5625" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="283" x2="686.5" y1="549.5625" y2="549.5625"/><polygon fill="#A80036" points="670.5,575.9141,680.5,579.9141,670.5,583.9141,674.5,579.9141" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="278" x2="676.5" y1="579.9141" y2="579.9141"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="65" x="447.75" y="575.0576">parse(data)</text><polygon fill="#A80036" points="1035,606.2656,1045,610.2656,1035,614.2656,1039,610.2656" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="692.5" x2="1041" y1="610.2656" y2="610.2656"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="25" x="857.25" y="605.4092">data</text><rect fill="#3333C4" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="227" x="1047" y="587.9141"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="213" x="1054" y="609.4473">returnCommand:ReturnCommand</text><polygon fill="#A80036" points="703.5,648.875,693.5,652.875,703.5,656.875,699.5,652.875" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="697.5" x2="1159.5" y1="652.875" y2="652.875"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="92" x="880.5" y="648.0186">returnCommand</text><polygon fill="#A80036" points="289,679.2266,279,683.2266,289,687.2266,285,683.2266" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="283" x2="686.5" y1="683.2266" y2="683.2266"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="92" x="436.75" y="678.3701">returnCommand</text><line style="stroke: #A80036; stroke-width: 2.0;" x1="678.5" x2="696.5" y1="688.2266" y2="706.2266"/><line style="stroke: #A80036; stroke-width: 2.0;" x1="678.5" x2="696.5" y1="706.2266" y2="688.2266"/><polygon fill="#A80036" points="1143.5,723.5781,1153.5,727.5781,1143.5,731.5781,1147.5,727.5781" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="278" x2="1149.5" y1="727.5781" y2="727.5781"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="89" x="672.25" y="722.7217">execute(Model)</text><polygon fill="#A80036" points="1506,753.9297,1516,757.9297,1506,761.9297,1510,757.9297" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="1165.5" x2="1512" y1="757.9297" y2="757.9297"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="171" x="1256.25" y="753.0732">addReturnOrder(toBeCreated)</text><polygon fill="#A80036" points="1176.5,767.9297,1166.5,771.9297,1176.5,775.9297,1172.5,771.9297" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="1170.5" x2="1522" y1="771.9297" y2="771.9297"/><polygon fill="#A80036" points="289,781.9297,279,785.9297,289,789.9297,285,785.9297" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="283" x2="1159.5" y1="785.9297" y2="785.9297"/><line style="stroke: #A80036; stroke-width: 2.0;" x1="1151.5" x2="1169.5" y1="790.9297" y2="808.9297"/><line style="stroke: #A80036; stroke-width: 2.0;" x1="1151.5" x2="1169.5" y1="808.9297" y2="790.9297"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="278" x2="325" y1="864.2813" y2="864.2813"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="325" x2="325" y1="864.2813" y2="877.2813"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="284" x2="325" y1="877.2813" y2="877.2813"/><polygon fill="#A80036" points="294,873.2813,284,877.2813,294,881.2813,290,877.2813" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="70" x="290" y="859.4248">printResult()</text><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="283" x2="325" y1="917.6328" y2="917.6328"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="325" x2="325" y1="917.6328" y2="930.6328"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="278" x2="325" y1="930.6328" y2="930.6328"/><polygon fill="#A80036" points="288,926.6328,278,930.6328,288,934.6328,284,930.6328" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="53" x="290" y="912.7764">message</text><polygon fill="#A80036" points="1292,951.9844,1302,955.9844,1292,959.9844,1296,955.9844" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="278" x2="1298" y1="955.9844" y2="955.9844"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="53" x="764.5" y="951.1279">message</text><rect fill="#3333C4" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="157" x="1304" y="933.6328"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="143" x="1311" y="955.166">result:CommandResult</text><polygon fill="#A80036" points="289,994.5938,279,998.5938,289,1002.5938,285,998.5938" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="283" x2="1381.5" y1="998.5938" y2="998.5938"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="32" x="814.25" y="993.7373">result</text><line style="stroke: #A80036; stroke-width: 2.0;" x1="1373.5" x2="1391.5" y1="1003.5938" y2="1021.5938"/><line style="stroke: #A80036; stroke-width: 2.0;" x1="1373.5" x2="1391.5" y1="1021.5938" y2="1003.5938"/><polygon fill="#A80036" points="93,1038.9453,83,1042.9453,93,1046.9453,89,1042.9453" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="87" x2="272" y1="1042.9453" y2="1042.9453"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="32" x="161.5" y="1038.0889">result</text><line style="stroke: #A80036; stroke-width: 2.0;" x1="264" x2="282" y1="1047.9453" y2="1065.9453"/><line style="stroke: #A80036; stroke-width: 2.0;" x1="264" x2="282" y1="1065.9453" y2="1047.9453"/><polygon fill="#A80036" points="19,1083.2969,9,1087.2969,19,1091.2969,15,1087.2969" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="13" x2="76" y1="1087.2969" y2="1087.2969"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="32" x="26.5" y="1082.4404">result</text><!--MD5=[ed0c405fbf344f1b7d7b2294e062ca71]
+@startuml
+
+
+
+
+
+
+
+
+skinparam BackgroundColor #FFFFFFF
+
+skinparam Shadowing false
+
+skinparam Class {
+    FontColor #FFFFFF
+    BorderThickness 1
+    BorderColor #FFFFFF
+    StereotypeFontColor #FFFFFF
+    FontName Arial
+}
+
+skinparam Actor {
+    BorderColor #000000
+    Color #000000
+    FontName Arial
+}
+
+skinparam Sequence {
+    MessageAlign center
+    BoxFontSize 15
+    BoxPadding 0
+    BoxFontColor #FFFFFF
+    FontName Arial
+}
+
+skinparam Participant {
+    FontColor #FFFFFFF
+    Padding 20
+}
+
+skinparam MinClassWidth 50
+skinparam ParticipantPadding 10
+skinparam Shadowing false
+skinparam DefaultTextAlignment center
+skinparam packageStyle Rectangle
+
+hide footbox
+hide members
+hide circle
+mainframe sd execute import command
+
+box Logic #C8C8FA
+participant ":LogicManager" as LogicManager #3333C4
+participant "importCommand:ImportCommand" as ImportCommand #3333C4
+participant ":InsertCommandParser" as InsertCommandParser #3333C4
+participant ":ReturnCommandParser" as ReturnCommandParser #3333C4
+participant "insertCommand:InsertCommand" as InsertCommand #3333C4
+participant "returnCommand:ReturnCommand" as ReturnCommand #3333C4
+participant "result:CommandResult" as CommandResult #3333C4
+end box
+
+box Model #F97181
+participant ":Model" as Model #9D0012
+end box
+activate LogicManager
+
+LogicManager -> ImportCommand : execute(model)
+activate ImportCommand
+
+loop until every String data in ordersData are processed
+    alt data starts with order
+        create InsertCommandParser
+        ImportCommand -> InsertCommandParser ++
+
+        InsertCommandParser - -> ImportCommand - -
+
+        ImportCommand -> InsertCommandParser ++ : parse(data)
+
+        create InsertCommand
+        InsertCommandParser -> InsertCommand ++ : data
+
+        InsertCommand - -> InsertCommandParser - - : insertCommand
+
+        InsertCommandParser - -> ImportCommand - - : insertCommand
+
+        InsertCommandParser -[hidden]-> ImportCommand
+        destroy InsertCommandParser
+
+        ImportCommand -> InsertCommand ++ : execute(Model)
+
+        InsertCommand -> Model++ : addOrder(toAdd)
+
+        Model - -> InsertCommand- -
+
+        InsertCommand - -> ImportCommand - -
+
+        InsertCommand -[hidden]-> ImportCommand
+        destroy InsertCommand
+
+    else data starts with return
+        create ReturnCommandParser
+        ImportCommand -> ReturnCommandParser ++
+
+        ReturnCommandParser - -> ImportCommand - -
+
+        ImportCommand -> ReturnCommandParser ++ : parse(data)
+
+        create ReturnCommand
+        ReturnCommandParser -> ReturnCommand ++ : data
+
+        ReturnCommand - -> ReturnCommandParser - - : returnCommand
+
+        ReturnCommandParser - -> ImportCommand - - : returnCommand
+        ReturnCommandParser -[hidden]-> ImportCommand
+        destroy ReturnCommandParser
+
+        ImportCommand -> ReturnCommand ++ : execute(Model)
+
+        ReturnCommand -> Model++ : addReturnOrder(toBeCreated)
+
+        Model - -> ReturnCommand- -
+        ReturnCommand - -> ImportCommand - -
+
+        ReturnCommand -[hidden]-> ImportCommand
+        destroy ReturnCommand
+        |||
+    end
+end
+
+ImportCommand -> ImportCommand ++ : printResult()
+
+ImportCommand - -> ImportCommand - - : message
+create CommandResult
+ImportCommand -> CommandResult ++ : message
+
+CommandResult - -> ImportCommand - - : result
+
+CommandResult -[hidden]-> ImportCommand
+destroy CommandResult
+
+ImportCommand - -> LogicManager - - : result
+
+CommandResult -[hidden]-> ImportCommand
+destroy ImportCommand
+
+[<- -LogicManager : result
+deactivate LogicManager
+
+@enduml
+
+PlantUML version 1.2019.11(Sun Sep 22 18:02:15 SGT 2019)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11.0.5+10-b520.30
+Operating System: Windows 10
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

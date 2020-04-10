@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="583px" preserveAspectRatio="none" style="width:1134px;height:583px;" version="1.1" viewBox="0 0 1134 583" width="1134px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="569.874" style="stroke: #000000; stroke-width: 1.0;" width="1119" x="4" y="3"/><path d="M182,4 L182,13.6094 L172,23.6094 L4,23.6094 " fill="none" style="stroke: #000000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="168" x="7" y="18.5332">sd execute clear command</text><rect fill="#C8C8FA" height="524.4688" style="stroke: #A80036; stroke-width: 1.0;" width="1014" x="9" y="31.6094"/><text fill="#FFFFFF" font-family="sans-serif" font-size="15" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="39" x="494.5" y="47.1807">Logic</text><rect fill="#F97181" height="524.4688" style="stroke: #A80036; stroke-width: 1.0;" width="92" x="1025" y="31.6094"/><text fill="#FFFFFF" font-family="sans-serif" font-size="15" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="44" x="1047" y="47.1807">Model</text><rect fill="#FFFFFF" height="455.9922" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="72" y="97.0859"/><rect fill="#FFFFFF" height="424.6406" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="261.5" y="119.4375"/><rect fill="#FFFFFF" height="348.9375" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="266.5" y="157.7891"/><rect fill="#FFFFFF" height="48.9609" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="473.5" y="186.7891"/><rect fill="#FFFFFF" height="48.9609" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="698.5" y="259.75"/><rect fill="#FFFFFF" height="32.6094" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="925.5" y="437.7656"/><rect fill="#FFFFFF" height="14" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1066" y="339.0625"/><rect fill="#FFFFFF" height="14" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1066" y="383.4141"/><rect fill="#3333C4" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="153" x="402" y="170.7891"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="139" x="409" y="192.3223">orderBook:OrderBook</text><rect fill="#3333C4" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="237" x="585" y="243.75"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="223" x="592" y="265.2832">returnOrderBook:ReturnOrderBook</text><rect fill="#3333C4" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="157" x="852" y="405.4141"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="143" x="859" y="426.9473">result:CommandResult</text><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="77" x2="77" y1="87.0859" y2="562.0781"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="266" x2="266" y1="87.0859" y2="562.0781"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="478" x2="478" y1="202.0938" y2="562.0781"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="703" x2="703" y1="275.0547" y2="562.0781"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="930" x2="930" y1="436.7188" y2="562.0781"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1071" x2="1071" y1="87.0859" y2="562.0781"/><rect fill="#3333C4" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="108" x="23" y="54.4766"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="94" x="30" y="76.0098">:LogicManager</text><rect fill="#3333C4" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="211" x="161" y="54.4766"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="197" x="168" y="76.0098">clearCommand:ClearCommand</text><rect fill="#9D0012" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="64" x="1039" y="54.4766"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="42" x="1050" y="76.0098">:Model</text><rect fill="#FFFFFF" height="455.9922" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="72" y="97.0859"/><rect fill="#FFFFFF" height="424.6406" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="261.5" y="119.4375"/><rect fill="#FFFFFF" height="348.9375" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="266.5" y="157.7891"/><rect fill="#FFFFFF" height="48.9609" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="473.5" y="186.7891"/><rect fill="#FFFFFF" height="48.9609" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="698.5" y="259.75"/><rect fill="#FFFFFF" height="32.6094" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="925.5" y="437.7656"/><rect fill="#FFFFFF" height="14" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1066" y="339.0625"/><rect fill="#FFFFFF" height="14" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="1066" y="383.4141"/><polygon fill="#A80036" points="249.5,115.4375,259.5,119.4375,249.5,123.4375,253.5,119.4375" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="82" x2="255.5" y1="119.4375" y2="119.4375"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="89" x="127.25" y="114.5811">execute(model)</text><line style="stroke: #A80036; stroke-width: 1.0;" x1="271.5" x2="318.5" y1="144.7891" y2="144.7891"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="318.5" x2="318.5" y1="144.7891" y2="157.7891"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="277.5" x2="318.5" y1="157.7891" y2="157.7891"/><polygon fill="#A80036" points="287.5,153.7891,277.5,157.7891,287.5,161.7891,283.5,157.7891" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="117" x="283.5" y="139.9326">updateModel(model)</text><polygon fill="#A80036" points="390,172.7891,400,176.7891,390,180.7891,394,176.7891" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="276.5" x2="396" y1="176.7891" y2="176.7891"/><rect fill="#3333C4" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="153" x="402" y="170.7891"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="139" x="409" y="192.3223">orderBook:OrderBook</text><polygon fill="#A80036" points="287.5,231.75,277.5,235.75,287.5,239.75,283.5,235.75" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="281.5" x2="477.5" y1="235.75" y2="235.75"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="59" x="348" y="230.8936">orderBook</text><polygon fill="#A80036" points="573,245.75,583,249.75,573,253.75,577,249.75" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="276.5" x2="579" y1="249.75" y2="249.75"/><rect fill="#3333C4" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="237" x="585" y="243.75"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="223" x="592" y="265.2832">returnOrderBook:ReturnOrderBook</text><polygon fill="#A80036" points="287.5,304.7109,277.5,308.7109,287.5,312.7109,283.5,308.7109" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="281.5" x2="702.5" y1="308.7109" y2="308.7109"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="95" x="442.5" y="303.8545">returnOrderBook</text><polygon fill="#A80036" points="1054,335.0625,1064,339.0625,1054,343.0625,1058,339.0625" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="276.5" x2="1060" y1="339.0625" y2="339.0625"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="147" x="597.75" y="334.2061">setOrderBook(orderBook)</text><polygon fill="#A80036" points="287.5,349.0625,277.5,353.0625,287.5,357.0625,283.5,353.0625" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="281.5" x2="1070" y1="353.0625" y2="353.0625"/><polygon fill="#A80036" points="1054,379.4141,1064,383.4141,1054,387.4141,1058,383.4141" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="276.5" x2="1060" y1="383.4141" y2="383.4141"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="221" x="560.75" y="378.5576">setReturnOrderBook(returnOrderBook)</text><polygon fill="#A80036" points="287.5,393.4141,277.5,397.4141,287.5,401.4141,283.5,397.4141" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="281.5" x2="1070" y1="397.4141" y2="397.4141"/><polygon fill="#A80036" points="840,423.7656,850,427.7656,840,431.7656,844,427.7656" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="276.5" x2="846" y1="427.7656" y2="427.7656"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="234" x="447.25" y="422.9092">MESSAGE_SUCCESS_ORDER_BOOK</text><rect fill="#3333C4" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="157" x="852" y="405.4141"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="143" x="859" y="426.9473">result:CommandResult</text><polygon fill="#A80036" points="287.5,466.375,277.5,470.375,287.5,474.375,283.5,470.375" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="281.5" x2="929.5" y1="470.375" y2="470.375"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="32" x="587.5" y="465.5186">result</text><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="276.5" x2="318.5" y1="505.7266" y2="505.7266"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="318.5" x2="318.5" y1="505.7266" y2="518.7266"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="271.5" x2="318.5" y1="518.7266" y2="518.7266"/><polygon fill="#A80036" points="281.5,514.7266,271.5,518.7266,281.5,522.7266,277.5,518.7266" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="32" x="283.5" y="500.8701">result</text><polygon fill="#A80036" points="93,540.0781,83,544.0781,93,548.0781,89,544.0781" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="87" x2="265.5" y1="544.0781" y2="544.0781"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="32" x="158.25" y="539.2217">result</text><!--MD5=[9a48cbbe3d0fe435bc292523af04c5fd]
+@startuml
+mainframe sd execute clear command
+
+
+
+
+
+
+
+
+skinparam BackgroundColor #FFFFFFF
+
+skinparam Shadowing false
+
+skinparam Class {
+    FontColor #FFFFFF
+    BorderThickness 1
+    BorderColor #FFFFFF
+    StereotypeFontColor #FFFFFF
+    FontName Arial
+}
+
+skinparam Actor {
+    BorderColor #000000
+    Color #000000
+    FontName Arial
+}
+
+skinparam Sequence {
+    MessageAlign center
+    BoxFontSize 15
+    BoxPadding 0
+    BoxFontColor #FFFFFF
+    FontName Arial
+}
+
+skinparam Participant {
+    FontColor #FFFFFFF
+    Padding 20
+}
+
+skinparam MinClassWidth 50
+skinparam ParticipantPadding 10
+skinparam Shadowing false
+skinparam DefaultTextAlignment center
+skinparam packageStyle Rectangle
+
+hide footbox
+hide members
+hide circle
+box Logic #C8C8FA
+participant ":LogicManager" as LogicManager #3333C4
+participant "clearCommand:ClearCommand" as ClearCommand #3333C4
+participant "orderBook:OrderBook" as OrderBook #3333C4
+participant "returnOrderBook:ReturnOrderBook" as ReturnOrderBook #3333C4
+participant "result:CommandResult" as CommandResult #3333C4
+end box
+
+box Model #F97181
+participant ":Model" as Model #9D0012
+end box
+activate LogicManager
+
+LogicManager -> ClearCommand ++ : execute(model)
+
+ClearCommand -> ClearCommand ++ : updateModel(model)
+
+create OrderBook
+ClearCommand -> OrderBook ++
+
+OrderBook - -> ClearCommand - - : orderBook
+
+create ReturnOrderBook
+ClearCommand -> ReturnOrderBook ++
+ReturnOrderBook -> ClearCommand - - : returnOrderBook
+
+ClearCommand -> Model ++ : setOrderBook(orderBook)
+Model - -> ClearCommand - -
+
+ClearCommand -> Model ++ : setReturnOrderBook(returnOrderBook)
+Model - -> ClearCommand - -
+
+create CommandResult
+ClearCommand -> CommandResult ++ : MESSAGE_SUCCESS_ORDER_BOOK
+
+CommandResult - -> ClearCommand - - : result
+
+ClearCommand - -> ClearCommand - - : result
+
+ClearCommand - -> LogicManager - - : result
+
+@enduml
+
+PlantUML version 1.2019.11(Sun Sep 22 18:02:15 SGT 2019)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11.0.5+10-b520.30
+Operating System: Windows 10
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>
