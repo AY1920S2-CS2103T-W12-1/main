@@ -29,7 +29,42 @@ interacts with it using a CLI, and it has a GUI created with JavaFX. It is writt
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: Allows the user to insert new delivery order into the Order List.</p>
+<p>What it does: Allows the user to insert new delivery order into the Order List. The user can add an order
+that contains the following attributes :<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Transaction ID</p>
+</li>
+<li>
+<p>Name</p>
+</li>
+<li>
+<p>Phone</p>
+</li>
+<li>
+<p>Address</p>
+</li>
+<li>
+<p>Email</p>
+</li>
+<li>
+<p>Delivery Timestamp</p>
+</li>
+<li>
+<p>Warehouse location</p>
+</li>
+<li>
+<p>Cash on Delivery</p>
+</li>
+<li>
+<p>Comment (Optional)</p>
+</li>
+<li>
+<p>Type Of Item (Optional)</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>Justification: This is an important feature and it is a must-have. It allows user to insert multiple orders into
@@ -329,6 +364,13 @@ but <code>tid/TRANSACTION_IDn/CUSTOMER_NAME</code> will be an invalid command in
 <p><code>CASH_ON_DELIVERY</code> must start with a dollar sign followed by the value.</p>
 </li>
 <li>
+<p><code>CASH_ON_DELIVERY</code> value must be strictly less than $10,000,000,000,000.If there is a need
+to add decimal places, you can only add two.</p>
+</li>
+<li>
+<p><strong>Do Not add any commas in the value of <code>CASH_ON_DELIVERY</code></strong></p>
+</li>
+<li>
 <p>To add the Delivery Date and Time, first type in the date in this format : YYYY-MM-DD. Followed by adding the time
 in 24 hour format.</p>
 </li>
@@ -348,10 +390,6 @@ but <code>n/9001 1009</code> is not allowed.</p>
 </li>
 <li>
 <p>Only numbers are allowed in <code>PHONE_NUMBER</code>.</p>
-</li>
-<li>
-<p><code>CASH_ON_DELIVERY</code> value must be strictly less than $10,000,000,000,000.If there is a need
-to add decimal places, you can only add two.</p>
 </li>
 </ul>
 </div>
@@ -580,6 +618,12 @@ different combinations of the command.<br></p>
 </li>
 <li>
 <p><code>show</code> <code>all</code></p>
+</li>
+<li>
+<p><code>show</code> <code>today</code></p>
+</li>
+<li>
+<p><code>show</code> <code>DATE</code></p>
 </li>
 </ul>
 </div>
@@ -855,12 +899,104 @@ all delivered orders and <code>undone</code> to display all orders that are not 
 </div>
 <div class="paragraph">
 <p>The LogicManager will call the parseCommand method of OrderBookParser, which then passes the second argument
-the second argument into the <code>ListCommand</code> object. This object will then be ultimately returned to the <code>LogicManager</code>.
+into the <code>ListCommand</code> object. This object will then be ultimately returned to the <code>LogicManager</code>.
 Next, the <code>LogicManager</code> will call the execute(model) method using the <code>ListCommand</code> object. In this method, it wil use
 the <code>Model</code> object to call the methods : updateFilteredOrderList and updateFilteredReturnOrderList. Since in this case, the
 argument is empty, the predicate that is parsed to the two methods will always result to true, which means to list
 everything from the order book and return book. When completed, the execute(model) will return a <code>CommandResult</code> object
 to the <code>LogicManager</code>, indicating that the command execution is a success.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="show"><a class="link" href="#show">Show feature</a></h3>
+<div class="paragraph">
+<p>This section describes the <a href="#show-functionality">functionality</a> , the <a href="#show-structure">structure</a>,
+<a href="#show-interactions">interactions</a> between objects and <a href="#show-path">path</a> the path execution of the <strong>Show Command</strong>.</p>
+</div>
+<div class="sect3">
+<h4 id="show-functionality"><a class="link" href="#show-functionality">What is the Show feature</a></h4>
+<div class="paragraph">
+<p>Show feature allows the user to see the statistical information of all the orders for both Delivery Orders
+and Return Orders.</p>
+</div>
+<div class="paragraph">
+<p>There are a few ways in which the user can input to the command box to execute the <strong>Show Command</strong> :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>show</code> <code>START_DATE</code> <code>[END_DATE]</code></p>
+</li>
+<li>
+<p><code>show</code> <code>all</code></p>
+</li>
+<li>
+<p><code>show</code> <code>today</code></p>
+</li>
+<li>
+<p><code>show</code> <code>DATE</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="show-structure"><a class="link" href="#show-structure">Structure Show feature</a></h4>
+<div class="paragraph">
+<p>The structure of the List Feature is as shown below:</p>
+</div>
+<div class="paragraph">
+<div class="title">Show Command Class Diagram</div>
+<p><span class="image"><img src="../images/ShowCommandClassDiagram.svg" alt="ShowCommandClassDiagram"></span></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="show-path"><a class="link" href="#show-path">Path execution of the Show Command</a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ShowCommandActivityDiagram.svg" alt="ShowCommandActivityDiagram">
+</div>
+<div class="title">Figure 8. Show Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above activity diagram shows the logic and the path execution when the <strong>Show Command</strong> is executed.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="show-interactions"><a class="link" href="#show-interactions">Interaction between objects during execution of Show Command</a></h4>
+<div class="paragraph">
+<p>The sequence diagram for the <strong>Show Command</strong> is shown below:<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ShowCommandSequenceDiagram.svg" alt="ShowCommandSequenceDiagram">
+</div>
+<div class="title">Figure 9. Show Command Sequence Diagram</div>
+</div>
+<div class="paragraph">
+<p>The user first calls the command "show all".</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>It can accept either one or two arguments.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The LogicManager will call the parseCommand method of OrderBookParser, which then passes the second argument
+into the <code>ShowCommand</code> object. Within the object, it will call the parseData method to make sense of the dates given.
+After that, it returns the object to the <code>LogicManager</code>.
+Next, the <code>LogicManager</code> will call the execute(model) method using the <code>ShowCommand</code> object.
+When completed, the execute(model) will return a <code>CommandResult</code> object to the <code>LogicManager</code>, indicating that the command execution is a success.
+In this case where the input is "show all", it will have a message that indicates that the command is showing all information.</p>
 </div>
 </div>
 </div>
@@ -1173,4 +1309,4 @@ Expected: An error will occur, a message will appear in the response box, indica
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 10:25:34 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 10:28:35 UTC</div></div></div></body></html>

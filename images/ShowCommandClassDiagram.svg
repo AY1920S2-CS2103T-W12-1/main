@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="553.5px" preserveAspectRatio="none" style="width:592px;height:553px;" version="1.1" viewBox="0 0 592 553" width="592.5px" zoomAndPan="magnify"><defs><filter height="300%" id="f6mp39wp8hijh" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="3.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="6.0" dy="6.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[614bb8879e231c0a0a338829be5e3f66]
+class {abstract}\nCommand--><rect fill="#FEFECE" filter="url(#f6mp39wp8hijh)" height="105.0352" id="{abstract}\nCommand" style="stroke: #A80036; stroke-width: 2.25;" width="337.5" x="50.25" y="12"/><text fill="#000000" font-family="sans-serif" font-size="18" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="78" x="180" y="38.1855">{abstract}</text><text fill="#000000" font-family="sans-serif" font-size="18" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="88.5" x="174.75" y="60.8262">Command</text><line style="stroke: #A80036; stroke-width: 2.25;" x1="51.75" x2="386.25" y1="72.2813" y2="72.2813"/><line style="stroke: #A80036; stroke-width: 2.25;" x1="51.75" x2="386.25" y1="84.2813" y2="84.2813"/><text fill="#000000" font-family="sans-serif" font-size="16.5" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="319.5" x="59.25" y="107.4097">+execute(model : Model) : CommandResult</text><!--MD5=[7e20e022571e30ec1001cf6eabd7f3e2]
+class Model--><rect fill="#FEFECE" filter="url(#f6mp39wp8hijh)" height="84.2813" id="Model" style="stroke: #A80036; stroke-width: 2.25;" width="94.5" x="461.25" y="22.5"/><text fill="#000000" font-family="sans-serif" font-size="18" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="91.5" x="462.75" y="48.6855">«interface»</text><text fill="#000000" font-family="sans-serif" font-size="18" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="49.5" x="483.75" y="71.3262">Model</text><line style="stroke: #A80036; stroke-width: 2.25;" x1="462.75" x2="554.25" y1="82.7813" y2="82.7813"/><line style="stroke: #A80036; stroke-width: 2.25;" x1="462.75" x2="554.25" y1="94.7813" y2="94.7813"/><!--MD5=[e6dc55dd324d6a8c189f3ada02b144fc]
+class Predicate--><rect fill="#FEFECE" filter="url(#f6mp39wp8hijh)" height="84.2813" id="Predicate" style="stroke: #A80036; stroke-width: 2.25;" width="94.5" x="482.25" y="330.75"/><text fill="#000000" font-family="sans-serif" font-size="18" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="91.5" x="483.75" y="356.9355">«interface»</text><text fill="#000000" font-family="sans-serif" font-size="18" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="78" x="490.5" y="379.5762">Predicate</text><line style="stroke: #A80036; stroke-width: 2.25;" x1="483.75" x2="575.25" y1="391.0313" y2="391.0313"/><line style="stroke: #A80036; stroke-width: 2.25;" x1="483.75" x2="575.25" y1="403.0313" y2="403.0313"/><!--MD5=[7115e272b1fbbee2bab1d3ba631c4fbb]
+class ShowCommand--><rect fill="#FEFECE" filter="url(#f6mp39wp8hijh)" height="331.4414" id="ShowCommand" style="stroke: #A80036; stroke-width: 2.25;" width="420" x="9" y="207"/><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="135" x="151.5" y="233.1855">ShowCommand</text><line style="stroke: #A80036; stroke-width: 2.25;" x1="10.5" x2="427.5" y1="244.6406" y2="244.6406"/><text fill="#000000" font-family="sans-serif" font-size="16.5" lengthAdjust="spacingAndGlyphs" textLength="129" x="18" y="267.769">-argument : String</text><text fill="#000000" font-family="sans-serif" font-size="16.5" lengthAdjust="spacingAndGlyphs" textLength="189" x="18" y="288.5229">-intendedMessage : String</text><text fill="#000000" font-family="sans-serif" font-size="16.5" lengthAdjust="spacingAndGlyphs" textLength="241.5" x="18" y="309.2769">-isCommandSuccessful : boolean</text><line style="stroke: #A80036; stroke-width: 2.25;" x1="10.5" x2="427.5" y1="318.9023" y2="318.9023"/><text fill="#000000" font-family="sans-serif" font-size="16.5" lengthAdjust="spacingAndGlyphs" textLength="250.5" x="18" y="342.0308">+parseData(argText : String) : void</text><text fill="#000000" font-family="sans-serif" font-size="16.5" lengthAdjust="spacingAndGlyphs" textLength="315" x="18" y="362.7847">+checkValidInput(arrOfDate : String[]) : void</text><text fill="#000000" font-family="sans-serif" font-size="16.5" lengthAdjust="spacingAndGlyphs" textLength="327" x="18" y="383.5386">+checkNumberOfToday(dates: String[]) : void</text><text fill="#000000" font-family="sans-serif" font-size="16.5" lengthAdjust="spacingAndGlyphs" textLength="280.5" x="18" y="404.2925">+initEndDate(arrOfDate : String[]) : void</text><text fill="#000000" font-family="sans-serif" font-size="16.5" lengthAdjust="spacingAndGlyphs" textLength="240" x="18" y="425.0464">+initStartDate(start : String) : void</text><text fill="#000000" font-family="sans-serif" font-size="16.5" lengthAdjust="spacingAndGlyphs" textLength="162" x="18" y="445.8003">+validateDates() : void</text><text fill="#000000" font-family="sans-serif" font-size="16.5" lengthAdjust="spacingAndGlyphs" textLength="402" x="18" y="466.5542">+setSuccessMessage(successMessage : String) : void</text><text fill="#000000" font-family="sans-serif" font-size="16.5" lengthAdjust="spacingAndGlyphs" textLength="367.5" x="18" y="487.3081">+setFailureMessage(failureMessage : String) : void</text><text fill="#000000" font-family="sans-serif" font-size="16.5" lengthAdjust="spacingAndGlyphs" textLength="186" x="18" y="508.062">+initializeMessage() : void</text><text fill="#000000" font-family="sans-serif" font-size="16.5" lengthAdjust="spacingAndGlyphs" textLength="306" x="18" y="528.8159">+execute(model : Model) : CommandResult</text><!--MD5=[f4b9ba1aa9e113f5ae64b6d0641fafbf]
+reverse link Model to ShowCommand--><path d="M448.9215,128.8185 C427.11,151.818 401.292,179.0415 374.976,206.7885 " fill="none" id="Model&lt;-ShowCommand" style="stroke: #A80036; stroke-width: 1.5; stroke-dasharray: 7.0,7.0;"/><polygon fill="none" points="441.7935,121.077,470.0565,106.5345,457.0305,135.528,441.7935,121.077" style="stroke: #A80036; stroke-width: 1.5;"/><!--MD5=[193640f5643d9c90a8b9923f93c2b502]
+reverse link {abstract}\nCommand to ShowCommand--><path d="M219,147.1815 C219,165.687 219,186.003 219,206.6115 " fill="none" id="{abstract}\nCommand&lt;-ShowCommand" style="stroke: #A80036; stroke-width: 1.5;"/><polygon fill="none" points="208.5,147.0915,219,117.0915,229.5,147.0915,208.5,147.0915" style="stroke: #A80036; stroke-width: 1.5;"/><!--MD5=[e6e5b2c0d62739a400b1d12936085b12]
+link Model to Predicate--><path d="M511.2885,106.5345 C515.133,162.4095 522.0495,262.953 526.1625,322.7475 " fill="none" id="Model-&gt;Predicate" style="stroke: #A80036; stroke-width: 1.5; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A80036" points="526.6995,330.5475,531.7597,316.6679,526.1852,323.0652,519.788,317.4907,526.6995,330.5475" style="stroke: #A80036; stroke-width: 1.5;"/><!--MD5=[d1548814fab4b38ebe461001c20d0ff2]
+@startuml
+
+skinparam backgroundColor #ffffff
+skinparam classAttributeIconSize 0
+hide circle
+
+abstract class "{abstract}\nCommand" {
+    + {abstract} execute(model : Model) : CommandResult
+}
+
+interface Model <<interface>> {
+}
+interface Predicate <<interface>> {
+}
+
+class ShowCommand implements Model{
+    - argument : String
+    - intendedMessage : String
+    - isCommandSuccessful : boolean
+
+    + parseData(argText : String) : void
+    + checkValidInput(arrOfDate : String[]) : void
+    + checkNumberOfToday(dates: String[]) : void
+    + initEndDate(arrOfDate : String[]) : void
+    + initStartDate(start : String) : void
+    + validateDates() : void
+    + setSuccessMessage(successMessage : String) : void
+    + setFailureMessage(failureMessage : String) : void
+    + initializeMessage() : void
+    + execute(model : Model) : CommandResult
+}
+ShowCommand - -up|> "{abstract}\nCommand"
+Model ..> Predicate
+@enduml
+
+PlantUML version 1.2019.11(Sun Sep 22 18:02:15 SGT 2019)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11.0.5+10-b520.17
+Operating System: Windows 10
+Default Encoding: UTF-8
+Language: en
+Country: SG
+--></g></svg>

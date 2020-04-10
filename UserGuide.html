@@ -487,6 +487,13 @@ but <code>tid/TRANSACTION_IDn/CUSTOMER_NAME</code> will be an invalid command in
 <p><code>CASH_ON_DELIVERY</code> must start with a dollar sign followed by the value.</p>
 </li>
 <li>
+<p><code>CASH_ON_DELIVERY</code> value must be strictly less than $10,000,000,000,000.If there is a need
+to add decimal places, you can only add two.</p>
+</li>
+<li>
+<p><strong>Do Not add any commas in the value of <code>CASH_ON_DELIVERY</code></strong></p>
+</li>
+<li>
 <p>To add the Delivery Date and Time, first type in the date in this format : YYYY-MM-DD. Followed by adding the time
 in 24 hour format.</p>
 </li>
@@ -506,10 +513,6 @@ but <code>n/9001 1009</code> is not allowed.</p>
 </li>
 <li>
 <p>Only numbers are allowed in <code>PHONE_NUMBER</code>.</p>
-</li>
-<li>
-<p><code>CASH_ON_DELIVERY</code> value must be strictly less than $10,000,000,000,000.If there is a need
-to add decimal places, you can only add two.</p>
 </li>
 </ul>
 </div>
@@ -2194,6 +2197,12 @@ different combinations of the command.<br></p>
 <li>
 <p><code>show</code> <code>all</code></p>
 </li>
+<li>
+<p><code>show</code> <code>today</code></p>
+</li>
+<li>
+<p><code>show</code> <code>DATE</code></p>
+</li>
 </ul>
 </div>
 <div class="admonitionblock note">
@@ -3264,4 +3273,4 @@ OR<br>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 10:25:34 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 10:28:35 UTC</div></div></div></body></html>
