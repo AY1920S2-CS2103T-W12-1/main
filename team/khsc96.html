@@ -942,15 +942,24 @@ However, if <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> is
 </div>
 <h3 id="use-case-uc05-editing-order-details" class="discrete">Use case: UC05 - Editing order details</h3>
 <div class="paragraph">
+<p>Preconditions: There should be a valid order/return order that can be edited.</p>
+</div>
+<div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
+<p>User requests to <span class="underline">list orders (UC10).</span></p>
+</li>
+<li>
+<p>User wants to edit a specific order.</p>
+</li>
+<li>
 <p>User request to edit order details.</p>
 </li>
 <li>
-<p>Delino edit the order details</p>
+<p>Delino edit the order details.</p>
 </li>
 <li>
 <p>Delino display changes made.</p>
@@ -966,11 +975,11 @@ However, if <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> is
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a. Delino detects invalid syntax.</p>
+<p>3a. Delino detects invalid syntax from user input.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a1. Delino shows an error message.</p>
+<p>3a1. Delino shows an error message.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -983,11 +992,25 @@ However, if <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> is
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1b. Delino unable to detect any order with the transaction id.</p>
+<p>3b. Delino unable to detect any order specified by the user.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1b1. Delino shows no order found message.</p>
+<p>3b1. Delino shows no order found message.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3c. Delino detects duplicate a order.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3c1. Delino shows duplicate order message.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1004,7 +1027,10 @@ However, if <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> is
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User request to search specific order by transaction id</p>
+<p>User wants to search a specifc order by a given keyword.</p>
+</li>
+<li>
+<p>User request to search specific order by a given keyword.</p>
 </li>
 <li>
 <p>Delino display the requested order.</p>
@@ -1020,11 +1046,11 @@ However, if <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> is
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a. Delino detects invalid syntax.</p>
+<p>2a. Delino detects invalid syntax from user input.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a1. Delino shows an error message.</p>
+<p>2a1. Delino shows an error message.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1037,11 +1063,11 @@ However, if <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> is
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1b. Delino unable to find order with the transaction id.</p>
+<p>2b. Delino unable to find order with the transaction id.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1b1. Delino display order not found message.</p>
+<p>2b1. Delino display order not found message.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1054,4 +1080,4 @@ However, if <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> is
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 17:20:46 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 17:25:36 UTC</div></div></div></body></html>

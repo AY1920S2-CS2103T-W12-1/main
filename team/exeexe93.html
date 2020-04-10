@@ -833,7 +833,7 @@ OR<br>
 <div class="title">Figure 4. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="{repoURL}/blob/master/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
+<p><strong>API</strong> : <a href="{repoURL}/blob/master/src/main/java/seedu/delino/storage/Storage.java"><code>Storage.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Storage</code> component,</p>
@@ -1233,6 +1233,9 @@ which is then pass back to the <code>LogicManager</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
+<p>User wants to clear all orders.</p>
+</li>
+<li>
 <p>User requests to clear all orders.</p>
 </li>
 <li>
@@ -1252,11 +1255,11 @@ which is then pass back to the <code>LogicManager</code>.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a. Delino detects invalid syntax.</p>
+<p>2a. Delino detects invalid syntax from user input.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a1. Delino shows an error message.</p>
+<p>2a1. Delino shows an error message.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1269,29 +1272,29 @@ which is then pass back to the <code>LogicManager</code>.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1b. Delino detects no flag <code>-f</code>.</p>
+<p>2b. Delino detects no flag <code>-f</code>.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1b1. Delino trigger pop-up message.</p>
+<p>2b1. Delino trigger pop-up message.</p>
 <div class="ulist None">
 <ul class="None">
 <li>
-<p>1b2a. User select <code>yes</code> button.</p>
+<p>2b2a. User select <code>yes</code> button.</p>
 <div class="ulist None">
 <ul class="None">
 <li>
-<p>1b2a1. Return to step 2.</p>
+<p>2b2a1. Return to step 2.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>1b2b. User select <code>no</code> button.</p>
+<p>2b2b. User select <code>no</code> button.</p>
 <div class="ulist None">
 <ul class="None">
 <li>
-<p>1b2b1. Use case ends.</p>
+<p>2b2b1. Use case ends.</p>
 </li>
 </ul>
 </div>
@@ -1307,11 +1310,11 @@ which is then pass back to the <code>LogicManager</code>.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1c. Delino detects no orders.</p>
+<p>2c. Delino detects no orders.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1c1. Delino shows no order to be cleared message.</p>
+<p>2c1. Delino shows no order to be cleared message.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1328,6 +1331,9 @@ which is then pass back to the <code>LogicManager</code>.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
+<li>
+<p>User wants to import a specific orders from an external file.</p>
+</li>
 <li>
 <p>User requests to import orders from an external file.</p>
 </li>
@@ -1351,11 +1357,11 @@ which is then pass back to the <code>LogicManager</code>.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a. Delino detects invalid syntax.</p>
+<p>2a. Delino detects invalid syntax from user input.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a1. Delino shows an error message.</p>
+<p>2a1. Delino shows an error message.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1368,11 +1374,11 @@ which is then pass back to the <code>LogicManager</code>.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. Delino detects invalid file path.</p>
+<p>3a. Delino detects invalid file path.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a1. Delino shows the invalid file path error message</p>
+<p>3a1. Delino shows the invalid file path error message</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1385,11 +1391,11 @@ which is then pass back to the <code>LogicManager</code>.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a. Delino is unable to open the file.</p>
+<p>4a. Delino is unable to open the file.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. Delino shows permission denied error message.</p>
+<p>4a1. Delino shows permission denied error message.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1592,4 +1598,4 @@ Expected: In the response box, a message will appear to indicate that the import
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 17:20:46 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 17:25:36 UTC</div></div></div></body></html>

@@ -672,7 +672,7 @@ Are you interested in improving your parcel delivery management? Read further to
 <div class="title">Figure 2. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="{repoURL}/blob/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
+<p><strong>API</strong> : <a href="{repoURL}/blob/master/src/main/java/seedu/delino/model/Model.java"><code>Model.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Model</code>,</p>
@@ -1238,7 +1238,7 @@ method to update the list in the <code>model</code>.<br></p>
 <div class="sect1">
 <h2 id="use-cases"><a class="link" href="#use-cases">Use Cases</a></h2>
 <div class="sectionbody">
-<h3 id="use-case-uc12-display-list-of-commands-in-delino-using-help" class="discrete">Use case: UC12 - Display list of commands in Delino using help</h3>
+<h3 id="use-case-uc08-request-for-help" class="discrete">Use case: UC08 - Request for help</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1295,6 +1295,315 @@ method to update the list in the <code>model</code>.<br></p>
 </li>
 </ul>
 </div>
+<h3 id="use-case-uc09-importing-order-details" class="discrete">Use case: UC09 -  Importing order details</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User wants to import a specific orders from an external file.</p>
+</li>
+<li>
+<p>User requests to import orders from an external file.</p>
+</li>
+<li>
+<p>Delino checks for file existence.</p>
+</li>
+<li>
+<p>Delino imports all orders from the external file.</p>
+</li>
+<li>
+<p>Delino displays all orders imported.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. Delino detects invalid syntax from user input.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Delino shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a. Delino detects invalid file path.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. Delino shows the invalid file path error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>4a. Delino is unable to open the file.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>4a1. Delino shows permission denied error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc10-listing-all-orders" class="discrete">Use case: UC10 - Listing all orders</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User wants to view all orders.</p>
+</li>
+<li>
+<p>User requests to view the list of orders.</p>
+</li>
+<li>
+<p>Delino display list of orders.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. Delino detects invalid syntax from user input.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Delino shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a. Delino detects no orders.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. Delino shows empty order list message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc11-returning-an-order" class="discrete">Use case: UC11 - Returning an order</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User wants to return an order or create a new return order.</p>
+</li>
+<li>
+<p>User requests to return an order or create a new return order.</p>
+</li>
+<li>
+<p>Either an order will be converted to a return order or a new return order will be created</p>
+</li>
+<li>
+<p>Delino displays the updated return order list with the new return order.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. Delino detects invalid syntax from user input.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Delino shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b. Delino detects invalid parcel attributes.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b1. Delino shows an error message to the user.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2c. Delino detects invalid <a href="#command_prefix"><code>TRANSACTION_ID</code></a>, i.e. order with
+the given <a href="#command_prefix"><code>TRANSACTION_ID</code></a> does not exist.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2c1. Delino shows an error message to the user.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2d. Delino detects missing parcel attributes.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2d1. Delino shows an error message to the user.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc12-obtain-orders-in-a-postal-sector" class="discrete">Use case: UC12 - Obtain orders in a postal sector</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User wants to obtain all orders in a specified postal sector.</p>
+</li>
+<li>
+<p>User requests to obtain orders in a specified postal sector</p>
+</li>
+<li>
+<p>Delino obtains all orders located in the postal sector</p>
+</li>
+<li>
+<p>Delino display the list of orders</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. Delino detects invalid syntax from user input.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Delino shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a. Delino detects no orders.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. Delino shows empty order list message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc13-show-statistics" class="discrete">Use case: UC13 - Show statistics</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to see the statistics of orders.</p>
+</li>
+<li>
+<p>Delino opens a window that contains the statistics.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1315,13 +1624,26 @@ method to update the list in the <code>model</code>.<br></p>
 <p>The system should be able to respond within three seconds.</p>
 </li>
 <li>
-<p>The system should be able to work without internet access.</p>
+<p>The system should work without internet access.</p>
 </li>
 <li>
 <p>A user should be able to get all the information he/she needs within four commands.</p>
 </li>
 <li>
 <p>A user should be able to familiarise himself/herself within an hour of usage.</p>
+</li>
+<li>
+<p>The data cannot be stored in a Database Management System (DBMS).</p>
+</li>
+<li>
+<p>The system should work once downloaded and should not depend on a remote server.</p>
+</li>
+<li>
+<p>The application should not be larger than 50Mb.</p>
+</li>
+<li>
+<p>The application should be crash during its execution. It should show warning messages instead of
+crashing.</p>
 </li>
 </ol>
 </div>
@@ -2079,18 +2401,21 @@ Expected: The GUI window will be closed</p>
 <li>
 <p>Test case: Adding any other words as the second argument of the <code>exit</code> command
 Expected: The response box will display an invalid command message</p>
-<h3 id="use-case-uc11-returning-an-order" class="discrete">Use case: UC11 - Returning an order</h3>
 </li>
 </ol>
 </div>
 </li>
 </ol>
 </div>
+<h3 id="use-case-uc11-returning-an-order-2" class="discrete">Use case: UC11 - Returning an order</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
+<li>
+<p>User wants to return an order or create a new return order.</p>
+</li>
 <li>
 <p>User requests to return an order or create a new return order.</p>
 </li>
@@ -2111,11 +2436,11 @@ Expected: The response box will display an invalid command message</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a. Delino detects invalid syntax.</p>
+<p>2a. Delino detects invalid syntax from user input.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a1. Delino shows an error message to the user.</p>
+<p>2a1. Delino shows an error message.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2128,11 +2453,11 @@ Expected: The response box will display an invalid command message</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1b. Delino detects invalid parcel attributes.</p>
+<p>2b. Delino detects invalid parcel attributes.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1b1. Delino shows an error message to the user.</p>
+<p>2b1. Delino shows an error message to the user.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2145,12 +2470,12 @@ Expected: The response box will display an invalid command message</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1c. Delino detects invalid <a href="#command_prefix"><code>TRANSACTION_ID</code></a>, i.e. order with
+<p>2c. Delino detects invalid <a href="#command_prefix"><code>TRANSACTION_ID</code></a>, i.e. order with
 the given <a href="#command_prefix"><code>TRANSACTION_ID</code></a> does not exist.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1c1. Delino shows an error message to the user.</p>
+<p>2c1. Delino shows an error message to the user.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2163,29 +2488,31 @@ the given <a href="#command_prefix"><code>TRANSACTION_ID</code></a> does not exi
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1d. Delino detects missing parcel attributes.</p>
+<p>2d. Delino detects missing parcel attributes.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1d1. Delino shows an error message to the user.</p>
+<p>2d1. Delino shows an error message to the user.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 <h3 id="use-case-uc04-mark-order-or-return-order-as-delivered" class="discrete">Use case: UC04 - Mark order or return order as delivered</h3>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User request to mark order or return order as delivered,
-based on the <a href="#command_prefix"><code>FLAG</code></a> provided, -o or -r respectively and <a href="#command_prefix"><code>INDEX</code></a>.</p>
+<p>User wants to mark an order or return order as delivered.</p>
+</li>
+<li>
+<p>User request to mark order or return order as delivered.</p>
 </li>
 <li>
 <p>Delino changes the delivery status of the specified order or return order to delivered.</p>
@@ -2204,11 +2531,11 @@ based on the <a href="#command_prefix"><code>FLAG</code></a> provided, -o or -r 
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a. Delino detects invalid syntax.</p>
+<p>2a. Delino detects invalid syntax from user input.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a1. Delino shows an error message.</p>
+<p>2a1. Delino shows an error message.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2221,11 +2548,11 @@ based on the <a href="#command_prefix"><code>FLAG</code></a> provided, -o or -r 
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1b. Delino unable to detect any parcel with the <a href="#command_prefix"><code>INDEX</code></a> provided.</p>
+<p>2b. Delino unable to detect any parcel with the <a href="#command_prefix"><code>INDEX</code></a> provided.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1b1. Delino shows error message to the user.</p>
+<p>2b1. Delino shows error message to the user.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2238,11 +2565,11 @@ based on the <a href="#command_prefix"><code>FLAG</code></a> provided, -o or -r 
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1c. Delino unable to detect valid <a href="#command_prefix"><code>INDEX</code></a> provided.</p>
+<p>2c. Delino unable to detect valid <a href="#command_prefix"><code>INDEX</code></a> provided.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1c1. Delino shows error message to the user.</p>
+<p>2c1. Delino shows error message to the user.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2255,11 +2582,11 @@ based on the <a href="#command_prefix"><code>FLAG</code></a> provided, -o or -r 
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1d. Delino unable to detect valid <a href="#command_prefix"><code>FLAG</code></a> provided.</p>
+<p>2d. Delino unable to detect valid <a href="#command_prefix"><code>FLAG</code></a> provided.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1d1. Delino shows error message to the user.</p>
+<p>2d1. Delino shows error message to the user.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2480,4 +2807,4 @@ Expected: An error will occur and the response box will show an error message</p
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 17:20:46 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 17:25:36 UTC</div></div></div></body></html>
