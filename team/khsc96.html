@@ -191,7 +191,7 @@ This feature requires a thorough understanding of the existing code of AB3 such 
 <div class="sect2">
 <h3 id="edit"><a class="link" href="#edit">Editing an order : <code>edit</code> [Done by - Kenny Ho Si Chong]</a></h3>
 <div class="paragraph">
-<p>In this section, you will be able to find out how to properly <a href="#edit-works">use</a> the <code>Edit</code> command and the relevant <a href="#edit-examples">examples</a>.<br>
+<p>In this section, you will be able to find out how to properly <a href="#edit-works">use</a> the <code>edit</code> command and the relevant <a href="#edit-examples">examples</a>.<br>
 Why will you want to use the <code>edit</code> command? If you wish to edit any field of a parcel, the <code>edit</code> command will provide you the means to do so.</p>
 </div>
 <div class="sect3">
@@ -200,7 +200,7 @@ Why will you want to use the <code>edit</code> command? If you wish to edit any 
 <p>Here is how you can edit the details of any parcel by following the steps below:<br></p>
 </div>
 <div class="paragraph">
-<p><strong>Step 1</strong> : Type in the keyword <strong>edit</strong><br>
+<p><strong>Step 1</strong> : Type in the keyword <code>edit</code><br>
 <strong>Step 2</strong> : Provide the <code><a href="#command_flags">FLAG</a></code> corresponding to the parcel order type you want to edit<br>
 <strong>Step 3</strong> : Provide the <code>INDEX</code> of the parcel displayed on the screen that you wish to edit<br>
 <strong>Step 4</strong> : Provide the <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> coupled with a front slash <code>/</code> and the new value you want to change to.<br>
@@ -231,7 +231,7 @@ Why will you want to use the <code>edit</code> command? If you wish to edit any 
 <div class="sect3">
 <h4 id="edit-examples"><a class="link" href="#edit-examples">What constitutes a valid Edit command</a></h4>
 <div class="paragraph">
-<p>The syntax for a valid <code>Edit</code> command can be seen below:</p>
+<p>The syntax for a valid <code>edit</code> command can be seen below:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -270,6 +270,9 @@ Why will you want to use the <code>edit</code> command? If you wish to edit any 
 </tr>
 </table>
 </div>
+<div class="paragraph">
+<p>These are the possible combinations of the <code>edit</code> command:</p>
+</div>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 1. Possible Combinations of Edit command</caption>
 <colgroup>
@@ -286,22 +289,22 @@ Why will you want to use the <code>edit</code> command? If you wish to edit any 
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to edit the name of the first return order displayed on returns list you can do this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to edit the name of the first return order displayed on returns list</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit</code> <code>-r</code> <code>1</code> <code>n/Xuan En</code><br></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The index <code>1</code> customer&#8217;s name of the return order list will be changed to <code>Xuan En</code>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to edit the phone number of the second order displayed on the orders list you can do this!</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to edit the phone number of the second order displayed on the orders list.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit</code> <code>-o</code> <code>2</code> <code>p/9999 4444</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The index <code>2</code> customer&#8217;s phone number of the order list will be changed changed to <code>9999 4444</code>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to edit the address of the first order displayed on the orders list you can do this!</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to edit the address of the first order displayed on the orders list.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit</code> <code>-o</code> <code>1</code> <code>a/Blk 123 Pasir Ris Street 51 #12-21 S510123</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The index <code>1</code> customer&#8217;s address of the order list will be changed to <code>Blk 123 Pasir Ris Street 51 #12-21 S510123</code>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to edit the name, phone number and address of the third return order displayed on the returns list you can do this!</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to edit the name, phone number and address of the third return order displayed on the returns list.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit</code> <code>-r</code> <code>3</code> <code>n/Mr Tan</code> <code>p/0123 4567</code> <code>a/Blk 141 Yishun st 71 #09-09 S760141</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The index <code>3</code> customer&#8217;s name, phone and address of the return order list will be changed accordingly to the prefix.</p></td>
 </tr>
@@ -339,17 +342,17 @@ Why will you want to use the <code>edit</code> command? If you wish to edit any 
 <div class="sect2">
 <h3 id="search"><a class="link" href="#search">Searching for parcels using their attributes: <code>search</code> [Done by Kenny Ho Si Chong]</a></h3>
 <div class="paragraph">
-<p>In this section, you will be able to find out how to properly <a href="#edit-works">use</a> the Search command and the relevant <a href="#edit-examples">examples</a>.<br>
-Why will you want to use the <code>search</code> command? If you wish to <code>search</code> for a parcel with specific keywords, the <code>search</code> command will provide you the means to do so.</p>
+<p>In this section, you will be able to find out how to properly <a href="#search-works">use</a> the <code>search</code> command and the relevant <a href="#search-examples">examples</a>.<br>
+Why will you want to use the <code>search</code> command? If you wish to search for a parcel with specific keywords, the <code>search</code> command will provide you the means to do so.</p>
 </div>
 <div class="sect3">
 <h4 id="search-works"><a class="link" href="#search-works">How to use the Search command?</a></h4>
 <div class="paragraph">
-<p>Here is how you can <code>search</code> for any parcel containing the keywords given by following the steps below:<br></p>
+<p>Here is how you can search for any parcel containing the keywords given by the following steps below:<br></p>
 </div>
 <div class="paragraph">
-<p><strong>Step 1</strong> : Type in the keyword <strong>search</strong><br>
-<strong>Step 2</strong> (optional) : Provide <code>-o</code> flag if you want to only search for parcels in the order list. A <code>-r</code> flag also can be used to only search for parcels in the return list.</p>
+<p><strong>Step 1</strong> : Type in the keyword <code>search</code><br>
+<strong>Step 2 (optional)</strong> : Provide <code>-o</code> flag if you want to only search for parcels in the order list. A <code>-r</code> flag also can be used to only search for parcels in the return list.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -366,8 +369,8 @@ Why will you want to use the <code>search</code> command? If you wish to <code>s
 </table>
 </div>
 <div class="paragraph">
-<p><strong>Step 3 (optional)</strong> : If you wish to only specifically search for keyword in a field, you should provide the <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> coupled with a front slash <code>/</code> and the keyword you want to search for.<br>
-<strong>Step 4</strong> : Provide any number of alphanumeric word you wish to search for in the parcel.<br>
+<p><strong>Step 3 (optional)</strong> : If you wish to only specifically search for keywords in a field, you should provide the <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> coupled with a front slash <code>/</code> and the keyword you want to search for.<br>
+<strong>Step 4</strong> : Provide any number of alphanumeric words you wish to search for in the parcel.<br>
 <strong>Step 5</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
 </div>
 <div class="admonitionblock note">
@@ -398,15 +401,15 @@ Why will you want to use the <code>search</code> command? If you wish to <code>s
 <div class="sect3">
 <h4 id="search-examples"><a class="link" href="#search-examples">What constitutes a valid Search command?</a></h4>
 <div class="paragraph">
-<p>The syntax for a valid <code>Search</code> command can be seen below:</p>
+<p>The syntax for a valid <code>search</code> command can be seen below:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>search</code> <code><a href="#command_flags">[FLAG]</a></code> <code>KEYWORD</code> <code>[MORE_KEYWORDS]&#8230;&#8203;</code> OR</p>
+<p><code>search</code> <code>[<a href="#command_flags">FLAG</a>]</code> <code>KEYWORD</code> <code>[MORE_KEYWORDS]&#8230;&#8203;</code> OR</p>
 </li>
 <li>
-<p><code>search</code> <code><a href="#command_flags">[FLAG]</a></code> <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD</code> <code>[MORE_KEYWORDS]&#8230;&#8203;</code> <code>[<a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD MORE_KEYWORDS]&#8230;&#8203;</code></p>
+<p><code>search</code> <code>[<a href="#command_flags">FLAG</a>]</code> <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD</code> <code>[MORE_KEYWORDS]&#8230;&#8203;</code> <code>[<a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD MORE_KEYWORDS]&#8230;&#8203;</code></p>
 </li>
 </ul>
 </div>
@@ -436,6 +439,9 @@ Why will you want to use the <code>search</code> command? If you wish to <code>s
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>These are the possible combinations of the <code>search</code> command:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 2. Possible Combinations of Search command</caption>
@@ -473,7 +479,7 @@ Why will you want to use the <code>search</code> command? If you wish to <code>s
 <td class="tableblock halign-left valign-top"><p class="tableblock">Return all order(s) with either phone number of <code>92039999</code> or transaction ID of <code>asj2od3943</code> or name of <code>jeremy</code> or any of the above combinations.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to search for any parcel containing the name <code>Jeremy</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to search for <strong>any</strong> parcel containing the name <code>Jeremy</code>.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>n/Jeremy</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Return all parcel(s) with the name of <code>Jeremy</code></p></td>
 </tr>
@@ -570,7 +576,7 @@ the provided link in the table below.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#search"><strong>Search</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code><a href="#command_flags">[FLAG]</a></code> <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD</code> <code>[MORE_KEYWORDS]&#8230;&#8203;</code> <code>[<a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD MORE_KEYWORDS]&#8230;&#8203;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>[<a href="#command_flags">FLAG</a>]</code> <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD</code> <code>[MORE_KEYWORDS]&#8230;&#8203;</code> <code>[<a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD MORE_KEYWORDS]&#8230;&#8203;</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>-r</code> <code>tid/ac1e345x7s</code><br>
 <code>search</code> <code>-r</code> <code>Jeremy Loh</code><br>
 <code>search</code> <code>-o</code> <code>tid/asj2od3943</code><br>
@@ -1048,4 +1054,4 @@ However, if <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> is
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 14:58:15 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 15:19:30 UTC</div></div></div></body></html>

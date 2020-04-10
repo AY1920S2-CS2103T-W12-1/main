@@ -340,32 +340,32 @@ to do so.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to have a confirmation notice before clearing both lists, you could use this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to have a confirmation notice before clearing both lists.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Popup will appear and ask the user for confirmation to clear both order list and return order list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pop-up will appear and ask the user for confirmation to clear both order list and return order list.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you don&#8217;t want to get prompt before clearing both lists, you could use this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you don&#8217;t want to get prompt before clearing both lists.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code> <code>-f</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both order list and return order list will be cleared immediately.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to have a confirmation notice before clearing return order list, you could use this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to have a confirmation notice before clearing return order list.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code> <code>-r</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Popup will appear and ask the user for confirmation to clear the return order list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pop-up will appear and ask the user for confirmation to clear the return order list.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you don&#8217;t want to get prompt before clearing return order list, you could use this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you don&#8217;t want to get prompt before clearing return order list.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code> <code>-f</code> <code>-r</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Only return order list is cleared immediately.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to have a confirmation notice before clearing order list, you could use this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to have a confirmation notice before clearing order list.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code> <code>-o</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Popup will appear and ask the user for confirmation to clear the order list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pop-up will appear and ask the user for confirmation to clear the order list.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you don&#8217;t want to get prompt before clearing order list, you could use this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you don&#8217;t want to get prompt before clearing order list.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code> <code>-o</code> <code>-f</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Only order list is cleared immediately.</p></td>
 </tr>
@@ -390,7 +390,7 @@ to do so.</p>
 </div>
 <div class="paragraph">
 <p><strong>Step 1</strong> : Type in the keyword <code>import</code>.<br>
-<strong>Step 2</strong> : Provides the CSV file name that you would like to import with the <strong>.csv</strong> extension behind<br>
+<strong>Step 2</strong> : Provide the CSV file name that you would like to import with the <strong>.csv</strong> extension behind.<br>
 <strong>Step 3</strong> : Press <code>Enter</code> on your keyboard to send the instruction to Delino.</p>
 </div>
 </div>
@@ -398,10 +398,10 @@ to do so.</p>
 <h4 id="what-constitutes-a-valid-import-command"><a class="link" href="#what-constitutes-a-valid-import-command">What constitutes a valid Import command</a></h4>
 <div class="paragraph">
 <p>In this section, you will learn about the syntax of a valid <code>import</code> command, the format for both orders and return orders in the CSV file
-and the combination for the <code>import</code> command.</p>
+and the possible combination for the <code>import</code> command.</p>
 </div>
 <div class="paragraph">
-<p>The syntax for a valid <code>Import</code> command can be seen below:</p>
+<p>The syntax for a valid <code>import</code> command can be seen below:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -509,7 +509,7 @@ and the combination for the <code>import</code> command.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Commas <code>,</code> are required in between of the different fields.</p>
+<p>Commas <code>,</code> are required in between the different fields.</p>
 </li>
 <li>
 <p>Prefixes are required before any value for that field.</p>
@@ -524,7 +524,7 @@ and the combination for the <code>import</code> command.</p>
 <p><code>ORDER_TYPE</code> denote the start of an delivery order or return order.</p>
 </li>
 <li>
-<p>If there are 2 or more <code>ORDER_TYPE</code> within a single order sentence it will be treated as 2 or more orders.</p>
+<p>If there are 2 or more <code>ORDER_TYPE</code> within a single CSV row, it will be treated as 2 or more orders.</p>
 </li>
 <li>
 <p>The last value of the same type will be stored if duplicate prefix type is found in a single order sentence.</p>
@@ -542,7 +542,7 @@ and the combination for the <code>import</code> command.</p>
 </table>
 </div>
 <div id="import-combination" class="paragraph">
-<p>There are only one possible combination for the <code>import</code> Command:</p>
+<p>There is only one possible combination for the <code>import</code> Command:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 2. Possible combination of Import command</caption>
@@ -560,7 +560,7 @@ and the combination for the <code>import</code> command.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to import all of the orders and return orders at once via a CSV file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to import all of the orders and return orders at once via a CSV file.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>import</code> <code>orders.csv</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Import the contents of the CSV file, <code>orders.csv</code>, to Delino.</p></td>
 </tr>
@@ -637,7 +637,7 @@ the provided link in the table below.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#search"><strong>Search</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code><a href="#command_flags">[FLAG]</a></code> <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD</code> <code>[MORE_KEYWORDS]&#8230;&#8203;</code> <code>[<a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD MORE_KEYWORDS]&#8230;&#8203;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>[<a href="#command_flags">FLAG</a>]</code> <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD</code> <code>[MORE_KEYWORDS]&#8230;&#8203;</code> <code>[<a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD MORE_KEYWORDS]&#8230;&#8203;</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>-r</code> <code>tid/ac1e345x7s</code><br>
 <code>search</code> <code>-r</code> <code>Jeremy Loh</code><br>
 <code>search</code> <code>-o</code> <code>tid/asj2od3943</code><br>
@@ -1592,4 +1592,4 @@ Expected: In the response box, a message will appear to indicate that the import
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 14:58:15 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 15:19:30 UTC</div></div></div></body></html>
