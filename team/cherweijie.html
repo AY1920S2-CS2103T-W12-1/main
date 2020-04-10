@@ -21,29 +21,92 @@ interacts with it using a CLI, and it has a GUI created with JavaFX. It is writt
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>: [Coming soon]</p>
+<p><strong>Major enhancement</strong>:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does:</p>
+<p>Added <code>return</code> command (Pull request: <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/303">#303</a>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: This command allows the user to create a new return order and add it into the Return Order List or
+convert a delivered order into a return order
+and add it into the Return Order List.</p>
 </li>
 <li>
-<p>Justification:</p>
+<p>Justification: This feature is a must-have in Delino as it is a delivery management app. It allows the user to convert
+delivered orders into return orders and even create new return orders from scratch with the given parcel attributes.</p>
 </li>
 <li>
-<p>Highlights:</p>
-</li>
-<li>
-<p>Credits: <em>{mention here if you reused any code/ideas from elsewhere or if a third-party library is heavily used in the feature so that a reader can make a more accurate judgement of how much effort went into the feature}</em></p>
+<p>Highlights: This feature requires a deep understanding of the AddressBook 3 (AB3) codebase and that took quite a bit of time.
+Two different logic execution paths had to be implemented and the testing of this feature also had to be extensive
+and exhaustive to ensure that no test cases were missed in the process of testing. The parametized testing functionality
+provided by JUnit 5 made this process to be much more convenient (<a href="https://www.baeldung.com/parameterized-tests-junit-5" class="bare">https://www.baeldung.com/parameterized-tests-junit-5</a>).
+Furthermore, new classes such as ReturnOrder, ReturnCommand, Parcel abstract class also had to be implemented for this
+feature to be fully functional. Therefore, this feature affects subsequent features to be added due to changes in inheritance of classes.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Minor enhancement</strong>: [Coming soon]</p>
+<p>Added <code>delivered</code> command (Pull request: <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/302">#302</a> )</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Allows the user to mark orders or return orders as delivered.</p>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+<p>Justification: This is a must-have feature for a delivery management app like Delino. It allows the user to easily
+mark an order or return order as delivered after delivering the parcel.</p>
+</li>
+<li>
+<p>Highlights: This feature required good understanding of the AB3 codebase and how the entire order list and return order
+list are edited to display the changes in the GUI. As such, this required a deep level of understanding of how the entire
+app worked so that the changes can be executed and displayed on the GUI from the start of the command till the end of execution.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Added the <code>help</code> command (Pull requests: <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/310">#310</a>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: It displays a list of all Delino&#8217;s commands and llows the user to see the usage of each command in Delino and
+quickly be able to utilise Delino&#8217;s available features.</p>
+</li>
+<li>
+<p>Justification: This command was rather simple to implement but the main problem faced was deciding the right window size
+for the pop-up help window as different screens have different resolutions and this resulted in some bugs that had to be
+re-looked at and fixed.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Updated Delino&#8217;s icon image and link in the Developer Guide (Pull request: <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/245">#245</a>)</p>
+</li>
+<li>
+<p>Added Non-functional requirements (NFR) in the Developer Guide (Pull request: <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/89">#89</a>)</p>
+</li>
+<li>
+<p>Wrote Must-haves for user stories in Developer Guide (Pull request: <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/65">#65</a>)</p>
+</li>
+<li>
+<p>Did the first mock-up for Delino&#8217;s UI using Adobe XD (Pull request: <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/85">#85</a>)</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>Code contributed</strong>: [<a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=cherweijie&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2020-02-14&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false">Functional code &amp; Test code</a>]</p>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
@@ -51,12 +114,18 @@ interacts with it using a CLI, and it has a GUI created with JavaFX. It is writt
 <ul>
 <li>
 <p>Project management:</p>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>In charge of team facilitation, code integration and UI design.</p>
 </li>
-</ul>
+<li>
+<p>Set up Codacy with Jeremy to improve code quality of Delino&#8217;s repository. (Pull request: <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/61">#61</a>)</p>
+</li>
+<li>
+<p>Ensure that project deliverables are completed on time.</p>
+</li>
+</ol>
 </div>
 </li>
 <li>
@@ -64,7 +133,7 @@ interacts with it using a CLI, and it has a GUI created with JavaFX. It is writt
 <div class="ulist">
 <ul>
 <li>
-<p>Adapted the given Address Book UI into Delino&#8217;s first draft UI. <a href="https://github.com/" class="bare">https://github.com/</a></p>
+<p>Adapted the given Address Book UI into Delino&#8217;s first draft UI. (Pull request: <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/85">#85</a>)</p>
 </li>
 </ul>
 </div>
@@ -74,7 +143,13 @@ interacts with it using a CLI, and it has a GUI created with JavaFX. It is writt
 <div class="ulist">
 <ul>
 <li>
-<p>To be added</p>
+<p>Updated Developer Guide to include Delivered Command (Pull request: <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/253">#253</a>)</p>
+</li>
+<li>
+<p>Updated Developer Guide to include Return Command (Pull request: )</p>
+</li>
+<li>
+<p>Updated Developer Guide to include Help Command (Pull request: )</p>
 </li>
 </ul>
 </div>
@@ -84,16 +159,12 @@ interacts with it using a CLI, and it has a GUI created with JavaFX. It is writt
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com">#12</a>, <a href="https://github.com">#32</a>, <a href="https://github.com">#19</a>, <a href="https://github.com">#42</a></p>
+<p>PRs reviewed (with non-trivial review comments): (Pull requests: <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/118">#118</a>,
+<a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/191">#191</a>,
+<a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/226">#226</a>)</p>
 </li>
 <li>
-<p>Contributed to forum discussions (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>, <a href="https://github.com">4</a>)</p>
-</li>
-<li>
-<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
-</li>
-<li>
-<p>Some parts of the history feature I added was adopted by several other class mates (<a href="https://github.com">1</a>, <a href="https://github.com">2</a>)</p>
+<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com/Cherweijie/ped/issues" class="bare">https://github.com/Cherweijie/ped/issues</a>)</p>
 </li>
 </ul>
 </div>
@@ -103,7 +174,7 @@ interacts with it using a CLI, and it has a GUI created with JavaFX. It is writt
 <div class="ulist">
 <ul>
 <li>
-<p>Set up Codacy to improve</p>
+<p>Set up Codacy and updated its badge to link to our repository together with Jeremy (Pull request: <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/61">#61</a>)</p>
 </li>
 </ul>
 </div>
@@ -112,9 +183,6 @@ interacts with it using a CLI, and it has a GUI created with JavaFX. It is writt
 </div>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><em>{you can add/remove categories in the list above}</em></p>
 </div>
 </div>
 </div>
@@ -131,89 +199,57 @@ interacts with it using a CLI, and it has a GUI created with JavaFX. It is writt
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="introduction"><a class="link" href="#introduction">Introduction</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This user guide provides in-depth documentation on the Delino desktop application:
+quick start guide, features, FAQ, command summary, and glossary.</p>
+</div>
+<div class="paragraph">
+<p>Delino is for couriers who <strong>prefer to use a desktop app for managing their delivery tasks</strong>.
+It is <strong>optimised for those who have a strong preference towards Command Line Interface</strong> (CLI)
+while still enjoying the benefits of a Graphical User Interface (GUI).
+Sounds interesting? Have a quick look at our tutorial <a href="#Quick Start">[Quick Start]</a> to get started.
+Have a delightful journey using Delino!</p>
+</div>
 <div class="sect2">
-<h3 id="delete"><a class="link" href="#delete">Deleting an order : <code>delete</code> [Done by - Loh Jeremy Wen Jun]</a></h3>
-<div class="paragraph">
-<p>In this section, you will learn more about the <code>delete</code> command,
-<a href="#how_to_use_delete_command">how to use it</a> and the
-<a href="#usage_scenario_delete_command">possible usage scenarios</a> of the <code>delete</code> command.<br></p>
-</div>
-<div class="paragraph">
-<p>The <code>delete</code> command is useful if you would like to delete a specific order from either
-the order list or return order list.<br>
-This would allow you to correct any accidental additions that you may have made
-when <a href="#insert">inserting orders</a> or <a href="#import">importing an order file</a>.</p>
+<h3 id="help"><a class="link" href="#help">Showing the Help message - <code>help</code> [Done by - Cher Wei Jie]</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>In this section, you will learn more about the Help command and how to use it.<br>
+Why would you want to use the Help command?
+You can use this Help command to see a summary of all available features of Delino.</p>
+</li>
+</ul>
 </div>
 <div class="sect3">
-<h4 id="how_to_use_delete_command"><a class="link" href="#how_to_use_delete_command">How to use the delete command</a></h4>
+<h4 id="help-works"><a class="link" href="#help-works">How to use the Help command?</a></h4>
 <div class="paragraph">
-<p>In this section, you learn more about the exact inputs required to use the <code>delete</code> command.</p>
-</div>
-<div class="paragraph">
-<p>Here are the steps you should follow to delete an order using the <code>delete</code> command:<br>
-<strong>Step 1</strong> : Type in the keyword <code>delete</code><br></p>
+<p>Here is how you can use the Help command to show a summary of all available commands in Delino.</p>
 </div>
 <div class="paragraph">
-<p><strong>Step 2</strong> : Provide a <code>FLAG</code> to indicate which list to delete your order from<br></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>A <code>FLAG</code> can be either <code>-o</code> or <code>-r</code>.<br>
-A <code>-o</code> flag indicates the order list.<br>
-A <code>-r</code> flag indicates the return order list.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p><strong>Step 3</strong> : Provide an <code>INDEX</code> to indicate the specific order to delete based on the list</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The <code>INDEX</code> refers to the <code>INDEX</code> number shown in the displayed list.<br>
-The <code>INDEX</code> <strong>must be a positive integer</strong> i.e. 1, 2, 3, &#8230;&#8203;</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p><strong>Step 4</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
+<p><strong>Step 1</strong> : Type in the keyword <strong>help</strong>.<br>
+<strong>Step 2</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="what-constitutes-a-valid-delete-command"><a class="link" href="#what-constitutes-a-valid-delete-command">What constitutes a valid delete command</a></h4>
+<h4 id="help-examples"><a class="link" href="#help-examples">What constitutes a valid Help command?</a></h4>
 <div class="paragraph">
-<p>In this section, you will learn more about the syntax of the <code>delete</code> command<br></p>
+<p>The syntax for a valid help command can be seen below!</p>
 </div>
-<div class="paragraph">
-<p>The syntax for a valid <code>delete</code> command is the following:<br>
-<code>delete</code> <code>FLAG</code> <code>INDEX</code><br></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="usage_scenario_delete_command"><a class="link" href="#usage_scenario_delete_command">Delete command usage scenarios</a></h4>
-<div class="paragraph">
-<p>In this section, you will learn more about the various usage scenarios of the <code>delete</code> command!</p>
-</div>
-<div class="paragraph">
-<p>The table below describes the possible usage scenarios of the delete command:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>help</code></p>
+</li>
+</ul>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 1. Possible Combinations of delete command</caption>
+<caption class="title">Table 1. Possible Combinations of Help command</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -228,31 +264,365 @@ The <code>INDEX</code> <strong>must be a positive integer</strong> i.e. 1, 2, 3,
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to delete the second order from the order list.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete</code> <code>-o</code> <code>2</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes the 2nd order from the order list.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to delete the third order from the return order list.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete</code> <code>-r</code> <code>3</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes the 3rd return order from the return order list.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want delete the first order that belongs to the customer 'Betsy'.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>-o</code> <code>Betsy</code><br>
-<code>delete</code> <code>-o</code> <code>1</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes the 1st order in the results of the <code>search</code> command
-(search all orders with customer&#8217;s name <code>Betsy</code>).</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to obtain all orders in the return order list located in the central region of Singapore.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>-r</code> <code>Aaron</code><br>
-<code>delete</code> <code>-r</code> <code>1</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes the 1st return order in the results of the <code>search</code> command
-(search all return orders with customer&#8217;s name <code>Aaron</code>).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to view all the available commands in Delino, you can do this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>help</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A pop-up window will be shown that includes a summary to briefly explain all the commands that Delino offers.</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="return"><a class="link" href="#return">Returning an order : <code>return</code> [Done by - Cher Wei Jie]</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>In this section, you will learn more about the Return command and how to use it.<br>
+Why would you want to use the Return command?
+You can use this Return command to create a new return order to be added into the return order list.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="return-works"><a class="link" href="#return-works">How to use the Return command?</a></h4>
+<div class="paragraph">
+<p>Here is how you can convert an order into a return order or create a new return order by following the steps below:</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong> : Type in the keyword <strong>return</strong>.<br>
+<strong>Step 2a</strong> : If you would like to convert an existing order into a return order,
+provide the <code><a href="#command_prefix">TRANSACTION_ID</a></code> corresponding to the order to be converted.<br>
+<strong>Step 2b</strong>: If you would like to create a new return order in the return list, provide the
+<code><a href="#command_prefix">TRANSACTION_ID</a></code> <code><a href="#command_prefix">CUSTOMER_NAME</a></code> <code><a href="#command_prefix">ADDRESS</a></code>
+<code><a href="#command_prefix">PHONE_NUMBER</a></code> <code><a href="#command_prefix">RETURN_TIMESTAMP</a></code> <code><a href="#command_prefix">WAREHOUSE_LOCATION</a></code>
+<code><a href="#command_prefix">CUSTOMER_EMAIL</a></code> <code><a href="#command_prefix">[COMMENTS_BY_CUSTOMER]</a></code> <code><a href="#command_prefix">[TYPE OF ITEM]</a></code> of the parcel.<br>
+<strong>Step 3</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Please include a whitespace in between the keyword &amp; transaction id or keyword &amp; the attributes aforementioned.<br>
+i.e. <code>return</code> <code>tid/123abcd</code><br>
+ or<br>
+<code>return</code> <code>tid/A999999</code> <code>n/John Doe</code> <code>p/98765432</code> <code>a/311 Clementi Ave 2 #02-25</code> <code>e/johndoe@gmail.com</code>
+<code>rts/2020-05-05 1500</code> <code>w/5 Toh Guan Rd E #02-30 S608831</code> <code>c/NIL</code> <code>type/glass</code></p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="return-examples"><a class="link" href="#return-examples">What constitutes a valid Return command?</a></h4>
+<div class="paragraph">
+<p>The syntax for a valid Return command can be seen below!</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>return</code> <code>TRANSACTION_ID</code> or <code>return</code> <code>TRANSACTION_ID</code> <code>CUSTOMER_NAME</code> <code>CUSTOMER_ADDRESS</code> <code>CUSTOMER_EMAIL</code>
+<code>WAREHOUSE_LOCATION</code> <code>PHONE_NUMBER</code> <code>RETURN_TIMESTAMP</code> <code>[COMMENTS_BY_CUSTOMER]</code> <code>[TYPE_OF_ITEM]</code></p>
+</li>
+</ul>
+</div>
+<div class="ulist NOTE">
+<ul class="NOTE">
+<li>
+<p>The <code>TRANSACTION_ID</code> refers to the transaction id of a parcel.</p>
+</li>
+<li>
+<p>The <code>CUSTOMER_NAME</code> refers to the name of the recipient of the parcel.</p>
+</li>
+<li>
+<p>The <code>CUSTOMER_ADDRESS</code> refers to the location which the return should be picked up from.</p>
+</li>
+<li>
+<p>The <code>WAREHOUSE_LOCATION</code> refers to the location which the return should be delivered to.</p>
+</li>
+<li>
+<p>The <code>PHONE_NUMBER</code> refers to the phone number of the customer.</p>
+</li>
+<li>
+<p>The <code>RETURN_TIMESTAMP</code> refers to the return date and time of the parcel. This field cannot be earlier than the current date and time.</p>
+</li>
+<li>
+<p>The <code>COMMENTS_BY_CUSTOMER</code> is an optional attribute which can be included if the customer has special requests.</p>
+</li>
+<li>
+<p>The <code>TYPE_OF_ITEM</code> is an optional attribute which can be included if the item requires special attention.
+For example, it can be used when the item is fragile.</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 2. Possible Combinations of Return command</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Scenario</th>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to convert the order with Transaction Id 'abc1234' into a return order and display it on returns list, you can do this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>return</code> <code>tid/abc1234</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This order will be removed from the order list and be added into the returns list as a return order.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to create a new return order in the return order list, you can do this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>return</code> <code>tid/123abcd</code> <code>n/weijie</code> <code>a/blk 32 clementi road</code> <code>p/92123412</code> <code>w/Jurong warehouse</code> <code>rts/2020-04-05</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A return order with the input attributes will be created into the return order list.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>TRANSACTION_ID</code> given belongs to the return order that will be created.</p>
+</li>
+<li>
+<p>A return order will be created after executing this return command.</p>
+</li>
+<li>
+<p>If the parcel is an existing order, it will be removed from the order list and converted into a return order
+and added into the return order list.</p>
+</li>
+<li>
+<p>If the parcel is a new return order, it will be created and added into the return order list.</p>
+</li>
+<li>
+<p>All return orders will not have the <code>CASH_ON_DELIVERY</code> attribute as
+the item was already delivered and the money already was collected upon delivery.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The conversion of an order into a return order can only be done if the order was already delivered.</p>
+</li>
+<li>
+<p>The <code>TRANSACTION_ID</code> <strong>is alphanumeric</strong>, e.g: 123asd, 1234567, abcdef.</p>
+</li>
+<li>
+<p>The <code>CUSTOMER_NAME</code> <strong>must consist of only alphabets</strong>.</p>
+</li>
+<li>
+<p>The <code>CUSTOMER_ADDRESS</code> <strong>is alphanumeric</strong>.</p>
+</li>
+<li>
+<p>The <code>CUSTOMER_PHONE</code> <strong>must be numeric</strong></p>
+</li>
+<li>
+<p>The <code>WAREHOUSE_LOCATION</code> <strong>is alphanumeric</strong></p>
+</li>
+<li>
+<p>The <code>RETURN_TIMESTAMP</code> <strong>must follow the yyyy-mm-dd format</strong> <strong>must not be earlier than the current date and time</strong></p>
+</li>
+<li>
+<p>The <code>COMMENTS_BY_CUSTOMER</code> <strong>is alphanumeric</strong></p>
+</li>
+<li>
+<p>The <code>TYPE_OF_ITEM</code> is <strong>alphanumeric</strong></p>
+</li>
+<li>
+<p>The resulting created return order will not have the <code>CASH_ON_DELIVERY</code> field as the money
+was already collected.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delivered"><a class="link" href="#delivered">Delivering an order or return order : <code>delivered</code> [Done by - Cher Wei Jie]</a></h3>
+<div class="paragraph">
+<p>In this section, you will learn more about the Delivered command and how to use it.<br>
+Why would you want to use the Delivered command?
+If you have delivered an order or return order, you can mark it as delivered with the Delivered command.</p>
+</div>
+<div class="sect3">
+<h4 id="delivered-works"><a class="link" href="#delivered-works">How to use the Delivered command</a></h4>
+<div class="paragraph">
+<p>This section will explain the steps needed to use the Delivered command.<br></p>
+</div>
+<div class="paragraph">
+<p>Here is how you can mark the details of any order or return order by following the steps below:<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong> : Type in the keyword <strong>delivered</strong><br>
+<strong>Step 2</strong> : Provide the <code><a href="#command_flags">FLAG</a></code> corresponding to the parcel order type you want to mark as delivered<br>
+<strong>Step 3</strong> : Provide the <code>INDEX</code> of the parcel displayed on the screen that you wish to mark as delivered<br>
+<strong>Step 4</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Please include a whitespace in between the keyword, command flag and index. i.e. <code>delivered -o 1</code></p>
+</li>
+<li>
+<p>If you can&#8217;t see any orders use the <a href="#list"><code>list</code></a> command to view existing parcel!
+If nothing is showing up, it means you got to <a href="#insert"><code>insert</code></a> or <a href="#return"><code>return</code></a> some parcel and start doing work!</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="delivered-examples"><a class="link" href="#delivered-examples">What constitutes a valid Delivered command</a></h4>
+<div class="paragraph">
+<p>The syntax for a valid Delivered command can be seen below!</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>delivered</code> <code>FLAG</code> <code>INDEX</code></p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 3. Possible Combinations of Delivered command</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Scenario</th>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to mark the first return order displayed on returns list as delivered, you can do this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delivered</code> <code>-r</code> <code>1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Delivery Status of the first return order displayed on the returns list will be changed to "Returned to Warehouse"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to mark the second order displayed on the orders list, you can do this:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delivered</code> <code>-o</code> <code>2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The delivery status of the second order in the order list will be changed to "Delivered".</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>INDEX</code> given is the parcel you will be marking as delivered.</p>
+</li>
+<li>
+<p>The parcel will be marked as delivered after executing this delivered command.</p>
+</li>
+<li>
+<p>If the parcel is an order, its Delivery Status will be changed from "Not Delivered" to "Delivered".</p>
+</li>
+<li>
+<p>If the parcel is a return order, its Delivery Status will be changed from "Not returned to warehouse" to "Returned to warehouse"</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>INDEX</code> <strong>must be a positive integer</strong>, e.g: 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>The <code>INDEX</code> <strong>must be in range</strong> of the number of displayed orders</p>
+</li>
+<li>
+<p>Only can be used when there is at least an order or return order displayed.</p>
+</li>
+<li>
+<p>The <code>FLAG</code> can only be either <code>-o</code> or <code>-r</code>, please refer to <a href="#command_flags">here</a> for more information.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Ui.png" alt="Ui" width="790">
+</div>
+<div class="title">Figure 1. Graphical User Interface (GUI) of Delino</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="product-information"><a class="link" href="#product-information">Product Information</a></h3>
+<div class="paragraph">
+<p>Are you still using pen and papers or Excel to keep track of all your orders?<br></p>
+</div>
+<div class="paragraph">
+<p>With Delino, you can be rest assured that it will help you to keep track of a large number of orders in the most efficient way possible.
+Are you interested in improving your parcel delivery management? Read further to discover the features of Delino!</p>
 </div>
 </div>
 </div>
@@ -273,11 +643,1720 @@ The <code>INDEX</code> <strong>must be a positive integer</strong> i.e. 1, 2, 3,
 </div>
 </div>
 <div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
+<h2 id="design"><a class="link" href="#design">Design</a></h2>
 <div class="sectionbody">
-<hr>
+<div class="sect2">
+<h3 id="Design-Model"><a class="link" href="#Design-Model">Model component</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ModelClassDiagram.svg" alt="ModelClassDiagram">
+</div>
+<div class="title">Figure 2. Structure of the Model Component</div>
+</div>
 <div class="paragraph">
-<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
+<p><strong>API</strong> : <a href="{repoURL}/blob/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>Model</code>,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
+</li>
+<li>
+<p>stores the Order Book data.</p>
+</li>
+<li>
+<p>exposes an unmodifiable <code>ObservableList&lt;Order&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
+</li>
+<li>
+<p>does not depend on any of the other three components.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+An Order class consists of nine different fields as shown in the image. Every order is part of a UniqueOrderList and
+every UniqueOrderList is part of an OrderBook.
+<span class="image"><img src="../images/BetterModelClassDiagram.svg" alt="BetterModelClassDiagram"></span>
+</td>
+</tr>
+</table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 10:28:41 UTC</div></div></div></body></html>
+</div>
+</div>
+<div class="sect1">
+<h2 id="features"><a class="link" href="#features">Features</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="return"><a class="link" href="#return">Return Feature</a></h3>
+<div class="paragraph">
+<p>In this section, you will learn more about how the <code>return</code> feature is implemented.</p>
+</div>
+<div class="sect3">
+<h4 id="what-is-return"><a class="link" href="#what-is-return">What is the Return Feature</a></h4>
+<div class="paragraph">
+<p>The return feature allows the user to either:<br>
+1. Create a new return order from his/her input parcel attributes.<br>
+2. Convert an existing delivered order to a return order.</p>
+</div>
+<div class="paragraph">
+<p>The return feature was implemented as a <code>ReturnCommand</code> in the <code>Logic</code> package.<br></p>
+</div>
+<div class="paragraph">
+<p>The <code>return</code> command has two possible formats:<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>return</code> <a href="#command_prefix"><code>TRANSACTION_ID</code></a>
+If the user provides only a valid <a href="#command_prefix"><code>TRANSACTION_ID</code></a> in his input, the order with the given
+<a href="#command_prefix"><code>TRANSACTION_ID</code></a> will be converted into a return order with the same attributes.
+The created return order will be added into the return order list.</p>
+</li>
+<li>
+<p><code>return</code> <a href="#command_prefix"><code>TRANSACTION_ID</code></a> <a href="#command_prefix"><code>NAME</code></a> <a href="#command_prefix"><code>ADDRESS</code></a> <a href="#command_prefix"><code>PHONE_NUMBER</code></a>
+<a href="#command_prefix"><code>EMAIL</code></a> <a href="#command_prefix"><code>RETURN_TIMESTAMP</code></a> <a href="#command_prefix"><code>WAREHOUSE_LOCATION</code></a> <a href="#command_prefix"><code>[COMMENTS]</code></a>
+<a href="#command_prefix"><code>[ITEM_TYPE]</code></a>
+If the user provides these compulsory parcel attributes, a return order with the given parcel attributes will be created and added to the return order list.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>All return orders do not have the <a href="#command_prefix"><code>CASH_ON_DELIVERY</code></a> parcel attribute.</p>
+</li>
+<li>
+<p>The <a href="#command_prefix"><code>TRANSACTION_ID</code></a> is alphanumeric, which determines the <a href="#command_prefix"><code>TRANSACTION_ID</code></a> of the resulting return order.</p>
+</li>
+<li>
+<p>The <a href="#command_prefix"><code>NAME</code></a> consists of alphabets and determines the <a href="#command_prefix"><code>NAME</code></a> of the resulting return order.</p>
+</li>
+<li>
+<p>The <a href="#command_prefix"><code>ADDRESS</code></a> is alphanumeric and determines the <a href="#command_prefix"><code>ADDRESS</code></a>  of the resulting return order.</p>
+</li>
+<li>
+<p>The <a href="#command_prefix"><code>PHONE_NUMBER</code></a> consists of only numbers and determines the <a href="#command_prefix"><code>PHONE_NUMBER</code></a> of the resulting return order.</p>
+</li>
+<li>
+<p>The <a href="#command_prefix"><code>EMAIL</code></a> is alphanumeric and determines the <a href="#command_prefix"><code>EMAIL</code></a> of the resulting return order.</p>
+</li>
+<li>
+<p>The <a href="#command_prefix"><code>RETURN_TIMESTAMP</code></a> should include the date in YYYY-MM-DD format and time in 24-hour format with a whitespace in between
+the date and time.</p>
+</li>
+<li>
+<p>The <a href="#command_prefix"><code>WAREHOUSE_LOCATION</code></a> is alphanumeric and it determines the <a href="#command_prefix"><code>WAREHOUSE_LOCATION</code></a> of the resulting return order.</p>
+</li>
+<li>
+<p>The <a href="#command_prefix"><code>[COMMENTS]</code></a> is an optional alphanumeric field and determines the <a href="#command_prefix"><code>[COMMENTS]</code></a> of the resulting return order.</p>
+</li>
+<li>
+<p>The <a href="#command_prefix"><code>[ITEM_TYPE]</code></a> is an optional alphanumeric field and determines the <a href="#command_prefix"><code>[ITEM_TYPE]</code></a> of the resulting return order.</p>
+</li>
+</ol>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="execution-paths-return"><a class="link" href="#execution-paths-return">Execution paths of Return command</a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the execution paths for the <code>return</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ReturnCommandActivityDiagram.png" alt="ReturnCommandActivityDiagram">
+</div>
+<div class="title">Figure 3. Return Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p>There are three possible execution paths for the <code>return</code> command</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User provides an invalid <code>return</code> command input<br>
+This will result in a parse exception and an error message will be displayed to the user.</p>
+</li>
+<li>
+<p>User provides a valid <code>return</code> command input with a valid <a href="#command_prefix"><code>TRANSACTION_ID</code></a>, i.e.<br>
+<code>return</code> <a href="#command_prefix"><code>TRANSACTION_ID</code></a><br>
+If the order with the given <a href="#command_prefix"><code>TRANSACTION_ID</code></a> is delivered,
+it will be converted to an existing order with the given <a href="#command_prefix"><code>TRANSACTION_ID</code></a> into a return order.<br>
+This return order will then be added into the return order list.</p>
+</li>
+<li>
+<p>User provides a valid <code>return</code> command input with all compulsory parcel attributes, i.e.<br>
+<code>return</code> <a href="#command_prefix"><code>TRANSACTION_ID</code></a> <a href="#command_prefix"><code>NAME</code></a> <a href="#command_prefix"><code>ADDRESS</code></a> <a href="#command_prefix"><code>PHONE_NUMBER</code></a>
+<a href="#command_prefix"><code>EMAIL</code></a> <a href="#command_prefix"><code>RETURN_TIMESTAMP</code></a> <a href="#command_prefix"><code>WAREHOUSE_LOCATION</code></a> <a href="#command_prefix"><code>[COMMENTS]</code></a>
+<a href="#command_prefix"><code>[ITEM_TYPE]</code></a><br>
+If the given <a href="#command_prefix"><code>TRANSACTION_ID</code></a> does not exist as an order or return order,
+this will create a new return order based on the given parcel attributes and the resulting return order
+will be added to the return order list.<br>
+If the given <code>return</code> <a href="#command_prefix"><code>TRANSACTION_ID</code></a> already exists as an order or return order, an error message
+will be displayed to the user that an order or return order already exists in the order list or return order list respectively.</p>
+</li>
+<li>
+<p>User provides a valid <code>return</code> command input with an invalid <a href="#command_prefix"><code>TRANSACTION_ID</code></a><br>
+This will result in a parse exception and an error message will be displayed to the user.</p>
+</li>
+<li>
+<p>User provides a valid <code>return</code> command but one or more of the compulsory parcel attributes is/are invalid.
+This will result in a parse exception and an error message will be displayed to the user.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="structure-return"><a class="link" href="#structure-return">Structure of Return Command</a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ReturnClassDiagram.png" alt="ReturnClassDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>ReturnCommand</code>
+and its associated classes and interfaces. Some methods and fields are not included because they are
+not extensively utilised in <code>ReturnCommand</code>; such as public static fields and getter/setter methods.</p>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>DeliveredCommand</code> and
+its associated classes and interfaces. Some methods and fields are not included because they are
+not extensively utilised in <code>DeliveredCommand</code>; such as public static fields and getter/setter methods.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="return-interactions"><a class="link" href="#return-interactions">Interactions between objects when Return Command is executed</a></h4>
+
+</div>
+<div class="sect3">
+<h4 id="sequence-diagram-for-converting-an-order-into-a-return-order"><a class="link" href="#sequence-diagram-for-converting-an-order-into-a-return-order">Sequence Diagram for converting an order into a return order</a></h4>
+<div class="paragraph">
+<p>The sequence diagrams for the <strong>Return Command</strong> are shown below.</p>
+</div>
+<div class="paragraph">
+<div class="title">Return Command Sequence Diagram</div>
+<p>image::ReturnSequenceDiagram1_a.png[</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ReturnSequenceDiagram2_a.png" alt="ReturnSequenceDiagram2 a">
+</div>
+<div class="title">Figure 4. Execution of Return Command to convert a delivered Order into a Return Order</div>
+</div>
+<div class="paragraph">
+<p>The arguments typed into Delino by the user will first be done by the <code>execute</code>
+method in <code>LogicManager</code>. After which, an <code>OrderBookParser</code> object will be created to parse
+the input which is determined by the command word via the parseCommand method. In this case, it is the
+<code>return</code> command word that will be parsed.<br></p>
+</div>
+<div class="paragraph">
+<p>Then, a <code>ReturnCommandParser</code> object will be created to parse the arguments after removing
+the command word <code>return</code> from the user&#8217;s input. Based on the command word <code>return</code>,
+a <code>ReturnCommand</code> object will be created.<br></p>
+</div>
+<div class="paragraph">
+<p>Subsequently, the parseCommand method in <code>LogicManager</code> will continue to create a CommandResult
+based on the validity of the user&#8217;s input; which is determined by the <code>execute</code> method in
+<code>ReturnCommand</code>.<br></p>
+</div>
+<div class="paragraph">
+<p>The <code>execute</code> method of <code>ReturnCommand</code> will first check if the return order in the constructor of
+ReturnCommand is present. In this case, since we are converting an order into a return order,
+the return order will not be present in the constructor of <code>ReturnCommand</code> and
+the isReturnOrderNotPresent() method will return true.<br></p>
+</div>
+<div class="paragraph">
+<p>If the given <a href="#command_prefix"><code>TRANSACTION_ID</code></a> exists in the order list, the
+getOrderByTransactionId(model) method will attempt to create a new Order object from
+the model&#8217;s Order list based on the given transaction ID, i.e. orderToBeReturned.<br></p>
+</div>
+<div class="paragraph">
+<p>The isDelivered() method checks if the newly created Order is delivered. If the order was not
+delivered, it will throw a command exception and display an error message to the user.<br></p>
+</div>
+<div class="paragraph">
+<p>If the order was delivered, the deleteOrder(orderToBeReturned) method will be triggered
+to delete the order from the model&#8217;s order list. Also, a new return order will be created based
+on the ReturnOrder&#8217;s constructor that takes in an Order, i.e. ReturnOrder(orderToBeReturned). This
+creates a new Return Order object, toBeCreated.<br></p>
+</div>
+<div class="paragraph">
+<p>Subsequently, this newly created ReturnOrder object toBeCreated, will be checked against the
+model&#8217;s return order list using the hasParcel(toBeCreated) method. If it exists, a command exception will be thrown
+and an error message will be displayed to the user.<br></p>
+</div>
+<div class="paragraph">
+<p>If the ReturnOrder does not exist in the model&#8217;s return order list, the newly created ReturnOrder object,
+toBeCreated, will be added to the model&#8217;s return order list using the addReturnOrder(toBeCreated) method.<br></p>
+</div>
+<div class="paragraph">
+<p>Finally, a new CommandResult will be created to display the success message to the user for converting
+a delivered order to a return order.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sequence-diagram-for-creating-a-new-return-order"><a class="link" href="#sequence-diagram-for-creating-a-new-return-order">Sequence Diagram for creating a new return order</a></h4>
+<div class="paragraph">
+<p>The sequence diagrams for the <strong>Return Command</strong> are shown below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ReturnSequenceDiagram1_b.png" alt="ReturnSequenceDiagram1 b">
+</div>
+<div class="title">Figure 5. Return Command Sequence Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ReturnSequenceDiagram2_b.png" alt="ReturnSequenceDiagram2 b">
+</div>
+<div class="title">Figure 6. Execution of Return Command to create a new Return Order</div>
+</div>
+<div class="paragraph">
+<p>The arguments typed into Delino by the user will first be done by the <code>execute</code>
+method in <code>LogicManager</code>. After which, an <code>OrderBookParser</code> object will be created to parse
+the input which is determined by the command word via the parseCommand method. In this case, it is the
+<code>return</code> command word that will be parsed.<br></p>
+</div>
+<div class="paragraph">
+<p>Then, a <code>ReturnCommandParser</code> object will be created to parse the arguments after removing
+the command word <code>return</code> from the user&#8217;s input. Based on the command word <code>return</code>,
+a <code>ReturnCommand</code> object will be created.<br></p>
+</div>
+<div class="paragraph">
+<p>Subsequently, the parseCommand method in <code>LogicManager</code> will continue to create a CommandResult
+based on the validity of the user&#8217;s input; which is determined by the <code>execute</code> method in
+<code>ReturnCommand</code>.<br></p>
+</div>
+<div class="paragraph">
+<p>The <code>execute</code> method of <code>ReturnCommand</code> will first check if the return order in the constructor of
+ReturnCommand is present. In this case, since we are creating a new return order from the given parcel attributes, a
+return order will be created and it will be used in the constructor of <code>ReturnCommand</code> and
+the isReturnOrderNotPresent() method will return false.<br></p>
+</div>
+<div class="paragraph">
+<p>Also, a new return order will be created based on the ReturnOrder&#8217;s constructor
+that takes in an Order, i.e. ReturnOrder(orderToBeReturned). This
+creates a new ReturnOrder object, toBeCreated.<br></p>
+</div>
+<div class="paragraph">
+<p>Subsequently, this newly created ReturnOrder object toBeCreated, will be checked against the
+model&#8217;s return order list using the hasParcel(toBeCreated) method.
+If it exists, a command exception will be thrown
+and an error message will be displayed to the user.<br></p>
+</div>
+<div class="paragraph">
+<p>If the ReturnOrder does not exist in the model&#8217;s return order list, the newly created ReturnOrder object,
+toBeCreated, will be added to the model&#8217;s return order list using the addReturnOrder(toBeCreated) method.<br></p>
+</div>
+<div class="paragraph">
+<p>Finally, a new CommandResult will be created to display the success message to the user for creating a
+new return order with the given parcel attributes.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delivered"><a class="link" href="#delivered">Delivered Feature</a></h3>
+<div class="paragraph">
+<p>In this section, the <a href="#what-is-delivered">functionality</a> of the <code>delivered</code> feature, the
+<a href="#execution-paths-delivered">expected execution path</a>,
+the <a href="#structure-delivered">structure</a> of the <code>DeliveredCommand</code> class and the <a href="#sequence-delivered">interactions</a>
+between objects with the <code>DeliveredCommand</code> will be discussed.</p>
+</div>
+<div class="sect3">
+<h4 id="what-is-delivered"><a class="link" href="#what-is-delivered">What is the Delivered feature</a></h4>
+<div class="paragraph">
+<p>The <code>delivered</code> function allows the user to mark orders or return orders
+as delivered after delivering an order or a return order.<br></p>
+</div>
+<div class="paragraph">
+<p>The <code>delivered</code> feature was implemented as the <code>DeliveredCommand</code> in the <code>logic</code> package.<br>
+The <code>delivered</code> function requires a valid <a href="#command_prefix"><code>FLAG</code></a> and a valid <a href="#command_prefix"><code>INDEX</code></a>.<br>
+i.e. <code>delivered</code> <a href="#command_prefix"><code>INDEX</code></a> <a href="#command_prefix"><code>FLAG</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <a href="#command_prefix"><code>FLAG</code></a> can either be '-o' or '-r', which indicates which list
+(order list or return order list respectively) to mark the parcel from. The <a href="#command_prefix"><code>FLAG</code></a> is
+only valid when either '-o' and '-r' is used. All other inputs will be regarded as invalid.<br></p>
+</div>
+<div class="paragraph">
+<p>The <a href="#command_prefix"><code>INDEX</code></a> is a positive integer that determines
+which order or return order to be marked as delivered. The <a href="#command_prefix"><code>INDEX</code></a> is only valid if
+it is a positive integer and if it is not bigger than the size of the order list or return order list, depending
+on the <a href="#command_prefix"><code>FLAG</code></a>that is provided. For instance, if the '-o' <a href="#command_prefix"><code>FLAG</code></a> is provided,
+the <a href="#command_prefix"><code>INDEX</code></a> should not be greater than the size of the order list.<br></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="execution-paths-delivered"><a class="link" href="#execution-paths-delivered">Execution Paths of Delivered Command</a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DeliveredCommandActivityDiagram.png" alt="DeliveredCommandActivityDiagram">
+</div>
+<div class="title">Figure 7. Activity Diagram of the Delivered Command</div>
+</div>
+<div class="paragraph">
+<p>The above activity diagram shows the logic behind the <code>DeliveredCommand</code> which is determined in
+the <code>DeliveredCommandParser</code> class when the user inputs the command word <code>delivered</code> to activate the
+<code>delivered</code> feature.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="structure-delivered"><a class="link" href="#structure-delivered">Structure of Delivered Command</a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DeliveredClassDiagram.png" alt="DeliveredClassDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>DeliveredCommand</code> and
+its associated classes and interfaces. Some methods and fields are not included because they are
+not extensively utilised in <code>DeliveredCommand</code>; such as public static fields and getter/setter methods.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sequence-diagram-for-delivering-an-order"><a class="link" href="#sequence-diagram-for-delivering-an-order">Sequence Diagram for delivering an order</a></h4>
+<div class="paragraph">
+<p>The sequence diagrams for the <strong>Delivered Command</strong> are shown below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DeliveredSequenceDiagram.png" alt="DeliveredSequenceDiagram">
+</div>
+<div class="title">Figure 8. Delivered Command Sequence Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DeliveredSequenceDiagram2.png" alt="DeliveredSequenceDiagram2">
+</div>
+<div class="title">Figure 9. Execution of Delivered Command</div>
+</div>
+<div class="paragraph">
+<p>The arguments typed into Delino by the user will first be done by the <code>execute</code>
+method in <code>LogicManager</code>. After which, an <code>OrderBookParser</code> object will be created to parse
+the input which is determined by the command word via the parseCommand method. In this case, it is the
+<code>delivered</code> command word that will be parsed.<br></p>
+</div>
+<div class="paragraph">
+<p>Then, a <code>DeliveredCommandParser</code> object will be created to parse the arguments after removing
+the command word <code>delivered</code> from the user&#8217;s input. Based on the command word <code>delivered</code>,
+a <code>DeliveredCommand</code> object will be created.<br></p>
+</div>
+<div class="paragraph">
+<p>Subsequently, the parseCommand method in <code>LogicManager</code> will continue to create a CommandResult
+based on the validity of the user&#8217;s input; which is determined by the <code>execute</code> method in
+<code>DeliveredCommand</code>.<br></p>
+</div>
+<div class="paragraph">
+<p>The <code>execute</code> method of <code>DeliveredCommand</code> will first check if a valid
+<a href="#command_prefix"><code>FLAG</code></a> is present in the user&#8217;s input. If the <a href="#command_prefix"><code>FLAG</code></a>
+is not valid, a <code>CommandException</code> will be thrown to the user to tell him/her that their
+input was invalid and tell them the format which their input should follow.<br></p>
+</div>
+<div class="paragraph">
+<p>If a valid <a href="#command_prefix"><code>FLAG</code></a> is present, this will trigger the
+<code>processDeliveryOfOrder</code> method in <code>DeliveredCommand</code> which will check if
+a valid <a href="#command_prefix"><code>INDEX</code></a> is present in the user&#8217;s input.<br></p>
+</div>
+<div class="paragraph">
+<p>If the <a href="#command_prefix"><code>INDEX</code></a> is not valid, <code>processDeliveryOfOrder</code> method will throw
+a <code>CommandException</code> to the user; telling him/her that their input was invalid and the format
+that their input should follow. i.e. <code>delivered</code> <a href="#command_prefix"><code>FLAG</code></a>
+ <a href="#command_prefix"><code>INDEX</code></a><br></p>
+</div>
+<div class="paragraph">
+<p>If both <a href="#command_prefix"><code>FLAG</code></a> and <a href="#command_prefix"><code>INDEX</code></a> are valid, an <code>Order</code>
+or <code>ReturnOrder</code> object will be created based on the <a href="#command_prefix"><code>FLAG</code></a>.
+The <a href="#command_prefix"><code>INDEX</code></a> will determine which order or return order to take from
+the order list or return order list respectively using the appropriate getter method.
+The <code>Order</code> or <code>ReturnOrder</code> object will be checked to see if it was delivered using the <code>isDelivered()</code> method.<br></p>
+</div>
+<div class="paragraph">
+<p>If the <code>Order</code> or <code>ReturnOrder</code> was already delivered, this will call the <code>updateOrderList(model)</code> or
+<code>updatedReturnOrderList(model)</code> method respectively in <code>DeliveredCommand</code> and a new
+instance of <code>CommandResult</code> will be created to tell the user that the order or return order was delivered.<br></p>
+</div>
+<div class="paragraph">
+<p>If the <code>Order</code> or <code>ReturnOrder</code> was not delivered, this will call the <code>deliverAndUpdateOrderList(model)</code> or
+<code>deliverAndUpdateReturnOrderList(model)</code> respectively in <code>DeliveredCommand</code>. In these methods, the particular <code>Order</code> or
+<code>ReturnOrder</code> will be retrieved from the <code>model</code> using the <code>getFilteredOrderList()</code> or <code>getFilteredReturnOrderList()</code>
+method. Based on the retrieved <code>Order</code> or <code>ReturnOrder</code>, a new <code>Order</code> or <code>ReturnOrder</code> with the <code>delivered</code>
+delivery status will be instantiated using the <code>createDeliveredOrder</code> or <code>createDeliveredReturnOrder</code> methods respectively.<br></p>
+</div>
+<div class="paragraph">
+<p>Then, the <code>setOrder</code> or <code>setReturnOrder</code> method will be called to replace the original <code>Order</code> or <code>ReturnOrder</code> object
+respectively in <code>model</code>. The <code>deliverOrder</code> or <code>deliverReturnOrder</code> method will be called to to set the
+delivery status of the object to delivered. Then, the <code>updateFilteredOrderList()</code> method or <code>updateFilteredReturnOrderList()</code>
+method to update the list in the <code>model</code>.<br></p>
+</div>
+<div class="paragraph">
+<p>Based on the new updates, a new <code>CommandResult</code> object will be instantiated to print the message success to the user.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="use-cases"><a class="link" href="#use-cases">Use Cases</a></h2>
+<div class="sectionbody">
+<h3 id="use-case-uc12-display-list-of-commands-in-delino-using-help" class="discrete">Use case: UC12 - Display list of commands in Delino using help</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list all commands in Delino</p>
+</li>
+<li>
+<p>Delino opens a new window after execution of the help command.</p>
+</li>
+<li>
+<p>Delino display the list of commands and a button to provide user a link to Delino&#8217;s User Guide</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Delino detects invalid syntax.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Delino shows an error message to tell user the right way to use the help command.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b. Delino detects additional non-whitespace characters after the command word, help.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. Delino shows an error message to tell user the right way to use the help command.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="non-functional-requirements"><a class="link" href="#non-functional-requirements">Appendix A: Non Functional Requirements</a></h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Should work on any <a href="#mainstream-os">mainstream OS</a> as long as it has Java <code>11</code> or above installed.</p>
+</li>
+<li>
+<p>Should be able to hold up to 350 orders without a noticeable sluggishness in performance for typical usage.</p>
+</li>
+<li>
+<p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
+</li>
+<li>
+<p>The system should be able to respond within three seconds.</p>
+</li>
+<li>
+<p>The system should be able to work without internet access.</p>
+</li>
+<li>
+<p>A user should be able to get all the information he/she needs within four commands.</p>
+</li>
+<li>
+<p>A user should be able to familiarise himself/herself within an hour of usage.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="glossary"><a class="link" href="#glossary">Appendix B: Glossary</a></h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="mainstream-os"></a> Mainstream OS</dt>
+<dd>
+<p>Windows, Linux, Unix, OS-X</p>
+</dd>
+<dt class="hdlist1"><a id="returns"></a> Returns</dt>
+<dd>
+<p>An order that is rejected and needs to be returned to the warehouse</p>
+</dd>
+<dt class="hdlist1"><a id="invalid-syntax"></a> Invalid syntax</dt>
+<dd>
+<p>Any syntax used that does not correspond to the required format</p>
+</dd>
+<dt class="hdlist1"><a id="status-bar"></a> Status Bar</dt>
+<dd>
+<p>Refers to the display field showing the results of an executed command</p>
+</dd>
+</dl>
+</div>
+<table id="command_prefix" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 4. Command Prefix</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Prefix</th>
+<th class="tableblock halign-left valign-top">Meaning</th>
+<th class="tableblock halign-left valign-top">Used in the following Command(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ot/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Order Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#import">Import</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tid/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transaction ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#import">Import</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Customer Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#import">Import</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#import">Import</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">p/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Phone Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#import">Import</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">e/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Email</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#import">Import</a>, <a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dts/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delivery Date And Time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#import">Import</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rts/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Return Date and Time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#import">Import</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">w/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Warehouse Location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#import">Import</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cod/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cash On Delivery</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">c/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comments by Customer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#import">Import</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type of Item</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#import">Import</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+</tbody>
+</table>
+<table id="command_flags" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 5. Possible Command Flags</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Flag</th>
+<th class="tableblock halign-left valign-top">Meaning</th>
+<th class="tableblock halign-left valign-top">Used in the following Command(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-f</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Force clear, no user confirmation will be requested</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#clear">Clear</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-o</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Order flag, Operation on order list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#clear">Clear</a>, <a href="#delete">Delete</a>, <a href="#delivered">Delivered</a>, <a href="#edit">Edit</a>, <a href="#nearby">Nearby</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-r</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Return Order flag, Operation on return order list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#clear">Clear</a>, <a href="#delete">Delete</a>, <a href="#delivered">Delivered</a>, <a href="#edit">Edit</a>, <a href="#nearby">Nearby</a>, <a href="#search">Search</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="product-survey"><a class="link" href="#product-survey">Appendix C: Product Survey</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong><a href="https://www.pinglockergroup.com/en/parcel-management-software">PingLocker</a></strong></p>
+</div>
+<div class="paragraph">
+<p>Pros:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You can take a picture of the parcel and it is automatically added to the application for tracking.</p>
+</li>
+<li>
+<p>You can also receive weekly statistics on your delivery tasks and time saved.</p>
+</li>
+<li>
+<p>The application interface looks good and easy to navigate.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Cons:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Required to scan the parcels one by one, which can be slow and tedious.</p>
+</li>
+<li>
+<p>There does not seem to be a feature to keep track of parcels in a particular area/region.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><a href="https://sg.pickupp.io/en/delivery-agents">Pickupp</a></strong></p>
+</div>
+<div class="paragraph">
+<p>Pros:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You can take a picture of the parcel barcode to add to the application for tracking.</p>
+</li>
+<li>
+<p>There is language support for chinese language (in addition to english)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Cons:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>There are no statistics available.</p>
+</li>
+<li>
+<p>Required to scan the parcels one by one, which can be slow and tedious.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix D: Instructions for Manual Testing</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Given below are instructions to test the app manually.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+These instructions only provide a starting point for testers to work on; testers are expected to do more <em>exploratory</em> testing.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="launch-delino"><a class="link" href="#launch-delino">Launch Delino</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Initial launch</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Ensure that you have Java 11 installed in your computer</p>
+</li>
+<li>
+<p>Download the latest Delino.jar</p>
+</li>
+<li>
+<p>Copy the jar file to the folder you would like to use as a home address for Delino application
+Expected: Shows the GUI of the Delino App. The window size may not be optimum</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="inserting-an-order"><a class="link" href="#inserting-an-order">Inserting an order</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Insert a minimum of 2 orders</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Insert command format: <code>insert</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>ts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>cod/CASH_ON_DELIVERY</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p>
+</li>
+<li>
+<p>Test case: <code>insert</code> <code>tid/9876543210</code> <code>n/John Doe</code> <code>a/Blk 572 Hougang st 51 #10-33 S530572</code> <code>p/98766789</code> <code>e/johndoe@example.com</code> <code>ts/2020-02-20 1300</code> <code>w/Yishun</code> <code>cod/$4</code><br>
+Expected: Inserts an order with the above details to the list and displayed on the GUI</p>
+</li>
+<li>
+<p>Test case: <code>insert</code> <code>tid/1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 572 Hougang st 51 #11-37 S530572</code> <code>p/9001 0019</code> <code>e/amoscheong@example.com</code> <code>ts/2020-03-10 1650</code> <code>w/Marsiling</code> <code>cod/$5</code> <code>c/Leave it at the riser</code> <code>type/glass</code><br>
+Expected: Inserts the order to the list, including the item type and the order comment</p>
+</li>
+<li>
+<p>Test case: Invalid Syntax<br>
+Expected: No order is added. Error details shown in the response message. A help message displayed for user to insert accordingly. Status bar remain unchanged</p>
+</li>
+<li>
+<p>Test case: Insert order with existing Transaction ID in list<br>
+Expected: An error will occur and a message will be displayed, stating that order with duplicate ID cannot be inserted into the list</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="returning-an-order"><a class="link" href="#returning-an-order">Returning an order</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Convert a delivered order into a return order or create a new return order</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Insert command format: <code>return</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>rts/RETURN_TIMESTAMP</code> <code>w/WAREHOUSE_LOCATION</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p>
+</li>
+<li>
+<p>Test case: <code>return</code> <code>tid/9876543210</code> <code>n/John Doe</code> <code>a/Blk 572 Hougang st 51 #10-33 S530572</code> <code>p/98766789</code> <code>e/johndoe@example.com</code> <code>rts/2020-02-20 1300</code> <code>w/Yishun</code><br>
+Expected: Creates a new return order with the above details and adds it into the return order list. This will be displayed on the GUI</p>
+</li>
+<li>
+<p>Test case: <code>return</code> <code>tid/1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 572 Hougang st 51 #11-37 S530572</code> <code>p/9001 0019</code> <code>e/amoscheong@example.com</code> <code>rts/2020-03-10 1650</code> <code>w/Marsiling</code> <code>c/Leave it at the riser</code> <code>type/glass</code><br>
+Expected: Creates a new return order with the above details, including type and comments and adds it into the return order list. This will be displayed on the GUI</p>
+</li>
+<li>
+<p>Test case: <code>return</code> <code>tid/1023456789</code><br>
+   Expected: Checks if an order with the given <a href="#command_prefix"><code>TRANSACTION_ID</code></a> exists. If it exists and
+it was delivered, it will be converted into a return order and added into the return order list.</p>
+</li>
+<li>
+<p>Test case: Invalid Syntax<br>
+Expected: No return order is added. Error details shown in the response message. A help message displayed for user to use the return command accordingly.</p>
+</li>
+<li>
+<p>Test case: Return order with invalid Transaction ID in order list<br>
+   Expected: An error will occur and a message will be displayed, stating that order with the given <a href="#command_prefix"><code>TRANSACTION_ID</code></a>
+cannot be found in the order list.</p>
+</li>
+<li>
+<p>Test case: Return order with missing parcel attributes<br>
+Expected: An error will occur and a message will be displayed, indicating the right message usage of the return feature.</p>
+</li>
+<li>
+<p>Test case: Order to be converted was not delivered<br>
+Expected: An error will occur and a message will be displayed, indicating that the order was not delivered and cannot be returned.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-an-order"><a class="link" href="#deleting-an-order">Deleting an order</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting an order with respect to the current list displayed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Delete command format: <code>delete</code> <code>FLAG</code> <code>INDEX</code></p>
+</li>
+<li>
+<p>Prerequisites: List all orders using the <code>list</code> command. Multiple orders in the list</p>
+</li>
+<li>
+<p>Test case: <code>delete</code> <code>-o</code> <code>1</code><br>
+Expected: The first order item in the current order list will be removed. Details of the deleted order will be displayed in the response box</p>
+</li>
+<li>
+<p>Test case: <code>delete</code> <code>-r</code> <code>2</code><br>
+Expected: The second item in the current return order list will be removed. Details of the deleted order will be displayed in the response box</p>
+</li>
+<li>
+<p>Test case: <code>delete</code> <code>20</code><br>
+Expected: No order is deleted as no <code>FLAG</code> is provided.<br>
+An error message will be displayed in the response box.</p>
+</li>
+<li>
+<p>Test case: <code>delete</code> <code>-r</code> <code>INVALID_INDEX</code><br>
+Expected: No order is deleted. An error message will be displayed in the response box, indicating that the index cannot be found in the list</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="edit-orders"><a class="link" href="#edit-orders">Edit orders</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Edit the details of the delivery order by specifying the <code><a href="#command_flag">FLAG</a></code> (order type), <code>INDEX</code> (parcel number displayed), <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> (the field user want to change) and <code>NEW_VALUE</code> (the new value that user want to replace the old ones with). For detailed implementation explanation click <a href="#edit">here</a>.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisite: Call the <code><a href="#list">list</a></code> command to show something or <code><a href="#insert">insert</a></code>/<code><a href="#return">return</a></code> command to add something before you can <code><a href="#edit">edit</a></code>.</p>
+</li>
+<li>
+<p>Edit command format: <code>edit</code> <code><a href="#command_flag">FLAG</a></code> <code>INDEX</code> <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/NEW_VALUE</code></p>
+</li>
+<li>
+<p>Test case: <code>edit</code> <code>-r</code> <code>1</code> <code>n/Xuan En</code><br>
+Expected: The first index customer&#8217;s name is changed to Xuan En.</p>
+</li>
+<li>
+<p>Test case: <code>edit</code> <code>-o</code> <code>2</code> <code>p/99521654</code><br>
+Expected: The second index phone number is changed to 9952 1654.</p>
+</li>
+<li>
+<p>Test case: <code>edit</code> <code>-o</code> <code>1</code> <code>a/Blk 123 Pasir Ris street 51 #12-23 S510123</code><br>
+Expected: The first index is edited where the address of the customer of the order will be changed to Blk 123 Pasir Ris Street 51 #12-23 S510123.</p>
+</li>
+<li>
+<p>Test case: <code>edit</code> <code>-r</code> <code>2</code> <code>n/Mr Tan</code> <code>p/98776655</code> <code>a/Blk 888 Jurong East street 2 #01-02 S609601</code><br>
+Expected: The second index of the list is edited. The name is changed to Mr Tan, phone number changed to 98776655 and address will be changed to Blk 888 Jurong East street 2 #01-02 S609601.</p>
+</li>
+<li>
+<p>Test case: <code>edit</code> <code>-o</code> <code>1</code> <code>dts/09/08/2020</code><br>
+Expected: The delivery date of the first index of the customer will be rescheduled to 09/08/2020.</p>
+</li>
+<li>
+<p>Test case: <code>edit</code> <code>-r</code> <code>1</code> <code>rts/02/02/1900</code><br>
+Expected: The response box will display an error message as it is impossible to put a date that is already passed.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="import-orders"><a class="link" href="#import-orders">Import orders</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Import a new list of orders from a .csv file given by the company</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Import command format: <code>import</code> <code>NAME_OF_FILE.csv</code></p>
+</li>
+<li>
+<p>Prerequisites :
+The import file must be a <code>.csv file</code> and the <code>csv file</code> should be inside <code>data</code> folder which is the same directory as the JAR file. Otherwise, it will cause the app to raise an exception and print the error message. Should not import a file that is non-existent</p>
+</li>
+<li>
+<p>Test case: <code>import</code> <code>customers_20_02_2020.csv</code><br>
+Expected: In the response box, a message will appear to indicate that the import is successful. At the same time, the contents of the .csv file will be shown to the user in the form of a list of orders</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="list-orders"><a class="link" href="#list-orders">List orders</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>List all the delivery orders for the user. The type of orders to be listed is dependent on the command input from the user</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>list</code><br>
+Expected: List all the delivery orders, showing all completed and uncompleted orders.</p>
+</li>
+<li>
+<p>Test case: <code>list</code> <code>done</code><br>
+Expected: List all completed delivery orders.</p>
+</li>
+<li>
+<p>Test case: <code>list</code> <code>undone</code><br>
+Expected: List all uncompleted delivery orders.</p>
+</li>
+<li>
+<p>Test case: <code>list</code> <code>ANY_WORD_OTHER_THAN_UNDONE_AND_DONE</code><br>
+Expected: An error will occur, a message will appear in the response box, indicating an invalid list command</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="search-an-order"><a class="link" href="#search-an-order">Search an order</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Search an order based on the <code>KEYWORD</code> and <code>FLAG</code>(if any) given. For a more detailed explanation of the implementation click <a href="#search">here</a>.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Search command format: <code>search</code> <code><a href="#command_flag">FLAG</a></code> <code>KEYWORD</code></p>
+</li>
+<li>
+<p>Test case: <code>list</code> <code>done</code><br>
+<code>search</code> <code>-r</code> <code>Jeremy Loh</code><br>
+Expected: Specifically search for any return order from the return order list that has any field matching the keyword of either <code>Jeremy</code>, <code>Loh</code> or both and print it to the user.</p>
+</li>
+<li>
+<p>Test case: <code>list</code> <code>undone</code><br>
+<code>search</code> <code>-o</code> <code>tid/asj2od3943</code><br>
+Expected: Specifically search for any order from the order list that has a Transaction id of <code>asj2od3943</code> and print it out to the user.</p>
+</li>
+<li>
+<p>Test case: <code>list</code><br>
+<code>search</code> <code>n/Jeremy</code><br>
+   Expected: Specifically search for both return order or order from both list that has one word of the name matching the key word <code>Jeremy</code>.</p>
+</li>
+<li>
+<p>Test case: <code>list</code><br>
+<code>search</code><br>
+Expected: An error message will appear in the response box, stating that the argument cannot be empty and there are no changes to the list itself.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mark-parcel-as-delivered"><a class="link" href="#mark-parcel-as-delivered">Mark parcel as delivered</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Mark a parcel&#8217;s delivery status as delivered based on its <a href="#command_prefix"><code>INDEX</code></a> and <a href="#command_prefix"><code>FLAG</code></a>
+whenever the parcel has been delivered.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Delivered command format: <code>delivered</code> <a href="#command_prefix"><code>FLAG</code></a> <a href="#command_prefix"><code>INDEX</code></a></p>
+</li>
+<li>
+<p>Prerequisite: Ensure that your order list or return order list has at least one order.</p>
+</li>
+<li>
+<p>Test case: <code>delivered</code> <code>-o</code> <code>1</code><br>
+Expected: The first order in the currently displayed order list will be marked as delivered</p>
+</li>
+<li>
+<p>Test case: <code>delivered</code> <code>-r</code> <code>2</code><br>
+Expected: The second return order in the currently displayed return order list will be marked as delivered</p>
+</li>
+<li>
+<p>Test case: Invalid syntax<br>
+Expected: No parcel is marked as delivered. The error message will be displayed on the error response box describing the error</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="clear-orders"><a class="link" href="#clear-orders">Clear orders</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Clear all orders while all orders are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Clear command format: <code>clear</code> <code>[FLAG]</code></p>
+</li>
+<li>
+<p>Test case: <code>clear</code><br>
+Expected: Confirmation message will display in status message.<br></p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>If <strong>Yes</strong> button is pressed, the both order and return order lists will be cleared. Notify the user that both order lists have been cleared in the status message.<br></p>
+</li>
+<li>
+<p>If <strong>No</strong> button is pressed, no order list is cleared.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case: <code>clear</code> <code>-f</code><br>
+Expected: Both order list and return order list will be cleared. Notify the user that both order lists have been cleared in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>clear</code> <code>-f</code> <code>-r</code><br>
+Expected: Only return order list will be cleared. Notify the user that return order list has been cleared in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>clear</code> <code>-r</code> <code>-r</code> <code>-f</code><br>
+Expected: Only return order list will be cleared. Notify the user that return order list has been cleared in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>clear</code> <code>-r</code> <code>-o</code><br>
+Expected: Invalid command input, as both <code>-r</code> and <code>-o</code> cannot be in a single command.<br>
+Error details shown in the response message. A help message displayed for the user to type the correct command. Status bar remains unchanged</p>
+</li>
+<li>
+<p>Test case: <code>clear</code> <code>-r-f</code><br>
+Expected: Invalid command input, as space is required in between flags.<br>
+   Error details shown in the response message. A help message displayed for the user to type the correct command. Status bar remains unchanged</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="help-2"><a class="link" href="#help-2">Help</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Display a list of available commands to user</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>help</code><br>
+Expected: A list of commands will be displayed in a new pop-up window and the response box will indicate a successful command.</p>
+</li>
+<li>
+<p>Test case: Invalid syntax<br>
+Expected: An error will occur and the response box will show an error message</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="show"><a class="link" href="#show">Show</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Opens a window which shows the statistics of the current lists of orders. It displays information such
+as earnings made, orders delivered and orders returned (Including a PieChart).</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>show</code> <code>all</code><br>
+Expected: All statistical information of all the orders shown in the statistics tab.</p>
+</li>
+<li>
+<p>Test case: <code>show</code> <code>today</code><br>
+Expected: All statistical information today shown in the statistics tab.</p>
+</li>
+<li>
+<p>Test case: <code>show</code> <code>today</code> <code>2020-12-03</code><br>
+Expected: All statistical information between the dates shown in the statistics tab.</p>
+</li>
+<li>
+<p>Test case: <code>show</code> <code>2020-12-03</code><br>
+Expected: All statistical information for the given date shown in the statistics tab.</p>
+</li>
+<li>
+<p>Test case: <code>show</code> <code>2020-12-03</code> <code>2021-01-01</code><br>
+Expected: All statistical information within the dates shown in the statistics tab.</p>
+</li>
+<li>
+<p>Test case: Invalid syntax<br>
+Expected: An error will occur and the response box will show an error message.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="obtain-all-nearby-orders-based-on-area-or-postal-sector"><a class="link" href="#obtain-all-nearby-orders-based-on-area-or-postal-sector">Obtain all nearby orders based on area or postal sector</a></h3>
+<div class="paragraph">
+<p>There are two possible search criteria for nearby orders</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Obtain all orders located in the same postal sector.<br>
+The postal sector to search for is given by the user.<br>
+A <strong>postal sector</strong> is the first <strong>two</strong> digits of a six digit Singapore postal code.<br>
+The list of postal sectors and their corresponding general locations can be found
+<a href="https://www.ura.gov.sg/realEstateIIWeb/resources/misc/list_of_postal_districts.htm">here</a>.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Nearby command format: <code>nearby</code> <code>[FLAG]</code> <code>POSTAL_SECTOR</code></p>
+</li>
+<li>
+<p>Prerequisites: Should call a list command before calling nearby. The nearby command will search based on the current list</p>
+</li>
+<li>
+<p>Test case: <code>nearby</code> <code>-o</code> <code>79</code><br>
+Expected: Obtain all orders located in postal sector 79 (Seletar)</p>
+</li>
+<li>
+<p>Test case: <code>nearby</code> <code>-r</code> <code>07</code><br>
+Expected: Obtain all return orders located in postal sector 07 (Anson, Tanjong Pagar)</p>
+</li>
+<li>
+<p>Test case: <code>nearby</code> <code>-o</code> <code>99</code><br>
+Expected: An error will occur as the given postal sector is invalid</p>
+</li>
+<li>
+<p>Test case: <code>nearby</code> <code>-o</code> <code>600</code><br>
+Expected: An error will occur as the given postal sector is invalid</p>
+</li>
+<li>
+<p>Test case: <code>nearby -o</code><br>
+Expected: An error will occur as it is an invalid syntax (no postal sector is provided)</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Obtain all orders located in the same area.<br>
+There are <strong>5</strong> different areas in Singapore: Central, East, North East, West, North<br></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Nearby command format: <code>nearby</code> <code>[FLAG]</code> <code>AREA</code></p>
+</li>
+<li>
+<p>Prerequisites: Should call a list command before calling nearby. The nearby command will search based on the current list</p>
+</li>
+<li>
+<p>Test case: <code>nearby</code> <code>-o</code> <code>central</code><br>
+Expected: Obtain all orders located in central area of Singapore</p>
+</li>
+<li>
+<p>Test case: <code>nearby</code> <code>-r</code> <code>east</code><br>
+Expected: Obtain all return orders located in east area of Singapore</p>
+</li>
+<li>
+<p>Test case: <code>nearby</code> <code>-o</code> <code>north east</code><br>
+Expected: Obtain all orders located in east area of Singapore</p>
+</li>
+<li>
+<p>Test case: <code>nearby</code> <code>-r</code> <code>west</code><br>
+Expected: Obtain all return orders located in east area of Singapore</p>
+</li>
+<li>
+<p>Test case: <code>nearby</code> <code>-r</code> <code>north</code><br>
+Expected: Obtain all return orders located in east area of Singapore</p>
+</li>
+<li>
+<p>Information about each area was obtained from
+<a href="https://keylocation.sg/singapore/districts-map">this website</a><br></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-data"><a class="link" href="#saving-data">Saving data</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Manual Saving is not required as data is already saved in the hard disk after any commands that change the data</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exit"><a class="link" href="#exit">Exit</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Exits the Delino App using the <code>exit</code> command</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>exit</code><br>
+Expected: The GUI window will be closed</p>
+</li>
+<li>
+<p>Test case: Adding any other words as the second argument of the <code>exit</code> command
+Expected: The response box will display an invalid command message</p>
+<h3 id="use-case-uc11-returning-an-order" class="discrete">Use case: UC11 - Returning an order</h3>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to return an order or create a new return order.</p>
+</li>
+<li>
+<p>Either an order will be converted to a return order or a new return order will be created</p>
+</li>
+<li>
+<p>Delino displays the updated return order list with the new return order.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Delino detects invalid syntax.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Delino shows an error message to the user.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b. Delino detects invalid parcel attributes.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. Delino shows an error message to the user.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1c. Delino detects invalid <a href="#command_prefix"><code>TRANSACTION_ID</code></a>, i.e. order with
+the given <a href="#command_prefix"><code>TRANSACTION_ID</code></a> does not exist.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1c1. Delino shows an error message to the user.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1d. Delino detects missing parcel attributes.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1d1. Delino shows an error message to the user.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+<h3 id="use-case-uc04-mark-order-or-return-order-as-delivered" class="discrete">Use case: UC04 - Mark order or return order as delivered</h3>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User request to mark order or return order as delivered,
+based on the <a href="#command_prefix"><code>FLAG</code></a> provided, -o or -r respectively and <a href="#command_prefix"><code>INDEX</code></a>.</p>
+</li>
+<li>
+<p>Delino changes the delivery status of the specified order or return order to delivered.</p>
+</li>
+<li>
+<p>Delino will display an updated order list or return order list.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Delino detects invalid syntax.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Delino shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b. Delino unable to detect any parcel with the <a href="#command_prefix"><code>INDEX</code></a> provided.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. Delino shows error message to the user.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1c. Delino unable to detect valid <a href="#command_prefix"><code>INDEX</code></a> provided.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1c1. Delino shows error message to the user.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1d. Delino unable to detect valid <a href="#command_prefix"><code>FLAG</code></a> provided.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1d1. Delino shows error message to the user.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="glossary-2"><a class="link" href="#glossary-2">Glossary</a></h2>
+<div class="sectionbody">
+<table id="command_prefix" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 6. Command Prefix</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Prefix</th>
+<th class="tableblock halign-left valign-top">Meaning</th>
+<th class="tableblock halign-left valign-top">Used in the following Command(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ot/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Order Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#import">Import</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tid/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transaction ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#import">Import</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Customer Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#import">Import</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#import">Import</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">p/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Phone Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#import">Import</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">e/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Email</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#import">Import</a>, <a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dts/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delivery Date And Time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#import">Import</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rts/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Return Date and Time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#import">Import</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">w/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Warehouse Location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#import">Import</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cod/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cash On Delivery</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">c/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comments by Customer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#import">Import</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type of Item</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#import">Import</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a></p></td>
+</tr>
+</tbody>
+</table>
+<table id="command_flags" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 7. Possible Command Flags</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Flag</th>
+<th class="tableblock halign-left valign-top">Meaning</th>
+<th class="tableblock halign-left valign-top">Used in the following Command(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-f</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Force clear, no user confirmation will be requested</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#clear">Clear</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-o</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Order flag, Operation on order list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#clear">Clear</a>, <a href="#delete">Delete</a>, <a href="#delivered">Delivered</a>, <a href="#edit">Edit</a>, <a href="#nearby">Nearby</a>, <a href="#search">Search</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-r</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Return Order flag, Operation on return order list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#clear">Clear</a>, <a href="#delete">Delete</a>, <a href="#delivered">Delivered</a>, <a href="#edit">Edit</a>, <a href="#nearby">Nearby</a>, <a href="#search">Search</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="appendix-g-instructions-for-manual-testing"><a class="link" href="#appendix-g-instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="mark-parcel-as-delivered-2"><a class="link" href="#mark-parcel-as-delivered-2">Mark parcel as delivered</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Mark a parcel&#8217;s delivery status as delivered based on its <a href="#command_prefix"><code>INDEX</code></a> and <a href="#command_prefix"><code>FLAG</code></a>
+whenever the parcel has been delivered.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Delivered command format: <code>delivered</code> <a href="#command_prefix"><code>FLAG</code></a> <a href="#command_prefix"><code>INDEX</code></a></p>
+</li>
+<li>
+<p>Prerequisite: Ensure that your order list or return order list has at least one order.</p>
+</li>
+<li>
+<p>Test case: <code>delivered</code> <code>-o</code> <code>1</code><br>
+Expected: The first order in the currently displayed order list will be marked as delivered</p>
+</li>
+<li>
+<p>Test case: <code>delivered</code> <code>-r</code> <code>2</code><br>
+Expected: The second return order in the currently displayed return order list will be marked as delivered</p>
+</li>
+<li>
+<p>Test case: Invalid syntax<br>
+   Expected: No parcel is marked as delivered. The error message will be displayed on the error response box describing the error
+=== Returning an order</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Convert a delivered order into a return order or create a new return order</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Insert command format: <code>return</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>rts/RETURN_TIMESTAMP</code> <code>w/WAREHOUSE_LOCATION</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p>
+</li>
+<li>
+<p>Test case: <code>return</code> <code>tid/9876543210</code> <code>n/John Doe</code> <code>a/Blk 572 Hougang st 51 #10-33 S530572</code> <code>p/98766789</code> <code>e/johndoe@example.com</code> <code>rts/2020-02-20 1300</code> <code>w/Yishun</code><br>
+Expected: Creates a new return order with the above details and adds it into the return order list. This will be displayed on the GUI</p>
+</li>
+<li>
+<p>Test case: <code>return</code> <code>tid/1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 572 Hougang st 51 #11-37 S530572</code> <code>p/9001 0019</code> <code>e/amoscheong@example.com</code> <code>rts/2020-03-10 1650</code> <code>w/Marsiling</code> <code>c/Leave it at the riser</code> <code>type/glass</code><br>
+Expected: Creates a new return order with the above details, including type and comments and adds it into the return order list. This will be displayed on the GUI</p>
+</li>
+<li>
+<p>Test case: <code>return</code> <code>tid/1023456789</code><br>
+   Expected: Checks if an order with the given <a href="#command_prefix"><code>TRANSACTION_ID</code></a> exists. If it exists and
+it was delivered, it will be converted into a return order and added into the return order list.</p>
+</li>
+<li>
+<p>Test case: Invalid Syntax<br>
+Expected: No return order is added. Error details shown in the response message. A help message displayed for user to use the return command accordingly.</p>
+</li>
+<li>
+<p>Test case: Return order with invalid Transaction ID in order list<br>
+   Expected: An error will occur and a message will be displayed, stating that order with the given <a href="#command_prefix"><code>TRANSACTION_ID</code></a>
+cannot be found in the order list.</p>
+</li>
+<li>
+<p>Test case: Return order with missing parcel attributes<br>
+Expected: An error will occur and a message will be displayed, indicating the right message usage of the return feature.</p>
+</li>
+<li>
+<p>Test case: Order to be converted was not delivered<br>
+   Expected: An error will occur and a message will be displayed, indicating that the order was not delivered and cannot be returned.
+=== Help</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Display a list of available commands to user</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>help</code><br>
+Expected: A list of commands will be displayed in a new pop-up window and the response box will indicate a successful command.</p>
+</li>
+<li>
+<p>Test case: Invalid syntax<br>
+Expected: An error will occur and the response box will show an error message</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 10:34:58 UTC</div></div></div></body></html>
