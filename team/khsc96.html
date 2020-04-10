@@ -79,10 +79,10 @@ This feature requires a thorough understanding of the existing code of AB3 such 
 <p>Changes to all asiicdoc files title to match our app Delino (Pull request <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/92">#92</a>).</p>
 </li>
 <li>
-<p>Improve UI of Delino (Pull requests: <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/209">#209</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/221">#221</a>)</p>
+<p>Improve UI of Delino (Pull requests: <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/209">#209</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/221">#221</a>).</p>
 </li>
 <li>
-<p>Refine constraint of receiver name (Pull requests: <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/305">#305</a>)</p>
+<p>Allow user to easily see the time in Delino by adding a real-time clock (Pull requests: <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/336">#336</a>).</p>
 </li>
 </ol>
 </div>
@@ -1079,5 +1079,86 @@ However, if <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> is
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="edit-orders"><a class="link" href="#edit-orders">Edit orders</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Edit the details of the delivery order by specifying the <code><a href="#command_flag">FLAG</a></code> (order type), <code>INDEX</code> (parcel number displayed), <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> (the field user want to change) and <code>NEW_VALUE</code> (the new value that user want to replace the old ones with). For detailed implementation explanation click <a href="#edit">here</a>.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisite: Call the <code><a href="#list">list</a></code> command to show something or <code><a href="#insert">insert</a></code>/<code><a href="#return">return</a></code> command to add something before you can <code><a href="#edit">edit</a></code>.</p>
+</li>
+<li>
+<p>Edit command format: <code>edit</code> <code><a href="#command_flag">FLAG</a></code> <code>INDEX</code> <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/NEW_VALUE</code></p>
+</li>
+<li>
+<p>Test case: <code>edit</code> <code>-r</code> <code>1</code> <code>n/Xuan En</code><br>
+Expected: The first index customer&#8217;s name is changed to Xuan En.</p>
+</li>
+<li>
+<p>Test case: <code>edit</code> <code>-o</code> <code>2</code> <code>p/99521654</code><br>
+Expected: The second index phone number is changed to 9952 1654.</p>
+</li>
+<li>
+<p>Test case: <code>edit</code> <code>-o</code> <code>1</code> <code>a/Blk 123 Pasir Ris street 51 #12-23 S510123</code><br>
+Expected: The first index is edited where the address of the customer of the order will be changed to Blk 123 Pasir Ris Street 51 #12-23 S510123.</p>
+</li>
+<li>
+<p>Test case: <code>edit</code> <code>-r</code> <code>2</code> <code>n/Mr Tan</code> <code>p/98776655</code> <code>a/Blk 888 Jurong East street 2 #01-02 S609601</code><br>
+Expected: The second index of the list is edited. The name is changed to Mr Tan, phone number changed to 98776655 and address will be changed to Blk 888 Jurong East street 2 #01-02 S609601.</p>
+</li>
+<li>
+<p>Test case: <code>edit</code> <code>-o</code> <code>1</code> <code>dts/09/08/2020</code><br>
+Expected: The delivery date of the first index of the customer will be rescheduled to 09/08/2020.</p>
+</li>
+<li>
+<p>Test case: <code>edit</code> <code>-r</code> <code>1</code> <code>rts/02/02/1900</code><br>
+Expected: The response box will display an error message as it is impossible to put a date that is already passed.</p>
+</li>
+</ol>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 17:25:43 UTC</div></div></div></body></html>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="search-an-order"><a class="link" href="#search-an-order">Search an order</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Search an order based on the <code>KEYWORD</code> and <code>FLAG</code>(if any) given. For a more detailed explanation of the implementation click <a href="#search">here</a>.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Search command format: <code>search</code> <code><a href="#command_flag">FLAG</a></code> <code>KEYWORD</code></p>
+</li>
+<li>
+<p>Test case: <code>list</code> <code>done</code><br>
+<code>search</code> <code>-r</code> <code>Jeremy Loh</code><br>
+Expected: Specifically search for any return order from the return order list that has any field matching the keyword of either <code>Jeremy</code>, <code>Loh</code> or both and print it to the user.</p>
+</li>
+<li>
+<p>Test case: <code>list</code> <code>undone</code><br>
+<code>search</code> <code>-o</code> <code>tid/asj2od3943</code><br>
+Expected: Specifically search for any order from the order list that has a Transaction id of <code>asj2od3943</code> and print it out to the user.</p>
+</li>
+<li>
+<p>Test case: <code>list</code><br>
+<code>search</code> <code>n/Jeremy</code><br>
+   Expected: Specifically search for both return order or order from both list that has one word of the name matching the key word <code>Jeremy</code>.</p>
+</li>
+<li>
+<p>Test case: <code>list</code><br>
+<code>search</code><br>
+   Expected: An error message will appear in the response box, stating that the argument cannot be empty and there are no changes to the list itself.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 17:37:24 UTC</div></div></div></body></html>
