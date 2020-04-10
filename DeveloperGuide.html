@@ -56,11 +56,12 @@
 <li><a href="#search-an-order">G.8. Search an order</a></li>
 <li><a href="#mark-order-as-done">G.9. Mark order as Done</a></li>
 <li><a href="#clear-orders">G.10. Clear orders</a></li>
-<li><a href="#show">G.11. Show</a></li>
-<li><a href="#obtain-all-nearby-orders-based-on-area-or-postal-sector">G.12. Obtain all nearby orders based on area or postal sector</a></li>
-<li><a href="#undo-previous-action">G.13. Undo previous action</a></li>
-<li><a href="#saving-data">G.14. Saving data</a></li>
-<li><a href="#exit">G.15. Exit</a></li>
+<li><a href="#help">G.11. Help</a></li>
+<li><a href="#show">G.12. Show</a></li>
+<li><a href="#obtain-all-nearby-orders-based-on-area-or-postal-sector">G.13. Obtain all nearby orders based on area or postal sector</a></li>
+<li><a href="#undo-previous-action">G.14. Undo previous action</a></li>
+<li><a href="#saving-data">G.15. Saving data</a></li>
+<li><a href="#exit">G.16. Exit</a></li>
 </ul>
 </li>
 </ul>
@@ -1494,7 +1495,7 @@ This will result in a <code>ParseException</code> as invalid arguments are provi
 <div class="content">
 <img src="images/NearbySequenceDiagramParseException.svg" alt="NearbySequenceDiagramParseException">
 </div>
-<div class="title">Figure 35. Nearby Command Sequence Diagram of <code>nearby</code></div>
+<div class="title">Figure 35. Parse Exception due to invalid <code>nearby</code> command</div>
 </div>
 <div class="paragraph">
 <p>The exception will be thrown in the <code>NearbyCommandParser</code>.</p>
@@ -3480,12 +3481,18 @@ Error details shown in the response message. A help message displayed for the us
 <li>
 <p>Test case: <code>clear</code> <code>-r-f</code><br>
 Expected: Invalid command input, as space is required in between flags.<br>
-   Error details shown in the response message. A help message displayed for the user to type the correct command. Status bar remains unchanged
-=== Help</p>
+   Error details shown in the response message. A help message displayed for the user to type the correct command. Status bar remains unchanged</p>
 </li>
 </ol>
 </div>
 </li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="help"><a class="link" href="#help">G.11. Help</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Display a list of available commands to user</p>
 <div class="olist loweralpha">
@@ -3505,7 +3512,7 @@ Expected: An error will occur and the response box will show an error message</p
 </div>
 </div>
 <div class="sect2">
-<h3 id="show"><a class="link" href="#show">G.11. Show</a></h3>
+<h3 id="show"><a class="link" href="#show">G.12. Show</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3544,7 +3551,7 @@ Expected: An error will occur and the response box will show an error message.</
 </div>
 </div>
 <div class="sect2">
-<h3 id="obtain-all-nearby-orders-based-on-area-or-postal-sector"><a class="link" href="#obtain-all-nearby-orders-based-on-area-or-postal-sector">G.12. Obtain all nearby orders based on area or postal sector</a></h3>
+<h3 id="obtain-all-nearby-orders-based-on-area-or-postal-sector"><a class="link" href="#obtain-all-nearby-orders-based-on-area-or-postal-sector">G.13. Obtain all nearby orders based on area or postal sector</a></h3>
 <div class="paragraph">
 <p>There are two possible search criteria for nearby orders</p>
 </div>
@@ -3629,7 +3636,7 @@ Expected: Obtain all return orders located in east area of Singapore</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="undo-previous-action"><a class="link" href="#undo-previous-action">G.13. Undo previous action</a></h3>
+<h3 id="undo-previous-action"><a class="link" href="#undo-previous-action">G.14. Undo previous action</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3654,7 +3661,7 @@ Expected: Error message displayed in the response box</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.14. Saving data</a></h3>
+<h3 id="saving-data"><a class="link" href="#saving-data">G.15. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3664,7 +3671,7 @@ Expected: Error message displayed in the response box</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exit"><a class="link" href="#exit">G.15. Exit</a></h3>
+<h3 id="exit"><a class="link" href="#exit">G.16. Exit</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3686,4 +3693,4 @@ Expected: The response box will display an invalid command message</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 06:10:52 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 07:40:42 UTC</div></div></div></body></html>
