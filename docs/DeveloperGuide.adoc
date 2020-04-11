@@ -30,8 +30,8 @@ If you wish to contact the team, more details can be found <<AboutUs#, here>>.
 == How to navigate this Developer Guide
 This developer guide is written for anyone who wish to extend/modify Delino.
 This guide will first touch on the overview of our application in the <<Design-Architecture, design architecture>>.
-Secondly, the specific implementation of Delino's commands will be further elaborated in the
-<<implementation, implementation>> section.
+This guide will also cover the specific implementation of Delino's commands: +
+This will be further elaborated in the <<implementation, implementation>> section.
 
 If you need help setting up your development environment to work on Delino, you can follow the
 <<SettingUp#, Setting Up>> guide.
