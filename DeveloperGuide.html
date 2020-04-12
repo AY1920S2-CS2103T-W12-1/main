@@ -766,7 +766,7 @@ Afterward,  the new <strong>ClearCommand</strong> object will be executed.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>If <code>-f</code> flag is found in flags, the respective order book will be cleared and
+<p>If <code>-f</code> flag is found in flags, the respective orders will be cleared and
 display a success message to the user.</p>
 </li>
 <li>
@@ -775,7 +775,7 @@ User would be required to press either one of the following two buttons:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>Yes</code> button - The respective order book will be cleared and display successful clear message to the user.</p>
+<p><code>Yes</code> button - The respective orders will be cleared and display successful clear message to the user.</p>
 </li>
 <li>
 <p><code>No</code> button - Pop up closed and end of activity.</p>
@@ -805,33 +805,33 @@ the user has key in:</p>
 <ol class="arabic">
 <li>
 <p><code>MESSAGE_USAGE</code><br>
-clear: Clear either both order book list and return order book list or one of them.<br>
+clear: Clear either both order list and return order list or one of them.<br>
 Parameters: -o/-r/-f<br>
 Example: clear -o -f<br></p>
 </li>
 <li>
-<p><code>MESSAGE_SUCCESS_ORDER_BOOK</code><br>
-Inform the user that order book list has been cleared successfully.</p>
+<p><code>MESSAGE_SUCCESS_ORDER_LIST</code><br>
+Inform the user that order list has been cleared successfully.</p>
 </li>
 <li>
-<p><code>MESSAGE_SUCCESS_RETURN_BOOK</code><br>
-Inform the user that return order book list has been cleared successfully.</p>
+<p><code>MESSAGE_SUCCESS_RETURN_LIST</code><br>
+Inform the user that return order list has been cleared successfully.</p>
 </li>
 <li>
-<p><code>MESSAGE_SUCCESS_BOTH_BOOK</code><br>
-Inform the user that both order book lists have been cleared successfully.</p>
+<p><code>MESSAGE_SUCCESS_BOTH_LIST</code><br>
+Inform the user that both order lists have been cleared successfully.</p>
 </li>
 <li>
-<p><code>MESSAGE_ENQUIRY_ORDER_BOOK</code><br>
-Confirmation message to the user if the user want to clear order book list.</p>
+<p><code>MESSAGE_ENQUIRY_ORDER_LIST</code><br>
+Confirmation message to the user if the user want to clear order list.</p>
 </li>
 <li>
-<p><code>MESSAGE_ENQUIRY_RETURN_BOOK</code><br>
-Confirmation message to the user if the user want to clear return order book list.</p>
+<p><code>MESSAGE_ENQUIRY_RETURN_LIST</code><br>
+Confirmation message to the user if the user want to clear return order list.</p>
 </li>
 <li>
-<p><code>MESSAGE_ENQUIRY_BOTH_BOOK</code><br>
-Confirmation message to the user if the user want to clear both order book lists.</p>
+<p><code>MESSAGE_ENQUIRY_BOTH_LIST</code><br>
+Confirmation message to the user if the user want to clear both order lists.</p>
 </li>
 </ol>
 </div>
@@ -850,7 +850,7 @@ Sequence Diagram below:<br></p>
 </div>
 <div class="paragraph">
 <p>The above sequence diagram illustrate how the <code>clear</code> Command is being processed when the user inputs
-<code>clear -f</code> to force clear both the order book and return order book.</p>
+<code>clear -f</code> to force clear all of the orders and return orders without any prompt.</p>
 </div>
 <div class="paragraph">
 <p>After the user input. the arguments passed to the <code>clear</code> command will be parsed by the <strong>ClearCommandParser</strong> class<br>
@@ -4684,4 +4684,4 @@ Delino by working tirelessly to build it together. Overall, we believe that Deli
 and time spent on perfecting it.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 10:06:29 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 10:15:27 UTC</div></div></div></body></html>
