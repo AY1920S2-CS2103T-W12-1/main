@@ -4131,8 +4131,11 @@ Expected: An error will occur and a message will be displayed, stating that orde
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Return command format: <code>return</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>rts/RETURN_TIMESTAMP</code> <code>w/WAREHOUSE_LOCATION</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code><br>
-OR <code>return</code> <code>tid/TRANSACTION_ID</code> <code>rts/RETURN_TIMESTAMP</code></p>
+<p>Return command format: <code>return</code> <a href="#command_prefix"><code>TRANSACTION_ID</code></a> <a href="#command_prefix"><code>NAME</code></a>
+<a href="#command_prefix"><code>ADDRESS</code></a> <a href="#command_prefix"><code>PHONE_NUMBER</code></a> <a href="#command_prefix"><code>EMAIL</code></a>
+ <a href="#command_prefix"><code>RETURN_TIMESTAMP</code></a> <a href="#command_prefix"><code>WAREHOUSE_LOCATION</code></a>
+ <a href="#command_prefix"><code>[COMMENTS_BY_CUSTOMER]</code></a> <a href="#command_prefix"><code>[TYPE_OF_ITEM]</code></a><br>
+OR <code>return</code> <a href="#command_prefix"><code>TRANSACTION_ID</code></a> <a href="#command_prefix"><code>RETURN_TIMESTAMP</code></a></p>
 </li>
 <li>
 <p>Test case: <code>return</code> <code>tid/9876543210</code> <code>n/John Doe</code> <code>a/Blk 572 Hougang st 51 #10-33 S530572</code> <code>p/98766789</code> <code>e/johndoe@example.com</code> <code>rts/2020-02-20 1300</code> <code>w/Yishun</code><br>
@@ -4684,4 +4687,4 @@ Delino by working tirelessly to build it together. Overall, we believe that Deli
 and time spent on perfecting it.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 17:13:51 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 17:24:57 UTC</div></div></div></body></html>
