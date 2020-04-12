@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Eng Xuan En - UML Diagrams</title><link rel="stylesheet" href="../../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://github.com/AY1920S2-CS2103T-W12-1/main"><img src="../../images/delino_icon.png" alt="Delino"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="../../index.html">Delino</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../../index.html">Delino</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W12-1/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"></div><div id="content"><div class="sect1">
+<h2 id="eng-xuan-en-uml-diagrams"><a class="link" href="#eng-xuan-en-uml-diagrams">Eng Xuan En - UML Diagrams</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Import Feature UML Diagrams</strong><br></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../images/ImportActivityDiagram.svg" alt="ImportActivityDiagram" width="60%">
+</div>
+</div>
+<div class="paragraph">
+<p>This Activity Diagram purpose is to describe the general work flow of the Import feature. This diagram is especially
+useful for users, as it give them a general work flow of how Import command works and what they should expect out of
+Delino when performing a Import command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../images/ImportClassDiagram.svg" alt="ImportClassDiagram" width="45%">
+</div>
+</div>
+<div class="paragraph">
+<p>This Class Diagram purpose is to describe the dependencies of ImportCommand class when implementing this feature.
+This diagram is essential to our Delino application because it allows developer or users who are interested to better
+understand the underlying dependencies of ImportCommand class.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../images/ImportCommandSequenceDiagram.svg" alt="ImportCommandSequenceDiagram" width="55%">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../images/ExecuteImportCommand.svg" alt="ExecuteImportCommand" width="55%">
+</div>
+</div>
+<div class="paragraph">
+<p>The two sequence diagrams show a more detailed explanation of the communication between the different classes used in
+the Logic and Model after the user execute the <code>import</code> command. This would allows the user to further understand how
+ImportCommand works after <code>import</code> Command being executed.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Clear Feature UML Diagram</strong></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../images/ClearActivityDiagram.svg" alt="ClearActivityDiagram" width="55%">
+</div>
+</div>
+<div class="paragraph">
+<p>The purpose of this Activity Diagram is to describe the general work flow of the Clear feature.
+This diagram is especially useful for users, as it give them a general work flow of how Clear command works and what
+they should expect out of Delino when performing a Clear command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../images/ClearCommandClassDiagram.svg" alt="ClearCommandClassDiagram" width="50%">
+</div>
+</div>
+<div class="paragraph">
+<p>This Class Diagram purpose is to describe the dependencies of SearchCommand class when implementing this feature.
+This diagram is essential to our Delino application because it allows developer or users who are interested to better
+understand the underlying dependencies of SearchCommand class.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../images/ClearCommandSequenceDiagram.svg" alt="ClearCommandSequenceDiagram" width="50%">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../images/ExecuteClearCommand.svg" alt="ExecuteClearCommand" width="50%">
+</div>
+</div>
+<div class="paragraph">
+<p>The two sequence diagrams show a more detailed explanation of the communication between the Logic and Model class of
+Delino when the <code>clear</code> command is being executed. During the parsing of ClearCommandParser, it will check if the flags
+in the arguments are valid and whether if both <code>-r</code> and <code>-o</code> flags are found in the arguments which will throws
+ParseException if it fails the checks. This allows the user to be able to understand how the ClearCommand works after
+executing the <code>clear</code> Command.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Storage Class UML Diagram</strong></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../images/StorageClassDiagram.svg" alt="StorageClassDiagram" width="50%">
+</div>
+</div>
+<div class="paragraph">
+<p>This Class Diagram purpose is to give a overview of a storage system in Delino, whereby StorageManager is interacting
+with Logic Manager through the interface, Storage. This is essential to Delino, as it allows the developer or users
+who are interested to better understand the relationship between StorageManager and the other storage class.</p>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 06:02:34 UTC</div></div></div></body></html>

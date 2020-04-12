@@ -482,7 +482,7 @@ but <code>tid/TRANSACTION_IDn/CUSTOMER_NAME</code> will be an invalid command in
 <p><code>TRANSACTION_ID</code> must be alphanumeric (No numbers or special characters allowed).</p>
 </li>
 <li>
-<p><code>ADDRESS</code> must have a postal code.</p>
+<p><code>ADDRESS</code> should contain a valid Singapore address followed by a postal code.</p>
 </li>
 <li>
 <p><code>EMAIL</code> should be a valid email address.</p>
@@ -491,7 +491,7 @@ but <code>tid/TRANSACTION_IDn/CUSTOMER_NAME</code> will be an invalid command in
 <p><code>CASH_ON_DELIVERY</code> must start with a dollar sign followed by the value.</p>
 </li>
 <li>
-<p><code>CASH_ON_DELIVERY</code> value must be strictly less than $10,000,000,000,000. If there is a need
+<p><code>CASH_ON_DELIVERY</code> value must be strictly less than $10,000. If there is a need
 to add decimal places, you can only add two.</p>
 </li>
 <li>
@@ -645,7 +645,7 @@ i.e. <code>return</code> <code>tid/123abcd</code><br>
 <div class="ulist">
 <ul>
 <li>
-<p><code>return</code> <code>TRANSACTION_ID</code> or <code>return</code> <code>TRANSACTION_ID</code> <code>CUSTOMER_NAME</code> <code>ADDRESS</code> <code>CUSTOMER_EMAIL</code>
+<p><code>return</code> <code>TRANSACTION_ID</code> <code>RETURN_TIMESTAMP</code> or <code>return</code> <code>TRANSACTION_ID</code> <code>CUSTOMER_NAME</code> <code>ADDRESS</code> <code>CUSTOMER_EMAIL</code>
 <code>WAREHOUSE_LOCATION</code> <code>PHONE_NUMBER</code> <code>RETURN_TIMESTAMP</code> <code>[COMMENTS_BY_CUSTOMER]</code> <code>[TYPE_OF_ITEM]</code></p>
 </li>
 </ul>
@@ -675,7 +675,8 @@ i.e. <code>return</code> <code>tid/123abcd</code><br>
 <p>The <code>PHONE_NUMBER</code> refers to the phone number of the customer.</p>
 </li>
 <li>
-<p>The <code>RETURN_TIMESTAMP</code> refers to the return date and time of the parcel. This field cannot be earlier than the current date and time.</p>
+<p>The <code>RETURN_TIMESTAMP</code> refers to the return date and time of the parcel. This field cannot be earlier than the current date and time.
+Also, it cannot be before the delivery time stamp of the order to be converted.</p>
 </li>
 <li>
 <p>The <code>COMMENTS_BY_CUSTOMER</code> is an optional attribute which can be included if the customer has special requests.</p>
@@ -710,8 +711,9 @@ For example, it can be used when the item is fragile.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">If you want to convert the order with Transaction Id <code>abc1234</code> into a return order and display it on returns list.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>return</code> <code>tid/abc1234</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This order will be removed from the order list and be added into the returns list as a return order.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>return</code> <code>tid/abc1234</code> <code>rts/2020-05-05 1600</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This order will be removed from the order list and be added into the returns list as a return order with the updated
+return time stamp.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">If you want to create a new return order in the return order list.</p></td>
@@ -731,6 +733,9 @@ For example, it can be used when the item is fragile.</p>
 <ul>
 <li>
 <p>The <code>TRANSACTION_ID</code> given belongs to the return order that will be created.</p>
+</li>
+<li>
+<p>The <code>RETURN_TIMESTAMP</code> has to be before the delivery time stamp of the order.</p>
 </li>
 <li>
 <p>A return order will be created after executing this <code>return</code> command.</p>
@@ -2401,15 +2406,33 @@ Optionally you can click on the cross button of the application to exit!
 </div>
 <div class="sect2">
 <h3 id="saving"><a class="link" href="#saving">3.14. Saving the data</a></h3>
+<div class="paragraph">
+<p>In this section, you will learn more about how Delino save your data.</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Data is saved in the hard disk automatically after any command that changes data that is present.</p>
+<p>Data is saved as JSON file in the hard disk automatically after any command that changes the data that is present.</p>
 </li>
 <li>
-<p>There is no need to save manually.</p>
+<p>There is no need for you to save manually.</p>
 </li>
 </ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>It is intended behaviour for allowing the order or return order to have a timestamp before the current time when
+the data is loaded from JSON files.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -2419,7 +2442,9 @@ Optionally you can click on the cross button of the application to exit!
 </td>
 <td class="content">
 <div class="paragraph">
-<p>There is no need to alter the JSON file in the data folder!</p>
+<p>There is no need to alter the JSON file in the data folder!<br>
+If you still insist on changing the data in JSON file,
+please ensure that all amended fields are in the valid format.</p>
 </div>
 </td>
 </tr>
@@ -2511,7 +2536,7 @@ Return Orders are used for delivering goods that are rejected by the user.</p>
 </div>
 </div>
 <div class="olist arabic">
-<ol class="arabic">
+<ol class="arabic" start="7">
 <li>
 <p><strong>Question</strong>: What does the other symbols in the app mean?<br>
 <strong>Answer</strong>:</p>
@@ -3414,4 +3439,4 @@ OR<br>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 17:37:25 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 06:02:34 UTC</div></div></div></body></html>

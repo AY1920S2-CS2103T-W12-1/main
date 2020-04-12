@@ -643,13 +643,14 @@ OR<br>
 <div class="sect2">
 <h3 id="edit"><a class="link" href="#edit">Edit Feature</a></h3>
 <div class="paragraph">
-<p>In this section, the <a href="#what-is-edit">functionality</a> of the <code>edit</code> feature, the expected <a href="#edit-path-execution">execution path</a>, the <a href="#edit-structure">structure</a> of the <code>EditCommand</code> class
-and the <a href="#edit-interactions">interactions</a> between objects with the <code>EditCommand</code> object will be discussed.</p>
+<p>In this section, the <a href="#what-is-edit">functionality</a> of the <code>edit</code> feature, the
+expected <a href="#edit-path-execution">execution path</a>, the <a href="#edit-structure">structure</a> of the <strong>EditCommand</strong> class
+and the <a href="#edit-interactions">interactions</a> between objects with the <strong>EditCommand</strong> object will be discussed.</p>
 </div>
 <div class="sect3">
 <h4 id="what-is-edit"><a class="link" href="#what-is-edit">What is Edit Command</a></h4>
 <div class="paragraph">
-<p>The <code>edit</code> feature was implemented as <code>EditCommand</code> in the <code>Logic</code> package.<br></p>
+<p>The <code>edit</code> feature was implemented as <strong>EditCommand</strong> in the Logic package.<br></p>
 </div>
 <div class="paragraph">
 <p><code>edit</code> feature format : <code>edit</code> <code>INDEX</code> <code><a href="#command_flags">FLAG</a></code> <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code>/<code>NEW_VALUE</code> <code>[<a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code>/<code>NEW_VALUE]</code></p>
@@ -709,13 +710,15 @@ This feature allows user to edit more than one field within a command.
 <p>The above figure illustrates the execution path of <code>edit</code> command when performed by the user.<br></p>
 </div>
 <div class="paragraph">
-<p>Input when received, will be parsed by the <code>OrderBookParser</code>. <code>OrderBookParser</code> will check if command word matches any features command word.<br>
-In this feature, the command word is <code>edit</code>. If no command word is detected, a exception class should be generated for displaying of error message. <code>CommandException</code> is used in this feature to achieve that function.<br></p>
+<p>Input when received, will be parsed by the <strong>DelinoParser</strong>.
+<strong>DelinoParser</strong> will check if command word matches any features command word.<br>
+In this feature, the command word is <code>edit</code>. If no command word is detected, a exception class should be
+generated for displaying of error message. <strong>CommandException</strong> is used in this feature to achieve that function.<br></p>
 </div>
 <div class="paragraph">
 <p>Once validated, user input is once again parse and check for validity. At this step, if user have provided input not matching the valid <code>edit</code> <a href="#what-is-edit">format</a>, an exception class is thrown.<br>
 Furthermore, if <code>NEW_VALUE</code> is invalid an exception should be thrown as well.<br>
-<code>ParseException</code> class is used in this scenario.</p>
+<strong>ParseException</strong> class is used in this scenario.</p>
 </div>
 <div class="paragraph">
 <p>Some invalid <code>NEW_VALUE</code>:<br>
@@ -739,8 +742,9 @@ Furthermore, if <code>NEW_VALUE</code> is invalid an exception should be thrown 
 <div class="title">Figure 2. Edit Command Class Diagram</div>
 </div>
 <div class="paragraph">
-<p>The class diagram above depicts the structure of <code>EditCommand</code>. As per any <code>Command</code> class, <code>EditCommand</code> needs to extend the abstract class <code>Command</code>.<br>
-Information that are left out in this class diagram are the common messages used in <code>EditCommand</code>.</p>
+<p>The class diagram above depicts the structure of <strong>EditCommand</strong>. As per any <strong>Command</strong> class,
+<strong>EditCommand</strong> needs to extend the abstract class <strong>Command</strong>.<br>
+Information that are left out in this class diagram are the common messages used in <strong>EditCommand</strong>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -752,35 +756,44 @@ Information that are left out in this class diagram are the common messages used
 <div class="title">Figure 3. Edit Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
-<p>The above figure illustrates the important interactions of <code>EditCommand</code> when the user successfully edit the first displayed order name to <code>Alice</code>.<br></p>
+<p>The above figure illustrates the important interactions of <strong>EditCommand</strong> when the user successfully edit the first displayed order name to <code>Alice</code>.<br></p>
 </div>
 <div class="paragraph">
-<p>The handling of breaking down the user input is done in the <code>EditcommandParser</code> class which is called upon by the <code>OrderBookParser</code> after an initial check for correctness of the command input.<br></p>
+<p>The handling of breaking down the user input is done in the <strong>EditCommandParser</strong> class which is called upon by the
+<strong>DelinoParser</strong> after an initial check for correctness of the command input.<br></p>
 </div>
 <div class="paragraph">
-<p>The <code>EditParcelDescriptor</code> class is a static class contained in the <code>EditCommand</code> class. It act as a helper class to allow the setting of all the <code>NEW_VALUE</code> to the corresponding <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> in the <code>EditCommandParser</code> class.
-The <code>EditParcelDescriptor</code> object is then passed back as a parameter to instantiate an <code>EditCommand</code>. In the diagram above, the <code>EditParcelDescriptor</code> object is named as <code>epd</code>.
-The <code>EditCommand</code> object is then passed back as <code>e</code> to the <code>LogicManager</code> which will then call the <code>EditCommand#execute</code>. This execute method mainly calls the 3 helper method, not shown, <code>EditCommand#createEditedOrder</code>/<code>EditComand#createEditedReturnOrder</code> and <code>EditCommand#generalSetParcel</code>.
-The main function of these methods are to help <code>EditCommand</code> in updating the <code>ObservableList</code> in the <code>Model</code> class which is responsible for the updating of list displayed.</p>
+<p>The <strong>EditParcelDescriptor</strong> class is a static class contained in the <strong>EditCommand</strong> class.
+It act as a helper class to allow the setting of all the <code>NEW_VALUE</code> to the corresponding
+<code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> in the <strong>EditCommandParser</strong> class.
+The <strong>EditParcelDescriptor</strong> object is then passed back as a parameter to instantiate an <strong>EditCommand</strong>.
+In the diagram above, the <strong>EditParcelDescriptor</strong> object is named as epd.
+The <strong>EditCommand</strong> object is then passed back as e to the <strong>LogicManager</strong>
+which will then call EditCommand#execute.
+This execute method mainly calls the 3 helper method, not shown,
+EditCommand#createEditedOrder/EditCommand#createEditedReturnOrder and EditCommand#generalSetParcel.
+The main function of these methods are to help <strong>EditCommand</strong> in updating the <strong>ObservableList</strong> in the
+<strong>Model</strong> class which is responsible for the updating of list displayed.</p>
 </div>
 <div class="paragraph">
-<p>The <code>ObeservableList</code> is a JavaFX function which listens and automatically changes the list once an update is performed.</p>
+<p>The <strong>ObservableList</strong> is a JavaFX class which listens and automatically changes the list once an update is performed.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="search"><a class="link" href="#search">Search Feature</a></h3>
 <div class="paragraph">
-<p>In this section, the <a href="#what-is-search">functionality</a> of the <code>search</code> feature, the expected <a href="#search-path-execution">execution path</a>, the <a href="#search-structure">structure</a> of the <code>SearchCommand</code> class
-and the <a href="#search-interactions">interactions</a> between objects with the <code>SearchCommand</code> object will be discussed.</p>
+<p>In this section, the <a href="#what-is-search">functionality</a> of the <code>search</code> feature, the expected
+<a href="#search-path-execution">execution path</a>, the <a href="#search-structure">structure</a> of the <strong>SearchCommand</strong> class
+and the <a href="#search-interactions">interactions</a> between objects with the <strong>SearchCommand</strong> object will be discussed.</p>
 </div>
 <div class="sect3">
 <h4 id="what-is-search"><a class="link" href="#what-is-search">What is the Search feature</a></h4>
 <div class="paragraph">
-<p>The <code>search</code> feature was implemented as the <code>SearchCommand</code> in the <code>logic</code> package.</p>
+<p>The <code>search</code> feature was implemented as the <strong>SearchCommand</strong> in the logic package.</p>
 </div>
 <div class="paragraph">
-<p>The search function allow users to search for any orders according to the provided input.<br></p>
+<p>The <code>search</code> feature allow users to search for any orders according to the provided input.<br></p>
 </div>
 <div class="paragraph">
 <p><code>search</code> feature format: <code>search</code> <code><a href="#command_flags">[FLAG]</a></code> <code><a href="#command_prefix">[ORDER_ATTRIBUTE_PREFIX]</a></code>/<code>[KEYWORD]</code></p>
@@ -811,7 +824,8 @@ Keyword search is case-insensitive. E.g: Given <code>Jeremy</code> it matches <c
 </div>
 <div class="paragraph">
 <p>There are two mode of searching, <strong>general search</strong> or <strong>specific search</strong>.<br>
-If the user does not provide any <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code>, a <strong>general search</strong> mode will be performed on orders, return orders, or both depending on the <code><a href="#command_flag">FLAG</a></code>.<br></p>
+If the user does not provide any <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code>, a <strong>general search</strong> mode will be
+performed on orders, return orders, or both depending on the <code><a href="#command_flags">FLAG</a></code>.<br></p>
 </div>
 <div class="paragraph">
 <p>The <code><a href="#command_flags">[FLAG]</a></code> <code>-o</code> when given, searches only for parcels in the order list.<br>
@@ -845,11 +859,11 @@ The <code><a href="#command_flags">[FLAG]</a></code> <code>-r</code> when given,
 </div>
 <div class="paragraph">
 <p>The above activity diagram illustrates the different execution paths of <code>search</code> command.<br>
-Whenever a user keys in an input with the <code>search</code> keyword, the <code>SearchCommandParser</code> class will handle the parsing of input.<br>
-User input will be validated in the <code>SearchCommandParser</code> class.</p>
+Whenever a user keys in an input with the <code>search</code> keyword, the <strong>SearchCommandParser</strong> class will handle the parsing of input.<br>
+User input will be validated in the <strong>SearchCommandParser</strong> class.</p>
 </div>
 <div class="paragraph">
-<p>Input is deemed as invalid and <code>ParseException</code> is thrown under these scenarios:<br>
+<p>Input is deemed as invalid and <strong>ParseException</strong> is thrown under these scenarios:<br>
 1) <code><a href="#command_flags">FLAG</a></code> given is not <code>-o</code> or <code>-r</code>.<br>
 2) Multiple <code><a href="#command_flags">FLAG</a></code> detected.<br>
 3) No <code>KEYWORD</code> is given after <code>search</code>.</p>
@@ -867,8 +881,9 @@ User input will be validated in the <code>SearchCommandParser</code> class.</p>
 <div class="title">Figure 5. Search Command Class Diagram</div>
 </div>
 <div class="paragraph">
-<p>The above class diagram depicts the structure of the class <code>SearchCommand</code>. As per any <code>Command</code> class, <code>SearchCommand</code> needs to extend the abstract class <code>Command</code>.<br>
-Information that are left out in this class diagram are the common messages used in <code>SearchCommand</code>.</p>
+<p>The above class diagram depicts the structure of the class <strong>SearchCommand</strong>. As per any <strong>Command</strong> class,
+<strong>SearchCommand</strong> needs to extend the abstract class <strong>Command</strong>.<br>
+Information that are left out in this class diagram are the common messages used in <strong>SearchCommand</strong>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -884,7 +899,8 @@ Information that are left out in this class diagram are the common messages used
 Particularly, the interactions shown is a success <code>search</code> command executed by the user and only an abstract view is shown.</p>
 </div>
 <div class="paragraph">
-<p><code>LogicManager</code> first calls <code>parseCommand</code> with arguments representing the user input, <code>Alice</code>. The <code>SearchCommandParser</code> will then check for any invalid arguments passed by the user.<br></p>
+<p><strong>LogicManager</strong> first calls parseCommand with arguments representing the user input, <code>Alice</code>.
+The <strong>SearchCommandParser</strong> will then check for any invalid arguments passed by the user.<br></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -896,10 +912,10 @@ Particularly, the interactions shown is a success <code>search</code> command ex
 <div class="ulist">
 <ul>
 <li>
-<p>If the given arguments are valid, <code>SearchCommandParser</code> will return  a new <code>SearchCommand</code> object.<br></p>
+<p>If the given arguments are valid, <strong>SearchCommandParser</strong> will return  a new <strong>SearchCommand</strong> object.<br></p>
 </li>
 <li>
-<p>If the given arguments are invalid or empty, a <code>ParseException</code> object will be thrown (not shown in the diagram).</p>
+<p>If the given arguments are invalid or empty, a <strong>ParseException</strong> object will be thrown (not shown in the diagram).</p>
 </li>
 </ul>
 </div>
@@ -908,9 +924,12 @@ Particularly, the interactions shown is a success <code>search</code> command ex
 </table>
 </div>
 <div class="paragraph">
-<p>The <code>SearchCommandParser</code> will then checks for the presence of any <code><a href="#command_flags">FLAG</a></code>. The presence of one will result in different <code>SearchCommand</code> constructor being called.<br>
-The <code>SearchCommandParser</code> will call the both the <code>OrderContainsKeywordsPredicate</code> constructor and the <code>ReturnOrderContainsKeywordsPredicate</code> if no <code><a href="#command_flags">FLAG</a></code> is given.<br>
-However, if a <code><a href="#command_flags">FLAG</a></code> is given, the corresponding predicate will be instantiated and passed as an parameter for the <code>SearchCommand</code> constructor with the other left as null value.</p>
+<p>The <strong>SearchCommandParser</strong> will then checks for the presence of any <code><a href="#command_flags">FLAG</a></code>.
+The presence of one will result in different <strong>SearchCommand</strong> constructor being called.<br>
+The <strong>SearchCommandParser</strong> will call the both the <strong>OrderContainsKeywordsPredicate</strong> constructor and
+the <strong>ReturnOrderContainsKeywordsPredicate</strong> if no <code><a href="#command_flags">FLAG</a></code> is given.<br>
+However, if a <code><a href="#command_flags">FLAG</a></code> is given, the corresponding predicate will be instantiated and passed
+as an parameter for the <strong>SearchCommand</strong> constructor with the other left as null value.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -922,7 +941,9 @@ However, if a <code><a href="#command_flags">FLAG</a></code> is given, the corre
 <div class="ulist">
 <ul>
 <li>
-<p>What is not shown is that optionally, either <code>OrderContainsKeywordsPredicate</code> or <code>ReturnOrderContainsKeywordsPredicate</code> can be null if a <code><a href="#command_flags">FLAG</a></code> is given. However, under no circumstances should both be null.</p>
+<p>What is not shown is that optionally, either <strong>OrderContainsKeywordsPredicate</strong> or
+<strong>ReturnOrderContainsKeywordsPredicate</strong> can be null if a <code><a href="#command_flags">FLAG</a></code> is given.
+However, under no circumstances should both be null.</p>
 </li>
 </ul>
 </div>
@@ -931,14 +952,15 @@ However, if a <code><a href="#command_flags">FLAG</a></code> is given, the corre
 </table>
 </div>
 <div class="paragraph">
-<p>The parsing of user input utilises <code>ArgumentTokenzier</code> (not shown in sequence diagram) to process and split each <code>KEYWORD</code> to it&#8217;s corresponding <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code>, if given any.<br></p>
+<p>The parsing of user input utilises <strong>ArgumentTokenzier</strong> (not shown in sequence diagram) to process and split
+each <code>KEYWORD</code> to it&#8217;s corresponding <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code>, if given any.<br></p>
 </div>
 <div class="paragraph">
 <p>If the preamble to any <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> is not empty, a <strong>general search</strong> will be performed in which <code>KEYWORD</code> will be searched through all fields of parcel.<br>
 However, if <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> is given and the preamble is empty, the <strong>specific search</strong> will be performed. Only parcel fields that correspond to the given <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> will be searched and matched with the <code>KEYWORD</code>.</p>
 </div>
 <div class="paragraph">
-<p>The order and return order list updates automatically as the JavaFX class <code>ObservableList</code> is used to listen to any changes.</p>
+<p>The order and return order list updates automatically as the JavaFX class <strong>ObservableList</strong> is used to listen to any changes.</p>
 </div>
 <h3 id="use-case-uc05-editing-order-details" class="discrete">Use case: UC05 - Editing order details</h3>
 <div class="paragraph">
@@ -992,11 +1014,11 @@ However, if <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> is
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3b. Delino unable to detect any order specified by the user.</p>
+<p>3b. Delino unable to detect any parcel specified by the user.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3b1. Delino shows no order found message.</p>
+<p>3b1. Delino shows no parcel found message.</p>
 </li>
 </ul>
 </div>
@@ -1006,11 +1028,11 @@ However, if <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> is
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3c. Delino detects duplicate a order.</p>
+<p>3c. Delino detects duplicate parcel.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3c1. Delino shows duplicate order message.</p>
+<p>3c1. Delino shows duplicate parcel message.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1022,15 +1044,18 @@ However, if <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> is
 </div>
 <h3 id="use-case-uc07-search-an-order" class="discrete">Use case: UC07 - Search an order</h3>
 <div class="paragraph">
+<p>Preconditions: There should be a valid order/return order in Delino.</p>
+</div>
+<div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User wants to search a specifc order by a given keyword.</p>
+<p>User wants to search a specifc order or return order by a given keyword.</p>
 </li>
 <li>
-<p>User request to search specific order by a given keyword.</p>
+<p>User request to search specific order or return order by a given keyword.</p>
 </li>
 <li>
 <p>Delino display the requested order.</p>
@@ -1063,11 +1088,11 @@ However, if <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> is
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2b. Delino unable to find order with the transaction id.</p>
+<p>2b. Delino unable to find any parcel field that matches the given keyword.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2b1. Delino display order not found message.</p>
+<p>2b1. Delino display parcel not found message.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1099,15 +1124,15 @@ Expected: The first index customer&#8217;s name is changed to Xuan En.</p>
 </li>
 <li>
 <p>Test case: <code>edit</code> <code>-o</code> <code>2</code> <code>p/99521654</code><br>
-Expected: The second index phone number is changed to 9952 1654.</p>
+Expected: The second index phone number is changed to 99521654.</p>
 </li>
 <li>
 <p>Test case: <code>edit</code> <code>-o</code> <code>1</code> <code>a/Blk 123 Pasir Ris street 51 #12-23 S510123</code><br>
 Expected: The first index is edited where the address of the customer of the order will be changed to Blk 123 Pasir Ris Street 51 #12-23 S510123.</p>
 </li>
 <li>
-<p>Test case: <code>edit</code> <code>-r</code> <code>2</code> <code>n/Mr Tan</code> <code>p/98776655</code> <code>a/Blk 888 Jurong East street 2 #01-02 S609601</code><br>
-Expected: The second index of the list is edited. The name is changed to Mr Tan, phone number changed to 98776655 and address will be changed to Blk 888 Jurong East street 2 #01-02 S609601.</p>
+<p>Test case: <code>edit</code> <code>-r</code> <code>2</code> <code>n/Mr Tan</code> <code>p/98776655</code> <code>a/Blk 841 Yishun st 81 #01-02 S760841</code><br>
+Expected: The second index of the list is edited. The name is changed to Mr Tan, phone number changed to 98776655 and address will be changed to Blk 841 Yishun st 81 #01-02 S760841.</p>
 </li>
 <li>
 <p>Test case: <code>edit</code> <code>-o</code> <code>1</code> <code>dts/09/08/2020</code><br>
@@ -1161,4 +1186,4 @@ Expected: Specifically search for any order from the order list that has a Trans
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 17:37:25 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 06:02:34 UTC</div></div></div></body></html>

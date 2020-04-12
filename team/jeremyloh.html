@@ -1540,15 +1540,18 @@ This would allow you to complete more orders!</p></td>
 <div class="sect2">
 <h3 id="delete"><a class="link" href="#delete">Delete Feature</a></h3>
 <div class="paragraph">
-<p>In this section, you will learn more about how the <code>delete</code> feature is implemented.</p>
+<p>In this section, the <a href="#what-is-delete">functionality</a> of the <code>delete</code> feature, the
+<a href="#execution-paths-delete">expected execution path</a>,
+the <a href="#structure-delete">structure</a> of the <strong>DeleteCommand</strong> class and the <a href="#interactions-delete">interactions</a>
+between objects with the <strong>DeleteCommand</strong> will be discussed.</p>
 </div>
 <div class="sect3">
-<h4 id="what-is-the-delete-feature"><a class="link" href="#what-is-the-delete-feature">What is the Delete Feature</a></h4>
+<h4 id="what-is-delete"><a class="link" href="#what-is-delete">What is the Delete Feature</a></h4>
 <div class="paragraph">
-<p>The delete feature allows the user to delete orders in either the order list or return order list.<br></p>
+<p>The <code>delete</code> feature allows the user to delete orders in either the order list or return order list.<br></p>
 </div>
 <div class="paragraph">
-<p>The delete feature was implemented as a <code>DeleteCommand</code> in the <code>Logic</code> package.<br></p>
+<p>The <code>delete</code> feature was implemented as a <strong>DeleteCommand</strong> in the Logic package.<br></p>
 </div>
 <div class="paragraph">
 <p>The <code>delete</code> command has the following format:<br></p>
@@ -1588,7 +1591,7 @@ The <code>INDEX</code> <strong>must be a positive integer</strong> i.e. 1, 2, 3,
 </div>
 </div>
 <div class="sect3">
-<h4 id="execution-paths-of-delete-command"><a class="link" href="#execution-paths-of-delete-command">Execution paths of Delete command</a></h4>
+<h4 id="execution-paths-delete"><a class="link" href="#execution-paths-delete">Execution paths of Delete command</a></h4>
 <div class="paragraph">
 <p>In this section, you will learn more about the execution paths for the <code>delete</code> command.</p>
 </div>
@@ -1625,7 +1628,7 @@ A Command Exception wil be generated.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="structure-of-delete-command"><a class="link" href="#structure-of-delete-command">Structure of Delete command</a></h4>
+<h4 id="structure-delete"><a class="link" href="#structure-delete">Structure of Delete command</a></h4>
 <div class="paragraph">
 <p>In this section, you will learn more about the relationships between objects
 related to the <code>delete</code> command.</p>
@@ -1637,7 +1640,7 @@ related to the <code>delete</code> command.</p>
 <div class="title">Figure 2. Delete Command Class Diagram</div>
 </div>
 <div class="paragraph">
-<p>In the <code>DeleteCommand</code> class, there are also static strings present that represent the
+<p>In the <strong>DeleteCommand</strong> class, there are also static strings present that represent the
 various possible messages.<br>
 For some of the message strings, there are placeholder %s strings used for including dynamic input<br>
 These messages are the following:</p>
@@ -1649,6 +1652,10 @@ These messages are the following:</p>
 Deleted Order: %1$s<br></p>
 </li>
 <li>
+<p><code>MESSAGE_DELETE_RETURN_ORDER_SUCCESS</code><br>
+Deleted Return Order: %1$s<br></p>
+</li>
+<li>
 <p><code>MESSAGE_INVALID_FLAG</code><br>
 Invalid flag given!<br></p>
 </li>
@@ -1656,7 +1663,7 @@ Invalid flag given!<br></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="interactions-between-delete-command-and-its-associated-objects"><a class="link" href="#interactions-between-delete-command-and-its-associated-objects">Interactions between Delete command and its associated objects</a></h4>
+<h4 id="interactions-delete"><a class="link" href="#interactions-delete">Interactions between Delete command and its associated objects</a></h4>
 <div class="paragraph">
 <p>In this section, you will learn more about the <code>delete</code> command and its inner workings.</p>
 </div>
@@ -1673,9 +1680,9 @@ list.</p>
 <div class="title">Figure 3. Delete Command Sequence Diagram for <code>delete</code> <code>-o</code> <code>1</code></div>
 </div>
 <div class="paragraph">
-<p>The arguments passed to the <code>delete</code> command will be parsed by the <code>DeleteCommandParser</code> class.<br>
-If the given arguments are valid, a new <code>DeleteCommand</code> object will be returned.<br>
-In this class, invalid arguments will result in a <code>ParseException</code>.<br>
+<p>The arguments passed to the <code>delete</code> command will be parsed by the <strong>DeleteCommandParser</strong> class.<br>
+If the given arguments are valid, a new <strong>DeleteCommand</strong> object will be returned.<br>
+In this class, invalid arguments will result in a <strong>ParseException</strong>.<br>
 Two checks will be done for the arguments:</p>
 </div>
 <div class="olist arabic">
@@ -1689,20 +1696,20 @@ Two checks will be done for the arguments:</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>When the <code>LogicManager</code> runs the <code>execute()</code> method of <code>DeleteCommand</code>,
-<code>DeleteCommand</code> will first check the list to delete from.<br></p>
+<p>When the <strong>LogicManager</strong> runs the <code>execute()</code> method of <strong>DeleteCommand</strong>,
+<strong>DeleteCommand</strong> will first check the list to delete from.<br></p>
 </div>
 <div class="paragraph">
-<p>The <code>deleteFromOrderList(model)</code> method of <code>DeleteCommand</code> will then
-be called and the filtered order list will be obtained from the <code>getFilteredOrderList()</code>
-method of the <code>model</code>.<br></p>
+<p>The deleteFromOrderList(model) method of <strong>DeleteCommand</strong> will then
+be called and the filtered order list will be obtained from the getFilteredOrderList()
+method of the model.<br></p>
 </div>
 <div class="paragraph">
-<p>The specified order at <code>INDEX</code> 1 will be deleted using the <code>deleteOrder(order)</code> method
-in the <code>model</code>.</p>
+<p>The specified order at <code>INDEX</code> 1 will be deleted using the deleteOrder(order) method
+in the model.</p>
 </div>
 <div class="paragraph">
-<p>A new <code>CommandResult</code> will be created and returned to the <code>LogicManager</code>.</p>
+<p>A new <strong>CommandResult</strong> will be created and returned to the <strong>LogicManager</strong>.</p>
 </div>
 <div class="paragraph">
 <p>The sequence diagram below shows the interactions for a <code>delete</code> command execution of
@@ -1717,9 +1724,9 @@ list.</p>
 <div class="title">Figure 4. Delete Command Sequence Diagram for <code>delete</code> <code>-r</code> <code>2</code></div>
 </div>
 <div class="paragraph">
-<p>The arguments passed to the <code>delete</code> command will be parsed by the <code>DeleteCommandParser</code> class.<br>
-If the given arguments are valid, a new <code>DeleteCommand</code> object will be returned.<br>
-In this class, invalid arguments will result in a <code>ParseException</code>.<br>
+<p>The arguments passed to the <code>delete</code> command will be parsed by the <strong>DeleteCommandParser</strong> class.<br>
+If the given arguments are valid, a new <strong>DeleteCommand</strong> object will be returned.<br>
+In this class, invalid arguments will result in a <strong>ParseException</strong>.<br>
 Two checks will be done for the arguments:</p>
 </div>
 <div class="olist arabic">
@@ -1733,36 +1740,41 @@ Two checks will be done for the arguments:</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>When the <code>LogicManager</code> runs the <code>execute()</code> method of <code>DeleteCommand</code>,
-<code>DeleteCommand</code> will first check the list to delete from.<br></p>
+<p>When the <strong>LogicManager</strong> runs the execute() method of <strong>DeleteCommand</strong>,
+<strong>DeleteCommand</strong> will first check the list to delete from.<br></p>
 </div>
 <div class="paragraph">
-<p>The <code>deleteFromReturnList(model)</code> method of <code>DeleteCommand</code> will then
-be called and the filtered return order list will be obtained from the <code>getFilteredReturnOrderList()</code>
-method of the <code>model</code>.<br></p>
+<p>The deleteFromReturnList(model) method of <strong>DeleteCommand</strong> will then
+be called and the filtered return order list will be obtained from the getFilteredReturnOrderList()
+method of the model.<br></p>
 </div>
 <div class="paragraph">
-<p>The specified return order at <code>INDEX</code> 2 will be deleted using the <code>deleteReturnOrder(returnOrder)</code> method
-in the <code>model</code>.</p>
+<p>The specified return order at <code>INDEX</code> 2 will be deleted using the deleteReturnOrder(returnOrder) method
+in the model.</p>
 </div>
 <div class="paragraph">
-<p>A new <code>CommandResult</code> will be created and returned to the <code>LogicManager</code>.</p>
+<p>A new <strong>CommandResult</strong> will be created and returned to the <strong>LogicManager</strong>.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="nearby"><a class="link" href="#nearby">Nearby Feature</a></h3>
 <div class="paragraph">
+<p>In this section, the <a href="#what-is-nearby">functionality</a> of the <code>nearby</code> feature, the
+expected <a href="#nearby-path-execution">execution path</a>, the <a href="#nearby-structure">structure</a> of the <strong>NearbyCommand</strong> class
+and the <a href="#nearby-interactions">interactions</a> between objects with the <strong>NearbyCommand</strong> object will be discussed.</p>
+</div>
+<div class="paragraph">
 <p>In this section, you will learn more about how the <code>nearby</code> feature is implemented.</p>
 </div>
 <div class="sect3">
-<h4 id="what-is-the-nearby-feature"><a class="link" href="#what-is-the-nearby-feature">What is the Nearby Feature</a></h4>
+<h4 id="what-is-nearby"><a class="link" href="#what-is-nearby">What is the Nearby Feature</a></h4>
 <div class="paragraph">
-<p>The nearby feature allows the user to view all orders that are located at a particular area
+<p>The <code>nearby</code> feature allows the user to view all orders that are located at a particular area
 based on a given search criteria.<br></p>
 </div>
 <div class="paragraph">
-<p>The nearby feature was implemented as a <code>NearbyCommand</code> in the <code>Logic</code> package.<br></p>
+<p>The <code>nearby</code> feature was implemented as a <strong>NearbyCommand</strong> in the Logic package.<br></p>
 </div>
 <div class="paragraph">
 <p>The <code>nearby</code> command has two possible formats:<br></p>
@@ -1839,7 +1851,7 @@ The list of postal sectors and their corresponding general locations can be foun
 </div>
 </div>
 <div class="sect3">
-<h4 id="execution-paths-of-nearby-command"><a class="link" href="#execution-paths-of-nearby-command">Execution paths of Nearby command</a></h4>
+<h4 id="nearby-path-execution"><a class="link" href="#nearby-path-execution">Execution paths of Nearby command</a></h4>
 <div class="paragraph">
 <p>In this section, you will learn more about the execution paths for the <code>nearby</code> command.</p>
 </div>
@@ -1899,7 +1911,7 @@ There are currently five areas that are searchable:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="structure-of-nearby-command"><a class="link" href="#structure-of-nearby-command">Structure of Nearby command</a></h4>
+<h4 id="nearby-structure"><a class="link" href="#nearby-structure">Structure of Nearby command</a></h4>
 <div class="paragraph">
 <p>In this section, you will learn more about the relationships between objects
 related to the <code>nearby</code> command.</p>
@@ -1911,7 +1923,7 @@ related to the <code>nearby</code> command.</p>
 <div class="title">Figure 6. Nearby Command Class Diagram</div>
 </div>
 <div class="paragraph">
-<p>In the <code>NearbyCommand</code> class, there are also static strings present that represent the
+<p>In the <strong>NearbyCommand</strong> class, there are also static strings present that represent the
 various possible messages.<br>
 For some of the message strings, there are placeholder %s strings used for including dynamic input<br>
 These messages are the following:</p>
@@ -1951,7 +1963,7 @@ Invalid area given.<br></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="interactions-between-nearby-command-and-its-associated-objects"><a class="link" href="#interactions-between-nearby-command-and-its-associated-objects">Interactions between Nearby command and its associated objects</a></h4>
+<h4 id="nearby-interactions"><a class="link" href="#nearby-interactions">Interactions between Nearby command and its associated objects</a></h4>
 <div class="paragraph">
 <p>In this section, you will learn more about the <code>nearby</code> command and its inner workings.</p>
 </div>
@@ -1969,18 +1981,18 @@ should be displayed to the user.</p>
 <div class="title">Figure 7. Nearby Command Sequence Diagram for <code>nearby</code> <code>-o</code> <code>14</code></div>
 </div>
 <div class="paragraph">
-<p>The arguments passed to the Nearby Command will be parsed by the <code>NearbyCommandParser</code> class.<br>
-If the given arguments are valid, a new <code>NearbyCommand</code> object will be returned.<br>
-In this class, invalid arguments will result in a <code>ParseException</code>.<br>
+<p>The arguments passed to the Nearby Command will be parsed by the <strong>NearbyCommandParser</strong> class.<br>
+If the given arguments are valid, a new <strong>NearbyCommand</strong> object will be returned.<br>
+In this class, invalid arguments will result in a <strong>ParseException</strong>.<br>
 Two types of invalid arguments are checked for: empty arguments
 and arguments with only whitespace characters.</p>
 </div>
 <div class="paragraph">
-<p>The <code>execute()</code> function of the <code>NearbyCommand</code> will first check if the given arguments
+<p>The execute() function of the <strong>NearbyCommand</strong> will first check if the given arguments
 are in the format required for postal sector search (the argument can be converted into an integer).
 If the first check is successful, the argument will be converted into an integer and
-a second check is performed via the <code>isValidPostalSector(Index postalSector)</code> function
-of the <code>NearbyCommandUtil</code> helper class.</p>
+a second check is performed via the isValidPostalSector(Index postalSector) function
+of the <strong>NearbyCommandUtil</strong> helper class.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1990,14 +2002,14 @@ of the <code>NearbyCommandUtil</code> helper class.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p><code>NearbyCommandUtil</code> is a helper class that contains functions and variables used for
+<p><strong>NearbyCommandUtil</strong> is a helper class that contains functions and variables used for
 identifying postal sectors and their corresponding general locations.<br>
-This class was created to reduce the responsibility of the <code>NearbyCommand</code> class.<br></p>
+This class was created to reduce the responsibility of the <strong>NearbyCommand</strong> class.<br></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>A <code>HashMap</code> was used to store information about postal sectors and their respective general locations.</p>
+<p>A <strong>HashMap</strong> was used to store information about postal sectors and their respective general locations.</p>
 </li>
 </ul>
 </div>
@@ -2006,10 +2018,10 @@ This class was created to reduce the responsibility of the <code>NearbyCommand</
 </table>
 </div>
 <div class="paragraph">
-<p>The <code>model</code> will then be updated by the <code>updateFilteredOrderList(orderPredicate)</code> function.<br></p>
+<p>The model will then be updated by the updateFilteredOrderList(orderPredicate) function.<br></p>
 </div>
 <div class="paragraph">
-<p>A <code>CommandResult</code> is then generated and returned to the <code>LogicManager</code>.</p>
+<p>A <strong>CommandResult</strong> is then generated and returned to the <strong>LogicManager</strong>.</p>
 </div>
 <div class="paragraph">
 <p>The sequence diagram below shows the interactions for a <code>nearby</code> command execution of
@@ -2025,18 +2037,18 @@ should be displayed to the user.</p>
 <div class="title">Figure 8. Nearby Command Sequence Diagram of <code>nearby</code> <code>-o</code> <code>central</code></div>
 </div>
 <div class="paragraph">
-<p>The <code>NearbyCommandParser</code> will check for invalid arguments given by the user.<br>
+<p>The <strong>NearbyCommandParser</strong> will check for invalid arguments given by the user.<br>
 Invalid arguments can be either empty arguments or arguments with
 only whitespace characters.
-A <code>ParseException</code> will be generated if an invalid argument is present.</p>
+A <strong>ParseException</strong> will be generated if an invalid argument is present.</p>
 </div>
 <div class="paragraph">
-<p>A new <code>NearbyCommand</code> will be created and returned to <code>LogicManager</code>.</p>
+<p>A new <strong>NearbyCommand</strong> will be created and returned to <strong>LogicManager</strong>.</p>
 </div>
 <div class="paragraph">
-<p><code>LogicManager</code> will then call the <code>execute()</code> function of the <code>NearbyCommand</code>.<br>
+<p><strong>LogicManager</strong> will then call the execute() function of the <strong>NearbyCommand</strong>.<br>
 There will then be a check for whether the given argument is a valid area with the
-function <code>isValidArea(area)</code> present in the <code>DistrictInfo</code> class.</p>
+function isValidArea(area) present in the <strong>DistrictInfo</strong> class.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2046,24 +2058,24 @@ function <code>isValidArea(area)</code> present in the <code>DistrictInfo</code>
 </td>
 <td class="content">
 <div class="paragraph">
-<p><code>DistrictInfo</code> is a helper class that contains functions and variables used for
+<p><strong>DistrictInfo</strong> is a helper class that contains functions and variables used for
 identifying areas.<br>
-This class was created to reduce the responsibility of the <code>NearbyCommand</code> class.<br></p>
+This class was created to reduce the responsibility of the <strong>NearbyCommand</strong> class.<br></p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The model will then be updated using the <code>updateFilteredOrderList(orderPredicate)</code> function.</p>
+<p>The model will then be updated using the updateFilteredOrderList(orderPredicate) function.</p>
 </div>
 <div class="paragraph">
-<p>A new <code>CommandResult</code> will be created and returned to the <code>LogicManager</code>.</p>
+<p>A new <strong>CommandResult</strong> will be created and returned to the <strong>LogicManager</strong>.</p>
 </div>
 <div class="paragraph">
 <p>The sequence diagram below shows the interactions for a <code>nearby</code> command execution of
 <code>nearby</code>.<br>
-This will result in a <code>ParseException</code> as invalid arguments are provided.</p>
+This will result in a <strong>ParseException</strong> as invalid arguments are provided.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -2072,7 +2084,7 @@ This will result in a <code>ParseException</code> as invalid arguments are provi
 <div class="title">Figure 9. Parse Exception due to invalid <code>nearby</code> command</div>
 </div>
 <div class="paragraph">
-<p>The exception will be thrown in the <code>NearbyCommandParser</code>.</p>
+<p>The exception will be thrown in the <strong>NearbyCommandParser</strong>.</p>
 </div>
 </div>
 </div>
@@ -2336,7 +2348,7 @@ Expected: An error will occur as the given postal sector is invalid</p>
 Expected: An error will occur as the given postal sector is invalid</p>
 </li>
 <li>
-<p>Test case: <code>nearby -o</code><br>
+<p>Test case: <code>nearby</code> <code>-o</code><br>
 Expected: An error will occur as it is an invalid syntax (no postal sector is provided)</p>
 </li>
 </ol>
@@ -2384,4 +2396,4 @@ Expected: Obtain all return orders located in east area of Singapore</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 17:37:25 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 06:02:34 UTC</div></div></div></body></html>

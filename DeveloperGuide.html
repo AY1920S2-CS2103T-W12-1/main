@@ -9,45 +9,47 @@
 <div id="toc" class="toc">
 <div id="toctitle"></div>
 <ul class="sectlevel1">
-<li><a href="#setting-up">1. Setting up</a></li>
-<li><a href="#design">2. Design</a>
+<li><a href="#about-us">1. About Us</a></li>
+<li><a href="#how-to-navigate-this-developer-guide">2. How to navigate this Developer Guide</a></li>
+<li><a href="#setting-up">3. Setting up</a></li>
+<li><a href="#design">4. Design</a>
 <ul class="sectlevel2">
-<li><a href="#Design-Architecture">2.1. Architecture</a></li>
-<li><a href="#Design-Ui">2.2. UI component</a></li>
-<li><a href="#Design-Logic">2.3. Logic component</a></li>
-<li><a href="#Design-Model">2.4. Model component</a></li>
-<li><a href="#Design-Storage">2.5. Storage component</a></li>
-<li><a href="#Design-Commons">2.6. Common classes</a></li>
+<li><a href="#Design-Architecture">4.1. Architecture</a></li>
+<li><a href="#Design-Ui">4.2. UI component</a></li>
+<li><a href="#Design-Logic">4.3. Logic component</a></li>
+<li><a href="#Design-Model">4.4. Model component</a></li>
+<li><a href="#Design-Storage">4.5. Storage component</a></li>
+<li><a href="#Design-Commons">4.6. Common classes</a></li>
 </ul>
 </li>
-<li><a href="#implementation">3. Implementation</a>
+<li><a href="#implementation">5. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#insert">3.1. Insert Feature</a></li>
-<li><a href="#list">3.2. List feature</a></li>
-<li><a href="#clear-feature">3.3. Clear feature</a></li>
-<li><a href="#delete">3.4. Delete Feature</a></li>
-<li><a href="#delivered">3.5. Delivered Feature</a></li>
-<li><a href="#edit">3.6. Edit Feature</a></li>
-<li><a href="#return">3.7. Return Feature</a></li>
-<li><a href="#nearby">3.8. Nearby Feature</a></li>
-<li><a href="#help">3.9. Help Feature</a></li>
-<li><a href="#import">3.10. Import feature</a></li>
-<li><a href="#search">3.11. Search Feature</a></li>
-<li><a href="#show">3.12. Show feature</a></li>
-<li><a href="#logging">3.13. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.14. Configuration</a></li>
+<li><a href="#insert">5.1. Insert Feature</a></li>
+<li><a href="#list">5.2. List feature</a></li>
+<li><a href="#clear-feature">5.3. Clear feature</a></li>
+<li><a href="#delete">5.4. Delete Feature</a></li>
+<li><a href="#delivered">5.5. Delivered Feature</a></li>
+<li><a href="#edit">5.6. Edit Feature</a></li>
+<li><a href="#return">5.7. Return Feature</a></li>
+<li><a href="#nearby">5.8. Nearby Feature</a></li>
+<li><a href="#help">5.9. Help Feature</a></li>
+<li><a href="#import">5.10. Import feature</a></li>
+<li><a href="#search">5.11. Search Feature</a></li>
+<li><a href="#show">5.12. Show feature</a></li>
+<li><a href="#logging">5.13. Logging</a></li>
+<li><a href="#Implementation-Configuration">5.14. Configuration</a></li>
 </ul>
 </li>
-<li><a href="#documentation">4. Documentation</a></li>
-<li><a href="#testing">5. Testing</a></li>
-<li><a href="#dev-ops">6. Dev Ops</a></li>
+<li><a href="#documentation">6. Documentation</a></li>
+<li><a href="#testing">7. Testing</a></li>
+<li><a href="#dev-ops">8. Dev Ops</a></li>
 <li><a href="#product-scope">Appendix A: Product Scope</a></li>
 <li><a href="#user-stories">Appendix B: User Stories</a></li>
 <li><a href="#use-cases">Appendix C: Use Cases</a></li>
 <li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
 <li><a href="#glossary">Appendix E: Glossary</a></li>
 <li><a href="#product-survey">Appendix F: Product Survey</a></li>
-<li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
+<li><a href="#manual-testing">Appendix G: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
 <li><a href="#launch-delino">G.1. Launch Delino</a></li>
 <li><a href="#inserting-an-order">G.2. Inserting an order</a></li>
@@ -66,11 +68,113 @@
 <li><a href="#exit">G.15. Exit</a></li>
 </ul>
 </li>
+<li><a href="#effort">Appendix H: Effort</a></li>
 </ul>
 </div>
 </div>
 <div class="sect1">
-<h2 id="setting-up"><a class="link" href="#setting-up">1. Setting up</a></h2>
+<h2 id="about-us"><a class="link" href="#about-us">1. About Us</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Delino is for couriers who <strong>prefer to use a desktop app for managing their delivery tasks</strong>.
+It is <strong>optimised for those who have a strong preference towards Command Line Interface</strong> (CLI)
+while still enjoying the benefits of a Graphical User Interface (GUI).</p>
+</div>
+<div class="paragraph">
+<p>Delino is adapted from the <a href="https://se-education.org/addressbook-level3/">AddressBook-Level3</a> project created by
+<a href="https://se-education.org">SE-EDU initiative</a>.</p>
+</div>
+<div class="paragraph">
+<p>If you wish to contact the team, more details can be found <a href="AboutUs.html">here</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="how-to-navigate-this-developer-guide"><a class="link" href="#how-to-navigate-this-developer-guide">2. How to navigate this Developer Guide</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This developer guide is written for anyone who wish to extend/modify Delino.
+This guide will first touch on the overview of our application in the <a href="#Design-Architecture">design architecture</a>.
+Secondly, the specific implementation of Delino&#8217;s commands will be further elaborated in the
+<a href="#implementation">implementation</a> section.</p>
+</div>
+<div class="paragraph">
+<p>If you need help setting up your development environment to work on Delino, you can follow the
+<a href="SettingUp.html">Setting Up</a> guide.</p>
+</div>
+<div class="paragraph">
+<p>Manual testing of Delino can be done by following <a href="#manual-testing">Appendix G: Instructions for Manual Testing</a>.</p>
+</div>
+<div class="paragraph">
+<p>Throughout this developer guide, you might encounter additional symbols. These symbols are used to
+highlight important information.<br>
+This developer guide uses the following symbols:</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This block contains additional <strong>notes</strong>.<br>
+It contains more information regarding complex content that you should take note of.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This block contains additional <strong>tips</strong>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This block contains <strong>warning</strong> information.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This block contains <strong>important</strong> information that you should be mindful of.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><code>text markup</code> : This is used to indicate keywords such as command arguments to Delino. (e.g. <code>exit</code>)<br>
+<strong>bold</strong> : This is used to indicate the various Java files in Delino.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="setting-up"><a class="link" href="#setting-up">3. Setting up</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="SettingUp.html">here</a>.</p>
@@ -78,10 +182,10 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="design"><a class="link" href="#design">2. Design</a></h2>
+<h2 id="design"><a class="link" href="#design">4. Design</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">2.1. Architecture</a></h3>
+<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">4.1. Architecture</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/ArchitectureDiagram.svg" alt="ArchitectureDiagram">
@@ -184,7 +288,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Ui"><a class="link" href="#Design-Ui">2.2. UI component</a></h3>
+<h3 id="Design-Ui"><a class="link" href="#Design-Ui">4.2. UI component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/UiClassDiagram.svg" alt="UiClassDiagram">
@@ -195,27 +299,30 @@ The following class plays an important role at the architecture level:</p>
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/blob/master/src/main/java/seedu/delino/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
+<p>The UI consists of a <strong>MainWindow</strong> that is made up of parts e.g.<strong>CommandBox</strong>, <strong>ResultDisplay</strong>, <strong>PersonListPanel</strong> etc. All these, including the <strong>MainWindow</strong>, inherit from the abstract <strong>UiPart</strong> class.</p>
 </div>
 <div class="paragraph">
-<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/blob/master/src/main/java/seedu/delino/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/blob/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+<p>The <strong>UI</strong> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that
+are in the <code>src/main/resources/view</code> folder. For example, the layout of the
+<a href="https://github.com/AY1920S2-CS2103T-W12-1/main/blob/master/src/main/java/seedu/delino/ui/MainWindow.java"><code>MainWindow</code></a> is specified
+in <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/blob/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
 </div>
 <div class="paragraph">
-<p>The <code>UI</code> component,</p>
+<p>The <strong>UI</strong> component,</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Executes user commands using the <code>Logic</code> component.</p>
+<p>Executes user commands using the <strong>Logic</strong> component.</p>
 </li>
 <li>
-<p>Listens for changes to <code>Model</code> data so that the UI can be updated with the modified data.</p>
+<p>Listens for changes to <strong>Model</strong> data so that the UI can be updated with the modified data.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Logic"><a class="link" href="#Design-Logic">2.3. Logic component</a></h3>
+<h3 id="Design-Logic"><a class="link" href="#Design-Logic">4.3. Logic component</a></h3>
 <div id="fig-LogicClassDiagram" class="imageblock">
 <div class="content">
 <img src="images/LogicClassDiagram.svg" alt="LogicClassDiagram">
@@ -229,24 +336,24 @@ The following class plays an important role at the architecture level:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><code>Logic</code> uses the <code>OrderBookParser</code> class to parse the user command.</p>
+<p><strong>Logic</strong> uses the <strong>DelinoParser</strong> class to parse the user command.</p>
 </li>
 <li>
-<p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
+<p>This results in a <strong>Command</strong> object which is executed by the <strong>LogicManager</strong>.</p>
 </li>
 <li>
-<p>The command execution can affect the <code>Model</code> (e.g. adding a new order).</p>
+<p>The command execution can affect the <strong>Model</strong> (e.g. adding a new order).</p>
 </li>
 <li>
-<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
+<p>The result of the command execution is encapsulated as a <strong>CommandResult</strong> object which is passed back to the <strong>Ui</strong>.</p>
 </li>
 <li>
-<p>In addition, the <code>CommandResult</code> object can also instruct the <code>Ui</code> to perform certain actions, such as displaying help to the user.</p>
+<p>In addition, the <strong>CommandResult</strong> object can also instruct the <strong>Ui</strong> to perform certain actions, such as displaying help to the user.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete -o 1")</code> API call.</p>
+<p>Given below is the Sequence Diagram for interactions within the <strong>Logic</strong> component for the <code>execute("delete -o 1")</code> API call.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -261,17 +368,18 @@ The following class plays an important role at the architecture level:</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The lifeline for <code>DeleteCommandParser</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+The lifeline for <strong>DeleteCommandParser</strong> should end at the destroy marker (X) but due to a limitation of
+PlantUML, the lifeline reaches the end of diagram.
 </td>
 </tr>
 </table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Model"><a class="link" href="#Design-Model">2.4. Model component</a></h3>
+<h3 id="Design-Model"><a class="link" href="#Design-Model">4.4. Model component</a></h3>
 <div class="imageblock">
 <div class="content">
-<img src="images/ModelClassDiagram.svg" alt="ModelClassDiagram">
+<img src="images/ModelClassDiagram.png" alt="ModelClassDiagram">
 </div>
 <div class="title">Figure 7. Structure of the Model Component</div>
 </div>
@@ -279,18 +387,20 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/blob/master/src/main/java/seedu/delino/model/Model.java"><code>Model.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The <code>Model</code>,</p>
+<p>The <strong>Model</strong>,</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
+<p>stores a <strong>UserPref</strong> object that represents the user&#8217;s preferences.</p>
 </li>
 <li>
-<p>stores the Order Book data.</p>
+<p>stores the Order Book and Return Order Book data.</p>
 </li>
 <li>
-<p>exposes an unmodifiable <code>ObservableList&lt;Order&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
+<p>exposes two unmodifiable lists, the <code>ObservableList&lt;ReturnOrder&gt;</code> and <code>ObservableList&lt;Order&gt;</code> that can be
+'observed'.<br>
+ e.g. The UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
 </li>
 <li>
 <p>does not depend on any of the other three components.</p>
@@ -304,16 +414,19 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-An Order class consists of nine different fields as shown in the image. Every order is part of a UniqueOrderList and
-every UniqueOrderList is part of an OrderBook.
-<span class="image"><img src="images/BetterModelClassDiagram.svg" alt="BetterModelClassDiagram"></span>
+An <strong>Order</strong> class consists of ten different fields as shown in the image.
+Every order is part of a <strong>UniqueOrderList</strong> and
+every <strong>UniqueOrderList</strong> is part of an <strong>OrderBook</strong>.<br>
+Similarly, a <strong>ReturnOrder</strong> class consists of nine different fields as shown in the image.
+Every return order is part of a <strong>UniqueReturnOrderList</strong> and every
+<strong>UniqueReturnOrderList</strong> is part of a <strong>ReturnOrderBook</strong>.
 </td>
 </tr>
 </table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Storage"><a class="link" href="#Design-Storage">2.5. Storage component</a></h3>
+<h3 id="Design-Storage"><a class="link" href="#Design-Storage">4.5. Storage component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/StorageClassDiagram.svg" alt="StorageClassDiagram">
@@ -324,21 +437,21 @@ every UniqueOrderList is part of an OrderBook.
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/blob/master/src/main/java/seedu/delino/storage/Storage.java"><code>Storage.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The <code>Storage</code> component,</p>
+<p>The <strong>Storage</strong> component,</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>can save <code>UserPref</code> objects in json format and read it back.</p>
+<p>can save <strong>UserPref</strong> objects in json format and read it back.</p>
 </li>
 <li>
-<p>can save both OrderBook and ReturnOrderBook data in json format and read it back.</p>
+<p>can save both <strong>OrderBook</strong> and <strong>ReturnOrderBook</strong> data in json format and read it back.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Commons"><a class="link" href="#Design-Commons">2.6. Common classes</a></h3>
+<h3 id="Design-Commons"><a class="link" href="#Design-Commons">4.6. Common classes</a></h3>
 <div class="paragraph">
 <p>Classes used by multiple components are in the <code>seedu.delino.commons</code> package.</p>
 </div>
@@ -346,24 +459,28 @@ every UniqueOrderList is part of an OrderBook.
 </div>
 </div>
 <div class="sect1">
-<h2 id="implementation"><a class="link" href="#implementation">3. Implementation</a></h2>
+<h2 id="implementation"><a class="link" href="#implementation">5. Implementation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="insert"><a class="link" href="#insert">3.1. Insert Feature</a></h3>
+<h3 id="insert"><a class="link" href="#insert">5.1. Insert Feature</a></h3>
 <div class="paragraph">
-<p>This section, will <a href="#what-is-insert">introduce</a> the Insert Feature. In addition, it will show the expected
-<a href="#insert-sequence">path-execution</a>, the <a href="#insert-class">structure</a> of the of the <strong>InsertCommand</strong> class,
+<p>This section, will <a href="#what-is-insert">introduce</a> the <code>insert</code> feature.
+In addition, it will show the expected <a href="#insert-sequence">path-execution</a>,
+the <a href="#insert-class">structure</a> of the of the <strong>InsertCommand</strong> class,
 <a href="#insertparser-class">structure</a> of the <strong>InsertCommandParser</strong> class and
-it will also describe the <a href="#insert-activity">interaction</a> of objects between the <strong>InsertCommand</strong> object and other object classes.</p>
+it will also describe the <a href="#insert-sequence">interaction</a> of objects between the <strong>InsertCommand</strong> object
+and other object classes.</p>
 </div>
 <div class="sect3">
-<h4 id="what-is-insert"><a class="link" href="#what-is-insert">3.1.1. What is the Insert feature</a></h4>
+<h4 id="what-is-insert"><a class="link" href="#what-is-insert">5.1.1. What is the Insert feature</a></h4>
 <div class="paragraph">
-<p>The insert feature allows the user to insert an incoming delivery order into the list using the command line.
-The order consists of : Transaction ID, Name, Phone, Address, Email, Delivery Timestamp, Warehouse location,
+<p>The <code>insert</code> feature allows the user to insert an incoming delivery order into the list using the command line.<br></p>
+</div>
+<div class="paragraph">
+<p>The order consists of : Transaction ID, Name, Phone, Address, Email, Delivery Timestamp, Warehouse location,
 CashOnDelivery</p>
 </div>
 <div class="paragraph">
@@ -381,34 +498,60 @@ CashOnDelivery</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="insert-class"><a class="link" href="#insert-class">3.1.2. Structure of Insert feature</a></h4>
+<h4 id="insert-class"><a class="link" href="#insert-class">5.1.2. Structure of Insert feature</a></h4>
+<div class="paragraph">
+<p>The following diagrams shows the overview of the <strong>InsertCommand</strong> Class Diagram:<br></p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/InsertClassDiagram.svg" alt="InsertClassDiagram">
 </div>
 <div class="title">Figure 9. Insert Class Diagram</div>
 </div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <strong>InsertCommand</strong>
+and its associated classes and interfaces. Some methods and fields are not included because they are
+not extensively utilised in <strong>InsertCommand</strong>; such as public static fields and getter/setter methods.</p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="insertparser-class"><a class="link" href="#insertparser-class">3.1.3. Structure of InsertCommandParser</a></h4>
+<h4 id="insertparser-class"><a class="link" href="#insertparser-class">5.1.3. Structure of InsertCommandParser</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/InsertParserClassDiagram.svg" alt="InsertParserClassDiagram">
 </div>
 <div class="title">Figure 10. InsertCommandParser Class Diagram</div>
 </div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <strong>InsertCommandParser</strong>
+and its associated classes and interfaces. It describes all the class dependencies of the <strong>InsertCommandParser</strong>
+class. Some methods and fields are not included because they are
+not extensively utilised in <strong>InsertCommand</strong>; such as public static fields and getter/setter methods.
+As shown in the diagram above, the <strong>InsertCommandParser</strong> make use of methods from classes such as using the
+getValue method from the <strong>ArgumentMultimap</strong> class.</p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="insert-activity"><a class="link" href="#insert-activity">3.1.4. Path Execution of Insert Command</a></h4>
+<h4 id="insert-activity"><a class="link" href="#insert-activity">5.1.4. Path Execution of Insert Command</a></h4>
+<div class="paragraph">
+<p>The overview of the <strong>InsertCommand</strong> Activity Diagram is shown below:<br></p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/InsertActivityDiagram.svg" alt="InsertActivityDiagram">
 </div>
 <div class="title">Figure 11. Insert Activity Diagram</div>
 </div>
+<div class="paragraph">
+<p>After the user calls the <code>insert</code> command, the code will check if the command has all the compulsory prefixes present.
+The code will throw a <strong>ParseException</strong> when there are missing prefixes. After that is checked, it will check if the
+new order added is a duplicate (The Order is already inserted into the application). It will throw a <strong>CommandException</strong>
+when the user tries to insert a duplicate order. Otherwise, it will insert the order and prints a success message to
+the user.</p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="insert-sequence"><a class="link" href="#insert-sequence">3.1.5. Interaction between objects when the <strong>Insert Command</strong> is executed</a></h4>
+<h4 id="insert-sequence"><a class="link" href="#insert-sequence">5.1.5. Interaction between objects when the <strong>Insert Command</strong> is executed</a></h4>
 <div class="paragraph">
 <p>Here is the sequence diagram for the <strong>Insert Command</strong> as shown below:<br></p>
 </div>
@@ -419,9 +562,10 @@ CashOnDelivery</p>
 <div class="title">Figure 12. Insert</div>
 </div>
 <div class="paragraph">
-<p>The arguments of the Insert Command will be parsed using the parse method of the <code>InsertCommandParser</code> class.<br>
-The <code>InsertCommandParser</code> will tokenize the arguments parsed in using the tokenize method of <code>ArgumentTokenizer</code> class which
-returns the tokenized arguments. Using the tokenized arguments, the Parser will check if the arguments parsed in matches with the
+<p>The arguments of the <code>insert</code> command will be parsed using the parse method of the <strong>InsertCommandParser</strong> class.<br>
+The <strong>InsertCommandParser</strong> will tokenize the arguments parsed in using the tokenize method of
+<strong>ArgumentTokenizer</strong> class which returns the tokenized arguments.
+Using the tokenized arguments, the Parser will check if the arguments parsed in matches with the
 tokenized arguments using the arePrefixesPresent method.</p>
 </div>
 <div class="paragraph">
@@ -431,45 +575,49 @@ tokenized arguments using the arePrefixesPresent method.</p>
 <ol class="arabic">
 <li>
 <p>Some compulsory prefixes are not present :<br>
-<code>InsertCommandParser</code> will throw a new <code>ParseException</code> object to the <code>LogicManager</code>.</p>
+<strong>InsertCommandParser</strong> will throw a new <strong>ParseException</strong> object to the <strong>LogicManager</strong>.</p>
 </li>
 <li>
 <p>All compulsory prefixes are present in the arguments :<br>
-It will the  proceed to use the getValue method of the <code>ArgumentMultimap</code> class to get the value of the prefix. For example,
-if the argument parsed in is tid/A12345, the getValue method will get the value 'A12345'. Subsequently, it will use the
-<code>ParseUtil</code> methods to get the corresponding object values and put it into the parameters of the new <code>Order</code> object.
-The order object will be put into the parameter of the <code>InsertCommand</code> object and this will be returned
-to the <code>LogicManager</code> class for execution.</p>
+It will the  proceed to use the getValue method of the <strong>ArgumentMultimap</strong> class to get the value of the prefix.
+For example, if the argument parsed in is tid/A12345, the getValue method will get the
+value 'A12345'. Subsequently, it will use the <strong>ParseUtil</strong> methods to get the corresponding object
+values and put it into the parameters of the new <strong>Order</strong> object.
+The order object will be put into the parameter of the <strong>InsertCommand</strong> object and this will be returned
+to the <strong>LogicManager</strong> class for execution.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p><code>LogicManager</code> will call the execute() method of this <code>InsertCommand</code> object. In the execute() method, it will use the <code>Model</code> class
-to call hasOrder method to check for duplicates, if it is a duplicate, the order will throw a CommandException which
-indicates that there is a duplicate order in the OrderBook already. Else, it will successfully inserts the new order
-using addOder method. Finally, it return a new <code>CommandResult</code> object, containing a String that indicates a successful
-insertion.</p>
+<p><strong>LogicManager</strong> will call the execute() method of this <strong>InsertCommand</strong> object.
+In the execute() method, it will use the <strong>Model</strong> class to call hasOrder method to check
+for duplicates, if it is a duplicate, the order will throw a <strong>CommandException</strong> which
+indicates that there is a duplicate order in the <strong>OrderBook</strong> already.
+Else, it will successfully inserts the new order
+using addOrder method. Finally, it return a new <strong>CommandResult</strong> object,
+containing a String that indicates a successful insertion.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="list"><a class="link" href="#list">3.2. List feature</a></h3>
+<h3 id="list"><a class="link" href="#list">5.2. List feature</a></h3>
 <div class="paragraph">
 <p>This section describes the <a href="#list-functionality">functionality</a> , the <a href="#list-structure">structure</a>,
-<a href="#list-interactions">interactions</a> between objects and <a href="#list-path">path</a> the path execution of the <strong>List Command</strong>.</p>
+<a href="#list-interactions">interactions</a> between objects and <a href="#list-path">path</a> the path execution
+of the <code>list</code> command.</p>
 </div>
 <div class="sect3">
-<h4 id="list-functionality"><a class="link" href="#list-functionality">3.2.1. What is the List feature</a></h4>
+<h4 id="list-functionality"><a class="link" href="#list-functionality">5.2.1. What is the List feature</a></h4>
 <div class="paragraph">
 <p>List feature allows the user to see all the orders from both Delivery Orders and Return Orders.</p>
 </div>
 <div class="paragraph">
-<p>The user can enter <code>list</code> to display all the orders. Besides that, the user can also input <code>done</code> to dispay
+<p>The user can enter <code>list</code> to display all the orders. Besides that, the user can also input <code>done</code> to display
 all delivered orders and <code>undone</code> to display all orders that are not delivered.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-structure"><a class="link" href="#list-structure">3.2.2. Structure List feature</a></h4>
+<h4 id="list-structure"><a class="link" href="#list-structure">5.2.2. Structure List feature</a></h4>
 <div class="paragraph">
 <p>The structure of the List Feature is as shown below:</p>
 </div>
@@ -479,9 +627,26 @@ all delivered orders and <code>undone</code> to display all orders that are not 
 </div>
 <div class="title">Figure 13. List Class Diagram</div>
 </div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <strong>ListCommand</strong> and all its associated classes and interfaces.
+The <strong>ListCommand</strong> has dependencies on the <strong>Model</strong> class as it uses the two methods from it :<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>updateFilteredOrderList</p>
+</li>
+<li>
+<p>updateReturnFilteredOrderList</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>There are other variables and strings not shown in this Class Diagrams as they are either static methods or variables.</p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="list-path"><a class="link" href="#list-path">3.2.3. Path execution of the List Command</a></h4>
+<h4 id="list-path"><a class="link" href="#list-path">5.2.3. Path execution of the List Command</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/ListActivityDiagram.svg" alt="ListActivityDiagram">
@@ -489,13 +654,31 @@ all delivered orders and <code>undone</code> to display all orders that are not 
 <div class="title">Figure 14. List Activity Diagram</div>
 </div>
 <div class="paragraph">
-<p>The above activity diagram shows the logic and the path execution when the <strong>List Command</strong> is executed.</p>
+<p>The above activity diagram shows the logic and the path execution when the <code>list</code> command is executed.
+There are only three correct syntax available for <code>ListCommand</code>:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list</code></p>
+</li>
+<li>
+<p><code>list</code> <code>done</code></p>
+</li>
+<li>
+<p><code>list</code> <code>undone</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The code will check if the input is one of the three mentioned above. If the input is not one of the three, it will
+cause the code the throw an error message to the user.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-interactions"><a class="link" href="#list-interactions">3.2.4. Interaction between objects during execution of List Command</a></h4>
+<h4 id="list-interactions"><a class="link" href="#list-interactions">5.2.4. Interaction between objects during execution of List Command</a></h4>
 <div class="paragraph">
-<p>The sequence diagram for the <strong>List Command</strong> is shown below:<br></p>
+<p>The sequence diagram for the <code>list</code> command is shown below:<br></p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -504,7 +687,7 @@ all delivered orders and <code>undone</code> to display all orders that are not 
 <div class="title">Figure 15. List Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
-<p>The user first calls the command "list".</p>
+<p>The user first calls the command <code>list</code>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -521,34 +704,38 @@ all delivered orders and <code>undone</code> to display all orders that are not 
 </table>
 </div>
 <div class="paragraph">
-<p>The LogicManager will call the parseCommand method of OrderBookParser, which then passes the second argument
-into the <code>ListCommand</code> object. This object will then be ultimately returned to the <code>LogicManager</code>.
-Next, the <code>LogicManager</code> will call the execute(model) method using the <code>ListCommand</code> object. In this method, it wil use
-the <code>Model</code> object to call the methods : updateFilteredOrderList and updateFilteredReturnOrderList. Since in this case, the
-argument is empty, the predicate that is parsed to the two methods will always result to true, which means to list
-everything from the order book and return book. When completed, the execute(model) will return a <code>CommandResult</code> object
-to the <code>LogicManager</code>, indicating that the command execution is a success.</p>
+<p>The LogicManager will call the parseCommand method of <strong>DelinoParser</strong>, which then passes the second argument
+into the <strong>ListCommand</strong> object. This object will then be ultimately returned to the <strong>LogicManager</strong>.
+Next, the <strong>LogicManager</strong> will call the execute(model) method using the <strong>ListCommand</strong> object.
+In this method, it wil use the <strong>Model</strong> object to call the methods :
+updateFilteredOrderList and updateFilteredReturnOrderList.
+Since in this case, the argument is empty, the predicate that is parsed to the two methods
+will always result to true, which means to list
+everything from the order book and return book.
+When completed, the execute(model) will return a <strong>CommandResult</strong> object
+to the <strong>LogicManager</strong>, indicating that the command execution is a success.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="clear-feature"><a class="link" href="#clear-feature">3.3. Clear feature</a></h3>
+<h3 id="clear-feature"><a class="link" href="#clear-feature">5.3. Clear feature</a></h3>
 <div class="paragraph">
-<p>In this section, the <a href="#what-is-clear">functionality</a> of the <code>clear</code> feature, the expected <a href="#clear-execution-path">execution path</a>,
-the <a href="#clear-structure">structure</a> of the <code>ClearCommand</code> class and the <a href="#clear-interaction">interactions</a>
-between objects with the <code>ClearCommand</code> object will be discussed.</p>
+<p>In this section, the <a href="#what-is-clear">functionality</a> of the <code>clear</code> feature,
+the expected <a href="#clear-execution-path">execution path</a>,
+the <a href="#clear-structure">structure</a> of the <strong>ClearCommand</strong> class and the <a href="#clear-interaction">interactions</a>
+between objects with the <strong>ClearCommand</strong> object will be discussed.</p>
 </div>
 <div class="sect3">
-<h4 id="what-is-clear"><a class="link" href="#what-is-clear">3.3.1. What is the Clear feature</a></h4>
+<h4 id="what-is-clear"><a class="link" href="#what-is-clear">5.3.1. What is the Clear feature</a></h4>
 <div class="paragraph">
-<p>The <code>clear</code> feature was implemented as a <code>ClearCommand</code> in the <code>logic</code> package.<br>
+<p>The <code>clear</code> feature was implemented as a <strong>ClearCommand</strong> in the logic package.<br>
 The <code>clear</code> feature allows the user to remove the orders and return orders by input one command line.<br></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="clear-execution-path"><a class="link" href="#clear-execution-path">3.3.2. Execution paths of Clear Command</a></h4>
+<h4 id="clear-execution-path"><a class="link" href="#clear-execution-path">5.3.2. Execution paths of Clear Command</a></h4>
 <div class="paragraph">
-<p>The execution path of the <code>ClearCommand</code> is shown below:<br></p>
+<p>The execution path of the <code>clear</code> command is shown below:<br></p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -557,7 +744,7 @@ The <code>clear</code> feature allows the user to remove the orders and return o
 <div class="title">Figure 16. Clear Class Activity Diagram</div>
 </div>
 <div class="paragraph">
-<p>After user enter the <code>clear</code> command, the <code>ClearCommandParser</code> will run the following two checks:<br></p>
+<p>After user enter the <code>clear</code> command, the <strong>ClearCommandParser</strong> will run the following two checks:<br></p>
 </div>
 <div class="ulist">
 <ul>
@@ -571,10 +758,10 @@ The <code>clear</code> feature allows the user to remove the orders and return o
 </div>
 <div class="paragraph">
 <p>If either one of the conditions occurs, exception will be thrown and the error message will be display to the user.
-Afterward,  the new <code>ClearCommand</code> object will be executed.</p>
+Afterward,  the new <strong>ClearCommand</strong> object will be executed.</p>
 </div>
 <div class="paragraph">
-<p>During the execution of the <code>ClearCommand</code>:</p>
+<p>During the execution of the <code>clear</code> command:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -600,24 +787,18 @@ User would be required to press either one of the following two buttons:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="clear-structure"><a class="link" href="#clear-structure">3.3.3. Structure of Clear Command</a></h4>
+<h4 id="clear-structure"><a class="link" href="#clear-structure">5.3.3. Structure of Clear Command</a></h4>
 <div class="paragraph">
-<p>The following diagramS shows the overview of the <code>ClearCommand</code> Class Diagram:<br></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/ClearCommandParserClassDiagram.svg" alt="ClearCommandParserClassDiagram">
-</div>
-<div class="title">Figure 17. Clear Command Parser Class Diagram</div>
+<p>The following diagrams shows the overview of the <code>clear</code> command Class Diagram:<br></p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ClearCommandClassDiagram.svg" alt="ClearCommandClassDiagram">
 </div>
-<div class="title">Figure 18. Clear Command Class Diagram</div>
+<div class="title">Figure 17. Clear Command Class Diagram</div>
 </div>
 <div class="paragraph">
-<p>In the <code>ClearCommand</code> class, there are also some static messages for the different input command
+<p>In the <strong>ClearCommand</strong> class, there are also some static messages for the different input command
 the user has key in:</p>
 </div>
 <div class="olist arabic">
@@ -656,62 +837,65 @@ Confirmation message to the user if the user want to clear both order book lists
 </div>
 </div>
 <div class="sect3">
-<h4 id="clear-interaction"><a class="link" href="#clear-interaction">3.3.4. Interactions between objects when Clear Command is executed</a></h4>
+<h4 id="clear-interaction"><a class="link" href="#clear-interaction">5.3.4. Interactions between objects when Clear Command is executed</a></h4>
 <div class="paragraph">
-<p>In this section, the interactions between objects when <code>ClearCommand</code> is executed will be display in the Clear Command
+<p>In this section, the interactions between objects when <code>clear</code> command is executed will be display in the Clear Command
 Sequence Diagram below:<br></p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ClearCommandSequenceDiagram.svg" alt="ClearCommandSequenceDiagram">
 </div>
-<div class="title">Figure 19. Clear Command Sequence Diagram</div>
+<div class="title">Figure 18. Clear Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
-<p>The above sequence diagram illustrate how <code>Clear</code> Command being processed when the user input <code>clear -f</code> to force clear
-both order book and return order book.</p>
+<p>The above sequence diagram illustrate how the <code>clear</code> Command is being processed when the user inputs
+<code>clear -f</code> to force clear both the order book and return order book.</p>
 </div>
 <div class="paragraph">
-<p>After the user input. the arguments passed to the <code>Clear</code> Command will be parsed by the <code>ClearCommandParser</code> class<br>
-If the given arguments are valid, a new <code>Clear</code> Command object will be returned.</p>
+<p>After the user input. the arguments passed to the <code>clear</code> command will be parsed by the <strong>ClearCommandParser</strong> class<br>
+If the given arguments are valid, a new <strong>ClearCommand</strong> object will be returned.</p>
 </div>
 <div class="paragraph">
-<p>In the <code>ClearCommandParser</code>, there will be two validation checks:<br>
+<p>In <strong>ClearCommandParser</strong>, there will be two validation checks:<br>
 1. Ensure the flag is one of the three flags: <code>-f</code>, <code>-o</code> and <code>-r</code><br>
 2. Ensure the arguments do not have both <code>-o</code> and <code>-r</code> flags.</p>
 </div>
 <div class="paragraph">
 <p>After the two validation checks, the flag will be added into HashSet, <strong>flags</strong> which will then passed to
-the new <code>ClearCommand</code> object created by <code>ClearCommandParser</code> and it is being returned to the <code>LogicManager</code>.
-The <code>LogicManager</code> will start to run the execute the <code>clear</code> Command, which will be
+the new <strong>ClearCommand</strong> object created by <strong>ClearCommandParser</strong> and it is being returned to the <strong>LogicManager</strong>.
+The <strong>LogicManager</strong> will start to run the execute the <code>clear</code> command, which will be
 shown in details in below diagram:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ExecuteClearCommand.svg" alt="ExecuteClearCommand">
 </div>
-<div class="title">Figure 20. Execution of Clear Command Sequence Diagram</div>
+<div class="title">Figure 19. Execution of Clear Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
-<p>After <code>LogicManager</code> call the <code>ClearCommand#execute(model)</code>, the <code>clear</code> Command will update the model by pass a new
-<code>OrderBook</code> object and a new <code>ReturnOrderBook</code> object to <code>Model</code>.  The <code>Model</code> will then update its own orderBook and
-returnOrderBook. In addition, the <code>clear</code> Command will pass back a new <code>CommandResult</code> object with the success message
-in it to the <code>LogicManager</code> at the end of the execution.</p>
+<p>After <strong>LogicManager</strong> call the ClearCommand#execute(model), the <code>clear</code> command will update the model by pass a new
+<strong>OrderBook</strong> object and a new <strong>ReturnOrderBook</strong> object to <strong>Model</strong>.  The <strong>Model</strong> will then update its own orderBook and
+returnOrderBook. In addition, the <code>clear</code> command will pass back a new <strong>CommandResult</strong> object with the success message
+in it to the <strong>LogicManager</strong> at the end of the execution.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="delete"><a class="link" href="#delete">3.4. Delete Feature</a></h3>
+<h3 id="delete"><a class="link" href="#delete">5.4. Delete Feature</a></h3>
 <div class="paragraph">
-<p>In this section, you will learn more about how the <code>delete</code> feature is implemented.</p>
+<p>In this section, the <a href="#what-is-delete">functionality</a> of the <code>delete</code> feature, the
+<a href="#execution-paths-delete">expected execution path</a>,
+the <a href="#structure-delete">structure</a> of the <strong>DeleteCommand</strong> class and the <a href="#interactions-delete">interactions</a>
+between objects with the <strong>DeleteCommand</strong> will be discussed.</p>
 </div>
 <div class="sect3">
-<h4 id="what-is-the-delete-feature"><a class="link" href="#what-is-the-delete-feature">3.4.1. What is the Delete Feature</a></h4>
+<h4 id="what-is-delete"><a class="link" href="#what-is-delete">5.4.1. What is the Delete Feature</a></h4>
 <div class="paragraph">
-<p>The delete feature allows the user to delete orders in either the order list or return order list.<br></p>
+<p>The <code>delete</code> feature allows the user to delete orders in either the order list or return order list.<br></p>
 </div>
 <div class="paragraph">
-<p>The delete feature was implemented as a <code>DeleteCommand</code> in the <code>Logic</code> package.<br></p>
+<p>The <code>delete</code> feature was implemented as a <strong>DeleteCommand</strong> in the Logic package.<br></p>
 </div>
 <div class="paragraph">
 <p>The <code>delete</code> command has the following format:<br></p>
@@ -751,7 +935,7 @@ The <code>INDEX</code> <strong>must be a positive integer</strong> i.e. 1, 2, 3,
 </div>
 </div>
 <div class="sect3">
-<h4 id="execution-paths-of-delete-command"><a class="link" href="#execution-paths-of-delete-command">3.4.2. Execution paths of Delete command</a></h4>
+<h4 id="execution-paths-delete"><a class="link" href="#execution-paths-delete">5.4.2. Execution paths of Delete command</a></h4>
 <div class="paragraph">
 <p>In this section, you will learn more about the execution paths for the <code>delete</code> command.</p>
 </div>
@@ -759,7 +943,7 @@ The <code>INDEX</code> <strong>must be a positive integer</strong> i.e. 1, 2, 3,
 <div class="content">
 <img src="images/DeleteActivityDiagram.svg" alt="DeleteActivityDiagram">
 </div>
-<div class="title">Figure 21. Delete Command Activity Diagram</div>
+<div class="title">Figure 20. Delete Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>There are four possible execution paths for the <code>delete</code> command</p>
@@ -788,7 +972,7 @@ A Command Exception wil be generated.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="structure-of-delete-command"><a class="link" href="#structure-of-delete-command">3.4.3. Structure of Delete command</a></h4>
+<h4 id="structure-delete"><a class="link" href="#structure-delete">5.4.3. Structure of Delete command</a></h4>
 <div class="paragraph">
 <p>In this section, you will learn more about the relationships between objects
 related to the <code>delete</code> command.</p>
@@ -797,10 +981,10 @@ related to the <code>delete</code> command.</p>
 <div class="content">
 <img src="images/DeleteClassDiagram.svg" alt="DeleteClassDiagram">
 </div>
-<div class="title">Figure 22. Delete Command Class Diagram</div>
+<div class="title">Figure 21. Delete Command Class Diagram</div>
 </div>
 <div class="paragraph">
-<p>In the <code>DeleteCommand</code> class, there are also static strings present that represent the
+<p>In the <strong>DeleteCommand</strong> class, there are also static strings present that represent the
 various possible messages.<br>
 For some of the message strings, there are placeholder %s strings used for including dynamic input<br>
 These messages are the following:</p>
@@ -812,6 +996,10 @@ These messages are the following:</p>
 Deleted Order: %1$s<br></p>
 </li>
 <li>
+<p><code>MESSAGE_DELETE_RETURN_ORDER_SUCCESS</code><br>
+Deleted Return Order: %1$s<br></p>
+</li>
+<li>
 <p><code>MESSAGE_INVALID_FLAG</code><br>
 Invalid flag given!<br></p>
 </li>
@@ -819,7 +1007,7 @@ Invalid flag given!<br></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="interactions-between-delete-command-and-its-associated-objects"><a class="link" href="#interactions-between-delete-command-and-its-associated-objects">3.4.4. Interactions between Delete command and its associated objects</a></h4>
+<h4 id="interactions-delete"><a class="link" href="#interactions-delete">5.4.4. Interactions between Delete command and its associated objects</a></h4>
 <div class="paragraph">
 <p>In this section, you will learn more about the <code>delete</code> command and its inner workings.</p>
 </div>
@@ -833,12 +1021,12 @@ list.</p>
 <div class="content">
 <img src="images/DeleteSequenceDiagram.svg" alt="DeleteSequenceDiagram">
 </div>
-<div class="title">Figure 23. Delete Command Sequence Diagram for <code>delete</code> <code>-o</code> <code>1</code></div>
+<div class="title">Figure 22. Delete Command Sequence Diagram for <code>delete</code> <code>-o</code> <code>1</code></div>
 </div>
 <div class="paragraph">
-<p>The arguments passed to the <code>delete</code> command will be parsed by the <code>DeleteCommandParser</code> class.<br>
-If the given arguments are valid, a new <code>DeleteCommand</code> object will be returned.<br>
-In this class, invalid arguments will result in a <code>ParseException</code>.<br>
+<p>The arguments passed to the <code>delete</code> command will be parsed by the <strong>DeleteCommandParser</strong> class.<br>
+If the given arguments are valid, a new <strong>DeleteCommand</strong> object will be returned.<br>
+In this class, invalid arguments will result in a <strong>ParseException</strong>.<br>
 Two checks will be done for the arguments:</p>
 </div>
 <div class="olist arabic">
@@ -852,20 +1040,20 @@ Two checks will be done for the arguments:</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>When the <code>LogicManager</code> runs the <code>execute()</code> method of <code>DeleteCommand</code>,
-<code>DeleteCommand</code> will first check the list to delete from.<br></p>
+<p>When the <strong>LogicManager</strong> runs the <code>execute()</code> method of <strong>DeleteCommand</strong>,
+<strong>DeleteCommand</strong> will first check the list to delete from.<br></p>
 </div>
 <div class="paragraph">
-<p>The <code>deleteFromOrderList(model)</code> method of <code>DeleteCommand</code> will then
-be called and the filtered order list will be obtained from the <code>getFilteredOrderList()</code>
-method of the <code>model</code>.<br></p>
+<p>The deleteFromOrderList(model) method of <strong>DeleteCommand</strong> will then
+be called and the filtered order list will be obtained from the getFilteredOrderList()
+method of the model.<br></p>
 </div>
 <div class="paragraph">
-<p>The specified order at <code>INDEX</code> 1 will be deleted using the <code>deleteOrder(order)</code> method
-in the <code>model</code>.</p>
+<p>The specified order at <code>INDEX</code> 1 will be deleted using the deleteOrder(order) method
+in the model.</p>
 </div>
 <div class="paragraph">
-<p>A new <code>CommandResult</code> will be created and returned to the <code>LogicManager</code>.</p>
+<p>A new <strong>CommandResult</strong> will be created and returned to the <strong>LogicManager</strong>.</p>
 </div>
 <div class="paragraph">
 <p>The sequence diagram below shows the interactions for a <code>delete</code> command execution of
@@ -877,12 +1065,12 @@ list.</p>
 <div class="content">
 <img src="images/DeleteSequenceDiagram2.svg" alt="DeleteSequenceDiagram2">
 </div>
-<div class="title">Figure 24. Delete Command Sequence Diagram for <code>delete</code> <code>-r</code> <code>2</code></div>
+<div class="title">Figure 23. Delete Command Sequence Diagram for <code>delete</code> <code>-r</code> <code>2</code></div>
 </div>
 <div class="paragraph">
-<p>The arguments passed to the <code>delete</code> command will be parsed by the <code>DeleteCommandParser</code> class.<br>
-If the given arguments are valid, a new <code>DeleteCommand</code> object will be returned.<br>
-In this class, invalid arguments will result in a <code>ParseException</code>.<br>
+<p>The arguments passed to the <code>delete</code> command will be parsed by the <strong>DeleteCommandParser</strong> class.<br>
+If the given arguments are valid, a new <strong>DeleteCommand</strong> object will be returned.<br>
+In this class, invalid arguments will result in a <strong>ParseException</strong>.<br>
 Two checks will be done for the arguments:</p>
 </div>
 <div class="olist arabic">
@@ -896,39 +1084,39 @@ Two checks will be done for the arguments:</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>When the <code>LogicManager</code> runs the <code>execute()</code> method of <code>DeleteCommand</code>,
-<code>DeleteCommand</code> will first check the list to delete from.<br></p>
+<p>When the <strong>LogicManager</strong> runs the execute() method of <strong>DeleteCommand</strong>,
+<strong>DeleteCommand</strong> will first check the list to delete from.<br></p>
 </div>
 <div class="paragraph">
-<p>The <code>deleteFromReturnList(model)</code> method of <code>DeleteCommand</code> will then
-be called and the filtered return order list will be obtained from the <code>getFilteredReturnOrderList()</code>
-method of the <code>model</code>.<br></p>
+<p>The deleteFromReturnList(model) method of <strong>DeleteCommand</strong> will then
+be called and the filtered return order list will be obtained from the getFilteredReturnOrderList()
+method of the model.<br></p>
 </div>
 <div class="paragraph">
-<p>The specified return order at <code>INDEX</code> 2 will be deleted using the <code>deleteReturnOrder(returnOrder)</code> method
-in the <code>model</code>.</p>
+<p>The specified return order at <code>INDEX</code> 2 will be deleted using the deleteReturnOrder(returnOrder) method
+in the model.</p>
 </div>
 <div class="paragraph">
-<p>A new <code>CommandResult</code> will be created and returned to the <code>LogicManager</code>.</p>
+<p>A new <strong>CommandResult</strong> will be created and returned to the <strong>LogicManager</strong>.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="delivered"><a class="link" href="#delivered">3.5. Delivered Feature</a></h3>
+<h3 id="delivered"><a class="link" href="#delivered">5.5. Delivered Feature</a></h3>
 <div class="paragraph">
 <p>In this section, the <a href="#what-is-delivered">functionality</a> of the <code>delivered</code> feature, the
 <a href="#execution-paths-delivered">expected execution path</a>,
-the <a href="#structure-delivered">structure</a> of the <code>DeliveredCommand</code> class and the <a href="#sequence-delivered">interactions</a>
-between objects with the <code>DeliveredCommand</code> will be discussed.</p>
+the <a href="#structure-delivered">structure</a> of the <strong>DeliveredCommand</strong> class and the <a href="#sequence-delivered">interactions</a>
+between objects with the <strong>DeliveredCommand</strong> will be discussed.</p>
 </div>
 <div class="sect3">
-<h4 id="what-is-delivered"><a class="link" href="#what-is-delivered">3.5.1. What is the Delivered feature</a></h4>
+<h4 id="what-is-delivered"><a class="link" href="#what-is-delivered">5.5.1. What is the Delivered feature</a></h4>
 <div class="paragraph">
 <p>The <code>delivered</code> function allows the user to mark orders or return orders
 as delivered after delivering an order or a return order.<br></p>
 </div>
 <div class="paragraph">
-<p>The <code>delivered</code> feature was implemented as the <code>DeliveredCommand</code> in the <code>logic</code> package.<br>
+<p>The <code>delivered</code> feature was implemented as the <strong>DeliveredCommand</strong> in the logic package.<br>
 The <code>delivered</code> function requires a valid <a href="#command_prefix"><code>FLAG</code></a> and a valid <a href="#command_prefix"><code>INDEX</code></a>.<br>
 i.e. <code>delivered</code> <a href="#command_prefix"><code>INDEX</code></a> <a href="#command_prefix"><code>FLAG</code></a></p>
 </div>
@@ -946,122 +1134,124 @@ the <a href="#command_prefix"><code>INDEX</code></a> should not be greater than 
 </div>
 </div>
 <div class="sect3">
-<h4 id="execution-paths-delivered"><a class="link" href="#execution-paths-delivered">3.5.2. Execution Paths of Delivered Command</a></h4>
+<h4 id="execution-paths-delivered"><a class="link" href="#execution-paths-delivered">5.5.2. Execution Paths of Delivered Command</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/DeliveredCommandActivityDiagram.png" alt="DeliveredCommandActivityDiagram">
 </div>
-<div class="title">Figure 25. Activity Diagram of the Delivered Command</div>
+<div class="title">Figure 24. Activity Diagram of the Delivered Command</div>
 </div>
 <div class="paragraph">
-<p>The above activity diagram shows the logic behind the <code>DeliveredCommand</code> which is determined in
-the <code>DeliveredCommandParser</code> class when the user inputs the command word <code>delivered</code> to activate the
+<p>The above activity diagram shows the logic behind the <strong>DeliveredCommand</strong> which is determined in
+the <strong>DeliveredCommandParser</strong> class when the user inputs the command word <code>delivered</code> to activate the
 <code>delivered</code> feature.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="structure-delivered"><a class="link" href="#structure-delivered">3.5.3. Structure of Delivered Command</a></h4>
+<h4 id="structure-delivered"><a class="link" href="#structure-delivered">5.5.3. Structure of Delivered Command</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/DeliveredClassDiagram.png" alt="DeliveredClassDiagram">
 </div>
 </div>
 <div class="paragraph">
-<p>The above class diagram shows the structure of the <code>DeliveredCommand</code> and
+<p>The above class diagram shows the structure of the <strong>DeliveredCommand</strong> and
 its associated classes and interfaces. Some methods and fields are not included because they are
-not extensively utilised in <code>DeliveredCommand</code>; such as public static fields and getter/setter methods.</p>
+not extensively utilised in <strong>DeliveredCommand</strong>; such as public static fields and getter/setter methods.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="sequence-diagram-for-delivering-an-order"><a class="link" href="#sequence-diagram-for-delivering-an-order">3.5.4. Sequence Diagram for delivering an order</a></h4>
+<h4 id="sequence-delivered"><a class="link" href="#sequence-delivered">5.5.4. Interactions between Delivered command and its associated objects</a></h4>
 <div class="paragraph">
-<p>The sequence diagrams for the <strong>Delivered Command</strong> are shown below.</p>
+<p>The sequence diagrams for the <code>delivered</code> command are shown below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/DeliveredSequenceDiagram.png" alt="DeliveredSequenceDiagram">
 </div>
-<div class="title">Figure 26. Delivered Command Sequence Diagram</div>
+<div class="title">Figure 25. Delivered Command Sequence Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/DeliveredSequenceDiagram2.png" alt="DeliveredSequenceDiagram2">
 </div>
-<div class="title">Figure 27. Execution of Delivered Command</div>
+<div class="title">Figure 26. Execution of Delivered Command</div>
 </div>
 <div class="paragraph">
 <p>The arguments typed into Delino by the user will first be done by the <code>execute</code>
-method in <code>LogicManager</code>. After which, an <code>OrderBookParser</code> object will be created to parse
+method in <code>LogicManager</code>. After which, an <code>DelinoParser</code> object will be created to parse
 the input which is determined by the command word via the parseCommand method. In this case, it is the
 <code>delivered</code> command word that will be parsed.<br></p>
 </div>
 <div class="paragraph">
-<p>Then, a <code>DeliveredCommandParser</code> object will be created to parse the arguments after removing
+<p>Then, a <strong>DeliveredCommandParser</strong> object will be created to parse the arguments after removing
 the command word <code>delivered</code> from the user&#8217;s input. Based on the command word <code>delivered</code>,
-a <code>DeliveredCommand</code> object will be created.<br></p>
+a <strong>DeliveredCommand</strong> object will be created.<br></p>
 </div>
 <div class="paragraph">
-<p>Subsequently, the parseCommand method in <code>LogicManager</code> will continue to create a CommandResult
+<p>Subsequently, the parseCommand method in <strong>LogicManager</strong> will continue to create a <strong>CommandResult</strong>
 based on the validity of the user&#8217;s input; which is determined by the <code>execute</code> method in
-<code>DeliveredCommand</code>.<br></p>
+<strong>DeliveredCommand</strong>.<br></p>
 </div>
 <div class="paragraph">
-<p>The <code>execute</code> method of <code>DeliveredCommand</code> will first check if a valid
+<p>The <code>execute</code> method of <strong>DeliveredCommand</strong> will first check if a valid
 <a href="#command_prefix"><code>FLAG</code></a> is present in the user&#8217;s input. If the <a href="#command_prefix"><code>FLAG</code></a>
-is not valid, a <code>CommandException</code> will be thrown to the user to tell him/her that their
+is not valid, a <strong>CommandException</strong> will be thrown to the user to tell him/her that their
 input was invalid and tell them the format which their input should follow.<br></p>
 </div>
 <div class="paragraph">
 <p>If a valid <a href="#command_prefix"><code>FLAG</code></a> is present, this will trigger the
-<code>processDeliveryOfOrder</code> method in <code>DeliveredCommand</code> which will check if
+processDeliveryOfOrder method in <strong>DeliveredCommand</strong> which will check if
 a valid <a href="#command_prefix"><code>INDEX</code></a> is present in the user&#8217;s input.<br></p>
 </div>
 <div class="paragraph">
-<p>If the <a href="#command_prefix"><code>INDEX</code></a> is not valid, <code>processDeliveryOfOrder</code> method will throw
-a <code>CommandException</code> to the user; telling him/her that their input was invalid and the format
+<p>If the <a href="#command_prefix"><code>INDEX</code></a> is not valid, processDeliveryOfOrder method will throw
+a <strong>CommandException</strong> to the user; telling him/her that their input was invalid and the format
 that their input should follow. i.e. <code>delivered</code> <a href="#command_prefix"><code>FLAG</code></a>
  <a href="#command_prefix"><code>INDEX</code></a><br></p>
 </div>
 <div class="paragraph">
-<p>If both <a href="#command_prefix"><code>FLAG</code></a> and <a href="#command_prefix"><code>INDEX</code></a> are valid, an <code>Order</code>
-or <code>ReturnOrder</code> object will be created based on the <a href="#command_prefix"><code>FLAG</code></a>.
+<p>If both <a href="#command_prefix"><code>FLAG</code></a> and <a href="#command_prefix"><code>INDEX</code></a> are valid, an <strong>Order</strong>
+or <strong>ReturnOrder</strong> object will be created based on the <a href="#command_prefix"><code>FLAG</code></a>.
 The <a href="#command_prefix"><code>INDEX</code></a> will determine which order or return order to take from
 the order list or return order list respectively using the appropriate getter method.
-The <code>Order</code> or <code>ReturnOrder</code> object will be checked to see if it was delivered using the <code>isDelivered()</code> method.<br></p>
+The <code>Order</code> or <code>ReturnOrder</code> object will be checked to see if it was delivered using the <code>checkIfOrderWasDelivered(model)</code> method.<br></p>
 </div>
 <div class="paragraph">
-<p>If the <code>Order</code> or <code>ReturnOrder</code> was already delivered, this will call the <code>updateOrderList(model)</code> or
-<code>updatedReturnOrderList(model)</code> method respectively in <code>DeliveredCommand</code> and a new
-instance of <code>CommandResult</code> will be created to tell the user that the order or return order was delivered.<br></p>
+<p>If the <strong>Order</strong> or <strong>ReturnOrder</strong> was already delivered, this will call the updateOrderList(model) or
+updatedReturnOrderList(model) method respectively in <strong>DeliveredCommand</strong> and a new
+instance of <strong>CommandResult</strong> will be created to tell the user that the order or return order was delivered.<br></p>
 </div>
 <div class="paragraph">
-<p>If the <code>Order</code> or <code>ReturnOrder</code> was not delivered, this will call the <code>deliverAndUpdateOrderList(model)</code> or
-<code>deliverAndUpdateReturnOrderList(model)</code> respectively in <code>DeliveredCommand</code>. In these methods, the particular <code>Order</code> or
-<code>ReturnOrder</code> will be retrieved from the <code>model</code> using the <code>getFilteredOrderList()</code> or <code>getFilteredReturnOrderList()</code>
-method. Based on the retrieved <code>Order</code> or <code>ReturnOrder</code>, a new <code>Order</code> or <code>ReturnOrder</code> with the <code>delivered</code>
-delivery status will be instantiated using the <code>createDeliveredOrder</code> or <code>createDeliveredReturnOrder</code> methods respectively.<br></p>
+<p>If the <strong>Order</strong> or <strong>ReturnOrder</strong> was not delivered, this will call the deliverAndUpdateOrderList(model) or
+deliverAndUpdateReturnOrderList(model) respectively in <strong>DeliveredCommand</strong>.
+In these methods, the particular <strong>Order</strong> or <strong>ReturnOrder</strong> will be retrieved from the
+model using the getFilteredOrderList() or getFilteredReturnOrderList() method.
+Based on the retrieved <strong>Order</strong> or <strong>ReturnOrder</strong>, a new <strong>Order</strong> or <strong>ReturnOrder</strong> with the <code>delivered</code>
+delivery status will be instantiated using the createDeliveredOrder or createDeliveredReturnOrder methods respectively.<br></p>
 </div>
 <div class="paragraph">
-<p>Then, the <code>setOrder</code> or <code>setReturnOrder</code> method will be called to replace the original <code>Order</code> or <code>ReturnOrder</code> object
-respectively in <code>model</code>. The <code>deliverOrder</code> or <code>deliverReturnOrder</code> method will be called to to set the
-delivery status of the object to delivered. Then, the <code>updateFilteredOrderList()</code> method or <code>updateFilteredReturnOrderList()</code>
-method to update the list in the <code>model</code>.<br></p>
+<p>Then, the setOrder or setReturnOrder method will be called to replace the original <strong>Order</strong> or <strong>ReturnOrder</strong> object
+respectively in model. The deliverOrder or deliverReturnOrder method will be called to to set the
+delivery status of the object to delivered. Then, the updateFilteredOrderList() method or
+updateFilteredReturnOrderList() method to update the list in the model.<br></p>
 </div>
 <div class="paragraph">
-<p>Based on the new updates, a new <code>CommandResult</code> object will be instantiated to print the message success to the user.</p>
+<p>Based on the new updates, a new <strong>CommandResult</strong> object will be instantiated to print the message success to the user.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="edit"><a class="link" href="#edit">3.6. Edit Feature</a></h3>
+<h3 id="edit"><a class="link" href="#edit">5.6. Edit Feature</a></h3>
 <div class="paragraph">
-<p>In this section, the <a href="#what-is-edit">functionality</a> of the <code>edit</code> feature, the expected <a href="#edit-path-execution">execution path</a>, the <a href="#edit-structure">structure</a> of the <code>EditCommand</code> class
-and the <a href="#edit-interactions">interactions</a> between objects with the <code>EditCommand</code> object will be discussed.</p>
+<p>In this section, the <a href="#what-is-edit">functionality</a> of the <code>edit</code> feature, the
+expected <a href="#edit-path-execution">execution path</a>, the <a href="#edit-structure">structure</a> of the <strong>EditCommand</strong> class
+and the <a href="#edit-interactions">interactions</a> between objects with the <strong>EditCommand</strong> object will be discussed.</p>
 </div>
 <div class="sect3">
-<h4 id="what-is-edit"><a class="link" href="#what-is-edit">3.6.1. What is Edit Command</a></h4>
+<h4 id="what-is-edit"><a class="link" href="#what-is-edit">5.6.1. What is Edit Command</a></h4>
 <div class="paragraph">
-<p>The <code>edit</code> feature was implemented as <code>EditCommand</code> in the <code>Logic</code> package.<br></p>
+<p>The <code>edit</code> feature was implemented as <strong>EditCommand</strong> in the Logic package.<br></p>
 </div>
 <div class="paragraph">
 <p><code>edit</code> feature format : <code>edit</code> <code>INDEX</code> <code><a href="#command_flags">FLAG</a></code> <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code>/<code>NEW_VALUE</code> <code>[<a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code>/<code>NEW_VALUE]</code></p>
@@ -1110,24 +1300,26 @@ This feature allows user to edit more than one field within a command.
 </div>
 </div>
 <div class="sect3">
-<h4 id="edit-path-execution"><a class="link" href="#edit-path-execution">3.6.2. Execution paths of Edit Command</a></h4>
+<h4 id="edit-path-execution"><a class="link" href="#edit-path-execution">5.6.2. Execution paths of Edit Command</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/EditCommandActivityDiagram.svg" alt="EditCommandActivityDiagram">
 </div>
-<div class="title">Figure 28. EditCommand Activity Diagram</div>
+<div class="title">Figure 27. EditCommand Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above figure illustrates the execution path of <code>edit</code> command when performed by the user.<br></p>
 </div>
 <div class="paragraph">
-<p>Input when received, will be parsed by the <code>OrderBookParser</code>. <code>OrderBookParser</code> will check if command word matches any features command word.<br>
-In this feature, the command word is <code>edit</code>. If no command word is detected, a exception class should be generated for displaying of error message. <code>CommandException</code> is used in this feature to achieve that function.<br></p>
+<p>Input when received, will be parsed by the <strong>DelinoParser</strong>.
+<strong>DelinoParser</strong> will check if command word matches any features command word.<br>
+In this feature, the command word is <code>edit</code>. If no command word is detected, a exception class should be
+generated for displaying of error message. <strong>CommandException</strong> is used in this feature to achieve that function.<br></p>
 </div>
 <div class="paragraph">
 <p>Once validated, user input is once again parse and check for validity. At this step, if user have provided input not matching the valid <code>edit</code> <a href="#what-is-edit">format</a>, an exception class is thrown.<br>
 Furthermore, if <code>NEW_VALUE</code> is invalid an exception should be thrown as well.<br>
-<code>ParseException</code> class is used in this scenario.</p>
+<strong>ParseException</strong> class is used in this scenario.</p>
 </div>
 <div class="paragraph">
 <p>Some invalid <code>NEW_VALUE</code>:<br>
@@ -1143,57 +1335,68 @@ Furthermore, if <code>NEW_VALUE</code> is invalid an exception should be thrown 
 </div>
 </div>
 <div class="sect3">
-<h4 id="edit-structure"><a class="link" href="#edit-structure">3.6.3. Structure of Edit Command</a></h4>
+<h4 id="edit-structure"><a class="link" href="#edit-structure">5.6.3. Structure of Edit Command</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/EditCommandClassDiagram.png" alt="EditCommandClassDiagram">
 </div>
-<div class="title">Figure 29. Edit Command Class Diagram</div>
+<div class="title">Figure 28. Edit Command Class Diagram</div>
 </div>
 <div class="paragraph">
-<p>The class diagram above depicts the structure of <code>EditCommand</code>. As per any <code>Command</code> class, <code>EditCommand</code> needs to extend the abstract class <code>Command</code>.<br>
-Information that are left out in this class diagram are the common messages used in <code>EditCommand</code>.</p>
+<p>The class diagram above depicts the structure of <strong>EditCommand</strong>. As per any <strong>Command</strong> class,
+<strong>EditCommand</strong> needs to extend the abstract class <strong>Command</strong>.<br>
+Information that are left out in this class diagram are the common messages used in <strong>EditCommand</strong>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="edit-interactions"><a class="link" href="#edit-interactions">3.6.4. Interactions between Edit Command and it&#8217;s associated objects</a></h4>
+<h4 id="edit-interactions"><a class="link" href="#edit-interactions">5.6.4. Interactions between Edit Command and it&#8217;s associated objects</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/EditCommandSequenceDiagram.svg" alt="EditCommandSequenceDiagram">
 </div>
-<div class="title">Figure 30. Edit Command Sequence Diagram</div>
+<div class="title">Figure 29. Edit Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
-<p>The above figure illustrates the important interactions of <code>EditCommand</code> when the user successfully edit the first displayed order name to <code>Alice</code>.<br></p>
+<p>The above figure illustrates the important interactions of <strong>EditCommand</strong> when the user successfully edit the first displayed order name to <code>Alice</code>.<br></p>
 </div>
 <div class="paragraph">
-<p>The handling of breaking down the user input is done in the <code>EditcommandParser</code> class which is called upon by the <code>OrderBookParser</code> after an initial check for correctness of the command input.<br></p>
+<p>The handling of breaking down the user input is done in the <strong>EditCommandParser</strong> class which is called upon by the
+<strong>DelinoParser</strong> after an initial check for correctness of the command input.<br></p>
 </div>
 <div class="paragraph">
-<p>The <code>EditParcelDescriptor</code> class is a static class contained in the <code>EditCommand</code> class. It act as a helper class to allow the setting of all the <code>NEW_VALUE</code> to the corresponding <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> in the <code>EditCommandParser</code> class.
-The <code>EditParcelDescriptor</code> object is then passed back as a parameter to instantiate an <code>EditCommand</code>. In the diagram above, the <code>EditParcelDescriptor</code> object is named as <code>epd</code>.
-The <code>EditCommand</code> object is then passed back as <code>e</code> to the <code>LogicManager</code> which will then call the <code>EditCommand#execute</code>. This execute method mainly calls the 3 helper method, not shown, <code>EditCommand#createEditedOrder</code>/<code>EditComand#createEditedReturnOrder</code> and <code>EditCommand#generalSetParcel</code>.
-The main function of these methods are to help <code>EditCommand</code> in updating the <code>ObservableList</code> in the <code>Model</code> class which is responsible for the updating of list displayed.</p>
+<p>The <strong>EditParcelDescriptor</strong> class is a static class contained in the <strong>EditCommand</strong> class.
+It act as a helper class to allow the setting of all the <code>NEW_VALUE</code> to the corresponding
+<code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> in the <strong>EditCommandParser</strong> class.
+The <strong>EditParcelDescriptor</strong> object is then passed back as a parameter to instantiate an <strong>EditCommand</strong>.
+In the diagram above, the <strong>EditParcelDescriptor</strong> object is named as epd.
+The <strong>EditCommand</strong> object is then passed back as e to the <strong>LogicManager</strong>
+which will then call EditCommand#execute.
+This execute method mainly calls the 3 helper method, not shown,
+EditCommand#createEditedOrder/EditCommand#createEditedReturnOrder and EditCommand#generalSetParcel.
+The main function of these methods are to help <strong>EditCommand</strong> in updating the <strong>ObservableList</strong> in the
+<strong>Model</strong> class which is responsible for the updating of list displayed.</p>
 </div>
 <div class="paragraph">
-<p>The <code>ObeservableList</code> is a JavaFX function which listens and automatically changes the list once an update is performed.</p>
+<p>The <strong>ObservableList</strong> is a JavaFX class which listens and automatically changes the list once an update is performed.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="return"><a class="link" href="#return">3.7. Return Feature</a></h3>
+<h3 id="return"><a class="link" href="#return">5.7. Return Feature</a></h3>
 <div class="paragraph">
-<p>In this section, you will learn more about how the <code>return</code> feature is implemented.</p>
+<p>In this section, the <a href="#what-is-return">functionality</a> of the <code>return</code> feature, the
+expected <a href="#execution-paths-return">execution path</a>, the <a href="#structure-return">structure</a> of the <strong>ReturnCommand</strong> class
+and the <a href="#return-interactions">interactions</a> between objects with the <strong>ReturnCommand</strong> object will be discussed.</p>
 </div>
 <div class="sect3">
-<h4 id="what-is-return"><a class="link" href="#what-is-return">3.7.1. What is the Return Feature</a></h4>
+<h4 id="what-is-return"><a class="link" href="#what-is-return">5.7.1. What is the Return Feature</a></h4>
 <div class="paragraph">
-<p>The return feature allows the user to either:<br>
+<p>The <code>return</code> feature allows the user to either:<br>
 1. Create a new return order from his/her input parcel attributes.<br>
 2. Convert an existing delivered order to a return order.</p>
 </div>
 <div class="paragraph">
-<p>The return feature was implemented as a <code>ReturnCommand</code> in the <code>Logic</code> package.<br></p>
+<p>The return feature was implemented as a <strong>ReturnCommand</strong> in the Logic package.<br></p>
 </div>
 <div class="paragraph">
 <p>The <code>return</code> command has two possible formats:<br></p>
@@ -1201,10 +1404,10 @@ The main function of these methods are to help <code>EditCommand</code> in updat
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><code>return</code> <a href="#command_prefix"><code>TRANSACTION_ID</code></a>
-If the user provides only a valid <a href="#command_prefix"><code>TRANSACTION_ID</code></a> in his input, the order with the given
-<a href="#command_prefix"><code>TRANSACTION_ID</code></a> will be converted into a return order with the same attributes.
-The created return order will be added into the return order list.</p>
+<p><code>return</code> <a href="#command_prefix"><code>TRANSACTION_ID</code></a> <a href="#command_prefix"><code>RETURN_TIMESTAMP</code></a>
+If the user provides a valid <a href="#command_prefix"><code>TRANSACTION_ID</code></a> and <a href="#command_prefix"><code>RETURN_TIMESTAMP</code></a> in his input, the order with the given
+<a href="#command_prefix"><code>TRANSACTION_ID</code></a> will be converted into a return order with the same attributes but with the updated
+<a href="#command_prefix"><code>RETURN_TIMESTAMP</code></a>. The created return order will be added into the return order list.</p>
 </li>
 <li>
 <p><code>return</code> <a href="#command_prefix"><code>TRANSACTION_ID</code></a> <a href="#command_prefix"><code>NAME</code></a> <a href="#command_prefix"><code>ADDRESS</code></a> <a href="#command_prefix"><code>PHONE_NUMBER</code></a>
@@ -1252,7 +1455,7 @@ the date and time.</p>
 <p>The <a href="#command_prefix"><code>[COMMENTS]</code></a> is an optional alphanumeric field and determines the <a href="#command_prefix"><code>[COMMENTS]</code></a> of the resulting return order.</p>
 </li>
 <li>
-<p>The <a href="#command_prefix"><code>[ITEM_TYPE]</code></a> is an optional alphanumeric field and determines the <a href="#command_prefix"><code>[ITEM_TYPE]</code></a> of the resulting return order.</p>
+<p>The <a href="#command_prefix"><code>[ITEM_TYPE]</code></a> is an optional alphabetic field and determines the <a href="#command_prefix"><code>[ITEM_TYPE]</code></a> of the resulting return order.</p>
 </li>
 </ol>
 </div>
@@ -1262,7 +1465,7 @@ the date and time.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="execution-paths-return"><a class="link" href="#execution-paths-return">3.7.2. Execution paths of Return command</a></h4>
+<h4 id="execution-paths-return"><a class="link" href="#execution-paths-return">5.7.2. Execution paths of Return command</a></h4>
 <div class="paragraph">
 <p>In this section, you will learn more about the execution paths for the <code>return</code> command.</p>
 </div>
@@ -1270,7 +1473,7 @@ the date and time.</p>
 <div class="content">
 <img src="images/ReturnCommandActivityDiagram.png" alt="ReturnCommandActivityDiagram">
 </div>
-<div class="title">Figure 31. Return Command Activity Diagram</div>
+<div class="title">Figure 30. Return Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>There are three possible execution paths for the <code>return</code> command</p>
@@ -1311,24 +1514,26 @@ This will result in a parse exception and an error message will be displayed to 
 </div>
 </div>
 <div class="sect3">
-<h4 id="structure-return"><a class="link" href="#structure-return">3.7.3. Structure of Return Command</a></h4>
+<h4 id="structure-return"><a class="link" href="#structure-return">5.7.3. Structure of Return Command</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/ReturnClassDiagram.png" alt="ReturnClassDiagram">
 </div>
 </div>
 <div class="paragraph">
-<p>The above class diagram shows the structure of the <code>ReturnCommand</code>
+<p>The above class diagram shows the structure of the <strong>ReturnCommand</strong>
 and its associated classes and interfaces. Some methods and fields are not included because they are
-not extensively utilised in <code>ReturnCommand</code>; such as public static fields and getter/setter methods.</p>
+not extensively utilised in <strong>ReturnCommand</strong>; such as public static fields and getter/setter methods.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="return-interactions"><a class="link" href="#return-interactions">3.7.4. Interactions between objects when Return Command is executed</a></h4>
-
+<h4 id="return-interactions"><a class="link" href="#return-interactions">5.7.4. Interactions between objects when Return Command is executed</a></h4>
+<div class="paragraph">
+<p>The sequence diagrams for the <code>return</code> command are shown below.</p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="sequence-diagram-for-converting-an-order-into-a-return-order"><a class="link" href="#sequence-diagram-for-converting-an-order-into-a-return-order">3.7.5. Sequence Diagram for converting an order into a return order</a></h4>
+<h4 id="sequence-diagram-for-converting-an-order-into-a-return-order"><a class="link" href="#sequence-diagram-for-converting-an-order-into-a-return-order">5.7.5. Sequence Diagram for converting an order into a return order</a></h4>
 <div class="paragraph">
 <p>The sequence diagrams for the <strong>Return Command</strong> are shown below.</p>
 </div>
@@ -1336,17 +1541,17 @@ not extensively utilised in <code>ReturnCommand</code>; such as public static fi
 <div class="content">
 <img src="images/ReturnSequenceDiagram1_a.png" alt="ReturnSequenceDiagram1 a">
 </div>
-<div class="title">Figure 32. Return Command Sequence Diagram</div>
+<div class="title">Figure 31. Return Command Sequence Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ReturnSequenceDiagram2_a.png" alt="ReturnSequenceDiagram2 a">
 </div>
-<div class="title">Figure 33. Execution of Return Command to convert a delivered Order into a Return Order</div>
+<div class="title">Figure 32. Execution of Return Command to convert a delivered Order into a Return Order</div>
 </div>
 <div class="paragraph">
 <p>The arguments typed into Delino by the user will first be done by the <code>execute</code>
-method in <code>LogicManager</code>. After which, an <code>OrderBookParser</code> object will be created to parse
+method in <code>LogicManager</code>. After which, an <code>DelinoParser</code> object will be created to parse
 the input which is determined by the command word via the parseCommand method. In this case, it is the
 <code>return</code> command word that will be parsed.<br></p>
 </div>
@@ -1372,12 +1577,16 @@ getOrderByTransactionId(model) method will attempt to create a new Order object 
 the model&#8217;s Order list based on the given transaction ID, i.e. orderToBeReturned.<br></p>
 </div>
 <div class="paragraph">
-<p>The isDelivered() method checks if the newly created Order is delivered. If the order was not
+<p>The checkIfOrderWasDelivered(model) method checks if the newly created Order is delivered. If the order was not
 delivered, it will throw a command exception and display an error message to the user.<br></p>
 </div>
 <div class="paragraph">
-<p>If the order was delivered, the deleteOrder(orderToBeReturned) method will be triggered
-to delete the order from the model&#8217;s order list. Also, a new return order will be created based
+<p>If the order was delivered, Delino will proceed to check if the timestamp input was valid. If it was
+invalid, an exception will be thrown and an error message will be displayed to the user.</p>
+</div>
+<div class="paragraph">
+<p>If the order was delivered and the timestamp input was valid,
+the deleteOrder(orderToBeReturned) method will be triggered to delete the order from the model&#8217;s order list. Also, a new return order will be created based
 on the ReturnOrder&#8217;s constructor that takes in an Order, i.e. ReturnOrder(orderToBeReturned). This
 creates a new Return Order object, toBeCreated.<br></p>
 </div>
@@ -1396,7 +1605,7 @@ a delivered order to a return order.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="sequence-diagram-for-creating-a-new-return-order"><a class="link" href="#sequence-diagram-for-creating-a-new-return-order">3.7.6. Sequence Diagram for creating a new return order</a></h4>
+<h4 id="sequence-diagram-for-creating-a-new-return-order"><a class="link" href="#sequence-diagram-for-creating-a-new-return-order">5.7.6. Sequence Diagram for creating a new return order</a></h4>
 <div class="paragraph">
 <p>The sequence diagrams for the <strong>Return Command</strong> are shown below.</p>
 </div>
@@ -1404,70 +1613,75 @@ a delivered order to a return order.</p>
 <div class="content">
 <img src="images/ReturnSequenceDiagram1_b.png" alt="ReturnSequenceDiagram1 b">
 </div>
-<div class="title">Figure 34. Return Command Sequence Diagram</div>
+<div class="title">Figure 33. Return Command Sequence Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ReturnSequenceDiagram2_b.png" alt="ReturnSequenceDiagram2 b">
 </div>
-<div class="title">Figure 35. Execution of Return Command to create a new Return Order</div>
+<div class="title">Figure 34. Execution of Return Command to create a new Return Order</div>
 </div>
 <div class="paragraph">
 <p>The arguments typed into Delino by the user will first be done by the <code>execute</code>
-method in <code>LogicManager</code>. After which, an <code>OrderBookParser</code> object will be created to parse
+method in <strong>LogicManager</strong>. After which, an <strong>DelinoParser</strong> object will be created to parse
 the input which is determined by the command word via the parseCommand method. In this case, it is the
 <code>return</code> command word that will be parsed.<br></p>
 </div>
 <div class="paragraph">
-<p>Then, a <code>ReturnCommandParser</code> object will be created to parse the arguments after removing
+<p>Then, a <strong>ReturnCommandParser</strong> object will be created to parse the arguments after removing
 the command word <code>return</code> from the user&#8217;s input. Based on the command word <code>return</code>,
-a <code>ReturnCommand</code> object will be created.<br></p>
+a <strong>ReturnCommand</strong> object will be created.<br></p>
 </div>
 <div class="paragraph">
-<p>Subsequently, the parseCommand method in <code>LogicManager</code> will continue to create a CommandResult
+<p>Subsequently, the parseCommand method in <strong>LogicManager</strong> will continue to create a CommandResult
 based on the validity of the user&#8217;s input; which is determined by the <code>execute</code> method in
-<code>ReturnCommand</code>.<br></p>
+<strong>ReturnCommand</strong>.<br></p>
 </div>
 <div class="paragraph">
-<p>The <code>execute</code> method of <code>ReturnCommand</code> will first check if the return order in the constructor of
-ReturnCommand is present. In this case, since we are creating a new return order from the given parcel attributes, a
-return order will be created and it will be used in the constructor of <code>ReturnCommand</code> and
+<p>The <code>execute</code> method of <strong>ReturnCommand</strong> will first check if the return order in the constructor of
+<strong>ReturnCommand</strong> is present. In this case, since we are creating a new return order from the given parcel attributes, a
+return order will be created and it will be used in the constructor of <strong>ReturnCommand</strong> and
 the isReturnOrderNotPresent() method will return false.<br></p>
 </div>
 <div class="paragraph">
-<p>Also, a new return order will be created based on the ReturnOrder&#8217;s constructor
-that takes in an Order, i.e. ReturnOrder(orderToBeReturned). This
-creates a new ReturnOrder object, toBeCreated.<br></p>
+<p>Also, a new return order will be created based on the <strong>ReturnOrder</strong>'s constructor
+that takes in an <strong>Order</strong>, i.e. ReturnOrder(orderToBeReturned). This
+creates a new <strong>ReturnOrder</strong> object, toBeCreated.<br></p>
 </div>
 <div class="paragraph">
-<p>Subsequently, this newly created ReturnOrder object toBeCreated, will be checked against the
+<p>Subsequently, this newly created <strong>ReturnOrder</strong> object toBeCreated, will be checked against the
 model&#8217;s return order list using the hasParcel(toBeCreated) method.
 If it exists, a command exception will be thrown
 and an error message will be displayed to the user.<br></p>
 </div>
 <div class="paragraph">
-<p>If the ReturnOrder does not exist in the model&#8217;s return order list, the newly created ReturnOrder object,
+<p>If the <strong>ReturnOrder</strong> does not exist in the model&#8217;s return order list, the newly created <strong>ReturnOrder</strong> object,
 toBeCreated, will be added to the model&#8217;s return order list using the addReturnOrder(toBeCreated) method.<br></p>
 </div>
 <div class="paragraph">
-<p>Finally, a new CommandResult will be created to display the success message to the user for creating a
+<p>Finally, a new <strong>CommandResult</strong> will be created to display the success message to the user for creating a
 new return order with the given parcel attributes.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="nearby"><a class="link" href="#nearby">3.8. Nearby Feature</a></h3>
+<h3 id="nearby"><a class="link" href="#nearby">5.8. Nearby Feature</a></h3>
+<div class="paragraph">
+<p>In this section, the <a href="#what-is-nearby">functionality</a> of the <code>nearby</code> feature, the
+expected <a href="#nearby-path-execution">execution path</a>, the <a href="#nearby-structure">structure</a> of the <strong>NearbyCommand</strong> class
+and the <a href="#nearby-interactions">interactions</a> between objects with the <strong>NearbyCommand</strong> object will be discussed.</p>
+</div>
 <div class="paragraph">
 <p>In this section, you will learn more about how the <code>nearby</code> feature is implemented.</p>
 </div>
 <div class="sect3">
-<h4 id="what-is-the-nearby-feature"><a class="link" href="#what-is-the-nearby-feature">3.8.1. What is the Nearby Feature</a></h4>
+<h4 id="what-is-nearby"><a class="link" href="#what-is-nearby">5.8.1. What is the Nearby Feature</a></h4>
 <div class="paragraph">
-<p>The nearby feature allows the user to view all orders that are located at a particular area
+<p>The <code>nearby</code> feature allows the user to view all orders that are located at a particular area
 based on a given search criteria.<br></p>
 </div>
 <div class="paragraph">
-<p>The nearby feature was implemented as a <code>NearbyCommand</code> in the <code>Logic</code> package.<br></p>
+<p>The <code>nearby</code> feature was implemented as a <strong>NearbyCommand</strong> in the Logic package.<br></p>
 </div>
 <div class="paragraph">
 <p>The <code>nearby</code> command has two possible formats:<br></p>
@@ -1544,7 +1758,7 @@ The list of postal sectors and their corresponding general locations can be foun
 </div>
 </div>
 <div class="sect3">
-<h4 id="execution-paths-of-nearby-command"><a class="link" href="#execution-paths-of-nearby-command">3.8.2. Execution paths of Nearby command</a></h4>
+<h4 id="nearby-path-execution"><a class="link" href="#nearby-path-execution">5.8.2. Execution paths of Nearby command</a></h4>
 <div class="paragraph">
 <p>In this section, you will learn more about the execution paths for the <code>nearby</code> command.</p>
 </div>
@@ -1552,7 +1766,7 @@ The list of postal sectors and their corresponding general locations can be foun
 <div class="content">
 <img src="images/NearbyActivityDiagram.svg" alt="NearbyActivityDiagram">
 </div>
-<div class="title">Figure 36. Nearby Command Activity Diagram</div>
+<div class="title">Figure 35. Nearby Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>There are four possible execution paths for the <code>nearby</code> command</p>
@@ -1604,7 +1818,7 @@ There are currently five areas that are searchable:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="structure-of-nearby-command"><a class="link" href="#structure-of-nearby-command">3.8.3. Structure of Nearby command</a></h4>
+<h4 id="nearby-structure"><a class="link" href="#nearby-structure">5.8.3. Structure of Nearby command</a></h4>
 <div class="paragraph">
 <p>In this section, you will learn more about the relationships between objects
 related to the <code>nearby</code> command.</p>
@@ -1613,10 +1827,10 @@ related to the <code>nearby</code> command.</p>
 <div class="content">
 <img src="images/NearbyClassDiagram.svg" alt="NearbyClassDiagram">
 </div>
-<div class="title">Figure 37. Nearby Command Class Diagram</div>
+<div class="title">Figure 36. Nearby Command Class Diagram</div>
 </div>
 <div class="paragraph">
-<p>In the <code>NearbyCommand</code> class, there are also static strings present that represent the
+<p>In the <strong>NearbyCommand</strong> class, there are also static strings present that represent the
 various possible messages.<br>
 For some of the message strings, there are placeholder %s strings used for including dynamic input<br>
 These messages are the following:</p>
@@ -1656,7 +1870,7 @@ Invalid area given.<br></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="interactions-between-nearby-command-and-its-associated-objects"><a class="link" href="#interactions-between-nearby-command-and-its-associated-objects">3.8.4. Interactions between Nearby command and its associated objects</a></h4>
+<h4 id="nearby-interactions"><a class="link" href="#nearby-interactions">5.8.4. Interactions between Nearby command and its associated objects</a></h4>
 <div class="paragraph">
 <p>In this section, you will learn more about the <code>nearby</code> command and its inner workings.</p>
 </div>
@@ -1671,21 +1885,21 @@ should be displayed to the user.</p>
 <div class="content">
 <img src="images/NearbyCommandSequenceDiagram1.svg" alt="NearbyCommandSequenceDiagram1">
 </div>
-<div class="title">Figure 38. Nearby Command Sequence Diagram for <code>nearby</code> <code>-o</code> <code>14</code></div>
+<div class="title">Figure 37. Nearby Command Sequence Diagram for <code>nearby</code> <code>-o</code> <code>14</code></div>
 </div>
 <div class="paragraph">
-<p>The arguments passed to the Nearby Command will be parsed by the <code>NearbyCommandParser</code> class.<br>
-If the given arguments are valid, a new <code>NearbyCommand</code> object will be returned.<br>
-In this class, invalid arguments will result in a <code>ParseException</code>.<br>
+<p>The arguments passed to the Nearby Command will be parsed by the <strong>NearbyCommandParser</strong> class.<br>
+If the given arguments are valid, a new <strong>NearbyCommand</strong> object will be returned.<br>
+In this class, invalid arguments will result in a <strong>ParseException</strong>.<br>
 Two types of invalid arguments are checked for: empty arguments
 and arguments with only whitespace characters.</p>
 </div>
 <div class="paragraph">
-<p>The <code>execute()</code> function of the <code>NearbyCommand</code> will first check if the given arguments
+<p>The execute() function of the <strong>NearbyCommand</strong> will first check if the given arguments
 are in the format required for postal sector search (the argument can be converted into an integer).
 If the first check is successful, the argument will be converted into an integer and
-a second check is performed via the <code>isValidPostalSector(Index postalSector)</code> function
-of the <code>NearbyCommandUtil</code> helper class.</p>
+a second check is performed via the isValidPostalSector(Index postalSector) function
+of the <strong>NearbyCommandUtil</strong> helper class.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1695,14 +1909,14 @@ of the <code>NearbyCommandUtil</code> helper class.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p><code>NearbyCommandUtil</code> is a helper class that contains functions and variables used for
+<p><strong>NearbyCommandUtil</strong> is a helper class that contains functions and variables used for
 identifying postal sectors and their corresponding general locations.<br>
-This class was created to reduce the responsibility of the <code>NearbyCommand</code> class.<br></p>
+This class was created to reduce the responsibility of the <strong>NearbyCommand</strong> class.<br></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>A <code>HashMap</code> was used to store information about postal sectors and their respective general locations.</p>
+<p>A <strong>HashMap</strong> was used to store information about postal sectors and their respective general locations.</p>
 </li>
 </ul>
 </div>
@@ -1711,10 +1925,10 @@ This class was created to reduce the responsibility of the <code>NearbyCommand</
 </table>
 </div>
 <div class="paragraph">
-<p>The <code>model</code> will then be updated by the <code>updateFilteredOrderList(orderPredicate)</code> function.<br></p>
+<p>The model will then be updated by the updateFilteredOrderList(orderPredicate) function.<br></p>
 </div>
 <div class="paragraph">
-<p>A <code>CommandResult</code> is then generated and returned to the <code>LogicManager</code>.</p>
+<p>A <strong>CommandResult</strong> is then generated and returned to the <strong>LogicManager</strong>.</p>
 </div>
 <div class="paragraph">
 <p>The sequence diagram below shows the interactions for a <code>nearby</code> command execution of
@@ -1727,21 +1941,21 @@ should be displayed to the user.</p>
 <div class="content">
 <img src="images/NearbyCommandSequenceDiagram2.svg" alt="NearbyCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 39. Nearby Command Sequence Diagram of <code>nearby</code> <code>-o</code> <code>central</code></div>
+<div class="title">Figure 38. Nearby Command Sequence Diagram of <code>nearby</code> <code>-o</code> <code>central</code></div>
 </div>
 <div class="paragraph">
-<p>The <code>NearbyCommandParser</code> will check for invalid arguments given by the user.<br>
+<p>The <strong>NearbyCommandParser</strong> will check for invalid arguments given by the user.<br>
 Invalid arguments can be either empty arguments or arguments with
 only whitespace characters.
-A <code>ParseException</code> will be generated if an invalid argument is present.</p>
+A <strong>ParseException</strong> will be generated if an invalid argument is present.</p>
 </div>
 <div class="paragraph">
-<p>A new <code>NearbyCommand</code> will be created and returned to <code>LogicManager</code>.</p>
+<p>A new <strong>NearbyCommand</strong> will be created and returned to <strong>LogicManager</strong>.</p>
 </div>
 <div class="paragraph">
-<p><code>LogicManager</code> will then call the <code>execute()</code> function of the <code>NearbyCommand</code>.<br>
+<p><strong>LogicManager</strong> will then call the execute() function of the <strong>NearbyCommand</strong>.<br>
 There will then be a check for whether the given argument is a valid area with the
-function <code>isValidArea(area)</code> present in the <code>DistrictInfo</code> class.</p>
+function isValidArea(area) present in the <strong>DistrictInfo</strong> class.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1751,62 +1965,62 @@ function <code>isValidArea(area)</code> present in the <code>DistrictInfo</code>
 </td>
 <td class="content">
 <div class="paragraph">
-<p><code>DistrictInfo</code> is a helper class that contains functions and variables used for
+<p><strong>DistrictInfo</strong> is a helper class that contains functions and variables used for
 identifying areas.<br>
-This class was created to reduce the responsibility of the <code>NearbyCommand</code> class.<br></p>
+This class was created to reduce the responsibility of the <strong>NearbyCommand</strong> class.<br></p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The model will then be updated using the <code>updateFilteredOrderList(orderPredicate)</code> function.</p>
+<p>The model will then be updated using the updateFilteredOrderList(orderPredicate) function.</p>
 </div>
 <div class="paragraph">
-<p>A new <code>CommandResult</code> will be created and returned to the <code>LogicManager</code>.</p>
+<p>A new <strong>CommandResult</strong> will be created and returned to the <strong>LogicManager</strong>.</p>
 </div>
 <div class="paragraph">
 <p>The sequence diagram below shows the interactions for a <code>nearby</code> command execution of
 <code>nearby</code>.<br>
-This will result in a <code>ParseException</code> as invalid arguments are provided.</p>
+This will result in a <strong>ParseException</strong> as invalid arguments are provided.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/NearbySequenceDiagramParseException.svg" alt="NearbySequenceDiagramParseException">
 </div>
-<div class="title">Figure 40. Parse Exception due to invalid <code>nearby</code> command</div>
+<div class="title">Figure 39. Parse Exception due to invalid <code>nearby</code> command</div>
 </div>
 <div class="paragraph">
-<p>The exception will be thrown in the <code>NearbyCommandParser</code>.</p>
+<p>The exception will be thrown in the <strong>NearbyCommandParser</strong>.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="help"><a class="link" href="#help">3.9. Help Feature</a></h3>
+<h3 id="help"><a class="link" href="#help">5.9. Help Feature</a></h3>
 <div class="paragraph">
-<p>In this section, the <a href="#what-is-import">functionality</a> of the <code>help</code> feature,
-the expected <a href="#import-execution-path">execution path</a>, the <a href="#import-structure">structure</a>
-of the <code>HelpCommand</code> class and the <a href="#import-interaction">interactions</a>
+<p>In this section, the <a href="#what-is-help">functionality</a> of the <code>help</code> feature,
+the expected <a href="#execution-paths-help">execution path</a>, the <a href="#structure-help">structure</a>
+of the <code>HelpCommand</code> class and the <a href="#help-interactions">interactions</a>
 between objects with the <code>HelpCommand</code> object will be discussed.</p>
 </div>
 <div class="sect3">
-<h4 id="what-is-help"><a class="link" href="#what-is-help">3.9.1. What is the Help Feature</a></h4>
+<h4 id="what-is-help"><a class="link" href="#what-is-help">5.9.1. What is the Help Feature</a></h4>
 <div class="paragraph">
-<p>The <code>help</code> feature was implemented as the <code>HelpCommand</code> in the <code>logic</code> package.<br>
+<p>The <code>help</code> feature was implemented as the <strong>HelpCommand</strong> in the logic package.<br>
 The <code>help</code> feature allows users to save the trouble of adding the delivery orders and the return orders one by one
 when they have large amount of delivery orders or return orders to add into Delino.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="execution-paths-help"><a class="link" href="#execution-paths-help">3.9.2. Execution paths of the Help command</a></h4>
+<h4 id="execution-paths-help"><a class="link" href="#execution-paths-help">5.9.2. Execution paths of the Help command</a></h4>
 <div class="paragraph">
-<p>The execution path of the <code>HelpCommand</code> is shown below:<br></p>
+<p>The execution path of the <strong>HelpCommand</strong> is shown below:<br></p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/HelpCommandActivityDiagram.png" alt="HelpCommandActivityDiagram">
 </div>
-<div class="title">Figure 41. Help Command Activity Diagram</div>
+<div class="title">Figure 40. Help Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>After the user enters the help command word, there will be a validation check to ensure that there are no
@@ -1814,103 +2028,103 @@ non-whitespace characters following after the <code>help</code> command word so 
 be processed as a valid command.</p>
 </div>
 <div class="paragraph">
-<p>If there are non-whitespace characters following <code>help</code> command word, a ParseException object willl
+<p>If there are non-whitespace characters following <code>help</code> command word, a <strong>ParseException</strong> object will
 be created and thrown to the user by displaying an error message.</p>
 </div>
 <div class="paragraph">
-<p>If there are no non-whitespace characters following the <code>help</code> command word, a new HelpCommand object
-will be created and a CommandResult object will be created subsequently to display the success message
+<p>If there are no non-whitespace characters following the <code>help</code> command word, a new <strong>HelpCommand</strong> object
+will be created and a <strong>CommandResult</strong> object will be created subsequently to display the success message
 to the user.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="structure-help"><a class="link" href="#structure-help">3.9.3. Structure of Help Command</a></h4>
+<h4 id="structure-help"><a class="link" href="#structure-help">5.9.3. Structure of Help Command</a></h4>
 <div class="paragraph">
-<p>The following diagram shows the overview structure of the <code>HelpCommand</code> Class Diagram:<br></p>
+<p>The following diagram shows the overview structure of the <strong>HelpCommand</strong> Class Diagram:<br></p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/HelpCommandClassDiagram.png" alt="HelpCommandClassDiagram">
 </div>
-<div class="title">Figure 42. Help Command Class Diagram</div>
+<div class="title">Figure 41. Help Command Class Diagram</div>
 </div>
 <div class="paragraph">
-<p>The above class diagram shows the structure of the <code>HelpCommand</code>
+<p>The above class diagram shows the structure of the <strong>HelpCommand</strong>
 and its associated classes and interfaces. Some methods and fields are not included because they are
-not extensively utilised in <code>HelpCommand</code>; such as public static fields and getter/setter methods.</p>
+not extensively utilised in <strong>HelpCommand</strong>; such as public static fields and getter/setter methods.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="help-interactions"><a class="link" href="#help-interactions">3.9.4. Interactions between objects when Help Command is executed</a></h4>
+<h4 id="help-interactions"><a class="link" href="#help-interactions">5.9.4. Interactions between objects when Help Command is executed</a></h4>
 
 </div>
 <div class="sect3">
-<h4 id="sequence-diagram-for-executing-the-help-command"><a class="link" href="#sequence-diagram-for-executing-the-help-command">3.9.5. Sequence Diagram for executing the Help Command</a></h4>
+<h4 id="sequence-diagram-for-executing-the-help-command"><a class="link" href="#sequence-diagram-for-executing-the-help-command">5.9.5. Sequence Diagram for executing the Help Command</a></h4>
 <div class="paragraph">
-<p>The sequence diagrams for the <strong>Help Command</strong> are shown below.</p>
+<p>The sequence diagrams for the <code>help</code> command are shown below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/HelpCommandSequenceDiagram.png" alt="HelpCommandSequenceDiagram">
 </div>
-<div class="title">Figure 43. Help Command Sequence Diagram</div>
+<div class="title">Figure 42. Help Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The arguments typed into Delino by the user will first be done by the <code>execute</code>
-method in <code>LogicManager</code>. After which, an <code>OrderBookParser</code> object will be created to parse
+method in <strong>LogicManager</strong>. After which, an <strong>DelinoParser</strong> object will be created to parse
 the input which is determined by the command word via the parseCommand method. In this case, it is the
 <code>return</code> command word that will be parsed.<br></p>
 </div>
 <div class="paragraph">
-<p>Then, a <code>HelpCommandParser</code> object will be created to parse the arguments after removing
+<p>Then, a <strong>HelpCommandParser</strong> object will be created to parse the arguments after removing
 the command word <code>help</code> from the user&#8217;s input. Based on the command word <code>help</code>,
-a <code>HelpCommand</code> object will be created. The parse() method in <code>HelpCommand</code> will
+a <strong>HelpCommand</strong> object will be created. The parse() method in <strong>HelpCommand</strong> will
 check the validity of the user&#8217;s input to see if there are any non-whitespace characters following
 the <code>help</code> command word.<br></p>
 </div>
 <div class="paragraph">
-<p>Subsequently, the parseCommand method in <code>LogicManager</code> will continue to create a CommandResult
+<p>Subsequently, the parseCommand method in <strong>LogicManager</strong> will continue to create a <strong>CommandResult</strong>
 based on the validity of the user&#8217;s input.<br></p>
 </div>
 <div class="paragraph">
 <p>If the user input is invalid, i.e. there are non-whitespace characters after the <code>help</code> command word,
-a ParseException object will be created in the <code>parse</code> method in <code>HelpCommandParser</code>
+a <strong>ParseException</strong> object will be created in the <code>parse</code> method in <strong>HelpCommandParser</strong>
 and an error message will be displayed to the user.<br></p>
 </div>
 <div class="paragraph">
 <p>If the user input is valid, i.e. there are no non-whitespace characters after the <code>help</code> command word,
-the <code>parse</code> method of <code>HelpCommandParser</code> will return a new HelpCommand.<br></p>
+the <code>parse</code> method of <strong>HelpCommandParser</strong> will return a new <strong>HelpCommand</strong>.<br></p>
 </div>
 <div class="paragraph">
-<p>Then, a new <code>CommandResult</code> will be created based on the user input. This will then display the
+<p>Then, a new <strong>CommandResult</strong> will be created based on the user input. This will then display the
 success message to the user.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="import"><a class="link" href="#import">3.10. Import feature</a></h3>
+<h3 id="import"><a class="link" href="#import">5.10. Import feature</a></h3>
 <div class="paragraph">
 <p>In this section, the <a href="#what-is-import">functionality</a> of the <code>import</code> feature, the expected <a href="#import-execution-path">execution path</a>, the <a href="#import-structure">structure</a> of the
-<code>ImportCommand</code> class and the <a href="#import-interaction">interactions</a> between objects with the <code>ImportCommand</code> object will be discussed.</p>
+<strong>ImportCommand</strong> class and the <a href="#import-interaction">interactions</a> between objects with the <strong>ImportCommand</strong> object will be discussed.</p>
 </div>
 <div class="sect3">
-<h4 id="what-is-import"><a class="link" href="#what-is-import">3.10.1. What is the Import feature</a></h4>
+<h4 id="what-is-import"><a class="link" href="#what-is-import">5.10.1. What is the Import feature</a></h4>
 <div class="paragraph">
-<p>The <code>import</code> feature was implemented as the <code>ImportCommand</code> in the <code>logic</code> package.<br>
+<p>The <code>import</code> feature was implemented as the <strong>ImportCommand</strong> in the logic package.<br>
 The <code>import</code> feature allows users to save the trouble of adding the delivery orders and the return orders one by one
 when they have large amount of delivery orders or return orders to add into Delino.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="import-execution-path"><a class="link" href="#import-execution-path">3.10.2. Execution paths of Import Command</a></h4>
+<h4 id="import-execution-path"><a class="link" href="#import-execution-path">5.10.2. Execution paths of Import Command</a></h4>
 <div class="paragraph">
-<p>The execution path of the <code>ImportCommand</code> is shown below:<br></p>
+<p>The execution path of the <strong>ImportCommand</strong> is shown below:<br></p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ImportActivityDiagram.svg" alt="ImportActivityDiagram">
 </div>
-<div class="title">Figure 44. Import Command Activity Diagram</div>
+<div class="title">Figure 43. Import Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>After the user enter the <code>import</code> command, there are three validation check for the file based on the input argument, <code>FILE_NAME</code>:<br></p>
@@ -1959,24 +2173,24 @@ when they have large amount of delivery orders or return orders to add into Deli
 </ul>
 </div>
 <div class="paragraph">
-<p>Afterward, a new <code>ImportCommand</code> will be created and executed. For every data inside the list, either order or return order
+<p>Afterward, a new <strong>ImportCommand</strong> will be created and executed. For every data inside the list, either order or return order
 will be added into the order book and return order book respectively based on the <code>orderType</code> value.
 If the <code>orderType</code> is invalid, add the data into the result, which will be displayed to the user after processing.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="import-structure"><a class="link" href="#import-structure">3.10.3. Structure of Import Command</a></h4>
+<h4 id="import-structure"><a class="link" href="#import-structure">5.10.3. Structure of Import Command</a></h4>
 <div class="paragraph">
-<p>The following diagram shows the overview structure of the <code>ImportCommand</code> Class Diagram:<br></p>
+<p>The following diagram shows the overview structure of the <strong>ImportCommand</strong> Class Diagram:<br></p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ImportClassDiagram.svg" alt="ImportClassDiagram">
 </div>
-<div class="title">Figure 45. Import Command Class Diagram</div>
+<div class="title">Figure 44. Import Command Class Diagram</div>
 </div>
 <div class="paragraph">
-<p>In the <code>ImportCommand</code> Class, there are also a few static message to display to the user for the various scenarios occurred
+<p>In the <strong>ImportCommand</strong> Class, there are also a few static message to display to the user for the various scenarios occurred
 during the importing of data from the CSV file:<br></p>
 </div>
 <div class="olist arabic">
@@ -2013,37 +2227,23 @@ order and return order.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="import-interaction"><a class="link" href="#import-interaction">3.10.4. Interactions between objects when Import Command is executed</a></h4>
+<h4 id="import-interaction"><a class="link" href="#import-interaction">5.10.4. Interactions between objects when Import Command is executed</a></h4>
 <div class="paragraph">
-<p>In this section, the interactions between the objects when <code>ImportCommand</code> is executed will be shown in the Import Command
+<p>In this section, the interactions between the objects when <strong>ImportCommand</strong> is executed will be shown in the Import Command
 Sequence Diagram below:<br></p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ImportCommandSequenceDiagram.svg" alt="ImportCommandSequenceDiagram">
 </div>
-<div class="title">Figure 46. Import Command Sequence Diagram</div>
+<div class="title">Figure 45. Import Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
-<p>The arguments passed to the <code>import</code> Command will be parsed by the <code>ImportCommandParser</code> class.<br>
-If the given arguments are valid, a new <code>ImportCommand</code> object will be returned.
-In this class, invalid arguments will result in a <code>ParseException</code>.<br></p>
-</div>
-<div class="paragraph">
-<p>Three types of checks will be done before returning the <code>ImportCommand</code>:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Check whether the argument has the <code>.csv</code> file extension at the back.</p>
-</li>
-<li>
-<p>Check whether the file is exists in the data folder.</p>
-</li>
-<li>
-<p>Check whether the first prefix is <code>orderType</code> prefix.</p>
-</li>
-</ol>
+<p>The arguments passed to the <code>import</code> command will be parsed by the <strong>ImportCommandParser</strong> class.<br>
+Then, the <strong>ImportCommandParser</strong> will called the ParseUtil#parseCsvFile() to get the filePath based
+on the input the user provides. Afterward, <strong>CsvProcessor</strong> will be called to retrieve the data from the csv file
+and return the processed <code>fileData</code> back to ParseUtil. The <code>fileData</code> will be further pass to <strong>ImportCommandParser</strong>
+and to the constructor of <strong>ImportCommand</strong>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2053,51 +2253,53 @@ In this class, invalid arguments will result in a <code>ParseException</code>.<b
 </td>
 <td class="content">
 <div class="paragraph">
-<p><code>CsvProcessor</code> is  a helper class that helps to retrieve the data from the csv file and process the data before
-giving to <code>ImportCommand</code>.</p>
+<p><strong>CsvProcessor</strong> is  a helper class that helps to retrieve the data from the csv file and process the data before
+giving to <strong>ImportCommand</strong>.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>After the <code>ImportCommand</code> object is being returned to the <code>LogicManager</code>, the <code>LogicManager</code> will start
-to run the execute the <code>ImportCommand</code>, this will be shown at the diagram below.</p>
+<p>Afterward, the <strong>ImportCommand</strong> object is being returned to the <strong>LogicManager</strong> and the <strong>LogicManager</strong> will start
+to run the execute the <strong>ImportCommand</strong>, which will be shown at the diagram below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ExecuteImportCommand.svg" alt="ExecuteImportCommand">
 </div>
-<div class="title">Figure 47. Execution of Import Command Sequence Diagram</div>
+<div class="title">Figure 46. Execution of Import Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
-<p>The <code>ImportCommand#execute(model)</code> will first check if the data given starts with
-<strong>order</strong> or <strong>return</strong> and pass to the <code>InsertCommandParser</code> or <code>ReturnCommandParser</code> respectively.<br></p>
+<p>The ImportCommand#execute() will first check if the data given starts with
+<strong>order</strong> or <strong>return</strong> and pass to the <strong>InsertCommandParser</strong> or <strong>ReturnCommandParser</strong> respectively.<br></p>
 </div>
 <div class="paragraph">
-<p>Afterwards, <code>InsertCommandParser</code> or <code>ReturnCommandParser</code> will return a new <code>InsertCommand</code> or <code>ReturnCommand</code> respectively
-if it successfully parse the data. The <code>ImportCommand</code> will then call the <code>InsertCommand#execute(Model)</code>
-or <code>ReturnCommand#execute(Model)</code> depend whether it is delivery order or return order. This will cause a delivery order or return order being added into the <code>Model</code>.</p>
+<p>Afterwards, <strong>InsertCommandParser</strong> or <strong>ReturnCommandParser</strong> will return a new <strong>InsertCommand</strong> or <strong>ReturnCommand</strong> respectively
+if it successfully parse the data. The <strong>ImportCommand</strong> will then call the InsertCommand#execute()
+or ReturnCommand#execute() depend whether it is delivery order or return order.
+This will cause a delivery order or return order being added into the Model.</p>
 </div>
 <div class="paragraph">
-<p>The <code>ImportCommand</code> will call its own <code>printResult()</code> function and return a String message to the <code>CommandResult</code> object
-which is then pass back to the <code>LogicManager</code>.</p>
+<p>The <strong>ImportCommand</strong> will call its own printResult() function and return a String message to the <strong>CommandResult</strong> object
+which is then pass back to the <strong>LogicManager</strong>.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="search"><a class="link" href="#search">3.11. Search Feature</a></h3>
+<h3 id="search"><a class="link" href="#search">5.11. Search Feature</a></h3>
 <div class="paragraph">
-<p>In this section, the <a href="#what-is-search">functionality</a> of the <code>search</code> feature, the expected <a href="#search-path-execution">execution path</a>, the <a href="#search-structure">structure</a> of the <code>SearchCommand</code> class
-and the <a href="#search-interactions">interactions</a> between objects with the <code>SearchCommand</code> object will be discussed.</p>
+<p>In this section, the <a href="#what-is-search">functionality</a> of the <code>search</code> feature, the expected
+<a href="#search-path-execution">execution path</a>, the <a href="#search-structure">structure</a> of the <strong>SearchCommand</strong> class
+and the <a href="#search-interactions">interactions</a> between objects with the <strong>SearchCommand</strong> object will be discussed.</p>
 </div>
 <div class="sect3">
-<h4 id="what-is-search"><a class="link" href="#what-is-search">3.11.1. What is the Search feature</a></h4>
+<h4 id="what-is-search"><a class="link" href="#what-is-search">5.11.1. What is the Search feature</a></h4>
 <div class="paragraph">
-<p>The <code>search</code> feature was implemented as the <code>SearchCommand</code> in the <code>logic</code> package.</p>
+<p>The <code>search</code> feature was implemented as the <strong>SearchCommand</strong> in the logic package.</p>
 </div>
 <div class="paragraph">
-<p>The search function allow users to search for any orders according to the provided input.<br></p>
+<p>The <code>search</code> feature allow users to search for any orders according to the provided input.<br></p>
 </div>
 <div class="paragraph">
 <p><code>search</code> feature format: <code>search</code> <code><a href="#command_flags">[FLAG]</a></code> <code><a href="#command_prefix">[ORDER_ATTRIBUTE_PREFIX]</a></code>/<code>[KEYWORD]</code></p>
@@ -2128,7 +2330,8 @@ Keyword search is case-insensitive. E.g: Given <code>Jeremy</code> it matches <c
 </div>
 <div class="paragraph">
 <p>There are two mode of searching, <strong>general search</strong> or <strong>specific search</strong>.<br>
-If the user does not provide any <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code>, a <strong>general search</strong> mode will be performed on orders, return orders, or both depending on the <code><a href="#command_flag">FLAG</a></code>.<br></p>
+If the user does not provide any <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code>, a <strong>general search</strong> mode will be
+performed on orders, return orders, or both depending on the <code><a href="#command_flags">FLAG</a></code>.<br></p>
 </div>
 <div class="paragraph">
 <p>The <code><a href="#command_flags">[FLAG]</a></code> <code>-o</code> when given, searches only for parcels in the order list.<br>
@@ -2153,20 +2356,20 @@ The <code><a href="#command_flags">[FLAG]</a></code> <code>-r</code> when given,
 </div>
 </div>
 <div class="sect3">
-<h4 id="search-path-execution"><a class="link" href="#search-path-execution">3.11.2. Execution paths of Search Command</a></h4>
+<h4 id="search-path-execution"><a class="link" href="#search-path-execution">5.11.2. Execution paths of Search Command</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/SearchCommandActivityDiagram.svg" alt="SearchCommandActivityDiagram">
 </div>
-<div class="title">Figure 48. Search Command Activity Diagram</div>
+<div class="title">Figure 47. Search Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above activity diagram illustrates the different execution paths of <code>search</code> command.<br>
-Whenever a user keys in an input with the <code>search</code> keyword, the <code>SearchCommandParser</code> class will handle the parsing of input.<br>
-User input will be validated in the <code>SearchCommandParser</code> class.</p>
+Whenever a user keys in an input with the <code>search</code> keyword, the <strong>SearchCommandParser</strong> class will handle the parsing of input.<br>
+User input will be validated in the <strong>SearchCommandParser</strong> class.</p>
 </div>
 <div class="paragraph">
-<p>Input is deemed as invalid and <code>ParseException</code> is thrown under these scenarios:<br>
+<p>Input is deemed as invalid and <strong>ParseException</strong> is thrown under these scenarios:<br>
 1) <code><a href="#command_flags">FLAG</a></code> given is not <code>-o</code> or <code>-r</code>.<br>
 2) Multiple <code><a href="#command_flags">FLAG</a></code> detected.<br>
 3) No <code>KEYWORD</code> is given after <code>search</code>.</p>
@@ -2176,32 +2379,34 @@ User input will be validated in the <code>SearchCommandParser</code> class.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="search-structure"><a class="link" href="#search-structure">3.11.3. Structure of Search Command</a></h4>
+<h4 id="search-structure"><a class="link" href="#search-structure">5.11.3. Structure of Search Command</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/SearchCommandClassDiagram.png" alt="SearchCommandClassDiagram">
 </div>
-<div class="title">Figure 49. Search Command Class Diagram</div>
+<div class="title">Figure 48. Search Command Class Diagram</div>
 </div>
 <div class="paragraph">
-<p>The above class diagram depicts the structure of the class <code>SearchCommand</code>. As per any <code>Command</code> class, <code>SearchCommand</code> needs to extend the abstract class <code>Command</code>.<br>
-Information that are left out in this class diagram are the common messages used in <code>SearchCommand</code>.</p>
+<p>The above class diagram depicts the structure of the class <strong>SearchCommand</strong>. As per any <strong>Command</strong> class,
+<strong>SearchCommand</strong> needs to extend the abstract class <strong>Command</strong>.<br>
+Information that are left out in this class diagram are the common messages used in <strong>SearchCommand</strong>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="search-interactions"><a class="link" href="#search-interactions">3.11.4. Interactions between objects when Search Command is executed</a></h4>
+<h4 id="search-interactions"><a class="link" href="#search-interactions">5.11.4. Interactions between objects when Search Command is executed</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/SearchCommandSequenceDiagram.svg" alt="SearchCommandSequenceDiagram">
 </div>
-<div class="title">Figure 50. Search Command Sequence Diagram</div>
+<div class="title">Figure 49. Search Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The sequence diagram above illustrates the interactions between objects when <code>search</code> command is performed by the user.<br>
 Particularly, the interactions shown is a success <code>search</code> command executed by the user and only an abstract view is shown.</p>
 </div>
 <div class="paragraph">
-<p><code>LogicManager</code> first calls <code>parseCommand</code> with arguments representing the user input, <code>Alice</code>. The <code>SearchCommandParser</code> will then check for any invalid arguments passed by the user.<br></p>
+<p><strong>LogicManager</strong> first calls parseCommand with arguments representing the user input, <code>Alice</code>.
+The <strong>SearchCommandParser</strong> will then check for any invalid arguments passed by the user.<br></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -2213,10 +2418,10 @@ Particularly, the interactions shown is a success <code>search</code> command ex
 <div class="ulist">
 <ul>
 <li>
-<p>If the given arguments are valid, <code>SearchCommandParser</code> will return  a new <code>SearchCommand</code> object.<br></p>
+<p>If the given arguments are valid, <strong>SearchCommandParser</strong> will return  a new <strong>SearchCommand</strong> object.<br></p>
 </li>
 <li>
-<p>If the given arguments are invalid or empty, a <code>ParseException</code> object will be thrown (not shown in the diagram).</p>
+<p>If the given arguments are invalid or empty, a <strong>ParseException</strong> object will be thrown (not shown in the diagram).</p>
 </li>
 </ul>
 </div>
@@ -2225,9 +2430,12 @@ Particularly, the interactions shown is a success <code>search</code> command ex
 </table>
 </div>
 <div class="paragraph">
-<p>The <code>SearchCommandParser</code> will then checks for the presence of any <code><a href="#command_flags">FLAG</a></code>. The presence of one will result in different <code>SearchCommand</code> constructor being called.<br>
-The <code>SearchCommandParser</code> will call the both the <code>OrderContainsKeywordsPredicate</code> constructor and the <code>ReturnOrderContainsKeywordsPredicate</code> if no <code><a href="#command_flags">FLAG</a></code> is given.<br>
-However, if a <code><a href="#command_flags">FLAG</a></code> is given, the corresponding predicate will be instantiated and passed as an parameter for the <code>SearchCommand</code> constructor with the other left as null value.</p>
+<p>The <strong>SearchCommandParser</strong> will then checks for the presence of any <code><a href="#command_flags">FLAG</a></code>.
+The presence of one will result in different <strong>SearchCommand</strong> constructor being called.<br>
+The <strong>SearchCommandParser</strong> will call the both the <strong>OrderContainsKeywordsPredicate</strong> constructor and
+the <strong>ReturnOrderContainsKeywordsPredicate</strong> if no <code><a href="#command_flags">FLAG</a></code> is given.<br>
+However, if a <code><a href="#command_flags">FLAG</a></code> is given, the corresponding predicate will be instantiated and passed
+as an parameter for the <strong>SearchCommand</strong> constructor with the other left as null value.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -2239,7 +2447,9 @@ However, if a <code><a href="#command_flags">FLAG</a></code> is given, the corre
 <div class="ulist">
 <ul>
 <li>
-<p>What is not shown is that optionally, either <code>OrderContainsKeywordsPredicate</code> or <code>ReturnOrderContainsKeywordsPredicate</code> can be null if a <code><a href="#command_flags">FLAG</a></code> is given. However, under no circumstances should both be null.</p>
+<p>What is not shown is that optionally, either <strong>OrderContainsKeywordsPredicate</strong> or
+<strong>ReturnOrderContainsKeywordsPredicate</strong> can be null if a <code><a href="#command_flags">FLAG</a></code> is given.
+However, under no circumstances should both be null.</p>
 </li>
 </ul>
 </div>
@@ -2248,31 +2458,32 @@ However, if a <code><a href="#command_flags">FLAG</a></code> is given, the corre
 </table>
 </div>
 <div class="paragraph">
-<p>The parsing of user input utilises <code>ArgumentTokenzier</code> (not shown in sequence diagram) to process and split each <code>KEYWORD</code> to it&#8217;s corresponding <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code>, if given any.<br></p>
+<p>The parsing of user input utilises <strong>ArgumentTokenzier</strong> (not shown in sequence diagram) to process and split
+each <code>KEYWORD</code> to it&#8217;s corresponding <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code>, if given any.<br></p>
 </div>
 <div class="paragraph">
 <p>If the preamble to any <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> is not empty, a <strong>general search</strong> will be performed in which <code>KEYWORD</code> will be searched through all fields of parcel.<br>
 However, if <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> is given and the preamble is empty, the <strong>specific search</strong> will be performed. Only parcel fields that correspond to the given <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> will be searched and matched with the <code>KEYWORD</code>.</p>
 </div>
 <div class="paragraph">
-<p>The order and return order list updates automatically as the JavaFX class <code>ObservableList</code> is used to listen to any changes.</p>
+<p>The order and return order list updates automatically as the JavaFX class <strong>ObservableList</strong> is used to listen to any changes.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="show"><a class="link" href="#show">3.12. Show feature</a></h3>
+<h3 id="show"><a class="link" href="#show">5.12. Show feature</a></h3>
 <div class="paragraph">
 <p>This section describes the <a href="#show-functionality">functionality</a> , the <a href="#show-structure">structure</a>,
-<a href="#show-interactions">interactions</a> between objects and <a href="#show-path">path</a> the path execution of the <strong>Show Command</strong>.</p>
+<a href="#show-interactions">interactions</a> between objects and <a href="#show-path">path</a> the path execution of the <code>show</code> command.</p>
 </div>
 <div class="sect3">
-<h4 id="show-functionality"><a class="link" href="#show-functionality">3.12.1. What is the Show feature</a></h4>
+<h4 id="show-functionality"><a class="link" href="#show-functionality">5.12.1. What is the Show feature</a></h4>
 <div class="paragraph">
-<p>Show feature allows the user to see the statistical information of all the orders for both Delivery Orders
+<p>The <code>show</code> feature allows the user to see the statistical information of all the orders for both Delivery Orders
 and Return Orders.</p>
 </div>
 <div class="paragraph">
-<p>There are a few ways in which the user can input to the command box to execute the <strong>Show Command</strong> :</p>
+<p>There are a few ways in which the user can input to the command box to execute the <code>show</code> command:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2292,37 +2503,53 @@ and Return Orders.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="show-structure"><a class="link" href="#show-structure">3.12.2. Structure Show feature</a></h4>
+<h4 id="show-structure"><a class="link" href="#show-structure">5.12.2. Structure Show feature</a></h4>
 <div class="paragraph">
-<p>The structure of the List Feature is as shown below:</p>
+<p>The structure of the <code>show</code> feature is as shown below:</p>
 </div>
 <div class="paragraph">
 <div class="title">Show Command Class Diagram</div>
 <p><span class="image"><img src="images/ShowCommandClassDiagram.svg" alt="ShowCommandClassDiagram"></span></p>
 </div>
+<div class="paragraph">
+<p>The above diagram shows all the methods and variables that the <strong>ShowCommand</strong> class is using when the command is
+executed. All the static methods and variables are not mentioned in this diagram. Furthermore, there are
+some methods and variables omitted from this diagram as it is irrelevant to the <strong>ShowCommand</strong> class.</p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="show-path"><a class="link" href="#show-path">3.12.3. Path execution of the Show Command</a></h4>
+<h4 id="show-path"><a class="link" href="#show-path">5.12.3. Path execution of the Show Command</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/ShowCommandActivityDiagram.svg" alt="ShowCommandActivityDiagram">
 </div>
-<div class="title">Figure 51. Show Command Activity Diagram</div>
+<div class="title">Figure 50. Show Command Activity Diagram</div>
 </div>
 <div class="paragraph">
-<p>The above activity diagram shows the logic and the path execution when the <strong>Show Command</strong> is executed.</p>
+<p>The above activity diagram shows the logic and the path execution when the <code>show</code> command is executed.</p>
+</div>
+<div class="paragraph">
+<p>The main logic of the <strong>ShowCommand</strong> is to check if the number of arguments in the input besides <code>show</code> is one or two.
+If it is neither, the code will throw an exception. If there is only one argument, the code will check if the word
+provided is either <code>all</code> or <code>today</code> or simply just a <code>DATE</code> the value of <code>DATE</code> will be validated to check
+if it is a valid date.
+It throws an error if it is invalid. When its correct, the code will execute the input accordingly.
+If the number is two arguments, it will check if the dates provided are valid or invalid date.
+It throws an error for the latter. The code will then ensure that the <code>START_DATE</code> is before the <code>END_DATE</code>.
+Once the input passes all the validations in the <strong>ShowCommand</strong> code,
+the command will then be executed and it prints a success message to the user.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="show-interactions"><a class="link" href="#show-interactions">3.12.4. Interaction between objects during execution of Show Command</a></h4>
+<h4 id="show-interactions"><a class="link" href="#show-interactions">5.12.4. Interaction between objects during execution of Show Command</a></h4>
 <div class="paragraph">
-<p>The sequence diagram for the <strong>Show Command</strong> is shown below:<br></p>
+<p>The sequence diagram for the <code>show</code> command is shown below:<br></p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ShowCommandSequenceDiagram.svg" alt="ShowCommandSequenceDiagram">
 </div>
-<div class="title">Figure 52. Show Command Sequence Diagram</div>
+<div class="title">Figure 51. Show Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The user first calls the command "show all".</p>
@@ -2342,27 +2569,27 @@ and Return Orders.</p>
 </table>
 </div>
 <div class="paragraph">
-<p>The LogicManager will call the parseCommand method of OrderBookParser, which then passes the second argument
-into the <code>ShowCommand</code> object. Within the object, it will call the parseData method to make sense of the dates given.
+<p>The <strong>LogicManager</strong> will call the parseCommand method of <strong>DelinoParser</strong>, which then passes the second argument
+into the <strong>ShowCommand</strong> object. Within the object, it will call the parseData method to make sense of the dates given.
 After that, it returns the object to the <code>LogicManager</code>.
-Next, the <code>LogicManager</code> will call the execute(model) method using the <code>ShowCommand</code> object.
-When completed, the execute(model) will return a <code>CommandResult</code> object to the <code>LogicManager</code>, indicating that the command execution is a success.
+Next, the <strong>LogicManager</strong> will call the execute(model) method using the <strong>ShowCommand</strong> object.
+When completed, the execute(model) will return a <strong>CommandResult</strong> object to the <strong>LogicManager</strong>, indicating that the command execution is a success.
 In this case where the input is "show all", it will have a message that indicates that the command is showing all information.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.13. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">5.13. Logging</a></h3>
 <div class="paragraph">
-<p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
+<p>We are using <code>java.util.logging</code> package for logging. The <strong>LogsCenter</strong> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.14, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 5.14, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
-<p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
+<p>The <strong>Logger</strong> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
 </li>
 <li>
 <p>Currently log messages are output through: <code>Console</code> and to a <code>.log</code> file.</p>
@@ -2390,7 +2617,7 @@ In this case where the input is "show all", it will have a message that indicate
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.14. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">5.14. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2398,7 +2625,7 @@ In this case where the input is "show all", it will have a message that indicate
 </div>
 </div>
 <div class="sect1">
-<h2 id="documentation"><a class="link" href="#documentation">4. Documentation</a></h2>
+<h2 id="documentation"><a class="link" href="#documentation">6. Documentation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Documentation.html">here</a>.</p>
@@ -2406,7 +2633,7 @@ In this case where the input is "show all", it will have a message that indicate
 </div>
 </div>
 <div class="sect1">
-<h2 id="testing"><a class="link" href="#testing">5. Testing</a></h2>
+<h2 id="testing"><a class="link" href="#testing">7. Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Testing.html">here</a>.</p>
@@ -2414,7 +2641,7 @@ In this case where the input is "show all", it will have a message that indicate
 </div>
 </div>
 <div class="sect1">
-<h2 id="dev-ops"><a class="link" href="#dev-ops">6. Dev Ops</a></h2>
+<h2 id="dev-ops"><a class="link" href="#dev-ops">8. Dev Ops</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="DevOps.html">here</a>.</p>
@@ -2430,7 +2657,13 @@ In this case where the input is "show all", it will have a message that indicate
 <div class="ulist">
 <ul>
 <li>
-<p>has a need to manage his or her delivery orders conveniently</p>
+<p>has a need to manage his or her delivery orders and return orders conveniently</p>
+</li>
+<li>
+<p>has a need to search the orders or return orders by region</p>
+</li>
+<li>
+<p>want to check his or her today&#8217;s earnings.</p>
 </li>
 <li>
 <p>prefer desktop apps over other types</p>
@@ -2442,7 +2675,7 @@ In this case where the input is "show all", it will have a message that indicate
 <p>prefers typing over mouse input</p>
 </li>
 <li>
-<p>is reasonably comfortable using CLI apps</p>
+<p>is reasonably comfortable using <a href="#cli">CLI</a> apps</p>
 </li>
 </ul>
 </div>
@@ -3026,11 +3259,11 @@ In this case where the input is "show all", it will have a message that indicate
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3b. Delino unable to detect any order specified by the user.</p>
+<p>3b. Delino unable to detect any parcel specified by the user.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3b1. Delino shows no order found message.</p>
+<p>3b1. Delino shows no parcel found message.</p>
 </li>
 </ul>
 </div>
@@ -3040,11 +3273,11 @@ In this case where the input is "show all", it will have a message that indicate
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3c. Delino detects duplicate a order.</p>
+<p>3c. Delino detects duplicate parcel.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3c1. Delino shows duplicate order message.</p>
+<p>3c1. Delino shows duplicate parcel message.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3082,15 +3315,18 @@ In this case where the input is "show all", it will have a message that indicate
 </div>
 <h3 id="use-case-uc07-search-an-order" class="discrete">Use case: UC07 - Search an order</h3>
 <div class="paragraph">
+<p>Preconditions: There should be a valid order/return order in Delino.</p>
+</div>
+<div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User wants to search a specifc order by a given keyword.</p>
+<p>User wants to search a specifc order or return order by a given keyword.</p>
 </li>
 <li>
-<p>User request to search specific order by a given keyword.</p>
+<p>User request to search specific order or return order by a given keyword.</p>
 </li>
 <li>
 <p>Delino display the requested order.</p>
@@ -3123,11 +3359,11 @@ In this case where the input is "show all", it will have a message that indicate
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2b. Delino unable to find order with the transaction id.</p>
+<p>2b. Delino unable to find any parcel field that matches the given keyword.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2b1. Delino display order not found message.</p>
+<p>2b1. Delino display parcel not found message.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3412,11 +3648,29 @@ the given <a href="#command_prefix"><code>TRANSACTION_ID</code></a> does not exi
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2d. Delino detects missing parcel attributes.</p>
+<p>2d. Delino detects invalid <a href="#command_prefix"><code>RETURN_TIMESTAMP</code></a>, i.e. order with
+the given <a href="#command_prefix"><code>RETURN_TIMESTAMP</code></a> is bfeore the delivery time stamp of the order.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
 <p>2d1. Delino shows an error message to the user.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2e. Delino detects missing parcel attributes.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2e1. Delino shows an error message to the user.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3488,20 +3742,53 @@ the given <a href="#command_prefix"><code>TRANSACTION_ID</code></a> does not exi
 </div>
 <h3 id="use-case-uc13-show-statistics" class="discrete">Use case: UC13 - Show statistics</h3>
 <div class="paragraph">
+<p>Preconditions: There should be a delivered order/return order in the list.</p>
+</div>
+<div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to see the statistics of orders.</p>
+<p>User wants to know about their delivery statistics.</p>
 </li>
 <li>
-<p>Delino opens a window that contains the statistics.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
+<p>User requests to see the statistics of orders or return orders.</p>
+</li>
+<li>
+<p>Delino displays the statistics.</p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. Delino detects invalid syntax from user input.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Delino shows an error message.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2b. Delino detecs an invalid date from user input.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b1. Delino shows an error message.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Use case ends.</p>
 </div>
 </div>
 </div>
@@ -3556,6 +3843,18 @@ crashing.</p>
 <dt class="hdlist1"><a id="mainstream-os"></a> Mainstream OS</dt>
 <dd>
 <p>Windows, Linux, Unix, OS-X</p>
+</dd>
+<dt class="hdlist1"><a id="cli"></a> CLI</dt>
+<dd>
+<p>Command line interface</p>
+</dd>
+<dt class="hdlist1"><a id="mss"></a> MSS</dt>
+<dd>
+<p>Main Success Scenario, the most straightforward interaction for a given use case, which assumes that nothing goes wrong</p>
+</dd>
+<dt class="hdlist1"><a id="extension"></a> Extensions</dt>
+<dd>
+<p>Possible alternative flow of events of MSS.</p>
 </dd>
 <dt class="hdlist1"><a id="returns"></a> Returns</dt>
 <dd>
@@ -3749,7 +4048,7 @@ crashing.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a></h2>
+<h2 id="manual-testing"><a class="link" href="#manual-testing">Appendix G: Instructions for Manual Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Given below are instructions to test the app manually.</p>
@@ -3832,7 +4131,8 @@ Expected: An error will occur and a message will be displayed, stating that orde
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Insert command format: <code>return</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>rts/RETURN_TIMESTAMP</code> <code>w/WAREHOUSE_LOCATION</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p>
+<p>Return command format: <code>return</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>rts/RETURN_TIMESTAMP</code> <code>w/WAREHOUSE_LOCATION</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code><br>
+OR <code>return</code> <code>tid/TRANSACTION_ID</code> <code>rts/RETURN_TIMESTAMP</code></p>
 </li>
 <li>
 <p>Test case: <code>return</code> <code>tid/9876543210</code> <code>n/John Doe</code> <code>a/Blk 572 Hougang st 51 #10-33 S530572</code> <code>p/98766789</code> <code>e/johndoe@example.com</code> <code>rts/2020-02-20 1300</code> <code>w/Yishun</code><br>
@@ -3843,9 +4143,10 @@ Expected: Creates a new return order with the above details and adds it into the
 Expected: Creates a new return order with the above details, including type and comments and adds it into the return order list. This will be displayed on the GUI</p>
 </li>
 <li>
-<p>Test case: <code>return</code> <code>tid/1023456789</code><br>
-   Expected: Checks if an order with the given <a href="#command_prefix"><code>TRANSACTION_ID</code></a> exists. If it exists and
-it was delivered, it will be converted into a return order and added into the return order list.</p>
+<p>Test case: <code>return</code> <code>tid/1023456789</code> <code>rts/2020-05-12 1300</code><br>
+   Expected: Checks if an order with the given Transaction ID exists. If it exists and
+it was delivered, check if the given return time stamp is after the delivery time stamp. If it is both delivered and the return time stamp is after
+the delivery time stamp, the order will be converted into a return order and added into the return order list.</p>
 </li>
 <li>
 <p>Test case: Invalid Syntax<br>
@@ -3853,7 +4154,11 @@ Expected: No return order is added. Error details shown in the response message.
 </li>
 <li>
 <p>Test case: Return order with invalid Transaction ID in order list<br>
-   Expected: An error will occur and a message will be displayed, stating that order with the given <a href="#command_prefix"><code>TRANSACTION_ID</code></a>
+Expected: An error will occur and a message will be displayed, stating that order with the given Transaction ID.</p>
+</li>
+<li>
+<p>Test case: Return order with invalid return time stamp in order list<br>
+   Expected: An error will occur and a message will be displayed, stating that order with the given Transaction ID.
 cannot be found in the order list.</p>
 </li>
 <li>
@@ -3927,15 +4232,15 @@ Expected: The first index customer&#8217;s name is changed to Xuan En.</p>
 </li>
 <li>
 <p>Test case: <code>edit</code> <code>-o</code> <code>2</code> <code>p/99521654</code><br>
-Expected: The second index phone number is changed to 9952 1654.</p>
+Expected: The second index phone number is changed to 99521654.</p>
 </li>
 <li>
 <p>Test case: <code>edit</code> <code>-o</code> <code>1</code> <code>a/Blk 123 Pasir Ris street 51 #12-23 S510123</code><br>
 Expected: The first index is edited where the address of the customer of the order will be changed to Blk 123 Pasir Ris Street 51 #12-23 S510123.</p>
 </li>
 <li>
-<p>Test case: <code>edit</code> <code>-r</code> <code>2</code> <code>n/Mr Tan</code> <code>p/98776655</code> <code>a/Blk 888 Jurong East street 2 #01-02 S609601</code><br>
-Expected: The second index of the list is edited. The name is changed to Mr Tan, phone number changed to 98776655 and address will be changed to Blk 888 Jurong East street 2 #01-02 S609601.</p>
+<p>Test case: <code>edit</code> <code>-r</code> <code>2</code> <code>n/Mr Tan</code> <code>p/98776655</code> <code>a/Blk 841 Yishun st 81 #01-02 S760841</code><br>
+Expected: The second index of the list is edited. The name is changed to Mr Tan, phone number changed to 98776655 and address will be changed to Blk 841 Yishun st 81 #01-02 S760841.</p>
 </li>
 <li>
 <p>Test case: <code>edit</code> <code>-o</code> <code>1</code> <code>dts/09/08/2020</code><br>
@@ -4228,7 +4533,7 @@ Expected: An error will occur as the given postal sector is invalid</p>
 Expected: An error will occur as the given postal sector is invalid</p>
 </li>
 <li>
-<p>Test case: <code>nearby -o</code><br>
+<p>Test case: <code>nearby</code> <code>-o</code><br>
 Expected: An error will occur as it is an invalid syntax (no postal sector is provided)</p>
 </li>
 </ol>
@@ -4308,4 +4613,75 @@ Expected: The response box will display an invalid command message</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 17:37:25 UTC</div></div></div></body></html>
+</div>
+<div class="sect1">
+<h2 id="effort"><a class="link" href="#effort">Appendix H: Effort</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Overview</strong><br>
+Our team wanted to make an application that could reduce the hassle of managing couriers' orders. We decided to build
+Delino which aims to provide a centralised platform for couriers to easily manage their deliveries. Delino is
+significantly different from Address Book 3 (AB3). In addition to the existing basic features of AB3, we needed to add
+additional features to satisfy the needs of our target audience, couriers. Features that are unique to Delino are
+Nearby, Show, Import, Return and the enhanced Search.</p>
+</div>
+<div class="paragraph">
+<p><strong>Challenges faced</strong><br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Brainstorming of ideas</strong> - Ideation was the first hurdle we faced as a team. Coming up with ideas was easy, however,
+the conflict arose when we were deciding on which idea to implement as every member wanted to solve a different problem.
+We listed the pros and cons of each proposed idea, and had a few group meetings to evaluate the proposed ideas. We
+finally chose an idea that was deemed to be most feasible.</p>
+</li>
+<li>
+<p><strong>Debugging</strong> - Had to spend a huge amount of time tracing through the code of more than 7kLoC in order to determine
+coding bugs/errors. Sometimes, the problem could have been solved by a simple removal or addition of a line of code,
+in order to resolve the long list of error messages that were displayed to us.</p>
+</li>
+<li>
+<p><strong>Separate the return order from order</strong> - It is important to be able to show two lists, one with orders and the other
+with return orders. However, this caused list updating to be a major problem for most of the commands. This required
+significant modifications to our code.</p>
+</li>
+<li>
+<p><strong>Documentation</strong> - It was difficult to efficiently ensure that everything was standardised in the user guide and
+developer guide as we encountered a lot of different terms that required group discussion before we could finalise
+on a proper way of dealing with it.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>In order to deal with this documentation problem, it often resulted in us having to meet up for long hours (up to 10
+hours/day) on consecutive days in order for us to finalise a document together. As a result, it was one of the most
+time-consuming parts of this project as we usually had to use one person’s screen and go through an entire document
+together so that we could standardise it consistently.</p>
+</div>
+<div class="paragraph">
+<p><strong>Achievements</strong><br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Implementing commands</strong> - Ensuring that our commands were implemented in an OOP manner was essential for further
+extension or fixing of bugs. Throughout the project, we made various code restructuring to allow for better code
+maintainability.</p>
+</li>
+<li>
+<p><strong>Maintaining test coverage</strong> - As a group, we set a soft-limit for our test coverage to be 80% as we wanted to ensure
+that the code that we wrote as a team is functional and extensively covered by all the different test-cases. As much as
+possible, we applied the different testing methods taught in lessons such as Regression testing, Integration testing
+and Unit testing.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Conclusion</strong><br>
+In conclusion, Our team had a great time working with one another and we are proud to have come up with a product like
+Delino by working tirelessly to build it together. Overall, we believe that Delino is a good testament to our hard work
+and time spent on perfecting it.</p>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 06:02:34 UTC</div></div></div></body></html>

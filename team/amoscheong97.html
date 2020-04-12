@@ -366,7 +366,7 @@ but <code>tid/TRANSACTION_IDn/CUSTOMER_NAME</code> will be an invalid command in
 <p><code>TRANSACTION_ID</code> must be alphanumeric (No numbers or special characters allowed).</p>
 </li>
 <li>
-<p><code>ADDRESS</code> must have a postal code.</p>
+<p><code>ADDRESS</code> should contain a valid Singapore address followed by a postal code.</p>
 </li>
 <li>
 <p><code>EMAIL</code> should be a valid email address.</p>
@@ -375,7 +375,7 @@ but <code>tid/TRANSACTION_IDn/CUSTOMER_NAME</code> will be an invalid command in
 <p><code>CASH_ON_DELIVERY</code> must start with a dollar sign followed by the value.</p>
 </li>
 <li>
-<p><code>CASH_ON_DELIVERY</code> value must be strictly less than $10,000,000,000,000. If there is a need
+<p><code>CASH_ON_DELIVERY</code> value must be strictly less than $10,000. If there is a need
 to add decimal places, you can only add two.</p>
 </li>
 <li>
@@ -743,16 +743,20 @@ will be displayed to you.</p></td>
 <div class="sect2">
 <h3 id="insert"><a class="link" href="#insert">Insert Feature</a></h3>
 <div class="paragraph">
-<p>This section, will <a href="#what-is-insert">introduce</a> the Insert Feature. In addition, it will show the expected
-<a href="#insert-sequence">path-execution</a>, the <a href="#insert-class">structure</a> of the of the <strong>InsertCommand</strong> class,
+<p>This section, will <a href="#what-is-insert">introduce</a> the <code>insert</code> feature.
+In addition, it will show the expected <a href="#insert-sequence">path-execution</a>,
+the <a href="#insert-class">structure</a> of the of the <strong>InsertCommand</strong> class,
 <a href="#insertparser-class">structure</a> of the <strong>InsertCommandParser</strong> class and
-it will also describe the <a href="#insert-activity">interaction</a> of objects between the <strong>InsertCommand</strong> object and other object classes.</p>
+it will also describe the <a href="#insert-sequence">interaction</a> of objects between the <strong>InsertCommand</strong> object
+and other object classes.</p>
 </div>
 <div class="sect3">
 <h4 id="what-is-insert"><a class="link" href="#what-is-insert">What is the Insert feature</a></h4>
 <div class="paragraph">
-<p>The insert feature allows the user to insert an incoming delivery order into the list using the command line.
-The order consists of : Transaction ID, Name, Phone, Address, Email, Delivery Timestamp, Warehouse location,
+<p>The <code>insert</code> feature allows the user to insert an incoming delivery order into the list using the command line.<br></p>
+</div>
+<div class="paragraph">
+<p>The order consists of : Transaction ID, Name, Phone, Address, Email, Delivery Timestamp, Warehouse location,
 CashOnDelivery</p>
 </div>
 <div class="paragraph">
@@ -771,11 +775,19 @@ CashOnDelivery</p>
 </div>
 <div class="sect3">
 <h4 id="insert-class"><a class="link" href="#insert-class">Structure of Insert feature</a></h4>
+<div class="paragraph">
+<p>The following diagrams shows the overview of the <strong>InsertCommand</strong> Class Diagram:<br></p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/InsertClassDiagram.svg" alt="InsertClassDiagram">
 </div>
 <div class="title">Figure 1. Insert Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <strong>InsertCommand</strong>
+and its associated classes and interfaces. Some methods and fields are not included because they are
+not extensively utilised in <strong>InsertCommand</strong>; such as public static fields and getter/setter methods.</p>
 </div>
 </div>
 <div class="sect3">
@@ -786,14 +798,32 @@ CashOnDelivery</p>
 </div>
 <div class="title">Figure 2. InsertCommandParser Class Diagram</div>
 </div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <strong>InsertCommandParser</strong>
+and its associated classes and interfaces. It describes all the class dependencies of the <strong>InsertCommandParser</strong>
+class. Some methods and fields are not included because they are
+not extensively utilised in <strong>InsertCommand</strong>; such as public static fields and getter/setter methods.
+As shown in the diagram above, the <strong>InsertCommandParser</strong> make use of methods from classes such as using the
+getValue method from the <strong>ArgumentMultimap</strong> class.</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="insert-activity"><a class="link" href="#insert-activity">Path Execution of Insert Command</a></h4>
+<div class="paragraph">
+<p>The overview of the <strong>InsertCommand</strong> Activity Diagram is shown below:<br></p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/InsertActivityDiagram.svg" alt="InsertActivityDiagram">
 </div>
 <div class="title">Figure 3. Insert Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p>After the user calls the <code>insert</code> command, the code will check if the command has all the compulsory prefixes present.
+The code will throw a <strong>ParseException</strong> when there are missing prefixes. After that is checked, it will check if the
+new order added is a duplicate (The Order is already inserted into the application). It will throw a <strong>CommandException</strong>
+when the user tries to insert a duplicate order. Otherwise, it will insert the order and prints a success message to
+the user.</p>
 </div>
 </div>
 <div class="sect3">
@@ -808,9 +838,10 @@ CashOnDelivery</p>
 <div class="title">Figure 4. Insert</div>
 </div>
 <div class="paragraph">
-<p>The arguments of the Insert Command will be parsed using the parse method of the <code>InsertCommandParser</code> class.<br>
-The <code>InsertCommandParser</code> will tokenize the arguments parsed in using the tokenize method of <code>ArgumentTokenizer</code> class which
-returns the tokenized arguments. Using the tokenized arguments, the Parser will check if the arguments parsed in matches with the
+<p>The arguments of the <code>insert</code> command will be parsed using the parse method of the <strong>InsertCommandParser</strong> class.<br>
+The <strong>InsertCommandParser</strong> will tokenize the arguments parsed in using the tokenize method of
+<strong>ArgumentTokenizer</strong> class which returns the tokenized arguments.
+Using the tokenized arguments, the Parser will check if the arguments parsed in matches with the
 tokenized arguments using the arePrefixesPresent method.</p>
 </div>
 <div class="paragraph">
@@ -820,24 +851,27 @@ tokenized arguments using the arePrefixesPresent method.</p>
 <ol class="arabic">
 <li>
 <p>Some compulsory prefixes are not present :<br>
-<code>InsertCommandParser</code> will throw a new <code>ParseException</code> object to the <code>LogicManager</code>.</p>
+<strong>InsertCommandParser</strong> will throw a new <strong>ParseException</strong> object to the <strong>LogicManager</strong>.</p>
 </li>
 <li>
 <p>All compulsory prefixes are present in the arguments :<br>
-It will the  proceed to use the getValue method of the <code>ArgumentMultimap</code> class to get the value of the prefix. For example,
-if the argument parsed in is tid/A12345, the getValue method will get the value 'A12345'. Subsequently, it will use the
-<code>ParseUtil</code> methods to get the corresponding object values and put it into the parameters of the new <code>Order</code> object.
-The order object will be put into the parameter of the <code>InsertCommand</code> object and this will be returned
-to the <code>LogicManager</code> class for execution.</p>
+It will the  proceed to use the getValue method of the <strong>ArgumentMultimap</strong> class to get the value of the prefix.
+For example, if the argument parsed in is tid/A12345, the getValue method will get the
+value 'A12345'. Subsequently, it will use the <strong>ParseUtil</strong> methods to get the corresponding object
+values and put it into the parameters of the new <strong>Order</strong> object.
+The order object will be put into the parameter of the <strong>InsertCommand</strong> object and this will be returned
+to the <strong>LogicManager</strong> class for execution.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p><code>LogicManager</code> will call the execute() method of this <code>InsertCommand</code> object. In the execute() method, it will use the <code>Model</code> class
-to call hasOrder method to check for duplicates, if it is a duplicate, the order will throw a CommandException which
-indicates that there is a duplicate order in the OrderBook already. Else, it will successfully inserts the new order
-using addOder method. Finally, it return a new <code>CommandResult</code> object, containing a String that indicates a successful
-insertion.</p>
+<p><strong>LogicManager</strong> will call the execute() method of this <strong>InsertCommand</strong> object.
+In the execute() method, it will use the <strong>Model</strong> class to call hasOrder method to check
+for duplicates, if it is a duplicate, the order will throw a <strong>CommandException</strong> which
+indicates that there is a duplicate order in the <strong>OrderBook</strong> already.
+Else, it will successfully inserts the new order
+using addOrder method. Finally, it return a new <strong>CommandResult</strong> object,
+containing a String that indicates a successful insertion.</p>
 </div>
 </div>
 </div>
@@ -845,7 +879,8 @@ insertion.</p>
 <h3 id="list"><a class="link" href="#list">List feature</a></h3>
 <div class="paragraph">
 <p>This section describes the <a href="#list-functionality">functionality</a> , the <a href="#list-structure">structure</a>,
-<a href="#list-interactions">interactions</a> between objects and <a href="#list-path">path</a> the path execution of the <strong>List Command</strong>.</p>
+<a href="#list-interactions">interactions</a> between objects and <a href="#list-path">path</a> the path execution
+of the <code>list</code> command.</p>
 </div>
 <div class="sect3">
 <h4 id="list-functionality"><a class="link" href="#list-functionality">What is the List feature</a></h4>
@@ -853,7 +888,7 @@ insertion.</p>
 <p>List feature allows the user to see all the orders from both Delivery Orders and Return Orders.</p>
 </div>
 <div class="paragraph">
-<p>The user can enter <code>list</code> to display all the orders. Besides that, the user can also input <code>done</code> to dispay
+<p>The user can enter <code>list</code> to display all the orders. Besides that, the user can also input <code>done</code> to display
 all delivered orders and <code>undone</code> to display all orders that are not delivered.</p>
 </div>
 </div>
@@ -868,6 +903,23 @@ all delivered orders and <code>undone</code> to display all orders that are not 
 </div>
 <div class="title">Figure 5. List Class Diagram</div>
 </div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <strong>ListCommand</strong> and all its associated classes and interfaces.
+The <strong>ListCommand</strong> has dependencies on the <strong>Model</strong> class as it uses the two methods from it :<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>updateFilteredOrderList</p>
+</li>
+<li>
+<p>updateReturnFilteredOrderList</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>There are other variables and strings not shown in this Class Diagrams as they are either static methods or variables.</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="list-path"><a class="link" href="#list-path">Path execution of the List Command</a></h4>
@@ -878,13 +930,31 @@ all delivered orders and <code>undone</code> to display all orders that are not 
 <div class="title">Figure 6. List Activity Diagram</div>
 </div>
 <div class="paragraph">
-<p>The above activity diagram shows the logic and the path execution when the <strong>List Command</strong> is executed.</p>
+<p>The above activity diagram shows the logic and the path execution when the <code>list</code> command is executed.
+There are only three correct syntax available for <code>ListCommand</code>:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list</code></p>
+</li>
+<li>
+<p><code>list</code> <code>done</code></p>
+</li>
+<li>
+<p><code>list</code> <code>undone</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The code will check if the input is one of the three mentioned above. If the input is not one of the three, it will
+cause the code the throw an error message to the user.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="list-interactions"><a class="link" href="#list-interactions">Interaction between objects during execution of List Command</a></h4>
 <div class="paragraph">
-<p>The sequence diagram for the <strong>List Command</strong> is shown below:<br></p>
+<p>The sequence diagram for the <code>list</code> command is shown below:<br></p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -893,7 +963,7 @@ all delivered orders and <code>undone</code> to display all orders that are not 
 <div class="title">Figure 7. List Command Sequence Diagram</div>
 </div>
 <div class="paragraph">
-<p>The user first calls the command "list".</p>
+<p>The user first calls the command <code>list</code>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -910,13 +980,16 @@ all delivered orders and <code>undone</code> to display all orders that are not 
 </table>
 </div>
 <div class="paragraph">
-<p>The LogicManager will call the parseCommand method of OrderBookParser, which then passes the second argument
-into the <code>ListCommand</code> object. This object will then be ultimately returned to the <code>LogicManager</code>.
-Next, the <code>LogicManager</code> will call the execute(model) method using the <code>ListCommand</code> object. In this method, it wil use
-the <code>Model</code> object to call the methods : updateFilteredOrderList and updateFilteredReturnOrderList. Since in this case, the
-argument is empty, the predicate that is parsed to the two methods will always result to true, which means to list
-everything from the order book and return book. When completed, the execute(model) will return a <code>CommandResult</code> object
-to the <code>LogicManager</code>, indicating that the command execution is a success.</p>
+<p>The LogicManager will call the parseCommand method of <strong>DelinoParser</strong>, which then passes the second argument
+into the <strong>ListCommand</strong> object. This object will then be ultimately returned to the <strong>LogicManager</strong>.
+Next, the <strong>LogicManager</strong> will call the execute(model) method using the <strong>ListCommand</strong> object.
+In this method, it wil use the <strong>Model</strong> object to call the methods :
+updateFilteredOrderList and updateFilteredReturnOrderList.
+Since in this case, the argument is empty, the predicate that is parsed to the two methods
+will always result to true, which means to list
+everything from the order book and return book.
+When completed, the execute(model) will return a <strong>CommandResult</strong> object
+to the <strong>LogicManager</strong>, indicating that the command execution is a success.</p>
 </div>
 </div>
 </div>
@@ -924,16 +997,16 @@ to the <code>LogicManager</code>, indicating that the command execution is a suc
 <h3 id="show"><a class="link" href="#show">Show feature</a></h3>
 <div class="paragraph">
 <p>This section describes the <a href="#show-functionality">functionality</a> , the <a href="#show-structure">structure</a>,
-<a href="#show-interactions">interactions</a> between objects and <a href="#show-path">path</a> the path execution of the <strong>Show Command</strong>.</p>
+<a href="#show-interactions">interactions</a> between objects and <a href="#show-path">path</a> the path execution of the <code>show</code> command.</p>
 </div>
 <div class="sect3">
 <h4 id="show-functionality"><a class="link" href="#show-functionality">What is the Show feature</a></h4>
 <div class="paragraph">
-<p>Show feature allows the user to see the statistical information of all the orders for both Delivery Orders
+<p>The <code>show</code> feature allows the user to see the statistical information of all the orders for both Delivery Orders
 and Return Orders.</p>
 </div>
 <div class="paragraph">
-<p>There are a few ways in which the user can input to the command box to execute the <strong>Show Command</strong> :</p>
+<p>There are a few ways in which the user can input to the command box to execute the <code>show</code> command:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -955,11 +1028,16 @@ and Return Orders.</p>
 <div class="sect3">
 <h4 id="show-structure"><a class="link" href="#show-structure">Structure Show feature</a></h4>
 <div class="paragraph">
-<p>The structure of the List Feature is as shown below:</p>
+<p>The structure of the <code>show</code> feature is as shown below:</p>
 </div>
 <div class="paragraph">
 <div class="title">Show Command Class Diagram</div>
 <p><span class="image"><img src="../images/ShowCommandClassDiagram.svg" alt="ShowCommandClassDiagram"></span></p>
+</div>
+<div class="paragraph">
+<p>The above diagram shows all the methods and variables that the <strong>ShowCommand</strong> class is using when the command is
+executed. All the static methods and variables are not mentioned in this diagram. Furthermore, there are
+some methods and variables omitted from this diagram as it is irrelevant to the <strong>ShowCommand</strong> class.</p>
 </div>
 </div>
 <div class="sect3">
@@ -971,13 +1049,24 @@ and Return Orders.</p>
 <div class="title">Figure 8. Show Command Activity Diagram</div>
 </div>
 <div class="paragraph">
-<p>The above activity diagram shows the logic and the path execution when the <strong>Show Command</strong> is executed.</p>
+<p>The above activity diagram shows the logic and the path execution when the <code>show</code> command is executed.</p>
+</div>
+<div class="paragraph">
+<p>The main logic of the <strong>ShowCommand</strong> is to check if the number of arguments in the input besides <code>show</code> is one or two.
+If it is neither, the code will throw an exception. If there is only one argument, the code will check if the word
+provided is either <code>all</code> or <code>today</code> or simply just a <code>DATE</code> the value of <code>DATE</code> will be validated to check
+if it is a valid date.
+It throws an error if it is invalid. When its correct, the code will execute the input accordingly.
+If the number is two arguments, it will check if the dates provided are valid or invalid date.
+It throws an error for the latter. The code will then ensure that the <code>START_DATE</code> is before the <code>END_DATE</code>.
+Once the input passes all the validations in the <strong>ShowCommand</strong> code,
+the command will then be executed and it prints a success message to the user.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="show-interactions"><a class="link" href="#show-interactions">Interaction between objects during execution of Show Command</a></h4>
 <div class="paragraph">
-<p>The sequence diagram for the <strong>Show Command</strong> is shown below:<br></p>
+<p>The sequence diagram for the <code>show</code> command is shown below:<br></p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1003,11 +1092,11 @@ and Return Orders.</p>
 </table>
 </div>
 <div class="paragraph">
-<p>The LogicManager will call the parseCommand method of OrderBookParser, which then passes the second argument
-into the <code>ShowCommand</code> object. Within the object, it will call the parseData method to make sense of the dates given.
+<p>The <strong>LogicManager</strong> will call the parseCommand method of <strong>DelinoParser</strong>, which then passes the second argument
+into the <strong>ShowCommand</strong> object. Within the object, it will call the parseData method to make sense of the dates given.
 After that, it returns the object to the <code>LogicManager</code>.
-Next, the <code>LogicManager</code> will call the execute(model) method using the <code>ShowCommand</code> object.
-When completed, the execute(model) will return a <code>CommandResult</code> object to the <code>LogicManager</code>, indicating that the command execution is a success.
+Next, the <strong>LogicManager</strong> will call the execute(model) method using the <strong>ShowCommand</strong> object.
+When completed, the execute(model) will return a <strong>CommandResult</strong> object to the <strong>LogicManager</strong>, indicating that the command execution is a success.
 In this case where the input is "show all", it will have a message that indicates that the command is showing all information.</p>
 </div>
 </div>
@@ -1065,6 +1154,9 @@ In this case where the input is "show all", it will have a message that indicate
 <li>
 <p>2b1. Delino shows duplicate order message.</p>
 <h3 id="use-case-uc13-show-statistics" class="discrete">Use case: UC13 - Show statistics</h3>
+<div class="paragraph">
+<p>Preconditions: There should be a delivered order/return order in the list.</p>
+</div>
 </li>
 </ul>
 </div>
@@ -1077,15 +1169,45 @@ In this case where the input is "show all", it will have a message that indicate
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to see the statistics of orders.</p>
+<p>User wants to know about their delivery statistics.</p>
 </li>
 <li>
-<p>Delino opens a window that contains the statistics.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
+<p>User requests to see the statistics of orders or return orders.</p>
+</li>
+<li>
+<p>Delino displays the statistics.</p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. Delino detects invalid syntax from user input.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Delino shows an error message.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2b. Delino detecs an invalid date from user input.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b1. Delino shows an error message.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Use case ends.</p>
 </div>
 <h3 id="use-case-uc10-listing-all-orders" class="discrete">Use case: UC10 - Listing all orders</h3>
 <div class="paragraph">
@@ -1337,4 +1459,4 @@ Expected: An error will occur, a message will appear in the response box, indica
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 17:37:25 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 06:02:34 UTC</div></div></div></body></html>
