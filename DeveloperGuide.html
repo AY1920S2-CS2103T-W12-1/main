@@ -467,12 +467,10 @@ Every return order is part of a <strong>UniqueReturnOrderList</strong> and every
 <div class="sect2">
 <h3 id="insert"><a class="link" href="#insert">5.1. Insert Feature</a></h3>
 <div class="paragraph">
-<p>This section, will <a href="#what-is-insert">introduce</a> the <code>insert</code> feature.
-In addition, it will show the expected <a href="#insert-sequence">path-execution</a>,
-the <a href="#insert-class">structure</a> of the of the <strong>InsertCommand</strong> class,
+<p>In this section, the <a href="#what-is-insert">functionality</a> of the <code>insert</code> feature, the
+expected <a href="#insert-activity">execution path</a>, the <a href="#insert-class">structure</a> of the <strong>InsertCommand</strong> class, the
 <a href="#insertparser-class">structure</a> of the <strong>InsertCommandParser</strong> class and
-it will also describe the <a href="#insert-sequence">interaction</a> of objects between the <strong>InsertCommand</strong> object
-and other object classes.</p>
+the <a href="#insert-sequence">interactions</a> between objects with the <strong>InsertCommand</strong> object will be discussed.</p>
 </div>
 <div class="sect3">
 <h4 id="what-is-insert"><a class="link" href="#what-is-insert">5.1.1. What is the Insert feature</a></h4>
@@ -498,7 +496,26 @@ CashOnDelivery</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="insert-class"><a class="link" href="#insert-class">5.1.2. Structure of Insert feature</a></h4>
+<h4 id="insert-activity"><a class="link" href="#insert-activity">5.1.2. Path Execution of Insert Command</a></h4>
+<div class="paragraph">
+<p>The overview of the <strong>InsertCommand</strong> Activity Diagram is shown below:<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/InsertActivityDiagram.svg" alt="InsertActivityDiagram">
+</div>
+<div class="title">Figure 9. Insert Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p>After the user calls the <code>insert</code> command, the code will check if the command has all the compulsory prefixes present.
+The code will throw a <strong>ParseException</strong> when there are missing prefixes. After that is checked, it will check if the
+new order added is a duplicate (The Order is already inserted into the application). It will throw a <strong>CommandException</strong>
+when the user tries to insert a duplicate order. Otherwise, it will insert the order and prints a success message to
+the user.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="insert-class"><a class="link" href="#insert-class">5.1.3. Structure of Insert feature</a></h4>
 <div class="paragraph">
 <p>The following diagrams shows the overview of the <strong>InsertCommand</strong> Class Diagram:<br></p>
 </div>
@@ -506,7 +523,7 @@ CashOnDelivery</p>
 <div class="content">
 <img src="images/InsertClassDiagram.svg" alt="InsertClassDiagram">
 </div>
-<div class="title">Figure 9. Insert Class Diagram</div>
+<div class="title">Figure 10. Insert Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram shows the structure of the <strong>InsertCommand</strong>
@@ -515,39 +532,20 @@ not extensively utilised in <strong>InsertCommand</strong>; such as public stati
 </div>
 </div>
 <div class="sect3">
-<h4 id="insertparser-class"><a class="link" href="#insertparser-class">5.1.3. Structure of InsertCommandParser</a></h4>
+<h4 id="insertparser-class"><a class="link" href="#insertparser-class">5.1.4. Structure of InsertCommandParser Class</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/InsertParserClassDiagram.svg" alt="InsertParserClassDiagram">
 </div>
-<div class="title">Figure 10. InsertCommandParser Class Diagram</div>
+<div class="title">Figure 11. InsertCommandParser Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram shows the structure of the <strong>InsertCommandParser</strong>
 and its associated classes and interfaces. It describes all the class dependencies of the <strong>InsertCommandParser</strong>
 class. Some methods and fields are not included because they are
 not extensively utilised in <strong>InsertCommand</strong>; such as public static fields and getter/setter methods.
-As shown in the diagram above, the <strong>InsertCommandParser</strong> make use of methods from classes such as using the
+As shown in the diagram above, the <strong>InsertParser</strong> make use of methods from classes such as using the
 getValue method from the <strong>ArgumentMultimap</strong> class.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="insert-activity"><a class="link" href="#insert-activity">5.1.4. Path Execution of Insert Command</a></h4>
-<div class="paragraph">
-<p>The overview of the <strong>InsertCommand</strong> Activity Diagram is shown below:<br></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/InsertActivityDiagram.svg" alt="InsertActivityDiagram">
-</div>
-<div class="title">Figure 11. Insert Activity Diagram</div>
-</div>
-<div class="paragraph">
-<p>After the user calls the <code>insert</code> command, the code will check if the command has all the compulsory prefixes present.
-The code will throw a <strong>ParseException</strong> when there are missing prefixes. After that is checked, it will check if the
-new order added is a duplicate (The Order is already inserted into the application). It will throw a <strong>CommandException</strong>
-when the user tries to insert a duplicate order. Otherwise, it will insert the order and prints a success message to
-the user.</p>
 </div>
 </div>
 <div class="sect3">
@@ -602,9 +600,9 @@ containing a String that indicates a successful insertion.</p>
 <div class="sect2">
 <h3 id="list"><a class="link" href="#list">5.2. List feature</a></h3>
 <div class="paragraph">
-<p>This section describes the <a href="#list-functionality">functionality</a> , the <a href="#list-structure">structure</a>,
-<a href="#list-interactions">interactions</a> between objects and <a href="#list-path">path</a> the path execution
-of the <code>list</code> command.</p>
+<p>In this section, the <a href="#list-functionality">functionality</a> of the <code>list</code> feature, the expected
+<a href="#list-path">execution path</a>, the <a href="#list-structure">structure</a> of the <strong>ListCommand</strong> class
+and the <a href="#list-interactions">interactions</a> between objects with the <strong>ListCommand</strong> object will be discussed.</p>
 </div>
 <div class="sect3">
 <h4 id="list-functionality"><a class="link" href="#list-functionality">5.2.1. What is the List feature</a></h4>
@@ -617,41 +615,12 @@ all delivered orders and <code>undone</code> to display all orders that are not 
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-structure"><a class="link" href="#list-structure">5.2.2. Structure List feature</a></h4>
-<div class="paragraph">
-<p>The structure of the List Feature is as shown below:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/ListClassDiagram.svg" alt="ListClassDiagram">
-</div>
-<div class="title">Figure 13. List Class Diagram</div>
-</div>
-<div class="paragraph">
-<p>The above class diagram shows the structure of the <strong>ListCommand</strong> and all its associated classes and interfaces.
-The <strong>ListCommand</strong> has dependencies on the <strong>Model</strong> class as it uses the two methods from it :<br></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>updateFilteredOrderList</p>
-</li>
-<li>
-<p>updateReturnFilteredOrderList</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>There are other variables and strings not shown in this Class Diagrams as they are either static methods or variables.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="list-path"><a class="link" href="#list-path">5.2.3. Path execution of the List Command</a></h4>
+<h4 id="list-path"><a class="link" href="#list-path">5.2.2. Path execution of the List Command</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/ListActivityDiagram.svg" alt="ListActivityDiagram">
 </div>
-<div class="title">Figure 14. List Activity Diagram</div>
+<div class="title">Figure 13. List Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above activity diagram shows the logic and the path execution when the <code>list</code> command is executed.
@@ -673,6 +642,35 @@ There are only three correct syntax available for <code>ListCommand</code>:<br><
 <div class="paragraph">
 <p>The code will check if the input is one of the three mentioned above. If the input is not one of the three, it will
 cause the code the throw an error message to the user.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="list-structure"><a class="link" href="#list-structure">5.2.3. Structure List feature</a></h4>
+<div class="paragraph">
+<p>The structure of the List Feature is as shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ListClassDiagram.svg" alt="ListClassDiagram">
+</div>
+<div class="title">Figure 14. List Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <strong>ListCommand</strong> and all its associated classes and interfaces.
+The <strong>ListCommand</strong> has dependencies on the <strong>Model</strong> class as it uses the two methods from it :<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>updateFilteredOrderList</p>
+</li>
+<li>
+<p>updateReturnFilteredOrderList</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>There are other variables and strings not shown in this Class Diagrams as they are either static methods or variables.</p>
 </div>
 </div>
 <div class="sect3">
@@ -2473,8 +2471,10 @@ However, if <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> is
 <div class="sect2">
 <h3 id="show"><a class="link" href="#show">5.12. Show feature</a></h3>
 <div class="paragraph">
-<p>This section describes the <a href="#show-functionality">functionality</a> , the <a href="#show-structure">structure</a>,
-<a href="#show-interactions">interactions</a> between objects and <a href="#show-path">path</a> the path execution of the <code>show</code> command.</p>
+<p>In this section, the <a href="#show-functionality">functionality</a> of the <code>show</code> feature,
+the expected <a href="#show-path">execution path</a>,
+the <a href="#show-structure">structure</a> of the <strong>ShowCommand</strong> class and the <a href="#show-interactions">interactions</a>
+between objects with the <strong>ShowCommand</strong> object will be discussed.</p>
 </div>
 <div class="sect3">
 <h4 id="show-functionality"><a class="link" href="#show-functionality">5.12.1. What is the Show feature</a></h4>
@@ -2503,22 +2503,7 @@ and Return Orders.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="show-structure"><a class="link" href="#show-structure">5.12.2. Structure Show feature</a></h4>
-<div class="paragraph">
-<p>The structure of the <code>show</code> feature is as shown below:</p>
-</div>
-<div class="paragraph">
-<div class="title">Show Command Class Diagram</div>
-<p><span class="image"><img src="images/ShowCommandClassDiagram.svg" alt="ShowCommandClassDiagram"></span></p>
-</div>
-<div class="paragraph">
-<p>The above diagram shows all the methods and variables that the <strong>ShowCommand</strong> class is using when the command is
-executed. All the static methods and variables are not mentioned in this diagram. Furthermore, there are
-some methods and variables omitted from this diagram as it is irrelevant to the <strong>ShowCommand</strong> class.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="show-path"><a class="link" href="#show-path">5.12.3. Path execution of the Show Command</a></h4>
+<h4 id="show-path"><a class="link" href="#show-path">5.12.2. Path execution of the Show Command</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/ShowCommandActivityDiagram.svg" alt="ShowCommandActivityDiagram">
@@ -2538,6 +2523,21 @@ If the number is two arguments, it will check if the dates provided are valid or
 It throws an error for the latter. The code will then ensure that the <code>START_DATE</code> is before the <code>END_DATE</code>.
 Once the input passes all the validations in the <strong>ShowCommand</strong> code,
 the command will then be executed and it prints a success message to the user.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="show-structure"><a class="link" href="#show-structure">5.12.3. Structure Show feature</a></h4>
+<div class="paragraph">
+<p>The structure of the <code>show</code> feature is as shown below:</p>
+</div>
+<div class="paragraph">
+<div class="title">Show Command Class Diagram</div>
+<p><span class="image"><img src="images/ShowCommandClassDiagram.svg" alt="ShowCommandClassDiagram"></span></p>
+</div>
+<div class="paragraph">
+<p>The above diagram shows all the methods and variables that the <strong>ShowCommand</strong> class is using when the command is
+executed. All the static methods and variables are not mentioned in this diagram. Furthermore, there are
+some methods and variables omitted from this diagram as it is irrelevant to the <strong>ShowCommand</strong> class.</p>
 </div>
 </div>
 <div class="sect3">
@@ -2937,12 +2937,54 @@ In this case where the input is "show all", it will have a message that indicate
 </ul>
 </div>
 </li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
 <li>
 <p>2b. Delino detects the insertion of a duplicate order.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
 <p>2b1. Delino shows duplicate order message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2c. Delino detects invalid <a href="#command_prefix"><code>DELIVERY_TIMESTAMP</code></a>, i.e. order with
+the given <a href="#command_prefix"><code>DELIVERY_TIMESTAMP</code></a> is before the delivery time stamp of the order.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2c1. Delino shows an error message to the user.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2d. Delino detects missing parcel attributes.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2d1. Delino shows an error message to the user.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
 </li>
 </ul>
 </div>
@@ -4098,7 +4140,10 @@ Expected: Shows the GUI of the Delino App. The window size may not be optimum</p
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Insert command format: <code>insert</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>ts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>cod/CASH_ON_DELIVERY</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p>
+<p>Insert command format: <code>insert</code> <a href="#command_prefix"><code>TRANSACTION_ID</code></a> <a href="#command_prefix"><code>CUSTOMER_NAME</code></a>
+<a href="#command_prefix"><code>ADDRESS</code></a> <a href="#command_prefix"><code>PHONE_NUMBER</code></a> <a href="#command_prefix"><code>EMAIL</code></a>
+ <a href="#command_prefix"><code>DELIVERY_TIMESTAMP</code></a> <a href="#command_prefix"><code>WAREHOUSE_LOCATION</code></a> <a href="#command_prefix"><code>CASH_ON_DELIVERY</code></a>
+ <a href="#command_prefix"><code>[COMMENTS_BY_CUSTOMER]</code></a> <a href="#command_prefix"><code>[TYPE_OF_ITEM]</code></a></p>
 </li>
 <li>
 <p>Test case: <code>insert</code> <code>tid/9876543210</code> <code>n/John Doe</code> <code>a/Blk 572 Hougang st 51 #10-33 S530572</code> <code>p/98766789</code> <code>e/johndoe@example.com</code> <code>ts/2020-02-20 1300</code> <code>w/Yishun</code> <code>cod/$4</code><br>
@@ -4687,4 +4732,4 @@ Delino by working tirelessly to build it together. Overall, we believe that Deli
 and time spent on perfecting it.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 08:19:38 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 08:23:41 UTC</div></div></div></body></html>
