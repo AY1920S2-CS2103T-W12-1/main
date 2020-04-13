@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://github.com/AY1920S2-CS2103T-W12-1/main"><img src="images/delino_icon.png" alt="Delino"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="index.html">Delino</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">Delino</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W12-1/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Delino - Developer Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>By: <code>CS2103T-W12-01</code>      Since: <code>Jan 2020</code>      Licence: <code>MIT</code></p>
+<p>By: <code>CS2103T-W12-1</code>      Since: <code>Jan 2020</code>      Licence: <code>MIT</code></p>
 </div>
 </div>
 <div id="toc" class="toc">
@@ -85,7 +85,7 @@ while still enjoying the benefits of a Graphical User Interface (GUI).</p>
 <a href="https://se-education.org">SE-EDU initiative</a>.</p>
 </div>
 <div class="paragraph">
-<p>If you wish to contact the team, more details can be found <a href="AboutUs.html">here</a>.</p>
+<p>If you wish to contact the Delino team, more details can be found <a href="AboutUs.html">here</a>.</p>
 </div>
 </div>
 </div>
@@ -1115,20 +1115,20 @@ as delivered after delivering an order or a return order.<br></p>
 </div>
 <div class="paragraph">
 <p>The <code>delivered</code> feature was implemented as the <strong>DeliveredCommand</strong> in the logic package.<br>
-The <code>delivered</code> function requires a valid <a href="#command_prefix"><code>FLAG</code></a> and a valid <a href="#command_prefix"><code>INDEX</code></a>.<br>
-i.e. <code>delivered</code> <a href="#command_prefix"><code>INDEX</code></a> <a href="#command_prefix"><code>FLAG</code></a></p>
+The <code>delivered</code> function requires a valid <a href="#command_flags"><code>FLAG</code></a> and a valid <code>INDEX</code>.<br>
+i.e. <code>delivered</code> <code>INDEX</code> <a href="#command_flags"><code>FLAG</code></a></p>
 </div>
 <div class="paragraph">
-<p>The <a href="#command_prefix"><code>FLAG</code></a> can either be '-o' or '-r', which indicates which list
-(order list or return order list respectively) to mark the parcel from. The <a href="#command_prefix"><code>FLAG</code></a> is
+<p>The <a href="#command_flags"><code>FLAG</code></a> can either be '-o' or '-r', which indicates which list
+(order list or return order list respectively) to mark the parcel from. The <a href="#command_flags"><code>FLAG</code></a> is
 only valid when either '-o' and '-r' is used. All other inputs will be regarded as invalid.<br></p>
 </div>
 <div class="paragraph">
-<p>The <a href="#command_prefix"><code>INDEX</code></a> is a positive integer that determines
-which order or return order to be marked as delivered. The <a href="#command_prefix"><code>INDEX</code></a> is only valid if
+<p>The <code>INDEX</code> is a positive integer that determines
+which order or return order to be marked as delivered. The <code>INDEX</code> is only valid if
 it is a positive integer and if it is not bigger than the size of the order list or return order list, depending
-on the <a href="#command_prefix"><code>FLAG</code></a>that is provided. For instance, if the '-o' <a href="#command_prefix"><code>FLAG</code></a> is provided,
-the <a href="#command_prefix"><code>INDEX</code></a> should not be greater than the size of the order list.<br></p>
+on the <a href="#command_flags"><code>FLAG</code></a>that is provided. For instance, if the '-o' <a href="#command_flags"><code>FLAG</code></a> is provided,
+the <code>INDEX</code> should not be greater than the size of the order list.<br></p>
 </div>
 </div>
 <div class="sect3">
@@ -1193,25 +1193,25 @@ based on the validity of the user&#8217;s input; which is determined by the <cod
 </div>
 <div class="paragraph">
 <p>The <code>execute</code> method of <strong>DeliveredCommand</strong> will first check if a valid
-<a href="#command_prefix"><code>FLAG</code></a> is present in the user&#8217;s input. If the <a href="#command_prefix"><code>FLAG</code></a>
+<a href="#command_flags"><code>FLAG</code></a> is present in the user&#8217;s input. If the <a href="#command_flags"><code>FLAG</code></a>
 is not valid, a <strong>CommandException</strong> will be thrown to the user to tell him/her that their
 input was invalid and tell them the format which their input should follow.<br></p>
 </div>
 <div class="paragraph">
-<p>If a valid <a href="#command_prefix"><code>FLAG</code></a> is present, this will trigger the
+<p>If a valid <a href="#command_flags"><code>FLAG</code></a> is present, this will trigger the
 processDeliveryOfOrder method in <strong>DeliveredCommand</strong> which will check if
-a valid <a href="#command_prefix"><code>INDEX</code></a> is present in the user&#8217;s input.<br></p>
+a valid <code>INDEX</code> is present in the user&#8217;s input.<br></p>
 </div>
 <div class="paragraph">
-<p>If the <a href="#command_prefix"><code>INDEX</code></a> is not valid, processDeliveryOfOrder method will throw
+<p>If the <code>INDEX</code> is not valid, processDeliveryOfOrder method will throw
 a <strong>CommandException</strong> to the user; telling him/her that their input was invalid and the format
-that their input should follow. i.e. <code>delivered</code> <a href="#command_prefix"><code>FLAG</code></a>
- <a href="#command_prefix"><code>INDEX</code></a><br></p>
+that their input should follow. i.e. <code>delivered</code> <a href="#command_flags"><code>FLAG</code></a>
+ <code>INDEX</code><br></p>
 </div>
 <div class="paragraph">
-<p>If both <a href="#command_prefix"><code>FLAG</code></a> and <a href="#command_prefix"><code>INDEX</code></a> are valid, an <strong>Order</strong>
-or <strong>ReturnOrder</strong> object will be created based on the <a href="#command_prefix"><code>FLAG</code></a>.
-The <a href="#command_prefix"><code>INDEX</code></a> will determine which order or return order to take from
+<p>If both <a href="#command_flags"><code>FLAG</code></a> and <code>INDEX</code> are valid, an <strong>Order</strong>
+or <strong>ReturnOrder</strong> object will be created based on the <a href="#command_flags"><code>FLAG</code></a>.
+The <code>INDEX</code> will determine which order or return order to take from
 the order list or return order list respectively using the appropriate getter method.
 The <code>Order</code> or <code>ReturnOrder</code> object will be checked to see if it was delivered using the <code>checkIfOrderWasDelivered(model)</code> method.<br></p>
 </div>
@@ -1483,10 +1483,11 @@ the date and time.</p>
 This will result in a parse exception and an error message will be displayed to the user.</p>
 </li>
 <li>
-<p>User provides a valid <code>return</code> command input with a valid <a href="#command_prefix"><code>TRANSACTION_ID</code></a>, i.e.<br>
-<code>return</code> <a href="#command_prefix"><code>TRANSACTION_ID</code></a><br>
+<p>User provides a valid <code>return</code> command input with a valid <a href="#command_prefix"><code>TRANSACTION_ID</code></a> and
+<a href="#command_prefix"><code>RETURN_TIMESTAMP</code></a>, i.e.<br>
+<code>return</code> <a href="#command_prefix"><code>TRANSACTION_ID</code></a> <a href="#command_prefix"><code>RETURN_TIMESTAMP</code></a><br>
 If the order with the given <a href="#command_prefix"><code>TRANSACTION_ID</code></a> is delivered,
-it will be converted to an existing order with the given <a href="#command_prefix"><code>TRANSACTION_ID</code></a> into a return order.<br>
+it will be converted to an existing order with the given <a href="#command_prefix"><code>TRANSACTION_ID</code></a> into a return order with the updated <a href="#command_prefix"><code>RETURN_TIMESTAMP</code></a>.<br>
 This return order will then be added into the return order list.</p>
 </li>
 <li>
@@ -3201,7 +3202,7 @@ the given <a href="#command_prefix"><code>DELIVERY_TIMESTAMP</code></a> is befor
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2b. Delino unable to detect any parcel with the <a href="#command_prefix"><code>INDEX</code></a> provided.</p>
+<p>2b. Delino unable to detect any parcel with the <code>INDEX</code> provided.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
@@ -3218,7 +3219,7 @@ the given <a href="#command_prefix"><code>DELIVERY_TIMESTAMP</code></a> is befor
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2c. Delino unable to detect valid <a href="#command_prefix"><code>INDEX</code></a> provided.</p>
+<p>2c. Delino unable to detect valid <code>INDEX</code> provided.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
@@ -3235,7 +3236,7 @@ the given <a href="#command_prefix"><code>DELIVERY_TIMESTAMP</code></a> is befor
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2d. Delino unable to detect valid <a href="#command_prefix"><code>FLAG</code></a> provided.</p>
+<p>2d. Delino unable to detect valid <a href="#command_flags"><code>FLAG</code></a> provided.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
@@ -3479,16 +3480,16 @@ the given <a href="#command_prefix"><code>DELIVERY_TIMESTAMP</code></a> is befor
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User wants to import a specific orders from an external file.</p>
+<p>User wants to import a specific orders from an external csv file.</p>
 </li>
 <li>
-<p>User requests to import orders from an external file.</p>
+<p>User requests to import orders from an external csv file.</p>
 </li>
 <li>
 <p>Delino checks for file existence.</p>
 </li>
 <li>
-<p>Delino imports all orders from the external file.</p>
+<p>Delino imports all orders from the external csv file.</p>
 </li>
 <li>
 <p>Delino displays all orders imported.</p>
@@ -4146,11 +4147,11 @@ Expected: Shows the GUI of the Delino App. The window size may not be optimum</p
  <a href="#command_prefix"><code>[COMMENTS_BY_CUSTOMER]</code></a> <a href="#command_prefix"><code>[TYPE_OF_ITEM]</code></a></p>
 </li>
 <li>
-<p>Test case: <code>insert</code> <code>tid/9876543210</code> <code>n/John Doe</code> <code>a/Blk 572 Hougang st 51 #10-33 S530572</code> <code>p/98766789</code> <code>e/johndoe@example.com</code> <code>ts/2020-02-20 1300</code> <code>w/Yishun</code> <code>cod/$4</code><br>
+<p>Test case: <code>insert</code> <code>tid/9876543210</code> <code>n/John Doe</code> <code>a/Blk 572 Hougang st 51 #10-33 S530572</code> <code>p/98766789</code> <code>e/johndoe@example.com</code> <code>dts/2020-05-20 1300</code> <code>w/Yishun</code> <code>cod/$4</code><br>
 Expected: Inserts an order with the above details to the list and displayed on the GUI</p>
 </li>
 <li>
-<p>Test case: <code>insert</code> <code>tid/1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 572 Hougang st 51 #11-37 S530572</code> <code>p/9001 0019</code> <code>e/amoscheong@example.com</code> <code>ts/2020-03-10 1650</code> <code>w/Marsiling</code> <code>cod/$5</code> <code>c/Leave it at the riser</code> <code>type/glass</code><br>
+<p>Test case: <code>insert</code> <code>tid/1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 572 Hougang st 51 #11-37 S530572</code> <code>p/90010019</code> <code>e/amoscheong@example.com</code> <code>dts/2020-05-10 1650</code> <code>w/Marsiling</code> <code>cod/$5</code> <code>c/Leave it at the riser</code> <code>type/glass</code><br>
 Expected: Inserts the order to the list, including the item type and the order comment</p>
 </li>
 <li>
@@ -4183,11 +4184,11 @@ Expected: An error will occur and a message will be displayed, stating that orde
 OR <code>return</code> <a href="#command_prefix"><code>TRANSACTION_ID</code></a> <a href="#command_prefix"><code>RETURN_TIMESTAMP</code></a></p>
 </li>
 <li>
-<p>Test case: <code>return</code> <code>tid/9876543210</code> <code>n/John Doe</code> <code>a/Blk 572 Hougang st 51 #10-33 S530572</code> <code>p/98766789</code> <code>e/johndoe@example.com</code> <code>rts/2020-02-20 1300</code> <code>w/Yishun</code><br>
+<p>Test case: <code>return</code> <code>tid/9876543210</code> <code>n/John Doe</code> <code>a/Blk 572 Hougang st 51 #10-33 S530572</code> <code>p/98766789</code> <code>e/johndoe@example.com</code> <code>rts/2020-05-20 1300</code> <code>w/Yishun</code><br>
 Expected: Creates a new return order with the above details and adds it into the return order list. This will be displayed on the GUI</p>
 </li>
 <li>
-<p>Test case: <code>return</code> <code>tid/1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 572 Hougang st 51 #11-37 S530572</code> <code>p/9001 0019</code> <code>e/amoscheong@example.com</code> <code>rts/2020-03-10 1650</code> <code>w/Marsiling</code> <code>c/Leave it at the riser</code> <code>type/glass</code><br>
+<p>Test case: <code>return</code> <code>tid/1023456789</code> <code>n/Amos Cheong</code> <code>a/Blk 572 Hougang st 51 #11-37 S530572</code> <code>p/90010019</code> <code>e/amoscheong@example.com</code> <code>rts/2020-05-10 1650</code> <code>w/Marsiling</code> <code>c/Leave it at the riser</code> <code>type/glass</code><br>
 Expected: Creates a new return order with the above details, including type and comments and adds it into the return order list. This will be displayed on the GUI</p>
 </li>
 <li>
@@ -4202,12 +4203,11 @@ Expected: No return order is added. Error details shown in the response message.
 </li>
 <li>
 <p>Test case: Return order with invalid Transaction ID in order list<br>
-Expected: An error will occur and a message will be displayed, stating that order with the given Transaction ID.</p>
+Expected: An error will occur and a message will be displayed, stating that order with the given Transaction ID cannot be found in the order list.</p>
 </li>
 <li>
-<p>Test case: Return order with invalid return time stamp in order list<br>
-   Expected: An error will occur and a message will be displayed, stating that order with the given Transaction ID.
-cannot be found in the order list.</p>
+<p>Test case: Return order with invalid return time stamp<br>
+Expected: An error will occur and a message will be displayed, stating that the return time stamp is not valid.</p>
 </li>
 <li>
 <p>Test case: Return order with missing parcel attributes<br>
@@ -4291,11 +4291,11 @@ Expected: The first index is edited where the address of the customer of the ord
 Expected: The second index of the list is edited. The name is changed to Mr Tan, phone number changed to 98776655 and address will be changed to Blk 841 Yishun st 81 #01-02 S760841.</p>
 </li>
 <li>
-<p>Test case: <code>edit</code> <code>-o</code> <code>1</code> <code>dts/09/08/2020</code><br>
+<p>Test case: <code>edit</code> <code>-o</code> <code>1</code> <code>dts/2020-08-09</code><br>
 Expected: The delivery date of the first index of the customer will be rescheduled to 09/08/2020.</p>
 </li>
 <li>
-<p>Test case: <code>edit</code> <code>-r</code> <code>1</code> <code>rts/02/02/1900</code><br>
+<p>Test case: <code>edit</code> <code>-r</code> <code>1</code> <code>rts/1900-02-02</code><br>
 Expected: The response box will display an error message as it is impossible to put a date that is already passed.</p>
 </li>
 </ol>
@@ -4401,12 +4401,12 @@ Expected: Specifically search for any order from the order list that has a Trans
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Mark a parcel&#8217;s delivery status as delivered based on its <a href="#command_prefix"><code>INDEX</code></a> and <a href="#command_prefix"><code>FLAG</code></a>
+<p>Mark a parcel&#8217;s delivery status as delivered based on its <code>INDEX</code> and <a href="#command_flags"><code>FLAG</code></a>
 whenever the parcel has been delivered.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Delivered command format: <code>delivered</code> <a href="#command_prefix"><code>FLAG</code></a> <a href="#command_prefix"><code>INDEX</code></a></p>
+<p>Delivered command format: <code>delivered</code> <a href="#command_flags"><code>FLAG</code></a> <code>INDEX</code></p>
 </li>
 <li>
 <p>Prerequisite: Ensure that your order list or return order list has at least one order.</p>
@@ -4732,4 +4732,4 @@ Delino by working tirelessly to build it together. Overall, we believe that Deli
 and time spent on perfecting it.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 08:23:48 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 08:54:33 UTC</div></div></div></body></html>
