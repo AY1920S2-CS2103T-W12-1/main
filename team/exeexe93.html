@@ -58,7 +58,7 @@ have different attributes in their models.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: Stores return orders.</p>
+<p>What it does: Stores return orders in json file.</p>
 </li>
 <li>
 <p>Justification: The storage of return orders is important, as the return orders are required to be separate from
@@ -76,20 +76,7 @@ which is stored in hard disk.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: Gives the user three options to clear:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Only order list</p>
-</li>
-<li>
-<p>Only return order list</p>
-</li>
-<li>
-<p>Both order list and return order list</p>
-</li>
-</ul>
-</div>
+<p>What it does: Gives the user to clear either both order lists or only one of them.</p>
 </li>
 <li>
 <p>Justification: This is an essential update, which prevent the user from having the trouble clearing the orders or return orders one by one.</p>
@@ -129,9 +116,8 @@ as clearing the wrong list, the data in that list would be lost permanently.</p>
 <p>What it does: Allows orders and return orders to store customer comment.</p>
 </li>
 <li>
-<p>Justification: This is an essential update, which allows the courier to be able to take note about<br>
-the customer&#8217;s request, such as sending a message to notify the customer that the courier will be sending<br>
-their parcel on that day.</p>
+<p>Justification: This is an essential update, which allows the courier to be able to take note about
+the customer&#8217;s request for that delivery.</p>
 </li>
 </ul>
 </div>
@@ -146,15 +132,6 @@ their parcel on that day.</p>
 <p><strong>Other contributions</strong>:</p>
 <div class="ulist">
 <ul>
-<li>
-<p>Enhancements to existing GUI:</p>
-</li>
-<li>
-<p>Modified the <code>Clear Window</code> to suit the needs for the modified <code>clear</code> command. (Pull request <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/180">#180</a>)</p>
-</li>
-<li>
-<p>Replaced the address book icon to Delino icon. (Pull request <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/226/commits/d7c029f7cdf8a11f42bbae6d3f5c49f6a0f19eee">226</a>)</p>
-</li>
 <li>
 <p>Project management:</p>
 <div class="ulist">
@@ -230,17 +207,9 @@ and clear features (Pull requests <a href="https://github.com/AY1920S2-CS2103T-W
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="features"><a class="link" href="#features">Features</a></h2>
-<div class="sectionbody">
 <div class="sect2">
-<h3 id="clear-feature"><a class="link" href="#clear-feature">Clear feature</a></h3>
-<div class="paragraph">
-<p>This whole section on Clear feature can be found at <a href="https://ay1920s2-cs2103t-w12-1.github.io/main/UserGuide.html#clear">here</a>. This link is provided in the event if some of the cross links are not working, as they refer to documents
-done by another team member.</p>
-</div>
+<h3 id="features"><a class="link" href="#features">Features</a></h3>
+
 </div>
 <div class="sect2">
 <h3 id="clear"><a class="link" href="#clear">Clearing all entries : <code>clear</code> [Done by - Eng Xuan En]</a></h3>
@@ -378,13 +347,6 @@ to do so.</p>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="import-feature"><a class="link" href="#import-feature">Import feature</a></h3>
-<div class="paragraph">
-<p>This whole section on Import feature can be found at <a href="https://ay1920s2-cs2103t-w12-1.github.io/main/UserGuide.html#import">here</a>. This link is provided in the event if some of the cross links are not working, as they refer to documents
-done by another team member.</p>
 </div>
 </div>
 <div class="sect2">
@@ -582,15 +544,10 @@ and the possible combination for the <code>import</code> command.</p>
 </table>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="command-summary"><a class="link" href="#command-summary">Command Summary</a></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="command-summary"><a class="link" href="#command-summary">Command Summary</a></h3>
 <div class="paragraph">
-<p>This whole section on command summary can be found at <a href="https://ay1920s2-cs2103t-w12-1.github.io/main/UserGuide.html#command-summary">here</a>. This link is provided in the event if some of the cross links are not working, as they refer to documents
-done by another team member.
-In this section, you can find out more about the commands supported by Delino
+<p>In this section, you can find out more about the commands supported by Delino
 (their respective format and example).</p>
 </div>
 <div class="paragraph">
@@ -701,17 +658,10 @@ OR<br>
 </tbody>
 </table>
 </div>
-</div>
-<div class="sect1">
-<h2 id="command-prefix"><a class="link" href="#command-prefix">Command Prefix</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This whole section on command prefix can be found at <a href="https://ay1920s2-cs2103t-w12-1.github.io/main/UserGuide.html#command_prefix">here</a>. This link is provided in the event if some of the cross links are not working, as they refer to documents
-done by another team member.
-=== Command Prefix
-.Command Prefix</p>
-</div>
+<div class="sect2">
+<h3 id="command_prefix"><a class="link" href="#command_prefix">Command Prefix</a></h3>
 <table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 4. Command Prefix</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -788,16 +738,10 @@ done by another team member.
 </tbody>
 </table>
 </div>
-</div>
-<div class="sect1">
-<h2 id="command-flags"><a class="link" href="#command-flags">Command Flags</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This whole section on command flags can be found at <a href="https://ay1920s2-cs2103t-w12-1.github.io/main/UserGuide.html#command_flags">here</a>. This link is provided in the event if some of the cross links are not working, as they refer to documents
-done by another team member.
-.Possible Command Flags</p>
-</div>
+<div class="sect2">
+<h3 id="command_flags"><a class="link" href="#command_flags">Command Flags</a></h3>
 <table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 5. Possible Command Flags</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -830,6 +774,7 @@ done by another team member.
 </table>
 </div>
 </div>
+</div>
 <div class="sect1">
 <h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
 <div class="sectionbody">
@@ -843,14 +788,9 @@ done by another team member.
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="storage-design"><a class="link" href="#storage-design">Storage Design</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This whole section on storage design can be found at <a href="https://ay1920s2-cs2103t-w12-1.github.io/main/DeveloperGuide.html#Design-Storage">here</a>. This link is provided in the event if some of the cross links are not working, as they refer to documents
-done by another team member.</p>
+<div class="sect2">
+<h3 id="design"><a class="link" href="#design">Design</a></h3>
+
 </div>
 <div class="sect2">
 <h3 id="Design-Storage"><a class="link" href="#Design-Storage">Storage component</a></h3>
@@ -877,17 +817,12 @@ done by another team member.</p>
 </ul>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="clear-feature-2"><a class="link" href="#clear-feature-2">Clear feature</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This whole section on Clear feature can be found at <a href="https://ay1920s2-cs2103t-w12-1.github.io/main/DeveloperGuide.html#clear-feature">here</a>. This link is provided in the event if some of the cross links are not working, as they refer to documents
-done by another team member.</p>
+<div class="sect2">
+<h3 id="features-2"><a class="link" href="#features-2">Features</a></h3>
+
 </div>
 <div class="sect2">
-<h3 id="clear-feature-3"><a class="link" href="#clear-feature-3">Clear feature</a></h3>
+<h3 id="clear-feature"><a class="link" href="#clear-feature">Clear feature</a></h3>
 <div class="paragraph">
 <p>In this section, the <a href="#what-is-clear">functionality</a> of the <code>clear</code> feature,
 the expected <a href="#clear-execution-path">execution path</a>,
@@ -1049,15 +984,6 @@ returnOrderBook. In addition, the <code>clear</code> command will pass back a ne
 in it to the <strong>LogicManager</strong> at the end of the execution.</p>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="import-feature-2"><a class="link" href="#import-feature-2">Import feature</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This whole section on Import feature can be found at <a href="https://ay1920s2-cs2103t-w12-1.github.io/main/DeveloperGuide.html#import">here</a>. This link is provided in the event if some of the cross links are not working, as they refer to documents
-done by another team member.</p>
 </div>
 <div class="sect2">
 <h3 id="import"><a class="link" href="#import">Import feature</a></h3>
@@ -1244,15 +1170,8 @@ which is then pass back to the <strong>LogicManager</strong>.</p>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="use-case-for-clear-feature"><a class="link" href="#use-case-for-clear-feature">Use Case for Clear feature</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This whole section on Use Case for Clear feature can be found at <a href="https://ay1920s2-cs2103t-w12-1.github.io/main/DeveloperGuide.html#use-cases">here</a>. This link is provided in the event if some of the cross links are not working, as they refer to documents
-done by another team member.</p>
-</div>
+<div class="sect2">
+<h3 id="use-cases"><a class="link" href="#use-cases">Use Cases</a></h3>
 <h3 id="use-case-uc02-clear-all-orders" class="discrete">Use case: UC02 - Clear all orders</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
@@ -1352,15 +1271,8 @@ done by another team member.</p>
 </ul>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="use-case-for-import-feature"><a class="link" href="#use-case-for-import-feature">Use Case for Import feature</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This whole section on Use Case for Import feature can be found at <a href="https://ay1920s2-cs2103t-w12-1.github.io/main/DeveloperGuide.html#use-cases">here</a>. This link is provided in the event if some of the cross links are not working, as they refer to documents
-done by another team member.</p>
-</div>
-<h3 id="use-case-uc09-importing-order-details" class="discrete">Use case: UC09 -  Importing order details</h3>
+<div class="sect2">
+<h3 id="use-case-uc09-importing-order-details"><a class="link" href="#use-case-uc09-importing-order-details">Use case: UC09 -  Importing order details</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1441,16 +1353,10 @@ done by another team member.</p>
 </ul>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="command-prefix-2"><a class="link" href="#command-prefix-2">Command Prefix</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This whole section on command prefix can be found at <a href="https://ay1920s2-cs2103t-w12-1.github.io/main/DeveloperGuide.html#glossary">here</a>. This link is provided in the event if some of the cross links are not working, as they refer to documents
-done by another team member.</p>
-</div>
+<div class="sect2">
+<h3 id="glossary"><a class="link" href="#glossary">Glossary</a></h3>
 <table id="command_prefix" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 4. Command Prefix</caption>
+<caption class="title">Table 6. Command Prefix</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1526,17 +1432,8 @@ done by another team member.</p>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="command-flags-2"><a class="link" href="#command-flags-2">Command Flags</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This whole section on command flags can be found at <a href="https://ay1920s2-cs2103t-w12-1.github.io/main/DeveloperGuide.html#glossary">here</a>. This link is provided in the event if some of the cross links are not working, as they refer to documents
-done by another team member.</p>
-</div>
 <table id="command_flags" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 5. Possible Command Flags</caption>
+<caption class="title">Table 7. Possible Command Flags</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1568,13 +1465,9 @@ done by another team member.</p>
 </tbody>
 </table>
 </div>
-</div>
-<div class="sect1">
-<h2 id="clear-feature-4"><a class="link" href="#clear-feature-4">Clear feature</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This whole section on Manual Testing for Clear feature can be found at <a href="https://ay1920s2-cs2103t-w12-1.github.io/main/DeveloperGuide.html#clear-orders">here</a>. This link is provided in the event if some of the cross links are not working, as they refer to documents
-done by another team member.</p>
+<div class="sect2">
+<h3 id="instruction-of-manual-testing"><a class="link" href="#instruction-of-manual-testing">Instruction of Manual Testing</a></h3>
+
 </div>
 <div class="sect2">
 <h3 id="clear-orders"><a class="link" href="#clear-orders">Clear orders</a></h3>
@@ -1629,15 +1522,6 @@ Expected: Invalid command input, as space is required in between flags.<br>
 </ol>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="import-feature-3"><a class="link" href="#import-feature-3">Import feature</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This whole section on Manual Testing for Import feature can be found at <a href="https://ay1920s2-cs2103t-w12-1.github.io/main/DeveloperGuide.html#import-orders">here</a>. This link is provided in the event if some of the cross links are not working, as they refer to documents
-done by another team member.</p>
-</div>
 <div class="sect2">
 <h3 id="import-orders"><a class="link" href="#import-orders">Import orders</a></h3>
 <div class="olist arabic">
@@ -1664,4 +1548,4 @@ Expected: In the response box, a message will appear to indicate that the import
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 06:44:37 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 07:23:35 UTC</div></div></div></body></html>
