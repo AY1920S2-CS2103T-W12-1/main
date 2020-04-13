@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://github.com/AY1920S2-CS2103T-W12-1/main"><img src="images/delino_icon.png" alt="Delino"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="index.html">Delino</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">Delino</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W12-1/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Delino - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>By: <code>CS2103T-W12-01</code>      Since: <code>Jan 2020</code>      Licence: <code>MIT</code></p>
+<p>By: <code>CS2103T-W12-1</code>      Since: <code>Jan 2020</code>      Licence: <code>MIT</code></p>
 </div>
 </div>
 <div id="toc" class="toc">
@@ -216,69 +216,53 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 100%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Current Features</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Future Features</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#clear">clear</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#export">export</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#delete">delete</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#reminder">reminder</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#delivered">delivered</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rescheduling">rescheduling orders</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">edit</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#tracking-work">keeping track of work schedule</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#exit">exit</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#statistics">showing more statistic of completed orders</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#help">help</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#show">show</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert">insert</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#import">import</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#list">list</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#nearby">nearby</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#return">return</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#search">search</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#saving">saving</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
@@ -912,8 +896,8 @@ Why will you want to use the <code>edit</code> command? If you wish to edit any 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">If you want to edit the phone number of the second order displayed on the orders list.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit</code> <code>-o</code> <code>2</code> <code>p/9999 4444</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The index <code>2</code> customer&#8217;s phone number of the order list will be changed changed to <code>9999 4444</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit</code> <code>-o</code> <code>2</code> <code>p/99994444</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The index <code>2</code> customer&#8217;s phone number of the order list will be changed changed to <code>99994444</code>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">If you want to edit the address of the first order displayed on the orders list.</p></td>
@@ -922,7 +906,7 @@ Why will you want to use the <code>edit</code> command? If you wish to edit any 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">If you want to edit the name, phone number and address of the third return order displayed on the returns list.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit</code> <code>-r</code> <code>3</code> <code>n/Mr Tan</code> <code>p/0123 4567</code> <code>a/Blk 141 Yishun st 71 #09-09 S760141</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit</code> <code>-r</code> <code>3</code> <code>n/Mr Tan</code> <code>p/96959321</code> <code>a/Blk 141 Yishun st 71 #09-09 S760141</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The index <code>3</code> customer&#8217;s name, phone and address of the return order list will be changed accordingly to the prefix.</p></td>
 </tr>
 </tbody>
@@ -2639,9 +2623,9 @@ the provided link in the table below.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit"><strong>Edit</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit</code> <code>FLAG</code> <code>INDEX</code> <code>ORDER_ATTRIBUTE_PREFIX/VALUE</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit</code> <code>-r</code> <code>2</code> <code>n/Xuan En</code><br>
-<code>edit</code> <code>-o</code> <code>2</code> <code>p/9999 4444</code><br>
+<code>edit</code> <code>-o</code> <code>2</code> <code>p/99994444</code><br>
 <code>edit</code> <code>-o</code> <code>1</code> <code>a/Blk 123 Pasir Ris Street 51 #12-21 S510123</code><br>
-<code>edit</code> <code>-r</code> <code>3</code> <code>n/Mr Tan</code> <code>p/0123 4567</code> <code>a/Blk 141 Yishun st 71 #09-09 S760141</code></p></td>
+<code>edit</code> <code>-r</code> <code>3</code> <code>n/Mr Tan</code> <code>p/99994567</code> <code>a/Blk 141 Yishun st 71 #09-09 S760141</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#exit"><strong>Exit</strong></a></p></td>
@@ -2650,7 +2634,7 @@ the provided link in the table below.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#search"><strong>Search</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>[<a href="#command_flags">FLAG</a>]</code> <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD</code> <code>[MORE_KEYWORDS]&#8230;&#8203;</code> <code>[<a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD MORE_KEYWORDS]&#8230;&#8203;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>FLAG</code> <code>ORDER_ATTRIBUTE_PREFIX/KEYWORD</code> <code>[MORE_KEYWORDS]&#8230;&#8203;</code> <code>[ORDER_ATTRIBUTE_PREFIX/KEYWORD MORE_KEYWORDS]&#8230;&#8203;</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>-r</code> <code>tid/ac1e345x7s</code><br>
 <code>search</code> <code>-r</code> <code>Jeremy Loh</code><br>
 <code>search</code> <code>-o</code> <code>tid/asj2od3943</code><br>
@@ -2664,8 +2648,23 @@ the provided link in the table below.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#show"><strong>Show</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code> <code>START_DATE</code> <code>[END_DATE]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code> <code>2020-01-01</code> <code>2020-12-31</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code> <code>all</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code> <code>all</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code> <code>today</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code> <code>today</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code> <code>DATE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code> <code>2020-03-20</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#import"><strong>Import</strong></a></p></td>
@@ -2681,10 +2680,15 @@ the provided link in the table below.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#return"><strong>Return</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>return</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>rts/RETURN_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>c/COMMENTS_BY_CUSTOMER</code> <code>type/TYPE_OF_ITEM</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>return</code> <code>tid/ac17s2a</code> <code>n/BOBBY TAN</code> <code>a/123 Delta Road #03-333, Singapore 123456</code> <code>p/91230456</code> <code>rts/12-12-2020 1301</code> <code>w/Jurong Warehouse</code> <code>c/NIL</code> <code>type/glass</code><br>
-<code>return</code> <code>tid/ac17s2a</code><br>
-<code>return</code> <code>tid/b1230512</code> <code>n/Aaron Teo</code> <code>a/256 Alpha Road #03-222, Singapore 123567</code> <code>p/91230456</code> <code>e/aaron@example.com</code> <code>rts/12-12-2020 1400</code> <code>w/Jurong Warehouse</code> <code>c/Leave it at the lobby</code> <code>type/metal</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>return</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>rts/RETURN_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>return</code> <code>tid/ac17s2a</code> <code>n/BOBBY TAN</code> <code>a/123 Delta Road #03-333, Singapore S169814</code> <code>p/91230456</code> <code>rts/2020-12-12 1301</code> <code>w/Jurong Warehouse</code> <code>c/NIL</code> <code>type/glass</code><br>
+<code>return</code> <code>tid/ac17s2a</code><br></p>
+<p class="tableblock"><code>return</code> <code>tid/b1230512</code> <code>n/Aaron Teo</code> <code>a/256 Delta Road #03-222, Singapore S169256</code> <code>p/91230456</code> <code>e/aaron@example.com</code> <code>rts/2020-12-12 1400</code> <code>w/Jurong Warehouse</code> <code>c/Leave it at the lobby</code> <code>type/metal</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>return</code> <code>tid/TRANSACTION_ID</code> <code>rts/RETURN_DATE_&amp;_TIME</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>return</code> <code>tid/ac17s2a</code> <code>rts/2020-12-12 1301</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#nearby"><strong>Nearby</strong></a></p></td>
@@ -2747,7 +2751,7 @@ OR<br>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">e/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Email</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#return">Return</a>, <a href="#search">Search</a>, <a href="#import">Import</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a>, <a href="#import">Import</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dts/</p></td>
@@ -3439,4 +3443,4 @@ OR<br>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 07:23:40 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 07:52:43 UTC</div></div></div></body></html>

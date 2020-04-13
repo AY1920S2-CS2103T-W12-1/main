@@ -599,9 +599,9 @@ the provided link in the table below.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit"><strong>Edit</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit</code> <code>FLAG</code> <code>INDEX</code> <code>ORDER_ATTRIBUTE_PREFIX/VALUE</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit</code> <code>-r</code> <code>2</code> <code>n/Xuan En</code><br>
-<code>edit</code> <code>-o</code> <code>2</code> <code>p/9999 4444</code><br>
+<code>edit</code> <code>-o</code> <code>2</code> <code>p/99994444</code><br>
 <code>edit</code> <code>-o</code> <code>1</code> <code>a/Blk 123 Pasir Ris Street 51 #12-21 S510123</code><br>
-<code>edit</code> <code>-r</code> <code>3</code> <code>n/Mr Tan</code> <code>p/0123 4567</code> <code>a/Blk 141 Yishun st 71 #09-09 S760141</code></p></td>
+<code>edit</code> <code>-r</code> <code>3</code> <code>n/Mr Tan</code> <code>p/99994567</code> <code>a/Blk 141 Yishun st 71 #09-09 S760141</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#exit"><strong>Exit</strong></a></p></td>
@@ -610,7 +610,7 @@ the provided link in the table below.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#search"><strong>Search</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>[<a href="#command_flags">FLAG</a>]</code> <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD</code> <code>[MORE_KEYWORDS]&#8230;&#8203;</code> <code>[<a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/KEYWORD MORE_KEYWORDS]&#8230;&#8203;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>FLAG</code> <code>ORDER_ATTRIBUTE_PREFIX/KEYWORD</code> <code>[MORE_KEYWORDS]&#8230;&#8203;</code> <code>[ORDER_ATTRIBUTE_PREFIX/KEYWORD MORE_KEYWORDS]&#8230;&#8203;</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>-r</code> <code>tid/ac1e345x7s</code><br>
 <code>search</code> <code>-r</code> <code>Jeremy Loh</code><br>
 <code>search</code> <code>-o</code> <code>tid/asj2od3943</code><br>
@@ -624,8 +624,23 @@ the provided link in the table below.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#show"><strong>Show</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code> <code>START_DATE</code> <code>[END_DATE]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code> <code>2020-01-01</code> <code>2020-12-31</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code> <code>all</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code> <code>all</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code> <code>today</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code> <code>today</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code> <code>DATE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show</code> <code>2020-03-20</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#import"><strong>Import</strong></a></p></td>
@@ -641,10 +656,15 @@ the provided link in the table below.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#return"><strong>Return</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>return</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>rts/RETURN_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>c/COMMENTS_BY_CUSTOMER</code> <code>type/TYPE_OF_ITEM</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>return</code> <code>tid/ac17s2a</code> <code>n/BOBBY TAN</code> <code>a/123 Delta Road #03-333, Singapore 123456</code> <code>p/91230456</code> <code>rts/12-12-2020 1301</code> <code>w/Jurong Warehouse</code> <code>c/NIL</code> <code>type/glass</code><br>
-<code>return</code> <code>tid/ac17s2a</code><br>
-<code>return</code> <code>tid/b1230512</code> <code>n/Aaron Teo</code> <code>a/256 Alpha Road #03-222, Singapore 123567</code> <code>p/91230456</code> <code>e/aaron@example.com</code> <code>rts/12-12-2020 1400</code> <code>w/Jurong Warehouse</code> <code>c/Leave it at the lobby</code> <code>type/metal</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>return</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>rts/RETURN_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>return</code> <code>tid/ac17s2a</code> <code>n/BOBBY TAN</code> <code>a/123 Delta Road #03-333, Singapore S169814</code> <code>p/91230456</code> <code>rts/2020-12-12 1301</code> <code>w/Jurong Warehouse</code> <code>c/NIL</code> <code>type/glass</code><br>
+<code>return</code> <code>tid/ac17s2a</code><br></p>
+<p class="tableblock"><code>return</code> <code>tid/b1230512</code> <code>n/Aaron Teo</code> <code>a/256 Delta Road #03-222, Singapore S169256</code> <code>p/91230456</code> <code>e/aaron@example.com</code> <code>rts/2020-12-12 1400</code> <code>w/Jurong Warehouse</code> <code>c/Leave it at the lobby</code> <code>type/metal</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>return</code> <code>tid/TRANSACTION_ID</code> <code>rts/RETURN_DATE_&amp;_TIME</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>return</code> <code>tid/ac17s2a</code> <code>rts/2020-12-12 1301</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#nearby"><strong>Nearby</strong></a></p></td>
@@ -703,7 +723,7 @@ OR<br>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">e/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Email</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#insert">Insert</a>, <a href="#edit">Edit</a>, <a href="#return">Return</a>, <a href="#search">Search</a>, <a href="#import">Import</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">Edit</a>, <a href="#insert">Insert</a>, <a href="#return">Return</a>, <a href="#search">Search</a>, <a href="#import">Import</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dts/</p></td>
@@ -1548,4 +1568,4 @@ Expected: In the response box, a message will appear to indicate that the import
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 07:23:40 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 07:52:43 UTC</div></div></div></body></html>
