@@ -307,10 +307,11 @@ You can use this <code>return</code> command to create a new return order to be 
 <div class="paragraph">
 <p><strong>Step 1</strong> : Type in the keyword <code>return</code>.<br>
 <strong>Step 2a</strong> : If you would like to convert an existing order into a return order,
-provide the <a href="#command_prefix"><code>TRANSACTION_ID</code></a> and the <a href="#command_prefix"><code>RETURN_TIMESTAMP</code></a> to the order to be converted.<br>
-<strong>Step 2b</strong>: If you would like to create a new return order in the return order list, provide the <a href="#command_prefix"><code>TRANSACTION_ID</code></a>
-<a href="#command_prefix"><code>NAME</code></a> <a href="#command_prefix"><code>ADDRESS</code></a> <a href="#command_prefix"><code>PHONE_NUMBER</code></a> <a href="#command_prefix"><code>RETURN_TIMESTAMP</code></a>
-<a href="#command_prefix"><code>WAREHOUSE_LOCATION</code></a> <a href="#command_prefix"><code>EMAIL</code></a> <a href="#command_prefix"><code>[COMMENTS_BY_CUSTOMER]</code></a> <a href="#command_prefix"><code>[TYPE_OF_ITEM]</code></a> of the parcel.<br>
+provide the <code>TRANSACTION_ID</code> and the <code>RETURN_DATE_AND_TIME</code> to the order to be converted.<br>
+<strong>Step 2b</strong>: If you would like to create a new return order in the return order list, provide the
+<code>TRANSACTION_ID</code> <code>CUSTOMER_NAME</code> <code>ADDRESS</code>
+<code>PHONE_NUMBER</code> <code>RETURN_DATE_AND_TIME</code> <code>WAREHOUSE_LOCATION</code>
+<code>EMAIL</code> <code>[COMMENTS_BY_CUSTOMER]</code> <code>[TYPE_OF_ITEM]</code> of the parcel.<br>
 <strong>Step 3</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
 </div>
 <div class="admonitionblock note">
@@ -344,8 +345,11 @@ i.e. <code>return</code> <code>tid/123abcd</code> <code>rts/2020-05-05 1500</cod
 <div class="ulist">
 <ul>
 <li>
-<p><code>return</code> <code>TRANSACTION_ID</code> <code>RETURN_TIMESTAMP</code> or <code>return</code> <code>TRANSACTION_ID</code> <code>CUSTOMER_NAME</code> <code>ADDRESS</code> <code>CUSTOMER_EMAIL</code>
-<code>WAREHOUSE_LOCATION</code> <code>PHONE_NUMBER</code> <code>RETURN_TIMESTAMP</code> <code>[COMMENTS_BY_CUSTOMER]</code> <code>[TYPE_OF_ITEM]</code></p>
+<p><code>return</code> <code>tid/<a href="#command_prefix">TRANSACTION_ID</a></code> <code>rts/<a href="#command_prefix">RETURN_DATE_AND_TIME</a></code> or
+<code>return</code> <code>tid/<a href="#command_prefix">TRANSACTION_ID</a></code> <code>n/<a href="#command_prefix">CUSTOMER_NAME</a></code>
+<code>a/<a href="#command_prefix">ADDRESS</a></code> <code>e/<a href="#command_prefix">EMAIL</a></code>
+<code>w/<a href="#command_prefix">WAREHOUSE_LOCATION</a></code> <code>p/<a href="#command_prefix">PHONE_NUMBER</a></code>
+<code>rts/<a href="#command_prefix">RETURN_DATE_AND_TIME</a></code> <code>c/[<a href="#command_prefix">COMMENTS_BY_CUSTOMER</a>]</code> <code>type/[<a href="#command_prefix">TYPE_OF_ITEM</a>]</code></p>
 </li>
 </ul>
 </div>
@@ -521,7 +525,7 @@ If you have delivered an order or return order, you can mark it as delivered wit
 </div>
 <div class="paragraph">
 <p><strong>Step 1</strong> : Type in the keyword <code>delivered</code><br>
-<strong>Step 2</strong> : Provide the <code><a href="#command_flags">FLAG</a></code> corresponding to the parcel order type you want to mark as delivered<br>
+<strong>Step 2</strong> : Provide the <code>FLAG</code> corresponding to the parcel order type you want to mark as delivered<br>
 <strong>Step 3</strong> : Provide the <code>INDEX</code> of the parcel displayed on the screen that you wish to mark as delivered<br>
 <strong>Step 4</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
 </div>
@@ -538,8 +542,8 @@ If you have delivered an order or return order, you can mark it as delivered wit
 <p>Please include a whitespace in between the keyword, command flag and index. i.e. <code>delivered -o 1</code></p>
 </li>
 <li>
-<p>If you can&#8217;t see any orders use the <a href="#list"><code>list</code></a> command to view existing parcel!
-If nothing is showing up, it means you got to <a href="#insert"><code>insert</code></a> or <a href="#return"><code>return</code></a> some parcel and start doing work!</p>
+<p>If you can&#8217;t see any orders use the <code><a href="#list">list</a></code> command to view existing parcel!
+If nothing is showing up, it means you got to <code><a href="#insert">insert</a></code> or <code><a href="#return">return</a></code> some parcel and start doing work!</p>
 </li>
 </ul>
 </div>
@@ -556,7 +560,7 @@ If nothing is showing up, it means you got to <a href="#insert"><code>insert</co
 <div class="ulist">
 <ul>
 <li>
-<p><code>delivered</code> <code>FLAG</code> <code>INDEX</code></p>
+<p><code>delivered</code> <code><a href="#command_flags">FLAG</a></code> <code>INDEX</code></p>
 </li>
 </ul>
 </div>
@@ -636,7 +640,7 @@ If nothing is showing up, it means you got to <a href="#insert"><code>insert</co
 <p>Only can be used when there is at least an order or return order displayed.</p>
 </li>
 <li>
-<p>The <code>FLAG</code> can only be either <code>-o</code> or <code>-r</code>, please refer to <a href="#command_flags">here</a> for more information.</p>
+<p>The <code>FLAG</code> can only be either <code>-o</code> or <code>-r</code>.</p>
 </li>
 </ul>
 </div>
@@ -1806,4 +1810,4 @@ Expected: An error will occur and the response box will show an error message</p
 </ol>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 09:12:07 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 09:14:40 UTC</div></div></div></body></html>

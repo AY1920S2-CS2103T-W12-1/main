@@ -214,7 +214,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="paragraph">
 <p>In this section you will be able to learn about the various features of Delino.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all" style="width: 50%;">
 <colgroup>
 <col style="width: 100%;">
 </colgroup>
@@ -376,14 +376,14 @@ The <code>insert</code> Command is in charge of this functionality.</p>
 <p><strong>Step 1</strong> : Type in the keyword <code>insert</code><br></p>
 </div>
 <div class="paragraph">
-<p><strong>Step 2</strong> : Add in the prefixes <code><a href="#command_prefix">TRANSACTION_ID</a></code> <code><a href="#command_prefix">CUSTOMER_NAME</a></code>
-<code><a href="#command_prefix">ADDRESS</a></code> <code><a href="#command_prefix">PHONE_NUMBER</a></code> <code><a href="#command_prefix">EMAIL</a></code>
-<code><a href="#command_prefix">ORDER_TIMESTAMP</a></code> <code><a href="#command_prefix">WAREHOUSE_LOCATION</a></code> <code><a href="#command_prefix">CASH_ON_DELIVERY</a></code>
+<p><strong>Step 2</strong> : Add in the prefixes <code>TRANSACTION_ID</code> <code>CUSTOMER_NAME</code>
+<code>ADDRESS</code> <code>PHONE_NUMBER</code> <code>EMAIL</code>
+<code>DELIVERY_DATE_AND_TIME</code> <code>WAREHOUSE_LOCATION</code> <code>CASH_ON_DELIVERY</code>
 of the delivery orders<br></p>
 </div>
 <div class="paragraph">
-<p><strong>Step 3 (Optional)</strong> : Add in the Customer comment and type of item using the prefixes <code>[<a href="#command_prefix">COMMENT_BY_CUSTOMER</a>]</code>
-<code>[<a href="#command_prefix">TYPE_OF_ITEM</a>]</code><br></p>
+<p><strong>Step 3 (Optional)</strong> : Add in the Customer comment and type of item using the prefixes <code>[COMMENT_BY_CUSTOMER]</code>
+<code>[TYPE_OF_ITEM]</code><br></p>
 </div>
 <div class="paragraph">
 <p><strong>Step 4</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
@@ -393,7 +393,10 @@ of the delivery orders<br></p>
 <h4 id="insert-examples"><a class="link" href="#insert-examples">3.2.2. What constitutes a valid Insert command</a></h4>
 <div class="paragraph">
 <p>Here is the syntax of the <code>insert</code> Command :<br>
-<code>insert</code> <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>dts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>cod/CASH_ON_DELIVERY</code> <code>[c/COMMENTS_BY_CUSTOMER]</code> <code>[type/TYPE_OF_ITEM]</code></p>
+<code>insert</code> <code>tid/<a href="#command_prefix">TRANSACTION_ID</a></code> <code>n/<a href="#command_prefix">CUSTOMER_NAME</a></code> <code>a/<a href="#command_prefix">ADDRESS</a></code>
+<code>p/<a href="#command_prefix">PHONE_NUMBER</a></code> <code>e/<a href="#command_prefix">EMAIL</a></code> <code>dts/<a href="#command_prefix">DELIVERY_DATE_AND_TIME</a></code>
+<code>w/<a href="#command_prefix">WAREHOUSE_LOCATION</a></code> <code>cod/<a href="#command_prefix">CASH_ON_DELIVERY</a></code> <code>[<a href="#command_prefix">COMMENT_BY_CUSTOMER</a>]</code>
+<code>[<a href="#command_prefix">TYPE_OF_ITEM</a>]</code></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -435,7 +438,7 @@ of the delivery orders<br></p>
 <p>The <code>[TYPE_OF_ITEM]</code> refers to the type of item that the courier is delivering.</p>
 </li>
 <li>
-<p>The prefixes <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>dts/DELIVERY_DATE_&amp;_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>cod/CASH_ON_DELIVERY</code> are compulsory.</p>
+<p>The prefixes <code>tid/TRANSACTION_ID</code> <code>n/CUSTOMER_NAME</code> <code>a/ADDRESS</code> <code>p/PHONE_NUMBER</code> <code>e/EMAIL</code> <code>dts/DELIVERY_DATE_AND_TIME</code> <code>w/WAREHOUSE_LOCATION</code> <code>cod/CASH_ON_DELIVERY</code> are compulsory.</p>
 </li>
 <li>
 <p>The prefixes <code>c/COMMENTS_BY_CUSTOMER</code> <code>type/TYPE_OF_ITEM</code> are optional.</p>
@@ -486,8 +489,8 @@ to add decimal places, you can only add two.</p>
 in 24 hour format.</p>
 </li>
 <li>
-<p>The value for <code>DELIVERY_DATE_&amp;_TIME</code> must be a time in the future. For example, if the date and time now is 2020-04-03 1200,
-you are not allowed to add 2020-04-03 1159 as the <code>DELIVERY_DATE_&amp;_TIME</code>.</p>
+<p>The value for <code>DELIVERY_DATE_AND_TIME</code> must be a time in the future. For example, if the date and time now is 2020-04-03 1200,
+you are not allowed to add 2020-04-03 1159 as the <code>DELIVERY_DATE_AND_TIME</code>.</p>
 </li>
 <li>
 <p><code>TYPE_OF_ITEM</code> must consist of only alphabets (No numbers or special characters allowed).</p>
@@ -591,10 +594,11 @@ You can use this <code>return</code> command to create a new return order to be 
 <div class="paragraph">
 <p><strong>Step 1</strong> : Type in the keyword <code>return</code>.<br>
 <strong>Step 2a</strong> : If you would like to convert an existing order into a return order,
-provide the <a href="#command_prefix"><code>TRANSACTION_ID</code></a> and the <a href="#command_prefix"><code>RETURN_TIMESTAMP</code></a> to the order to be converted.<br>
-<strong>Step 2b</strong>: If you would like to create a new return order in the return order list, provide the <a href="#command_prefix"><code>TRANSACTION_ID</code></a>
-<a href="#command_prefix"><code>NAME</code></a> <a href="#command_prefix"><code>ADDRESS</code></a> <a href="#command_prefix"><code>PHONE_NUMBER</code></a> <a href="#command_prefix"><code>RETURN_TIMESTAMP</code></a>
-<a href="#command_prefix"><code>WAREHOUSE_LOCATION</code></a> <a href="#command_prefix"><code>EMAIL</code></a> <a href="#command_prefix"><code>[COMMENTS_BY_CUSTOMER]</code></a> <a href="#command_prefix"><code>[TYPE_OF_ITEM]</code></a> of the parcel.<br>
+provide the <code>TRANSACTION_ID</code> and the <code>RETURN_DATE_AND_TIME</code> to the order to be converted.<br>
+<strong>Step 2b</strong>: If you would like to create a new return order in the return order list, provide the
+<code>TRANSACTION_ID</code> <code>CUSTOMER_NAME</code> <code>ADDRESS</code>
+<code>PHONE_NUMBER</code> <code>RETURN_DATE_AND_TIME</code> <code>WAREHOUSE_LOCATION</code>
+<code>EMAIL</code> <code>[COMMENTS_BY_CUSTOMER]</code> <code>[TYPE_OF_ITEM]</code> of the parcel.<br>
 <strong>Step 3</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
 </div>
 <div class="admonitionblock note">
@@ -628,8 +632,11 @@ i.e. <code>return</code> <code>tid/123abcd</code> <code>rts/2020-05-05 1500</cod
 <div class="ulist">
 <ul>
 <li>
-<p><code>return</code> <code>TRANSACTION_ID</code> <code>RETURN_TIMESTAMP</code> or <code>return</code> <code>TRANSACTION_ID</code> <code>CUSTOMER_NAME</code> <code>ADDRESS</code> <code>CUSTOMER_EMAIL</code>
-<code>WAREHOUSE_LOCATION</code> <code>PHONE_NUMBER</code> <code>RETURN_TIMESTAMP</code> <code>[COMMENTS_BY_CUSTOMER]</code> <code>[TYPE_OF_ITEM]</code></p>
+<p><code>return</code> <code>tid/<a href="#command_prefix">TRANSACTION_ID</a></code> <code>rts/<a href="#command_prefix">RETURN_DATE_AND_TIME</a></code> or
+<code>return</code> <code>tid/<a href="#command_prefix">TRANSACTION_ID</a></code> <code>n/<a href="#command_prefix">CUSTOMER_NAME</a></code>
+<code>a/<a href="#command_prefix">ADDRESS</a></code> <code>e/<a href="#command_prefix">EMAIL</a></code>
+<code>w/<a href="#command_prefix">WAREHOUSE_LOCATION</a></code> <code>p/<a href="#command_prefix">PHONE_NUMBER</a></code>
+<code>rts/<a href="#command_prefix">RETURN_DATE_AND_TIME</a></code> <code>c/[<a href="#command_prefix">COMMENTS_BY_CUSTOMER</a>]</code> <code>type/[<a href="#command_prefix">TYPE_OF_ITEM</a>]</code></p>
 </li>
 </ul>
 </div>
@@ -801,9 +808,9 @@ Why will you want to use the <code>edit</code> command? If you wish to edit any 
 </div>
 <div class="paragraph">
 <p><strong>Step 1</strong> : Type in the keyword <code>edit</code><br>
-<strong>Step 2</strong> : Provide the <code><a href="#command_flags">FLAG</a></code> corresponding to the parcel order type you want to edit<br>
+<strong>Step 2</strong> : Provide the <code>FLAG</code> corresponding to the parcel order type you want to edit<br>
 <strong>Step 3</strong> : Provide the <code>INDEX</code> of the parcel displayed on the screen that you wish to edit<br>
-<strong>Step 4</strong> : Provide the <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> coupled with a front slash <code>/</code> and the new value you want to change to.<br>
+<strong>Step 4</strong> : Provide the <code>ORDER_ATTRIBUTE_PREFIX</code> coupled with a front slash <code>/</code> and the new value you want to change to.<br>
 <strong>Step 5</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
 </div>
 <div class="admonitionblock note">
@@ -836,7 +843,7 @@ Why will you want to use the <code>edit</code> command? If you wish to edit any 
 <div class="ulist">
 <ul>
 <li>
-<p><code>edit</code> <code>FLAG</code> <code>INDEX</code> <code>ORDER_ATTRIBUTE_PREFIX/NEW_VALUE</code> <code>[ORDER_ATTRIBUTE_PREFIXES/NEW_VALUE]&#8230;&#8203;</code></p>
+<p><code>edit</code> <code><a href="#command_flags">FLAG</a></code> <code>INDEX</code> <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/NEW_VALUE</code> <code>[<a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a>/NEW_VALUE]&#8230;&#8203;</code></p>
 </li>
 </ul>
 </div>
@@ -929,7 +936,7 @@ Why will you want to use the <code>edit</code> command? If you wish to edit any 
 <p>Only can be used when there is at least an order displayed.</p>
 </li>
 <li>
-<p>The <code>FLAG</code> can only be either <code>-o</code> or <code>-r</code>, please refer to <a href="#command_flags">here</a> for more information.</p>
+<p>The <code>FLAG</code> can only be either <code>-o</code> or <code>-r</code>.</p>
 </li>
 </ul>
 </div>
@@ -1009,7 +1016,7 @@ The <code>INDEX</code> <strong>must be a positive integer</strong> i.e. 1, 2, 3,
 </div>
 <div class="paragraph">
 <p>The syntax for a valid <code>delete</code> command is the following:<br>
-<code>delete</code> <code>FLAG</code> <code>INDEX</code><br></p>
+<code>delete</code> <code><a href="#command_flags">FLAG</a></code> <code>INDEX</code><br></p>
 </div>
 </div>
 <div class="sect3">
@@ -1123,7 +1130,7 @@ to do so.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>clear</code> <code>[FLAG]</code></p>
+<p><code>clear</code> <code>[<a href="#command_flags">FLAG</a>]</code></p>
 </li>
 </ul>
 </div>
@@ -1426,7 +1433,7 @@ Why will you want to use the <code>search</code> command? If you wish to search 
 </table>
 </div>
 <div class="paragraph">
-<p><strong>Step 3 (optional)</strong> : If you wish to only specifically search for keywords in a field, you should provide the <code><a href="#command_prefix">ORDER_ATTRIBUTE_PREFIX</a></code> coupled with a front slash <code>/</code> and the keyword you want to search for.<br>
+<p><strong>Step 3 (optional)</strong> : If you wish to only specifically search for keywords in a field, you should provide the <code>ORDER_ATTRIBUTE_PREFIX</code> coupled with a front slash <code>/</code> and the keyword you want to search for.<br>
 <strong>Step 4</strong> : Provide any number of alphanumeric words you wish to search for in the parcel.<br>
 <strong>Step 5</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
 </div>
@@ -1593,7 +1600,7 @@ orders.</p>
 <strong>Step 1</strong> : Type in the keyword <code>nearby</code><br></p>
 </div>
 <div class="paragraph">
-<p><strong>Step 2 (optional)</strong> : Provide an optional <code><a href="#command_flags">FLAG</a></code> that indicates which order list to
+<p><strong>Step 2 (optional)</strong> : Provide an optional <code>FLAG</code> that indicates which order list to
 search (order list or return order list).<br></p>
 </div>
 <div class="admonitionblock note">
@@ -1615,7 +1622,7 @@ A <code>-r</code> flag indicates searching of the nearby orders using the return
 <p>By default, if no <code>FLAG</code> is provided, both order list and return order list will be searched.<br></p>
 </div>
 <div class="paragraph">
-<p><strong>Step 3</strong> : Provide either a <code><a href="#postal_sector">POSTAL SECTOR</a></code> or an <code><a href="#area">AREA</a></code><br></p>
+<p><strong>Step 3</strong> : Provide either a <code>POSTAL SECTOR</code> or an <code>AREA</code><br></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1674,8 +1681,8 @@ The list of postal sectors and their corresponding general locations can be foun
 </div>
 <div class="paragraph">
 <p>The syntax for a valid <code>nearby</code> command can be one of the following:<br>
-1. <code>nearby</code> <code>[FLAG]</code> <code>POSTAL_SECTOR</code><br>
-2. <code>nearby</code> <code>[FLAG]</code> <code>AREA</code></p>
+1. <code>nearby</code> <code>[<a href="#command_flags">FLAG</a>]</code> <code><a href="#postal_sector">POSTAL_SECTOR</a></code><br>
+2. <code>nearby</code> <code>[<a href="#command_flags">FLAG</a>]</code> <code><a href="#area">AREA</a></code></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2020,7 +2027,7 @@ If you have delivered an order or return order, you can mark it as delivered wit
 </div>
 <div class="paragraph">
 <p><strong>Step 1</strong> : Type in the keyword <code>delivered</code><br>
-<strong>Step 2</strong> : Provide the <code><a href="#command_flags">FLAG</a></code> corresponding to the parcel order type you want to mark as delivered<br>
+<strong>Step 2</strong> : Provide the <code>FLAG</code> corresponding to the parcel order type you want to mark as delivered<br>
 <strong>Step 3</strong> : Provide the <code>INDEX</code> of the parcel displayed on the screen that you wish to mark as delivered<br>
 <strong>Step 4</strong> : Press <code>Enter</code> on your keyboard to see the magic!</p>
 </div>
@@ -2037,8 +2044,8 @@ If you have delivered an order or return order, you can mark it as delivered wit
 <p>Please include a whitespace in between the keyword, command flag and index. i.e. <code>delivered -o 1</code></p>
 </li>
 <li>
-<p>If you can&#8217;t see any orders use the <a href="#list"><code>list</code></a> command to view existing parcel!
-If nothing is showing up, it means you got to <a href="#insert"><code>insert</code></a> or <a href="#return"><code>return</code></a> some parcel and start doing work!</p>
+<p>If you can&#8217;t see any orders use the <code><a href="#list">list</a></code> command to view existing parcel!
+If nothing is showing up, it means you got to <code><a href="#insert">insert</a></code> or <code><a href="#return">return</a></code> some parcel and start doing work!</p>
 </li>
 </ul>
 </div>
@@ -2055,7 +2062,7 @@ If nothing is showing up, it means you got to <a href="#insert"><code>insert</co
 <div class="ulist">
 <ul>
 <li>
-<p><code>delivered</code> <code>FLAG</code> <code>INDEX</code></p>
+<p><code>delivered</code> <code><a href="#command_flags">FLAG</a></code> <code>INDEX</code></p>
 </li>
 </ul>
 </div>
@@ -2135,7 +2142,7 @@ If nothing is showing up, it means you got to <a href="#insert"><code>insert</co
 <p>Only can be used when there is at least an order or return order displayed.</p>
 </li>
 <li>
-<p>The <code>FLAG</code> can only be either <code>-o</code> or <code>-r</code>, please refer to <a href="#command_flags">here</a> for more information.</p>
+<p>The <code>FLAG</code> can only be either <code>-o</code> or <code>-r</code>.</p>
 </li>
 </ul>
 </div>
@@ -3442,4 +3449,4 @@ OR<br>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 09:12:07 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 09:14:40 UTC</div></div></div></body></html>
