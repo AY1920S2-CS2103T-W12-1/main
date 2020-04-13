@@ -39,9 +39,8 @@ This is one of the key feature of Delino as it allows the user to sieve out parc
 </li>
 <li>
 <p><strong>Highlights</strong>:<br>
-This enhancement is affected by the existing <code>insert</code> and <code>return</code> command as it depends heavily on the fields added in parcel.
-It also affects the future command to be added in if the future command requires to change the properties of a parcel. Implementing this feature requires
-the thorough understanding of the existing class in AB3 such as the <code>ArgumentMultimap</code> and the <code>NameContainsKeywordsPredicate</code>. Furthermore, JavaFX class <code>Predicate</code> was used to achieve functionality of this feature.<br>
+This enhancement is heavily affected by the fields added in parcel. A new field requires an update for Search, hence affecting future implementation. Implementing this feature requires
+the thorough understanding of the existing class in AB3 such as the <code>ArgumentMultimap</code> and the <code>NameContainsKeywordsPredicate</code>. Furthermore, JavaFX class <code>Predicate</code> was used to achieve functionality of this feature.
 Moreover, as this features allows user to search in many different possible way, testing the different scenarios are hard. ParametizedTest of JUnit testing was used to make my test code much cleaner.</p>
 </li>
 </ul>
@@ -76,10 +75,7 @@ This feature requires a thorough understanding of the existing code of AB3 such 
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Changes to all asiicdoc files title to match our app Delino (Pull request <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/92">#92</a>).</p>
-</li>
-<li>
-<p>Improve UI of Delino (Pull requests: <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/209">#209</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/221">#221</a>).</p>
+<p>Improve UI of Delino (Pull requests: <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/209">#209</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/221">#221</a>), <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/363">#363</a>.</p>
 </li>
 <li>
 <p>Allow user to easily see the time in Delino by adding a real-time clock (Pull requests: <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/336">#336</a>).</p>
@@ -102,10 +98,7 @@ This feature requires a thorough understanding of the existing code of AB3 such 
 <p>In charge of both code integration and testing.</p>
 </li>
 <li>
-<p>Finalised the pre-releases of Delino <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/releases/tag/v1.2">v1.2</a> and <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/releases/tag/v1.3">v1.3</a> on github.</p>
-</li>
-<li>
-<p>Together with Jeremy, we set-up the Travis bot in our team repo.</p>
+<p>Finalised the pre-releases and releases of Delino <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/releases/tag/v1.2">v1.2</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/releases/tag/v1.3">v1.3</a> and <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/releases/tag/v1.4">v1.4</a> on github.</p>
 </li>
 </ol>
 </div>
@@ -115,13 +108,10 @@ This feature requires a thorough understanding of the existing code of AB3 such 
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>UI changes Pull requests : <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/209">#209</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/221">#221</a></p>
+<p>UI changes Pull requests : <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/209">#209</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/221">#221</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/363">#363</a>.</p>
 </li>
 <li>
-<p>Improve search feature functionality to cover Return Order as well as coverage of test case <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/187">#187</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/248">#248</a>.</p>
-</li>
-<li>
-<p>Improve edit feature functionality to cover Return Order and improve error message for edit feature <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/234">#234</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/305">#305</a>.</p>
+<p>Improve search feature and edit feature functionality to cover Return Order as well as coverage of test case and error messages <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/187">#187</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/234">#234</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/248">#248</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/305">#305</a>.</p>
 </li>
 </ol>
 </div>
@@ -150,7 +140,7 @@ This feature requires a thorough understanding of the existing code of AB3 such 
 <p>PRs reviewed (with non-trivial review comments): <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/81">#81</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/116">#116</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/121">#121</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/171">#171</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/181">#181</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/194">#194</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/309">#309</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-1/main/pull/318">#318</a></p>
 </li>
 <li>
-<p>Contributed to forum discussions by asking a few help questions <a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/32">#32</a>, <a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/35">#35</a>, <a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/89">#89</a>.</p>
+<p>Contributed to forum discussions by asking a few help questions <a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/32">#32</a>, <a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/35">#35</a>, <a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/89">#89</a>, <a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/108">#108</a>.</p>
 </li>
 <li>
 <p>Reported bugs and suggestions for other teams in the class <a href="https://github.com/khsc96/ped/issues/1">#1</a>, <a href="https://github.com/khsc96/ped/issues/2">#2</a>, <a href="https://github.com/khsc96/ped/issues/3">#3</a>, <a href="https://github.com/khsc96/ped/issues/4">#4</a>, <a href="https://github.com/khsc96/ped/issues/5">#5</a>, <a href="https://github.com/khsc96/ped/issues/6">#6</a>, <a href="https://github.com/khsc96/ped/issues/7">#7</a>, <a href="https://github.com/khsc96/ped/issues/8">#8</a>.</p>
@@ -1287,4 +1277,4 @@ Expected: Specifically search for any order from the order list that has a Trans
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 07:52:48 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 07:53:53 UTC</div></div></div></body></html>
